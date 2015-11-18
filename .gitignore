@@ -2,5 +2,5 @@
 
 !.gitignore
 !.git
-!scripts
-!public/js/scripts
+!scripts/*
+!public/js/scripts/*
