@@ -1,6 +1,6 @@
-*
-
-!.gitignore
-!.git
-!./scripts/
-!./public/js/scripts/
+/*
+/*/
+!/scripts/
+!/scripts/*
+!/public/js/scripts/
+!/public/js/scripts/*
