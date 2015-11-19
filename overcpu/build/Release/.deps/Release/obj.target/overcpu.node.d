@@ -1,1 +1,0 @@
-cmd_Release/obj.target/overcpu.node := flock ./Release/linker.lock g++ -shared -pthread -rdynamic -m64  -Wl,-soname=overcpu.node -o Release/obj.target/overcpu.node -Wl,--start-group Release/obj.target/overcpu/overcpu.o -Wl,--end-group 
