@@ -1,0 +1,14 @@
+/*
+/*/
+!/.gitignore
+!/.git
+!/scripts/
+!/scripts/*
+!/public/
+/public/*
+!/public/js/
+/public/js/*
+!/public/js/scripts/
+!/public/js/scripts/*
+!/skeleton/
+!/skeleton/*
