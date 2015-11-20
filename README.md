@@ -1,6 +1,6 @@
 
 
-# ${projectname}
+USI Big Brother
 
 
 
