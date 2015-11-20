@@ -1,0 +1,608 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.3.24
+3 info using node@v0.10.25
+4 warn package.json Usi_Liquid_Streams@0.5.0 No repository field.
+5 verbose readDependencies using package.json deps
+6 verbose install where, deps [ '/Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams',
+6 verbose install   [ 'colors',
+6 verbose install     'debug',
+6 verbose install     'dnode',
+6 verbose install     'ejs',
+6 verbose install     'express',
+6 verbose install     'gm',
+6 verbose install     'inspect',
+6 verbose install     'jade',
+6 verbose install     'json-schema',
+6 verbose install     'mc',
+6 verbose install     'mime',
+6 verbose install     'mongodb',
+6 verbose install     'node-battery',
+6 verbose install     'now',
+6 verbose install     'portscanner',
+6 verbose install     'redis',
+6 verbose install     'request',
+6 verbose install     'restify',
+6 verbose install     'socket.io',
+6 verbose install     'socket.io-client',
+6 verbose install     'tv4',
+6 verbose install     'websocket',
+6 verbose install     'ws',
+6 verbose install     'xmlhttprequest',
+6 verbose install     'zmq' ] ]
+7 info preinstall Usi_Liquid_Streams@0.5.0
+8 warn package.json inspect@0.0.2 No repository field.
+9 verbose readDependencies using package.json deps
+10 verbose already installed skipping inspect@~0.0.2 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+11 verbose already installed skipping gm@~1.16.0 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+12 verbose already installed skipping jade@~1.3.1 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+13 verbose already installed skipping json-schema@~0.2.2 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+14 verbose already installed skipping mc@~1.0.6 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+15 verbose already installed skipping mongodb@~1.4.7 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+16 verbose already installed skipping mime@~1.2.11 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+17 verbose already installed skipping node-battery@0.2.2 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+18 verbose already installed skipping now@~0.8.1 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+19 verbose already installed skipping portscanner@~1.0.0 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+20 verbose already installed skipping request@~2.36.0 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+21 verbose already installed skipping redis@0.12.1 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+22 verbose already installed skipping restify@2.8.1 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+23 verbose already installed skipping socket.io@~0.9.16 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+24 verbose already installed skipping tv4@~1.0.18 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+25 verbose already installed skipping socket.io-client@~0.9.16 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+26 verbose already installed skipping websocket@~1.0.8 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+27 verbose already installed skipping ws@~0.7.1 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+28 verbose already installed skipping xmlhttprequest@~1.6.0 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+29 verbose cache add [ 'zmq@~2.7.0', null ]
+30 verbose cache add name=undefined spec="zmq@~2.7.0" args=["zmq@~2.7.0",null]
+31 verbose parsed url { protocol: null,
+31 verbose parsed url   slashes: null,
+31 verbose parsed url   auth: null,
+31 verbose parsed url   host: null,
+31 verbose parsed url   port: null,
+31 verbose parsed url   hostname: null,
+31 verbose parsed url   hash: null,
+31 verbose parsed url   search: null,
+31 verbose parsed url   query: null,
+31 verbose parsed url   pathname: 'zmq@~2.7.0',
+31 verbose parsed url   path: 'zmq@~2.7.0',
+31 verbose parsed url   href: 'zmq@~2.7.0' }
+32 verbose cache add name="zmq" spec="~2.7.0" args=["zmq","~2.7.0"]
+33 verbose parsed url { protocol: null,
+33 verbose parsed url   slashes: null,
+33 verbose parsed url   auth: null,
+33 verbose parsed url   host: null,
+33 verbose parsed url   port: null,
+33 verbose parsed url   hostname: null,
+33 verbose parsed url   hash: null,
+33 verbose parsed url   search: null,
+33 verbose parsed url   query: null,
+33 verbose parsed url   pathname: '~2.7.0',
+33 verbose parsed url   path: '~2.7.0',
+33 verbose parsed url   href: '~2.7.0' }
+34 verbose addNamed [ 'zmq', '~2.7.0' ]
+35 verbose addNamed [ null, '>=2.7.0-0 <2.8.0-0' ]
+36 silly lockFile 00ac478c-zmq-2-7-0 zmq@~2.7.0
+37 verbose lock zmq@~2.7.0 /Users/Andrea/.npm/00ac478c-zmq-2-7-0.lock
+38 silly addNameRange { name: 'zmq', range: '>=2.7.0-0 <2.8.0-0', hasData: false }
+39 verbose url raw zmq
+40 verbose url resolving [ 'https://registry.npmjs.org/', './zmq' ]
+41 verbose url resolved https://registry.npmjs.org/zmq
+42 info trying registry request attempt 1 at 15:22:18
+43 verbose etag "CB9JST6WVXOLV7EVT86NZ6WU3"
+44 http GET https://registry.npmjs.org/zmq
+45 verbose already installed skipping dnode@~1.2.0 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+46 verbose already installed skipping colors@1.0.3 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+47 verbose already installed skipping debug@1.0.2  /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+48 verbose already installed skipping ejs@^2.3.1 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+49 verbose already installed skipping express@~4.5.1 /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+50 http 304 https://registry.npmjs.org/zmq
+51 silly registry.get cb [ 304,
+51 silly registry.get   { date: 'Wed, 18 Nov 2015 14:22:18 GMT',
+51 silly registry.get     via: '1.1 varnish',
+51 silly registry.get     'cache-control': 'max-age=60',
+51 silly registry.get     etag: '"CB9JST6WVXOLV7EVT86NZ6WU3"',
+51 silly registry.get     age: '0',
+51 silly registry.get     connection: 'keep-alive',
+51 silly registry.get     'x-served-by': 'cache-fra1236-FRA',
+51 silly registry.get     'x-cache': 'HIT',
+51 silly registry.get     'x-cache-hits': '1',
+51 silly registry.get     'x-timer': 'S1447856538.483972,VS0,VE183',
+51 silly registry.get     vary: 'Accept' } ]
+52 verbose etag zmq from cache
+53 silly addNameRange number 2 { name: 'zmq', range: '>=2.7.0-0 <2.8.0-0', hasData: true }
+54 silly addNameRange versions [ 'zmq',
+54 silly addNameRange   [ '1.0.0',
+54 silly addNameRange     '1.0.1',
+54 silly addNameRange     '1.0.2',
+54 silly addNameRange     '1.0.3',
+54 silly addNameRange     '1.0.4',
+54 silly addNameRange     '2.0.0',
+54 silly addNameRange     '2.0.1',
+54 silly addNameRange     '2.0.2',
+54 silly addNameRange     '2.0.3',
+54 silly addNameRange     '2.1.0',
+54 silly addNameRange     '2.2.0',
+54 silly addNameRange     '2.3.0',
+54 silly addNameRange     '2.4.0',
+54 silly addNameRange     '2.5.0',
+54 silly addNameRange     '2.5.1',
+54 silly addNameRange     '2.6.0',
+54 silly addNameRange     '2.7.0',
+54 silly addNameRange     '2.8.0',
+54 silly addNameRange     '2.9.0',
+54 silly addNameRange     '2.10.0',
+54 silly addNameRange     '2.11.0',
+54 silly addNameRange     '2.11.1',
+54 silly addNameRange     '2.12.0',
+54 silly addNameRange     '2.13.0' ] ]
+55 verbose addNamed [ 'zmq', '2.7.0' ]
+56 verbose addNamed [ '2.7.0', '2.7.0' ]
+57 silly lockFile b29281ac-zmq-2-7-0 zmq@2.7.0
+58 verbose lock zmq@2.7.0 /Users/Andrea/.npm/b29281ac-zmq-2-7-0.lock
+59 silly lockFile b29281ac-zmq-2-7-0 zmq@2.7.0
+60 silly lockFile b29281ac-zmq-2-7-0 zmq@2.7.0
+61 silly lockFile 00ac478c-zmq-2-7-0 zmq@~2.7.0
+62 silly lockFile 00ac478c-zmq-2-7-0 zmq@~2.7.0
+63 silly resolved [ { name: 'zmq',
+63 silly resolved     version: '2.7.0',
+63 silly resolved     description: 'Bindings for node.js to zeromq',
+63 silly resolved     main: 'index',
+63 silly resolved     repository:
+63 silly resolved      { type: 'git',
+63 silly resolved        url: 'http://github.com/JustinTulloss/zeromq.node.git' },
+63 silly resolved     dependencies: { nan: '~0.8.0', bindings: '~1.1.1' },
+63 silly resolved     devDependencies: { should: '2.1.x', batch: '*', jade: '*', dox: '*', semver: '*' },
+63 silly resolved     engines: { node: '>=0.7.9' },
+63 silly resolved     scripts: { test: 'make test', install: 'node-gyp rebuild' },
+63 silly resolved     keywords:
+63 silly resolved      [ 'zeromq',
+63 silly resolved        'zmq',
+63 silly resolved        '0mq',
+63 silly resolved        'ømq',
+63 silly resolved        'libzmq',
+63 silly resolved        'native',
+63 silly resolved        'binding',
+63 silly resolved        'addon' ],
+63 silly resolved     author:
+63 silly resolved      { name: 'Justin Tulloss',
+63 silly resolved        email: 'justin.tulloss@gmail.com',
+63 silly resolved        url: 'http://justin.harmonize.fm' },
+63 silly resolved     contributors:
+63 silly resolved      [ [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object],
+63 silly resolved        [Object] ],
+63 silly resolved     gypfile: true,
+63 silly resolved     readme: '[![Build Status](https://travis-ci.org/JustinTulloss/zeromq.node.png)](https://travis-ci.org/JustinTulloss/zeromq.node)\n\n# node-zeromq\n\n  [ØMQ](http://www.zeromq.org/) bindings for node.js.\n\n## Installation\n\n[Install zmq package](http://www.zeromq.org/intro:get-the-software) first.\n\n    $ npm install zmq\n\n## Example\n\nproducer.js:\n\n```js\nvar zmq = require(\'zmq\')\n  , sock = zmq.socket(\'push\');\n\nsock.bindSync(\'tcp://127.0.0.1:3000\');\nconsole.log(\'Producer bound to port 3000\');\n\nsetInterval(function(){\n  console.log(\'sending work\');\n  sock.send(\'some work\');\n}, 500);\n```\n\nworker.js:\n\n```js\n\nvar zmq = require(\'zmq\')\n  , sock = zmq.socket(\'pull\');\n\nsock.connect(\'tcp://127.0.0.1:3000\');\nconsole.log(\'Worker connected to port 3000\');\n\nsock.on(\'message\', function(msg){\n  console.log(\'work: %s\', msg.toString());\n});\n```\n\n## Running tests\n\n  Install dev deps:\n\n     $ npm install\n\n  Build:\n\n     $ make\n\n  Test:\n\n     $ make test\n\n## Running benchmarks\n\nBenchmarks are available in the `perf` directory, and have been implemented\naccording to the zmq documentation:\n[How to run performance tests](http://www.zeromq.org/results:perf-howto)\n\nIn the following examples, the arguments are respectively:\n- the host to connect to/bind on\n- message size (in bytes)\n- message count\n\nYou can run a latency benchmark by running these two commands in two separate\nshells:\n\n```sh\nnode ./local_lat.js tcp://127.0.0.1:5555 1 100000\n```\n\n```sh\nnode ./remote_lat.js tcp://127.0.0.1:5555 1 100000\n```\n\nAnd you can run throughput tests by running these two commands in two\nseparate shells:\n\n```sh\nnode ./local_thr.js tcp://127.0.0.1:5555 1 100000\n```\n\n```sh\nnode ./remote_thr.js tcp://127.0.0.1:5555 1 100000\n```\n\n',
+63 silly resolved     readmeFilename: 'README.md',
+63 silly resolved     bugs: { url: 'https://github.com/JustinTulloss/zeromq.node/issues' },
+63 silly resolved     homepage: 'https://github.com/JustinTulloss/zeromq.node',
+63 silly resolved     _id: 'zmq@2.7.0',
+63 silly resolved     _from: 'zmq@~2.7.0' } ]
+64 info install zmq@2.7.0 into /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+65 info installOne zmq@2.7.0
+66 info /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq unbuild
+67 verbose tar unpack /Users/Andrea/.npm/zmq/2.7.0/package.tgz
+68 silly lockFile 37b82802--liquid-streams-node-modules-zmq tar:///Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq
+69 verbose lock tar:///Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq /Users/Andrea/.npm/37b82802--liquid-streams-node-modules-zmq.lock
+70 silly lockFile 302f99d5-Andrea-npm-zmq-2-7-0-package-tgz tar:///Users/Andrea/.npm/zmq/2.7.0/package.tgz
+71 verbose lock tar:///Users/Andrea/.npm/zmq/2.7.0/package.tgz /Users/Andrea/.npm/302f99d5-Andrea-npm-zmq-2-7-0-package-tgz.lock
+72 silly gunzTarPerm modes [ '755', '644' ]
+73 silly gunzTarPerm extractEntry package.json
+74 silly gunzTarPerm extractEntry .npmignore
+75 silly gunzTarPerm extractEntry README.md
+76 silly gunzTarPerm extractEntry LICENSE
+77 silly gunzTarPerm extractEntry index.js
+78 silly gunzTarPerm extractEntry History.md
+79 silly gunzTarPerm extractEntry binding.cc
+80 silly gunzTarPerm extractEntry binding.gyp
+81 silly gunzTarPerm extractEntry .travis.yml
+82 silly gunzTarPerm extractEntry examples/dealer_router.js
+83 silly gunzTarPerm extractEntry examples/pub_sub.js
+84 silly gunzTarPerm extractEntry examples/push_pull.js
+85 silly gunzTarPerm extractEntry examples/rep_req.js
+86 silly gunzTarPerm extractEntry examples/req_rep.js
+87 silly gunzTarPerm extractEntry examples/router_dealer.js
+88 silly gunzTarPerm extractEntry examples/rpc.js
+89 silly gunzTarPerm extractEntry examples/devices/forwarder.js
+90 silly gunzTarPerm extractEntry examples/devices/queue.js
+91 silly gunzTarPerm extractEntry examples/devices/streamer.js
+92 silly gunzTarPerm extractEntry examples/workers/producer.js
+93 silly gunzTarPerm extractEntry examples/workers/worker.js
+94 silly gunzTarPerm extractEntry windows/include/zmq.h
+95 silly gunzTarPerm extractEntry windows/include/zmq_utils.h
+96 silly gunzTarPerm extractEntry windows/lib/x64/libzmq-v100-mt-3_2_2.dll
+97 silly gunzTarPerm extractEntry windows/lib/x64/libzmq-v100-mt-3_2_2.lib
+98 silly gunzTarPerm extractEntry windows/lib/x86/libzmq-v100-mt-3_2_2.dll
+99 silly gunzTarPerm extractEntry windows/lib/x86/libzmq-v100-mt-3_2_2.lib
+100 silly gunzTarPerm extractEntry lib/index.js
+101 silly gunzTarPerm extractEntry Makefile
+102 silly gunzTarPerm extractEntry perf/local_lat.js
+103 silly gunzTarPerm extractEntry perf/local_thr.js
+104 silly gunzTarPerm extractEntry perf/remote_lat.js
+105 silly gunzTarPerm extractEntry perf/remote_thr.js
+106 silly gunzTarPerm extractEntry test/run.js
+107 silly gunzTarPerm extractEntry test/test.socket.monitor.js
+108 silly gunzTarPerm extractEntry test/test.socket.multipart.message.js
+109 silly gunzTarPerm extractEntry test/test.socket.multipart.sndmore.js
+110 silly gunzTarPerm extractEntry test/test.socket.messages.lateconnect.js
+111 silly gunzTarPerm extractEntry test/test.socket.pub-sub.js
+112 silly gunzTarPerm extractEntry test/test.socket.push-pull.js
+113 silly gunzTarPerm extractEntry test/test.socket.req-rep.js
+114 silly gunzTarPerm extractEntry test/test.socket.req-rep.multiple.js
+115 silly gunzTarPerm extractEntry test/test.socket.router.unroutable.js
+116 silly gunzTarPerm extractEntry test/test.socket.messages.js
+117 silly gunzTarPerm extractEntry test/test.socket.unbind.js
+118 silly gunzTarPerm extractEntry test/test.socket.js
+119 silly gunzTarPerm extractEntry test/test.socket.zap.curve.js
+120 silly gunzTarPerm extractEntry test/test.socket.events.js
+121 silly gunzTarPerm extractEntry test/test.socket.zap.null.js
+122 silly gunzTarPerm extractEntry test/test.gc.js
+123 silly gunzTarPerm extractEntry test/test.socket.zap.plain.js
+124 silly gunzTarPerm extractEntry test/test.exports.js
+125 silly gunzTarPerm extractEntry test/zap.js
+126 silly gunzTarPerm extractEntry test/test.socket.pub-sub.filter.js
+127 silly gunzTarPerm extractEntry docs/highlight.js
+128 silly gunzTarPerm extractEntry docs/menu.js
+129 silly gunzTarPerm extractEntry docs/index.html
+130 silly gunzTarPerm extractEntry docs/index.json
+131 silly gunzTarPerm extractEntry docs/style.css
+132 silly gunzTarPerm extractEntry docs/template.jade
+133 silly lockFile 37b82802--liquid-streams-node-modules-zmq tar:///Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq
+134 silly lockFile 37b82802--liquid-streams-node-modules-zmq tar:///Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq
+135 silly lockFile 302f99d5-Andrea-npm-zmq-2-7-0-package-tgz tar:///Users/Andrea/.npm/zmq/2.7.0/package.tgz
+136 silly lockFile 302f99d5-Andrea-npm-zmq-2-7-0-package-tgz tar:///Users/Andrea/.npm/zmq/2.7.0/package.tgz
+137 info preinstall zmq@2.7.0
+138 verbose readDependencies using package.json deps
+139 verbose readDependencies using package.json deps
+140 verbose cache add [ 'nan@~0.8.0', null ]
+141 verbose cache add name=undefined spec="nan@~0.8.0" args=["nan@~0.8.0",null]
+142 verbose parsed url { protocol: null,
+142 verbose parsed url   slashes: null,
+142 verbose parsed url   auth: null,
+142 verbose parsed url   host: null,
+142 verbose parsed url   port: null,
+142 verbose parsed url   hostname: null,
+142 verbose parsed url   hash: null,
+142 verbose parsed url   search: null,
+142 verbose parsed url   query: null,
+142 verbose parsed url   pathname: 'nan@~0.8.0',
+142 verbose parsed url   path: 'nan@~0.8.0',
+142 verbose parsed url   href: 'nan@~0.8.0' }
+143 verbose cache add name="nan" spec="~0.8.0" args=["nan","~0.8.0"]
+144 verbose parsed url { protocol: null,
+144 verbose parsed url   slashes: null,
+144 verbose parsed url   auth: null,
+144 verbose parsed url   host: null,
+144 verbose parsed url   port: null,
+144 verbose parsed url   hostname: null,
+144 verbose parsed url   hash: null,
+144 verbose parsed url   search: null,
+144 verbose parsed url   query: null,
+144 verbose parsed url   pathname: '~0.8.0',
+144 verbose parsed url   path: '~0.8.0',
+144 verbose parsed url   href: '~0.8.0' }
+145 verbose addNamed [ 'nan', '~0.8.0' ]
+146 verbose addNamed [ null, '>=0.8.0-0 <0.9.0-0' ]
+147 silly lockFile d5ae64ea-nan-0-8-0 nan@~0.8.0
+148 verbose lock nan@~0.8.0 /Users/Andrea/.npm/d5ae64ea-nan-0-8-0.lock
+149 verbose cache add [ 'bindings@~1.1.1', null ]
+150 verbose cache add name=undefined spec="bindings@~1.1.1" args=["bindings@~1.1.1",null]
+151 verbose parsed url { protocol: null,
+151 verbose parsed url   slashes: null,
+151 verbose parsed url   auth: null,
+151 verbose parsed url   host: null,
+151 verbose parsed url   port: null,
+151 verbose parsed url   hostname: null,
+151 verbose parsed url   hash: null,
+151 verbose parsed url   search: null,
+151 verbose parsed url   query: null,
+151 verbose parsed url   pathname: 'bindings@~1.1.1',
+151 verbose parsed url   path: 'bindings@~1.1.1',
+151 verbose parsed url   href: 'bindings@~1.1.1' }
+152 verbose cache add name="bindings" spec="~1.1.1" args=["bindings","~1.1.1"]
+153 verbose parsed url { protocol: null,
+153 verbose parsed url   slashes: null,
+153 verbose parsed url   auth: null,
+153 verbose parsed url   host: null,
+153 verbose parsed url   port: null,
+153 verbose parsed url   hostname: null,
+153 verbose parsed url   hash: null,
+153 verbose parsed url   search: null,
+153 verbose parsed url   query: null,
+153 verbose parsed url   pathname: '~1.1.1',
+153 verbose parsed url   path: '~1.1.1',
+153 verbose parsed url   href: '~1.1.1' }
+154 verbose addNamed [ 'bindings', '~1.1.1' ]
+155 verbose addNamed [ null, '>=1.1.1-0 <1.2.0-0' ]
+156 silly lockFile cc1512d6-bindings-1-1-1 bindings@~1.1.1
+157 verbose lock bindings@~1.1.1 /Users/Andrea/.npm/cc1512d6-bindings-1-1-1.lock
+158 silly addNameRange { name: 'nan', range: '>=0.8.0-0 <0.9.0-0', hasData: false }
+159 silly addNameRange { name: 'bindings', range: '>=1.1.1-0 <1.2.0-0', hasData: false }
+160 verbose url raw nan
+161 verbose url resolving [ 'https://registry.npmjs.org/', './nan' ]
+162 verbose url resolved https://registry.npmjs.org/nan
+163 info trying registry request attempt 1 at 15:22:18
+164 verbose etag "A792ZB4LRJE9K13ELZ0UIQEDV"
+165 http GET https://registry.npmjs.org/nan
+166 verbose url raw bindings
+167 verbose url resolving [ 'https://registry.npmjs.org/', './bindings' ]
+168 verbose url resolved https://registry.npmjs.org/bindings
+169 info trying registry request attempt 1 at 15:22:18
+170 verbose etag "2RXG5K4RRQWEOOFOAOOKVPOZR"
+171 http GET https://registry.npmjs.org/bindings
+172 http 304 https://registry.npmjs.org/nan
+173 silly registry.get cb [ 304,
+173 silly registry.get   { date: 'Wed, 18 Nov 2015 14:22:18 GMT',
+173 silly registry.get     via: '1.1 varnish',
+173 silly registry.get     'cache-control': 'max-age=60',
+173 silly registry.get     etag: '"A792ZB4LRJE9K13ELZ0UIQEDV"',
+173 silly registry.get     age: '27',
+173 silly registry.get     connection: 'keep-alive',
+173 silly registry.get     'x-served-by': 'cache-fra1246-FRA',
+173 silly registry.get     'x-cache': 'HIT',
+173 silly registry.get     'x-cache-hits': '4',
+173 silly registry.get     'x-timer': 'S1447856538.886784,VS0,VE0',
+173 silly registry.get     vary: 'Accept' } ]
+174 verbose etag nan from cache
+175 http 304 https://registry.npmjs.org/bindings
+176 silly registry.get cb [ 304,
+176 silly registry.get   { date: 'Wed, 18 Nov 2015 14:22:18 GMT',
+176 silly registry.get     via: '1.1 varnish',
+176 silly registry.get     'cache-control': 'max-age=60',
+176 silly registry.get     etag: '"2RXG5K4RRQWEOOFOAOOKVPOZR"',
+176 silly registry.get     age: '34',
+176 silly registry.get     connection: 'keep-alive',
+176 silly registry.get     'x-served-by': 'cache-fra1224-FRA',
+176 silly registry.get     'x-cache': 'HIT',
+176 silly registry.get     'x-cache-hits': '3',
+176 silly registry.get     'x-timer': 'S1447856538.891132,VS0,VE0',
+176 silly registry.get     vary: 'Accept' } ]
+177 verbose etag bindings from cache
+178 silly addNameRange number 2 { name: 'nan', range: '>=0.8.0-0 <0.9.0-0', hasData: true }
+179 silly addNameRange versions [ 'nan',
+179 silly addNameRange   [ '0.3.0-wip',
+179 silly addNameRange     '0.3.0-wip2',
+179 silly addNameRange     '0.3.0',
+179 silly addNameRange     '0.3.1',
+179 silly addNameRange     '0.3.2',
+179 silly addNameRange     '0.4.0',
+179 silly addNameRange     '0.4.1',
+179 silly addNameRange     '0.4.2',
+179 silly addNameRange     '0.4.3',
+179 silly addNameRange     '0.4.4',
+179 silly addNameRange     '0.5.0',
+179 silly addNameRange     '0.5.1',
+179 silly addNameRange     '0.5.2',
+179 silly addNameRange     '0.6.0',
+179 silly addNameRange     '0.7.0',
+179 silly addNameRange     '0.7.1',
+179 silly addNameRange     '0.8.0',
+179 silly addNameRange     '1.0.0',
+179 silly addNameRange     '1.1.0',
+179 silly addNameRange     '1.1.1',
+179 silly addNameRange     '1.1.2',
+179 silly addNameRange     '1.2.0',
+179 silly addNameRange     '1.3.0',
+179 silly addNameRange     '1.4.0',
+179 silly addNameRange     '1.4.1',
+179 silly addNameRange     '1.5.0',
+179 silly addNameRange     '1.4.2',
+179 silly addNameRange     '1.4.3',
+179 silly addNameRange     '1.5.1',
+179 silly addNameRange     '1.5.2',
+179 silly addNameRange     '1.6.0',
+179 silly addNameRange     '1.5.3',
+179 silly addNameRange     '1.6.1',
+179 silly addNameRange     '1.6.2',
+179 silly addNameRange     '1.7.0',
+179 silly addNameRange     '1.8.0',
+179 silly addNameRange     '1.8.1',
+179 silly addNameRange     '1.8.2',
+179 silly addNameRange     '1.8.3',
+179 silly addNameRange     '1.8.4',
+179 silly addNameRange     '1.9.0',
+179 silly addNameRange     '2.0.0',
+179 silly addNameRange     '2.0.1',
+179 silly addNameRange     '2.0.2',
+179 silly addNameRange     '2.0.3',
+179 silly addNameRange     '2.0.4',
+179 silly addNameRange     '2.0.5',
+179 silly addNameRange     '2.0.6',
+179 silly addNameRange     '2.0.7',
+179 silly addNameRange     '2.0.8',
+179 silly addNameRange     '2.0.9',
+179 silly addNameRange     '2.1.0' ] ]
+180 verbose addNamed [ 'nan', '0.8.0' ]
+181 verbose addNamed [ '0.8.0', '0.8.0' ]
+182 silly lockFile 46761758-nan-0-8-0 nan@0.8.0
+183 verbose lock nan@0.8.0 /Users/Andrea/.npm/46761758-nan-0-8-0.lock
+184 silly addNameRange number 2 { name: 'bindings', range: '>=1.1.1-0 <1.2.0-0', hasData: true }
+185 silly addNameRange versions [ 'bindings',
+185 silly addNameRange   [ '0.0.1',
+185 silly addNameRange     '0.1.0',
+185 silly addNameRange     '0.1.1',
+185 silly addNameRange     '0.2.0',
+185 silly addNameRange     '0.2.1',
+185 silly addNameRange     '0.2.2',
+185 silly addNameRange     '0.2.3',
+185 silly addNameRange     '0.2.4',
+185 silly addNameRange     '0.3.0',
+185 silly addNameRange     '0.4.0',
+185 silly addNameRange     '1.0.0',
+185 silly addNameRange     '1.1.0',
+185 silly addNameRange     '1.1.1',
+185 silly addNameRange     '1.2.0',
+185 silly addNameRange     '1.2.1' ] ]
+186 verbose addNamed [ 'bindings', '1.1.1' ]
+187 verbose addNamed [ '1.1.1', '1.1.1' ]
+188 silly lockFile 52dd60a7-bindings-1-1-1 bindings@1.1.1
+189 verbose lock bindings@1.1.1 /Users/Andrea/.npm/52dd60a7-bindings-1-1-1.lock
+190 silly lockFile 46761758-nan-0-8-0 nan@0.8.0
+191 silly lockFile 46761758-nan-0-8-0 nan@0.8.0
+192 silly lockFile d5ae64ea-nan-0-8-0 nan@~0.8.0
+193 silly lockFile d5ae64ea-nan-0-8-0 nan@~0.8.0
+194 silly lockFile 52dd60a7-bindings-1-1-1 bindings@1.1.1
+195 silly lockFile 52dd60a7-bindings-1-1-1 bindings@1.1.1
+196 silly lockFile cc1512d6-bindings-1-1-1 bindings@~1.1.1
+197 silly lockFile cc1512d6-bindings-1-1-1 bindings@~1.1.1
+198 silly resolved [ { name: 'nan',
+198 silly resolved     version: '0.8.0',
+198 silly resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8->0.12 compatibility',
+198 silly resolved     main: 'include_dirs.js',
+198 silly resolved     repository: { type: 'git', url: 'git://github.com/rvagg/nan.git' },
+198 silly resolved     contributors: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+198 silly resolved     license: 'MIT',
+198 silly resolved     readme: 'Native Abstractions for Node.js\n===============================\n\n**A header file filled with macro and utility goodness for making add-on development for Node.js easier across versions 0.8, 0.10 and 0.11, and eventually 0.12.**\n\n***Current version: 0.8.0*** *(See [nan.h](https://github.com/rvagg/nan/blob/master/nan.h) for complete ChangeLog)*\n\n[![NPM](https://nodei.co/npm/nan.png?downloads=true)](https://nodei.co/npm/nan/) [![NPM](https://nodei.co/npm-dl/nan.png?months=6)](https://nodei.co/npm/nan/)\n\nThanks to the crazy changes in V8 (and some in Node core), keeping native addons compiling happily across versions, particularly 0.10 to 0.11/0.12, is a minor nightmare. The goal of this project is to store all logic necessary to develop native Node.js addons without having to inspect `NODE_MODULE_VERSION` and get yourself into a macro-tangle.\n\nThis project also contains some helper utilities that make addon development a bit more pleasant.\n\n * **[News & Updates](#news)**\n * **[Usage](#usage)**\n * **[Example](#example)**\n * **[API](#api)**\n\n<a name="news"></a>\n## News & Updates\n\n### Dec-2013: NanCString and NanRawString\n\nTwo new functions have been introduced to replace the functionality that\'s been provided by `NanFromV8String` until now. NanCString has sensible defaults so it\'s super easy to fetch a null-terminated c-style string out of a `v8::String`. `NanFromV8String` is still around and has defaults that allow you to pass a single handle to fetch a `char*` while `NanRawString` requires a little more attention to arguments.\n\n### Nov-2013: Node 0.11.9+ breaking V8 change\n\nThe version of V8 that\'s shipping with Node 0.11.9+ has changed the signature for new `Local`s to: `v8::Local<T>::New(isolate, value)`, i.e. introducing the `isolate` argument and therefore breaking all new `Local` declarations for previous versions. NAN 0.6+ now includes a `NanNewLocal<T>(value)` that can be used in place to work around this incompatibility and maintain compatibility with 0.8->0.11.9+ (minus a few early 0.11 releases).\n\nFor example, if you wanted to return a `null` on a callback you will have to change the argument from `v8::Local<v8::Value>::New(v8::Null())` to `NanNewLocal<v8::Value>(v8::Null())`.\n\n### Nov-2013: Change to binding.gyp `"include_dirs"` for NAN\n\nInclusion of NAN in a project\'s binding.gyp is now greatly simplified. You can now just use `"<!(node -e \\"require(\'nan\')\\")"` in your `"include_dirs"`, see example below (note Windows needs the quoting around `require` to be just right: `"require(\'nan\')"` with appropriate `\\` escaping).\n\n<a name="usage"></a>\n## Usage\n\nSimply add **NAN** as a dependency in the *package.json* of your Node addon:\n\n``` bash\n$ npm install --save nan\n```\n\nPull in the path to **NAN** in your *binding.gyp* so that you can use `#include "nan.h"` in your *.cpp* files:\n\n``` python\n"include_dirs" : [\n    "<!(node -e \\"require(\'nan\')\\")"\n]\n```\n\nThis works like a `-I<path-to-NAN>` when compiling your addon.\n\n<a name="example"></a>\n## Example\n\nSee **[LevelDOWN](https://github.com/rvagg/node-leveldown/pull/48)** for a full example of **NAN** in use.\n\nFor a simpler example, see the **[async pi estimation example](https://github.com/rvagg/nan/tree/master/examples/async_pi_estimate)** in the examples directory for full code and an explanation of what this Monte Carlo Pi estimation example does. Below are just some parts of the full example that illustrate the use of **NAN**.\n\nCompare to the current 0.10 version of this example, found in the [node-addon-examples](https://github.com/rvagg/node-addon-examples/tree/master/9_async_work) repository and also a 0.11 version of the same found [here](https://github.com/kkoopa/node-addon-examples/tree/5c01f58fc993377a567812597e54a83af69686d7/9_async_work).\n\nNote that there is no embedded version sniffing going on here and also the async work is made much simpler, see below for details on the `NanAsyncWorker` class.\n\n```c++\n// addon.cc\n#include <node.h>\n#include "nan.h"\n// ...\n\nusing namespace v8;\n\nvoid InitAll(Handle<Object> exports) {\n  exports->Set(NanSymbol("calculateSync"),\n    FunctionTemplate::New(CalculateSync)->GetFunction());\n\n  exports->Set(NanSymbol("calculateAsync"),\n    FunctionTemplate::New(CalculateAsync)->GetFunction());\n}\n\nNODE_MODULE(addon, InitAll)\n```\n\n```c++\n// sync.h\n#include <node.h>\n#include "nan.h"\n\nNAN_METHOD(CalculateSync);\n```\n\n```c++\n// sync.cc\n#include <node.h>\n#include "nan.h"\n#include "sync.h"\n// ...\n\nusing namespace v8;\n\n// Simple synchronous access to the `Estimate()` function\nNAN_METHOD(CalculateSync) {\n  NanScope();\n\n  // expect a number as the first argument\n  int points = args[0]->Uint32Value();\n  double est = Estimate(points);\n\n  NanReturnValue(Number::New(est));\n}\n```\n\n```c++\n// async.cc\n#include <node.h>\n#include "nan.h"\n#include "async.h"\n\n// ...\n\nusing namespace v8;\n\nclass PiWorker : public NanAsyncWorker {\n public:\n  PiWorker(NanCallback *callback, int points)\n    : NanAsyncWorker(callback), points(points) {}\n  ~PiWorker() {}\n\n  // Executed inside the worker-thread.\n  // It is not safe to access V8, or V8 data structures\n  // here, so everything we need for input and output\n  // should go on `this`.\n  void Execute () {\n    estimate = Estimate(points);\n  }\n\n  // Executed when the async work is complete\n  // this function will be run inside the main event loop\n  // so it is safe to use V8 again\n  void HandleOKCallback () {\n    NanScope();\n\n    Local<Value> argv[] = {\n        Local<Value>::New(Null())\n      , Number::New(estimate)\n    };\n\n    callback->Call(2, argv);\n  };\n\n private:\n  int points;\n  double estimate;\n};\n\n// Asynchronous access to the `Estimate()` function\nNAN_METHOD(CalculateAsync) {\n  NanScope();\n\n  int points = args[0]->Uint32Value();\n  NanCallback *callback = new NanCallback(args[1].As<Function>());\n\n  NanAsyncQueueWorker(new PiWorker(callback, points));\n  NanReturnUndefined();\n}\n```\n\n<a name="api"></a>\n## API\n\n * <a href="#api_nan_method"><b><code>NAN_METHOD</code></b></a>\n * <a href="#api_nan_getter"><b><code>NAN_GETTER</code></b></a>\n * <a href="#api_nan_setter"><b><code>NAN_SETTER</code></b></a>\n * <a href="#api_nan_property_getter"><b><code>NAN_PROPERTY_GETTER</code></b></a>\n * <a href="#api_nan_property_setter"><b><code>NAN_PROPERTY_SETTER</code></b></a>\n * <a href="#api_nan_property_enumerator"><b><code>NAN_PROPERTY_ENUMERATOR</code></b></a>\n * <a href="#api_nan_property_deleter"><b><code>NAN_PROPERTY_DELETER</code></b></a>\n * <a href="#api_nan_property_query"><b><code>NAN_PROPERTY_QUERY</code></b></a>\n * <a href="#api_nan_index_getter"><b><code>NAN_INDEX_GETTER</code></b></a>\n * <a href="#api_nan_index_setter"><b><code>NAN_INDEX_SETTER</code></b></a>\n * <a href="#api_nan_index_enumerator"><b><code>NAN_INDEX_ENUMERATOR</code></b></a>\n * <a href="#api_nan_index_deleter"><b><code>NAN_INDEX_DELETER</code></b></a>\n * <a href="#api_nan_index_query"><b><code>NAN_INDEX_QUERY</code></b></a>\n * <a href="#api_nan_weak_callback"><b><code>NAN_WEAK_CALLBACK</code></b></a>\n * <a href="#api_nan_deprecated"><b><code>NAN_DEPRECATED</code></b></a>\n * <a href="#api_nan_inline"><b><code>NAN_INLINE</code></b></a> \n * <a href="#api_nan_new_local"><b><code>NanNewLocal</code></b></a>\n * <a href="#api_nan_return_value"><b><code>NanReturnValue</code></b></a>\n * <a href="#api_nan_return_undefined"><b><code>NanReturnUndefined</code></b></a>\n * <a href="#api_nan_return_null"><b><code>NanReturnNull</code></b></a>\n * <a href="#api_nan_return_empty_string"><b><code>NanReturnEmptyString</code></b></a>\n * <a href="#api_nan_scope"><b><code>NanScope</code></b></a>\n * <a href="#api_nan_locker"><b><code>NanLocker</code></b></a>\n * <a href="#api_nan_unlocker"><b><code>NanUnlocker</code></b></a>\n * <a href="#api_nan_get_internal_field_pointer"><b><code>NanGetInternalFieldPointer</code></b></a>\n * <a href="#api_nan_set_internal_field_pointer"><b><code>NanSetInternalFieldPointer</code></b></a>\n * <a href="#api_nan_object_wrap_handle"><b><code>NanObjectWrapHandle</code></b></a>\n * <a href="#api_nan_make_weak"><b><code>NanMakeWeak</code></b></a>\n * <a href="#api_nan_symbol"><b><code>NanSymbol</code></b></a>\n * <a href="#api_nan_get_pointer_safe"><b><code>NanGetPointerSafe</code></b></a>\n * <a href="#api_nan_set_pointer_safe"><b><code>NanSetPointerSafe</code></b></a>\n * <a href="#api_nan_raw_string"><b><code>NanRawString</code></b></a>\n * <a href="#api_nan_c_string"><b><code>NanCString</code></b></a>\n * <a href="#api_nan_from_v8_string"><b><code>NanFromV8String</code></b></a>\n * <a href="#api_nan_boolean_option_value"><b><code>NanBooleanOptionValue</code></b></a>\n * <a href="#api_nan_uint32_option_value"><b><code>NanUInt32OptionValue</code></b></a>\n * <a href="#api_nan_error"><b><code>NanError</code></b>, <b><code>NanTypeError</code></b>, <b><code>NanRangeError</code></b></a>\n * <a href="#api_nan_throw_error"><b><code>NanThrowError</code></b>, <b><code>NanThrowTypeError</code></b>, <b><code>NanThrowRangeError</code></b>, <b><code>NanThrowError(Handle<Value>)</code></b>, <b><code>NanThrowError(Handle<Value>, int)</code></b></a>\n * <a href="#api_nan_new_buffer_handle"><b><code>NanNewBufferHandle(char *, size_t, FreeCallback, void *)</code></b>, <b><code>NanNewBufferHandle(char *, uint32_t)</code></b>, <b><code>NanNewBufferHandle(uint32_t)</code></b></a>\n * <a href="#api_nan_buffer_use"><b><code>NanBufferUse(char *, uint32_t)</code></b></a>\n * <a href="#api_nan_new_context_handle"><b><code>NanNewContextHandle</code></b></a>\n * <a href="#api_nan_has_instance"><b><code>NanHasInstance</code></b></a>\n * <a href="#api_nan_persistent_to_local"><b><code>NanPersistentToLocal</code></b></a>\n * <a href="#api_nan_dispose_persistent"><b><code>NanDisposePersistent</code></b></a>\n * <a href="#api_nan_assign_persistent"><b><code>NanAssignPersistent</code></b></a>\n * <a href="#api_nan_init_persistent"><b><code>NanInitPersistent</code></b></a>\n * <a href="#api_nan_callback"><b><code>NanCallback</code></b></a>\n * <a href="#api_nan_async_worker"><b><code>NanAsyncWorker</code></b></a>\n * <a href="#api_nan_async_queue_worker"><b><code>NanAsyncQueueWorker</code></b></a>\n\n<a name="api_nan_method"></a>\n### NAN_METHOD(methodname)\n\nUse `NAN_METHOD` to define your V8 accessible methods:\n\n```c++\n// .h:\nclass Foo : public node::ObjectWrap {\n  ...\n\n  static NAN_METHOD(Bar);\n  static NAN_METHOD(Baz);\n}\n\n\n// .cc:\nNAN_METHOD(Foo::Bar) {\n  ...\n}\n\nNAN_METHOD(Foo::Baz) {\n  ...\n}\n```\n\nThe reason for this macro is because of the method signature change in 0.11:\n\n```c++\n// 0.10 and below:\nHandle<Value> name(const Arguments& args)\n\n// 0.11 and above\nvoid name(const FunctionCallbackInfo<Value>& args)\n```\n\nThe introduction of `FunctionCallbackInfo` brings additional complications:\n\n<a name="api_nan_getter"></a>\n### NAN_GETTER(methodname)\n\nUse `NAN_GETTER` to declare your V8 accessible getters. You get a `Local<String>` `property` and an appropriately typed `args` object that can act like the `args` argument to a `NAN_METHOD` call.\n\nYou can use `NanReturnNull()`, `NanReturnEmptyString()`, `NanReturnUndefined()` and `NanReturnValue()` in a `NAN_GETTER`.\n\n<a name="api_nan_setter"></a>\n### NAN_SETTER(methodname)\n\nUse `NAN_SETTER` to declare your V8 accessible setters. Same as `NAN_GETTER` but you also get a `Local<Value>` `value` object to work with.\n\n<a name="api_nan_property_getter"></a>\n### NAN_PROPERTY_GETTER(cbname)\nUse `NAN_PROPERTY_GETTER` to declare your V8 accessible property getters. You get a `Local<String>` `property` and an appropriately typed `args` object that can act similar to the `args` argument to a `NAN_METHOD` call.\n\nYou can use `NanReturnNull()`, `NanReturnEmptyString()`, `NanReturnUndefined()` and `NanReturnValue()` in a `NAN_PROPERTY_GETTER`.\n\n<a name="api_nan_property_setter"></a>\n### NAN_PROPERTY_SETTER(cbname)\nUse `NAN_PROPERTY_SETTER` to declare your V8 accessible property setters. Same as `NAN_PROPERTY_GETTER` but you also get a `Local<Value>` `value` object to work with.\n\n<a name="api_nan_property_enumerator"></a>\n### NAN_PROPERTY_ENUMERATOR(cbname)\nUse `NAN_PROPERTY_ENUMERATOR` to declare your V8 accessible property enumerators. You get an appropriately typed `args` object like the `args` argument to a `NAN_PROPERTY_GETTER` call.\n\nYou can use `NanReturnNull()`, `NanReturnEmptyString()`, `NanReturnUndefined()` and `NanReturnValue()` in a `NAN_PROPERTY_ENUMERATOR`.\n\n<a name="api_nan_property_deleter"></a>\n### NAN_PROPERTY_DELETER(cbname)\nUse `NAN_PROPERTY_DELETER` to declare your V8 accessible property deleters. Same as `NAN_PROPERTY_GETTER`.\n\nYou can use `NanReturnNull()`, `NanReturnEmptyString()`, `NanReturnUndefined()` and `NanReturnValue()` in a `NAN_PROPERTY_DELETER`.\n\n<a name="api_nan_property_query"></a>\n### NAN_PROPERTY_QUERY(cbname)\nUse `NAN_PROPERTY_QUERY` to declare your V8 accessible property queries. Same as `NAN_PROPERTY_GETTER`.\n\nYou can use `NanReturnNull()`, `NanReturnEmptyString()`, `NanReturnUndefined()` and `NanReturnValue()` in a `NAN_PROPERTY_QUERY`.\n\n<a name="api_nan_index_getter"></a>\n### NAN_INDEX_GETTER(cbname)\nUse `NAN_INDEX_GETTER` to declare your V8 accessible index getters. You get a `uint32_t` `index` and an appropriately typed `args` object that can act similar to the `args` argument to a `NAN_METHOD` call.\n\nYou can use `NanReturnNull()`, `NanReturnEmptyString()`, `NanReturnUndefined()` and `NanReturnValue()` in a `NAN_INDEX_GETTER`.\n\n<a name="api_nan_index_setter"></a>\n### NAN_INDEX_SETTER(cbname)\nUse `NAN_INDEX_SETTER` to declare your V8 accessible index setters. Same as `NAN_INDEX_GETTER` but you also get a `Local<Value>` `value` object to work with.\n\n<a name="api_nan_index_enumerator"></a>\n### NAN_INDEX_ENUMERATOR(cbname)\nUse `NAN_INDEX_ENUMERATOR` to declare your V8 accessible index enumerators. You get an appropriately typed `args` object like the `args` argument to a `NAN_INDEX_GETTER` call.\n\nYou can use `NanReturnNull()`, `NanReturnEmptyString()`, `NanReturnUndefined()` and `NanReturnValue()` in a `NAN_INDEX_ENUMERATOR`.\n\n<a name="api_nan_index_deleter"></a>\n### NAN_INDEX_DELETER(cbname)\nUse `NAN_INDEX_DELETER` to declare your V8 accessible index deleters. Same as `NAN_INDEX_GETTER`.\n\nYou can use `NanReturnNull()`, `NanReturnEmptyString()`, `NanReturnUndefined()` and `NanReturnValue()` in a `NAN_INDEX_DELETER`.\n\n<a name="api_nan_index_query"></a>\n### NAN_INDEX_QUERY(cbname)\nUse `NAN_INDEX_QUERY` to declare your V8 accessible index queries. Same as `NAN_INDEX_GETTER`.\n\nYou can use `NanReturnNull()`, `NanReturnEmptyString()`, `NanReturnUndefined()` and `NanReturnValue()` in a `NAN_INDEX_QUERY`.\n\n<a name="api_nan_weak_callback"></a>\n### NAN_WEAK_CALLBACK(type, cbname)\n\nUse `NAN_WEAK_CALLBACK` to declare your V8 WeakReference callbacks. There is an object argument accessible through `NAN_WEAK_CALLBACK_OBJECT`. The `type` argument gives the type of the `data` argument, accessible through `NAN_WEAK_CALLBACK_DATA(type)`.\n\n```c++\nstatic NAN_WEAK_CALLBACK(BufferReference*, WeakCheck) {\n  if (NAN_WEAK_CALLBACK_DATA(BufferReference*)->noLongerNeeded_) {\n    delete NAN_WEAK_CALLBACK_DATA(BufferReference*);\n  } else {\n    // Still in use, revive, prevent GC\n    NanMakeWeak(NAN_WEAK_CALLBACK_OBJECT, NAN_WEAK_CALLBACK_DATA(BufferReference*), &WeakCheck);\n  }\n}\n```\n\n<a name="api_nan_deprecated"></a>\n### NAN_DEPRECATED(declarator)\nDeclares a function as deprecated. Identical to `V8_DEPRECATED`.\n\n```c++\nstatic NAN_DEPRECATED(NAN_METHOD(foo)) {\n  ...\n}\n```\n\n<a name="api_nan_inline"></a>\n### NAN_INLINE(declarator)\nInlines a function. Identical to `V8_INLINE`.\n\n```c++\nstatic NAN_INLINE(int foo(int bar)) {\n  ...\n}\n```\n\n<a name="api_nan_new_local"></a>\n### NanNewLocal&lt;T&gt;(Handle&lt;Value&gt;)\n\nUse `NanNewLocal` in place of `v8::Local<T>::New(...)` as this function\nrequires an `isolate` argument in recent versions of V8 but not in older versions.\n\n```c++\nNanNewLocal<v8::Value>(v8::Null())\n```\n\n<a name="api_nan_return_value"></a>\n### NanReturnValue(Handle&lt;Value&gt;)\n\nUse `NanReturnValue` when you want to return a value from your V8 accessible method:\n\n```c++\nNAN_METHOD(Foo::Bar) {\n  ...\n\n  NanReturnValue(String::New("FooBar!"));\n}\n```\n\nNo `return` statement required.\n\n<a name="api_nan_return_undefined"></a>\n### NanReturnUndefined()\n\nUse `NanReturnUndefined` when you don\'t want to return anything from your V8 accessible method:\n\n```c++\nNAN_METHOD(Foo::Baz) {\n  ...\n\n  NanReturnUndefined();\n}\n```\n\n<a name="api_nan_return_null"></a>\n### NanReturnNull()\n\nUse `NanReturnNull` when you want to return `Null` from your V8 accessible method:\n\n```c++\nNAN_METHOD(Foo::Baz) {\n  ...\n\n  NanReturnNull();\n}\n```\n\n<a name="api_nan_return_empty_string"></a>\n### NanReturnEmptyString()\n\nUse `NanReturnEmptyString` when you want to return an empty `String` from your V8 accessible method:\n\n```c++\nNAN_METHOD(Foo::Baz) {\n  ...\n\n  NanReturnEmptyString();\n}\n```\n\n<a name="api_nan_scope"></a>\n### NanScope()\n\nThe introduction of `isolate` references for many V8 calls in Node 0.11 makes `NanScope()` necessary, use it in place of `HandleScope scope`:\n\n```c++\nNAN_METHOD(Foo::Bar) {\n  NanScope();\n\n  NanReturnValue(String::New("FooBar!"));\n}\n```\n\n<a name="api_nan_locker"></a>\n### NanLocker()\n\nThe introduction of `isolate` references for many V8 calls in Node 0.11 makes `NanLocker()` necessary, use it in place of `Locker locker`:\n\n```c++\nNAN_METHOD(Foo::Bar) {\n  NanLocker();\n  ...\n  NanUnlocker();\n}\n```\n\n<a name="api_nan_unlocker"></a>\n### NanUnlocker()\n\nThe introduction of `isolate` references for many V8 calls in Node 0.11 makes `NanUnlocker()` necessary, use it in place of `Unlocker unlocker`:\n\n```c++\nNAN_METHOD(Foo::Bar) {\n  NanLocker();\n  ...\n  NanUnlocker();\n}\n```\n\n<a name="api_nan_get_internal_field_pointer"></a>\n### void * NanGetInternalFieldPointer(Handle&lt;Object&gt;, int)\n\nGets a pointer to the internal field with at `index` from a V8 `Object` handle.\n\n```c++\nLocal<Object> obj;\n...\nNanGetInternalFieldPointer(obj, 0);\n```\n<a name="api_nan_set_internal_field_pointer"></a>\n### void NanSetInternalFieldPointer(Handle&lt;Object&gt;, int, void *)\n\nSets the value of the internal field at `index` on a V8 `Object` handle.\n\n```c++\nstatic Persistent<Function> dataWrapperCtor;\n...\nLocal<Object> wrapper = NanPersistentToLocal(dataWrapperCtor)->NewInstance();\nNanSetInternalFieldPointer(wrapper, 0, this);\n```\n\n<a name="api_nan_object_wrap_handle"></a>\n### Local&lt;Object&gt; NanObjectWrapHandle(Object)\n\nWhen you want to fetch the V8 object handle from a native object you\'ve wrapped with Node\'s `ObjectWrap`, you should use `NanObjectWrapHandle`:\n\n```c++\nNanObjectWrapHandle(iterator)->Get(String::NewSymbol("end"))\n```\n\n<a name="api_nan_make_weak"></a>\n### NanMakeWeak(Persistent&lt;T&gt;, parameter, callback)\n\nMake a persistent reference weak.\n\n<a name="api_nan_symbol"></a>\n### String NanSymbol(char *)\n\nThis isn\'t strictly about compatibility, it\'s just an easier way to create string symbol objects (i.e. `String::NewSymbol(x)`), for getting and setting object properties, or names of objects.\n\n```c++\nbool foo = false;\nif (obj->Has(NanSymbol("foo")))\n  foo = optionsObj->Get(NanSymbol("foo"))->BooleanValue()\n```\n\n<a name="api_nan_get_pointer_safe"></a>\n### Type NanGetPointerSafe(Type *[, Type])\n\nA helper for getting values from optional pointers. If the pointer is `NULL`, the function returns the optional default value, which defaults to `0`.  Otherwise, the function returns the value the pointer points to.\n\n```c++\nchar *plugh(uint32_t *optional) {\n  char res[] = "xyzzy";\n  uint32_t param = NanGetPointerSafe<uint32_t>(optional, 0x1337);\n  switch (param) {\n    ...\n  }\n  NanSetPointerSafe<uint32_t>(optional, 0xDEADBEEF);\n}  \n```\n\n<a name="api_nan_set_pointer_safe"></a>\n### bool NanSetPointerSafe(Type *, Type)\n\nA helper for setting optional argument pointers. If the pointer is `NULL`, the function simply return `false`.  Otherwise, the value is assigned to the variable the pointer points to.\n\n```c++\nconst char *plugh(size_t *outputsize) {\n  char res[] = "xyzzy";\n  if !(NanSetPointerSafe<size_t>(outputsize, strlen(res) + 1)) {\n    ...\n  }\n\n  ...\n}\n```\n\n<a name="api_nan_raw_string"></a>\n### void* NanRawString(Handle&lt;Value&gt;, enum Nan::Encoding, size_t *, void *, size_t, int)\n\nWhen you want to convert a V8 `String` to a `char*` buffer, use `NanRawString`. You have to supply an encoding as well as a pointer to a variable that will be assigned the number of bytes in the returned string. It is also possible to supply a buffer and its length to the function in order not to have a new buffer allocated. The final argument allows setting `String::WriteOptions`.\nJust remember that you\'ll end up with an object that you\'ll need to `delete[]` at some point unless you supply your own buffer:\n\n```c++\nsize_t count;\nvoid* decoded = NanRawString(args[1], Nan::BASE64, &count, NULL, 0, String::HINT_MANY_WRITES_EXPECTED);\nchar param_copy[count];\nmemcpy(param_copy, decoded, count);\ndelete[] decoded;\n```\n\n<a name="api_nan_c_string"></a>\n### char* NanCString(Handle&lt;Value&gt;, size_t *[, char *, size_t, int])\n\nWhen you want to convert a V8 `String` to a null-terminated C `char*` use `NanCString`. The resulting `char*` will be UTF-8-encoded, and you need to supply a pointer to a variable that will be assigned the number of bytes in the returned string. It is also possible to supply a buffer and its length to the function in order not to have a new buffer allocated. The final argument allows optionally setting `String::WriteOptions`, which default to `v8::String::NO_OPTIONS`.\nJust remember that you\'ll end up with an object that you\'ll need to `delete[]` at some point unless you supply your own buffer:\n\n```c++\nsize_t count;\nchar* name = NanCString(args[0], &count);\n```\n\n<a name="api_nan_from_v8_string"></a>\n### char* NanFromV8String(Handle&lt;Value&gt;[, enum Nan::Encoding, size_t *, char *, size_t, int])\n\nA convenience function that uses `NanRawString()` to convert a V8 `String` to a `char*`. Defaults to UTF8 encoding and no null-termination.\n\n```c++\nsize_t count;\nchar* name = NanFromV8String(args[0]);\n```\n\n<a name="api_nan_boolean_option_value"></a>\n### bool NanBooleanOptionValue(Handle&lt;Value&gt;, Handle&lt;String&gt;[, bool])\n\nWhen you have an "options" object that you need to fetch properties from, boolean options can be fetched with this pair. They check first if the object exists (`IsEmpty`), then if the object has the given property (`Has`) then they get and convert/coerce the property to a `bool`.\n\nThe optional last parameter is the *default* value, which is `false` if left off:\n\n```c++\n// `foo` is false unless the user supplies a truthy value for it\nbool foo = NanBooleanOptionValue(optionsObj, NanSymbol("foo"));\n// `bar` is true unless the user supplies a falsy value for it\nbool bar = NanBooleanOptionValueDefTrue(optionsObj, NanSymbol("bar"), true);\n```\n\n<a name="api_nan_uint32_option_value"></a>\n### uint32_t NanUInt32OptionValue(Handle&lt;Value&gt;, Handle&lt;String&gt;, uint32_t)\n\nSimilar to `NanBooleanOptionValue`, use `NanUInt32OptionValue` to fetch an integer option from your options object. Can be any kind of JavaScript `Number` and it will be coerced to an unsigned 32-bit integer.\n\nRequires all 3 arguments as a default is not optional:\n\n```c++\nuint32_t count = NanUInt32OptionValue(optionsObj, NanSymbol("count"), 1024);\n```\n\n<a name="api_nan_error"></a>\n### NanError(message), NanTypeError(message), NanRangeError(message)\n\nFor making `Error`, `TypeError` and `RangeError` objects.\n\n```c++\nLocal<Value> res = NanError("you must supply a callback argument");\n```\n\n<a name="api_nan_throw_error"></a>\n### NanThrowError(message), NanThrowTypeError(message), NanThrowRangeError(message), NanThrowError(Local&lt;Value&gt;), NanThrowError(Local&lt;Value&gt;, int)\n\nFor throwing `Error`, `TypeError` and `RangeError` objects. You should `return` this call:\n\n```c++\nreturn NanThrowError("you must supply a callback argument");\n```\n\nCan also handle any custom object you may want to throw. If used with the error code argument, it will add the supplied error code to the error object as a property called `code`.\n\n<a name="api_nan_new_buffer_handle"></a>\n### Local&lt;Object&gt; NanNewBufferHandle(char *, uint32_t), Local&lt;Object&gt; NanNewBufferHandle(uint32_t)\n\nThe `Buffer` API has changed a little in Node 0.11, this helper provides consistent access to `Buffer` creation:\n\n```c++\nNanNewBufferHandle((char*)value.data(), value.size());\n```\n\nCan also be used to initialize a `Buffer` with just a `size` argument.\n\nCan also be supplied with a `NAN_WEAK_CALLBACK` and a hint for the garbage collector, when dealing with weak references.\n\n<a name="api_nan_buffer_use"></a>\n### Local&lt;Object&gt; NanBufferUse(char*, uint32_t)\n\n`Buffer::New(char*, uint32_t)` prior to 0.11 would make a copy of the data.\nWhile it was possible to get around this, it required a shim by passing a\ncallback. So the new API `Buffer::Use(char*, uint32_t)` was introduced to remove\nneeding to use this shim.\n\n`NanBufferUse` uses the `char*` passed as the backing data, and will free the\nmemory automatically when the weak callback is called. Keep this in mind, as\ncareless use can lead to "double free or corruption" and other cryptic failures.\n\n<a name="api_nan_has_instance"></a>\n### bool NanHasInstance(Persistent&lt;FunctionTemplate&gt;&, Handle&lt;Value&gt;)\n\nCan be used to check the type of an object to determine it is of a particular class you have already defined and have a `Persistent<FunctionTemplate>` handle for.\n\n<a name="api_nan_persistent_to_local"></a>\n### Local&lt;Type&gt; NanPersistentToLocal(Persistent&lt;Type&gt;&)\n\nAside from `FunctionCallbackInfo`, the biggest and most painful change to V8 in Node 0.11 is the many restrictions now placed on `Persistent` handles. They are difficult to assign and difficult to fetch the original value out of.\n\nUse `NanPersistentToLocal` to convert a `Persistent` handle back to a `Local` handle.\n\n```c++\nLocal<Object> handle = NanPersistentToLocal(persistentHandle);\n```\n\n<a href="#api_nan_new_context_handle">\n### Local&lt;Context&gt; NanNewContextHandle([ExtensionConfiguration*, Handle&lt;ObjectTemplate&gt;, Handle&lt;Value&gt;])\nCreates a new `Local<Context>` handle.\n\n```c++\nLocal<FunctionTemplate> ftmpl = FunctionTemplate::New();\nLocal<ObjectTemplate> otmpl = ftmpl->InstanceTemplate();\nLocal<Context> ctx =  NanNewContextHandle(NULL, otmpl);\n```\n\n<a name="api_nan_dispose_persistent"></a>\n### void NanDisposePersistent(Persistent&lt;T&gt; &)\n\nUse `NanDisposePersistent` to dispose a `Persistent` handle.\n\n```c++\nNanDisposePersistent(persistentHandle);\n```\n\n<a name="api_nan_assign_persistent"></a>\n### NanAssignPersistent(type, handle, object)\n\nUse `NanAssignPersistent` to assign a non-`Persistent` handle to a `Persistent` one. You can no longer just declare a `Persistent` handle and assign directly to it later, you have to `Reset` it in Node 0.11, so this makes it easier.\n\nIn general it is now better to place anything you want to protect from V8\'s garbage collector as properties of a generic `Object` and then assign that to a `Persistent`. This works in older versions of Node also if you use `NanAssignPersistent`:\n\n```c++\nPersistent<Object> persistentHandle;\n\n...\n\nLocal<Object> obj = Object::New();\nobj->Set(NanSymbol("key"), keyHandle); // where keyHandle might be a Local<String>\nNanAssignPersistent(Object, persistentHandle, obj)\n```\n\n<a name="api_nan_init_persistent"></a>\n### NanInitPersistent(type, name, object)\n\nUser `NanInitPersistent` to declare and initialize a new `Persistent` with the supplied object. The assignment operator for `Persistent` is no longer public in Node 0.11, so this macro makes it easier to declare and initializing a new `Persistent`. See <a href="#api_nan_assign_persistent"><b><code>NanAssignPersistent</code></b></a> for more information.\n\n```c++\nLocal<Object> obj = Object::New();\nobj->Set(NanSymbol("key"), keyHandle); // where keyHandle might be a Local<String>\nNanInitPersistent(Object, persistentHandle, obj);\n```\n\n<a name="api_nan_callback"></a>\n### NanCallback\n\nBecause of the difficulties imposed by the changes to `Persistent` handles in V8 in Node 0.11, creating `Persistent` versions of your `Handle<Function>` is annoyingly tricky. `NanCallback` makes it easier by taking your handle, making it persistent until the `NanCallback` is deleted and even providing a handy `Call()` method to fetch and execute the callback `Function`.\n\n```c++\nLocal<Function> callbackHandle = args[0].As<Function>();\nNanCallback *callback = new NanCallback(callbackHandle);\n// pass `callback` around and it\'s safe from GC until you:\ndelete callback;\n```\n\nYou can execute the callback like so:\n\n```c++\n// no arguments:\ncallback->Call(0, NULL);\n\n// an error argument:\nHandle<Value> argv[] = {\n  Exception::Error(String::New("fail!"))\n};\ncallback->Call(1, argv);\n\n// a success argument:\nHandle<Value> argv[] = {\n  Null(),\n  String::New("w00t!")\n};\ncallback->Call(2, argv);\n```\n\n`NanCallback` also has a `Local<Function> GetCallback()` method that you can use\nto fetch a local handle to the underlying callback function, as well  as a\n`void SetFunction(Handle<Function>)` for setting the callback on the\n`NanCallback`.  Additionally a generic constructor is available for using\n`NanCallback` without performing heap allocations.\n\n<a name="api_nan_async_worker"></a>\n### NanAsyncWorker\n\n`NanAsyncWorker` is an abstract class that you can subclass to have much of the annoying async queuing and handling taken care of for you. It can even store arbitrary V8 objects for you and have them persist while the async work is in progress.\n\nSee a rough outline of the implementation:\n\n```c++\nclass NanAsyncWorker {\npublic:\n  NanAsyncWorker (NanCallback *callback);\n\n  // Clean up persistent handles and delete the *callback\n  virtual ~NanAsyncWorker ();\n\n  // Check the `char *errmsg` property and call HandleOKCallback()\n  // or HandleErrorCallback depending on whether it has been set or not\n  virtual void WorkComplete ();\n\n  // You must implement this to do some async work. If there is an\n  // error then allocate `errmsg` to to a message and the callback will\n  // be passed that string in an Error object\n  virtual void Execute ();\n\n  // Save a V8 object in a Persistent handle to protect it from GC\n  void SavePersistent(const char *key, Local<Object> &obj);\n\n  // Fetch a stored V8 object (don\'t call from within `Execute()`)\n  Local<Object> GetFromPersistent(const char *key);\n\nprotected:\n  // Set this if there is an error, otherwise it\'s NULL\n  const char *errmsg;\n\n  // Default implementation calls the callback function with no arguments.\n  // Override this to return meaningful data\n  virtual void HandleOKCallback ();\n\n  // Default implementation calls the callback function with an Error object\n  // wrapping the `errmsg` string\n  virtual void HandleErrorCallback ();\n};\n```\n\n<a name="api_nan_async_queue_worker"></a>\n### NanAsyncQueueWorker(NanAsyncWorker *)\n\n`NanAsyncQueueWorker` will run a `NanAsyncWorker` asynchronously via libuv. Both the *execute* and *after_work* steps are taken care of for you&mdash;most of the logic for this is embedded in `NanAsyncWorker`.\n\n### Contributors\n\nNAN is only possible due to the excellent work of the following contributors:\n\n<table><tbody>\n<tr><th align="left">Rod Vagg</th><td><a href="https://github.com/rvagg">GitHub/rvagg</a></td><td><a href="http://twitter.com/rvagg">Twitter/@rvagg</a></td></tr>\n<tr><th align="left">Benjamin Byholm</th><td><a href="https://github.com/kkoopa/">GitHub/kkoopa</a></td></tr>\n<tr><th align="left">Trevor Norris</th><td><a href="https://github.com/trevnorris">GitHub/trevnorris</a></td><td><a href="http://twitter.com/trevnorris">Twitter/@trevnorris</a></td></tr>\n<tr><th align="left">Nathan Rajlich</th><td><a href="https://github.com/TooTallNate">GitHub/TooTallNate</a></td><td><a href="http://twitter.com/TooTallNate">Twitter/@TooTallNate</a></td></tr>\n<tr><th align="left">Brett Lawson</th><td><a href="https://github.com/brett19">GitHub/brett19</a></td><td><a href="http://twitter.com/brett19x">Twitter/@brett19x</a></td></tr>\n<tr><th align="left">Ben Noordhuis</th><td><a href="https://github.com/bnoordhuis">GitHub/bnoordhuis</a></td><td><a href="http://twitter.com/bnoordhuis">Twitter/@bnoordhuis</a></td></tr>\n</tbody></table>\n\nLicence &amp; copyright\n-----------------------\n\nCopyright (c) 2013 NAN contributors (listed above).\n\nNative Abstractions for Node.js is licensed under an MIT +no-false-attribs license. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE file for more details.\n',
+198 silly resolved     readmeFilename: 'README.md',
+198 silly resolved     bugs: { url: 'https://github.com/rvagg/nan/issues' },
+198 silly resolved     homepage: 'https://github.com/rvagg/nan',
+198 silly resolved     _id: 'nan@0.8.0',
+198 silly resolved     _from: 'nan@~0.8.0' },
+198 silly resolved   { name: 'bindings',
+198 silly resolved     description: 'Helper module for loading your native module\'s .node file',
+198 silly resolved     keywords: [ 'native', 'addon', 'bindings', 'gyp', 'waf', 'c', 'c++' ],
+198 silly resolved     version: '1.1.1',
+198 silly resolved     author:
+198 silly resolved      { name: 'Nathan Rajlich',
+198 silly resolved        email: 'nathan@tootallnate.net',
+198 silly resolved        url: 'http://tootallnate.net' },
+198 silly resolved     repository:
+198 silly resolved      { type: 'git',
+198 silly resolved        url: 'git://github.com/TooTallNate/node-bindings.git' },
+198 silly resolved     main: './bindings.js',
+198 silly resolved     readme: 'node-bindings\n=============\n### Helper module for loading your native module\'s .node file\n\nThis is a helper module for authors of Node.js native addon modules.\nIt is basically the "swiss army knife" of `require()`ing your native module\'s\n`.node` file.\n\nThroughout the course of Node\'s native addon history, addons have ended up being\ncompiled in a variety of different places, depending on which build tool and which\nversion of node was used. To make matters worse, now the _gyp_ build tool can\nproduce either a _Release_ or _Debug_ build, each being built into different\nlocations.\n\nThis module checks _all_ the possible locations that a native addon would be built\nat, and returns the first one that loads successfully.\n\n\nInstallation\n------------\n\nInstall with `npm`:\n\n``` bash\n$ npm install bindings\n```\n\nOr add it to the `"dependencies"` section of your _package.json_ file.\n\n\nExample\n-------\n\n`require()`ing the proper bindings file for the current node version, platform\nand architecture is as simple as:\n\n``` js\nvar bindings = require(\'bindings\')(\'binding.node\')\n\n// Use your bindings defined in your C files\nbindings.your_c_function()\n```\n\n\nNice Error Output\n-----------------\n\nWhen the `.node` file could not be loaded, `node-bindings` throws an Error with\na nice error message telling you exactly what was tried. You can also check the\n`err.tries` Array property.\n\n```\nError: Could not load the bindings file. Tried:\n → /Users/nrajlich/ref/build/binding.node\n → /Users/nrajlich/ref/build/Debug/binding.node\n → /Users/nrajlich/ref/build/Release/binding.node\n → /Users/nrajlich/ref/out/Debug/binding.node\n → /Users/nrajlich/ref/Debug/binding.node\n → /Users/nrajlich/ref/out/Release/binding.node\n → /Users/nrajlich/ref/Release/binding.node\n → /Users/nrajlich/ref/build/default/binding.node\n → /Users/nrajlich/ref/compiled/0.8.2/darwin/x64/binding.node\n    at bindings (/Users/nrajlich/ref/node_modules/bindings/bindings.js:84:13)\n    at Object.<anonymous> (/Users/nrajlich/ref/lib/ref.js:5:47)\n    at Module._compile (module.js:449:26)\n    at Object.Module._extensions..js (module.js:467:10)\n    at Module.load (module.js:356:32)\n    at Function.Module._load (module.js:312:12)\n    ...\n```\n\n\nLicense\n-------\n\n(The MIT License)\n\nCopyright (c) 2012 Nathan Rajlich &lt;nathan@tootallnate.net&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\'Software\'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \'AS IS\', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n',
+198 silly resolved     readmeFilename: 'README.md',
+198 silly resolved     bugs: { url: 'https://github.com/TooTallNate/node-bindings/issues' },
+198 silly resolved     homepage: 'https://github.com/TooTallNate/node-bindings',
+198 silly resolved     _id: 'bindings@1.1.1',
+198 silly resolved     _from: 'bindings@~1.1.1' } ]
+199 info install nan@0.8.0 into /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq
+200 info install bindings@1.1.1 into /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq
+201 info installOne nan@0.8.0
+202 info installOne bindings@1.1.1
+203 info /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules/nan unbuild
+204 info /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules/bindings unbuild
+205 verbose tar unpack /Users/Andrea/.npm/nan/0.8.0/package.tgz
+206 silly lockFile e1be6644-ode-modules-zmq-node-modules-nan tar:///Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules/nan
+207 verbose lock tar:///Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules/nan /Users/Andrea/.npm/e1be6644-ode-modules-zmq-node-modules-nan.lock
+208 silly lockFile edebf9e0-Andrea-npm-nan-0-8-0-package-tgz tar:///Users/Andrea/.npm/nan/0.8.0/package.tgz
+209 verbose lock tar:///Users/Andrea/.npm/nan/0.8.0/package.tgz /Users/Andrea/.npm/edebf9e0-Andrea-npm-nan-0-8-0-package-tgz.lock
+210 verbose tar unpack /Users/Andrea/.npm/bindings/1.1.1/package.tgz
+211 silly lockFile c32e0521-odules-zmq-node-modules-bindings tar:///Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules/bindings
+212 verbose lock tar:///Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules/bindings /Users/Andrea/.npm/c32e0521-odules-zmq-node-modules-bindings.lock
+213 silly lockFile 09374d4c-a-npm-bindings-1-1-1-package-tgz tar:///Users/Andrea/.npm/bindings/1.1.1/package.tgz
+214 verbose lock tar:///Users/Andrea/.npm/bindings/1.1.1/package.tgz /Users/Andrea/.npm/09374d4c-a-npm-bindings-1-1-1-package-tgz.lock
+215 silly gunzTarPerm modes [ '755', '644' ]
+216 silly gunzTarPerm modes [ '755', '644' ]
+217 silly gunzTarPerm extractEntry package.json
+218 silly gunzTarPerm extractEntry package.json
+219 silly gunzTarPerm extractEntry README.md
+220 silly gunzTarPerm extractEntry LICENSE
+221 silly gunzTarPerm extractEntry README.md
+222 silly gunzTarPerm extractEntry bindings.js
+223 silly gunzTarPerm extractEntry include_dirs.js
+224 silly gunzTarPerm extractEntry .dntrc
+225 silly lockFile c32e0521-odules-zmq-node-modules-bindings tar:///Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules/bindings
+226 silly lockFile c32e0521-odules-zmq-node-modules-bindings tar:///Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules/bindings
+227 silly lockFile 09374d4c-a-npm-bindings-1-1-1-package-tgz tar:///Users/Andrea/.npm/bindings/1.1.1/package.tgz
+228 silly lockFile 09374d4c-a-npm-bindings-1-1-1-package-tgz tar:///Users/Andrea/.npm/bindings/1.1.1/package.tgz
+229 info preinstall bindings@1.1.1
+230 verbose readDependencies using package.json deps
+231 verbose readDependencies using package.json deps
+232 silly resolved []
+233 verbose about to build /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules/bindings
+234 info build /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules/bindings
+235 verbose linkStuff [ false,
+235 verbose linkStuff   false,
+235 verbose linkStuff   false,
+235 verbose linkStuff   '/Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules' ]
+236 info linkStuff bindings@1.1.1
+237 verbose linkBins bindings@1.1.1
+238 verbose linkMans bindings@1.1.1
+239 verbose rebuildBundles bindings@1.1.1
+240 info install bindings@1.1.1
+241 silly gunzTarPerm extractEntry build/config.gypi
+242 silly gunzTarPerm extractEntry nan.h
+243 info postinstall bindings@1.1.1
+244 silly lockFile e1be6644-ode-modules-zmq-node-modules-nan tar:///Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules/nan
+245 silly lockFile e1be6644-ode-modules-zmq-node-modules-nan tar:///Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules/nan
+246 silly lockFile edebf9e0-Andrea-npm-nan-0-8-0-package-tgz tar:///Users/Andrea/.npm/nan/0.8.0/package.tgz
+247 silly lockFile edebf9e0-Andrea-npm-nan-0-8-0-package-tgz tar:///Users/Andrea/.npm/nan/0.8.0/package.tgz
+248 info preinstall nan@0.8.0
+249 verbose readDependencies using package.json deps
+250 verbose readDependencies using package.json deps
+251 silly resolved []
+252 verbose about to build /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules/nan
+253 info build /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules/nan
+254 verbose linkStuff [ false,
+254 verbose linkStuff   false,
+254 verbose linkStuff   false,
+254 verbose linkStuff   '/Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq/node_modules' ]
+255 info linkStuff nan@0.8.0
+256 verbose linkBins nan@0.8.0
+257 verbose linkMans nan@0.8.0
+258 verbose rebuildBundles nan@0.8.0
+259 info install nan@0.8.0
+260 info postinstall nan@0.8.0
+261 verbose about to build /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq
+262 info build /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq
+263 verbose linkStuff [ false,
+263 verbose linkStuff   false,
+263 verbose linkStuff   false,
+263 verbose linkStuff   '/Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules' ]
+264 info linkStuff zmq@2.7.0
+265 verbose linkBins zmq@2.7.0
+266 verbose linkMans zmq@2.7.0
+267 verbose rebuildBundles zmq@2.7.0
+268 verbose rebuildBundles [ 'bindings', 'nan' ]
+269 info install zmq@2.7.0
+270 verbose unsafe-perm in lifecycle false
+271 info zmq@2.7.0 Failed to exec install script
+272 info /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules/zmq unbuild
+273 info preuninstall zmq@2.7.0
+274 info uninstall zmq@2.7.0
+275 verbose true,/Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules,/Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams/node_modules unbuild zmq@2.7.0
+276 info postuninstall zmq@2.7.0
+277 error zmq@2.7.0 install: `node-gyp rebuild`
+277 error Exit status 1
+278 error Failed at the zmq@2.7.0 install script.
+278 error This is most likely a problem with the zmq package,
+278 error not with npm itself.
+278 error Tell the author that this fails on your system:
+278 error     node-gyp rebuild
+278 error You can get their info via:
+278 error     npm owner ls zmq
+278 error There is likely additional logging output above.
+279 error System Darwin 15.0.0
+280 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+281 error cwd /Users/Andrea/Desktop/WebAtelierFinalProject/WLS/usi_liquid_streams
+282 error node -v v0.10.25
+283 error npm -v 1.3.24
+284 error code ELIFECYCLE
+285 verbose exit [ 1, true ]
