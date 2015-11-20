@@ -1,1 +1,0 @@
-alert('This is a custom script')
