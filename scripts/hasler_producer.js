@@ -9,6 +9,7 @@ var WebSocketServer = require('ws').Server
 wss.on('connection', function(socket){
 	console.log("new connection bla");
 	socket.on("message", function(data){
+		console.log('Prima di if', data);
 		if(k.isBound()){
 			data = JSON.parse(data);
 			console.log("Received:", data);
