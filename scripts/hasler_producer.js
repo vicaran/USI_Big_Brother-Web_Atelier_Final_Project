@@ -10,8 +10,8 @@ wss.on('connection', function(socket){
 	console.log("new connection bla");
 	socket.on("message", function(data){
 		if(k.isBound()){
-			console.log("Received:", data);
 			data = JSON.parse(data);
+			console.log("Received:", data);
 			data.time = new Date().getTime();
 			k.send(data);
 		}
