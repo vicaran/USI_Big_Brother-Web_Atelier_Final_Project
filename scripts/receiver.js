@@ -20,7 +20,7 @@ and receive the data from the tessel.
 //     });
 // });
 
-var k = require('./../k_globals/koala.js');
+// var k = require('./../k_globals/koala.js');
 var WebSocketServer = require('ws').Server
 var wss = new WebSocketServer({
     port: 15000
