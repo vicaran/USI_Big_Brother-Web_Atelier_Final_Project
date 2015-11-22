@@ -1,5 +1,5 @@
 //import WLS/libraries
-var k = require('./../k_globals/koala.js');
+// var k = require('./../k_globals/koala.js');
 
 var WebSocketServer = require('ws').Server
   , wss = new WebSocketServer({ port: 15000 });
@@ -11,9 +11,8 @@ wss.on('connection', function(socket){
 	console.log("New Connection");
 	console.log("This is socket:", socket)
 	socket.on("message", function(data){
-
+		data = JSON.parse(data);
 		console.log('This is the received data', data);
-		console.log("Bound: ",k.isBound());
 
 
 
