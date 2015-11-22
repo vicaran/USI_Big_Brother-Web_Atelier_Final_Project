@@ -25,6 +25,6 @@ wss.on('connection', function(socket) {
     // 	data = JSON.parse(data);
     // 	console.log("Received:", data);
     // 	data.time = new Date().getTime();
-    // 	k.send(data);
+    	// k.send(data);
     // }
 });
