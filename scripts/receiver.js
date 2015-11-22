@@ -38,7 +38,7 @@ var client = []
 var connection = wss.on('connection', function(socket) {
     client.push(socket)
     console.log("new connection");
-    socket.on("data", function(data) {
+    socket.on("message", function(data) {
         sendAll(data)
     });
 });
