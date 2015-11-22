@@ -37,12 +37,12 @@ wss.on('connection', function(socket) {
     client.push(socket)
     console.log("new connection");
     socket.on("message", function(data) {
+    	console.log("This is data:", data)
         sendAll(data)
     });
 });
 
 function sendAll(data) {
-	console.log('Send all');
     for (var i = 0; i < client.length; i++) {
         client[i].send(data)
     }
