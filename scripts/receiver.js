@@ -30,12 +30,10 @@ var wss = new WebSocketServer({
 //var id= 0;
 var client = []
 
-
-
 //create a websocket server
 //var wss = new ws.Server({'port': 15000});
 
-var connection = wss.on('connection', function(socket) {
+wss.on('connection', function(socket) {
     client.push(socket)
     console.log("new connection");
     socket.on("message", function(data) {
