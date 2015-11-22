@@ -11,7 +11,6 @@ var WebSocketServer = require('ws').Server,
 
 wss.on('connection', function(socket) {
     console.log("New Connection");
-    console.log("This is socket:", socket)
     // socket.on("message", function(data) {
     //         data = JSON.parse(data);
     //         console.log('This is the received data', data);
