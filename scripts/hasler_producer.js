@@ -8,11 +8,12 @@ var WebSocketServer = require('ws').Server
 //var wss = new ws.Server({'port': 15000});
 
 wss.on('connection', function(socket){
-	console.log("new connection bla");
+	console.log("New Connection");
 	socket.on("message", function(data){
-		console.log('Prima di if', data);
-		console.log('This is k:', k);
+
+		console.log('This is the received data', data);
 		console.log("Bound: ",k.isBound());
+
 		if(k.isBound()){
 			data = JSON.parse(data);
 			console.log("Received:", data);
