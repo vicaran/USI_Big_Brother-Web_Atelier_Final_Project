@@ -6,15 +6,8 @@ var WebSocketServer = require('ws').Server,
         port: 15000
     });
 
-//create a websocket server
-//var wss = new ws.Server({'port': 15000});
-
 wss.on('connection', function(socket) {
     console.log("New Connection");
-    // socket.on("message", function(data) {
-    //         data = JSON.parse(data);
-    //         console.log('This is the received data', data);
-    //     }
 
     socket.on("message", function(data) {
     	console.log('This is data:', data);
