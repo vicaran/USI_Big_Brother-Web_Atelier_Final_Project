@@ -20,11 +20,11 @@ and receive the data from the tessel.
 //     });
 // });
 
-// var k = require('./../k_globals/koala.js');
-var WebSocketServer = require('ws').Server
-var wss = new WebSocketServer({
-    port: 15000
-});
+var k = require('./../k_globals/koala.js');
+var WebSocketServer = require('ws').Server,
+    wss = new WebSocketServer({
+        port: 15000
+    });
 
 
 //var id= 0;
@@ -42,6 +42,7 @@ wss.on('connection', function(socket) {
 });
 
 function sendAll(data) {
+	console.log('Send all');
     for (var i = 0; i < client.length; i++) {
         client[i].send(data)
     }
