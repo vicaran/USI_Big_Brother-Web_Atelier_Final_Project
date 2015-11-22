@@ -13,8 +13,9 @@ wss.on('connection', function(socket) {
     socket.on("message", function(data) {
         console.log('This is data:', data);
         m = {
-        	response: 'Test'
+        	response: data
         }
+        console.log('I am going to send this:', m);
         socket.send(m)
     });
 });
