@@ -3,7 +3,7 @@
 
 var WebSocketServer = require('ws').Server,
     wss = new WebSocketServer({
-        port: 15001
+        port: 15000
     });
 
 wss.on('connection', function(socket) {
