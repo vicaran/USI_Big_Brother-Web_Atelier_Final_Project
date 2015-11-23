@@ -35,11 +35,11 @@ var client = []
 
 wss.on('connection', function(ws) {
     client.push(ws)
-    ws.on('message', function(data) {
-        console.log('received: %s', data);
-        sendAll(data)
-
-    });
+    wss.broadcast = function broadcast(data) {
+        wss.clients.forEach(function each(client) {
+            client.send(data);
+        });
+    };
     ws.on('close', function close() {
         client.splice(client.indexOf(ws),client.indexOf(ws)+1)
         console.log('disconnected');
