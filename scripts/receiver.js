@@ -35,11 +35,13 @@ var client = []
 
 wss.on('connection', function(socket) {
     client.push(socket)
+    var diocan = 0;
     console.log("new connection");
     socket.on("message", function(data) {
+        diocan = data
     	console.log("This is data:", data)
-        socket(data)
     });
+    wss.send(diocan)
 });
 //
 //function sendAll(data) {
