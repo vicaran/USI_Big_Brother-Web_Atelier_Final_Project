@@ -39,7 +39,7 @@ wss.on('connection', function(ws) {
         data = message
         console.log('received: %s', message);
     });
-    wss.send(data)
+    ws.send(data)
 
     //ws.send('something');
 });
