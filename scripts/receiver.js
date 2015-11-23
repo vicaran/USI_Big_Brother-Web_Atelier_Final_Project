@@ -51,6 +51,7 @@ function sendAll(data) {
     console.log(client.length)
     for (var i = 0; i < client.length; i++) {
         try {
+            print('Send')
             client[i].send(data)
         }
         catch (e) {
