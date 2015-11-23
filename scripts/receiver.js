@@ -28,7 +28,7 @@ var WebSocketServer = require('ws').Server,
 
 
 //var id= 0;
-var client = []
+//var client = []
 
 //create a websocket server
 //var wss = new ws.Server({'port': 15000});
