@@ -38,6 +38,8 @@ wss.on('connection', function(ws) {
     ws.on('message', function(message) {
         data = message
         console.log('received: %s', message);
+        ws.send(data)
+
     });
     ws.send(data)
 
