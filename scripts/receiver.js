@@ -49,4 +49,4 @@ function sendAll(data) {
         console.log('VA DIOCANE')
 
     }
-//}
+}
