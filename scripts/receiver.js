@@ -40,6 +40,10 @@ wss.on('connection', function(ws) {
         sendAll(data)
 
     });
+    ws.on('close',function(ws){
+        console.log('socket close')
+        client.splice(client.indexOf(ws),client.indexOf(ws)+1)
+    })
 });
 //
 function sendAll(data) {
