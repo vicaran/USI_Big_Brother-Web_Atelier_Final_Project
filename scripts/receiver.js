@@ -33,15 +33,11 @@ var client = []
 //create a websocket server
 //var wss = new ws.Server({'port': 15000});
 
-wss.on('connection', function(socket) {
-    client.push(socket)
-    var diocan = 0;
-    console.log("new connection");
-    socket.on("message", function(data) {
-        diocan = data
-    	console.log("This is data:", data)
+wss.on('connection', function(ws) {
+    ws.on('message', function(message) {
+        console.log('received: %s', message);
     });
-    wss.send(diocan)
+    ws.send('something');
 });
 //
 //function sendAll(data) {
