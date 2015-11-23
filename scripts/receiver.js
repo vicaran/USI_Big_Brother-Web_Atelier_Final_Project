@@ -20,9 +20,8 @@ and receive the data from the tessel.
 //     });
 // });
 
-//var k = require('./../k_globals/koala.js');
-var ws = require("nodejs-websocket")
-var port = 15000;
+//var k = require('./../k_globals/koala.js');var ws = require("nodejs-websocket")
+var port = 8000;
 
 // Create the websocket server, provide connection callback
 var server = ws.createServer(function (conn) {
@@ -40,12 +39,7 @@ var server = ws.createServer(function (conn) {
     conn.on("close", function (code, reason) {
         console.log("Connection closed")
     });
-<<<<<<< HEAD
 }).listen(port);
-=======
-    ws.send('something stupid');
-});
->>>>>>> origin/master
 //
 //function sendAll(data) {
 //    console.log(data)
