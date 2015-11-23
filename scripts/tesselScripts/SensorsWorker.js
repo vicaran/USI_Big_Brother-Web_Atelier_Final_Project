@@ -1,7 +1,6 @@
-//import the websocket library and infrastructure
-//var k = require("./tessel-connection.js");
+
 var tessel = require('tessel');
-//var k = require("./tessel-connection.js");
+var ws = require("nodejs-websocket");
 //initialize RGB Led variables (R + G B)
 var red = tessel.port['GPIO'].pwm[0];
 var blue = tessel.port['GPIO'].pwm[1];
@@ -13,7 +12,6 @@ port.pwmFrequency(31250);
 /**
  * Main function that take the data from the sensors
  */
-var ws = require("nodejs-websocket");
 var ports = 15000;
 
 var connection = ws.connect('ws://10.40.2.139:' + ports, function () {
@@ -29,7 +27,16 @@ var gatherData = function () {
     //initialized Led
     var led = tessel.port['GPIO'].pin['G3'];
     connection.on('text', function (data) {
-        console.log(data, '***')
+        var parse = JSON.parse(data)
+        var volume = parse.volume
+        console.log('-receiver-')
+        if (parse.light < 230) {
+            led.write(1)
+        }
+        else {
+            led.write(0)
+        }
+        setColor(volume);
     });
     interval = setInterval(function () {
 
@@ -42,13 +49,6 @@ var gatherData = function () {
         };
         connection.sendText(JSON.stringify(m));
 
-        if (m.light < 230) {
-            led.write(1)
-        }
-        else {
-            led.write(0)
-        }
-        setColor(volume);
     }, 500)
 };
 
