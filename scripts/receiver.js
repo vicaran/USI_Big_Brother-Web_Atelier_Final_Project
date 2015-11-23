@@ -1,7 +1,7 @@
 /**
-This is the script that opens the socket 
-and receive the data from the tessel.
-**/
+ This is the script that opens the socket
+ and receive the data from the tessel.
+ **/
 // var WebSocketServer = require('ws').Server,
 //     wss = new WebSocketServer({
 //         port: 15000
@@ -28,20 +28,20 @@ var WebSocketServer = require('ws').Server,
 
 
 //var id= 0;
-//var client = []
+var client = []
 
 //create a websocket server
 //var wss = new ws.Server({'port': 15000});
 
-wss.on('connection', function(ws) {
+wss.on('connection', function (ws) {
     client.push(ws)
-    wss.broadcast = function broadcast(data) {
-        wss.clients.forEach(function each(client) {
-            client.send(data);
-        });
-    };
+    ws.on('message', function (data) {
+        console.log('received: %s', data);
+        sendAll(data)
+
+    });
     ws.on('close', function close() {
-        client.splice(client.indexOf(ws),client.indexOf(ws)+1)
+        client.splice(client.indexOf(ws), client.indexOf(ws) + 1)
         console.log('disconnected');
     });
 
@@ -50,8 +50,11 @@ wss.on('connection', function(ws) {
 function sendAll(data) {
     console.log(client.length)
     for (var i = 0; i < client.length; i++) {
-        client[i].send(data)
-        //console.log('VA DIOCANE')
-
+        try {
+            client[i].send(data)
+        }
+        catch (e) {
+            console.log('Error: ' + e)
+        }
     }
 }
