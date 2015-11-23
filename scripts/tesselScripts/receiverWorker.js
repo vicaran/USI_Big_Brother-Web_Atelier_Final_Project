@@ -1,8 +1,18 @@
 // var k = require("./tessel-connection.js");
 var tessel = require('tessel');
+var ws = require("nodejs-websocket");
+var ports = 15000;
 
-//get some data from the environment
-var gatherData = function() {
+// INSERT TESSEL IP ADDRESS HERE. Always prepend with 'ws://' to indicate websocket
+var connection = ws.connect('ws://10.40.2.139:' + ports, function () {
+    console.log('--Tessel Connected--')
+});
+
+
+var receiveData = function() {
+    connection.on('text', function (data) {
+        console.log(data)
+    })
     var greenLigthBulb = tessel.port['GPIO'].pin['G5'];
     var blueLigthBulb = tessel.port['GPIO'].pin['G4'];
     var redLigthBulb = tessel.port['GPIO'].pin['G6'];
@@ -16,4 +26,4 @@ var gatherData = function() {
     }, 200)
 }
 
-gatherData()
+receiveData()

@@ -16,7 +16,6 @@ port.pwmFrequency(31250);
 var ws = require("nodejs-websocket");
 var ports = 15000;
 
-// INSERT TESSEL IP ADDRESS HERE. Always prepend with 'ws://' to indicate websocket
 var connection = ws.connect('ws://10.40.2.139:' + ports, function () {
     console.log('--Tessel Connected--')
 });
