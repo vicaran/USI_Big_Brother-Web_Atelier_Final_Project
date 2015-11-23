@@ -40,7 +40,12 @@ var server = ws.createServer(function (conn) {
     conn.on("close", function (code, reason) {
         console.log("Connection closed")
     });
+<<<<<<< HEAD
 }).listen(port);
+=======
+    ws.send('something stupid');
+});
+>>>>>>> origin/master
 //
 //function sendAll(data) {
 //    console.log(data)
