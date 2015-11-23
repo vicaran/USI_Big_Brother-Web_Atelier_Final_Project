@@ -14,11 +14,11 @@ port.pwmFrequency(31250);
  */
 var ports = 15000;
 
-var connection = ws.connect('ws://10.40.2.139:' + ports, function() {
+var connection = ws.connect('ws://10.40.2.139:' + ports, function () {
     console.log('--Tessel Connected--')
 });
 
-var gatherData = function() {
+var gatherData = function () {
 
     //initialized sound sensor
     var soundPin = tessel.port['GPIO'].analog[0];
@@ -26,7 +26,6 @@ var gatherData = function() {
     var lightPin = tessel.port['GPIO'].analog[1];
     //initialized Led
     var led = tessel.port['GPIO'].pin['G3'];
-<<<<<<< HEAD
     connection.on('text', function (data) {
         var parse = JSON.parse(data)
         var volume = parse.volume
@@ -38,12 +37,8 @@ var gatherData = function() {
             led.write(0)
         }
         setColor(volume);
-=======
-    connection.on('text', function(data) {
-        console.log(data, '***')
->>>>>>> origin/master
     });
-    interval = setInterval(function() {
+    interval = setInterval(function () {
 
         var volume = gatherSound(soundPin);
         var light = lightPin.read() * lightPin.resolution;
@@ -54,15 +49,6 @@ var gatherData = function() {
         };
         connection.sendText(JSON.stringify(m));
 
-<<<<<<< HEAD
-=======
-        if (m.light < 230) {
-            led.write(1)
-        } else {
-            led.write(0)
-        }
-        setColor(volume);
->>>>>>> origin/master
     }, 500)
 };
 
@@ -70,7 +56,7 @@ var gatherData = function() {
  * This function set the RGB Led. Low noise = green, medium = blue and high = red
  * @param {number} volume
  */
-var setColor = function(volume) {
+var setColor = function (volume) {
 
     if (volume < 10) {
 
@@ -78,13 +64,17 @@ var setColor = function(volume) {
         blue.write(1);
         red.write(1);
         green.pwmDutyCycle((255 - volume * 25.5) % 255 / 255);
-    } else if (volume >= 10 && volume <= 30) {
+    }
+
+    else if (volume >= 10 && volume <= 30) {
 
         console.log('medium');
         blue.pwmDutyCycle((100 - ((volume - 10) * 5)) % 255 / 255);
         red.write(1);
         green.write(1);
-    } else {
+    }
+
+    else {
 
         console.log('high');
         blue.write(1);
@@ -99,24 +89,25 @@ var setColor = function(volume) {
  * @param pin - the analog pin of the sound sensor
  * @returns {number} volume
  */
-var gatherSound = function(pin) {
-    var volume = 0.0; // peak-to-peak level
+var gatherSound = function (pin) {
+    var volume = 0.0;   // peak-to-peak level
 
     var signalMax = 0;
     var signalMin = 1024;
     var sampleWindow = 50;
 
-    var startMillis = new Date().getTime(); // Start of sample window
+    var startMillis = new Date().getTime();  // Start of sample window
 
     while (new Date().getTime() - startMillis < sampleWindow) {
         var sample = pin.read() * pin.resolution;
 
-        if (sample < 1024) // toss out spurious readings
+        if (sample < 1024)  // toss out spurious readings
         {
             if (sample > signalMax) {
-                signalMax = sample; // save just the max levels
-            } else if (sample < signalMin) {
-                signalMin = sample; // save just the min levels
+                signalMax = sample;  // save just the max levels
+            }
+            else if (sample < signalMin) {
+                signalMin = sample;  // save just the min levels
             }
         }
     }
