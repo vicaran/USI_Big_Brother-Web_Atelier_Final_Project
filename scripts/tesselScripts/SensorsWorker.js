@@ -30,8 +30,7 @@ var gatherData = function () {
     var led = tessel.port['GPIO'].pin['G3'];
     connection.on('text', function (data) {
         console.log(data, '***')
-    })
-
+    });
     interval = setInterval(function () {
 
         var volume = gatherSound(soundPin);
