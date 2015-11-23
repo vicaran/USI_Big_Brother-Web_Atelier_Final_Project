@@ -43,7 +43,9 @@ wss.on('connection', function(socket) {
 });
 
 function sendAll(data) {
+    console.log('************')
     for (var i = 0; i < client.length; i++) {
+        console.log(client[i])
         client[i].send(data)
     }
 }
