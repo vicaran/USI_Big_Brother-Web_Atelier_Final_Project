@@ -21,6 +21,7 @@ and receive the data from the tessel.
 // });
 
 //var k = require('./../k_globals/koala.js');var ws = require("nodejs-websocket")
+var ws = require("nodejs-websocket");
 var port = 8000;
 
 // Create the websocket server, provide connection callback
