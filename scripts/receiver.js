@@ -34,10 +34,12 @@ var client = []
 //var wss = new ws.Server({'port': 15000});
 
 wss.on('connection', function(ws) {
+    var data = '';
     ws.on('message', function(message) {
+        data = message
         console.log('received: %s', message);
     });
-    wss.send(message)
+    wss.send(data)
 
     //ws.send('something');
 });
