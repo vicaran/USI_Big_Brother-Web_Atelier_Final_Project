@@ -34,22 +34,19 @@ var client = []
 //var wss = new ws.Server({'port': 15000});
 
 wss.on('connection', function(ws) {
-    var data = '';
-    ws.on('message', function(message) {
-        data = message
-        console.log('received: %s', message);
-        ws.send(data)
+    client.push(ws)
+    ws.on('message', function(data) {
+        console.log('received: %s', data);
+        sendAll(data)
 
     });
-    ws.send(data)
-
-    //ws.send('something');
 });
 //
-//function sendAll(data) {
-//    console.log(data)
-//    for (var i = 0; i < client.length; i++) {
-//        client[i].send('test')
-//
-//    }
+function sendAll(data) {
+    console.log(data)
+    for (var i = 0; i < client.length; i++) {
+        client[i].send(data)
+        console.log('VA DIOCANE')
+
+    }
 //}
