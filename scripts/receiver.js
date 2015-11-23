@@ -47,10 +47,10 @@ wss.on('connection', function(ws) {
 });
 //
 function sendAll(data) {
-    console.log(data)
+    console.log(client.length)
     for (var i = 0; i < client.length; i++) {
         client[i].send(data)
-        console.log('VA DIOCANE')
+        //console.log('VA DIOCANE')
 
     }
 }
