@@ -36,8 +36,9 @@ var client = []
 wss.on('connection', function(ws) {
     ws.on('message', function(message) {
         console.log('received: %s', message);
-        wss.send(message)
     });
+    wss.send(message)
+
     //ws.send('something');
 });
 //
