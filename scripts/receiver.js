@@ -38,14 +38,14 @@ wss.on('connection', function(socket) {
     console.log("new connection");
     socket.on("message", function(data) {
     	console.log("This is data:", data)
-        sendAll(data)
+        socket(data)
     });
 });
-
-function sendAll(data) {
-    console.log(data)
-    for (var i = 0; i < client.length; i++) {
-        client[i].send('test')
-
-    }
-}
+//
+//function sendAll(data) {
+//    console.log(data)
+//    for (var i = 0; i < client.length; i++) {
+//        client[i].send('test')
+//
+//    }
+//}
