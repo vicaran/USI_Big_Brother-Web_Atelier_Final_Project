@@ -21,24 +21,26 @@ and receive the data from the tessel.
 // });
 
 //var k = require('./../k_globals/koala.js');
-var WebSocketServer = require('ws').Server,
-    wss = new WebSocketServer({
-        port: 15000
+var ws = require("nodejs-websocket")
+var port = 15000;
+
+// Create the websocket server, provide connection callback
+var server = ws.createServer(function (conn) {
+    console.log("New connection");
+
+    // If we get text from the client, and echo it
+    conn.on("text", function (str) {
+        // print it out
+        console.log("Received "+str)
+        // Send it back (but more excited)
+        conn.sendText(str.toUpperCase()+"!!!")
     });
 
-
-//var id= 0;
-var client = []
-
-//create a websocket server
-//var wss = new ws.Server({'port': 15000});
-
-wss.on('connection', function(ws) {
-    ws.on('message', function(message) {
-        console.log('received: %s', message);
+    // When the client closes the connection, notify us
+    conn.on("close", function (code, reason) {
+        console.log("Connection closed")
     });
-    ws.send('something');
-});
+}).listen(port);
 //
 //function sendAll(data) {
 //    console.log(data)
