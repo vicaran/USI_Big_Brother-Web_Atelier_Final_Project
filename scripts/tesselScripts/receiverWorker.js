@@ -21,19 +21,23 @@ var receiveData = function () {
         if (parse.light < 230) {
             yell.write(1)
         }
+
         if (volume < 10) {
+            yell.write(0)
             green.write(1)
             blue.write(0)
             red.write(0)
 
         }
         else if (volume >= 10 && volume <= 30) {
+            yell.write(0)
             green.write(0)
             blue.write(1)
             red.write(0)
 
         }
         else if(volume > 30) {
+            yell.write(0)
             green.write(0)
             blue.write(0)
             red.write(1)

@@ -49,7 +49,7 @@ var gatherData = function () {
             led.write(0)
         }
         setColor(volume);
-    }, 1000)
+    }, 500)
 };
 
 /**
