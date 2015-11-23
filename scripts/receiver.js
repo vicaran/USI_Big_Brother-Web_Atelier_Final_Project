@@ -9,20 +9,18 @@ var WebSocketServer = require('ws').Server,
 
 var client = []
 
-wss.on('connection', function (ws) {
+wss.on('connection', function(ws) {
     client.push(ws)
 
-    ws.on('message', function (data) {
+    ws.on('message', function(data) {
         //console.log('received: %s', data);
         sendAll(data)
-
     });
 
     ws.on('close', function close() {
         client.splice(client.indexOf(ws), client.indexOf(ws) + 1)
         console.log('disconnected');
     });
-
 });
 
 function sendAll(data) {
@@ -31,8 +29,7 @@ function sendAll(data) {
         try {
             console.log(data)
             client[i].send(data)
-        }
-        catch (e) {
+        } catch (e) {
             console.log('Error: ' + e)
         }
     }
