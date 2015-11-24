@@ -38,6 +38,7 @@ function sendAll(data, d) {
     console.log(keys.length)
     for (var i = 0; i < keys.length; i++) {
         try {
+            console.log('SOCKET ', i, ' **********')
             console.log('d: ', d)
             console.log('client[i].time: ', client[i].time)
 
