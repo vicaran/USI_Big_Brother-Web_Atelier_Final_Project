@@ -15,8 +15,8 @@ wss.on('connection', function (ws) {
         s: ws
     })
 
-    ws.on('message', function (data,socket) {
-        console.log(socket)
+    ws.on('message', function (data) {
+        console.log(ws.id)
         sendAll(data)
     });
 
