@@ -8,16 +8,18 @@ var WebSocketServer = require('ws').Server,
     });
 
 var client = []
-var  i = 0
+var i = 0
 wss.on('connection', function (ws) {
-    i ++
+    ws._id = i
+    i++
     client.push({
-        time: '',
-        s: ws
+        _id: {
+            time: '',
+            s: ws
+        }
     })
-
+    console.log(client)
     ws.on('message', function (data) {
-        ws._id = i
         console.log(ws._id)
         sendAll(data)
     });
