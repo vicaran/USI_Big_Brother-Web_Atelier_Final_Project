@@ -42,10 +42,11 @@ var gatherData = function () {
 
         var volume = gatherSound(soundPin);
         var light = lightPin.read() * lightPin.resolution;
+        var date = Date(Date.now())
         var m = {
             volume: volume,
             light: light,
-            time: Data.now()
+            time: date
         };
         connection.sendText(JSON.stringify(m));
 

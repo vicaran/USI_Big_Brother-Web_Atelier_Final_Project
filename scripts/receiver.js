@@ -21,6 +21,10 @@ wss.on('connection', function(ws) {
         client.splice(client.indexOf(ws), client.indexOf(ws) + 1)
         console.log('disconnected');
     });
+    ws.on('disconnect', function close() {
+        client.splice(client.indexOf(ws), client.indexOf(ws) + 1)
+        console.log('disconnected');
+    });
 });
 
 function sendAll(data) {
