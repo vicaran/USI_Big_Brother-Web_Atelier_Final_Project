@@ -37,20 +37,21 @@ function sendAll(data, d) {
     var keys = Object.keys(client)
     console.log(keys.length)
     for (var i = 0; i < keys.length; i++) {
+        var key = keys[i]
         try {
             console.log('SOCKET ', i, ' **********')
             console.log(keys)
             console.log('d: ', d)
-            console.log('client[i].time: ', client[i].time)
+            console.log('client[i].time: ', client[key].time)
 
-            if (((d - client[i].time)/ 1000) > 5) {
+            if (((d - client[key].time)/ 1000) > 5) {
                 console.log('Something went wrong, close socket ' + i)
                 //delete socket
-                delete client[i]
+                delete client[key]
             }
             else {
                 console.log(data)
-                client[i].ws.send(data)
+                client[key].ws.send(data)
             }
         } catch (e) {
             console.log('Error: ' + e)
