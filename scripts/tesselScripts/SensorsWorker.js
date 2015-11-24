@@ -26,6 +26,9 @@ var gatherData = function () {
     var lightPin = tessel.port['GPIO'].analog[1];
     //initialized Led
     var led = tessel.port['GPIO'].pin['G3'];
+    connection.on('disconnect', function close() {
+        console.log('disconnected');
+    });
     connection.on('text', function (data) {
         var parse = JSON.parse(data)
         var volume = parse.volume

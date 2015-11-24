@@ -9,11 +9,14 @@ var WebSocketServer = require('ws').Server,
 
 var client = []
 
-wss.on('connection', function(ws) {
-    client.push(ws)
+wss.on('connection', function (ws) {
+    client.push({
+        time: '',
+        s: ws
+    })
 
-    ws.on('message', function(data) {
-        //console.log('received: %s', data);
+    ws.on('message', function (data,socket) {
+        console.log(socket)
         sendAll(data)
     });
 
@@ -29,7 +32,6 @@ wss.on('connection', function(ws) {
 
 function sendAll(data) {
     console.log(client.length)
-    console.log(data.time)
     for (var i = 0; i < client.length; i++) {
         try {
             console.log(data)
