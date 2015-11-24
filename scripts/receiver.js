@@ -20,8 +20,8 @@ wss.on('connection', function (ws) {
     console.log(client, '*************************************')
     ws.on('message', function (data) {
         //update date
-        var date = Date.now()
-        client[ws._id].time = date.getTime / 1000;
+        var date = Date.now().getSeconds()
+        client[ws._id].time = date;
         //send data
         sendAll(data, date)
     });
