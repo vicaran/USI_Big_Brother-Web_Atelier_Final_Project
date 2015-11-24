@@ -23,7 +23,7 @@ wss.on('connection', function (ws) {
         var date = Date.now()
         client[ws._id].time = date.getTime / 1000;
         //send data
-        sendAll(data, d)
+        sendAll(data, date)
     });
 
     ws.on('close', function close() {
