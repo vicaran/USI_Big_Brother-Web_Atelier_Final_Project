@@ -46,7 +46,7 @@ function sendAll(data, d) {
             }
             else {
                 console.log(data)
-                client[i].send(data)
+                client[i].ws.send(data)
             }
         } catch (e) {
             console.log('Error: ' + e)
