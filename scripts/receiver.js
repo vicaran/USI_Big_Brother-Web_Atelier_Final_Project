@@ -39,6 +39,9 @@ function sendAll(data, d) {
     console.log(keys.length)
     for (var i = 0; i < keys.length; i++) {
         try {
+            console.log('d: ', d)
+            console.log('client[i].time: ', client[i].time)
+
             if ((d - client[i].time) > 5) {
                 console.log('Something went wrong, close socket ' + i)
                 //delete socket
