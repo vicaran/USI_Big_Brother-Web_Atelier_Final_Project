@@ -53,7 +53,7 @@ var gatherData = function () {
         };
         connection.sendText(JSON.stringify(m));
 
-    }, 500)
+    }, 2000)
 };
 
 /**

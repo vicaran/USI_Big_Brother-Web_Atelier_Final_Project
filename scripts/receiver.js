@@ -16,10 +16,12 @@ wss.on('connection', function (ws) {
         ws: ws
     }
     _id++
+
     console.log(client, '*************************************')
     ws.on('message', function (data) {
         //update date
         var date = Date.now()
+        console.log('wss._id', wss._id,' =========')
         client[wss._id].time = date.getTime / 1000;
         //send data
         sendAll(data, d)
