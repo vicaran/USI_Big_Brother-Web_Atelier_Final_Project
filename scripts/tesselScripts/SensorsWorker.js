@@ -45,7 +45,7 @@ var gatherData = function () {
 
         var volume = gatherSound(soundPin);
         var light = lightPin.read() * lightPin.resolution;
-        var date = Date(Date.now())
+        var date =Date.now()
         var m = {
             volume: volume,
             light: light,
