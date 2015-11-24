@@ -35,8 +35,9 @@ wss.on('connection', function (ws) {
 });
 
 function sendAll(data, d) {
-    console.log(client.length)
-    for (var i = 0; i < client.length; i++) {
+    var keys = Object.keys(client)
+    console.log(keys.length)
+    for (var i = 0; i < keys.length; i++) {
         try {
             if ((d - client[i].time) > 5) {
                 console.log('Something went wrong, close socket ' + i)
