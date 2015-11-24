@@ -16,11 +16,10 @@ wss.on('connection', function (ws) {
         ws: ws
     }
     _id++
-
     console.log(client, '*************************************')
     ws.on('message', function (data) {
         //update date
-        var date = new Date().getSeconds()
+        var date = new Date()
         client[ws._id].time = date;
         //send data
         sendAll(data, date)
@@ -42,7 +41,7 @@ function sendAll(data, d) {
             console.log('d: ', d)
             console.log('client[i].time: ', client[i].time)
 
-            if ((d - client[i].time) > 5) {
+            if (((d - client[i].time)/ 1000) > 5) {
                 console.log('Something went wrong, close socket ' + i)
                 //delete socket
                 delete client[i]
