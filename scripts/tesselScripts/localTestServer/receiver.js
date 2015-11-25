@@ -7,10 +7,10 @@ var WebSocketServer = require('ws').Server,
         port: 15000
     });
 
-var client = {}
+var client = {};
 var _id = 0
 wss.on('connection', function (ws) {
-    ws._id = _id
+    ws._id = _id;
     client[_id] = {
         time: '',
         ws: ws

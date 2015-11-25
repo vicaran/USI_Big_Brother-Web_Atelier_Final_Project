@@ -7,7 +7,6 @@ var pws = require("./../producer_connection.js")
 function mainExample() {
     pws.receive(function (data) {
         console.log(data + 'receiver!')
-
         pws.ack
     });
     //interval = setInterval(function () {

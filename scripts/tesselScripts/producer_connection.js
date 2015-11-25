@@ -26,7 +26,6 @@ var ack = function () {
     connection.sendText('ACK');
 };
 
-
 var receive = function (cb) {
     connection.on('text', cb)
 };
