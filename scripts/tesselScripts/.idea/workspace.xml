@@ -26,8 +26,8 @@
           <file leaf-file-name="producer_connection.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/producer_connection.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.63114756">
-                  <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+                <state vertical-scroll-proportion="0.45901638">
+                  <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
                   <folding />
                 </state>
               </provider>
@@ -104,8 +104,8 @@
           <file leaf-file-name="senderWorker.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/senderWorker.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.70765024">
-                  <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.38251367">
+                  <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
                   <folding />
                 </state>
               </provider>
@@ -132,7 +132,6 @@
         <option value="$PROJECT_DIR$/localTestServer/producerExample.js" />
         <option value="$PROJECT_DIR$/producerExample.js" />
         <option value="$PROJECT_DIR$/localTestServer/producerSensorExample.js" />
-        <option value="$PROJECT_DIR$/producer_connection.js" />
         <option value="$PROJECT_DIR$/localTestServer/receiver.js" />
         <option value="$PROJECT_DIR$/../receiver.js" />
         <option value="$PROJECT_DIR$/localTestServer/localReceiver.js" />
@@ -141,6 +140,7 @@
         <option value="$PROJECT_DIR$/receiverWorker.js" />
         <option value="$PROJECT_DIR$/SensorsWorker.js" />
         <option value="$PROJECT_DIR$/senderWorker.js" />
+        <option value="$PROJECT_DIR$/producer_connection.js" />
       </list>
     </option>
   </component>
@@ -348,7 +348,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="53" column="27" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="27" />
-          <folding />
+          <folding>
+            <marker date="1448479565000" expanded="true" signature="326:386" placeholder="/** Main function that take the data from the sensors ...*/" />
+            <marker date="1448479565000" expanded="true" signature="415:1189" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="679:927" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="817:853" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="859:895" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1093:1187" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1762:1866" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1762:1868" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1871:2045" placeholder="/** Function for reading the input from a microphone, gathering data in a window of 50ms ...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -372,7 +382,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1448479565000" expanded="true" signature="326:386" placeholder="/** Main function that take the data from the sensors ...*/" />
+            <marker date="1448479565000" expanded="true" signature="415:1189" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="679:927" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="817:853" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="859:895" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1093:1187" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1762:1866" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1762:1868" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1871:2045" placeholder="/** Function for reading the input from a microphone, gathering data in a window of 50ms ...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -388,7 +408,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
-          <folding />
+          <folding>
+            <marker date="1448479565000" expanded="true" signature="326:386" placeholder="/** Main function that take the data from the sensors ...*/" />
+            <marker date="1448479565000" expanded="true" signature="415:1189" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="679:927" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="817:853" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="859:895" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1093:1187" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1762:1866" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1762:1868" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1871:2045" placeholder="/** Function for reading the input from a microphone, gathering data in a window of 50ms ...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -451,18 +481,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/producer_connection.js">
+    <entry file="file://$PROJECT_DIR$/senderWorker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63114756">
-          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="14" selection-start-line="35" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <marker date="1448479565000" expanded="true" signature="326:386" placeholder="/** Main function that take the data from the sensors ...*/" />
+            <marker date="1448479565000" expanded="true" signature="415:1189" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="679:927" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="817:853" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="859:895" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1093:1187" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1762:1866" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1762:1868" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1871:2045" placeholder="/** Function for reading the input from a microphone, gathering data in a window of 50ms ...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/senderWorker.js">
+    <entry file="file://$PROJECT_DIR$/producer_connection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70765024">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.45901638">
+          <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
           <folding />
         </state>
       </provider>

@@ -1,5 +1,5 @@
 /**
- * Created by VeaVictis on 25/11/15.
+ * This module handle socket connection
  */
 
 var ws = require("nodejs-websocket");
@@ -23,7 +23,7 @@ var send = function (message) {
 var ack = function () {
     if (!ready)
         return;
-    connection.sendText('ACK');
+    send('ACK');
 };
 
 var receive = function (cb) {
