@@ -58,19 +58,20 @@ function sendAll(data, d) {
                         delete client[key]
                     }
                 }
-            }
-            console.log('SOCKET ', key, ' **********')
-            console.log(keys)
-            console.log('d: ', d)
-            console.log('client[i].time: ', client[key].time)
-
-            if (((d - client[key].time) / 1000) > 5) {
-                console.log('Something went wrong, close sender socket ' + i)
-                //delete socket
-                delete client[key]
             } else {
-                console.log(data)
-                client[key].ws.send(data)
+                console.log('SOCKET ', key, ' **********')
+                console.log(keys)
+                console.log('d: ', d)
+                console.log('client[i].time: ', client[key].time)
+
+                if (((d - client[key].time) / 1000) > 5) {
+                    console.log('Something went wrong, close sender socket ' + i)
+                    //delete socket
+                    delete client[key]
+                } else {
+                    console.log(data)
+                    client[key].ws.send(data)
+                }
             }
         } catch (e) {
             console.log('Error: ' + e)
