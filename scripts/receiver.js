@@ -10,8 +10,8 @@ var WebSocketServer = require('ws').Server,
 var client = {}
 var _id = 0
 
-wss.on('connection', function (ws) {
-    console.log('____________connection opened____________');
+wss.on('connection', function(ws) {
+    console.log('____________New Connection Opened____________');
     var fDate = new Date()
     ws._id = _id
     client[_id] = {
@@ -19,17 +19,15 @@ wss.on('connection', function (ws) {
         ws: ws,
     }
     _id++
-    console.log(client, '*************************************')
-    ws.on('message', function (data) {
+    // console.log(client, '*************************************')
+    ws.on('message', function(data) {
         //update date
         var date = new Date()
         client[ws._id].time = date;
         //send data
-        console.log('TRY', data);
-        console.log('aFter setting client', client);
-        if (data == "ACK"){
+        if (data == "ACK") {
             return
-        } else{
+        } else {
             sendAll(data, date)
         }
     });
@@ -44,18 +42,17 @@ wss.on('connection', function (ws) {
 
 function sendAll(data, d) {
     var keys = Object.keys(client)
-    console.log(keys.length)
+    console.log("There are: " + keys.length + " clients connected.")
     for (var i = 0; i < keys.length; i++) {
         var key = keys[i]
         try {
-            console.log('SOCKET ', key, ' **********')
-            console.log(keys)
-            if (((d - client[key].time)/ 1000) > 5) {
-                console.log('Something went wrong, close socket ' + i)
+            // console.log('SOCKET ', key, ' **********')
+            // console.log(keys)
+            if (((d - client[key].time) / 1000) > 5) {
+                console.log('Connection with client lost, close socket with id: ' + i + ".")
                 //delete socket
                 delete client[key]
-            }
-            else {
+            } else {
                 console.log(data)
                 client[key].ws.send(data)
             }
