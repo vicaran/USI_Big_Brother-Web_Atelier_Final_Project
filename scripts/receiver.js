@@ -10,7 +10,7 @@ var WebSocketServer = require('ws').Server,
 var client = {}
 var _id = 0
 
-wss.on('connection', function (ws) {
+wss.on('connection', function(ws) {
     console.log('connection opened____________');
     ws._id = _id;
     console.log('And this is ws._id:', ws._id);
@@ -18,23 +18,27 @@ wss.on('connection', function (ws) {
     ws._id = _id
     client[_id] = {
         time: '',
-        ws: ws,
-        listener: true 
+        ws: ws
+        // listener: true
     }
     _id++
     console.log(client, '*************************************')
-    ws.on('message', function (data) {
+    ws.on('message', function(data) {
         //update date
         var date = new Date()
         client[ws._id].time = date;
-        client[ws._id].listener = false;
+        // client[ws._id].listener = false;
         //send data
-        if (data == "ACK"){
-            return
-        } else{
+        if (data == "ACK") {
+            console.log('Listener socket recognised');
+            if (((date - client[key].time) / 1000) > 5)) {
+                console.log('Something went wrong, close listener socket ' + i)
+                delete client[key]
+            }
+        } else {
             sendAll(data, date)
         }
-        
+
     });
 
     ws.on('close', function close() {
@@ -56,12 +60,11 @@ function sendAll(data, d) {
             console.log('d: ', d)
             console.log('client[i].time: ', client[key].time)
 
-            if (((d - client[key].time)/ 1000) > 5 && client[key].listener == false) {
-                console.log('Something went wrong, close socket ' + i)
+            if (((d - client[key].time) / 1000) > 5) {
+                console.log('Something went wrong, close sender socket ' + i)
                 //delete socket
                 delete client[key]
-            }
-            else {
+            } else {
                 console.log(data)
                 client[key].ws.send(data)
             }
