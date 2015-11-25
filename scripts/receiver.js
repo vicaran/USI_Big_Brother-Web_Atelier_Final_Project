@@ -29,8 +29,12 @@ wss.on('connection', function (ws) {
         client[ws._id].time = date;
         client[ws._id].listener = false;
         //send data
-        console.log('TRYYY', data);
-        sendAll(data, date)
+        if (data == "ACK"){
+            return
+        } else{
+            sendAll(data, date)
+        }
+        
     });
 
     ws.on('close', function close() {
