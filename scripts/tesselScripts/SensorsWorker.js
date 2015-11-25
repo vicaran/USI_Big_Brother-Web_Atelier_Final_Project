@@ -50,7 +50,6 @@ var gatherData = function() {
             time: date
         };
         connection.sendText(JSON.stringify(m));
-
     }, 2000)
 };
 
@@ -73,7 +72,6 @@ var setColor = function(volume) {
         red.write(1);
         green.write(1);
     } else {
-
         console.log('high');
         blue.write(1);
         green.write(1);

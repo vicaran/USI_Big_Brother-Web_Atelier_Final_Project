@@ -44,15 +44,7 @@ var receiveData = function() {
             blue.write(0)
             red.write(1)
         }
-        
-        interval = setTimeout(function() {
-        green.write(0)
-        blue.write(0)
-        red.write(0)
-    }, 5000);
     })
-
-
 };
 
 receiveData()

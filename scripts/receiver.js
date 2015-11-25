@@ -28,7 +28,6 @@ wss.on('connection', function(ws) {
         if (data != "ACK") {
             sendAll(data, date)
         }
-        
     });
 
     ws.on('close', function close() {
