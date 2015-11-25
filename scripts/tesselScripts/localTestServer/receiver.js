@@ -7,23 +7,25 @@ var WebSocketServer = require('ws').Server,
         port: 15000
     });
 
-var client = {}
+var client = {};
 var _id = 0
 wss.on('connection', function (ws) {
-    ws._id = _id
+    ws._id = _id;
     client[_id] = {
         time: '',
         ws: ws
-    }
-    _id++
-    console.log(client, '*************************************')
+    };
+    console.log('Socket ' + _id + ' connected', '*************************************')
+    _id++;
     ws.on('message', function (data) {
         console.log(data)
         //update date
         var date = new Date()
         client[ws._id].time = date;
         //send data
-        sendAll(data, date)
+        if (data != 'ACK') {
+            sendAll(data, date)
+        }
     });
 
     ws.on('close', function close() {
@@ -45,7 +47,7 @@ function sendAll(data, d) {
             console.log('d: ', d)
             console.log('client[i].time: ', client[key].time)
 
-            if (((d - client[key].time)/ 1000) > 5) {
+            if (((d - client[key].time) / 1000) > 5) {
                 console.log('Something went wrong, close socket ' + i)
                 //delete socket
                 delete client[key]

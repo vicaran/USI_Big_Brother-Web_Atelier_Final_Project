@@ -1,7 +1,7 @@
 /**
  * Created by VeaVictis on 25/11/15.
  */
-var pws = require("./producer_connection.js")
+var pws = require("./../producer_connection.js")
 
 function mainExample() {
     pws.receive(function(data){console.log(data + '--')})
@@ -12,7 +12,7 @@ function mainExample() {
             a: 0
         };
         pws.send(dataTest)
-    }, 500)
+    }, 2000)
 }
 
 mainExample();
