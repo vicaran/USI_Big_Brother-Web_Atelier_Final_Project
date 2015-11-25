@@ -12,9 +12,10 @@ var _id = 0
 
 wss.on('connection', function (ws) {
     console.log('____________connection opened____________');
+    var fDate = new Date()
     ws._id = _id
     client[_id] = {
-        time: '',
+        time: fDate,
         ws: ws,
     }
     _id++
