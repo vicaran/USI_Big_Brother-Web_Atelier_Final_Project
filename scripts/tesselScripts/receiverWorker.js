@@ -16,12 +16,7 @@ var receiveData = function () {
     var red = tessel.port['GPIO'].pin['G6'];
     var yell = tessel.port['GPIO'].pin['G3'];
     interval = setInterval(function () {
-        var date =Date.now()
-        var m = {
-            time: date,
-            message: "ACK"
-        };
-        connection.sendText(JSON.stringify(m))
+        connection.sendText('ACK')
     },3000)
     connection.on('text', function (data) {
         var parse = JSON.parse(data)

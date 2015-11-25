@@ -49,8 +49,7 @@ var gatherData = function () {
         var m = {
             volume: volume,
             light: light,
-            time: date,
-            message: ""
+            time: date
         };
         connection.sendText(JSON.stringify(m));
 
