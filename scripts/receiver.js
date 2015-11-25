@@ -23,6 +23,7 @@ wss.on('connection', function (ws) {
     ws.on('message', function (data) {
         //update date
         var date = new Date()
+        console.log('fottuta data', date);
         client[ws._id].time = date;
         //send data
         console.log('TRY', data);
