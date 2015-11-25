@@ -10,8 +10,8 @@ var url = hostname + port.toString();
 var ready = false;
 
 var connection = ws.connect(url, function () {
-    console.log('--Producer Connected on: ' + url, ' --')
-    connection.sendText('ACK')
+    console.log('--Producer Connected on: ' + url, ' --');
+    ack();
     ready = true;
 });
 
