@@ -28,7 +28,6 @@ wss.on('connection', function(ws) {
         if (data != "ACK") {
             sendAll(data, date)
         }
-        
     });
 
     ws.on('close', function close() {
@@ -41,7 +40,7 @@ wss.on('connection', function(ws) {
 
 function sendAll(data, d) {
     var keys = Object.keys(client)
-    console.log("There are: " + keys.length + " client/s connected that is/are receiving the data.")
+    console.log("There is/are: " + keys.length + " client/s connected receiving the data.")
     for (var i = 0; i < keys.length; i++) {
         var key = keys[i]
         try {
