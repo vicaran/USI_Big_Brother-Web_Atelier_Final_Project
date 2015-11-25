@@ -29,23 +29,7 @@ wss.on('connection', function(ws) {
         client[ws._id].time = date;
         // client[ws._id].listener = false;
         //send data
-
-        if (data == "ACK") {
-            console.log('Listener socket recognised');
-            var interval = setInterval(function(){
-                if (((date - client[ws._id].time) / 1000) > 5) {
-                    console.log('Something went wrong, close listener socket ' + i)
-                    delete client[key]
-                }
-            },5000)
-            // if (((date - client[ws._id].time) / 1000) > 5) {
-            //     console.log('Something went wrong, close listener socket ' + i)
-            //     delete client[key]
-            // }
-        } else {
-            sendAll(data, date)
-        }
-
+        sendAll(data, date);
     });
 
     ws.on('close', function close() {
@@ -62,6 +46,14 @@ function sendAll(data, d) {
     for (var i = 0; i < keys.length; i++) {
         var key = keys[i]
         try {
+            if (data == "ACK") {
+                console.log('Listener socket recognised');
+                if (((d - client[key].time) / 1000) > 5) {
+                    console.log('Something went wrong, close sender socket ' + i)
+                    //delete socket
+                    delete client[key]
+                }
+            }
             console.log('SOCKET ', key, ' **********')
             console.log(keys)
             console.log('d: ', d)
