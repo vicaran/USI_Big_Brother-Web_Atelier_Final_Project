@@ -27,7 +27,7 @@ wss.on('connection', function (ws) {
         //update date
         var date = new Date()
         client[ws._id].time = date;
-        client[_id].listener = false;
+        client[ws._id].listener = false;
         //send data
         sendAll(data, date)
     });
