@@ -5,7 +5,7 @@
 var ws = require("nodejs-websocket");
 
 var port = 15000;
-var hostname = "ws://127.0.0.1:";
+var hostname = "ws://10.40.2.139:";
 var url = hostname + port.toString();
 var ready = false;
 

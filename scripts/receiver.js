@@ -16,6 +16,7 @@ wss.on('connection', function (ws) {
     client[_id] = {
         time: '',
         ws: ws,
+        listener: true
     }
     _id++
     console.log(client, '*************************************')
@@ -28,6 +29,7 @@ wss.on('connection', function (ws) {
         if (data == "ACK"){
             return
         } else{
+            client[ws._id].listener = false
             sendAll(data, date)
         }
     });
@@ -48,7 +50,7 @@ function sendAll(data, d) {
         try {
             console.log('SOCKET ', key, ' **********')
             console.log(keys)
-            if (((d - client[key].time)/ 1000) > 5) {
+            if (((d - client[key].time)/ 1000) > 5 && client[key].listener == false) {
                 console.log('Something went wrong, close socket ' + i)
                 //delete socket
                 delete client[key]
