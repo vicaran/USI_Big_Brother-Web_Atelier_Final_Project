@@ -35,13 +35,12 @@ var gatherData = function() {
 
         var volume = gatherSound(soundPin);
         var light = lightPin.read() * lightPin.resolution;
-        var date = Date.now()
-        var m = {
+        var data = {
             volume: volume,
             light: light,
-            time: date
+            time: Date.now()
         };
-        pws.send(JSON.stringify(m));
+        pws.send(JSON.stringify(data));
 
     }, 2000)
 };
