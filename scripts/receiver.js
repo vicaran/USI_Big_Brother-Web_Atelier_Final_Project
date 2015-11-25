@@ -10,29 +10,25 @@ var WebSocketServer = require('ws').Server,
 var client = {}
 var _id = 0
 
-wss.on('connection', function(ws) {
+wss.on('connection', function (ws) {
     console.log('____________connection opened____________');
     ws._id = _id
     client[_id] = {
         time: '',
         ws: ws,
-        listener: true
     }
     _id++
-
-    ws.on('message', function(data) {
+    console.log(client, '*************************************')
+    ws.on('message', function (data) {
         //update date
         var date = new Date()
-        console.log('fottuta data', date);
         client[ws._id].time = date;
         //send data
         console.log('TRY', data);
-        console.log(client, '*************************************')
-        if (data == "ACK") {
-            return;
-        } else {
-            client[ws._id].listener = false
-            sendAll(data, date);
+        if (data == "ACK"){
+            return
+        } else{
+            sendAll(data, date)
         }
     });
 
@@ -52,22 +48,15 @@ function sendAll(data, d) {
         try {
             console.log('SOCKET ', key, ' **********')
             console.log(keys)
-            if (client[key].listener == true) {
-                setTimeout(function() {
-                    console.log('Something went wrong, close receiver socket ' + i)
-                    delete client[key]
-                }, 5000)
-                console.log("Sending to listener socket:", data)
-                client[key].ws.send(data)
-            } else if (((d - client[key].time) / 1000) > 5 && client[key].listener == false) {
+            if (((d - client[key].time)/ 1000) > 5) {
                 console.log('Something went wrong, close socket ' + i)
                 //delete socket
                 delete client[key]
-            } else {
-                console.log("Sending to listener and sender socket:", data)
+            }
+            else {
+                console.log(data)
                 client[key].ws.send(data)
             }
-
         } catch (e) {
             console.log('Error: ' + e)
         }
