@@ -11,15 +11,11 @@ var client = {}
 var _id = 0
 
 wss.on('connection', function (ws) {
-    console.log('connection opened____________');
-    ws._id = _id;
-    console.log('And this is ws._id:', ws._id);
-
+    console.log('____________connection opened____________');
     ws._id = _id
     client[_id] = {
         time: '',
         ws: ws,
-        listener: true 
     }
     _id++
     console.log(client, '*************************************')
@@ -27,9 +23,8 @@ wss.on('connection', function (ws) {
         //update date
         var date = new Date()
         client[ws._id].time = date;
-        client[ws._id].listener = false;
         //send data
-        console.log('TRYYY', data);
+        console.log('TRY', data);
         if (data == "ACK"){
             return
         } else{
@@ -54,10 +49,7 @@ function sendAll(data, d) {
         try {
             console.log('SOCKET ', key, ' **********')
             console.log(keys)
-            console.log('d: ', d)
-            console.log('client[i].time: ', client[key].time)
-
-            if (((d - client[key].time)/ 1000) > 5 && client[key].listener == false) {
+            if (((d - client[key].time)/ 1000) > 5) {
                 console.log('Something went wrong, close socket ' + i)
                 //delete socket
                 delete client[key]
