@@ -48,6 +48,18 @@ function sendAll(data, d) {
     for (var i = 0; i < keys.length; i++) {
         var key = keys[i]
         try {
+            if (client[key].listener == true){
+                if (((d - client[key].time)/ 1000) > 5) {
+                console.log('Something went wrong, close listener socket ' + i)
+                //delete socket
+                delete client[key]
+            }
+            else {
+                console.log("Sending to listener socket:", data)
+                client[key].ws.send(data)
+            }
+
+            }
             console.log('SOCKET ', key, ' **********')
             console.log(keys)
             if (((d - client[key].time)/ 1000) > 5 && client[key].listener == false) {
@@ -56,7 +68,7 @@ function sendAll(data, d) {
                 delete client[key]
             }
             else {
-                console.log(data)
+                console.log("Sending to listener and sender socket:", data)
                 client[key].ws.send(data)
             }
         } catch (e) {
