@@ -67,10 +67,9 @@ function sendAll(data, d) {
                 console.log("Sending to listener and sender socket:", data)
                 client[key].ws.send(data)
             }
+
+        } catch (e) {
+            console.log('Error: ' + e)
         }
     }
-} catch (e) {
-    console.log('Error: ' + e)
-}
-}
 }
