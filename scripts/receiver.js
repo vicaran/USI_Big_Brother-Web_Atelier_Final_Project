@@ -25,11 +25,10 @@ wss.on('connection', function(ws) {
         var date = new Date()
         client[ws._id].time = date;
         //send data
-        if (data == "ACK") {
-            return
-        } else {
+        if (data != "ACK") {
             sendAll(data, date)
         }
+        
     });
 
     ws.on('close', function close() {

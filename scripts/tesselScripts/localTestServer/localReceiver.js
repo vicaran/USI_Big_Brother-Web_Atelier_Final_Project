@@ -29,7 +29,7 @@ wss.on('connection', function (ws) {
     });
 
     ws.on('close', function close() {
-        console.log('disconnected');
+        console.log('close');
     });
     ws.on('disconnect', function close() {
         console.log('disconnected');
