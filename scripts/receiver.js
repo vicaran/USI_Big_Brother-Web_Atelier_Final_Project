@@ -18,7 +18,7 @@ wss.on('connection', function(ws) {
     ws._id = _id
     client[_id] = {
         time: '',
-        ws: ws
+        ws: ws,
         listener: true
     }
     _id++
