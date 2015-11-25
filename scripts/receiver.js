@@ -31,7 +31,7 @@ wss.on('connection', function(ws) {
         //send data
         if (data == "ACK") {
             console.log('Listener socket recognised');
-            if (((date - client[key].time) / 1000) > 5)) {
+            if (((date - client[key].time) / 1000) > 5) {
                 console.log('Something went wrong, close listener socket ' + i)
                 delete client[key]
             }
