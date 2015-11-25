@@ -11,7 +11,7 @@ var ready = false;
 
 var connection = ws.connect(url, function () {
     console.log('--Producer Connected on: ' + url, ' --');
-    ack()
+    ack();
     ready = true;
 });
 

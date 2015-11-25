@@ -26,8 +26,8 @@
           <file leaf-file-name="producer_connection.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/producer_connection.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.26775956">
-                  <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+                <state vertical-scroll-proportion="0.6885246">
+                  <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -104,8 +104,8 @@
           <file leaf-file-name="senderWorker.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/senderWorker.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.420765">
-                  <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+                <state vertical-scroll-proportion="0.22950819">
+                  <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
                   <folding />
                 </state>
               </provider>
@@ -300,7 +300,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="441" y="23" width="1684" height="1147" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11906194" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -463,24 +463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/senderWorker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="14" selection-start-line="35" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <marker date="1448479565000" expanded="true" signature="326:386" placeholder="/** Main function that take the data from the sensors ...*/" />
-            <marker date="1448479565000" expanded="true" signature="415:1189" placeholder="{...}" />
-            <marker date="1448479565000" expanded="true" signature="679:927" placeholder="{...}" />
-            <marker date="1448479565000" expanded="true" signature="817:853" placeholder="{...}" />
-            <marker date="1448479565000" expanded="true" signature="859:895" placeholder="{...}" />
-            <marker date="1448479565000" expanded="true" signature="1093:1187" placeholder="{...}" />
-            <marker date="1448479565000" expanded="true" signature="1762:1866" placeholder="{...}" />
-            <marker date="1448479565000" expanded="true" signature="1762:1868" placeholder="{...}" />
-            <marker date="1448479565000" expanded="true" signature="1871:2045" placeholder="/** Function for reading the input from a microphone, gathering data in a window of 50ms ...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/localTestServer/producerSensorExample.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -499,10 +481,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/senderWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="14" selection-start-line="35" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <marker date="1448479565000" expanded="true" signature="326:386" placeholder="/** Main function that take the data from the sensors ...*/" />
+            <marker date="1448479565000" expanded="true" signature="415:1189" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="679:927" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="817:853" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="859:895" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1093:1187" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1762:1866" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1762:1868" placeholder="{...}" />
+            <marker date="1448479565000" expanded="true" signature="1871:2045" placeholder="/** Function for reading the input from a microphone, gathering data in a window of 50ms ...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/producer_connection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26775956">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.6885246">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
           <folding />
         </state>
       </provider>
