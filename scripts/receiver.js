@@ -19,15 +19,16 @@ wss.on('connection', function (ws) {
         listener: true
     }
     _id++
-    console.log(client, '*************************************')
+    
     ws.on('message', function (data) {
         //update date
         var date = new Date()
         client[ws._id].time = date;
         //send data
         console.log('TRY', data);
+        console.log(client, '*************************************')
         if (data == "ACK"){
-            return
+            sendAll(data, date)
         } else{
             client[ws._id].listener = false
             sendAll(data, date)
