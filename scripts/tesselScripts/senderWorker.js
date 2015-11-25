@@ -41,12 +41,8 @@ var gatherData = function() {
             light: light,
             time: date
         };
-<<<<<<< HEAD:scripts/tesselScripts/senderWorker.js
         pws.send(JSON.stringify(m));
 
-=======
-        connection.sendText(JSON.stringify(m));
->>>>>>> origin/master:scripts/tesselScripts/SensorsWorker.js
     }, 2000)
 };
 

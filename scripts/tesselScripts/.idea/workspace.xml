@@ -73,15 +73,15 @@
                 <state vertical-scroll-proportion="0.0">
                   <caret line="39" column="14" selection-start-line="35" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
                   <folding>
-                    <marker date="1448479384000" expanded="true" signature="326:386" placeholder="/** Main function that take the data from the sensors ...*/" />
-                    <marker date="1448479384000" expanded="true" signature="415:1210" placeholder="{...}" />
-                    <marker date="1448479384000" expanded="true" signature="679:927" placeholder="{...}" />
-                    <marker date="1448479384000" expanded="true" signature="817:853" placeholder="{...}" />
-                    <marker date="1448479384000" expanded="true" signature="859:895" placeholder="{...}" />
-                    <marker date="1448479384000" expanded="true" signature="1120:1208" placeholder="{...}" />
-                    <marker date="1448479384000" expanded="true" signature="1948:2052" placeholder="{...}" />
-                    <marker date="1448479384000" expanded="true" signature="1948:2054" placeholder="{...}" />
-                    <marker date="1448479384000" expanded="true" signature="2057:2231" placeholder="/** Function for reading the input from a microphone, gathering data in a window of 50ms ...*/" />
+                    <marker date="1448479463000" expanded="true" signature="326:386" placeholder="/** Main function that take the data from the sensors ...*/" />
+                    <marker date="1448479463000" expanded="true" signature="415:1210" placeholder="{...}" />
+                    <marker date="1448479463000" expanded="true" signature="679:927" placeholder="{...}" />
+                    <marker date="1448479463000" expanded="true" signature="817:853" placeholder="{...}" />
+                    <marker date="1448479463000" expanded="true" signature="859:895" placeholder="{...}" />
+                    <marker date="1448479463000" expanded="true" signature="1120:1208" placeholder="{...}" />
+                    <marker date="1448479463000" expanded="true" signature="1780:1884" placeholder="{...}" />
+                    <marker date="1448479463000" expanded="true" signature="1780:1886" placeholder="{...}" />
+                    <marker date="1448479463000" expanded="true" signature="1889:2063" placeholder="/** Function for reading the input from a microphone, gathering data in a window of 50ms ...*/" />
                   </folding>
                 </state>
               </provider>
@@ -104,8 +104,8 @@
           <file leaf-file-name="senderWorker.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/senderWorker.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.91803277">
-                  <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+                <state vertical-scroll-proportion="0.8224044">
+                  <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
@@ -140,6 +140,7 @@
         <option value="$PROJECT_DIR$/tessel-socket.js" />
         <option value="$PROJECT_DIR$/receiverWorker.js" />
         <option value="$PROJECT_DIR$/SensorsWorker.js" />
+        <option value="$PROJECT_DIR$/senderWorker.js" />
       </list>
     </option>
   </component>
@@ -460,8 +461,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/senderWorker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.91803277">
-          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.8224044">
+          <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
           <folding />
         </state>
       </provider>
