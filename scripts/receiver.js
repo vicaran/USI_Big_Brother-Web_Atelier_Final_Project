@@ -68,8 +68,9 @@ function sendAll(data, d) {
                 client[key].ws.send(data)
             }
         }
-    } catch (e) {
-        console.log('Error: ' + e)
     }
+} catch (e) {
+    console.log('Error: ' + e)
+}
 }
 }
