@@ -9,6 +9,14 @@ var WebSocketServer = require('ws').Server,
 
 var client = {}
 var _id = 0
+
+wss.on('open', function(ws){
+    console.log('connection opened____________');
+    ws._id = _id;
+    console.log('This is ws:', ws);
+    console.log('And this is ws._id:', ws._id);
+})
+
 wss.on('connection', function (ws) {
     ws._id = _id
     client[_id] = {
