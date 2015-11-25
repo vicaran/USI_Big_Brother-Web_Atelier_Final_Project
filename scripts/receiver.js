@@ -25,6 +25,7 @@ wss.on('connection', function (ws) {
         client[ws._id].time = date;
         //send data
         console.log('TRY', data);
+        console.log('aFter setting client', client);
         if (data == "ACK"){
             return
         } else{
