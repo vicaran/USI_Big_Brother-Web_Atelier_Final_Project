@@ -15,9 +15,9 @@ var receiveData = function () {
     var blue = tessel.port['GPIO'].pin['G4'];
     var red = tessel.port['GPIO'].pin['G6'];
     var yell = tessel.port['GPIO'].pin['G3'];
-    interval = setInterval(function () {
-        connection.sendText('ACK')
-    },3000)
+    // interval = setInterval(function () {
+    //     connection.sendText('ACK')
+    // },3000)
     connection.on('text', function (data) {
         var parse = JSON.parse(data)
         var volume = parse.volume
