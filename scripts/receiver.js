@@ -53,7 +53,7 @@ function sendAll(data, d) {
                 console.log('Listener socket recognised');
                 if (client[key].listener == true) {
                     if (((d - client[key].time) / 1000) > 5) {
-                        console.log('Something went wrong, close sender socket ' + i)
+                        console.log('Something went wrong, close receiver socket ' + i)
                         //delete socket
                         delete client[key]
                     }
