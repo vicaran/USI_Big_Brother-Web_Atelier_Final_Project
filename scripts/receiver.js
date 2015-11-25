@@ -42,7 +42,7 @@ wss.on('connection', function(ws) {
 
 function sendAll(data, d) {
     var keys = Object.keys(client)
-    console.log("There are: " + keys.length + " clients connected.")
+    console.log("There are: " + keys.length + " client/s connected that is/are receiving the data.")
     for (var i = 0; i < keys.length; i++) {
         var key = keys[i]
         try {
@@ -53,7 +53,6 @@ function sendAll(data, d) {
                 //delete socket
                 delete client[key]
             } else {
-                console.log(data)
                 client[key].ws.send(data)
             }
         } catch (e) {

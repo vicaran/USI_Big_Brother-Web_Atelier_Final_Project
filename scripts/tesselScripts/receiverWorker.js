@@ -18,6 +18,7 @@ var receiveData = function() {
     interval = setInterval(function() {
         connection.sendText('ACK')
     }, 3000)
+
     connection.on('text', function(data) {
         var parse = JSON.parse(data)
         var volume = parse.volume
@@ -26,7 +27,6 @@ var receiveData = function() {
         }
         if (parse.light >= 230) {
             yell.write(0)
-
         }
 
         if (volume < 10) {
@@ -43,10 +43,14 @@ var receiveData = function() {
             green.write(0)
             blue.write(0)
             red.write(1)
-
         }
-
     })
+
+    interval = setInterval(function() {
+        green.write(0)
+        blue.write(0)
+        red.write(0)
+    }, 4000);
 
 };
 
