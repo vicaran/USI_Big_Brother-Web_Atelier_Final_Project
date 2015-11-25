@@ -43,7 +43,7 @@ var receiver = function(e,cb){
     if(!ready){
         return;
     }
-    console.log('**');
+    console.log(e);
     connection.on(e,cb)
 };
 
