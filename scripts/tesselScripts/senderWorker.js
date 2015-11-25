@@ -1,5 +1,5 @@
 var tessel = require('tessel');
-var ws = require("nodejs-websocket");
+var pws = require("./../producer_connection.js")
 //initialize RGB Led variables (R + G B)
 var red = tessel.port['GPIO'].pwm[0];
 var blue = tessel.port['GPIO'].pwm[1];
@@ -11,12 +11,6 @@ port.pwmFrequency(31250);
 /**
  * Main function that take the data from the sensors
  */
-var ports = 15000;
-
-var connection = ws.connect('ws://10.40.2.139:' + ports, function() {
-    console.log('--Tessel Connected--')
-});
-
 var gatherData = function() {
 
     //initialized sound sensor
@@ -25,10 +19,8 @@ var gatherData = function() {
     var lightPin = tessel.port['GPIO'].analog[1];
     //initialized Led
     var led = tessel.port['GPIO'].pin['G3'];
-    connection.on('disconnect', function close() {
-        console.log('disconnected');
-    });
-    connection.on('text', function(data) {
+
+    pws.receive(function(data) {
         var parse = JSON.parse(data)
         var volume = parse.volume
         console.log('-receiver-')
@@ -49,7 +41,7 @@ var gatherData = function() {
             light: light,
             time: date
         };
-        connection.sendText(JSON.stringify(m));
+        pws.send(JSON.stringify(m));
 
     }, 2000)
 };

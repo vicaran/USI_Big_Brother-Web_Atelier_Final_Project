@@ -18,9 +18,9 @@ wss.on('connection', function (ws) {
     console.log('Socket ' + _id + ' connected', '*************************************')
     _id++;
     ws.on('message', function (data) {
-        console.log(data)
+        console.log(data);
         //update date
-        var date = new Date()
+        var date = new Date();
         client[ws._id].time = date;
         //send data
         if (data != 'ACK') {

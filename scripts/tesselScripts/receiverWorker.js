@@ -1,10 +1,6 @@
 var tessel = require('tessel');
-var ws = require("nodejs-websocket");
+var pws = require("./../producer_connection.js")
 
-var ports = 15000;
-var connection = ws.connect('ws://10.40.2.139:' + ports, function() {
-    console.log('--Tessel Connected--')
-});
 
 /**
  * Main function that receiver the data from network add turn on some leds
@@ -16,7 +12,7 @@ var receiveData = function() {
     var red = tessel.port['GPIO'].pin['G6'];
     var yell = tessel.port['GPIO'].pin['G3'];
     interval = setInterval(function() {
-        connection.sendText('ACK')
+        pws.ack()
     }, 3000)
 
     connection.on('text', function(data) {

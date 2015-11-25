@@ -17,4 +17,4 @@ function mainExample() {
     //}, 4000)
 }
 
-mainExample()
+mainExample();
