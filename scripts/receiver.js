@@ -29,12 +29,19 @@ wss.on('connection', function(ws) {
         client[ws._id].time = date;
         // client[ws._id].listener = false;
         //send data
+
         if (data == "ACK") {
             console.log('Listener socket recognised');
-            if (((date - client[ws._id].time) / 1000) > 5) {
-                console.log('Something went wrong, close listener socket ' + i)
-                delete client[key]
-            }
+            var interval = setInterval(function(){
+                if (((date - client[ws._id].time) / 1000) > 5) {
+                    console.log('Something went wrong, close listener socket ' + i)
+                    delete client[key]
+                }
+            },5000)
+            // if (((date - client[ws._id].time) / 1000) > 5) {
+            //     console.log('Something went wrong, close listener socket ' + i)
+            //     delete client[key]
+            // }
         } else {
             sendAll(data, date)
         }
