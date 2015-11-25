@@ -30,7 +30,6 @@ wss.on('connection', function (ws) {
         } else{
             sendAll(data, date)
         }
-        
     });
 
     ws.on('close', function close() {
