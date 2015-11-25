@@ -18,6 +18,11 @@ wss.on('open', function(ws){
 })
 
 wss.on('connection', function (ws) {
+    console.log('connection opened____________');
+    ws._id = _id;
+    console.log('This is ws:', ws);
+    console.log('And this is ws._id:', ws._id);
+    
     ws._id = _id
     client[_id] = {
         time: '',
