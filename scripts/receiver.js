@@ -10,23 +10,16 @@ var WebSocketServer = require('ws').Server,
 var client = {}
 var _id = 0
 
-wss.on('open', function(ws){
-    console.log('connection opened____________');
-    ws._id = _id;
-    console.log('This is ws:', ws);
-    console.log('And this is ws._id:', ws._id);
-})
-
 wss.on('connection', function (ws) {
     console.log('connection opened____________');
     ws._id = _id;
-    console.log('This is ws:', ws);
     console.log('And this is ws._id:', ws._id);
-    
+
     ws._id = _id
     client[_id] = {
         time: '',
-        ws: ws
+        ws: ws,
+        listener: true 
     }
     _id++
     console.log(client, '*************************************')
@@ -34,6 +27,7 @@ wss.on('connection', function (ws) {
         //update date
         var date = new Date()
         client[ws._id].time = date;
+        client[_id].listener = false;
         //send data
         sendAll(data, date)
     });
@@ -57,7 +51,7 @@ function sendAll(data, d) {
             console.log('d: ', d)
             console.log('client[i].time: ', client[key].time)
 
-            if (((d - client[key].time)/ 1000) > 5) {
+            if (((d - client[key].time)/ 1000) > 5 && client[key].listener == false) {
                 console.log('Something went wrong, close socket ' + i)
                 //delete socket
                 delete client[key]
