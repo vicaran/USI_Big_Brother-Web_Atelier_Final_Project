@@ -19,7 +19,6 @@ wss.on('connection', function(ws) {
         ws: ws,
     }
     _id++
-    // console.log(client, '*************************************')
     ws.on('message', function(data) {
         //update date
         var date = new Date()

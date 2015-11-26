@@ -26,8 +26,9 @@ var gatherData = function() {
         console.log('-receiver- ', parse);
         if (parse.light < 230) {
             led.write(1)
-        } else {
+        }else {
             led.write(0)
+
         }
         setColor(volume);
     });
@@ -40,7 +41,7 @@ var gatherData = function() {
             light: light,
             time: Date.now()
         };
-        pws.send(JSON.stringify(data));
+        pws.send(data);
 
     }, 2000)
 };

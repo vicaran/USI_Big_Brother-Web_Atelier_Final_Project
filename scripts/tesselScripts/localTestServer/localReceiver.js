@@ -40,11 +40,11 @@ function sendAll(data, d) {
     var keys = Object.keys(client)
     console.log(keys.length)
     for (var i = 0; i < keys.length; i++) {
-        var key = keys[i]
+        var key = keys[i];
         try {
             console.log('SOCKET ', key, ' **********')
             console.log(keys)
-            console.log('d: ', d)
+            console.log('d: ', d);
             console.log('client[i].time: ', client[key].time)
 
             if (((d - client[key].time) / 1000) > 5) {
