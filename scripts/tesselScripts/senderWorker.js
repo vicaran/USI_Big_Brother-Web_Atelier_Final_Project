@@ -21,10 +21,11 @@ var gatherData = function () {
     var led = tessel.port['GPIO'].pin['G3'];
 
     pws.receive(function (data) {
-        var parse = JSON.parse(data)
         if (data == "RESET") {
         }
         else {
+            var parse = JSON.parse(data)
+
             var volume = parse.volume;
             console.log('-receiver- ', parse);
             if (parse.light < 230) {

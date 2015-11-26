@@ -16,7 +16,6 @@ var receiveData = function() {
 
     pws.receive(function(data) {
         console.log(data, 'DATA NON PARSATO DIO PRESEPE')
-        var parse = JSON.parse(data)
         console.log(parse)
         if (data == "RESET") {
             green.write(0);
@@ -24,6 +23,8 @@ var receiveData = function() {
             red.write(0);
             yell.write(0);
         } else {
+            var parse = JSON.parse(data)
+
             var volume = parse.volume
             if (parse.light < 230) {
                 yell.write(1)
