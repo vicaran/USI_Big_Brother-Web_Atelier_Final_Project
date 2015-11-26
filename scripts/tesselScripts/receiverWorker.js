@@ -14,7 +14,7 @@ var receiveData = function() {
         pws.ack()
     }, 3000)
 
-    connection.on('text', function(data) {
+    pws.receive(function(data) {
         var parse = JSON.parse(data)
         var volume = parse.volume
         if (parse.light < 230) {
@@ -40,6 +40,6 @@ var receiveData = function() {
             red.write(1)
         }
     })
-};
+}
 
 receiveData()
