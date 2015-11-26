@@ -1,5 +1,5 @@
 var tessel = require('tessel');
-var pws = require("./../producer_connection.js")
+var pws = require("./producer_connection.js")
 //initialize RGB Led variables (R + G B)
 var red = tessel.port['GPIO'].pwm[0];
 var blue = tessel.port['GPIO'].pwm[1];
@@ -22,8 +22,8 @@ var gatherData = function() {
 
     pws.receive(function(data) {
         var parse = JSON.parse(data)
-        var volume = parse.volume
-        console.log('-receiver-')
+        var volume = parse.volume;
+        console.log('-receiver- ', data);
         if (parse.light < 230) {
             led.write(1)
         } else {

@@ -1,5 +1,5 @@
 var tessel = require('tessel');
-var pws = require("./../producer_connection.js")
+var pws = require("./producer_connection.js")
 
 
 /**
