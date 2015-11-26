@@ -49,6 +49,7 @@ function sendAll(data, d) {
                 delete client[key]
                 keys = Object.keys(client)
                 for (var i = 0; i < keys.length; i++) {
+                    key = keys[i]
                     console.log('DIOCAN RESET')
                     client[key].ws.send("RESET")
                 }
