@@ -15,13 +15,13 @@ var receiveData = function() {
     }, 4500)
 
     pws.receive(function(data) {
-        if (data == "RESET"){
+        var parse = JSON.parse(data)
+        if (parse == "RESET"){
             green.write(0);
             blue.write(0);
             red.write(0);
             yell.write(0);
         }
-        var parse = JSON.parse(data)
         var volume = parse.volume
         if (parse.light < 230) {
             yell.write(1)
