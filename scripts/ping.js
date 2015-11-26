@@ -6,18 +6,12 @@
 var k = require('./../k_globals/koala.js')
 
 
-k.createNode(function(msg) {
-
-	k.send('ping')
-	console.log('sent: ping')
-	
-}).start()
-
-
-k.onbinding = function() {
+setInterval(function(msg) {
 
 	k.send('ping')
 
-}
+}, 1000);
+
+
 
 console.log('ping started')
