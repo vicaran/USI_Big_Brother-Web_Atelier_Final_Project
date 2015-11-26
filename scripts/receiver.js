@@ -40,6 +40,7 @@ wss.on('connection', function(ws) {
 
 function sendAll(data, d) {
     var keys = Object.keys(client)
+    console.log('THIS IS DATA:', data);
     console.log("There is/are: " + keys.length + " client/s connected receiving the data.")
     for (var i = 0; i < keys.length; i++) {
         var key = keys[i]
