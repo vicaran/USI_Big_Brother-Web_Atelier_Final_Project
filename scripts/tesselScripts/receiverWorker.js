@@ -15,8 +15,6 @@ var receiveData = function() {
     }, 4500)
 
     pws.receive(function(data) {
-        console.log(data, 'DATA NON PARSATO DIO PRESEPE')
-        console.log(parse)
         if (data == "RESET") {
             green.write(0);
             blue.write(0);
