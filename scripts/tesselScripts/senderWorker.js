@@ -22,7 +22,7 @@ var gatherData = function () {
 
     pws.receive(function (data) {
         var parse = JSON.parse(data)
-        if (parse == "RESET") {
+        if (data == "RESET") {
         }
         else {
             var volume = parse.volume;

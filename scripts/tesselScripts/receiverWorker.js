@@ -18,7 +18,7 @@ var receiveData = function() {
         console.log(data, 'DATA NON PARSATO DIO PRESEPE')
         var parse = JSON.parse(data)
         console.log(parse)
-        if (parse == "RESET") {
+        if (data == "RESET") {
             green.write(0);
             blue.write(0);
             red.write(0);
