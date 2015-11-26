@@ -36,8 +36,8 @@
           <file leaf-file-name="receiverWorker.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/receiverWorker.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.420765">
-                  <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.8989071">
+                  <caret line="47" column="2" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
                   <folding />
                 </state>
               </provider>
@@ -85,7 +85,7 @@
             <entry file="file://$PROJECT_DIR$/senderWorker.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="51" column="3" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="28" />
+                  <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
@@ -94,8 +94,8 @@
           <file leaf-file-name="receiver.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/../receiver.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5163934">
-                  <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+                <state vertical-scroll-proportion="0.36338797">
+                  <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -128,10 +128,10 @@
         <option value="$PROJECT_DIR$/SensorsWorker.js" />
         <option value="$PROJECT_DIR$/servoProducerExample.js" />
         <option value="$PROJECT_DIR$/localTestServer/localReceiver.js" />
-        <option value="$PROJECT_DIR$/receiverWorker.js" />
         <option value="$PROJECT_DIR$/producer_connection.js" />
         <option value="$PROJECT_DIR$/senderWorker.js" />
         <option value="$PROJECT_DIR$/../../public/js/scripts/receiver.js" />
+        <option value="$PROJECT_DIR$/receiverWorker.js" />
         <option value="$PROJECT_DIR$/../receiver.js" />
       </list>
     </option>
@@ -530,14 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/receiverWorker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.420765">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../public/js/scripts/receiver.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28688523">
@@ -546,18 +538,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/receiverWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8989071">
+          <caret line="47" column="2" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/senderWorker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="3" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="28" />
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../receiver.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5163934">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.36338797">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
           <folding />
         </state>
       </provider>

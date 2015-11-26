@@ -46,6 +46,6 @@ var receiveData = function() {
             red.write(1)
         }
     })
-}
+};
 
-receiveData()
+receiveData();

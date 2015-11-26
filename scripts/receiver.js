@@ -26,9 +26,9 @@ wss.on('connection', function(ws) {
         var date = new Date()
         client[ws._id].time = date;
         //send data
-        data = JSON.parse(data)
-        if (data != "ACK") {
-            console.log(data,'***************************************************************')
+        temp = JSON.parse(data)
+        if (temp != "ACK") {
+            console.log(temp,'***************************************************************')
             sendAll(data, date)
         }
     });
