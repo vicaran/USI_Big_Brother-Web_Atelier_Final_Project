@@ -1,7 +1,6 @@
 var tessel = require('tessel');
 var pws = require("./producer_connection.js")
 
-
 /**
  * Main function that receiver the data from network add turn on some leds
  */
