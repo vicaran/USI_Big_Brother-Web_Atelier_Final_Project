@@ -15,6 +15,7 @@ var receiveData = function() {
     }, 4500)
 
     pws.receive(function(data) {
+        console.log(data,'DATA NON PARSATO DIO PRESEPE')
         var parse = JSON.parse(data)
         console.log(parse)
         if (parse == "RESET"){
