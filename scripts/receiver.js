@@ -46,7 +46,10 @@ function sendAll(data, d) {
         try {
             if (((d - client[key].time) / 1000) > 5) {
                 console.log('Connection with client lost, close socket with id: ' + i + ".")
-                sendAll('RESET',d)
+                keys = Object.keys(client)
+                for (var i = 0; i < keys.length; i++) {
+                    client[key].ws.send("RESET")
+                }
                 //delete socket
                 delete client[key]
             } else {
