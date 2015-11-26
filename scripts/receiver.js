@@ -46,7 +46,7 @@ function sendAll(data, d) {
         try {
             if (((d - client[key].time) / 1000) > 5) {
                 console.log('Connection with client lost, close socket with id: ' + i + ".")
-                data = '';
+                sendAll('RESET',d)
                 //delete socket
                 delete client[key]
             } else {
