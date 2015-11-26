@@ -46,13 +46,12 @@ function sendAll(data, d) {
         try {
             if (((d - client[key].time) / 1000) > 5) {
                 console.log('Connection with client lost, close socket with id: ' + i + ".")
+                delete client[key]
                 keys = Object.keys(client)
                 for (var i = 0; i < keys.length; i++) {
                     console.log('DIOCAN RESET')
                     client[key].ws.send("RESET")
                 }
-                //delete socket
-                delete client[key]
             } else {
                 temp = JSON.parse(data)
                 if (temp != "ACK") {
