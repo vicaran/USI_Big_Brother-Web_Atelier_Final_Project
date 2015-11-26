@@ -12,6 +12,8 @@ var _id = 0
 
 wss.on('connection', function(ws) {
     console.log('____________New Connection Opened____________');
+    console.log('There are ' + Object.keys(client).length.toString() + ' connections');
+
     var fDate = new Date()
     ws._id = _id
     client[_id] = {
@@ -39,15 +41,12 @@ wss.on('connection', function(ws) {
 
 function sendAll(data, d) {
     var keys = Object.keys(client)
-    console.log('THIS IS DATA:', data);
-    console.log("There is/are: " + keys.length + " client/s connected receiving the data.")
     for (var i = 0; i < keys.length; i++) {
         var key = keys[i]
         try {
-            // console.log('SOCKET ', key, ' **********')
-            // console.log(keys)
             if (((d - client[key].time) / 1000) > 5) {
                 console.log('Connection with client lost, close socket with id: ' + i + ".")
+                data = '';
                 //delete socket
                 delete client[key]
             } else {

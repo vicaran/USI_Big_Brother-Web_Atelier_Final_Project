@@ -1,6 +1,6 @@
 var tessel = require('tessel');
 var pws = require("./producer_connection.js")
-    //initialize RGB Led variables (R + G B)
+//initialize RGB Led variables (R + G B)
 var red = tessel.port['GPIO'].pwm[0];
 var blue = tessel.port['GPIO'].pwm[1];
 var green = tessel.port['GPIO'].pwm[2];
@@ -11,7 +11,7 @@ port.pwmFrequency(31250);
 /**
  * Main function that take the data from the sensors
  */
-var gatherData = function() {
+var gatherData = function () {
 
     //initialized sound sensor
     var soundPin = tessel.port['GPIO'].analog[0];
@@ -20,19 +20,19 @@ var gatherData = function() {
     //initialized Led
     var led = tessel.port['GPIO'].pin['G3'];
 
-    pws.receive(function(data) {
+    pws.receive(function (data) {
         var parse = JSON.parse(data)
         var volume = parse.volume;
         console.log('-receiver- ', parse);
         if (parse.light < 230) {
             led.write(1)
-        }else {
+        } else {
             led.write(0)
 
         }
         setColor(volume);
     });
-    interval = setInterval(function() {
+    interval = setInterval(function () {
 
         var volume = gatherSound(soundPin);
         var light = lightPin.read() * lightPin.resolution;
@@ -50,7 +50,7 @@ var gatherData = function() {
  * This function set the RGB Led. Low noise = green, medium = blue and high = red
  * @param {number} volume
  */
-var setColor = function(volume) {
+var setColor = function (volume) {
 
     if (volume < 10) {
 
@@ -78,7 +78,7 @@ var setColor = function(volume) {
  * @param pin - the analog pin of the sound sensor
  * @returns {number} volume
  */
-var gatherSound = function(pin) {
+var gatherSound = function (pin) {
     var volume = 0.0; // peak-to-peak level
 
     var signalMax = 0;
