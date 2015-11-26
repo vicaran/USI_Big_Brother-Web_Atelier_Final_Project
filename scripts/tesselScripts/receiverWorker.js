@@ -12,7 +12,7 @@ var receiveData = function() {
     var yell = tessel.port['GPIO'].pin['G3'];
     interval = setInterval(function() {
         pws.ack()
-    }, 3000)
+    }, 4500)
 
     pws.receive(function(data) {
         var parse = JSON.parse(data)
