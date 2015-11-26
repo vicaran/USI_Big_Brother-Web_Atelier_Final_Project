@@ -16,6 +16,7 @@ var receiveData = function() {
 
     pws.receive(function(data) {
         var parse = JSON.parse(data)
+        console.log(parse)
         if (parse == "RESET"){
             green.write(0);
             blue.write(0);
