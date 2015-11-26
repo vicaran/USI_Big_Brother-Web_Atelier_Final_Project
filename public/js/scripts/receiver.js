@@ -10,7 +10,7 @@ var WebSocketServer = require('ws').Server,
 var client = {}
 var _id = 0
 
-wss.on('connection', function(ws) {
+wss.on('connection', function (ws) {
     console.log('____________New Connection Opened____________');
     console.log('There are ' + Object.keys(client).length.toString() + ' connections');
 
@@ -21,13 +21,13 @@ wss.on('connection', function(ws) {
         ws: ws,
     }
     _id++
-    ws.on('message', function(data) {
+    ws.on('message', function (data) {
         //update date
         var date = new Date()
         client[ws._id].time = date;
         //send data
         if (data != "ACK") {
-            console.log(data,'***************************************************************')
+            console.log(data, '***************************************************************')
             sendAll(data, date)
         }
     });
