@@ -13,5 +13,4 @@ setInterval(function(msg) {
 }, 1000);
 
 
-k.send('sending ping... ');
 console.log('ping started');
