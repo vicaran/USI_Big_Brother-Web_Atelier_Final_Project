@@ -19,9 +19,10 @@ k.createNode(function(data) {
 //create the hidden div that will contain the received data
 k.createHTML('data', '<div id="newdata" style="display:none;"></div>');
 k.createHTML('canvas', '<canvas id="canvas" width="500px" height="500px"></canvas>');
+k.createHTML('data', '<div id="newdata1" style="display:none;"></div>');
 k.createHTML('canvas', '<canvas id="canvas1" width="500px" height="500px"></canvas>');
 
 
 
 //add the graph script
-k.createScript('our_graph', 'js/scripts/gau_graph.js');
+k.createScript('our_graph', 'js/scripts/ire_graph.js');
