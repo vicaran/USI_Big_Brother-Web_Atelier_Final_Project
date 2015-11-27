@@ -20,16 +20,26 @@ var myLine;
 var myRealLine;
 var ctx = document.getElementById("canvas").getContext("2d");
 var ctx1 = document.getElementById("canvas1").getContext("2d");
+var ctx2 = document.getElementById("canvas2").getContext("2d");
+var ctx3 = document.getElementById("canvas3").getContext("2d");
 
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
 
 myLine = new Chart(ctx);
 myLine1 = new Chart(ctx1);
+myLine2 = new Chart(ctx2);
+myLine3 = new Chart(ctx3);
 myRealLine = myLine.Line(lineChartData, {
 	responsive: true
 });
 myRealLine1 = myLine1.Line(lineChartData, {
+	responsive: true
+});
+myRealLine2 = myLine2.Line(lineChartData, {
+	responsive: true
+});
+myRealLine3 = myLine3.Line(lineChartData, {
 	responsive: true
 });
 
