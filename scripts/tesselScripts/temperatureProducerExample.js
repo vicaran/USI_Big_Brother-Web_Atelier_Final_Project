@@ -5,7 +5,7 @@
 var tessel = require('tessel');
 
 var main = function () {
-    var tempPin = tessel.port['GPIO'].pin['A1'];
+    var tempPin = tessel.port['GPIO'].pin['A3'];
     var voltage = 0;
     var temperature = 0.0
     interval = setInterval(function () {
