@@ -25,4 +25,4 @@ k.createHTML('canvas1', '<canvas id="canvas1" width="500px" height="500px"></can
 
 
 //add the graph script
-k.createScript('our_graph', 'js/scripts/ire_graph.js');
+k.createScript('our_graph', 'js/scripts/gau_graph.js');

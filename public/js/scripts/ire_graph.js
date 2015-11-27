@@ -20,8 +20,7 @@ var myLine;
 var myRealLine;
 var ctx = document.getElementById("canvas").getContext("2d");
 var ctx1 = document.getElementById("canvas1").getContext("2d");
-var ctx2 = document.getElementById("canvas2").getContext("2d");
-var ctx3 = document.getElementById("canvas3").getContext("2d");
+
 
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;

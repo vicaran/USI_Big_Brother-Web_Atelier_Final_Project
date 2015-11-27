@@ -15,9 +15,26 @@ var lineChartData = {
 	]
 
 }
+
+var barChartData = {
+	labels : [],
+	datasets : [
+		{
+			label: "Noise Data Set",
+			fillColor : "rgba(220,220,220,0.2)",
+			strokeColor : "rgba(220,220,220,1)",
+			highlightFill : "#fff",
+			highlightStroke : "rgba(220,220,220,1)",
+			data : []
+		}
+	]
+
+}
 var updateInterval;
 var myLine;
 var myRealLine;
+var myBar;
+var myRealBar;
 var ctx = document.getElementById("canvas").getContext("2d");
 var ctx1 = document.getElementById("canvas1").getContext("2d");
 Chart.defaults.global.animation = false;
@@ -28,7 +45,14 @@ myRealLine = myLine.Line(lineChartData, {
 	responsive: true
 });
 
-var updateGraph = function(temperature, time) {
+myBar = new Chart(ctx1);
+myRealBar = myBar.Bar(data, {
+	barShowStroke: false
+	});
+
+
+
+var updateGraphTemp = function(temperature, time) {
 	console.log(temperature, time)
 	
 	myRealLine.destroy();
@@ -49,4 +73,27 @@ var updateGraph = function(temperature, time) {
   //empty the content of the div
   document.getElementById('newdata').setAttribute('temperature', "");
   document.getElementById('newdata').setAttribute('time', "");
+}
+
+var updateGraphNoise = function(noise, time) {
+	console.log(noise, time)
+	
+	myRealBar.destroy();
+		 
+  //push newly received data (time & data)
+  barChartData.datasets[0].data.push(noise);
+  barChartData.labels.push(time);
+
+  //if longer than 20, remove the first one
+  if(barChartData.datasets[0].data.length > 20){
+    barChartData.datasets[0].data.shift();
+    barChartData.labels.shift();
+  }
+
+  //draw it
+  myBar.Bar(barChartData);
+  
+  //empty the content of the div
+  document.getElementById('newdata1').setAttribute('noise', "");
+  document.getElementById('newdata1').setAttribute('time', "");
 }
