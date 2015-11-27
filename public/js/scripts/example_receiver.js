@@ -4,6 +4,7 @@ var k = require('./../../../k_globals/koala.js')
 
 //script of the operator
 k.createNode(function(data) {
+	var data = JSON.parse(data);
 	k.callFunction("updateGraph", [data.content, data.time]);
 });
 
