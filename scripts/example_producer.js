@@ -12,6 +12,8 @@ setInterval(function(msg) {
 		time: new Date().getTime(),
 		content: Math.floor((Math.random()*100)+1),
 		};
+		
+	
 
 	k.send(JSON.stringify(data));
 	k.send(JSON.stringify(data1));
