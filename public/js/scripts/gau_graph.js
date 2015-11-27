@@ -36,6 +36,8 @@ var myRealLine;
 var myBar;
 var myRealBar;
 var ctx = document.getElementById("canvas").getContext("2d");
+ctx.canvas.width = 300;
+ctx.canvas.height = 300;
 var ctx1 = document.getElementById("canvas1").getContext("2d");
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
