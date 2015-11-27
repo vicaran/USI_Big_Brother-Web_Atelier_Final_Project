@@ -18,9 +18,9 @@ k.createNode(function(data) {
 
 //create the hidden div that will contain the received data
 k.createHTML('data', '<div id="newdata" style="display:none;"></div>');
-k.createHTML('canvas', '<canvas id="canvas" width="500px" height="500px"></canvas>');
+k.createHTML('canvas', '<canvas id="canvas" width="400px" height="400px"></canvas>');
 k.createHTML('data1', '<div id="newdata1" style="display:none;"></div>');
-k.createHTML('canvas1', '<canvas id="canvas1" width="500px" height="500px"></canvas>');
+k.createHTML('canvas1', '<canvas id="canvas1" width="400px" height="400px"></canvas>');
 
 
 
