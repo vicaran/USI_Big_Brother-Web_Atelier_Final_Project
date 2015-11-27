@@ -46,7 +46,7 @@ myRealLine = myLine.Line(lineChartData, {
 });
 
 myBar = new Chart(ctx1);
-myRealBar = myBar.Bar(data, {
+myRealBar = myBar.Bar(barChartData, {
 	barShowStroke: false
 	});
 
