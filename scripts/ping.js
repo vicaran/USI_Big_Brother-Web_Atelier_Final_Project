@@ -12,5 +12,7 @@ setInterval(function(msg) {
 
 }, 1000);
 
-
+k.createNode(function(msg){
+	console.log(msg);	
+});
 console.log('ping started');
