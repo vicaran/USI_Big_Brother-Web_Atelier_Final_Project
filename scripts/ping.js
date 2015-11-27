@@ -9,7 +9,9 @@ var k = require('./../k_globals/koala.js')
 setInterval(function(msg) {
 
 	k.send('ping');
-	console.log(msg);
+	k.createNode(function(m){
+		console.log(m);
+	});
 
 }, 1000);
 
