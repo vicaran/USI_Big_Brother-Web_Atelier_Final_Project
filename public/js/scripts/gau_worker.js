@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream
-var pws = require("./../producer_connection.js")
-var k = require('./../../../k_globals/koala.js')
-=======
+
 var pws = require("./producer_connection.js")
->>>>>>> Stashed changes
 
 /**
  * Main function that receiver the data from network add turn on some leds
@@ -23,7 +19,6 @@ var receiveData = function() {
 		drawGraph =  "updateGraphNoise";
 	}
 
-	k.callFunction(drawGraph, [data.content, data.time]);
 });
 
 //create the hidden div that will contain the received data
