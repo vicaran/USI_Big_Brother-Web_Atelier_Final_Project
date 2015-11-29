@@ -26,7 +26,7 @@ wss.on('connection', function (ws) {
     ws.on('message', function (data) {
         if (data == 'BROWSER') {
             console.log('browser')
-            
+
             client[ws._id].browser = true;
         }
         //update date
