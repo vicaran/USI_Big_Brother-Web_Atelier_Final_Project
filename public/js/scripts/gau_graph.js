@@ -36,7 +36,6 @@ var myRealLine;
 var myBar;
 var myRealBar;
 var ctx = document.getElementById("canvas").getContext("2d");
-var ctx1 = document.getElementById("canvas1").getContext("2d");
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
 
@@ -44,13 +43,6 @@ myLine = new Chart(ctx);
 myRealLine = myLine.Line(lineChartData, {
 	responsive: false
 });
-
-myBar = new Chart(ctx1);
-myRealBar = myBar.Bar(barChartData, {
-	barShowStroke: false
-	});
-
-
 
 var updateGraphTemp = function(temperature, time) {
 	console.log(temperature, time)
