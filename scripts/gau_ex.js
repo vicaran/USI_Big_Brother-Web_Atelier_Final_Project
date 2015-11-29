@@ -10,9 +10,8 @@ var ht = {
 	};
 
 	var data = JSON.parse(data);
-	if(ht[data.header.type]){
 		k.callFunction(ht['noise'], [data.volume,data.light, data.time]);
-	}
+		console.log('fuck gotier')
 
 });
 
