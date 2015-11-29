@@ -16,7 +16,7 @@ setInterval(function(msg) {
 	var dataMilestone = {
 			volume: Math.floor((Math.random()*100)+1),
 			light: Math.floor((Math.random()*100)+1),
-			time: Date().now()
+			time: Date.now()
 		};
 		
 	
