@@ -4,9 +4,9 @@
 
 var ws = require("nodejs-websocket");
 
-var port = 9997;
+var port = 15000;
 var hostname = "ws://195.176.181.55:";
-var url = hostname + port.toString();
+var url = hostname + port.toString() ;
 var ready = false;
 
 var connection = ws.connect(url, function() {
