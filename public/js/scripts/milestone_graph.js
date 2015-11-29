@@ -38,7 +38,7 @@ myRealLine = myLine.Line(lineChartData, {
 });
 
 var updateGraph = function(volume, light, time) {
-	console.log(volume,ligth, time)
+	console.log(volume,light, time)
 	
 	myRealLine.destroy();
 		 
