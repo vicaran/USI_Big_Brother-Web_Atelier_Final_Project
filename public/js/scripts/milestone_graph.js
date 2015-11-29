@@ -63,11 +63,12 @@ Chart.defaults.global.showTooltips = false;
 
 myLine = new Chart(ctx);
 myRealLine = myLine.Line(lineChartData, {
-	responsive: true
+	responsive: false
 });
 
-myBar = new Chart(ctx1);
+myBar = new Chart(ctx_bar);
 myRealBar = myBar.Bar(barChartData, {
+	responsive: false,
 	barShowStroke: false
 	});
 
@@ -94,7 +95,7 @@ var updateGraphLine = function(volume, light, time) {
   myLine.Line(lineChartData);
   
   //empty the content of the div
-  document.getElementById('newdata').setAttribute('temperature', "");
+  document.getElementById('newdata').setAttribute('volume', "");
   document.getElementById('newdata').setAttribute('time', "");
 }
 
@@ -119,6 +120,6 @@ var updateGraphBar = function(volume, light, time) {
   myBar.Bar(barChartData);
   
   //empty the content of the div
-  document.getElementById('newdata1').setAttribute('noise', "");
+  document.getElementById('newdata1').setAttribute('volume', "");
   document.getElementById('newdata1').setAttribute('time', "");
 }
