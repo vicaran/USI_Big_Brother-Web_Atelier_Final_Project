@@ -3,6 +3,8 @@
  and receive the data from the tessel.
  **/
 var k = require('./../k_globals/koala.js')
+
+
 var WebSocketServer = require('ws').Server,
     wss = new WebSocketServer({
         port: 15000
@@ -24,10 +26,8 @@ wss.on('connection', function (ws) {
     }
     _id++
     ws.on('message', function (data) {
-        console.log(data)
         if (data == 'BROWSER') {
             console.log('browser')
-
             client[ws._id].browser = true;
         }
         //update date
@@ -35,9 +35,9 @@ wss.on('connection', function (ws) {
         client[ws._id].time = date;
         //send data
         if (data != "ACK") {
-            console.log(data, '***************************************************************')
+            //console.log(data, '***************************************************************')
             sendAll(data, date)
-            k.send(JSON.stringify(data))
+            k.send(data)
         }
     });
 
@@ -73,7 +73,7 @@ function sendAll(data, d) {
             }
             else {
                 client[key].ws.send(data)
-                console.log('browser')
+                //console.log('browser')
             }
         } catch (e) {
             console.log('Error: ' + e)
