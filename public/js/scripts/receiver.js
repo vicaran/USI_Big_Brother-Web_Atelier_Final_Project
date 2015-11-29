@@ -20,9 +20,13 @@ wss.on('connection', function (ws) {
     client[_id] = {
         time: fDate,
         ws: ws,
+        browser: false
     }
     _id++
     ws.on('message', function (data) {
+        if (data == 'BROWSER') {
+            client[ws._id].browser = true;
+        }
         //update date
         var date = new Date()
         client[ws._id].time = date;
@@ -35,9 +39,12 @@ wss.on('connection', function (ws) {
     });
 
     ws.on('close', function close() {
-        console.log('disconnected');
+        delete client[ws._id]
+
+        console.log('close');
     });
     ws.on('disconnect', function close() {
+        delete client[ws._id]
         console.log('disconnected');
     });
 });
@@ -47,16 +54,23 @@ function sendAll(data, d) {
     for (var i = 0; i < keys.length; i++) {
         var key = keys[i]
         try {
-            if (((d - client[key].time) / 1000) > 5) {
-                console.log('Connection with client lost, close socket with id: ' + i + ".")
-                keys = Object.keys(client)
-                for (var i = 0; i < keys.length; i++) {
-                    client[key].ws.send("RESET")
+            if (!client[key].browser) {
+                if (((d - client[key].time) / 1000) > 5) {
+                    console.log('Connection with client lost, close socket with id: ' + i + ".")
+                    keys = Object.keys(client)
+                    for (var i = 0; i < keys.length; i++) {
+                        client[key].ws.send("RESET")
+                    }
+                    //delete socket
+                    delete client[key]
                 }
-                //delete socket
-                delete client[key]
-            } else {
+                else {
+                    client[key].ws.send(data)
+                }
+            }
+            else {
                 client[key].ws.send(data)
+                console.log('browser')
             }
         } catch (e) {
             console.log('Error: ' + e)
