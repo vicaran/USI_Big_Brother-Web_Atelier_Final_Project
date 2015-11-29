@@ -73,8 +73,7 @@ var updateGraphTemp = function(temperature, time) {
 var updateGraphNoise = function(noise, time) {
 	console.log(noise, time)
 	var date = new Date(time).toUTCString();
-	myRealBar.destroy();
-		 
+
   //push newly received data (time & data)
   barChartData.datasets[0].data.push(noise);
   barChartData.labels.push(date);
