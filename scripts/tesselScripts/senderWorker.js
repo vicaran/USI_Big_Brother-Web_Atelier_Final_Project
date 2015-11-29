@@ -1,9 +1,9 @@
 var tessel = require('tessel');
 var pws = require("./producer_connection.js")
 //initialize RGB Led variables (R + G B)
-var red = tessel.port['GPIO'].pwm[0];
-var blue = tessel.port['GPIO'].pwm[1];
-var green = tessel.port['GPIO'].pwm[2];
+//var red = tessel.port['GPIO'].pwm[0];
+//var blue = tessel.port['GPIO'].pwm[1];
+//var green = tessel.port['GPIO'].pwm[2];
 //set frequency to PWM pins
 var port = tessel.port['GPIO'];
 port.pwmFrequency(31250);
@@ -28,13 +28,13 @@ var gatherData = function () {
 
             var volume = parse.volume;
             console.log('-receiver- ', parse);
-            if (parse.light < 230) {
+            if (parse.light < 500) {
                 led.write(1)
             } else {
                 led.write(0)
 
             }
-            setColor(volume);
+            //setColor(volume);
         }
     });
     interval = setInterval(function () {
@@ -48,7 +48,7 @@ var gatherData = function () {
         };
         pws.send(data);
 
-    }, 2000)
+    }, 1000)
 };
 
 /**
