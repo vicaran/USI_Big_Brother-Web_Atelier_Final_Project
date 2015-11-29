@@ -8,7 +8,7 @@ k.createNode(function(data) {
 	
 	var data = JSON.parse(data);
 	console.log(data);
-	k.callFunction(updateGraph, [data.volume, data.light ,data.time]);
+	k.callFunction('updateGraph', [data.volume, data.light ,data.time]);
 
 });
 
