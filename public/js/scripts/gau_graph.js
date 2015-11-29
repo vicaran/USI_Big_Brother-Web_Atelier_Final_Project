@@ -85,10 +85,10 @@ var updateGraphNoise = function(noise, time) {
   barChartData.labels.push(time);
 
   //if longer than 20, remove the first one
-  if(barChartData.datasets[0].data.length > 20){
-    barChartData.datasets[0].data.shift();
-    barChartData.labels.shift();
-  }
+//   if(barChartData.datasets[0].data.length > 20){
+//     barChartData.datasets[0].data.shift();
+//     barChartData.labels.shift();
+//   }
 
   //draw it
   myBar.Bar(barChartData);
