@@ -17,6 +17,7 @@ var connection = ws.connect(url, function() {
 var send = function(message) {
     if (!ready)
         return;
+    console.log('dada')
     connection.sendText(JSON.stringify(message));
 };
 var ack = function() {
