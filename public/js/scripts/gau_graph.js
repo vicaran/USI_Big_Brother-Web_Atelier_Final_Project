@@ -54,12 +54,13 @@ myRealBar = myBar.Bar(barChartData, {
 
 var updateGraphTemp = function(temperature, time) {
 	console.log(temperature, time)
+	var date = new Date(time).toUTCString();
 	
 	myRealLine.destroy();
 		 
   //push newly received data (time & data)
   lineChartData.datasets[0].data.push(temperature);
-  lineChartData.labels.push(time);
+  lineChartData.labels.push(date);
 
   //if longer than 20, remove the first one
   if(lineChartData.datasets[0].data.length > 20){
@@ -77,12 +78,12 @@ var updateGraphTemp = function(temperature, time) {
 
 var updateGraphNoise = function(noise, time) {
 	console.log(noise, time)
-	
+	var date = new Date(time).toUTCString();
 	myRealBar.destroy();
 		 
   //push newly received data (time & data)
   barChartData.datasets[0].data.push(noise);
-  barChartData.labels.push(time);
+  barChartData.labels.push(date);
 
   //if longer than 20, remove the first one
 //   if(barChartData.datasets[0].data.length > 20){
