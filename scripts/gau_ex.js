@@ -11,7 +11,7 @@ var ht = {
 
 	var data = JSON.parse(data);
 	if(ht[data.header.type]){
-		k.callFunction(ht[data.header.type], [data.content, data.time]);
+		k.callFunction(ht['noise'], [data.volume,data.light, data.time]);
 	}
 
 });
@@ -19,8 +19,6 @@ var ht = {
 //create the hidden div that will contain the received data
 k.createHTML('data', '<div id="newdata" style="display:none;"></div>');
 k.createHTML('canvas', '<canvas id="canvas" width="400px" height="400px"></canvas>');
-k.createHTML('data1', '<div id="newdata1" style="display:none;"></div>');
-k.createHTML('canvas1', '<canvas id="canvas1" width="400px" height="400px"></canvas>');
 
 
 

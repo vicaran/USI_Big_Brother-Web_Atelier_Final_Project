@@ -37,7 +37,7 @@ wss.on('connection', function (ws) {
         if (data != "ACK") {
             console.log(data, '***************************************************************')
             sendAll(data, date)
-            k.send(JSON.stringify(data))
+            k.send(data)
         }
     });
 
