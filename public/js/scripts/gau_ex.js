@@ -4,20 +4,25 @@ var k = require('./../../../k_globals/koala.js')
 
 //script of the operator
 k.createNode(function(data) {
-	var ht = {
+
+console.log(data);
+var ht = {
 		"temp": "updateGraphTemp",
 		"noise": "updateGraphNoise",
 	};
 
 	var data = JSON.parse(data);
-	k.callFunction(ht['noise'], [data.volume,data.light, data.time]);
-	console.log('fuck gotier')
+	if(ht[data.header.type]){
+		k.callFunction(ht[data.header.type], [data.content, data.time]);
+	}
 
 });
 
 //create the hidden div that will contain the received data
-k.createHTML('data', '<div id="newdata" style="display:none;"> data</div>');
-//k.createHTML('canvas', '<canvas id="canvas" width="400px" height="400px"></canvas>');
+k.createHTML('data', '<div id="newdata" style="display:none;"></div>');
+k.createHTML('canvas', '<canvas id="canvas" width="400px" height="400px"></canvas>');
+k.createHTML('data1', '<div id="newdata1" style="display:none;"></div>');
+k.createHTML('canvas1', '<canvas id="canvas1" width="400px" height="400px"></canvas>');
 
 
 
