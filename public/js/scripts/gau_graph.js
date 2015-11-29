@@ -44,6 +44,12 @@ myRealLine = myLine.Line(lineChartData, {
 	responsive: false
 });
 
+myRealBar = myBar.Bar(barChartData, {
+	barShowStroke: false
+	});
+
+
+
 var updateGraphTemp = function(temperature, time) {
 	console.log(temperature, time)
 	var date = new Date(time).toUTCString();
