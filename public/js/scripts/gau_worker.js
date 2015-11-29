@@ -1,4 +1,4 @@
-var pws = require("./producer_connection.js")
+var pws = require("./../producer_connection.js")
 var k = require('./../../../k_globals/koala.js')
 
 /**
