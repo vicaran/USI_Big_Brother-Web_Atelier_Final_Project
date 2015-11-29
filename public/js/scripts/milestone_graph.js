@@ -39,13 +39,15 @@ myRealLine = myLine.Line(lineChartData, {
 
 var updateGraph = function(volume, light, time) {
 	console.log(volume,light, time)
+	var date = new Date(time).toUTCString();
+	date = date.split(' ')[4]
 	
 	myRealLine.destroy();
 		 
   //push newly received data (time & data)
   lineChartData.datasets[0].data.push(volume);
   lineChartData.datasets[1].data.push(light);
-  lineChartData.labels.push(time);
+  lineChartData.labels.push(date);
 
   //if longer than 20, remove the first one
   if(lineChartData.datasets[0].data.length > 20 | lineChartData.datasets[1].data.length > 20){
