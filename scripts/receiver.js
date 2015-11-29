@@ -35,7 +35,7 @@ wss.on('connection', function (ws) {
         client[ws._id].time = date;
         //send data
         if (data != "ACK") {
-            console.log(data, '***************************************************************')
+            //console.log(data, '***************************************************************')
             sendAll(data, date)
             k.send(data)
         }
@@ -73,7 +73,7 @@ function sendAll(data, d) {
             }
             else {
                 client[key].ws.send(data)
-                console.log('browser')
+                //console.log('browser')
             }
         } catch (e) {
             console.log('Error: ' + e)
