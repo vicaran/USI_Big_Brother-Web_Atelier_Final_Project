@@ -87,5 +87,4 @@ var updateGraphNoise = function(noise, time) {
   //draw it
 
   //empty the content of the div
-  document.getElementById('newdata1').setAttribute('time', "");
 }
