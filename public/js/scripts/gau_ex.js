@@ -4,6 +4,8 @@ var k = require('./../../../k_globals/koala.js')
 
 //script of the operator
 k.createNode(function(data) {
+
+console.log(data);
 var ht = {
 		"temp": "updateGraphTemp",
 		"noise": "updateGraphNoise",
