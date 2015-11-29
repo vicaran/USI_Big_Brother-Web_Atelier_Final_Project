@@ -44,10 +44,6 @@ myRealLine = myLine.Line(lineChartData, {
 	responsive: false
 });
 
-myRealBar = myBar.Bar(barChartData, {
-	barShowStroke: false
-	});
-
 
 
 var updateGraphTemp = function(temperature, time) {
@@ -90,8 +86,7 @@ var updateGraphNoise = function(noise, time) {
   }
 
   //draw it
-  myBar.Bar(barChartData);
-  
+
   //empty the content of the div
   document.getElementById('newdata1').setAttribute('noise', "");
   document.getElementById('newdata1').setAttribute('time', "");
