@@ -13,10 +13,16 @@ setInterval(function(msg) {
 		content: Math.floor((Math.random()*100)+1),
 		};
 		
+	var dataMilestone = {
+			volume: Math.floor((Math.random()*100)+1),
+			light: Math.floor((Math.random()*100)+1),
+			time: Date.now()
+		};
+		
 	
-
-	k.send(JSON.stringify(data));
-	k.send(JSON.stringify(data1));
+	k.send(JSON.stringify(dataMilestone));
+	//k.send(JSON.stringify(data));
+	//k.send(JSON.stringify(data1));
 
 }, 1000);
 
