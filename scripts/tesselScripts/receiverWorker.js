@@ -23,8 +23,8 @@ var receiveData = function() {
         } else {
             var parse = JSON.parse(data)
 
-            var volume = parse.volume
-            if (parse.light < 230) {
+            var volume = parse.volume;
+            if (parse.light < 530) {
                 yell.write(1)
             }
             if (parse.light >= 230) {
