@@ -15,7 +15,7 @@ var _id = 0
 
 wss.on('connection', function (ws) {
     console.log('____________New Connection Opened____________');
-    console.log('There are ' + Object.keys(client).length.toString() + ' connections');
+    console.log('There are ' + (Object.keys(client).length +1).toString() + ' connections');
 
     var fDate = new Date()
     ws._id = _id
