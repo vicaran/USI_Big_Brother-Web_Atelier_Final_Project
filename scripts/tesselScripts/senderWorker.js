@@ -28,7 +28,7 @@ var gatherData = function () {
 
             var volume = parse.volume;
             console.log('-receiver- ', parse);
-            if (parse.light < 500) {
+            if (parse.light < 530) {
                 led.write(1)
             } else {
                 led.write(0)

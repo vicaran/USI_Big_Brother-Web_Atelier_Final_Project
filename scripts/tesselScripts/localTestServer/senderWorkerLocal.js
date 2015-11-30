@@ -34,7 +34,7 @@ var gatherData = function () {
         };
         console.log(data)
 
-    }, 1000)
+    }, 200)
 };
 
 /**
