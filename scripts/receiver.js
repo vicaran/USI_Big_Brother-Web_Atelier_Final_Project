@@ -35,7 +35,6 @@ wss.on('connection', function (ws) {
         client[ws._id].time = date;
         //send data
         if (JSON.parse(data) != "ACK") {
-            //console.log(data, '***************************************************************')
             sendAll(data, date)
             k.send(data)
         }
