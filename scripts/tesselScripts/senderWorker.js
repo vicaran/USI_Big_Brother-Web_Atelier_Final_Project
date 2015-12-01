@@ -1,5 +1,5 @@
 var tessel = require('tessel');
-var pws = require("./producer_connection.js")
+var pws = require("./producerWS.js")
 //initialize RGB Led variables (R + G B)
 //var red = tessel.port['GPIO'].pwm[0];
 //var blue = tessel.port['GPIO'].pwm[1];
