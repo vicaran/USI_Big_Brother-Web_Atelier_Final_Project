@@ -15,7 +15,7 @@ var _id = 0
 
 wss.on('connection', function (ws) {
     console.log('____________New Connection Opened____________');
-    console.log('There are ' + Object.keys(client).length.toString() + ' connections');
+    console.log('There are ' + (Object.keys(client).length +1).toString() + ' connections');
 
     var fDate = new Date()
     ws._id = _id
@@ -34,8 +34,7 @@ wss.on('connection', function (ws) {
         var date = new Date()
         client[ws._id].time = date;
         //send data
-        if (data != "ACK") {
-            //console.log(data, '***************************************************************')
+        if (JSON.parse(data) != "ACK") {
             sendAll(data, date)
             k.send(data)
         }

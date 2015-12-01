@@ -1,5 +1,5 @@
 var tessel = require('tessel');
-var pws = require("./producer_connection.js")
+var pws = require("./producerWS.js");
 
 /**
  * Main function that receiver the data from network add turn on some leds
@@ -13,7 +13,7 @@ var receiveData = function() {
     interval = setInterval(function() {
         pws.ack()
     }, 4500);
-
+    //TODO use switch -- case
     pws.receive(function(data) {
         if (data == "RESET") {
             green.write(0);
@@ -23,8 +23,8 @@ var receiveData = function() {
         } else {
             var parse = JSON.parse(data)
 
-            var volume = parse.volume
-            if (parse.light < 230) {
+            var volume = parse.volume;
+            if (parse.light < 530) {
                 yell.write(1)
             }
             if (parse.light >= 230) {
