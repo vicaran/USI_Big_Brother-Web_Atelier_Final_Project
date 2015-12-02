@@ -8,6 +8,7 @@
 !/scripts/*
 !/public/
 /public/*
+!/public/css/
 !/public/js/
 /public/js/*
 !/public/js/scripts/
