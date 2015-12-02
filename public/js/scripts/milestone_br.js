@@ -25,4 +25,4 @@ k.createHTML('graph-container-close','</div>');
 k.createScript('our_graph', 'js/scripts/milestone_graph.js');
 
 //css
-k.createCSS('')
+k.createCSS('csstest', '/css/test.css')
