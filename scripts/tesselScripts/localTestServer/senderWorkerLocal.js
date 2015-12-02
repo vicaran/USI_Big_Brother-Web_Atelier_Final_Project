@@ -3,10 +3,11 @@
  */
 var tessel = require('tessel');
 //initialize RGB Led variables (R + G B)
-//var red = tessel.port['GPIO'].pwm[0];
+var ledStrip = tessel.port['GPIO'].pwm[0];
 //var blue = tessel.port['GPIO'].pwm[1];
 //var green = tessel.port['GPIO'].pwm[2];
 //set frequency to PWM pins
+var count = 0;
 var port = tessel.port['GPIO'];
 port.pwmFrequency(31250);
 
@@ -15,24 +16,25 @@ port.pwmFrequency(31250);
  */
 var gatherData = function () {
 
-    //initialized sound sensor
-    var soundPin = tessel.port['GPIO'].analog[0];
-    //initialized light sensor
-    var lightPin = tessel.port['GPIO'].analog[1];
-    //initialized Led
-    var led = tessel.port['GPIO'].pin['G3'];
+    ////initialized sound sensor
+    //var soundPin = tessel.port['GPIO'].analog[0];
+    ////initialized light secdnsor
+    //var lightPin = tessel.port['GPIO'].analog[1];
+    ////initialized Led
+    //var led = tessel.port['GPIO'].pin['G3'];
 
 
     interval = setInterval(function () {
-
-        var volume = gatherSound(soundPin);
-        var light = lightPin.read() * lightPin.resolution;
-        var data = {
-            volume: volume,
-            light: light,
-            time: Date.now()
-        };
-        console.log(data)
+        count = 255/10 %255;
+        ledStrip.write(1);
+        //var volume = gatherSound(soundPin);
+        //var light = lightPin.read() * lightPin.resolution;
+        //var data = {
+        //    volume: volume,
+        //    light: light,
+        //    time: Date.now()
+        //};
+        //console.log(data)
 
     }, 200)
 };
