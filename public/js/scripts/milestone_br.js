@@ -21,7 +21,8 @@ k.createHTML('data1', '<div id="newdata1" style="display:none;"> Hello</div>');
 k.createHTML('canvas1', '<canvas id="canvas1" width="400px" height="400px"></canvas>');
 k.createHTML('graph-container-close','</div>');
 
-
-
 //add the graph script
 k.createScript('our_graph', 'js/scripts/milestone_graph.js');
+
+//css
+k.createCSS('')
