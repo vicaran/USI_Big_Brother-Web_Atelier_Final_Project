@@ -56,6 +56,7 @@ wss.on('connection', function (ws) {
 function sendAll(data, d) {
     var keys = Object.keys(client)
     for (var i = 0; i < keys.length; i++) {
+        console.log("Data:", data);
         var key = keys[i]
         try {
             if (!client[key].browser) {
