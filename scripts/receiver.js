@@ -2,7 +2,7 @@
  This is the script that opens the socket
  and receive the data from the tessel.
  **/
-var k = require('./../k_globals/koala.js')
+//var k = require('./../k_globals/koala.js')
 
 
 var WebSocketServer = require('ws').Server,
@@ -35,8 +35,8 @@ wss.on('connection', function (ws) {
         client[ws._id].time = date;
         //send data
         if (JSON.parse(data) != "ACK") {
-            sendAll(data, date)
-            k.send(data)
+            sendAll(data, date);
+            //k.send(data)
         }
     });
 
