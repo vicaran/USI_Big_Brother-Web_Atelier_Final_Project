@@ -87,7 +87,8 @@ button.addEventListener('click', switchGraphs);
 //<-------------------------------------------------->
 function switchGraphs(){
 	var canvas1 = document.getElementById('canvas1');
-	canvas1.innerHTML = "hello";
+	canvas1.style.display = "none";
+	//console.log(canvas1);
 
 }
 
