@@ -5,3 +5,7 @@ body {
 #arrow { 
     color: #FF0D3F;
 }
+
+.hidden {
+	display: none;
+}
