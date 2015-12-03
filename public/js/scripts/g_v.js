@@ -18,6 +18,7 @@ var htmlString = '<div id="graph-container">' +
 				'<div id="newdata" style="display:none;"></div>' +
 				'<canvas id="canvas" width="400px" height="400px"></canvas>' +
 				'<div id="legend" class="chart-legend"></div>'+
+				'<button id="button">click me</button>'+
 				'<div id="newdata1" style="display:none;"> Hello</div>' +
  				'<canvas id="canvas1" width="400px" height="400px"></canvas>' +
  				'<div id="legend1" class="chart-legend"></div>'+
