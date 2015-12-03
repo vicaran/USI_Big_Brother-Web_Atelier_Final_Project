@@ -68,6 +68,7 @@ Chart.defaults.global.showTooltips = false;
 //<------------------------------------------------------------------->
 myLine = new Chart(ctx);
 myRealLine = myLine.Line(lineChartData, {
+	tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
 	responsive: false
 });
 
@@ -78,7 +79,7 @@ myRealBar = myBar.Bar(barChartData, {
 	});
 
 document.getElementById('legend').innerHTML = myLine.generateLegend();
-document.getElementById('legend1').innerHTML = myBar.generateLegend();
+//document.getElementById('legend1').innerHTML = myBar.generateLegend();
 
 
 //<-------------------------------------------------->
@@ -106,8 +107,8 @@ var updateGraphLine = function(volume, light, time) {
   myLine.Line(lineChartData);
   
   //empty the content of the div
-  //document.getElementById('newdata').setAttribute('volume', "");
-  //document.getElementById('newdata').setAttribute('time', "");
+  document.getElementById('newdata').setAttribute('volume', "");
+  document.getElementById('newdata').setAttribute('time', "");
 }
 
 
