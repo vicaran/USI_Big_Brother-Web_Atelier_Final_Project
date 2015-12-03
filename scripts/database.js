@@ -2,7 +2,7 @@ var k = require('./../k_globals/koala.js')
 
 var addToDatabase = function(data, date) {
     var jsonValue = JSON.parse(data);
-    console.log('Data received:', rcv);
+    console.log('Data received:', jsonValue);
     var keyDate = convertDate(date);
     console.log('And this is the date: ', keyDate);
 
