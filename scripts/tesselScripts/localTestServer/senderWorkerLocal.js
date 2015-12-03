@@ -16,27 +16,27 @@ port.pwmFrequency(31250);
  */
 var gatherData = function () {
 
-    ////initialized sound sensor
-    //var soundPin = tessel.port['GPIO'].analog[0];
-    ////initialized light secdnsor
-    //var lightPin = tessel.port['GPIO'].analog[1];
-    ////initialized Led
-    //var led = tessel.port['GPIO'].pin['G3'];
+    //initialized sound sensor
+    var soundPin = tessel.port['GPIO'].analog[0];
+    //initialized light secdnsor
+    var lightPin = tessel.port['GPIO'].analog[1];
+    //initialized Led
+    var led = tessel.port['GPIO'].pin['G3'];
 
 
     interval = setInterval(function () {
         count = 255/10 %255;
         ledStrip.write(1);
-        //var volume = gatherSound(soundPin);
-        //var light = lightPin.read() * lightPin.resolution;
-        //var data = {
-        //    volume: volume,
-        //    light: light,
-        //    time: Date.now()
-        //};
-        //console.log(data)
+        var volume = gatherSound(soundPin);
+        var light = lightPin.read() * lightPin.resolution;
+        var data = {
+            volume: volume,
+            light: light,
+            time: Date.now()
+        };
+        console.log(data)
 
-    }, 200)
+    }, 1000)
 };
 
 /**

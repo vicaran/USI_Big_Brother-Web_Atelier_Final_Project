@@ -17,8 +17,8 @@ wss.on('connection', function (ws) {
     console.log('____________New Connection Opened____________');
     console.log('There are ' + (Object.keys(client).length +1).toString() + ' connections');
 
-    var fDate = new Date()
-    ws._id = _id
+    var fDate = new Date();
+    ws._id = _id;
     client[_id] = {
         time: fDate,
         ws: ws,
@@ -41,13 +41,15 @@ wss.on('connection', function (ws) {
     });
 
     ws.on('close', function close() {
-        delete client[ws._id]
-
-        console.log('close');
+        delete client[ws._id];
+        console.log('close socket: ' +  _id);
+        _id --;
     });
     ws.on('disconnect', function close() {
-        delete client[ws._id]
-        console.log('disconnected');
+        delete client[ws._id];
+        console.log('disconnected socket: ' + _id);
+        _id --;
+
     });
 });
 
@@ -65,6 +67,8 @@ function sendAll(data, d) {
                     }
                     //delete socket
                     delete client[key]
+                    _id --;
+
                 }
                 else {
                     client[key].ws.send(data)
