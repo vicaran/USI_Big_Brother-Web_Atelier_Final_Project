@@ -23,8 +23,8 @@ wss.on('connection', function (ws) {
         time: fDate,
         ws: ws,
         browser: false
-    }
-    _id++
+    };
+    _id++;
     ws.on('message', function (data) {
         if (data == 'BROWSER') {
             console.log('browser')
@@ -35,7 +35,7 @@ wss.on('connection', function (ws) {
         client[ws._id].time = date;
         //send data
         if (JSON.parse(data) != "ACK") {
-            sendAll(data, date)
+            sendAll(data, date);
             k.send(data)
         }
     });

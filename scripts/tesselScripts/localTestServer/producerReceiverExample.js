@@ -2,7 +2,7 @@
  * Created by VeaVictis on 25/11/15.
  */
 
-var pws = require("./../producer_connection.js")
+var pws = require("./../producerWS.js")
 
 function mainExample() {
     pws.receive(function (data) {
