@@ -79,6 +79,7 @@ myRealBar = myBar.Bar(barChartData, {
 
 
 var leg = document.getElementById('legend');
+console.log("Hello");
 console.log(leg);
 document.getElementById('legend1').innerHTML = myBar.generateLegend();
 
