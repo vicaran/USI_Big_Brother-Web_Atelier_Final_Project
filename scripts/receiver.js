@@ -72,7 +72,7 @@ function sendAll(data, d) {
 
                 }
                 else {
-                    db.addToDatabase(data);
+                    db.addToDatabase(data, date);
                     client[key].ws.send(data)
                 }
             }
