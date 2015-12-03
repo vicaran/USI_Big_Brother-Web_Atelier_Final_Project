@@ -106,8 +106,8 @@ var updateGraphLine = function(volume, light, time) {
   myLine.Line(lineChartData);
   
   //empty the content of the div
-  document.getElementById('newdata').setAttribute('volume', "");
-  document.getElementById('newdata').setAttribute('time', "");
+  //document.getElementById('newdata').setAttribute('volume', "");
+  //document.getElementById('newdata').setAttribute('time', "");
 }
 
 
