@@ -69,7 +69,7 @@ Chart.defaults.global.showTooltips = false;
 myLine = new Chart(ctx);
 myRealLine = myLine.Line(lineChartData, {
 	tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-	responsive: false
+	responsive: false,
 });
 
 myBar = new Chart(ctx_bar);
@@ -86,7 +86,7 @@ document.getElementById('legend1').innerHTML = myRealBar.generateLegend();
 //<-------------------------------------------------->
 
 var updateGraphLine = function(volume, light, time) {
-	console.log(volume,light, time)
+	//console.log(volume,light, time)
 	var date = new Date(time).toUTCString();
 	date = date.split(' ')[4]
 	
@@ -98,7 +98,7 @@ var updateGraphLine = function(volume, light, time) {
   lineChartData.labels.push(date);
 
   //if longer than 20, remove the first one
-  if(lineChartData.datasets[0].data.length > 20 | lineChartData.datasets[1].data.length > 20){
+  if(lineChartData.datasets[0].data.length > 10 | lineChartData.datasets[1].data.length > 10){
     lineChartData.datasets[0].data.shift();
     lineChartData.datasets[1].data.shift();
     lineChartData.labels.shift();
@@ -127,7 +127,7 @@ var updateGraphBar = function(volume, light, time) {
   barChartData.labels.push(date);
 
   //if longer than 20, remove the first one
-  if(barChartData.datasets[0].data.length > 20 | barChartData.datasets[1].length > 20){
+  if(barChartData.datasets[0].data.length > 10 | barChartData.datasets[1].length > 10){
     barChartData.datasets[0].data.shift();
     barChartData.datasets[1].data.shift();
     barChartData.labels.shift();
