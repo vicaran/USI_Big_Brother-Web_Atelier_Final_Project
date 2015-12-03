@@ -66,8 +66,6 @@ graph_button.addEventListener('click', function(e){
 	}
 });
 
-}
-
 var updateInterval;
 var myLine;
 var myRealLine;
