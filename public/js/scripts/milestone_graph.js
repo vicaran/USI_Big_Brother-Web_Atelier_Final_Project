@@ -57,11 +57,13 @@ graph_button.addEventListener('click', function(e){
 	c1 = document.getElementById('canvas1');
 	if(c.classList.contains('hidden')){
 		c.classList.remove('hidden');
-		c1.classList.add('hidden');
-		nextGraph = 'c1';
+		c1.setAttribute('class','hidden');
+		// c1.classList.add('hidden');
+		nextGraph = 'canvas1';
 	}else if(c1.classList.contains('hidden')){
 		c1.classList.remove('hidden');
-		c.classList.add('hidden');
+		c.setAttribute('class','hidden');
+		// c.classList.add('hidden');
 		nextGraph = 'canvas';
 	}
 });
