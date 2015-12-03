@@ -1,1 +1,11 @@
-body: {background-color:black;}
+<<<<<<< HEAD
+body {background-color:black;}
+=======
+body {
+    background-color:#262626;
+}
+
+#arrow {
+    color: #FF0D3F;
+}
+>>>>>>> aeedb068b3b24c4df8140d9d4f0478b1e22088bb
