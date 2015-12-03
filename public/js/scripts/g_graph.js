@@ -74,12 +74,13 @@ myRealLine = myLine.Line(lineChartData, {
 
 myBar = new Chart(ctx_bar);
 myRealBar = myBar.Bar(barChartData, {
+	tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
 	responsive: false,
 	barShowStroke: false
 	});
 
 document.getElementById('legend').innerHTML = myRealLine.generateLegend();
-document.getElementById('legend1').innerHTML = myBar.generateLegend();
+document.getElementById('legend1').innerHTML = myRealBar.generateLegend();
 
 
 //<-------------------------------------------------->
