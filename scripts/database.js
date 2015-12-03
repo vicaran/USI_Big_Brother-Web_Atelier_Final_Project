@@ -3,7 +3,7 @@ var k = require('./../k_globals/koala.js')
 var addToDatabase = function(data, date) {
     var jsonParsed = JSON.parse(data);
     var valueJson = {
-    	"id" : 1;
+    	"id" : 1,
         "volume": jsonParsed["volume"],
         "light": jsonParsed["light"],
         "temperature": 0
