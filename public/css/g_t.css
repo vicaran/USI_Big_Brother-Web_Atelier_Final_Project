@@ -1,7 +1,7 @@
-.chart-legend ul {
+ul {
   list-style: none;
 }
-.chart-legend ul li {
+ul li {
   display: block;
   padding-left: 30px;
   position: relative;
@@ -11,7 +11,7 @@
   font-size: 14px;
 }
 
-.chart-legend li span {
+li span {
   display: block;
   position: absolute;
   left: 0;
