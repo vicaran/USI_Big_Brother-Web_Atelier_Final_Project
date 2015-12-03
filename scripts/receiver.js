@@ -3,7 +3,7 @@
  and receive the data from the tessel.
  **/
 var k = require('./../k_globals/koala.js')
-var db = require('./database.js')
+var dataB = require('./database.js')
 
 var WebSocketServer = require('ws').Server,
     wss = new WebSocketServer({
@@ -72,7 +72,7 @@ function sendAll(data, d) {
 
                 }
                 else {
-                    db.addToDatabase(data, d);
+                    dataB.addToDatabase(data, d);
                     client[key].ws.send(data)
                 }
             }
