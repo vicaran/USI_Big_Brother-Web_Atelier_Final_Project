@@ -15,13 +15,14 @@ k.createNode(function(data) {
 
 //create the hidden div that will contain the received data
 var htmlString = '<div id="graph-container">' +
-				'<i id="arrow" class="fa fa-refresh">a</i>' +
+				'<i class="fa fa-refresh" style="color: white"></i>' +
 				'<div id="newdata" style="display:none;"></div>' +
 				'<canvas id="canvas" width="400px" height="400px"></canvas>' +
 				'<div id="newdata1" style="display:none;"> Hello</div>' +
  				'<canvas id="canvas1" width="400px" height="400px"></canvas>' +
 				'</div>';
 k.createHTML('pimmi', htmlString);
+k.createLink()
 // k.createHTML('graph-container', '<div id="graph-container">');
 // k.createHTML('data', '<div id="newdata" style="display:none;"></div>');
 // k.createHTML('canvas', '<canvas id="canvas" width="400px" height="400px"></canvas>');
