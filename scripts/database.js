@@ -3,16 +3,19 @@ var k = require('./../k_globals/koala.js')
 var addToDatabase = function(data, date) {
     var jsonParsed = JSON.parse(data);
     var valueJson = {
+    	"id" : 1;
         "volume": jsonParsed["volume"],
         "light": jsonParsed["light"],
         "temperature": 0
     }
     var keyDate = convertDate(date) + "-" + convertHour(date);
-    console.log('Data received for database:', valueJson);
-    console.log('And this is the date: ', keyDate);
+    console.log('Key to store in the database:', keyDate);
+    console.log('and this is the respective value:', valueJson);
+    
 
-    k.stateful.set(keyDate, valueJson, function(){});
-    console.log('Get from database: ', k.stateful.get(keyDate, function(){}));
+    k.stateful.set(keyDate, valueJson, function(){
+    	console.log('Saved on the database');
+    });
 }
 
 function convertDate(inputFormat) {
