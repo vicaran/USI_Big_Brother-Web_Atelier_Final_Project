@@ -16,6 +16,10 @@ var addToDatabase = function(data, date) {
     k.stateful.set(keyDate, valueJson, function(){
     	console.log('Saved on the database');
     });
+
+    k.stateful.get(keyDate, function(res){
+    	console.log("This is the response: ", res);
+    });
 }
 
 function convertDate(inputFormat) {
