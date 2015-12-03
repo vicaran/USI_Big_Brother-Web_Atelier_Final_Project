@@ -81,7 +81,15 @@ myRealBar = myBar.Bar(barChartData, {
 
 document.getElementById('legend').innerHTML = myRealLine.generateLegend();
 document.getElementById('legend1').innerHTML = myRealBar.generateLegend();
+var button = document.getElementById('button');
+button.addEventListener('click', switchGraphs);
 
+//<-------------------------------------------------->
+function switchGraphs(){
+	var canvas1 = document.getElementById('canvas1');
+	canvas1.innerHTML = "hello";
+
+}
 
 //<-------------------------------------------------->
 
