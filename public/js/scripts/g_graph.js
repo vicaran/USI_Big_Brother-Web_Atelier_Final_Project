@@ -79,7 +79,7 @@ myRealBar = myBar.Bar(barChartData, {
 	});
 
 document.getElementById('legend').innerHTML = myRealLine.generateLegend();
-//document.getElementById('legend1').innerHTML = myBar.generateLegend();
+document.getElementById('legend1').innerHTML = myBar.generateLegend();
 
 
 //<-------------------------------------------------->
