@@ -1,1 +1,7 @@
-body: {background-color:black;}
+body {
+    background-color:#262626;
+}
+
+#arrow {
+    color: #FF0D3F;
+}
