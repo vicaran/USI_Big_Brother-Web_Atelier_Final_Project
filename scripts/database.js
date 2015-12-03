@@ -1,7 +1,11 @@
 var k = require('./../k_globals/koala.js')
 
 var addToDatabase = function(data, date) {
-    var jsonValue = JSON.parse(data);
+    var jsonParsed = JSON.parse(data);
+    console.log("parsed here: ", jsonParsed[1]);
+    // var jsonValue ={
+
+    // }
     console.log('Data received:', jsonValue);
     var keyDate = convertDate(date) + "-" + convertHour(date);
     console.log('And this is the date: ', keyDate);
