@@ -32,7 +32,7 @@ k.createHTML('html', htmlString);
 // k.createHTML('graph-container-close','</div>');
 
 //add the graph script
-k.createScript('our_graph', 'js/scripts/g_graph.js');
+k.createScript('our_graph1', 'js/scripts/g_graph.js');
 
 //css
 k.createCSS('css_g', '/css/g_t.css');
