@@ -77,7 +77,7 @@ myRealBar = myBar.Bar(barChartData, {
 	barShowStroke: false
 	});
 
-document.getElementById('legend').innerHTML = myLine.generateLegend();
+document.getElementById('legend').innerHTML = "HELLO AAAAaaaaasjdfksdjkflsdjlkfjsdlkfj sdlkfjlaksdjflasd jfoisdhf iasdjflk jaslkfjslkdfjlkasdjflk jslkdfjsdlkaj flkasdjflk sj"
 document.getElementById('legend1').innerHTML = myBar.generateLegend();
 
 
