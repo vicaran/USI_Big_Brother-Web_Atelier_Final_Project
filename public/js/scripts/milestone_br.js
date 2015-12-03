@@ -22,7 +22,6 @@ var htmlString = '<div id="graph-container">' +
  				'<canvas id="canvas1" width="400px" height="400px"></canvas>' +
 				'</div>';
 k.createHTML('pimmi', htmlString);
-k.createLink()
 // k.createHTML('graph-container', '<div id="graph-container">');
 // k.createHTML('data', '<div id="newdata" style="display:none;"></div>');
 // k.createHTML('canvas', '<canvas id="canvas" width="400px" height="400px"></canvas>');
