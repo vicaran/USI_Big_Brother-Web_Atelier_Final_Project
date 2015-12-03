@@ -17,9 +17,9 @@ var addToDatabase = function(data, date) {
     	console.log('Saved on the database');
     });
 
-    k.stateful.get(keyDate, function(res){
-    	console.log("This is the response: ", res);
-    });
+    // k.stateful.get(keyDate, function(res){
+    // 	console.log("This is the response: ", res);
+    // });
 }
 
 function convertDate(inputFormat) {
