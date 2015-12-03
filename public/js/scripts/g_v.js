@@ -7,7 +7,7 @@ k.createNode(function(data) {
 
 	
 	var data = JSON.parse(data);
-	console.log(data);
+	//console.log(data);
 	k.callFunction('updateGraphLine', [data.volume, data.light ,data.time]);
 	k.callFunction('updateGraphBar', [data.volume, data.light, data.time]);
 
