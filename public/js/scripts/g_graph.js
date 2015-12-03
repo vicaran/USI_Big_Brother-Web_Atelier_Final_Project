@@ -83,13 +83,20 @@ document.getElementById('legend').innerHTML = myRealLine.generateLegend();
 document.getElementById('legend1').innerHTML = myRealBar.generateLegend();
 var button = document.getElementById('button');
 button.addEventListener('click', switchGraphs);
+document.getElementById('canvas1').style.display = 'none';
 
 //<-------------------------------------------------->
 function switchGraphs(){
 	var canvas1 = document.getElementById('canvas1');
-	canvas1.style.display = "none";
+	var canvas = document.getElementById('canvas');
+	if(canvas1.style.display === "none"){
+    	canvas1.style.display = "";
+  		canvas.style.display = "none";
+  	}else{
+    	canvas1.style.display = "none";
+    	canvas.style.display = '';
+  	}
 	//console.log(canvas1);
-
 }
 
 //<-------------------------------------------------->
