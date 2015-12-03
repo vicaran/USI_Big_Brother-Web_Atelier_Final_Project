@@ -6,3 +6,5 @@ var addToDatabase = function(data, date){
 	console.log('And this is the date: ', date);
 	// k.stateful.set(key, value, cb);
 }
+
+exports.addToDatabase = addToDatabase;
