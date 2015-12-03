@@ -3,11 +3,12 @@
  */
 
 
-var MyTessel = function (id) {
+function MyTessel(id) {
     this.tessel = require('tessel');
     this.GPIO = this.tessel.port['GPIO'];
     this.ws = require("./producerWS.js");
     this._id = id;
+    console.log('CONSTRUCTOR')
 };
 
 exports.MyTessel = MyTessel;
