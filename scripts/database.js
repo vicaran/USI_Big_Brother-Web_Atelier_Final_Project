@@ -13,9 +13,10 @@ function convertDate(inputFormat) {
     function pad(s) {
         return (s < 10) ? '0' + s : s;
     }
-    datetext = inputFormat.toTimeString();
+    
     var d = new Date(inputFormat);
-    return [pad(d.getDate()), pad(d.getMonth() + 1), d.getFullYear()].join('/'), datetext = datetext.split(' ')[0];;
+    datetext = d.toTimeString();
+    return [pad(d.getDate()), pad(d.getMonth() + 1), d.getFullYear()].join('/'), datetext = datetext.split(' ')[0];
 }
 
 exports.addToDatabase = addToDatabase;
