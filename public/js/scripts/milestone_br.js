@@ -15,7 +15,7 @@ k.createNode(function(data) {
 
 //create the hidden div that will contain the received data
 var htmlString = '<div id="graph-container">' +
-				'<i class="fa fa-refresh"></i>' +
+				'<i id="arrow" class="fa fa-refresh"></i>' +
 				'<div id="newdata" style="display:none;"></div>' +
 				'<canvas id="canvas" width="400px" height="400px"></canvas>' +
 				'<div id="newdata1" style="display:none;"> Hello</div>' +
