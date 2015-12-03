@@ -10,22 +10,12 @@ var addToDatabase = function(data, date) {
 }
 
 function convertDate(inputFormat) {
-    // function pad(s) {
-    //     return (s < 10) ? '0' + s : s;
-    // }
-    // var d = new Date(inputFormat);
-    // return [pad(d.getDate()), pad(d.getMonth() + 1), d.getFullYear()].join('/');
-    dformat = [(inputFormat.getMonth() + 1).padLeft(),
-        inputFormat.getDate().padLeft(),
-        inputFormat.getFullYear()
-    ].join('/') + ' ' +
-        [inputFormat.getHours().padLeft(),
-        inputFormat.getMinutes().padLeft(),
-        inputFormat.getSeconds().padLeft()
-    ].join(':');
-    return dformat;
+    function pad(s) {
+        return (s < 10) ? '0' + s : s;
+    }
+    datetext = inputFormat.toTimeString();
+    var d = new Date(inputFormat);
+    return [pad(d.getDate()), pad(d.getMonth() + 1), d.getFullYear()].join('/'), datetext = datetext.split(' ')[0];;
 }
-
-
 
 exports.addToDatabase = addToDatabase;
