@@ -3,24 +3,14 @@
  */
 
 function MyTessel(id) {
-    this.tessel = require('tessel');
-    this.GPIO = this.tessel.port['GPIO'];
+    //this.tessel = require('tessel');
+    //this.GPIO = this.tessel.port['GPIO'];
     this.ws = require("./producerWS.js");
     this._id = id;
     console.log('CONSTRUCTOR')
 }
-
-
-
-var SenderTessel = Object.create(MyTessel);
-var t = new SenderTessel(1)
-console.log(t)
-
-
-//function SenderTessel(id){
-//    MyTessel.call(this,id)
-//}
-//SenderTessel.prototype = Object.create(MyTessel.prototype)
+var SenderTessel = new (MyTessel);
+console.log(SenderTessel.ws);
 /**
  * This function set the RGB Led. Low noise = green, medium = blue and high = red
  * @param {number} volume
@@ -85,7 +75,5 @@ SenderTessel.start = function () {
 
 SenderTessel.main = function () {
 };
-console.log(SenderTessel)
-//SenderTessel.prototype.constructor = SenderTessel
 
 exports.SenderTessel = SenderTessel;

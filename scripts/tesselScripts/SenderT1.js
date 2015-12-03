@@ -4,6 +4,6 @@
 
 var SenderTessel = require('./SenderTessel.js')
 
-SenderT1 = new SenderTessel(1)
+SenderT1 = new SenderTessel.SenderTessel
 SenderT1.main = function(){console.log('ciao')};
 SenderT1.start();
