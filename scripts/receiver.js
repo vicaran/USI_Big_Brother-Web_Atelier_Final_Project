@@ -23,8 +23,8 @@ wss.on('connection', function (ws) {
         time: fDate,
         ws: ws,
         browser: false
-    }
-    _id++
+    };
+    _id++;
     ws.on('message', function (data) {
         if (data == 'BROWSER') {
             console.log('browser')
