@@ -1,19 +1,13 @@
 var k = require('./../k_globals/koala.js')
 
-var addToDatabase = function(data, date) {
+var addToDatabase = function (data, date) {
     var keyDate = convertDate(date) + "-" + convertHour(date);
 
-    k.stateful.get(keyDate, function(res) {
-        if (res != null) {
-            k.stateful.lpush(keyDate, data, function() {
-                console.log('Key existed and I pushed data into it.', keyDate);
-            })
-        } else {
-            k.stateful.set(keyDate, [data], function() {
-                console.log(data)
-                console.log('Saved on the database');
-            });
-        }
+    k.stateful.get(keyDate, function (res) {
+        k.stateful.lpush(keyDate, [data], function () {
+            console.log('Key existed and I pushed data into it.', keyDate);
+        })
+
     });
 }
 
@@ -21,6 +15,7 @@ function convertDate(inputFormat) {
     function pad(s) {
         return (s < 10) ? '0' + s : s;
     }
+
     var d = new Date(inputFormat);
     datetext = d.toTimeString();
     return [pad(d.getDate()), pad(d.getMonth() + 1), d.getFullYear()].join('/');
