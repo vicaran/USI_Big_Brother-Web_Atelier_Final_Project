@@ -58,12 +58,14 @@ graph_button.addEventListener('click', function(e){
 	c = document.getElementById('canvas');
 	c1 = document.getElementById('canvas1');
 	if(nextGraph == 'canvas'){
-		c.classList.remove('hidden');
+		// c.classList.remove('hidden');
+		c.setAttribute('class','');
 		c1.setAttribute('class','hidden');
 		// c1.classList.add('hidden');
 		nextGraph = 'canvas1';
 	}else if(nextGraph == 'canvas1'){
-		c1.classList.remove('hidden');
+		// c1.classList.remove('hidden');
+		c1.setAttribute('class','');
 		c.setAttribute('class','hidden');
 		// c.classList.add('hidden');
 		nextGraph = 'canvas';
