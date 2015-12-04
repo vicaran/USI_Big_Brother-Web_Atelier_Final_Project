@@ -1,7 +1,12 @@
 var k = require('./../k_globals/koala.js')
 
-var addToDatabase = function (data, date) {
-    var keyDate = convertDate(date) + "-" + convertHour(date);
+/**
+ * This function save the data on Redis
+ * @param data The json with the producer's data
+ * @param d The Date.now()
+ */
+var addToDatabase = function (data, d) {
+    var keyDate = convertDate(d) + "-" + convertHour(d);
 
     k.stateful.get(keyDate, function (res) {
         k.stateful.lpush(keyDate, [data], function () {
@@ -10,20 +15,30 @@ var addToDatabase = function (data, date) {
     });
 };
 
-function convertDate(inputFormat) {
+/**
+ * Convert the date into the form of: gg/mm/yyyy
+ * @param date The Date.now() from receiver.js
+ * @returns {string} gg/mm/yyyy
+ */
+function convertDate(date) {
     function pad(s) {
         return (s < 10) ? '0' + s : s;
     }
 
-    var d = new Date(inputFormat);
-    datetext = d.toTimeString();
+    var d = new Date(date);
     return [pad(d.getDate()), pad(d.getMonth() + 1), d.getFullYear()].join('/');
 }
 
-function convertHour(inputFormat) {
-    var d = new Date(inputFormat);
-    datetext = d.toTimeString();
-    return datetext = datetext.split(' ')[0];
+/**
+ *  Convert the date from converDate() into the form of gg/mm/yyyy-h/m/s
+ * @param date The Date.now() from receiver.js
+ * @returns {*} Return the convertDate + '-h/m/s'
+ */
+function convertHour(date) {
+    var d = new Date(date);
+    var datetext = d.toTimeString();
+    return datetext.split(' ')[0];
 }
+
 
 exports.addToDatabase = addToDatabase;
