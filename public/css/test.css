@@ -1968,9 +1968,9 @@ body {
 .fa-refresh { 
     color: white;
     font-size: 20px;
-    position: fixed;
-    height: 200px;
-    width: 50px;
+    position: relative;
+    left: 20px;
+    bottom: 200px;
     
 }
 
@@ -1993,5 +1993,6 @@ canvas {
 /*.c1 {float:left;}*/
 .key {
     float:inherit;
-    background-color: 
+    background-color: grey;
+    color: white;
 }
