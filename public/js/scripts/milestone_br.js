@@ -19,7 +19,7 @@ var htmlString = '<div id="graph-container">' +
 				'<div id="newdata" style="display:none;"></div>' +
 				'<canvas id="canvas" class="" width="400px" height="400px"></canvas>' +
 				'<div id="newdata1" style="display:none;"> Hello</div>' +
- 				'<canvas id="canvas1" class="hidden" width="400px" height="400px"></canvas>' +
+ 				'<canvas id="canvas1" class="" width="400px" height="400px"></canvas>' +
 				'</div>';
 k.createHTML('pimmi', htmlString);
 // k.createHTML('graph-container', '<div id="graph-container">');
