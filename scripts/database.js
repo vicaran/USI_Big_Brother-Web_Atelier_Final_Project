@@ -7,7 +7,7 @@ var addToDatabase = function(data, date) {
         "volume": jsonParsed["volume"],
         "light": jsonParsed["light"],
         "temperature": 0
-    }
+    };
     var keyDate = convertDate(date) + "-" + convertHour(date);
     console.log('Key to store in the database:', keyDate);
     console.log('and this is the respective value:', valueJson);
