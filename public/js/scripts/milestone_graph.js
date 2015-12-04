@@ -4,22 +4,22 @@ var lineChartData = {
 	datasets : [
 		{
 			label: "volume Data Set",
-			fillColor : "rgba(215,54,139,0.2)",
-			strokeColor : "rgba(161,40,104,1)",
-			pointColor: "#731D4A"
-			pointStrokeColor : "#731D4A",
+			fillColor : "rgba(255,220,220,0.2)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
 			pointHighlightFill : "#fff",
-			pointHighlightStroke : "rgba(161,40,104,1)",
+			pointHighlightStroke : "rgba(220,220,220,1)",
 			data : []
 		},
 		 {
             label: "light dataset",
-            fillColor: "rgba(64,182,160,0.2)",
-            strokeColor: "rgba(32,92,81,1)",
-            pointColor: "#205C51",
-            pointStrokeColor: "#205C51",
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(32,92,81,1)",
+            pointHighlightStroke: "rgba(151,187,205,1)",
             data: []
         }
 	]
