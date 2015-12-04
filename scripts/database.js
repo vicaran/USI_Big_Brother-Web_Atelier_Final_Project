@@ -9,9 +9,10 @@ var addToDatabase = function (data, d) {
     var keyDate = convertDate(d) + "-" + convertHour(d);
 
     k.stateful.get(keyDate, function (res) {
+        console.log(keyDate)
         console.log('****  ', res, '  ****')
-        k.stateful.lpush(keyDate, [data], function () {
-            k.stateful.get(keyDate,function(find){
+        k.stateful.lpush(keyDate, data, function () {
+            k.stateful.get(keyDate, function (find) {
                 console.log(find)
             })
         })
