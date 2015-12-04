@@ -10,17 +10,19 @@
 function MyTessel(id) {
     //this.tessel = require('tessel');
     //this.GPIO = this.tessel.port['GPIO'];
-    this.ws = require("./producerWS.js");
-    var _id = id;
+    //this.ws = require("./producerWS.js");
+    //  TODO check if i can make id private
+     this._id = id;
     console.log('CONSTRUCTOR')
 }
-/**
- *  This function return the private field _id
- * @returns {*|number}
- */
-MyTessel.prototype.getId = function () {
-    return _id;
-};
+
+///**
+// *  This function return the private field _id
+// * @returns {*|number}
+// */
+//MyTessel.prototype.getId = function () {
+//    return this._id;
+//};
 
 /**
  * This class implements the Tessel interface in order to send data
