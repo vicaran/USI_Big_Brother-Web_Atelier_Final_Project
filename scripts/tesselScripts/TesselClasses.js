@@ -17,13 +17,14 @@ function MyTessel(id) {
 }
 /**
  * This function is the main function - you MUST override it
- *
- * @param f a function
- */
+ **/
 MyTessel.prototype.main = function () {
 
 };
 
+/**
+ * This function start the Tessel
+ */
 MyTessel.prototype.start = function () {
     this.main();
 };
