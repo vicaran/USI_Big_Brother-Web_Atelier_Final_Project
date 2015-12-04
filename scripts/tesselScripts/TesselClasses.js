@@ -45,7 +45,7 @@ MyTessel.prototype.start = function () {
  */
 function SenderTessel(id) {
     MyTessel.call(this, id);
-    console.log('Sender Tessel ' +this.id+  ' created')
+    console.log('Sender Tessel ' +this._id+  ' created')
 
     /**
      * This function set the RGB Led. Low noise = green, medium = blue and high = red
