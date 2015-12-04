@@ -3,7 +3,7 @@
  */
 
 var TesselClasses = require('./TesselClasses.js');
-var ReceiverT2 = TesselClasses.ReceiveTessel(2);
+var ReceiverT2 = new TesselClasses.ReceiveTessel(2);
 ReceiverT2.main = function(){
     var self = this;
     var green = tessel.port['GPIO'].pin['G5'];
