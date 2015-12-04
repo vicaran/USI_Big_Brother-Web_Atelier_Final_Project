@@ -1,21 +1,34 @@
 /**
  * Created by VeaVictis on 03/12/15.
  */
-
+/**
+ * This class holds a Tessel interface
+ *
+ * @param {int} id The unique identifier of the Tessel
+ * @constructor
+ */
 function MyTessel(id) {
     //this.tessel = require('tessel');
     //this.GPIO = this.tessel.port['GPIO'];
     this.ws = require("./producerWS.js");
-    this._id = id;
+    var _id = id;
     console.log('CONSTRUCTOR')
 }
 
+MyTessel.prototype.getId = function(){return _id;}
+
 /**
- * This function set the RGB Led. Low noise = green, medium = blue and high = red
- * @param {number} volume
+ * This class implements the Tessel interface in order to send data
+ *
+ * @param {int} id The unique identifier of the Tessel
+ * @constructor The Mytessel constructor
  */
 function SenderTessel(id) {
     MyTessel.call(this,id);
+    /**
+     * This function set the RGB Led. Low noise = green, medium = blue and high = red
+     * @param {number} volume
+     */
     this.setColor = function (volume) {
 
         if (volume < 10) {
@@ -82,12 +95,27 @@ function SenderTessel(id) {
 SenderTessel.prototype = Object.create(MyTessel.prototype);
 SenderTessel.prototype.constructor = SenderTessel;
 
+/**
+ * This class implements the Tessel interface in order to receive data
+ *
+ * @param {int} id The unique identifier of the Tessel
+ * @constructor The Mytessel constructor
+ */
 function ReceiveTessel(id){
     MyTessel.call(this,id);
-
+    /**
+     * This function is the main function
+     *
+     * @param f a function
+     */
     this.main = function(f) {
+        /**
+         * This intervall will send and ack every 4.5 s
+         *
+         * @type {number}
+         */
         interval = setInterval(function () {
-            pws.ack()
+            this.ws.ack()
         }, 4500);
         f();
     }
