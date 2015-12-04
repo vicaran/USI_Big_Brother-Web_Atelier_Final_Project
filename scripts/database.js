@@ -2,8 +2,9 @@ var k = require('./../k_globals/koala.js')
 
 var addToDatabase = function(data, date) {
     var keyDate = convertDate(date) + "-" + convertHour(date);
+
     k.stateful.get(keyDate, function(res) {
-        if (res != undefined) {
+        if (res != null) {
             k.stateful.lpush(keyDate, data, function() {
                 console.log('Key existed and I pushed data into it.', keyDate);
             })
@@ -12,7 +13,6 @@ var addToDatabase = function(data, date) {
                 console.log('Saved on the database');
             });
         }
-        console.log("This is the response: ", res);
     });
 }
 
