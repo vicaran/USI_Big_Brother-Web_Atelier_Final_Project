@@ -14,10 +14,13 @@ function MyTessel(id) {
     var _id = id;
     console.log('CONSTRUCTOR')
 }
-
+/**
+ *  This function return the private field _id
+ * @returns {*|number}
+ */
 MyTessel.prototype.getId = function () {
     return _id;
-}
+};
 
 /**
  * This class implements the Tessel interface in order to send data
@@ -47,7 +50,7 @@ function SenderTessel(id) {
                 red.write(1);
                 green.write(1);
                 break;
-            
+
             default:
                 console.log('high');
                 blue.write(1);
