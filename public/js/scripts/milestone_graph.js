@@ -4,12 +4,11 @@ var lineChartData = {
 	datasets : [
 		{
 			label: "volume Data Set",
-			fillColor : "rgba(220,220,220,0.2)",
-			strokeColor : "rgba(220,220,220,1)",
-			pointColor : "rgba(220,220,220,1)",
+			fillColor : "rgba(255,72,97,0.2)",
+			strokeColor : "rgba(168,48,64,1)",
 			pointStrokeColor : "#fff",
 			pointHighlightFill : "#fff",
-			pointHighlightStroke : "rgba(220,220,220,1)",
+			pointHighlightStroke : "rgba(168,48,64,1)",
 			data : []
 		},
 		 {
@@ -52,7 +51,7 @@ datasets : [
 // SWITCH BETWEEN GRAPHS
 // currently hidden 
 // var prev_graph_c1 = false;
-var nextGraph = nextGraph || 'c1'; 
+var nextGraph = nextGraph || 'c'; 
 
 var graph_button = document.getElementById("arrow");
 graph_button.addEventListener('click', function(e){

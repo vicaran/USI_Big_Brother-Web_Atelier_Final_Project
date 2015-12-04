@@ -1,5 +1,5 @@
 body {
-    background-color:262626;
+    background-color:#263447;
 }
 
 .fa-refresh { 
@@ -21,8 +21,10 @@ canvas {
     flex-direction: row;
 }
 */
-.arrow {float:left;}
+#arrow {float:left;}
 /*.c {float:left;}*/
 /*.c1 {float:left;}*/
-div > .c_key {float:inherit;}
-div > .c1_key {float:inherit;}
+.key {
+    float:inherit;
+    background-color: 
+}
