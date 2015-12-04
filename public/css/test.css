@@ -1966,8 +1966,11 @@ body {
 }
 
 .fa-refresh { 
-    color: #FF0D3F;
+    color: white;
     font-size: 20px;
+    position: fixed;
+    height: 100px;
+    
 }
 
 .hidden {
