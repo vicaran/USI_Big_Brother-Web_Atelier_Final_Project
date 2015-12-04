@@ -9,7 +9,7 @@ var addToDatabase = function(data, date) {
                 console.log('Key existed and I pushed data into it.', keyDate);
             })
         } else {
-            k.stateful.set(keyDate, data, function() {
+            k.stateful.set(keyDate, [data], function() {
                 console.log(data)
                 console.log('Saved on the database');
             });
