@@ -38,7 +38,7 @@ SenderT1.main = function () {
         };
         self.ws.send(data);
 
-    }, 1000)
+    }, 3000)
 };
 
 SenderT1.start();

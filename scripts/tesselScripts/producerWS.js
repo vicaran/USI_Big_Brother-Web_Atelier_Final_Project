@@ -20,7 +20,6 @@ var send = function(message) {
     connection.sendText(JSON.stringify(message));
 };
 var ack = function() {
-    console.log(ready)
     if (!ready)
         return;
     send('ACK');
