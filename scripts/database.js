@@ -1,6 +1,16 @@
 var k = require('./../k_globals/koala.js')
 
 var addToDatabase = function(data, date) {
+<<<<<<< HEAD
+=======
+    var jsonParsed = JSON.parse(data);
+    var valueJson = {
+    	"id" : 1,
+        "volume": jsonParsed["volume"],
+        "light": jsonParsed["light"],
+        "temperature": 0
+    };
+>>>>>>> dcf9a3f9a307fbcc3b4abf68f3eda8e50002ec08
     var keyDate = convertDate(date) + "-" + convertHour(date);
     k.stateful.get(keyDate, function(res) {
         if (res != undefined) {
