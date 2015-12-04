@@ -10,8 +10,8 @@ var WebSocketServer = require('ws').Server,
         port: 15000
     });
 
-var client = {}
-var _id = 0
+var client = {};
+var _id = 0;
 
 wss.on('connection', function (ws) {
     console.log('____________New Connection Opened____________');
@@ -26,11 +26,7 @@ wss.on('connection', function (ws) {
     };
     _id++;
     ws.on('message', function (data) {
-        console.log(data)
-        if (data == 'BROWSER') {
-            console.log('browser')
-            client[ws._id].browser = true;
-        }
+
         //update date
         var date = new Date()
         client[ws._id].time = date;
@@ -70,7 +66,7 @@ function sendAll(data, d) {
                         client[key].ws.send("RESET")
                     }
                     //delete socket
-                    delete client[key]
+                    delete client[key];
                     _id --;
 
                 }

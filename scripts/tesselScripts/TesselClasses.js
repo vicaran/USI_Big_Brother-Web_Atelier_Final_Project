@@ -123,17 +123,6 @@ function ReceiveTessel(id) {
     MyTessel.call(this, id);
     console.log('Receive Tessel ' +this.id+  ' created')
 
-    /**
-     * This interval will send and ack every 4.5 s
-     *
-     * @type {number}
-     */
-
-    this.interval = setInterval(function () {
-        this.ws.ack()
-    }, 4500);
-
-
 }
 
 ReceiveTessel.prototype = Object.create(MyTessel.prototype);
