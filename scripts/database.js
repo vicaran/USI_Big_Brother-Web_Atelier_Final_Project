@@ -7,9 +7,8 @@ var addToDatabase = function (data, date) {
         k.stateful.lpush(keyDate, [data], function () {
             console.log('Key existed and I pushed data into it.', keyDate);
         })
-
     });
-}
+};
 
 function convertDate(inputFormat) {
     function pad(s) {
