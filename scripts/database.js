@@ -11,7 +11,7 @@ var addToDatabase = function (data, d) {
     k.stateful.get(keyDate, function (res) {
         console.log('****  ', res, '  ****')
         k.stateful.lpush(keyDate, [data], function () {
-            k.stateful.get(Keydate,function(find){
+            k.stateful.get(keyDate,function(find){
                 console.log(find)
             })
         })
