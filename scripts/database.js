@@ -11,7 +11,6 @@ var addToDatabase = function(data, date) {
         } else {
             k.stateful.set(keyDate, data, function() {
                 console.log(data)
-
                 console.log('Saved on the database');
             });
         }
