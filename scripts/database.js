@@ -1,7 +1,6 @@
 var k = require('./../k_globals/koala.js')
 
 var addToDatabase = function(data, date) {
-    console.log(data)
     var keyDate = convertDate(date) + "-" + convertHour(date);
 
     k.stateful.get(keyDate, function(res) {
@@ -11,6 +10,8 @@ var addToDatabase = function(data, date) {
             })
         } else {
             k.stateful.set(keyDate, data, function() {
+                console.log(data)
+
                 console.log('Saved on the database');
             });
         }
