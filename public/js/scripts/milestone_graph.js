@@ -50,17 +50,19 @@ datasets : [
 
 }
 // SWITCH BETWEEN GRAPHS
-var nextGraph = nextGraph || 'canvas1';
+// currently hidden 
+var nextGraph = nextGraph || 'canvas1'; 
+
 var graph_button = document.getElementById("arrow");
 graph_button.addEventListener('click', function(e){
 	c = document.getElementById('canvas');
 	c1 = document.getElementById('canvas1');
-	if(c.classList.contains('hidden')){
+	if(nextGraph == 'canvas'){
 		c.classList.remove('hidden');
 		c1.setAttribute('class','hidden');
 		// c1.classList.add('hidden');
 		nextGraph = 'canvas1';
-	}else if(c1.classList.contains('hidden')){
+	}else if(nextGraph == 'canvas1'){
 		c1.classList.remove('hidden');
 		c.setAttribute('class','hidden');
 		// c.classList.add('hidden');
