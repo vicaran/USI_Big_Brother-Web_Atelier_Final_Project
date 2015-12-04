@@ -1970,7 +1970,7 @@ body {
     font-size: 20px;
     position: relative;
     left: 20px;
-    bottom: 200px;
+    bottom: 50px;
     
 }
 
@@ -1993,6 +1993,6 @@ canvas {
 /*.c1 {float:left;}*/
 .key {
     float:inherit;
-    background-color: grey;
+/*    background-color: grey;*/
     color: white;
 }
