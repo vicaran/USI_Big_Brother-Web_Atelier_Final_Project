@@ -51,24 +51,24 @@ datasets : [
 }
 // SWITCH BETWEEN GRAPHS
 // currently hidden 
-var nextGraph = nextGraph || 'canvas1'; 
+var nextGraph = nextGraph || 'c1'; 
 
 var graph_button = document.getElementById("arrow");
 graph_button.addEventListener('click', function(e){
-	c = document.getElementById('canvas');
-	c1 = document.getElementById('canvas1');
-	if(nextGraph == 'canvas'){
+	c = document.getElementById('c');
+	c1 = document.getElementById('c1');
+	if(nextGraph == 'c'){
 		// c.classList.remove('hidden');
 		c.setAttribute('class','');
 		c1.setAttribute('class','hidden');
 		// c1.classList.add('hidden');
-		nextGraph = 'canvas1';
-	}else if(nextGraph == 'canvas1'){
+		nextGraph = 'c1';
+	}else if(nextGraph == 'c1'){
 		// c1.classList.remove('hidden');
 		c1.setAttribute('class','');
 		c.setAttribute('class','hidden');
 		// c.classList.add('hidden');
-		nextGraph = 'canvas';
+		nextGraph = 'c';
 	}
 });
 
