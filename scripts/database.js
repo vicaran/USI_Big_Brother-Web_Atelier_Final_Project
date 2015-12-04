@@ -8,7 +8,7 @@ var k = require('./../k_globals/koala.js')
 var addToDatabase = function (data, d) {
     var keyDate = convertDate(d) + "-" + convertHour(d);
 
-    k.stateful.lpush(keyDate, [data], function(){
+    k.stateful.set(keyDate, [data], function(){
     	console.log("done.")
     })
     // k.stateful.get(keyDate, function (res) {
