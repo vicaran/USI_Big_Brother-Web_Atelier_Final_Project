@@ -4,7 +4,7 @@ var lineChartData = {
 	datasets : [
 		{
 			label: "volume Data Set",
-			fillColor : "rgba(255,220,220,0.2)",
+			fillColor : "rgba(215,54,139,0.2)",
 			strokeColor : "rgba(220,220,220,1)",
 			pointColor : "rgba(220,220,220,1)",
 			pointStrokeColor : "#fff",
