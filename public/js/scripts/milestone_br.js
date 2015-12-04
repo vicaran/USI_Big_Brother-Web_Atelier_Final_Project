@@ -17,13 +17,13 @@ k.createNode(function(data) {
 var htmlString = '<div id="graph-container">' +
 				'<i id="arrow" class="fa fa-refresh" style="color: white">SWITCH</i>' +
 				'<div id="newdata" style="display:none;"></div>' +
-				'<div>' + 
-				'<canvas id="canvas" class="" width="400px" height="400px"></canvas>' +
+				'<div id="canvas" class="">' + 
+				'<canvas width="400px" height="400px"></canvas>' +
 				'<div> LEGEND</div>' +
 				'</div>' +
 				'<div id="newdata1" style="display:none;"> Hello</div>' +
-				'<div>' +
- 				'<canvas id="canvas1" class="hidden" width="400px" height="400px"></canvas>' +
+				'<div id="canvas1" class="" >' +
+ 				'<canvas width="400px" height="400px"></canvas>' +
 				'<div> LEGEND</div>' +
 				'</div>' +
 				'</div>';
