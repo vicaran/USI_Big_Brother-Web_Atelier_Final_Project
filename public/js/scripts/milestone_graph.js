@@ -51,6 +51,7 @@ datasets : [
 }
 // SWITCH BETWEEN GRAPHS
 // currently hidden 
+// var prev_graph_c1 = false;
 var nextGraph = nextGraph || 'c1'; 
 
 var graph_button = document.getElementById("arrow");
@@ -68,7 +69,12 @@ graph_button.addEventListener('click', function(e){
 		c1.setAttribute('class','');
 		c.setAttribute('class','hidden');
 		// c.classList.add('hidden');
+		nextGraph = 'both';
+	}else{
+		c.setAttribute('class','');
+		c1.setAttribute('class','');
 		nextGraph = 'c';
+
 	}
 });
 
