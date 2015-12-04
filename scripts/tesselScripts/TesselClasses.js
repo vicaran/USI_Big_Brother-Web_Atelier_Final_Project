@@ -12,9 +12,22 @@ function MyTessel(id) {
     //this.GPIO = this.tessel.port['GPIO'];
     //this.ws = require("./producerWS.js");
     //  TODO check if i can make id private
-     this._id = id;
+    this._id = id;
     console.log('CONSTRUCTOR')
 }
+/**
+ * This function is the main function - you MUST override it
+ *
+ * @param f a function
+ */
+MyTessel.prototype.main = function () {
+
+};
+
+MyTessel.prototype.start = function () {
+    this.main();
+};
+
 
 ///**
 // *  This function return the private field _id
@@ -93,15 +106,7 @@ function SenderTessel(id) {
 
         return volume
     };
-
-    this.start = function () {
-        this.main();
-    };
-
-    this.main = function () {
-    };
 }
-
 
 SenderTessel.prototype = Object.create(MyTessel.prototype);
 SenderTessel.prototype.constructor = SenderTessel;
@@ -115,21 +120,16 @@ SenderTessel.prototype.constructor = SenderTessel;
 function ReceiveTessel(id) {
     MyTessel.call(this, id);
     /**
-     * This function is the main function
+     * This intervall will send and ack every 4.5 s
      *
-     * @param f a function
+     * @type {number}
      */
-    this.main = function (f) {
-        /**
-         * This intervall will send and ack every 4.5 s
-         *
-         * @type {number}
-         */
-        interval = setInterval(function () {
-            this.ws.ack()
-        }, 4500);
-        f();
-    }
+
+    this.interval = setInterval(function () {
+        this.ws.ack()
+    }, 4500);
+
+
 }
 
 ReceiveTessel.prototype = Object.create(MyTessel.prototype);
@@ -137,3 +137,5 @@ ReceiveTessel.prototype.constructor = ReceiveTessel;
 
 
 exports.SenderTessel = SenderTessel;
+exports.ReceiveTessel = ReceiveTessel;
+
