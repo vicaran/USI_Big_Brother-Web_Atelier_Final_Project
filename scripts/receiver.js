@@ -26,6 +26,7 @@ wss.on('connection', function (ws) {
     };
     _id++;
     ws.on('message', function (data) {
+        console.log(data)
         if (data == 'BROWSER') {
             console.log('browser')
             client[ws._id].browser = true;
