@@ -11,6 +11,10 @@ body {
 	display: none;
 }
 
+canvas {
+    float: left;
+}
+
 /*
 #graph-container {
     flex:auto;
@@ -18,7 +22,7 @@ body {
 }
 */
 .arrow {float:left;}
-.c {float:left;}
-.c1 {float:left;}
-.c_key {float:inherit;}
-.c1_key {float:inherit;}
+/*.c {float:left;}*/
+/*.c1 {float:left;}*/
+div > .c_key {float:inherit;}
+div > .c1_key {float:inherit;}
