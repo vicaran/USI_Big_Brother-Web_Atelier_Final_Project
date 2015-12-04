@@ -8,12 +8,11 @@
  * @constructor
  */
 function MyTessel(id) {
-    //this.tessel = require('tessel');
-    //this.GPIO = this.tessel.port['GPIO'];
-    //this.ws = require("./producerWS.js");
+    this.tessel = require('tessel');
+    this.GPIO = this.tessel.port['GPIO'];
+    this.ws = require("./producerWS.js");
     //  TODO check if i can make id private
     this._id = id;
-    console.log('CONSTRUCTOR')
 }
 /**
  * This function is the main function - you MUST override it
@@ -46,6 +45,8 @@ MyTessel.prototype.start = function () {
  */
 function SenderTessel(id) {
     MyTessel.call(this, id);
+    console.log('Sender Tessel ' +this.id+  ' created')
+
     /**
      * This function set the RGB Led. Low noise = green, medium = blue and high = red
      * @param {number} volume
@@ -120,8 +121,10 @@ SenderTessel.prototype.constructor = SenderTessel;
  */
 function ReceiveTessel(id) {
     MyTessel.call(this, id);
+    console.log('Receive Tessel ' +this.id+  ' created')
+
     /**
-     * This intervall will send and ack every 4.5 s
+     * This interval will send and ack every 4.5 s
      *
      * @type {number}
      */
