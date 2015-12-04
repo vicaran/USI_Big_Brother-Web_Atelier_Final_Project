@@ -11,8 +11,14 @@ body {
 	display: none;
 }
 
+/*
 #graph-container {
     flex:auto;
     flex-direction: row;
-    
 }
+*/
+.arrow {float:left;}
+.c {float:left;}
+.c1 {float:left;}
+.c_key {float:inherit;}
+.c1_key {float:inherit;}
