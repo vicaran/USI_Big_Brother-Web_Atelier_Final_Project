@@ -15,7 +15,9 @@ function MyTessel(id) {
     console.log('CONSTRUCTOR')
 }
 
-MyTessel.prototype.getId = function(){return _id;}
+MyTessel.prototype.getId = function () {
+    return _id;
+}
 
 /**
  * This class implements the Tessel interface in order to send data
@@ -24,30 +26,34 @@ MyTessel.prototype.getId = function(){return _id;}
  * @constructor The Mytessel constructor
  */
 function SenderTessel(id) {
-    MyTessel.call(this,id);
+    MyTessel.call(this, id);
     /**
      * This function set the RGB Led. Low noise = green, medium = blue and high = red
      * @param {number} volume
      */
     this.setColor = function (volume) {
 
-        if (volume < 10) {
+        switch (volume) {
+            case volume < 10:
+                console.log('low');
+                blue.write(1);
+                red.write(1);
+                green.pwmDutyCycle((255 - volume * 25.5) % 255 / 255);
+                break;
 
-            console.log('low');
-            blue.write(1);
-            red.write(1);
-            green.pwmDutyCycle((255 - volume * 25.5) % 255 / 255);
-        } else if (volume >= 10 && volume <= 30) {
+            case volume >= 10 && volume <= 30:
+                console.log('medium');
+                blue.pwmDutyCycle((100 - ((volume - 10) * 5)) % 255 / 255);
+                red.write(1);
+                green.write(1);
+                break;
+            
+            default:
+                console.log('high');
+                blue.write(1);
+                green.write(1);
+                red.write(0)
 
-            console.log('medium');
-            blue.pwmDutyCycle((100 - ((volume - 10) * 5)) % 255 / 255);
-            red.write(1);
-            green.write(1);
-        } else {
-            console.log('high');
-            blue.write(1);
-            green.write(1);
-            red.write(0)
 
         }
     };
@@ -101,14 +107,14 @@ SenderTessel.prototype.constructor = SenderTessel;
  * @param {int} id The unique identifier of the Tessel
  * @constructor The Mytessel constructor
  */
-function ReceiveTessel(id){
-    MyTessel.call(this,id);
+function ReceiveTessel(id) {
+    MyTessel.call(this, id);
     /**
      * This function is the main function
      *
      * @param f a function
      */
-    this.main = function(f) {
+    this.main = function (f) {
         /**
          * This intervall will send and ack every 4.5 s
          *
