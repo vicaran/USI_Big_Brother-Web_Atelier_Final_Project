@@ -54,7 +54,7 @@ function sendAll(data, d) {
     var keys = Object.keys(client)
         //add data to database
     dataB.addToDatabase(data, d);
-    console.log('This is data:', data);
+    // console.log('This is data:', data);
     for (var i = 0; i < keys.length; i++) {
         var key = keys[i]
         try {
