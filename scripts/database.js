@@ -49,7 +49,7 @@ var addToDatabase = function (data, d) {
                 }
                 if (!find) {
 
-                    parseRes[_id] = a
+                    parseRes[_id] = [a]
                 }
                 var newJson = JSON.stringify(parseRes)
                 k.stateful.set(keyDate, newJson, function () {
