@@ -23,7 +23,6 @@ var addToDatabase = function (data, d) {
         if (res == null || res == undefined) {
             var json = JSON.stringify(toSave)
             k.stateful.set(keyDate, json, function () {
-                console.log('saved: ', array)
             });
 
         }
