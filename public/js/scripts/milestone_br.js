@@ -40,8 +40,8 @@ var htmlString =
     			'<div class="nav-line"></div>' +
     		'</div>' +
     	'</div>' +
-    	'<div id="homepage"> This is the Home<div>' +
-    	'<div id="graph-container" style="display:none;">' +
+    	'<div id="homepage" style="display:none;"> This is the Home<div>' +
+    	'<div id="graph-container" >' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
 				'<div id="newdata" style="display:none;"></div>' +
 				'<div id="c" class="">' + 
