@@ -42,13 +42,14 @@ var addToDatabase = function (data, d) {
                 for (var i = 0; i < keys.length; i++) {
                     var key = keys[i];
                     if (_id == keys) {
+                        console.log('Aded at key: ', key)
                         parseRes[key].push(a)
                         find = true;
                     }
                 }
                 if (!find) {
 
-                    parseRes._id = a
+                    parseRes[_id] = a
                 }
                 var newJson = JSON.stringify(parseRes)
                 k.stateful.set(keyDate, newJson, function () {
