@@ -48,8 +48,7 @@ var addToDatabase = function (data, d) {
                 });
             }
         })
-    }
-    ;
+    };
 
 /**
  * Convert the date into the form of: gg/mm/yyyy
