@@ -41,21 +41,21 @@ var htmlString =
     		'</div>' +
     	'</div>' +
     	'<div id="homepage"> This is the Home<div>' +
-    	'<div id="graph-container" style="display:none">' +
+    	'<div id="graph-container" >' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
-				'<div id="newdata" style="display:none;"></div>' +
+				'<div id="newdata" ></div>' +
 				'<div id="c" class="">' + 
 				'<canvas id="canvas"  width="400px" height="400px"></canvas>' +
 				legend + 
 				'</div>' +
-				'<div id="newdata1" style="display:none;"> Hello</div>' +
+				'<div id="newdata1" > Hello</div>' +
 				'<div id="c1" class="">' +
  				'<canvas id="canvas1"  width="400px" height="400px"></canvas>' +
  				legend +
 				'</div>' +
 		'</div>'+
-		'<div id="old-graphs"  style="display:none"> Please choose a date and time<div>' +
-		'<div id="light-bulb"  style="display:none"><i class="fa fa-lightbulb-o fa-5x fa-pulse"></i><div>';
+		'<div id="old-graphs" > Please choose a date and time<div>' +
+		'<div id="light-bulb" ><i class="fa fa-lightbulb-o fa-5x fa-pulse"></i><div>';
 k.createHTML('pimmi', htmlString);
 // k.createHTML('graph-container', '<div id="graph-container">');
 // k.createHTML('data', '<div id="newdata" style="display:none;"></div>');
