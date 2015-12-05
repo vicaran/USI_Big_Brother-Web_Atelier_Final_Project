@@ -29,12 +29,11 @@ SenderT1.main = function() {
         var volume = self.gatherSound(soundPin);
         var light = lightPin.read() * lightPin.resolution;
         var data = {
-            _id: self.id,
+            _id: self._id,
             volume: volume,
             light: light,
             time: Date.now()
         };
-        console.log('This is the sending data', data);
         self.ws.send(data);
 
     }, 1000)
