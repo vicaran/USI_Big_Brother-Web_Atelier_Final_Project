@@ -24,7 +24,7 @@ var legend = '<div class="key">'+
 var htmlString = 
 '<div id="navbar">' +
     		'<div class="nav-panel">' +
-    			'<div id="home" class="fa fa-home">&nbsp; HOME</div>' +
+    			'<div id="home" class="fa fa-info">&nbsp; ABOUT</div>' +
     			'<div class="nav-line"></div>' +
     		'</div>' +
     		'<div class="nav-panel">' +
