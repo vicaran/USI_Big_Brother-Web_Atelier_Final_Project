@@ -1993,11 +1993,12 @@ canvas {
 /*.c1 {float:left;}*/
 .key {
     float:right;
+    position: relative;
     background-color:  rgba(51,56,63,0.3);
     color: #BEBDBF;
-    width: 9%;
-    padding:  2%;
-    height: 5em;
+    height: 8em;
+    padding: 2%;
+    width: 18%;
 }
 .key_entry{
 /*    display: grid;*/
