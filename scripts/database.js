@@ -10,17 +10,19 @@ var addToDatabase = function (data, d) {
 
     var parse = JSON.parse(data)
     var _id = parse._id;
-    var toSave = {
-        _id: {
-            volume: parse.volume,
-            light: parse.light,
-            temperature: parse.temperature
-        }
-    }
+    console.log(_id)
 
     k.stateful.get(keyDate, function (res) {
+
         console.log('&&&&&&&& ', res)
         if (res == null || res == undefined) {
+            var toSave = {
+                _id: [{
+                    volume: parse.volume,
+                    light: parse.light,
+                    temperature: parse.temperature
+                }]
+            };
             var json = JSON.stringify(toSave)
             k.stateful.set(keyDate, json, function () {
             });
@@ -28,30 +30,44 @@ var addToDatabase = function (data, d) {
         }
         else {
             var parseRes = JSON.parse(res)
-            console.log('----', parse)
-            parseRes._id = {
+            var find = false;
+            var a = {
                 volume: parse.volume,
                 light: parse.light,
                 temperature: parse.temperature
             };
-            var newJson = JSON.stringify(parse)
-            k.stateful.lpush(keyDate, newJson, function () {
-                console.log('saved: ', update)
-            });
-        }
-        //console.log('****  ', res, '  ****')
-    })
+            console.log('----', parse)
+            var keys = Object.keys(parseRes);
+            for (var i = 0; i < keys.length; i++) {
+                var key = keys[i];
+                if (_id == keys) {
+                    parseRes[key].push(a)
+                    find = true;
+                }
+            }
+            if (!find) {
 
-    // k.stateful.get(keyDate, function (res) {
-    //     console.log(keyDate)
-    //     console.log('****  ', res, '  ****')
-    //     k.stateful.lpush(keyDate, data, function () {
-    //         k.stateful.get(keyDate, function (find) {
-    //             console.log(find)
-    //         })
-    //     })
-    // });
-};
+                parseRes._id = a
+            }
+        var newJson = JSON.stringify(parseRes)
+        k.stateful.set(keyDate, newJson, function () {
+            console.log('saved: ', update)
+        });
+    }
+    //console.log('****  ', res, '  ****')
+})
+
+// k.stateful.get(keyDate, function (res) {
+//     console.log(keyDate)
+//     console.log('****  ', res, '  ****')
+//     k.stateful.lpush(keyDate, data, function () {
+//         k.stateful.get(keyDate, function (find) {
+//             console.log(find)
+//         })
+//     })
+// });
+}
+;
 
 /**
  * Convert the date into the form of: gg/mm/yyyy
