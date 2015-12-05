@@ -26,8 +26,8 @@ var htmlString = '<div id="graph-container">' +
 				'<div id="newdata" style="display:none;"></div>' +
 				'<div id="c" class="">' + 
 				'<canvas id="canvas"  width="400px" height="400px"></canvas>' +
+				legend+
 				'</div>' +
-				legend +
 				'<div id="newdata1" style="display:none;"> Hello</div>' +
 				'<div id="c1" class="">' +
  				'<canvas id="canvas1"  width="400px" height="400px"></canvas>' +
