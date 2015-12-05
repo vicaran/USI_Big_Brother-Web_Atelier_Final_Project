@@ -30,14 +30,15 @@ var addToDatabase = function (data, d) {
 
             }
             else {
+                var parseRes = JSON.parse(res)
                 var find = false;
                 var a = {
                     volume: parse.volume,
                     light: parse.light,
                     temperature: parse.temperature
                 };
-                console.log('----', res)
-                var keys = Object.keys(res);
+                console.log('----', parse)
+                var keys = Object.keys(parseRes);
                 for (var i = 0; i < keys.length; i++) {
                     var key = keys[i];
                     if (_id == keys) {
@@ -48,9 +49,9 @@ var addToDatabase = function (data, d) {
                 }
                 if (!find) {
 
-                    res[_id] = a
+                    parseRes[_id] = a
                 }
-                var newJson = JSON.stringify(res)
+                var newJson = JSON.stringify(parseRes)
                 k.stateful.set(keyDate, newJson, function () {
                     console.log('saved: ', update)
                 });
