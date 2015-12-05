@@ -18,8 +18,9 @@ var addToDatabase = function (data, d) {
 
         }
         else{
-            var update = res.push('c')
-            k.stateful.set(keyDate, update, function () {
+            res.push('c')
+            console.log('-------', res)
+            k.stateful.lpush(keyDate, res, function () {
                 console.log('saved: ', update)
             });
         }
