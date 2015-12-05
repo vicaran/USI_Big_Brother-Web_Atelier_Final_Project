@@ -24,11 +24,11 @@ var legend = '<div class="key">'+
 var htmlString = 
 '<div id="navbar">' +
     		'<div class="nav-panel">' +
-    			'<div id="live-feed" class="fa">LIVE FEED</div>' +
+    			'<div id="live-feed" class="fa fa-bar-chart">LIVE FEED</div>' +
     			'<div class="nav-line"></div>' +
     		'</div>' +
     		'<div class="nav-panel">' +
-    			'<div id="archives" class="fa">ARCHIVES</div>' +
+    			'<div id="archives" class="fa fa-database">ARCHIVES</div>' +
     			'<div class="nav-line"></div>' +
     		'</div>' +
     		'<div class="nav-panel">' +
