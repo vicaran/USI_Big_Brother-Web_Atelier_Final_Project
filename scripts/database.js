@@ -45,7 +45,7 @@ var addToDatabase = function(data, d) {
             }
             var newJson = JSON.stringify(parseRes);
             console.log(newJson);
-            k.stateful.lpush(keyDate, newJson, function() {
+            k.stateful.set(keyDate, newJson, function() {
                 console.log('Saved on existing key')
             });
         }
