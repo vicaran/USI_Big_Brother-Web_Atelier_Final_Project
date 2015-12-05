@@ -51,13 +51,13 @@ datasets : [
 
 // Navbar implementation
 var current_page = current_page || 'graph-container';
-document.getElementById(current_page).setAttribute('style', 'display', '');
+// document.getElementById(current_page).setAttribute('style', 'display', '');
 var nav = document.getElementById('navbar');
 nav.addEventListener('click', function(e){
 	// console.log('e');
-	console.log(e.target.lastchild);
-	if(e.target.id=="home"){
-		document.getElementById('homepage').setAttribute('class','');
+	console.log(e.target.childNodes);
+	if(e.target.id=="about"){
+		document.getElementById('info-page').setAttribute('class','');
 		document.getElementById('graph-container').setAttribute('class','hidden');
 		document.getElementById('old-graphs').setAttribute('class','hidden');
 		document.getElementById('light-bulb').setAttribute('class','hidden');
