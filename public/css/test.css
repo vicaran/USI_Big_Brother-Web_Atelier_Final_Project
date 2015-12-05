@@ -1982,6 +1982,40 @@ canvas {
     float: left;
 }
 
+.navbar{
+    color: #BEBDBF;
+    display: flex;
+    background-color: rgba(51,56,63,0.3);
+    height: 3em;
+    position: relative;
+    top: -8px;
+    left: -7px;
+    margin-right: -13px;
+    
+}
+
+.nav-panel{
+/*    background-color: #090603;*/
+    float: left;
+    margin-top:1em ;
+    padding-left: 2em;
+}
+.nav-panel:hover > .nav-line{
+    background-color: #BEBDBF;
+    position: relative;
+    bottom:-11px;
+    height:2px;
+}
+.nav-panel:selected > .nav-line{
+    background-color: #BEBDBF;
+    height:2px;
+    padding-right: 10px;
+}
+.nav-line{
+    background-color: rgba(51,56,63,0);
+    height:2px;
+    padding-right: 10px;
+}
 /*
 #graph-container {
     flex:auto;

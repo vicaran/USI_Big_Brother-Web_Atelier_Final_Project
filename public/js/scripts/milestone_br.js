@@ -21,7 +21,26 @@ var legend = '<div class="key">'+
             	'<div class="key_name"><div>Volume</div>'+
             	'<div>Light</div></div>'+
         	'</div>'
-var htmlString = '<div id="graph-container">' +
+var htmlString = 
+'<div class="navbar">' +
+    		'<div class="nav-panel">' +
+    			'<div class="fa fa-home">HOME</div>' +
+    			'<div class="nav-line"></div>' +
+    		'</div>' +
+    		'<div class="nav-panel">' +
+    			'<div class="fa">LIVE FEED</div>' +
+    			'<div class="nav-line"></div>' +
+    		'</div>' +
+    		'<div class="nav-panel">' +
+    			'<div class="fa">ARCHIVES</div>' +
+    			'<div class="nav-line"></div>' +
+    		'</div>' +
+    		'<div class="nav-panel">' +
+    			'<div class="fa fa-lightbulb-o">ACTIVATE LIGHTS</div>' +
+    			'<div class="nav-line"></div>' +
+    		'</div>' +
+    	'</div>' +
+    	'<div id="graph-container">' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
 				'<div id="newdata" style="display:none;"></div>' +
 				'<div id="c" class="">' + 
