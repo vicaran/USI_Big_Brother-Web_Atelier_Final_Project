@@ -6,56 +6,57 @@ var k = require('./../k_globals/koala.js')
  * @param d The Date.now()
  */
 var addToDatabase = function (data, d) {
-    var keyDate = convertDate(d) + "-" + convertHour(d);
+        var keyDate = convertDate(d) + "-" + convertHour(d);
 
-    var parse = JSON.parse(data)
-    var dioboia = parse._id;
-    console.log(dioboia)
+        var parse = JSON.parse(data)
+        var _id = parse._id;
 
-    k.stateful.get(keyDate, function (res) {
+        k.stateful.get(keyDate, function (res) {
 
-        console.log('&&&&&&&& ', res)
-        if (res == null || res == undefined) {
-            var toSave = {
-                dioboia: [{
+            console.log('&&&&&&&& ', res)
+            if (res == null || res == undefined) {
+                var toSave = {}
+
+                toSave[_id] =
+                    _[{
+                        volume: parse.volume,
+                        light: parse.light,
+                        temperature: parse.temperature
+                    }]
+
+                var json = JSON.stringify(toSave)
+                k.stateful.set(keyDate, json, function () {
+                });
+
+            }
+            else {
+                var parseRes = JSON.parse(res)
+                var find = false;
+                var a = {
                     volume: parse.volume,
                     light: parse.light,
                     temperature: parse.temperature
-                }]
-            };
-            var json = JSON.stringify(toSave)
-            k.stateful.set(keyDate, json, function () {
-            });
-
-        }
-        else {
-            var parseRes = JSON.parse(res)
-            var find = false;
-            var a = {
-                volume: parse.volume,
-                light: parse.light,
-                temperature: parse.temperature
-            };
-            console.log('----', parse)
-            var keys = Object.keys(parseRes);
-            for (var i = 0; i < keys.length; i++) {
-                var key = keys[i];
-                if (_id == keys) {
-                    parseRes[key].push(a)
-                    find = true;
+                };
+                console.log('----', parse)
+                var keys = Object.keys(parseRes);
+                for (var i = 0; i < keys.length; i++) {
+                    var key = keys[i];
+                    if (_id == keys) {
+                        parseRes[key].push(a)
+                        find = true;
+                    }
                 }
-            }
-            if (!find) {
+                if (!find) {
 
-                parseRes._id = a
+                    parseRes._id = a
+                }
+                var newJson = JSON.stringify(parseRes)
+                k.stateful.set(keyDate, newJson, function () {
+                    console.log('saved: ', update)
+                });
             }
-        var newJson = JSON.stringify(parseRes)
-        k.stateful.set(keyDate, newJson, function () {
-            console.log('saved: ', update)
-        });
-    }
-    //console.log('****  ', res, '  ****')
-})
+            //console.log('****  ', res, '  ****')
+        })
 
 // k.stateful.get(keyDate, function (res) {
 //     console.log(keyDate)
@@ -66,8 +67,8 @@ var addToDatabase = function (data, d) {
 //         })
 //     })
 // });
-}
-;
+    }
+    ;
 
 /**
  * Convert the date into the form of: gg/mm/yyyy
