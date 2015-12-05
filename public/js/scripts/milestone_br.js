@@ -24,10 +24,6 @@ var legend = '<div class="key">'+
 var htmlString = 
 '<div id="navbar">' +
     		'<div class="nav-panel">' +
-    			'<div id="home" class="fa fa-info">&nbsp; ABOUT</div>' +
-    			'<div class="nav-line"></div>' +
-    		'</div>' +
-    		'<div class="nav-panel">' +
     			'<div id="live-feed" class="fa">LIVE FEED</div>' +
     			'<div class="nav-line"></div>' +
     		'</div>' +
@@ -37,6 +33,10 @@ var htmlString =
     		'</div>' +
     		'<div class="nav-panel">' +
     			'<div id="activate-lights" class="fa fa-lightbulb-o"> &nbsp; ACTIVATE LIGHTS</div>' +
+    			'<div class="nav-line"></div>' +
+    		'</div>' +
+    		'<div class="nav-panel">' +
+    			'<div id="home" class="fa fa-info-circle">&nbsp; ABOUT</div>' +
     			'<div class="nav-line"></div>' +
     		'</div>' +
     	'</div>' +
