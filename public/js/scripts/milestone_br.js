@@ -40,7 +40,9 @@ var htmlString =
     			'<div class="nav-line"></div>' +
     		'</div>' +
     	'</div>' +
-    	'<div id="homepage" > This is the Home<div>' +
+    	'<div id="homepage" > This is the Home <div>' +
+    	'<div id="old-graphs"  class="hidden"> Please choose a date and time<div>' +
+		'<div id="light-bulb"  class="hidden"><i class="fa fa-lightbulb-o fa-5x fa-pulse"></i><div>' +
     	'<div id="graph-container" class="hidden" >' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
 				'<div id="newdata" style="display:none;"></div>' +
@@ -53,9 +55,7 @@ var htmlString =
  				'<canvas id="canvas1"  width="400px" height="400px"></canvas>' +
  				legend +
 				'</div>' +
-		'</div>'+
-		'<div id="old-graphs"  class="hidden"> Please choose a date and time<div>' +
-		'<div id="light-bulb"  class="hidden"><i class="fa fa-lightbulb-o fa-5x fa-pulse"></i><div>';
+		'</div>';
 k.createHTML('pimmi', htmlString);
 // k.createHTML('graph-container', '<div id="graph-container">');
 // k.createHTML('data', '<div id="newdata" style="display:none;"></div>');
