@@ -29,6 +29,7 @@ var addToDatabase = function(data, d) {
             });
 
         } else {
+            console.log('res', res)
             var parseRes = JSON.parse(res);
             // console.log('******************* ', _id, ' *******************')
             var a = {
@@ -42,7 +43,7 @@ var addToDatabase = function(data, d) {
                 console.log('PUSH ON DATABASE ON NEW ID: ', _id);
                 parseRes[_id] = [a]
             }
-            var newJson = JSON.stringify(parseRes)
+            var newJson = JSON.stringify(parseRes);
             console.log(newJson)
             k.stateful.set(keyDate, newJson, function() {
                 console.log('Saved on existing key')
