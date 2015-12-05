@@ -18,7 +18,7 @@ var addToDatabase = function (data, d) {
                 var toSave = {}
 
                 toSave[_id] =
-                    _[{
+                    [{
                         volume: parse.volume,
                         light: parse.light,
                         temperature: parse.temperature
