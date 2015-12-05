@@ -1992,7 +1992,46 @@ canvas {
 /*.c {float:left;}*/
 /*.c1 {float:left;}*/
 .key {
-    float:inherit;
-/*    background-color: grey;*/
-    color: white;
+    float:none;
+    background-color:  rgba(51,56,63,0.3);
+    color: #BEBDBF;
+    width: 9%;
+    padding:  2%;
+    height: 5em;
+}
+.key_entry{
+/*    display: grid;*/
+    float:left;
+/*    padding: 3px;*/
+}
+
+.volume_graph_key{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(215,54,139,0.8);
+    border: 1em;
+    border-color: rgba(220,220,220,1);
+    margin: 3px;
+    margin-top: 7px;
+
+}
+
+
+.light_graph_key {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(151,187,205,0.8);
+    border: 1em;
+    border-color: rgba(151,187,205,1);
+    margin: 3px;
+    margin-top: 5px;
+}
+.key_name{
+    margin-top: 5px;
+}
+.key_name >div{
+    float: left;
+    padding-top: 3px;
+    padding-left: 8px;
+    padding-bottom: 2px;
 }

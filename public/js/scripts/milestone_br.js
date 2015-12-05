@@ -14,21 +14,24 @@ k.createNode(function(data) {
 });
 
 //create the hidden div that will contain the received data
-var legend = '<div class="key"> '+
-			'<div> LEGEND <div>' +
-			'<canvas width="5px" height="5px"> </canvas>' +
-			'</div>';
+var legend = '<div class="key">'+
+            	'<div style="padding-left: 11px">LEGEND</div>'+
+            	'<div class="key_entry"><div class="volume_graph_key"></div>'+
+            	'<div class="light_graph_key"></div></div>'+
+            	'<div class="key_name"><div>Volume</div>'+
+            	'<div>Light</div></div>'+
+        	'</div>'
 var htmlString = '<div id="graph-container">' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
 				'<div id="newdata" style="display:none;"></div>' +
 				'<div id="c" class="">' + 
 				'<canvas id="canvas"  width="400px" height="400px"></canvas>' +
-				'<div class="key"> LEGEND</div>' +
+				legend+
 				'</div>' +
 				'<div id="newdata1" style="display:none;"> Hello</div>' +
 				'<div id="c1" class="">' +
  				'<canvas id="canvas1"  width="400px" height="400px"></canvas>' +
-				'<div id="c1_key" class="key"> LEGEND</div>' +
+				legend +
 				'</div>' +
 				'</div>';
 k.createHTML('pimmi', htmlString);
