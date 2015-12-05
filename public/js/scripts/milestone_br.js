@@ -55,7 +55,7 @@ var htmlString =
 				'</div>' +
 		'</div>'+
 		'<div id="old-graphs"> Please choose a date and time<div>' +
-		'<div id="light-bulb"><i class="fa fa-lightbulb-o fa-5x fa-pulse"><><div>';
+		'<div id="light-bulb"><i class="fa fa-lightbulb-o fa-5x fa-pulse"></i><div>';
 k.createHTML('pimmi', htmlString);
 // k.createHTML('graph-container', '<div id="graph-container">');
 // k.createHTML('data', '<div id="newdata" style="display:none;"></div>');
