@@ -13,4 +13,4 @@ interval = setInterval(function () {
         time: Date.now()
     };
     ws.send(data)
-}, 1000);
+}, 500);

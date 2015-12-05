@@ -9,15 +9,15 @@ var addToDatabase = function (data, d) {
     var keyDate = convertDate(d) + "-" + convertHour(d);
 
     var parse = JSON.parse(data)
-    var _id = parse._id;
-    console.log(_id)
+    var dioboia = parse._id;
+    console.log(dioboia)
 
     k.stateful.get(keyDate, function (res) {
 
         console.log('&&&&&&&& ', res)
         if (res == null || res == undefined) {
             var toSave = {
-                _id: [{
+                dioboia: [{
                     volume: parse.volume,
                     light: parse.light,
                     temperature: parse.temperature
