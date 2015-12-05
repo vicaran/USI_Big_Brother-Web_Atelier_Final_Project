@@ -1996,9 +1996,9 @@ canvas {
 /*    position: relative;*/
     background-color:  rgba(51,56,63,0.3);
     color: #BEBDBF;
-    height: 8em;
+    height: 9em;
     padding: 2%;
-    width: 16%;
+    width: 9em;
 }
 .key_entry{
 /*    display: grid;*/
