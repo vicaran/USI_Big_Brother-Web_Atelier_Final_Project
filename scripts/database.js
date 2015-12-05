@@ -28,11 +28,13 @@ var addToDatabase = function (data, d) {
 
         }
         else {
-            var parse = JSON.parse(res)
-            console.log('----',parse)
-            parse._id = {
-                toSave._id
-            }
+            var parseRes = JSON.parse(res)
+            console.log('----', parse)
+            parseRes._id = {
+                volume: parse.volume,
+                light: parse.light,
+                temperature: parse.temperature
+            };
             var newJson = JSON.stringify(parse)
             k.stateful.lpush(keyDate, newJson, function () {
                 console.log('saved: ', update)
