@@ -10,7 +10,6 @@ var addToDatabase = function (data, d) {
 
         var parse = JSON.parse(data)
         var _id = parse._id;
-        console.log('------------------- REQUEST BY SOCKET: ', _id, ' -------------------')
 
         k.stateful.get(keyDate, function (res) {
             if (res == null || res == undefined) {
@@ -21,7 +20,7 @@ var addToDatabase = function (data, d) {
                         volume: parse.volume,
                         light: parse.light,
                         temperature: parse.temperature
-                    }]
+                    }];
 
                 var json = JSON.stringify(toSave)
                 k.stateful.set(keyDate, json, function () {
@@ -30,6 +29,7 @@ var addToDatabase = function (data, d) {
             }
             else {
                 var parseRes = JSON.parse(res)
+                console.log('------------------- ALREADY EXIST AT THIS DATE, SOCKET: ', _id, ' -------------------')
                 var find = false;
                 var a = {
                     volume: parse.volume,
@@ -39,6 +39,8 @@ var addToDatabase = function (data, d) {
                 var keys = Object.keys(parseRes);
                 for (var i = 0; i < keys.length; i++) {
                     var key = keys[i];
+                    console.log(key, 'KEY ******')
+
                     if (_id == keys) {
                         console.log('Added at key: ', key)
                         parseRes[key].push(a);
