@@ -10,12 +10,11 @@ var addToDatabase = function (data, d) {
 
         var parse = JSON.parse(data)
         var _id = parse._id;
+        console.log('------------------- REQUEST BY SOCKET: ', _id, ' -------------------')
 
         k.stateful.get(keyDate, function (res) {
-
-            console.log('&&&&&&&& ', res)
             if (res == null || res == undefined) {
-                var toSave = {}
+                var toSave = {};
                 // gg luca
                 toSave[_id] =
                     [{
@@ -37,13 +36,12 @@ var addToDatabase = function (data, d) {
                     light: parse.light,
                     temperature: parse.temperature
                 };
-                console.log('----', parseRes)
                 var keys = Object.keys(parseRes);
                 for (var i = 0; i < keys.length; i++) {
                     var key = keys[i];
                     if (_id == keys) {
                         console.log('Added at key: ', key)
-                        parseRes[key].push(a)
+                        parseRes[key].push(a);
                         find = true;
                     }
                 }
@@ -56,18 +54,7 @@ var addToDatabase = function (data, d) {
                     console.log('saved: ', newJson)
                 });
             }
-            //console.log('****  ', res, '  ****')
         })
-
-// k.stateful.get(keyDate, function (res) {
-//     console.log(keyDate)
-//     console.log('****  ', res, '  ****')
-//     k.stateful.lpush(keyDate, data, function () {
-//         k.stateful.get(keyDate, function (find) {
-//             console.log(find)
-//         })
-//     })
-// });
     }
     ;
 
