@@ -37,7 +37,7 @@ var addToDatabase = function (data, d) {
                     light: parse.light,
                     temperature: parse.temperature
                 };
-                console.log('----', parse)
+                console.log('----', parseRes)
                 var keys = Object.keys(parseRes);
                 for (var i = 0; i < keys.length; i++) {
                     var key = keys[i];
