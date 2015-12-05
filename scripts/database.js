@@ -10,7 +10,7 @@ var addToDatabase = function(data, d) {
     var parse = JSON.parse(data)
         // console.log('this is parse', parse);
     var _id = parse._id;
-    // console.log('------------------- REQUEST FROM SOCKET: ', _id, ' -------------------')
+     console.log('------------------- REQUEST FROM SOCKET: ', _id, ' -------------------')
 
     k.stateful.get(keyDate, function(res) {
         if (res == null || res == undefined) {
@@ -39,6 +39,7 @@ var addToDatabase = function(data, d) {
             if (parseRes[_id] != undefined) {
                 parseRes[_id].push(a);
             } else {
+                console.log('PUSH ON DATABASE ON NEW ID: ', _id);
                 parseRes[_id] = [a]
             }
             var newJson = JSON.stringify(parseRes)

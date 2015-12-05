@@ -19,7 +19,7 @@ var senderNodejs = function (_id,n) {
                 light: 100
             };
             self.ws.send(data)
-        }, 100);
+        }, 1000);
     };
     this.start = function () {
         this.main()
@@ -39,4 +39,4 @@ var senderTestGenerator = function (NumberOfSender) {
 };
 
 
-senderTestGenerator(1000);
+senderTestGenerator(3);
