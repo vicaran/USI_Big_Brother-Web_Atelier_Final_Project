@@ -1992,13 +1992,13 @@ canvas {
 /*.c {float:left;}*/
 /*.c1 {float:left;}*/
 .key {
-    float:right;
+    float:left;
 /*    position: relative;*/
     background-color:  rgba(51,56,63,0.3);
     color: #BEBDBF;
     height: 8em;
     padding: 2%;
-    width: 18%;
+    width: 16%;
 }
 .key_entry{
 /*    display: grid;*/
