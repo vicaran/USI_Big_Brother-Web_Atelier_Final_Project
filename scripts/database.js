@@ -9,6 +9,7 @@ var addToDatabase = function (data, d) {
 
         var keyDate = convertDate(d) + "-" + convertHour(d);
         var parse = JSON.parse(data)
+        console.log('this is parse', parse);
         var _id = parse._id;
         console.log('------------------- REQUEST FROM SOCKET: ', _id, ' -------------------')
 
