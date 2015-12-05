@@ -39,6 +39,7 @@ var addToDatabase = function(data, d) {
             if (parseRes[_id] != undefined) {
                 parseRes[_id].push(a);
             } else {
+                console.log('PUSH ON DATABASE ON NEW ID: ', _id);
                 parseRes[_id] = [a]
             }
             var newJson = JSON.stringify(parseRes)
