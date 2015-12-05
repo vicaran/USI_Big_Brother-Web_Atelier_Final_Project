@@ -50,7 +50,7 @@ datasets : [
 }
 
 // Navbar implementation
-var current_page = current_page || 'graph-container';
+var current_page = current_page || 'homepage';
 document.getElementById(current_page).setAttribute('style', 'display', '');
 var nav = document.getElementById('navbar');
 nav.addEventListener('click', function(e){
@@ -78,7 +78,7 @@ nav.addEventListener('click', function(e){
 		document.getElementById('homepage').setAttribute('class','hidden');
 		document.getElementById('graph-container').setAttribute('class','hidden');
 		document.getElementById('old-graphs').setAttribute('class','hidden');
-		document.getElementById('light-bulb').removeAttribute('style');
+		document.getElementById('light-bulb').setAttribute('class','');
 		current_page = 'light-bulb';
 	}
 });
