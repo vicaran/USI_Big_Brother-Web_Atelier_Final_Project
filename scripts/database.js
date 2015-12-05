@@ -1,5 +1,4 @@
 var k = require('./../k_globals/koala.js')
-
 /**
  * This function save the data on Redis
  * @param data The json with the producer's data
@@ -9,9 +8,9 @@ var addToDatabase = function(data, d) {
 
     var keyDate = convertDate(d) + "-" + convertHour(d);
     var parse = JSON.parse(data)
-    console.log('this is parse', parse);
+        // console.log('this is parse', parse);
     var _id = parse._id;
-    console.log('------------------- REQUEST FROM SOCKET: ', _id, ' -------------------')
+    // console.log('------------------- REQUEST FROM SOCKET: ', _id, ' -------------------')
 
     k.stateful.get(keyDate, function(res) {
         if (res == null || res == undefined) {
@@ -25,11 +24,13 @@ var addToDatabase = function(data, d) {
             }];
 
             var json = JSON.stringify(toSave)
-            k.stateful.set(keyDate, json, function() {});
+            k.stateful.set(keyDate, json, function() {
+                console.log('Saved on new key')
+            });
 
         } else {
             var parseRes = JSON.parse(res);
-            console.log('******************* ', _id, ' *******************')
+            // console.log('******************* ', _id, ' *******************')
             var a = {
                 volume: parse.volume,
                 light: parse.light,
@@ -42,7 +43,7 @@ var addToDatabase = function(data, d) {
             }
             var newJson = JSON.stringify(parseRes)
             k.stateful.set(keyDate, newJson, function() {
-                console.log('saved')
+                console.log('Saved on existing key')
             });
         }
     })
@@ -72,6 +73,5 @@ function convertHour(date) {
     var datetext = d.toTimeString();
     return datetext.split(' ')[0];
 }
-
 
 exports.addToDatabase = addToDatabase;
