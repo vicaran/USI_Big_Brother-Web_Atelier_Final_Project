@@ -57,21 +57,21 @@ nav.addEventListener('click', function(e){
 	// console.log('e');
 	console.log(e.target.id);
 	if(e.target.id=="home"){
-		document.getElementById('homepage').removeAttribute('style');
-		document.getElementById('graph-container')..setAttribute('class','hidden');
+		document.getElementById('homepage').setAttribute('class','');
+		document.getElementById('graph-container').setAttribute('class','hidden');
 		document.getElementById('old-graphs').setAttribute('class','hidden');
 		document.getElementById('light-bulb').setAttribute('class','hidden');
 		current_page = 'homepage';
 	}else if(e.target.id=="live-feed"){
 		document.getElementById('homepage').setAttribute('class','hidden');
-		document.getElementById('graph-container').removeAttribute('style');
+		document.getElementById('graph-container').setAttribute('class','');
 		document.getElementById('old-graphs').setAttribute('class','hidden');
 		document.getElementById('light-bulb').setAttribute('class','hidden');
 		current_page = 'graph-container';
 	}else if(e.target.id=="archives"){
 		document.getElementById('homepage').setAttribute('class','hidden');
 		document.getElementById('graph-container').setAttribute('class','hidden');
-		document.getElementById('old-graphs').removeAttribute('style');
+		document.getElementById('old-graphs').setAttribute('class','');
 		document.getElementById('light-bulb').setAttribute('class','hidden');
 		current_page = 'old-graphs';
 	}else if(e.target.id=="activate-lights"){
