@@ -6,8 +6,8 @@ var lineChartData = {
 			label: "volume Data Set",
 			fillColor : "rgba(215,54,139,0.2)",
 			strokeColor : "rgba(215,54,139,1)",
-			pointColor : "rgba(215,54,139,1)",
-			pointStrokeColor : "#fff",
+			pointColor : "rgba(215,54,139,0.8)",
+			pointStrokeColor : "rgba(215,54,139,1)",
 			pointHighlightFill : "#fff",
 			pointHighlightStroke : "rgba(220,220,220,1)",
 			data : []
