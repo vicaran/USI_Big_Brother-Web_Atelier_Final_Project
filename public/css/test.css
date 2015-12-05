@@ -1982,7 +1982,7 @@ canvas {
     float: left;
 }
 
-.navbar{
+#navbar{
     color: #BEBDBF;
     display: flex;
     background-color: rgba(51,56,63,0.3);

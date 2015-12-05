@@ -22,7 +22,7 @@ var legend = '<div class="key">'+
             	'<div>Light</div></div>'+
         	'</div>'
 var htmlString = 
-'<div class="navbar">' +
+'<div id="navbar">' +
     		'<div class="nav-panel">' +
     			'<div id="home" class="fa fa-home">&nbsp; HOME</div>' +
     			'<div class="nav-line"></div>' +
