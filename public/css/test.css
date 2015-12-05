@@ -2001,7 +2001,7 @@ canvas {
 }
 .key_entry{
 /*    display: grid;*/
-    float:left;
+    float:right;
 /*    padding: 3px;*/
 }
 
