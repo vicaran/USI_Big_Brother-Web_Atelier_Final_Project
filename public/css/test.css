@@ -1993,7 +1993,7 @@ canvas {
 /*.c1 {float:left;}*/
 .key {
     float:right;
-    position: absolute;
+    position: fixed;
     background-color:  rgba(51,56,63,0.3);
     color: #BEBDBF;
     height: 8em;
