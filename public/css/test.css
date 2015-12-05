@@ -2008,7 +2008,7 @@ canvas {
     height:2px;
 }
 .nav-panel:selected > .nav-line{
-    background-color: #BEBDBF;
+    background-color: pink;
     height:2px;
     padding-right: 10px;
 }
