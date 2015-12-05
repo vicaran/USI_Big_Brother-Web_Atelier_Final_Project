@@ -47,15 +47,46 @@ datasets : [
 		data : []
 	},
 ]
-
 }
+
+// Navbar implementation
+var current_page = current_page || 'homepage';
+var nav = document.getElementById('navbar');
+nav.addEventListener('click', function(e){
+	if(e.target.id=="home"){
+		document.getElementById('homepage').setAttribute('style','');
+		document.getElementById('graph-container').setAttribute('style','display: none;');
+		document.getElementById('old-graphs').setAttribute('style','display: none;');
+		document.getElementById('light-bulb').setAttribute('style','display: none;');
+		current_page = 'homepage';
+	}else if(e.target.id=="live-feed"){
+		document.getElementById('homepage').setAttribute('style','display: none;');
+		document.getElementById('graph-container').setAttribute('style','');
+		document.getElementById('old-graphs').setAttribute('style','display: none;');
+		document.getElementById('light-bulb').setAttribute('style','display: none;');
+		current_page = 'graph-container';
+	}else if(e.target.id=="archives"){
+		document.getElementById('homepage').setAttribute('style','display: none;');
+		document.getElementById('graph-container').setAttribute('style','display: none;');
+		document.getElementById('old-graphs').setAttribute('style','');
+		document.getElementById('light-bulb').setAttribute('style','display: none;');
+		current_page = 'old-graphs';
+	}else if(e.target.id=="activate-lights"){
+		document.getElementById('homepage').setAttribute('style','display: none;');
+		document.getElementById('graph-container').setAttribute('style','display: none;');
+		document.getElementById('old-graphs').setAttribute('style','display: none;');
+		document.getElementById('light-bulb').setAttribute('style','');
+		current_page = 'light-bulb';
+	}
+});
+
 // SWITCH BETWEEN GRAPHS
 // currently hidden 
 // var prev_graph_c1 = false;
 var nextGraph = nextGraph || 'c'; 
 
 var graph_button = document.getElementById("arrow");
-graph_button.addEventListener('click', function(e){
+graph_button.addEventListener('click', function(){
 	c = document.getElementById('c');
 	c1 = document.getElementById('c1');
 	if(nextGraph == 'c'){
