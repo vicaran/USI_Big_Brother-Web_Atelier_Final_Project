@@ -57,28 +57,28 @@ nav.addEventListener('click', function(e){
 	// console.log('e');
 	console.log(e.target.id);
 	if(e.target.id=="home"){
-		document.getElementById('homepage').setAttribute('style','display: block;');
+		document.getElementById('homepage').removeAttribute('style');
 		document.getElementById('graph-container').setAttribute('style','display: none;');
 		document.getElementById('old-graphs').setAttribute('style','display: none;');
 		document.getElementById('light-bulb').setAttribute('style','display: none;');
 		current_page = 'homepage';
 	}else if(e.target.id=="live-feed"){
 		document.getElementById('homepage').setAttribute('style','display: none;');
-		document.getElementById('graph-container').setAttribute('style','display: block;');
+		document.getElementById('graph-container').removeAttribute('style');
 		document.getElementById('old-graphs').setAttribute('style','display: none;');
 		document.getElementById('light-bulb').setAttribute('style','display: none;');
 		current_page = 'graph-container';
 	}else if(e.target.id=="archives"){
 		document.getElementById('homepage').setAttribute('style','display: none;');
 		document.getElementById('graph-container').setAttribute('style','display: none;');
-		document.getElementById('old-graphs').setAttribute('style','display: block;');
+		document.getElementById('old-graphs').removeAttribute('style');
 		document.getElementById('light-bulb').setAttribute('style','display: none;');
 		current_page = 'old-graphs';
 	}else if(e.target.id=="activate-lights"){
 		document.getElementById('homepage').setAttribute('style','display: none;');
 		document.getElementById('graph-container').setAttribute('style','display: none;');
 		document.getElementById('old-graphs').setAttribute('style','display: none;');
-		document.getElementById('light-bulb').setAttribute('style','display: block;');
+		document.getElementById('light-bulb').removeAttribute('style');
 		current_page = 'light-bulb';
 	}
 });
