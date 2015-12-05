@@ -7,13 +7,23 @@ var k = require('./../k_globals/koala.js')
  */
 var addToDatabase = function (data, d) {
     var keyDate = convertDate(d) + "-" + convertHour(d);
-    k.stateful.set(keyDate, data, function () {
-        console.log('saved')
-    });
+
 
     k.stateful.get(keyDate, function (res) {
-        console.log(keyDate)
-        console.log('****  ', res, '  ****')
+        if (res == null || res == undefined) {
+            var array = [data];
+            k.stateful.set(keyDate, array, function () {
+                console.log('saved: ', array)
+            });
+
+        }
+        else{
+            var update = res.push(data)
+            k.stateful.set(keyDate, update, function () {
+                console.log('saved: ', update)
+            });
+        }
+        //console.log('****  ', res, '  ****')
     })
 
     // k.stateful.get(keyDate, function (res) {
