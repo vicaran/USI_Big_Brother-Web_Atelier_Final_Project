@@ -7,9 +7,9 @@ var k = require('./../k_globals/koala.js')
  */
 var addToDatabase = function (data, d) {
         var keyDate = convertDate(d) + "-" + convertHour(d);
-
         var parse = JSON.parse(data)
         var _id = parse._id;
+        console.log('------------------- REQUEST FROM SOCKET: ', _id, ' -------------------')
 
         k.stateful.get(keyDate, function (res) {
             if (res == null || res == undefined) {
@@ -28,9 +28,8 @@ var addToDatabase = function (data, d) {
 
             }
             else {
-                console.log('&&&&&&&&&&&&&&&&&&&& SAME DATE &&&&&&&&&&&&&&&&&&&&')
-                var parseRes = JSON.parse(res)
-                console.log('------------------- ALREADY EXIST AT THIS DATE, SOCKET: ', _id, ' -------------------')
+                var parseRes = JSON.parse(res);
+                console.log('******************* ', _id, ' *******************')
                 var find = false;
                 var a = {
                     volume: parse.volume,
@@ -40,9 +39,7 @@ var addToDatabase = function (data, d) {
                 var keys = Object.keys(parseRes);
                 for (var i = 0; i < keys.length; i++) {
                     var key = keys[i];
-                    console.log(key, 'KEY ******')
                     if (_id == key) {
-                        console.log('Added at key: ', key)
                         parseRes[key].push(a);
                         find = true;
                     }
@@ -53,7 +50,7 @@ var addToDatabase = function (data, d) {
                 }
                 var newJson = JSON.stringify(parseRes)
                 k.stateful.set(keyDate, newJson, function () {
-                    console.log('saved: ', newJson)
+                    console.log('saved')
                 });
             }
         })

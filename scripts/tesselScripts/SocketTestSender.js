@@ -19,7 +19,7 @@ var senderNodejs = function (_id,n) {
                 light: 100
             };
             self.ws.send(data)
-        }, 200);
+        }, 100);
     };
     this.start = function () {
         this.main()
@@ -32,7 +32,6 @@ var senderNodejs = function (_id,n) {
  */
 var senderTestGenerator = function (NumberOfSender) {
     for (var i = 0; i < NumberOfSender; i++) {
-        console.log(i)
         var t = new senderNodejs(i, i + 10)
         t.start()
 
@@ -40,4 +39,4 @@ var senderTestGenerator = function (NumberOfSender) {
 };
 
 
-senderTestGenerator(2);
+senderTestGenerator(10);
