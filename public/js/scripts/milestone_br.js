@@ -40,10 +40,10 @@ var htmlString =
     			'<div class="nav-line"></div>' +
     		'</div>' +
     	'</div>' +
-    	'<div id="homepage" >This is a homepage</div>' +
+    	'<div id="homepage" class="hidden">This is a homepage</div>' +
     	'<div id="old-graphs" class="hidden">This is where we add the database stuff</div>' +
     	'<div id="light-bulb" class="hidden">Turn USI lights on and off</div>' +
-    	'<div id="graph-container" class="hidden">' +
+    	'<div id="graph-container" class="">' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
 				'<div id="newdata" style="display:none;"></div>' +
 				'<div id="c" class="">' + 

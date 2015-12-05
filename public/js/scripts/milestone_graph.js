@@ -50,7 +50,7 @@ datasets : [
 }
 
 // Navbar implementation
-var current_page = current_page || 'homepage';
+var current_page = current_page || 'graph-container';
 document.getElementById(current_page).setAttribute('style', 'display', '');
 var nav = document.getElementById('navbar');
 nav.addEventListener('click', function(e){
