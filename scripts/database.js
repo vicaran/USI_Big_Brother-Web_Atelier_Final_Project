@@ -16,7 +16,7 @@ var addToDatabase = function (data, d) {
             console.log('&&&&&&&& ', res)
             if (res == null || res == undefined) {
                 var toSave = {}
-
+                // gg luca
                 toSave[_id] =
                     [{
                         volume: parse.volume,
