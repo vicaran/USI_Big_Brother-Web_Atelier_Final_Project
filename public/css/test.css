@@ -1993,7 +1993,7 @@ canvas {
 /*.c1 {float:left;}*/
 .key {
     float:right;
-    position: fixed;
+/*    position: relative;*/
     background-color:  rgba(51,56,63,0.3);
     color: #BEBDBF;
     height: 8em;
@@ -2005,7 +2005,9 @@ canvas {
     float:left;
 /*    padding: 3px;*/
 }
-
+#graph-container{
+    display: block;
+}
 .volume_graph_key{
     width: 20px;
     height: 20px;
