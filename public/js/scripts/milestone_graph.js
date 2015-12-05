@@ -33,9 +33,9 @@ datasets : [
 	{
 		label: "volume Data Set",
 		fillColor : "rgba(215,54,139,0.2)",
-		strokeColor : "rgba(215,54,139,1)",
+		strokeColor : "rgba(215,54,139,0.8)",
 		highlightFill : "#fff",
-		highlightStroke : "rgba(220,220,220,1)",
+		highlightStroke : "rgba(215,54,139,0.8)",
 		data : []
 	},
 	{
