@@ -54,7 +54,7 @@ var current_page = current_page || 'homepage';
 var nav = document.getElementById('navbar');
 nav.addEventListener('click', function(e){
 	// console.log('e');
-	console.log(e.id);
+	console.log(e.target);
 	if(e.target.id=="home"){
 		document.getElementById('homepage').setAttribute('style','display: block;');
 		document.getElementById('graph-container').setAttribute('style','display: none;');
