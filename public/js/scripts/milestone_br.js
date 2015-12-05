@@ -24,22 +24,23 @@ var legend = '<div class="key">'+
 var htmlString = 
 '<div class="navbar">' +
     		'<div class="nav-panel">' +
-    			'<div class="fa fa-home">HOME</div>' +
+    			'<div id="home" class="fa fa-home">&nbsp; HOME</div>' +
     			'<div class="nav-line"></div>' +
     		'</div>' +
     		'<div class="nav-panel">' +
-    			'<div class="fa">LIVE FEED</div>' +
+    			'<div id="live-feed" class="fa">LIVE FEED</div>' +
     			'<div class="nav-line"></div>' +
     		'</div>' +
     		'<div class="nav-panel">' +
-    			'<div class="fa">ARCHIVES</div>' +
+    			'<div id="archives" class="fa">ARCHIVES</div>' +
     			'<div class="nav-line"></div>' +
     		'</div>' +
     		'<div class="nav-panel">' +
-    			'<div class="fa fa-lightbulb-o">ACTIVATE LIGHTS</div>' +
+    			'<div id="activate-lights" class="fa fa-lightbulb-o">&nbsp; ACTIVATE LIGHTS</div>' +
     			'<div class="nav-line"></div>' +
     		'</div>' +
     	'</div>' +
+    	'<div id="homepage"> This is the Home<div>' +
     	'<div id="graph-container">' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
 				'<div id="newdata" style="display:none;"></div>' +
@@ -52,7 +53,9 @@ var htmlString =
  				'<canvas id="canvas1"  width="400px" height="400px"></canvas>' +
  				legend +
 				'</div>' +
-				'</div>';
+		'</div>'+
+		'<div id="old-graphs"> Please choose a date and time<div>' +
+		'<div id="light-bulb"><i class="fa fa-lightbulb-o fa-5x fa-pulse"><><div>';
 k.createHTML('pimmi', htmlString);
 // k.createHTML('graph-container', '<div id="graph-container">');
 // k.createHTML('data', '<div id="newdata" style="display:none;"></div>');
