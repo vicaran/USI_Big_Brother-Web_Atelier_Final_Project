@@ -41,8 +41,7 @@ var addToDatabase = function (data, d) {
                 for (var i = 0; i < keys.length; i++) {
                     var key = keys[i];
                     console.log(key, 'KEY ******')
-
-                    if (_id == keys) {
+                    if (_id == key) {
                         console.log('Added at key: ', key)
                         parseRes[key].push(a);
                         find = true;
