@@ -13,9 +13,9 @@ var WebSocketServer = require('ws').Server,
 var client = {};
 var _id = 0;
 
-wss.on('connection', function (ws) {
+wss.on('connection', function(ws) {
     console.log('____________New Connection Opened____________');
-    console.log('There are ' + (Object.keys(client).length +1).toString() + ' connections');
+    console.log('There are ' + (Object.keys(client).length + 1).toString() + ' connections');
 
     var fDate = new Date();
     ws._id = _id;
@@ -25,7 +25,7 @@ wss.on('connection', function (ws) {
         browser: false
     };
     _id++;
-    ws.on('message', function (data) {
+    ws.on('message', function(data) {
 
         //update date
         var date = new Date()
@@ -39,20 +39,20 @@ wss.on('connection', function (ws) {
 
     ws.on('close', function close() {
         delete client[ws._id];
-        console.log('close socket: ' +  _id);
-        _id --;
+        console.log('close socket: ' + _id);
+        _id--;
     });
     ws.on('disconnect', function close() {
         delete client[ws._id];
         console.log('disconnected socket: ' + _id);
-        _id --;
+        _id--;
 
     });
 });
 
 function sendAll(data, d) {
     var keys = Object.keys(client)
-    //add data to database
+        //add data to database
     dataB.addToDatabase(data, d);
     console.log('This is data:', data);
     for (var i = 0; i < keys.length; i++) {
@@ -67,14 +67,12 @@ function sendAll(data, d) {
                     }
                     //delete socket
                     delete client[key];
-                    _id --;
+                    _id--;
 
-                }
-                else {
+                } else {
                     client[key].ws.send(data)
                 }
-            }
-            else {
+            } else {
                 client[key].ws.send(data)
                 //console.log('browser')
             }

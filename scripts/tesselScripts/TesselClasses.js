@@ -17,14 +17,14 @@ function MyTessel(id) {
 /**
  * This function is the main function - you MUST override it
  **/
-MyTessel.prototype.main = function () {
+MyTessel.prototype.main = function() {
 
 };
 
 /**
  * This function start the Tessel
  */
-MyTessel.prototype.start = function () {
+MyTessel.prototype.start = function() {
     this.main();
 };
 
@@ -45,13 +45,13 @@ MyTessel.prototype.start = function () {
  */
 function SenderTessel(id) {
     MyTessel.call(this, id);
-    console.log('Sender Tessel ' +this._id+  ' created')
+    console.log('Sender Tessel ' + this._id + ' created')
 
     /**
      * This function set the RGB Led. Low noise = green, medium = blue and high = red
      * @param {number} volume
      */
-    this.setColor = function (volume) {
+    this.setColor = function(volume) {
 
         switch (volume) {
             case volume < 10:
@@ -73,8 +73,6 @@ function SenderTessel(id) {
                 blue.write(1);
                 green.write(1);
                 red.write(0)
-
-
         }
     };
 
@@ -83,7 +81,7 @@ function SenderTessel(id) {
      * @param pin - the analog pin of the sound sensor
      * @returns {number} volume
      */
-    this.gatherSound = function (pin) {
+    this.gatherSound = function(pin) {
         var volume = 0.0; // peak-to-peak level
 
         var signalMax = 0;
@@ -121,7 +119,7 @@ SenderTessel.prototype.constructor = SenderTessel;
  */
 function ReceiveTessel(id) {
     MyTessel.call(this, id);
-    console.log('Receive Tessel ' +this.id+  ' created')
+    console.log('Receive Tessel ' + this.id + ' created')
 
 }
 
@@ -131,4 +129,3 @@ ReceiveTessel.prototype.constructor = ReceiveTessel;
 
 exports.SenderTessel = SenderTessel;
 exports.ReceiveTessel = ReceiveTessel;
-

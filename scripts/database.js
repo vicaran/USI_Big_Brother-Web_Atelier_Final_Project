@@ -5,51 +5,48 @@ var k = require('./../k_globals/koala.js')
  * @param data The json with the producer's data
  * @param d The Date.now()
  */
-var addToDatabase = function (data, d) {
+var addToDatabase = function(data, d) {
 
-        var keyDate = convertDate(d) + "-" + convertHour(d);
-        var parse = JSON.parse(data)
-        console.log('this is parse', parse);
-        var _id = parse._id;
-        console.log('------------------- REQUEST FROM SOCKET: ', _id, ' -------------------')
+    var keyDate = convertDate(d) + "-" + convertHour(d);
+    var parse = JSON.parse(data)
+    console.log('this is parse', parse);
+    var _id = parse._id;
+    console.log('------------------- REQUEST FROM SOCKET: ', _id, ' -------------------')
 
-        k.stateful.get(keyDate, function (res) {
-            if (res == null || res == undefined) {
-                var toSave = {};
-                //if there isn't create a array of json
-                toSave[_id] =
-                    [{
-                        volume: parse.volume,
-                        light: parse.light,
-                        temperature: parse.temperature
-                    }];
+    k.stateful.get(keyDate, function(res) {
+        if (res == null || res == undefined) {
+            var toSave = {};
+            //if there isn't create a array of json
+            toSave[_id] =
+                [{
+                volume: parse.volume,
+                light: parse.light,
+                temperature: parse.temperature
+            }];
 
-                var json = JSON.stringify(toSave)
-                k.stateful.set(keyDate, json, function () {
-                });
+            var json = JSON.stringify(toSave)
+            k.stateful.set(keyDate, json, function() {});
 
+        } else {
+            var parseRes = JSON.parse(res);
+            console.log('******************* ', _id, ' *******************')
+            var a = {
+                volume: parse.volume,
+                light: parse.light,
+                temperature: parse.temperature
+            };
+            if (parseRes[_id] != undefined) {
+                parseRes[_id].push(a);
+            } else {
+                parseRes[_id] = [a]
             }
-            else {
-                var parseRes = JSON.parse(res);
-                console.log('******************* ', _id, ' *******************')
-                var a = {
-                    volume: parse.volume,
-                    light: parse.light,
-                    temperature: parse.temperature
-                };
-                if (parseRes[_id] != undefined) {
-                    parseRes[_id].push(a);
-                }
-                else {
-                    parseRes[_id] = [a]
-                }
-                var newJson = JSON.stringify(parseRes)
-                k.stateful.set(keyDate, newJson, function () {
-                    console.log('saved')
-                });
-            }
-        })
-    };
+            var newJson = JSON.stringify(parseRes)
+            k.stateful.set(keyDate, newJson, function() {
+                console.log('saved')
+            });
+        }
+    })
+};
 
 /**
  * Convert the date into the form of: gg/mm/yyyy
