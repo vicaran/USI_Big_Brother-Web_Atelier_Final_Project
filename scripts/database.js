@@ -53,7 +53,7 @@ var addToDatabase = function (data, d) {
                 }
                 var newJson = JSON.stringify(parseRes)
                 k.stateful.set(keyDate, newJson, function () {
-                    console.log('saved: ', update)
+                    console.log('saved: ', newJson)
                 });
             }
             //console.log('****  ', res, '  ****')
