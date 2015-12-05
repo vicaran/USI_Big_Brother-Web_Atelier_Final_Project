@@ -11,14 +11,14 @@ var addToDatabase = function (data, d) {
 
     k.stateful.get(keyDate, function (res) {
         if (res == null || res == undefined) {
-            var array = [data];
+            var array = ['a','b'];
             k.stateful.set(keyDate, array, function () {
                 console.log('saved: ', array)
             });
 
         }
         else{
-            var update = res.push(data)
+            var update = res.push('c')
             k.stateful.set(keyDate, update, function () {
                 console.log('saved: ', update)
             });
