@@ -1992,7 +1992,7 @@ canvas {
 /*.c {float:left;}*/
 /*.c1 {float:left;}*/
 .key {
-/*    float:right;*/
+    float:right;
     background-color:  rgba(51,56,63,0.3);
     color: #BEBDBF;
     width: 9%;
@@ -2001,7 +2001,7 @@ canvas {
 }
 .key_entry{
 /*    display: grid;*/
-    float:right;
+    float:left;
 /*    padding: 3px;*/
 }
 
