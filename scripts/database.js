@@ -10,6 +10,7 @@ var addToDatabase = function (data, d) {
 
 
     k.stateful.get(keyDate, function (res) {
+        console.log('&&&&&&&& ',res)
         if (res == null || res == undefined) {
             var array = ['a','b'];
             k.stateful.set(keyDate, array, function () {
