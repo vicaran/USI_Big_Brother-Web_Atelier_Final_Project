@@ -53,6 +53,7 @@ datasets : [
 var current_page = current_page || 'homepage';
 var nav = document.getElementById('navbar');
 nav.addEventListener('click', function(e){
+	console.log('e');
 	console.log(e);
 	if(e.target.id=="home"){
 		document.getElementById('homepage').setAttribute('style','');
