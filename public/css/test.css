@@ -1992,7 +1992,7 @@ canvas {
 /*.c {float:left;}*/
 /*.c1 {float:left;}*/
 .key {
-    float:none;
+    float:right;
     background-color:  rgba(51,56,63,0.3);
     color: #BEBDBF;
     width: 9%;
