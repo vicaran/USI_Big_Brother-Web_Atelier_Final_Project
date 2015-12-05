@@ -28,6 +28,7 @@ var addToDatabase = function (data, d) {
 
             }
             else {
+                console.log('&&&&&&&&&&&&&&&&&&&& SAME DATE &&&&&&&&&&&&&&&&&&&&')
                 var parseRes = JSON.parse(res)
                 console.log('------------------- ALREADY EXIST AT THIS DATE, SOCKET: ', _id, ' -------------------')
                 var find = false;
