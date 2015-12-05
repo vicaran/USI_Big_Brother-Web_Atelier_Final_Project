@@ -50,12 +50,12 @@ datasets : [
 }
 
 // Navbar implementation
-var current_page = current_page || 'graph-container';
+var current_page = current_page || 'homepage';
 document.getElementById(current_page).setAttribute('style', 'display', '');
 var nav = document.getElementById('navbar');
 nav.addEventListener('click', function(e){
 	// console.log('e');
-	console.log(e.target.id);
+	console.log(e.target.lastchild);
 	if(e.target.id=="home"){
 		document.getElementById('homepage').setAttribute('class','');
 		document.getElementById('graph-container').setAttribute('class','hidden');
