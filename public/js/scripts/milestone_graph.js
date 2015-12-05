@@ -53,8 +53,8 @@ datasets : [
 var current_page = current_page || 'homepage';
 var nav = document.getElementById('navbar');
 nav.addEventListener('click', function(e){
-	console.log('e');
-	console.log(e);
+	// console.log('e');
+	console.log(e.id);
 	if(e.target.id=="home"){
 		document.getElementById('homepage').setAttribute('style','display: block;');
 		document.getElementById('graph-container').setAttribute('style','display: none;');
@@ -133,7 +133,7 @@ myRealBar = myBar.Bar(barChartData, {
 	});
 
 var updateGraphLine = function(volume, light, time) {
-	console.log(volume,light, time)
+	// console.log(volume,light, time)
 	var date = new Date(time).toUTCString();
 	date = date.split(' ')[4]
 	
