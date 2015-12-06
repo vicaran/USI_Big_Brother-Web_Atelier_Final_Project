@@ -50,7 +50,10 @@ var htmlString =
     	about_section+
     	'</div>' +
     	'<div id="old-graphs" class="hidden">This is where we add the database stuff</div>' +
-    	'<div id="light-bulb" class="hidden">Turn USI lights on and off</div>' +
+    	'<div id="light-bulb" class="hidden">'+
+    	// Here we make the buttons for the tessel
+    	'<div id="tessel1" class="tessel-button">Sector 1</div>'+
+    	'</div>' +
     	'<div id="graph-container" class="">' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
 				'<div id="newdata" style="display:none;"></div>' +
