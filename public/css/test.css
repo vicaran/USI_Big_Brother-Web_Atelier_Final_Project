@@ -2022,6 +2022,10 @@ canvas {
     margin-top:1em ;
     padding-left: 2em;
 }
+.card >div{
+    background-color: rgba(51,56,63,0.3);
+    color: color: #BEBDBF;
+}
 .nav-panel:hover > .nav-line{
     background-color: #BEBDBF;
     position: relative;
