@@ -8,8 +8,7 @@ wss.on('connection', function(ws) {
     console.log('____________New Connection Opened____________');
     ws.on('message', function(data) {
     	console.log("websocket " + data);
-        }
-    });
+        });
 });
 
 setInterval(function(msg) {
