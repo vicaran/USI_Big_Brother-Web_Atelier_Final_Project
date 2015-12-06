@@ -2133,7 +2133,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     border-radius: 25px;
     color: #BEBDBF;
     height: 9em;
-    padding: 2%;
+    padding: 0.5%;
     width: 9em;
 }
 .key_entry{
@@ -2165,7 +2165,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     margin: 3px;
     margin-top: 5px;
 }
-.dataset_key {
+.temp_graph_key {
     width: 20px;
     height: 20px;
     background-color: rgba(241,85,45,0.8);
