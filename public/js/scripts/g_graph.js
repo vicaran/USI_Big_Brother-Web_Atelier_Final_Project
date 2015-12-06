@@ -1,3 +1,4 @@
+var requirejs = require('requirejs');
 //var k = require('./../../../k_globals/koala.js')
 
 //define the chart
@@ -211,9 +212,6 @@ var myFunction = function(){
 }
 
 var sending = function(k){
-
-	return k;
-
 	//or
 	//k.createNode()
 }
