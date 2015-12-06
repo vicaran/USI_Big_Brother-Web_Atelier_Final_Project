@@ -2,6 +2,7 @@ var TesselClasses = require('./TesselClasses.js');
 
 var SenderT1 = new TesselClasses.SenderTessel(2);
 SenderT1.main = function() {
+    var self = this;
     //initialized sound sensor
     var soundPin = this.tessel.port['GPIO'].analog[0];
     //initialized light sensor
@@ -25,15 +26,15 @@ SenderT1.main = function() {
     });
     interval = setInterval(function() {
 
-        var volume = this.gatherSound(soundPin);
+        var volume = self.gatherSound(soundPin);
         var light = lightPin.read() * lightPin.resolution;
         var data = {
-            _id: this._id,
+            _id: self._id,
             volume: volume,
             light: light,
             time: Date.now()
         };
-        this.ws.send(data);
+        self.ws.send(data);
 
     }, 1000)
 };
