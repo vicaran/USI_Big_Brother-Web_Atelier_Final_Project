@@ -56,7 +56,7 @@ var htmlString =
     	'</div>' +
     	// DATABASE GRAPHS
     	'<div id="old-graphs" class="hidden">'+
-    	'<div class="fa card"><i class="fa fa-exclamation-triangle fa-2x" style="color: #871F17"></i>'+
+    	'<div class="fa card"><i class="fa fa-exclamation-triangle fa-2x" style="color: #FFB700"></i>'+
     	'<div class="postpone">KEEP WATCHING TO FIND OUT...<br></div>'+
     	'</div>'+
     	'</div>' +

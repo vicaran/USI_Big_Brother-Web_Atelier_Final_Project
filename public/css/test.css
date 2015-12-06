@@ -2042,14 +2042,11 @@ canvas {
     font-size: 12pt;
 }
 .card >.postpone{
-    color: #871F17;
+    color: #FFB700;
     padding: 2em;
     border-radius: 25px;
     text-align: left;
     font-size: 56pt;
-}
-.postpone > i{
-    text-align: center;
 }
 .nav-panel:hover > .nav-line{
     background-color: #BEBDBF;
