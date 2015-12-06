@@ -212,7 +212,7 @@ var myFunction = function(){
 
 var sending = function(k){
 
-	k.send("hello");
+	return k;
 
 	//or
 	//k.createNode()

@@ -10,7 +10,7 @@ k.createNode(function(data) {
 	//console.log(data);
 	k.callFunction('updateGraphLine', [data.volume, data.light ,data.time]);
 	k.callFunction('updateGraphBar', [data.volume, data.light, data.time]);
-	k.callFunction('sending', [k]);
+	console.log(k.callFunction('sending',['ciao']));
 
 });
 
