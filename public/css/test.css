@@ -2036,6 +2036,7 @@ canvas {
 .nav-line{
     background-color: rgba(51,56,63,0);
     height:2px;
+    bottom:-11px;
     padding-right: 10px;
 }
 /*
