@@ -2048,6 +2048,9 @@ canvas {
     text-align: left;
     font-size: 56pt;
 }
+.postpone > i{
+    align: center;
+}
 .nav-panel:hover > .nav-line{
     background-color: #BEBDBF;
     position: relative;
