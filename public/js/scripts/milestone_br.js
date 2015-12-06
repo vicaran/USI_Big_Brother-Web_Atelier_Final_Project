@@ -43,7 +43,7 @@ var htmlString =
     	'<div class="whitespace"></div>' +
     	'<div id="info-page" class="hidden">BIG BROTHER IS WATCHING U</div>' +
     	'<div id="old-graphs" class="hidden">This is where we add the database stuff</div>' +
-    	'<div id="light-bulb" class="hidden"><i class="fa fa-lightbulb"></i></div>' +
+    	'<div id="light-bulb" class="hidden"><i class="fa fa-lightbulb" style="color:yellow;"></i></div>' +
     	'<div id="graph-container" class="">' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
 				'<div id="newdata" style="display:none;"></div>' +
