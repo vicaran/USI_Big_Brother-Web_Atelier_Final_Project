@@ -39,6 +39,7 @@ var htmlString =
     			'<div id="about" class="fa fa-info-circle">&nbsp; ABOUT</div>' +
     			'<div class="nav-line"></div>' +
     		'</div>' +
+    		'<div class="whitespace"></div>' +
     	'</div>' +
     	'<div id="info-page" class="hidden">BIG BROTHER IS WATCHING U</div>' +
     	'<div id="old-graphs" class="hidden">This is where we add the database stuff</div>' +
