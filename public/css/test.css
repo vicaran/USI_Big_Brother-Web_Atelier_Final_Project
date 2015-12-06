@@ -2030,6 +2030,7 @@ canvas {
     background-color: rgba(51,56,63,0.3);
     color: color: #BEBDBF;
     padding: 2em;
+    border-radius: 25px;
 }
 .nav-panel:hover > .nav-line{
     background-color: #BEBDBF;
