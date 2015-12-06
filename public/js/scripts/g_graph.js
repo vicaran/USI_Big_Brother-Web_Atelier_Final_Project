@@ -212,9 +212,9 @@ document.getElementById('legend1').innerHTML = myRealBar.generateLegend();
 document.getElementById('legend2').innerHTML = myRealLine1.generateLegend();
 document.getElementById('legend3').innerHTML = myRealBar1.generateLegend();
 
-var button = document.getElementById('button');
-button.addEventListener('click', switchGraphs);
-document.getElementById('canvas1').style.display = 'none';
+// var button = document.getElementById('button');
+// button.addEventListener('click', switchGraphs);
+// document.getElementById('canvas1').style.display = 'none';
 
 
 var input = document.getElementById("inputDate");
