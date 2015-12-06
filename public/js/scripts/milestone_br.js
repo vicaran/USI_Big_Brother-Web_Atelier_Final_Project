@@ -49,7 +49,7 @@ var htmlString =
     	'<div class="whitespace"></div>' +
 
     	// INDIVIDUAL SECTIONS BEGIN HERE
-    	// This is where we write about the team, wls, etc
+    	// ABOUT SECTION: This is where we write about the team, wls, etc
    		'<div id="info-page" class="hidden">'+ 
 		about_section+
     	about_section +
@@ -57,13 +57,18 @@ var htmlString =
     	// DATABASE GRAPHS
     	'<div id="old-graphs" class="hidden">'+
     	'<div class="fa card"><i class="fa fa-exclamation-triangle fa-2x" style="color: #FFB700"></i>'+
-    	'<div class="postpone">KEEP WATCHING TO FIND OUT...<br></div>'+
+    	'<div class="postpone">FOR NEXT TIME<br></div>'+
     	'</div>'+
     	'</div>' +
     	// ACTIVATE LIGHTS SECTION
     	'<div id="light-bulb" class="hidden">'+
     	// Here we make the buttons for the tessel
-    	'<div id="tessel1" class="tessel-button">Sector 1</div>'+
+    	// ---Andrea's Implementation :)
+		  '<a href="#" bubbletooltip="Light is currently: ON"><img src="part1.png" alt="p1" class="setDimension"></a>' +
+   '<a href="#" bubbletooltip="Light is currently: OFF"><img src="part2.png" alt="p2" class="setDimension"></a>' +
+   '<a href="#" bubbletooltip="Light is currently: OFF"><img src="part3.png" alt="p3" class="setDimension"></a>' +
+		// ---------------------------
+    	// '<div id="tessel1" class="tessel-button">Sector 1</div>'+
     	'</div>' +
     	'<div id="graph-container" class="">' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
