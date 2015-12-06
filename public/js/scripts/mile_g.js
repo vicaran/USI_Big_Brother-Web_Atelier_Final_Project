@@ -24,12 +24,12 @@ var lineChartData = {
         },
         {
             label: "temp dataset",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "rgba(151,187,205,1)",
+            fillColor: "rgba(241,85,45,0.2)",
+            strokeColor: "rgba(241,85,45,1)",
+            pointColor: "rgba(241,85,45,1)",
+            pointStrokeColor: "rgba(241,85,45,1)",
             pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
+            pointHighlightStroke: "rgba(241,85,45,1)",
             data: []
         }
 	]
@@ -61,10 +61,10 @@ var lineChartData1 = {
         },
         {
             label: "temp dataset",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "rgba(151,187,205,1)",
+            fillColor: "rgba(241,85,45,0.2)",
+            strokeColor: "rgba(241,85,45,1)",
+            pointColor: "rgba(241,85,45,1)",
+            pointStrokeColor: "rgba(241,85,45,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151,187,205,1)",
             data: []
@@ -95,8 +95,8 @@ datasets : [
 	},
 	{
 		label: "temp Data Set",
-		fillColor : "rgba(151,187,205,0.2)",
-		strokeColor : "rgba(151,187,205,1)",
+		fillColor : "rgba(241,85,45,0.2)",
+		strokeColor : "rgba(241,85,45,1)",
 		highlightFill : "#fff",
 		highlightStroke : "rgba(151,187,205,1)",
 		data : []
@@ -126,8 +126,8 @@ datasets : [
 	},
 	{
 		label: "temp Data Set",
-		fillColor : "rgba(151,187,205,0.2)",
-		strokeColor : "rgba(151,187,205,1)",
+		fillColor : "rgba(241,85,45,0.2)",
+		strokeColor : "rgba(241,85,45,1)",
 		highlightFill : "#fff",
 		highlightStroke : "rgba(151,187,205,1)",
 		data : []
