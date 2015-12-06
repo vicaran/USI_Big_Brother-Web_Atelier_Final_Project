@@ -14,8 +14,8 @@ k.createNode(function(data) {
 	//console.log(data);
 
 	if(ht[data._id]){
-		k.callfunction(ht[data._id][0], [data.volume, data.light, data.temperature, data.time])
-		k.callfunction(ht[data._id][1], [data.volume, data.light, data.temperature, data.time])
+		k.callFunction(ht[data._id][0], [data.volume, data.light, data.temperature, data.time])
+		k.callFunction(ht[data._id][1], [data.volume, data.light, data.temperature, data.time])
 	}
 	//k.callFunction('updateGraphLine', [data.volume, data.light ,data.time]);
 	//k.callFunction('updateGraphBar', [data.volume, data.light, data.time]);
