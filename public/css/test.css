@@ -2023,15 +2023,17 @@ canvas {
     padding-left: 2em;
 }
 .card{
-    background-color: rgba(51,56,63,1);
+    background-color: rgba(51,56,63,0.6);
     color: color: #BEBDBF;
     border-radius: 25px;
+    text-align: center;
 }
 .card >div{
 /*    background-color: rgba(51,56,63,0.3);*/
     color: color: #BEBDBF;
     padding: 2em;
     border-radius: 25px;
+    text-align: left;
 }
 .nav-panel:hover > .nav-line{
     background-color: #BEBDBF;
