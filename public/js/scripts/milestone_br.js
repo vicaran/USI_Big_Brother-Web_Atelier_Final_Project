@@ -57,9 +57,9 @@ var htmlString =
 				'</div>' +
 				'</div>' + 
 				'<div id="footer">' +
-            '<div class="fa"> With</div>' +
+            '<div class="fa"> With &nbsp;</div>' +
             '<i class="fa fa-heart "  style="color:#871F17;"></i>' +
-            '<div class="fa">The Big Brother Team</div>' +
+            '<div class="fa">&nbsp; The Big Brother Team</div>' +
     '</div>';
 k.createHTML('pimmi', htmlString);
 // k.createHTML('graph-container', '<div id="graph-container">');
