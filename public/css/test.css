@@ -2028,6 +2028,7 @@ canvas {
     border-radius: 25px;
     text-align: center;
     font-size: 14pt;
+    width: 80%;
     margin: 2em;
     padding-top: 2em;
 }
