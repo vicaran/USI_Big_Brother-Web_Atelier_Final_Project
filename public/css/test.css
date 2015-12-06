@@ -2046,7 +2046,7 @@ canvas {
     padding: 2em;
     border-radius: 25px;
     text-align: left;
-    font-size: 24pt;
+    font-size: 56pt;
 }
 .nav-panel:hover > .nav-line{
     background-color: #BEBDBF;

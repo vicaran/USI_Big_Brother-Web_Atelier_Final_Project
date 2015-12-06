@@ -58,7 +58,7 @@ var htmlString =
     	'<div id="old-graphs" class="hidden">'+
     	'<div class="fa card">'+
     	'<div class="postpone">KEEP WATCHING TO FIND OUT...</div>'+
-    	'</div>'+
+    	'<i class="fa fa-error fa-5x"></i></div>'+
     	'</div>' +
     	// ACTIVATE LIGHTS SECTION
     	'<div id="light-bulb" class="hidden">'+
