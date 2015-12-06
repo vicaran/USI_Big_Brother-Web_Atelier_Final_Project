@@ -236,4 +236,4 @@ function sending(){
 	//k.createNode()
 }
 
-loadScript(sending);
+//loadScript(sending);
