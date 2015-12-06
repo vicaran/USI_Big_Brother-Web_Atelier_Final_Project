@@ -14,8 +14,8 @@ k.createNode(function(data) {
 });
 
 //create the hidden div that will contain the received data
-var htmlString ='<input name="fromDate" type="text" value="Insert date from to" id="inputDate"></input>'+
-				'<div id="graph-container">' +
+var htmlString ='<div id="graph-container">' +
+				'<input name="fromDate" type="text" value="Insert..." id="inputDate"></input>'+
 				'<div id="radarData" style="display:none;"></div>' +
 				'<canvas id="canvasRadar" width="400px" height="400px"></canvas>' +
 				'<div id="newdata" style="display:none;"></div>' +
