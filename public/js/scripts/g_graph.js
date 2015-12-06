@@ -33,9 +33,9 @@ var lineChartData = {
     },
     {
         label: "Temp",
-        fillColor: "rgba(151,187,205,0.2)",
-        strokeColor: "rgba(151,187,205,1)",
-        pointColor: "rgba(151,187,205,1)",
+        fillColor: "rgba(50,0,255,0.2)",
+        strokeColor: "rgba(50,0,255,1)",
+        pointColor: "rgba(50,0,255,1)",
         pointStrokeColor: "#fff",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(151,187,205,1)",
@@ -63,8 +63,8 @@ var barChartData = {
         data: []
     },{
         label: "Temp",
-        fillColor: "rgba(151,187,205,0.2)",
-        strokeColor: "rgba(151,187,205,1)",
+        fillColor: "rgba(50,0,255,0.2)",
+        strokeColor: "rgba(50,0,255,1)",
         highlightFill: "#fff",
         highlightStroke: "rgba(151,187,205,1)",
         data: []},
@@ -96,8 +96,8 @@ var lineChartData1 = {
     {
         label: "Temp",
         fillColor: "rgba(151,187,205,0.2)",
-        strokeColor: "rgba(151,187,205,1)",
-        pointColor: "rgba(151,187,205,1)",
+        strokeColor: "rgba(50,0,255,1)",
+        pointColor: "rgba(50,0,255,1)",
         pointStrokeColor: "#fff",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(151,187,205,1)",
@@ -126,8 +126,8 @@ var barChartData1 = {
     }, 
     {
         label: "Temp",
-        fillColor: "rgba(151,187,205,0.2)",
-        strokeColor: "rgba(151,187,205,1)",
+        fillColor: "rgba(50,0,255,1)",
+        strokeColor: "rgba(50,0,255,1)",
         highlightFill: "#fff",
         highlightStroke: "rgba(151,187,205,1)",
         data: []
@@ -184,26 +184,26 @@ Chart.defaults.global.showTooltips = false;
 myLine = new Chart(ctx);
 myRealLine = myLine.Line(lineChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
+    responsive: true,
 });
 
 myLine1 = new Chart(ctx_1);
 myRealLine1 = myLine1.Line(lineChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
+    responsive: true,
 });
 
 myBar = new Chart(ctx_bar);
 myRealBar = myBar.Bar(barChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
+    responsive: true,
     barShowStroke: false
 });
 
 myBar1 = new Chart(ctx_bar1);
 myRealBar1 = myBar1.Bar(barChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
+    responsive: true,
     barShowStroke: false
 });
 
