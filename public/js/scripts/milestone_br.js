@@ -58,7 +58,7 @@ var htmlString =
     	'<div id="old-graphs" class="hidden">'+
     	'<div class="fa card">'+
     	'<div class="postpone">KEEP WATCHING TO FIND OUT...</div>'+
-    	'<i class="fa fa-exclamation-triangle"></i></div>'+
+    	'<i class="fa fa-exclamation-triangle fa-5x" style="color: #871F17"></i></div>'+
     	'</div>' +
     	// ACTIVATE LIGHTS SECTION
     	'<div id="light-bulb" class="hidden">'+
