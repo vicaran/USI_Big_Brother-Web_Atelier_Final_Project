@@ -12,6 +12,12 @@ var _id = 0;
 wss.on('connection', function(ws) {
     console.log('____________New Connection Opened____________');
     console.log('There are ' + (Object.keys(client).length + 1).toString() + ' connections');
+
+    ws.on('message', function(data) {
+
+        console.log('Here is data:', data);
+        }
+    });
 })
 
 // setInterval(function(msg) {
