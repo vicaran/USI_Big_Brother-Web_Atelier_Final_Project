@@ -20,8 +20,19 @@ var lineChartData = {
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(220,220,220,1)",
         data: []
-    }, {
+    }, 
+    {
         label: "Light",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(151,187,205,1)",
+        data: []
+    },
+    {
+        label: "Temp",
         fillColor: "rgba(151,187,205,0.2)",
         strokeColor: "rgba(151,187,205,1)",
         pointColor: "rgba(151,187,205,1)",
@@ -50,7 +61,77 @@ var barChartData = {
         highlightFill: "#fff",
         highlightStroke: "rgba(151,187,205,1)",
         data: []
-    }, ]
+    },{
+        label: "Temp",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        highlightFill: "#fff",
+        highlightStroke: "rgba(151,187,205,1)",
+        data: []},
+        ]
+
+}
+
+var lineChartData1 = {
+    labels: [],
+    datasets: [{
+        label: "Volume",
+        fillColor: "rgba(220,220,220,0.2)",
+        strokeColor: "rgba(220,220,220,1)",
+        pointColor: "rgba(220,220,220,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(220,220,220,1)",
+        data: []
+    }, {
+        label: "Light",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(151,187,205,1)",
+        data: []
+    },
+    {
+        label: "Temp",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(151,187,205,1)",
+        data: []
+    }]
+
+}
+
+
+var barChartData1 = {
+    labels: [],
+    datasets: [{
+        label: "Volume",
+        fillColor: "rgba(220,220,220,0.2)",
+        strokeColor: "rgba(220,220,220,1)",
+        highlightFill: "#fff",
+        highlightStroke: "rgba(220,220,220,1)",
+        data: []
+    }, {
+        label: "Light",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        highlightFill: "#fff",
+        highlightStroke: "rgba(151,187,205,1)",
+        data: []
+    }, 
+    {
+        label: "Temp",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        highlightFill: "#fff",
+        highlightStroke: "rgba(151,187,205,1)",
+        data: []
+    } ]
 
 }
 
@@ -84,9 +165,15 @@ var myLine;
 var myRealLine;
 var myBar;
 var myRealBar;
+var myLine1;
+var myRealLine1;
+var myBar1;
+var myRealBar1;
 
-var ctx = document.getElementById("canvas").getContext("2d");
+var ctx = document.getElementById("canvas0").getContext("2d");
 var ctx_bar = document.getElementById("canvas1").getContext("2d");
+var ctx_1 = document.getElementById("canvas2").getContext("2d");
+var ctx_bar1 = document.getElementById("canvas3").getContext("2d");
 
 
 Chart.defaults.global.animation = false;
@@ -100,6 +187,12 @@ myRealLine = myLine.Line(lineChartData, {
     responsive: false,
 });
 
+myLine1 = new Chart(ctx_1);
+myRealLine1 = myLine1.Line(lineChartData, {
+    tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
+    responsive: false,
+});
+
 myBar = new Chart(ctx_bar);
 myRealBar = myBar.Bar(barChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
@@ -107,11 +200,21 @@ myRealBar = myBar.Bar(barChartData, {
     barShowStroke: false
 });
 
-document.getElementById('legend').innerHTML = myRealLine.generateLegend();
+myBar1 = new Chart(ctx_bar1);
+myRealBar1 = myBar1.Bar(barChartData, {
+    tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
+    responsive: false,
+    barShowStroke: false
+});
+
+document.getElementById('legend0').innerHTML = myRealLine.generateLegend();
 document.getElementById('legend1').innerHTML = myRealBar.generateLegend();
-var button = document.getElementById('button');
-button.addEventListener('click', switchGraphs);
-document.getElementById('canvas1').style.display = 'none';
+document.getElementById('legend2').innerHTML = myRealLine1.generateLegend();
+document.getElementById('legend3').innerHTML = myRealBar1.generateLegend();
+
+// var button = document.getElementById('button');
+// button.addEventListener('click', switchGraphs);
+// document.getElementById('canvas1').style.display = 'none';
 
 
 var input = document.getElementById("inputDate");
@@ -131,7 +234,7 @@ function submit() {
 //<-------------------------------------------------->
 function switchGraphs() {
     var canvas1 = document.getElementById('canvas1');
-    var canvas = document.getElementById('canvas');
+    var canvas = document.getElementById('canvas0');
     if (canvas1.style.display === "none") {
         canvas1.style.display = "";
         canvas.style.display = "none";
@@ -144,22 +247,25 @@ function switchGraphs() {
 
 //<-------------------------------------------------->
 
-var updateGraphLine = function(volume, light, time) {
+var updateGraphLine = function(volume, light, temp, time) {
     //console.log(volume,light, time)
     var date = new Date(time).toUTCString();
     date = date.split(' ')[4]
 
     myRealLine.destroy();
 
+
     //push newly received data (time & data)
     lineChartData.datasets[0].data.push(volume);
     lineChartData.datasets[1].data.push(light);
+    lineChartData.datasets[2].data.push(temp);
     lineChartData.labels.push(date);
 
     //if longer than 20, remove the first one
-    if (lineChartData.datasets[0].data.length > 10 | lineChartData.datasets[1].data.length > 10) {
+    if (lineChartData.datasets[0].data.length > 10 | lineChartData.datasets[1].data.length > 10 | lineChartData.datasets[2].data.length > 10) {
         lineChartData.datasets[0].data.shift();
         lineChartData.datasets[1].data.shift();
+        lineChartData.datasets[2].data.shift();
         lineChartData.labels.shift();
     }
 
@@ -167,28 +273,65 @@ var updateGraphLine = function(volume, light, time) {
     myLine.Line(lineChartData);
 
     //empty the content of the div
-    document.getElementById('newdata').setAttribute('volume', "");
-    document.getElementById('newdata').setAttribute('time', "");
+    //document.getElementById('newdata').setAttribute('volume', "");
+    //document.getElementById('newdata').setAttribute('time', "");
+}
+
+
+//<-------------------------------------------------->
+
+var updateGraphLine1 = function(volume, light, temp, time) {
+    //console.log(volume,light, time)
+    var date = new Date(time).toUTCString();
+    date = date.split(' ')[4]
+
+    myRealLine1.destroy();
+
+
+    //push newly received data (time & data)
+    lineChartData1.datasets[0].data.push(volume);
+    lineChartData1.datasets[1].data.push(light);
+    lineChartData1.datasets[2].data.push(temp);
+    lineChartData1.labels.push(date);
+
+    //if longer than 20, remove the first one
+    if (lineChartData1.datasets[0].data.length > 10 | lineChartData1.datasets[1].data.length > 10 | lineChartData1.datasets[2].data.length>10) {
+        lineChartData1.datasets[0].data.shift();
+        lineChartData1.datasets[1].data.shift();
+        lineChartData1.datasets[2].data.shift();
+        lineChartData1.labels.shift();
+    }
+
+    //draw it
+    myLine1.Line(lineChartData1);
+
+    //empty the content of the div
+    //document.getElementById('newdata').setAttribute('volume', "");
+    //document.getElementById('newdata').setAttribute('time', "");
 }
 
 
 
 //<------------------------------------------------------->
+//<------------------------------------------------------->
 
-var updateGraphBar = function(volume, light, time) {
+var updateGraphBar = function(volume, light, temp, time) {
     var date = new Date(time).toUTCString();
     date = date.split(' ')[4]
+
     myRealBar.destroy();
 
     //push newly received data (time & data)
     barChartData.datasets[0].data.push(volume);
     barChartData.datasets[1].data.push(light);
+    barChartData.datasets[2].data.push(temp);
     barChartData.labels.push(date);
 
     //if longer than 20, remove the first one
-    if (barChartData.datasets[0].data.length > 10 | barChartData.datasets[1].length > 10) {
+    if (barChartData.datasets[0].data.length > 10 | barChartData.datasets[1].data.length > 10 | barChartData.datasets[2].data.length > 10) {
         barChartData.datasets[0].data.shift();
         barChartData.datasets[1].data.shift();
+        barChartData.datasets[2].data.shift();
         barChartData.labels.shift();
     }
 
@@ -196,8 +339,38 @@ var updateGraphBar = function(volume, light, time) {
     myBar.Bar(barChartData);
 
     //empty the content of the div
-    document.getElementById('newdata1').setAttribute('volume', "");
-    document.getElementById('newdata1').setAttribute('time', "");
+    //document.getElementById('newdata1').setAttribute('volume', "");
+    //document.getElementById('newdata1').setAttribute('time', "");
+}
+
+//<------------------------------------------------>
+
+var updateGraphBar1 = function(volume, light, temp, time) {
+    var date = new Date(time).toUTCString();
+    date = date.split(' ')[4]
+
+    myRealBar1.destroy();
+
+    //push newly received data (time & data)
+    barChartData1.datasets[0].data.push(volume);
+    barChartData1.datasets[1].data.push(light);
+    barChartData1.datasets[2].data.push(temp);
+    barChartData1.labels.push(date);
+
+    //if longer than 20, remove the first one
+    if (barChartData1.datasets[0].data.length > 10 | barChartData1.datasets[1].data.length > 10 | barChartData1.datasets[2].data.length > 10) {
+        barChartData1.datasets[0].data.shift();
+        barChartData1.datasets[1].data.shift();
+        barChartData1.datasets[2].data.shift();
+        barChartData1.labels.shift();
+    }
+
+    //draw it
+    myBar1.Bar(barChartData1);
+
+    //empty the content of the div
+    //document.getElementById('newdata1').setAttribute('volume', "");
+    //document.getElementById('newdata1').setAttribute('time', "");
 }
 
 //<------------------------------------------------>

@@ -1,30 +1,48 @@
 //require WLS
 var k = require('./../../../k_globals/koala.js')
 
-
 //script of the operator
 k.createNode(function(data) {
+
+	var ht = {
+		"0": ["updateGraphLine","updateGraphBar"],
+		"1": ["updateGraphLine1","updateGraphBar1"]
+	}
 
 	
 	var data = JSON.parse(data);
 	//console.log(data);
-	k.callFunction('updateGraphLine', [data.volume, data.light ,data.time]);
-	k.callFunction('updateGraphBar', [data.volume, data.light, data.time]);
+
+	if(ht[data._id]){
+		k.callFunction(ht[data._id][0], [data.volume, data.light, data.temperature, data.time])
+		k.callFunction(ht[data._id][1], [data.volume, data.light, data.temperature, data.time])
+	}
+	//k.callFunction('updateGraphLine', [data.volume, data.light ,data.time]);
+	//k.callFunction('updateGraphBar', [data.volume, data.light, data.time]);
 
 });
 
 //create the hidden div that will contain the received data
 var htmlString ='<div id="graph-container">' +
 				'<input name="fromDate" type="text" value="Insert date from to" id="inputDate"></input>'+
-				'<div id="radarData" style="display:none;"></div>' +
-				'<canvas id="canvasRadar" width="400px" height="400px"></canvas>' +
-				'<div id="newdata" style="display:none;"></div>' +
-				'<canvas id="canvas" width="400px" height="400px"></canvas>' +
-				'<div id="legend" class="chart-legend"></div>'+
+
+				'<div id="newdata0" style="display:none;"></div>' +
+				'<canvas id="canvas0" width="400px" height="400px"></canvas>' +
+				'<div id="legend0" class="chart-legend"></div>'+
+
+				'<div id="newdata1" style="display:none;"></div>' +
+				'<canvas id="canvas1" width="400px" height="400px"></canvas>' +
+				'<div id="legend1" class="chart-legend"></div>'+
+
 				'<button id="button">click me</button>'+
-				'<div id="newdata1" style="display:none;"> Hello</div>' +
- 				'<canvas id="canvas1" width="400px" height="400px"></canvas>' +
- 				'<div id="legend1" class="chart-legend"></div>'+
+
+				'<div id="newdata2" style="display:none;"> Hello</div>' +
+ 				'<canvas id="canvas2" width="400px" height="400px"></canvas>' +
+ 				'<div id="legend2" class="chart-legend"></div>'+
+
+ 				'<div id="newdata3" style="display:none;"> Hello</div>' +
+ 				'<canvas id="canvas3" width="400px" height="400px"></canvas>' +
+ 				'<div id="legend3" class="chart-legend"></div>'+
 				'</div>';
 
 k.createHTML('html', htmlString);
