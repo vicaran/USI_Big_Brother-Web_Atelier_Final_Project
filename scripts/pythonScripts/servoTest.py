@@ -1,30 +1,34 @@
 __author__ = 'VeaVictis'  # Servo Control
+import RPi.GPIO as GPIO
+
 import time
 
-def set(property, value):
-    try:
-        f = open("/sys/class/rpi-pwm/pwm0/" + property, 'w')
-        f.write(value)
-        f.close()
-    except:
-        print("Error writing to: " + property + " value: " + value)
+GPIO.setmode(GPIO.BOARD)
 
+GPIO.setup(18,GPIO.OUT)
 
-def setServo(angle):
-    set("servo", str(angle))
+p = GPIO.PWM(18,50)        #sets pin 21 to PWM and sends 50 signals per second
 
+p.start(7.5)          #starts by sending a pulse at 7.5% to center the servo
 
-set("delayed", "0")
-set("mode", "servo")
-set("servo_max", "180")
-set("active", "1")
+try:                      # I still don’t know what this does
 
-delay_period = 0.01
+    while True:       #starts an infinite loop
 
-while True:
-    for angle in range(0, 180):
-        setServo(angle)
-        time.sleep(delay_period)
-    for angle in range(0, 180):
-        setServo(180 - angle)
-        time.sleep(delay_period)
+        p.ChangeDutyCycle(4.5)    #sends a 4.5% pulse to turn the servo CCW
+
+        time.sleep(0.5)                   #continues for a half a second
+
+        p.ChangeDutyCycle(10.5)    #sends a 10.5% pulse to turn the servo CW
+
+        time.sleep(0.5)                   #continues for a half a second
+
+        p.ChangeDutyCycle(7.5)    #sends a 7.5% pulse to center the servo again
+
+        time.sleep(0.5)                   #continues for a half a second
+
+except KeyboardInterrupt:
+
+    p.stop()
+
+    GPIO.cleanup()                 #supposed to stop when a key is pressed, doesn’t work
