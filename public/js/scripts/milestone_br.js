@@ -58,7 +58,7 @@ var htmlString =
     	'<div id="old-graphs" class="hidden">'+
     	'<div class="fa card"><i class="fa fa-exclamation-triangle fa-2x" style="color: #FFB700"></i>'+
     	'<div class="postpone">FOR NEXT TIME<br></div>'+
-    	'<img src="https://media.giphy.com/media/xTk9ZJnsGLlsc0eFAk/giphy.gif" alt="vincent" class="setDimension"></a>' +
+    	'<img src="https://media.giphy.com/media/xTk9ZJnsGLlsc0eFAk/giphy.gif" alt="vincent"</a>' +
     	'</div>'+
     	'</div>' +
     	// ACTIVATE LIGHTS SECTION
