@@ -2029,6 +2029,7 @@ canvas {
     text-align: center;
     font-size: 14pt;
     margin: 2em;
+    padding-top: 2em;
 }
 .card >div{
 /*    background-color: rgba(51,56,63,0.3);*/
@@ -2036,6 +2037,7 @@ canvas {
     padding: 2em;
     border-radius: 25px;
     text-align: left;
+    font-size: 12pt;
 }
 .nav-panel:hover > .nav-line{
     background-color: #BEBDBF;
