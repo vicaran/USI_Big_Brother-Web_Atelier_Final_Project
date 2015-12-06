@@ -15,7 +15,7 @@ k.createNode(function(data) {
 
 	if(ht[data._id]){
 		k.callfunction(ht[data._id][0], [data.volume, data.light, data.temperature, data.time])
-		k.callfunction((ht[data._id][1], [data.volume, data.light, data.temperature, data.time])
+		k.callfunction(ht[data._id][1], [data.volume, data.light, data.temperature, data.time])
 	}
 	//k.callFunction('updateGraphLine', [data.volume, data.light ,data.time]);
 	//k.callFunction('updateGraphBar', [data.volume, data.light, data.time]);
@@ -29,7 +29,7 @@ var htmlString ='<div id="graph-container">' +
 				'<div id="newdata0" style="display:none;"></div>' +
 				'<canvas id="canvas0" width="400px" height="400px"></canvas>' +
 				'<div id="legend0" class="chart-legend"></div>'+
-				
+
 				'<div id="newdata1" style="display:none;"></div>' +
 				'<canvas id="canvas1" width="400px" height="400px"></canvas>' +
 				'<div id="legend1" class="chart-legend"></div>'+
