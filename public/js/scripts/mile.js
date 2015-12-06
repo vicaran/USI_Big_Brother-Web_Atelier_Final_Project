@@ -3,7 +3,7 @@ var k = require('./../../../k_globals/koala.js')
 
 
 //script of the operator
-k.createNode(function(data) 
+k.createNode(function(data){ 
 
 
     var ht = {
