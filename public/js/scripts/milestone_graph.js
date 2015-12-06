@@ -62,18 +62,20 @@ nav.addEventListener('click', function(e){
 		document.getElementById('old-graphs').setAttribute('class','hidden');
 		document.getElementById('light-bulb').setAttribute('class','hidden');
 		current_page = 'info-page';
-		e.target.parentNode.lastChild.setAttribute('style','color: red;');
+		e.target.parentNode.lastChild.setAttribute('style','background-color: red;');
 	}else if(e.target.id=="live-feed"){
 		document.getElementById('info-page').setAttribute('class','hidden');
 		document.getElementById('graph-container').setAttribute('class','');
 		document.getElementById('old-graphs').setAttribute('class','hidden');
 		document.getElementById('light-bulb').setAttribute('class','hidden');
 		current_page = 'graph-container';
+		e.target.parentNode.lastChild.setAttribute('style','background-color: red;');
 	}else if(e.target.id=="archives"){
 		document.getElementById('info-page').setAttribute('class','hidden');
 		document.getElementById('graph-container').setAttribute('class','hidden');
 		document.getElementById('old-graphs').setAttribute('class','');
 		document.getElementById('light-bulb').setAttribute('class','hidden');
+		e.target.parentNode.lastChild.setAttribute('style','background-color: red;');
 		current_page = 'old-graphs';
 	}else if(e.target.id=="activate-lights"){
 		document.getElementById('info-page').setAttribute('class','hidden');
@@ -81,6 +83,7 @@ nav.addEventListener('click', function(e){
 		document.getElementById('old-graphs').setAttribute('class','hidden');
 		document.getElementById('light-bulb').setAttribute('class','');
 		current_page = 'light-bulb';
+		e.target.parentNode.lastChild.setAttribute('style','background-color: red;');
 	}
 });
 
