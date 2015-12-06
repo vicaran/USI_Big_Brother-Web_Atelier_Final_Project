@@ -1,16 +1,16 @@
 var k = require('./../k_globals/koala.js')
-/**
- * This function save the data on Redis
- * @param data The json with the producer's data
- * @param d The Date.now()
- */
+    /**
+     * This function save the data on Redis
+     * @param data The json with the producer's data
+     * @param d The Date.now()
+     */
 var addToDatabase = function(data, d) {
 
     var keyDate = convertDate(d) + "-" + convertHour(d);
     var parse = JSON.parse(data)
         // console.log('this is parse', parse);
     var _id = parse._id;
-     console.log('------------------- REQUEST FROM SOCKET: ', _id, ' -------------------')
+    console.log('------------------- REQUEST FROM SOCKET: ', _id, ' -------------------')
 
     k.stateful.get(keyDate, function(res) {
         if (res == null || res == undefined) {
