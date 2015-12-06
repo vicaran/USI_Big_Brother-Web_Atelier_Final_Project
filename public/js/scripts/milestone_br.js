@@ -14,6 +14,10 @@ k.createNode(function(data) {
 });
 
 //create the hidden div that will contain the received data
+var about_section = '<div class="fa card">'+
+'<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam venenatis vulputate sem, commodo suscipit nisi congue ultricies. Sed a pharetra metus, at pulvinar neque. Maecenas porta suscipit ullamcorper. Mauris euismod rutrum eros ac bibendum. Curabitur eget quam ut augue sodales tristique a in quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin blandit ipsum sed venenatis scelerisque. Vestibulum vulputate tellus a sapien condimentum interdum. Nam ut augue a diam vulputate consequat.
+ Morbi vitae vestibulum tortor.</div>'+
+'</div>'
 var legend = '<div class="key">'+
             	'<div style="padding-left: 11px">LEGEND</div>'+
             	'<div class="key_entry"><div class="volume_graph_key"></div>'+
@@ -41,7 +45,7 @@ var htmlString =
     		'</div>' +
     	'</div>' +
     	'<div class="whitespace"></div>' +
-    	'<div id="info-page" class="hidden">BIG BROTHER IS WATCHING U</div>' +
+    	'<div id="info-page" class="hidden">'+ about_section+'</div>' +
     	'<div id="old-graphs" class="hidden">This is where we add the database stuff</div>' +
     	'<div id="light-bulb" class="hidden">Turn USI lights on and off</div>' +
     	'<div id="graph-container" class="">' +

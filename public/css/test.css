@@ -2028,12 +2028,12 @@ canvas {
     bottom:-11px;
     height:2px;
 }
-/*.nav-panel:selected > .nav-line{*/
-/*    background-color: pink;*/
-/*    height:2px;*/
-/*    bottom:-11px;*/
-/*    padding-right: 10px;*/
-/*}*/
+.nav-panel:target > .nav-line{
+    background-color: pink;
+    height:2px;
+    bottom:-11px;
+    padding-right: 10px;
+}
 .nav-line{
     background-color: rgba(51,56,63,0);
     height:2px;
