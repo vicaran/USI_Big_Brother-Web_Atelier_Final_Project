@@ -2024,8 +2024,8 @@ canvas {
 }
 
 .setDimension{
-    width: 400px;
-    height: 200px;
+    width: 300px;
+    height: 150px;
     opacity: 0.3;
 }
 .setDimension:hover { 
