@@ -2029,7 +2029,7 @@ canvas {
     text-align: center;
     font-size: 14pt;
     width: 80%;
-    align-self: center;
+    align: center;
     margin: 2em;
     padding-top: 2em;
 }
