@@ -29,14 +29,27 @@ setInterval(function(msg) {
 		content: Math.floor((Math.random()*100)+1),
 		};
 		
-	var dataMilestone = {
+	var dataMilestone1 = {
+			id: 0,
 			volume: Math.floor((Math.random()*100)+1),
 			light: Math.floor((Math.random()*100)+1),
+			temperature: 0,
 			time: Date.now()
 		};
+
+	var dataMilestone2 = {
+			id: 1,
+			volume: Math.floor((Math.random()*100)+1),
+			light: Math.floor((Math.random()*100)+1),
+			temperature: 0,
+			time: Date.now()
+		};
+
+
 		
 	
-	k.send(JSON.stringify(dataMilestone));
+	k.send(JSON.stringify(dataMilestone1));
+	k.send(JSON.stringify(dataMilestone2));
 	//k.send(JSON.stringify(data));
 	//k.send(JSON.stringify(data1));
 
@@ -46,6 +59,15 @@ k.createNode(function(msg){
 	console.log("createNode " + msg);	
 });
 
+
+
+
+// {
+// 	_id: 0, 
+// 	voluem: n,
+// 	light: n ,
+// 	temperature: 0
+// }
 
 
 

@@ -211,24 +211,24 @@ var myFunction = function() {
     });
 }
 
-function loadScript(callback) {
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = './../../../k_globals/koala.js';
+// function loadScript(callback) {
+//     var head = document.getElementsByTagName('head')[0];
+//     var script = document.createElement('script');
+//     script.type = 'text/javascript';
+//     script.src = './../../../k_globals/koala.js';
 
-    script.onreadystatechange = callback;
-    script.onload = callback;
+//     script.onreadystatechange = callback;
+//     script.onload = callback;
 
-    head.appendChild(script);
-}
+//     head.appendChild(script);
+// }
 
-function sending() {
-    console.log("sending hello...")
-    send("hello");
-    //or
-    //k.createNode()
-}
+// function sending() {
+//     console.log("sending hello...")
+//     send("hello");
+//     //or
+//     //k.createNode()
+// }
 
 
-loadScript(sending);
+// loadScript(sending);

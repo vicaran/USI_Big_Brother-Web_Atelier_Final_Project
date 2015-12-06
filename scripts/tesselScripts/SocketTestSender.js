@@ -16,7 +16,9 @@ var senderNodejs = function (_id,n) {
             var data = {
                 _id: self._id,
                 volume: self.n++,
-                light: 100
+                light: 100,
+                temperature: 0,
+                time: Date.now()
             };
             self.ws.send(data)
         }, 1000);
@@ -39,4 +41,4 @@ var senderTestGenerator = function (NumberOfSender) {
 };
 
 
-senderTestGenerator(3);
+senderTestGenerator(1);
