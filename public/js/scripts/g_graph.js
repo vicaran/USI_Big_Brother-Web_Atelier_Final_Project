@@ -122,6 +122,7 @@ document.getElementById('canvas1').style.display = 'none';
 
 
 var input = document.getElementById("inputDate");
+
 input.onkeydown = function(){
 	if(window.event.keyCode == '13'){
 		submit();
@@ -130,7 +131,7 @@ input.onkeydown = function(){
 }
 
 function submit(){
-	data.from = input.value;
+	console.log(input.value);
 }
 
 //<-------------------------------------------------->
@@ -228,7 +229,7 @@ function loadScript(callback){
     head.appendChild(script);
 }
 
-function sendind(){
+function sending(){
 	send("hello");
 		//or
 	//k.createNode()
