@@ -184,26 +184,26 @@ Chart.defaults.global.showTooltips = false;
 myLine = new Chart(ctx);
 myRealLine = myLine.Line(lineChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
+    responsive: true,
 });
 
 myLine1 = new Chart(ctx_1);
 myRealLine1 = myLine1.Line(lineChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
+    responsive: true,
 });
 
 myBar = new Chart(ctx_bar);
 myRealBar = myBar.Bar(barChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
+    responsive: true,
     barShowStroke: false
 });
 
 myBar1 = new Chart(ctx_bar1);
 myRealBar1 = myBar1.Bar(barChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
+    responsive: true,
     barShowStroke: false
 });
 
