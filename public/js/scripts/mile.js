@@ -32,7 +32,7 @@ var legend = '<div class="key">'+
             	'<div class="key_entry"><div class="volume_graph_key"></div>'+
             	'<div class="light_graph_key"></div><div class="dataset_key"></div></div>'+
             	'<div class="key_name"><div>Volume</div>'+
-            	'<div>Light</div><div>Dataset</div></div>'+
+            	'<div>Light</div><div>Temp</div></div>'+
         	'</div>'
 var htmlString = 
 // HEADER
