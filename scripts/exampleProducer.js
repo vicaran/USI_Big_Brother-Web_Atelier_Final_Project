@@ -49,7 +49,7 @@ setInterval(function(msg) {
 		
 	
 	k.send(JSON.stringify(dataMilestone1));
-	k.send(JSON.stringify(dtaMilestone2));
+	k.send(JSON.stringify(dataMilestone2));
 	//k.send(JSON.stringify(data));
 	//k.send(JSON.stringify(data1));
 
