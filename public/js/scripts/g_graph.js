@@ -3,12 +3,12 @@
     //If util.js calls define(), then this function is not fired until
     //util's dependencies have loaded, and the util argument will hold
     //the module value for "helper/util".
-var websocket = new WebSocket("ws://195.176.181.55:15000");
+var websocket = new WebSocket("ws://195.176.181.55:16000");
 
-websocket.send("HELLO");
+//websocket.send("HELLO");
 
 websocket.onmessage = function (event) {
-  console.log(event.data);
+  console.log(event);
 }
 //var k = require('./../../../k_globals/koala.js')
 //define the chart
