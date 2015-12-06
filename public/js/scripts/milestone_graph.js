@@ -62,12 +62,12 @@ nav.addEventListener('click', function(e){
 		document.getElementById('old-graphs').setAttribute('class','hidden');
 		document.getElementById('light-bulb').setAttribute('class','hidden');
 		current_page = 'info-page';
-		document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
-    padding-right: 10px');
-		document.getElementById('live-feed').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
-    padding-right: 10px');
-		document.getElementById('archives').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
-    padding-right: 10px');
+		// document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
+  //   padding-right: 10px');
+		// document.getElementById('live-feed').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
+  //   padding-right: 10px');
+		// document.getElementById('archives').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
+  //   padding-right: 10px');
 		e.target.parentNode.lastChild.setAttribute('style','background-color: #871F17; height:2px;
     padding-right: 10px');
 	}else if(e.target.id=="live-feed"){
@@ -76,12 +76,12 @@ nav.addEventListener('click', function(e){
 		document.getElementById('old-graphs').setAttribute('class','hidden');
 		document.getElementById('light-bulb').setAttribute('class','hidden');
 		current_page = 'graph-container';
-		document.getElementById('about').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
-    padding-right: 10px');
-		document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
-    padding-right: 10px');
-		document.getElementById('archives').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
-    padding-right: 10px');
+		// document.getElementById('about').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
+  //   padding-right: 10px');
+		// document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
+  //   padding-right: 10px');
+		// document.getElementById('archives').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
+  //   padding-right: 10px');
 		e.target.parentNode.lastChild.setAttribute('style','background-color: #871F17; height:2px;
     padding-right: 10px');
 	}else if(e.target.id=="archives"){
@@ -89,12 +89,12 @@ nav.addEventListener('click', function(e){
 		document.getElementById('graph-container').setAttribute('class','hidden');
 		document.getElementById('old-graphs').setAttribute('class','');
 		document.getElementById('light-bulb').setAttribute('class','hidden');
-		document.getElementById('about').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
-    padding-right: 10px');
-		document.getElementById('live-feed').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
-    padding-right: 10px');
-		document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
-    padding-right: 10px');
+		// document.getElementById('about').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
+  //   padding-right: 10px');
+		// document.getElementById('live-feed').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
+  //   padding-right: 10px');
+		// document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
+  //   padding-right: 10px');
 		e.target.parentNode.lastChild.setAttribute('style','background-color: #871F17; height:2px;
     padding-right: 10px');
 		current_page = 'old-graphs';
@@ -104,12 +104,12 @@ nav.addEventListener('click', function(e){
 		document.getElementById('old-graphs').setAttribute('class','hidden');
 		document.getElementById('light-bulb').setAttribute('class','');
 		current_page = 'light-bulb';
-		document.getElementById('about').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
-    padding-right: 10px');
-		document.getElementById('live-feed').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
-    padding-right: 10px');
-		document.getElementById('archives').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
-    padding-right: 10px');
+		// document.getElementById('about').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
+  //   padding-right: 10px');
+		// document.getElementById('live-feed').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
+  //   padding-right: 10px');
+		// document.getElementById('archives').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
+  //   padding-right: 10px');
 		e.target.parentNode.lastChild.setAttribute('style','background-color: #871F17; height:2px;
     padding-right: 10px');
 	}
