@@ -1,4 +1,9 @@
-var requirejs = require('requirejs');
+requirejs(["./../../../k_globals/koala"], function(k) {
+    //This function is called when scripts/helper/util.js is loaded.
+    //If util.js calls define(), then this function is not fired until
+    //util's dependencies have loaded, and the util argument will hold
+    //the module value for "helper/util".
+
 //var k = require('./../../../k_globals/koala.js')
 
 //define the chart
@@ -211,7 +216,10 @@ var myFunction = function(){
 	});
 }
 
-var sending = function(k){
+var sending = function(){
+	k.send("hello")
 	//or
 	//k.createNode()
 }
+
+});
