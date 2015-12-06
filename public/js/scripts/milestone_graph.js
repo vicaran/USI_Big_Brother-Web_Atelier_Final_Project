@@ -55,7 +55,7 @@ var current_page = current_page || 'graph-container';
 var nav = document.getElementById('navbar');
 nav.addEventListener('click', function(e){
 	// console.log('e');
-	console.log(e.target.childNodes);
+	console.log(e.target.lastChild);
 	if(e.target.id=="about"){
 		document.getElementById('info-page').setAttribute('class','');
 		document.getElementById('graph-container').setAttribute('class','hidden');
