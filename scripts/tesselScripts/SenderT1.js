@@ -26,15 +26,15 @@ SenderT1.main = function() {
     });
     interval = setInterval(function() {
 
-        var volume = self.gatherSound(soundPin);
+        var volume = this.gatherSound(soundPin);
         var light = lightPin.read() * lightPin.resolution;
         var data = {
-            _id: self._id,
+            _id: this._id,
             volume: volume,
             light: light,
             time: Date.now()
         };
-        self.ws.send(data);
+        this.ws.send(data);
 
     }, 1000)
 };
