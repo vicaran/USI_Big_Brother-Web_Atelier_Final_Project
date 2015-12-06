@@ -273,8 +273,8 @@ var updateGraphLine = function(volume, light, temp, time) {
     myLine.Line(lineChartData);
 
     //empty the content of the div
-    document.getElementById('newdata').setAttribute('volume', "");
-    document.getElementById('newdata').setAttribute('time', "");
+    //document.getElementById('newdata').setAttribute('volume', "");
+    //document.getElementById('newdata').setAttribute('time', "");
 }
 
 
@@ -298,7 +298,7 @@ var updateGraphLine1 = function(volume, light, temp, time) {
     if (lineChartData1.datasets[0].data.length > 10 | lineChartData1.datasets[1].data.length > 10 | lineChartData1.datasets[2].data.length>10) {
         lineChartData1.datasets[0].data.shift();
         lineChartData1.datasets[1].data.shift();
-        lineChartData2.datasets[2].data.shift();
+        lineChartData1.datasets[2].data.shift();
         lineChartData1.labels.shift();
     }
 
@@ -306,8 +306,8 @@ var updateGraphLine1 = function(volume, light, temp, time) {
     myLine1.Line(lineChartData1);
 
     //empty the content of the div
-    document.getElementById('newdata').setAttribute('volume', "");
-    document.getElementById('newdata').setAttribute('time', "");
+    //document.getElementById('newdata').setAttribute('volume', "");
+    //document.getElementById('newdata').setAttribute('time', "");
 }
 
 
@@ -339,8 +339,8 @@ var updateGraphBar = function(volume, light, temp, time) {
     myBar.Bar(barChartData);
 
     //empty the content of the div
-    document.getElementById('newdata1').setAttribute('volume', "");
-    document.getElementById('newdata1').setAttribute('time', "");
+    //document.getElementById('newdata1').setAttribute('volume', "");
+    //document.getElementById('newdata1').setAttribute('time', "");
 }
 
 //<------------------------------------------------>
