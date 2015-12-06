@@ -10,11 +10,15 @@ k.createNode(function(data) {
 	//console.log(data);
 	k.callFunction('updateGraphLine', [data.volume, data.light ,data.time]);
 	k.callFunction('updateGraphBar', [data.volume, data.light, data.time]);
+	console.log(k.callFunction('sending',['ciao']));
 
 });
 
 //create the hidden div that will contain the received data
-var htmlString = '<div id="graph-container">' +
+var htmlString ='<input name="fromDate" type="text" value="Insert date from to" id="inputDate"></input>'+
+				'<div id="graph-container">' +
+				'<div id="radarData" style="display:none;"></div>' +
+				'<canvas id="canvasRadar" width="400px" height="400px"></canvas>' +
 				'<div id="newdata" style="display:none;"></div>' +
 				'<canvas id="canvas" width="400px" height="400px"></canvas>' +
 				'<div id="legend" class="chart-legend"></div>'+

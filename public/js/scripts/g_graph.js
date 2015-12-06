@@ -1,3 +1,5 @@
+//var k = require('./../../../k_globals/koala.js')
+
 //define the chart
 var lineChartData = {
 	labels : [],
@@ -50,6 +52,33 @@ datasets : [
 
 }
 
+
+var radarChartData = {
+    labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: []
+        },
+        {
+            label: "My Second dataset",
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: []
+        }
+    ]
+};
+
 //<-----------------                 ------------------------------->
 var updateInterval;
 var myLine;
@@ -84,6 +113,19 @@ document.getElementById('legend1').innerHTML = myRealBar.generateLegend();
 var button = document.getElementById('button');
 button.addEventListener('click', switchGraphs);
 document.getElementById('canvas1').style.display = 'none';
+
+
+var input = document.getElementById("inputDate");
+input.onkeydown = function(){
+	if(window.event.keyCode == '13'){
+		submit();
+		input.blur();
+	}
+}
+
+function submit(){
+	data.from = input.value;
+}
 
 //<-------------------------------------------------->
 function switchGraphs(){
@@ -155,4 +197,23 @@ var updateGraphBar = function(volume, light, time) {
   //empty the content of the div
   document.getElementById('newdata1').setAttribute('volume', "");
   document.getElementById('newdata1').setAttribute('time', "");
+}
+
+//<------------------------------------------------>
+
+var myFunction = function(){
+	var ctx =document.getElementById("canvasRadar").getContext("2d");
+	var myRadar = new Chart(ctx)
+	var myRealRadar = myRadar.Radar(radarChartData, {
+		tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
+		responsive: false,
+	});
+}
+
+var sending = function(k){
+
+	return k;
+
+	//or
+	//k.createNode()
 }
