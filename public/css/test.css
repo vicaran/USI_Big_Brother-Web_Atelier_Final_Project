@@ -1989,10 +1989,10 @@ canvas {
     background-color: rgba(51,56,63,0.3);
     height: 3em;
     position: relative;
-    top: -8px;
-    left: -7px;
-    margin-right: -13px;
-    
+    top: 0px;
+    left: 0px;
+    right:-100%;
+    margin-right: -100px;    
 }
 #footer{
     color: #BEBDBF;
@@ -2006,7 +2006,7 @@ canvas {
     padding-right: 40%;
     padding-top:0.5em;
     padding-bottom: 0.5em;
-    margin
+    
     margin-right: -100px;
 }
 
