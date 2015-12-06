@@ -2004,7 +2004,8 @@ canvas {
     right: -100%;
     padding-left: 40%;
     padding-right: 40%;
-    padding-top:1em;
+    padding-top:0.5em;
+    padding-bottom: 0.5em;
     margin
     margin-right: -100px;
 }
