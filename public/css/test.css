@@ -2022,9 +2022,14 @@ canvas {
     margin-top:1em ;
     padding-left: 2em;
 }
+.card{
+    background-color: rgba(51,56,63,0.3);
+    color: color: #BEBDBF;
+}
 .card >div{
     background-color: rgba(51,56,63,0.3);
     color: color: #BEBDBF;
+    padding: 2em;
 }
 .nav-panel:hover > .nav-line{
     background-color: #BEBDBF;
