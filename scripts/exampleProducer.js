@@ -1,4 +1,16 @@
 var k = require('./../k_globals/koala.js')
+var WebSocketServer = require('ws').Server,
+    wss = new WebSocketServer({
+        port: 15000
+    });
+
+wss.on('connection', function(ws) {
+    console.log('____________New Connection Opened____________');
+    ws.on('message', function(data) {
+    	console.log("websocket " + data);
+        }
+    });
+});
 
 setInterval(function(msg) {
 	var data = {
@@ -27,7 +39,10 @@ setInterval(function(msg) {
 }, 1000);
 
 k.createNode(function(msg){
-	console.log(msg);	
+	console.log("createNode " + msg);	
 });
+
+
+
 
 console.log('Sending data... ');
