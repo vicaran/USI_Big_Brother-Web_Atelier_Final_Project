@@ -121,6 +121,19 @@ button.addEventListener('click', switchGraphs);
 document.getElementById('canvas1').style.display = 'none';
 
 
+var input = document.getElementById("inputDate");
+
+input.onkeydown = function(){
+	if(window.event.keyCode == '13'){
+		submit();
+		input.blur();
+	}
+}
+
+function submit(){
+	console.log(input.value);
+}
+
 //<-------------------------------------------------->
 function switchGraphs(){
 	var canvas1 = document.getElementById('canvas1');
@@ -217,21 +230,9 @@ function loadScript(callback){
 }
 
 function sending(){
-	var input = document.getElementById("inputDate");
-	input.onkeydown = function(){
-		if(window.event.keyCode == '13'){
-			submit();
-			input.blur();
-		}
-	}
-
-	function submit(){
-		console.log(input.value);
-		send("hello");
-	}
-
-	
-		//or
+	console.log("sending hello...")
+	send("hello");
+	//or
 	//k.createNode()
 }
 
