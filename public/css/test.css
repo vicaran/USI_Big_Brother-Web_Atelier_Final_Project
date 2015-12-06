@@ -2027,6 +2027,8 @@ canvas {
     color: color: #BEBDBF;
     border-radius: 25px;
     text-align: center;
+    font-size: 14pt;
+    margin: 2em;
 }
 .card >div{
 /*    background-color: rgba(51,56,63,0.3);*/
