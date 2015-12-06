@@ -1994,6 +1994,20 @@ canvas {
     margin-right: -13px;
     
 }
+#footer{
+    color: #BEBDBF;
+    background-color: rgba(51,56,63,0.3);
+    height: 2em;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: -100%;
+    padding-left: 40%;
+    padding-right: 40%;
+    padding-top:1em;
+    margin
+    margin-right: -100px;
+}
 
 .nav-panel{
 /*    background-color: #090603;*/

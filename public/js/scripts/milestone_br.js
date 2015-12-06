@@ -55,7 +55,12 @@ var htmlString =
  				'<canvas id="canvas1"  width="400px" height="400px"></canvas>' +
  				legend +
 				'</div>' +
-				'</div>';
+				'</div>' + 
+				'<div id="footer">' +
+            '<div class="fa"> With</div>' +
+            '<i class="fa fa-heart "  style="color:#871F17;"></i>' +
+            '<div class="fa">The Big Brother Team</div>' +
+    '</div>';
 k.createHTML('pimmi', htmlString);
 // k.createHTML('graph-container', '<div id="graph-container">');
 // k.createHTML('data', '<div id="newdata" style="display:none;"></div>');
