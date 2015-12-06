@@ -247,7 +247,7 @@ function switchGraphs() {
 
 //<-------------------------------------------------->
 
-var updateGraphLine = function(volume, light, , temp, time) {
+var updateGraphLine = function(volume, light, temp, time) {
     //console.log(volume,light, time)
     var date = new Date(time).toUTCString();
     date = date.split(' ')[4]
