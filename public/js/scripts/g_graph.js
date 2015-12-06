@@ -4,12 +4,6 @@
 //the module value for "helper/util".
 var websocket = new WebSocket("ws://195.176.181.55:16000");
 
-interval = setInterval(function() {
-
-    websocket.send("Hello!!");
-
-}, 1000)
-
 websocket.onmessage = function(event) {
     console.log(event);
 }
@@ -131,6 +125,7 @@ input.onkeydown = function() {
 
 function submit() {
     console.log(input.value);
+    websocket.send(JSON.stringify(input.value));
 }
 
 //<-------------------------------------------------->
