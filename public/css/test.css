@@ -2049,7 +2049,7 @@ canvas {
     font-size: 56pt;
 }
 .postpone > i{
-    align: center;
+    text-align: center;
 }
 .nav-panel:hover > .nav-line{
     background-color: #BEBDBF;
