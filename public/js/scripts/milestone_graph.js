@@ -81,7 +81,7 @@ nav.addEventListener('click', function(e){
   //   padding-right: 10px');
 		// document.getElementById('archives').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
   //   padding-right: 10px');
-		e.target.parentNode.lastChild.setAttribute('style','background-color: #871F17; height:2px; padding-right: 10px');
+		e.target.parentNode.lastChild.setAttribute('style','background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
 	}else if(e.target.id=="archives"){
 		document.getElementById('info-page').setAttribute('class','hidden');
 		document.getElementById('graph-container').setAttribute('class','hidden');
@@ -93,7 +93,7 @@ nav.addEventListener('click', function(e){
   //   padding-right: 10px');
 		// document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
   //   padding-right: 10px');
-		e.target.parentNode.lastChild.setAttribute('style','background-color: #871F17; height:2px; padding-right: 10px');
+		e.target.parentNode.lastChild.setAttribute('style','background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
 		current_page = 'old-graphs';
 	}else if(e.target.id=="activate-lights"){
 		document.getElementById('info-page').setAttribute('class','hidden');
@@ -107,7 +107,7 @@ nav.addEventListener('click', function(e){
   //   padding-right: 10px');
 		// document.getElementById('archives').parentNode.lastChild.setAttribute('style','background-color: rgba(51,56,63,0); height:2px;
   //   padding-right: 10px');
-		e.target.parentNode.lastChild.setAttribute('style','background-color: #871F17; height:2px; padding-right: 10px');
+		e.target.parentNode.lastChild.setAttribute('style','background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
 	}
 });
 
