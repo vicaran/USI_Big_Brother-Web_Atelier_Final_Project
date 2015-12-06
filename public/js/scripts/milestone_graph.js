@@ -62,6 +62,7 @@ nav.addEventListener('click', function(e){
 		document.getElementById('old-graphs').setAttribute('class','hidden');
 		document.getElementById('light-bulb').setAttribute('class','hidden');
 		current_page = 'info-page';
+		e.target.parentNode.lastChild.setAttribute('style','color: red;');
 	}else if(e.target.id=="live-feed"){
 		document.getElementById('info-page').setAttribute('class','hidden');
 		document.getElementById('graph-container').setAttribute('class','');
