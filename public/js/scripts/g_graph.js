@@ -1,4 +1,4 @@
-var k = require('./../../../k_globals/koala.js')
+//var k = require('./../../../k_globals/koala.js')
 
 //define the chart
 var lineChartData = {
@@ -210,7 +210,8 @@ var myFunction = function(){
 	});
 }
 
-var sendingOnClick = function(){
+var sending = function(k){
+
 	k.send("hello");
 
 	//or
