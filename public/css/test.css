@@ -2134,7 +2134,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     color: #BEBDBF;
     height: 9em;
     padding: 2%;
-    width: 9em;
+    width: 8em;
 }
 .key_entry{
 /*    display: grid;*/
