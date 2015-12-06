@@ -2025,6 +2025,7 @@ canvas {
 .card{
     background-color: rgba(51,56,63,0.3);
     color: color: #BEBDBF;
+    border-radius: 25px;
 }
 .card >div{
     background-color: rgba(51,56,63,0.3);
