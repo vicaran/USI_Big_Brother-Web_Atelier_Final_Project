@@ -64,7 +64,7 @@ var htmlString =
     	'<div id="light-bulb" class="hidden">'+
     	// Here we make the buttons for the tessel
     	// ---Andrea's Implementation :)
-		  '<a href="#" bubbletooltip="Light is currently: ON"><img src="./../part1.png" alt="p1" class="setDimension"></a>' +
+		  '<a href="#" bubbletooltip="Light is currently: ON"><img src="http://i67.tinypic.com/bg5ovs.png" alt="p1" class="setDimension"></a>' +
    '<a href="#" bubbletooltip="Light is currently: OFF"><img src="./../part2.png" alt="p2" class="setDimension"></a>' +
    '<a href="#" bubbletooltip="Light is currently: OFF"><img src="./../part3.png" alt="p3" class="setDimension"></a>' +
 		// ---------------------------
