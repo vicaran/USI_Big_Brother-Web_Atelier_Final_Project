@@ -27,6 +27,7 @@ var legend = '<div class="key">'+
             	'<div>Light</div></div>'+
         	'</div>'
 var htmlString = 
+// HEADER
 '<div id="navbar">' +
     		'<div class="nav-panel">' +
     			'<div id="live-feed" class="fa fa-bar-chart-o"> &nbsp;LIVE FEED</div>' +
@@ -46,11 +47,24 @@ var htmlString =
     		'</div>' +
     	'</div>' +
     	'<div class="whitespace"></div>' +
-    	'<div id="info-page" class="hidden">'+ 
-    	about_section+
+
+    	// INDIVIDUAL SECTIONS BEGIN HERE
+    	// This is where we write about the team, wls, etc
+   		'<div id="info-page" class="hidden">'+ 
+		about_section+
+    	about_section +
     	'</div>' +
-    	'<div id="old-graphs" class="hidden">This is where we add the database stuff</div>' +
-    	'<div id="light-bulb" class="hidden">Turn USI lights on and off</div>' +
+    	// DATABASE GRAPHS
+    	'<div id="old-graphs" class="hidden">'+
+    	'<div class="fa card"><i class="fa fa-exclamation-triangle fa-2x" style="color: #FFB700"></i>'+
+    	'<div class="postpone">KEEP WATCHING TO FIND OUT...<br></div>'+
+    	'</div>'+
+    	'</div>' +
+    	// ACTIVATE LIGHTS SECTION
+    	'<div id="light-bulb" class="hidden">'+
+    	// Here we make the buttons for the tessel
+    	'<div id="tessel1" class="tessel-button">Sector 1</div>'+
+    	'</div>' +
     	'<div id="graph-container" class="">' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
 				'<div id="newdata" style="display:none;"></div>' +
@@ -64,6 +78,7 @@ var htmlString =
  				legend +
 				'</div>' +
 				'</div>' + 
+				// FOOTER
 				'<div id="footer">' +
             '<div class="fa"> With &nbsp;</div>' +
             '<i class="fa fa-heart "  style="color:#871F17;"></i>' +

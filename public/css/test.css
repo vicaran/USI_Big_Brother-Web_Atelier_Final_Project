@@ -2041,18 +2041,25 @@ canvas {
     text-align: left;
     font-size: 12pt;
 }
+.card >.postpone{
+    color: #FFB700;
+    padding: 2em;
+    border-radius: 25px;
+    text-align: left;
+    font-size: 56pt;
+}
 .nav-panel:hover > .nav-line{
     background-color: #BEBDBF;
     position: relative;
     bottom:-11px;
     height:2px;
 }
-.nav-panel:target > .nav-line{
-    background-color: pink;
-    height:2px;
-    bottom:-11px;
-    padding-right: 10px;
-}
+/*.nav-panel:target > .nav-line{*/
+/*    background-color: pink;*/
+/*    height:2px;*/
+/*    bottom:-11px;*/
+/*    padding-right: 10px;*/
+/*}*/
 .nav-line{
     background-color: rgba(51,56,63,0);
     height:2px;
