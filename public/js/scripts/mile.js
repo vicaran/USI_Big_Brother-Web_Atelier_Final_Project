@@ -16,7 +16,7 @@ k.createNode(function(data){
             table[data._id] = "updateGraph" + data._id
         }
     }
-    console.log(t);
+    console.log(sensors);
     console.log(table);
     console.log(data);
 
