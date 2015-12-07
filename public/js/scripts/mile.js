@@ -13,7 +13,7 @@ k.createNode(function(data){
 
     
     var data = JSON.parse(data);
-    //console.log(data);
+    console.log(data);
 
     if(ht[data._id]){
         k.callFunction(ht[data._id][0], [data.volume, data.light, data.temperature, data.time])
