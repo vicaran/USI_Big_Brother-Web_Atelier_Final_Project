@@ -240,6 +240,7 @@ input.onkeydown = function() {
 
 function submit() {
     console.log(input.value)
+    producer_handler({header: "browser" , data: "hello"}, 'producer')
     //websocket.send(JSON.stringify(input.value));
 }
 
