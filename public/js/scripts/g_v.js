@@ -3,9 +3,9 @@ var k = require('./../../../k_globals/koala.js')
 
 //script of the operator
 k.createNode(function(data) {
-	console.log(data);
+	//console.log(data);
 
-	if(data.header === 'browser'){
+	if(data.header){
 		var data = JSON.parse(data);
 		console.log(data)
 
