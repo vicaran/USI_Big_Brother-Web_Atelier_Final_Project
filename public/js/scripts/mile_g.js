@@ -204,6 +204,10 @@ graph_button.addEventListener('click', function(){
 		// c.classList.remove('hidden');
 		c.setAttribute('class','');
 		c1.setAttribute('class','hidden');
+		c2.setAttribute('class','hidden');
+		c3.setAttribute('class','hidden');
+		console.log(myrealLine);
+		console.log(document.getElementById('canvas0'));
 		// c1.classList.add('hidden');
 		nextGraph = 'c1';
 	}else if(nextGraph == 'c1'){
