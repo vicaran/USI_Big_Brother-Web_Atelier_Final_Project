@@ -219,13 +219,30 @@ graph_button.addEventListener('click', function(){
 		// c1.classList.remove('hidden');
 		c1.setAttribute('class','');
 		c.setAttribute('class','hidden');
+		c2.setAttribute('class','hidden');
+		c3.setAttribute('class','hidden');
 		// c.classList.add('hidden');
-		nextGraph = 'both';
-	}else{
+		nextGraph = 'c2';
+	}else if(nextGraph == 'c2'){
+		c.setAttribute('class','hidden');
+		c1.setAttribute('class','hidden');
+		c2.setAttribute('class','');
+		c3.setAttribute('class','hidden');
+
+		nextGraph = 'c3';
+
+	}else if(nextGraph == 'c3'){
+		c.setAttribute('class','hidden');
+		c1.setAttribute('class','hidden');
+		c2.setAttribute('class','hidden');
+		c3.setAttribute('class','');
+		c = "both";
+	}
+	else{
 		c.setAttribute('class','');
 		c1.setAttribute('class','');
-		nextGraph = 'c';
-
+		c2.setAttribute('class','');
+		c3.setAttribute('class','');
 	}
 });
 
