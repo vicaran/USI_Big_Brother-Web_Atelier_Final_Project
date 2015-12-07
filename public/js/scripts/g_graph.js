@@ -170,10 +170,15 @@ var myRealLine1;
 var myBar1;
 var myRealBar1;
 
+// var myRad;
+// var myRealRad;
+
 var ctx = document.getElementById("canvas0").getContext("2d");
 var ctx_bar = document.getElementById("canvas1").getContext("2d");
 var ctx_1 = document.getElementById("canvas2").getContext("2d");
 var ctx_bar1 = document.getElementById("canvas3").getContext("2d");
+
+//var ctx_rad = document.getElementById("canvas4").getContext("2d");
 
 
 Chart.defaults.global.animation = false;
@@ -207,10 +212,17 @@ myRealBar1 = myBar1.Bar(barChartData, {
     barShowStroke: false
 });
 
+// myRad = new Chart(ctx_rad);
+// myRealRad = myRad.Radar(radarChartData, {
+// 	tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
+// 	responsive: false
+// });
+
 document.getElementById('legend0').innerHTML = myRealLine.generateLegend();
 document.getElementById('legend1').innerHTML = myRealBar.generateLegend();
 document.getElementById('legend2').innerHTML = myRealLine1.generateLegend();
 document.getElementById('legend3').innerHTML = myRealBar1.generateLegend();
+//document.getElementById('legend4').innerHTML = myRealRad.generateLegend();
 
 // var button = document.getElementById('button');
 // button.addEventListener('click', switchGraphs);
@@ -375,13 +387,56 @@ var updateGraphBar1 = function(volume, light, temp, time) {
 
 //<------------------------------------------------>
 
+
+var updateGraphRad = function(volume, light, temp, time) {
+    var date = new Date(time).toUTCString();
+    date = date.split(' ')[4]
+
+    //push newly received data (time & data)
+    barChartData1.datasets[0].data.push(volume);
+    barChartData1.datasets[1].data.push(light);
+    barChartData1.datasets[2].data.push(temp);
+    barChartData1.labels.push(date);
+
+    //if longer than 20, remove the first one
+    if (barChartData1.datasets[0].data.length > 10 | barChartData1.datasets[1].data.length > 10 | barChartData1.datasets[2].data.length > 10) {
+        barChartData1.datasets[0].data.shift();
+        barChartData1.datasets[1].data.shift();
+        barChartData1.datasets[2].data.shift();
+        barChartData1.labels.shift();
+    }
+
+    //draw it
+    myBar1.Bar(barChartData1);
+
+    //empty the content of the div
+    //document.getElementById('newdata1').setAttribute('volume', "");
+    //document.getElementById('newdata1').setAttribute('time', "");
+}
+
+
 var myFunction = function() {
-    var ctx = document.getElementById("canvasRadar").getContext("2d");
+    var ctx = document.getElementById("canvas4").getContext("2d");
     var myRadar = new Chart(ctx)
     var myRealRadar = myRadar.Radar(radarChartData, {
         tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
         responsive: false,
     });
+
+    var date = new Date(time).toUTCString();
+    date = date.split(' ')[4]
+
+    var arrayVolume = []
+    var arrayLight = []
+    var arrayTemp = []
+    var date = []
+
+    radarChartData.datasets[0].data.push(arrayVolume);
+    radarChartData.datasets[1].data.push(arrayLight);
+    radarChartData.datasets[0].data.push(arrayTemp);
+    radarChartData.labels.push(date);
+
+    myRadar.Radar(radarChartData);
 }
 
 // function loadScript(callback) {

@@ -27,13 +27,28 @@ var about_section = '<div class="fa card">'+
 '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam venenatis vulputate sem, commodo suscipit nisi congue ultricies. Sed a pharetra metus, at pulvinar neque. Maecenas porta suscipit ullamcorper. Mauris euismod rutrum eros ac bibendum. Curabitur eget quam ut augue sodales tristique a in quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin blandit ipsum sed venenatis scelerisque. Vestibulum vulputate tellus a sapien condimentum interdum. Nam ut augue a diam vulputate consequat. Morbi vitae vestibulum tortor.<br><br>'+
 'Donec molestie maximus velit, vitae venenatis massa tristique non. Aliquam erat volutpat. Duis imperdiet tempor elit ut sollicitudin. Fusce at purus vehicula, venenatis libero sit amet, faucibus eros. Maecenas id aliquam magna. Maecenas scelerisque sapien a metus iaculis facilisis. Duis tincidunt scelerisque sem et tempus. Phasellus iaculis tellus in ex pretium, a pellentesque justo pretium. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam bibendum aliquet dui, sollicitudin pharetra lectus dapibus in. Nullam porta erat ut pellentesque tristique.</div>'+
 '</div>'
+
+
+
+
+
 var legend = '<div class="key">'+
             	'<div style="padding-left: 11px">LEGEND</div>'+
-            	'<div class="key_entry"><div class="volume_graph_key"></div>'+
-            	'<div class="light_graph_key"></div></div>'+
-            	'<div class="key_name"><div>Volume</div>'+
-            	'<div>Light</div></div>'+
+            	'<div class="key_entry">'+
+                    '<div class="volume_graph_key"></div>'+
+                    '<div class="light_graph_key"></div>'+
+                '</div>'+
+            	'<div class="key_name">'+
+                '<div>Volume</div>'+
+            	'<div>Light</div>'+
+                '</div>'+
         	'</div>'
+
+
+
+
+
+
 var htmlString = 
 // HEADER
 '<div id="navbar">' +
@@ -85,7 +100,7 @@ var htmlString =
 				'<div id="c" class="">' + 
 				'<canvas id="canvas0"  width="400px" height="400px"></canvas>' +
 				legend + 
-				'</div>' +
+				'</div>' + 
 				'<div id="newdata1" style="display:none;"> Hello</div>' +
 				'<div id="c1" class="">' +
  				'<canvas id="canvas1"  width="400px" height="400px"></canvas>' +

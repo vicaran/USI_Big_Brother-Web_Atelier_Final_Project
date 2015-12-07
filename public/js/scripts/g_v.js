@@ -41,6 +41,10 @@ var htmlString ='<input name="fromDate" type="text" value="Insert date from to" 
  				'<div id="newdata3" style="display:none;"> Hello</div>' +
  				'<canvas id="canvas3" width="400px" height="400px"></canvas>' +
  				'<div id="legend3" class="chart-legend"></div>'+
+
+ 				'<div id="newdata4" style="display:none;"> Hello</div>' +
+ 				'<canvas id="canvas4" width="400px" height="400px"></canvas>' +
+ 				'<div id="legend4" class="chart-legend"></div>'+
 				'</div>';
 
 k.createHTML('html', htmlString);
