@@ -5,6 +5,7 @@ var k = require('./../../../k_globals/koala.js')
 k.createNode(function(data) {
 	//console.log(data);
 	//var data = JSON.parse(data);
+	console.log(data)
 
 	if(data.header === "browser"){
 		var data = JSON.parse(data);
@@ -19,7 +20,7 @@ k.createNode(function(data) {
 		"2": ["updateGraphLine1","updateGraphBar1"]
 	}
 
-	console.log("else", data)
+	// console.log("else", data)
 	var data = JSON.parse(data);
 	//console.log(data);
 
