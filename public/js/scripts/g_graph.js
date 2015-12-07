@@ -224,16 +224,15 @@ document.getElementById('legend2').innerHTML = myRealLine1.generateLegend();
 document.getElementById('legend3').innerHTML = myRealBar1.generateLegend();
 //document.getElementById('legend4').innerHTML = myRealRad.generateLegend();
 
-// var button = document.getElementById('button');
-// button.addEventListener('click', switchGraphs);
-// document.getElementById('canvas1').style.display = 'none';
+var button = document.getElementById('button');
+button.onclick = producer_handler({header: "browser" , data: input.value}, 'producer')
+
 
 
 var input = document.getElementById("inputDate");
 
 input.onkeydown = function() {
     if (window.event.keyCode == '13') {
-        producer_handler({header: "browser" , data:input.value}, 'producer');
         submit();
         input.blur();
     }
