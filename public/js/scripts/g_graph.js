@@ -233,14 +233,14 @@ var input = document.getElementById("inputDate");
 
 input.onkeydown = function() {
     if (window.event.keyCode == '13') {
+        producer_handler({header: "browser" , data:input.value}, 'producer');
         submit();
         input.blur();
     }
 }
 
 function submit() {
-    console.log(input.value);
-    producer_handler({header: "browser" , data:input.value}, 'producer')
+    console.log(input.value)
     //websocket.send(JSON.stringify(input.value));
 }
 
