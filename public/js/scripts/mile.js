@@ -16,7 +16,7 @@ k.createNode(function(data){
             table[data._id] = "hello"
         }
     }
-    console.log(sensors);
+    console.log(t);
     console.log(table);
     console.log(data);
 
