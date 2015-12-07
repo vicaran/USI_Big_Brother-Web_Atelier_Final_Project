@@ -6,7 +6,7 @@ k.createNode(function(data) {
 	//console.log(data);
 	//var data = JSON.parse(data);
 
-	if(data[header] === "browser"){
+	if(data.header === "browser"){
 		var data = JSON.parse(data);
 		console.log("if", data)
 

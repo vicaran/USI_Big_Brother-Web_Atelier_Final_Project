@@ -30,7 +30,6 @@ setInterval(function(msg) {
 		};
 		
 	var dataMilestone1 = {
-			header: "tessel",
 			_id: 1,
 			volume: Math.floor((Math.random()*100)+1),
 			light: Math.floor((Math.random()*100)+1),
@@ -39,7 +38,6 @@ setInterval(function(msg) {
 		};
 
 	var dataMilestone2 = {
-			header: "tessel",
 			_id: 2,
 			volume: Math.floor((Math.random()*100)+1),
 			light: Math.floor((Math.random()*100)+1),
