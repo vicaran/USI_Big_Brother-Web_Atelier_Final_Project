@@ -267,14 +267,14 @@ myLine = new Chart(ctx);
 myRealLine = myLine.Line(lineChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
     responsive: true,
-    maintainAspectRatio: false,
+    
 });
 
 myLine1 = new Chart(ctx_1);
 myRealLine1 = myLine1.Line(lineChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
     responsive: true,
-    maintainAspectRatio: false,
+    
 });
 
 myBar = new Chart(ctx_bar);
@@ -282,7 +282,7 @@ myRealBar = myBar.Bar(barChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
     responsive: true,
     barShowStroke: false,
-    maintainAspectRatio: false,
+    
 });
 
 myBar1 = new Chart(ctx_bar1);
@@ -290,7 +290,7 @@ myRealBar1 = myBar1.Bar(barChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
     responsive: true,
     barShowStroke: false,
-    maintainAspectRatio: false,
+
 });
 
 
