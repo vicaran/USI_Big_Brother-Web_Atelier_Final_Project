@@ -207,7 +207,8 @@ graph_button.addEventListener('click', function(){
 		c2.setAttribute('class','hidden');
 		c3.setAttribute('class','hidden');
 		myRealLine.options.responsive = true;
-		console.log(document.getElementById('canvas0'));
+
+		console.log(myRealLine);
 		// c1.classList.add('hidden');
 		nextGraph = 'c1';
 	}else if(nextGraph == 'c1'){
