@@ -202,7 +202,7 @@ graph_button.addEventListener('click', function(){
 
 	if(nextGraph == 'c'){
 		// c.classList.remove('hidden');
-		c.setAttribute('class','');
+		c.setAttribute('class','big_graph');
 		c1.setAttribute('class','hidden');
 		c2.setAttribute('class','hidden');
 		c3.setAttribute('class','hidden');

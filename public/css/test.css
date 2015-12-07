@@ -1979,6 +1979,12 @@ body {
 	display: none;
 }
 
+.big_graph{
+    height: 1000px;
+    width: 1000px;
+    background-color: rgba(255,0,0,0.2);
+}
+
 canvas {
     float: left;
 }
