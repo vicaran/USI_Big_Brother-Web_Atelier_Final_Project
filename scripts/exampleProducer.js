@@ -30,7 +30,7 @@ setInterval(function(msg) {
 		};
 		
 	var dataMilestone1 = {
-			_id: "0",
+			_id: 1,
 			volume: Math.floor((Math.random()*100)+1),
 			light: Math.floor((Math.random()*100)+1),
 			temperature: 0,
@@ -38,7 +38,7 @@ setInterval(function(msg) {
 		};
 
 	var dataMilestone2 = {
-			_id: "1",
+			_id: 2,
 			volume: Math.floor((Math.random()*100)+1),
 			light: Math.floor((Math.random()*100)+1),
 			temperature: 0,

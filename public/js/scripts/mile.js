@@ -7,8 +7,8 @@ k.createNode(function(data){
 
 
     var ht = {
-        "1": ["updateGraphLine","updateGraphBar"],
-        "2": ["updateGraphLine1","updateGraphBar1"]
+        1: ["updateGraphLine","updateGraphBar"],
+        2: ["updateGraphLine1","updateGraphBar1"]
     }
 
     
