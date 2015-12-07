@@ -18,7 +18,7 @@ k.createNode(function(data) {
 		"2": ["updateGraphLine1","updateGraphBar1"]
 	}
 
-	
+	console.log(data)
 	var data = JSON.parse(data);
 	//console.log(data);
 
@@ -67,6 +67,7 @@ k.createHTML('html', htmlString);
 
 //add the graph script
 k.createScript('our_graph1', 'js/scripts/g_graph.js');
+
 k.registerProducer('producer');
 
 //css
