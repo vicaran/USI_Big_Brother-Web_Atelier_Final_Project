@@ -2133,8 +2133,9 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     border-radius: 25px;
     color: #BEBDBF;
     height: 9em;
-    padding: 0.5%;
-    width: 9em;
+    padding: 2%;
+    width: 8em;
+    margin: 10px;
 }
 .key_entry{
 /*    display: grid;*/
@@ -2142,7 +2143,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 /*    padding: 3px;*/
 }
 #graph-container{
-    display: block;
+    display: flex;
 }
 .volume_graph_key{
     width: 20px;
