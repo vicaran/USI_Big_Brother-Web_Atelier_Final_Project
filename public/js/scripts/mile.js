@@ -5,14 +5,26 @@ var k = require('./../../../k_globals/koala.js')
 //script of the operator
 k.createNode(function(data){ 
 
+    var data = JSON.parse(data);
+    var sensors = {};
+    
+    sensors[data._id] = true;
+
 
     var ht = {
         1: ["updateGraphLine","updateGraphBar"],
         2: ["updateGraphLine1","updateGraphBar1"]
     }
 
-    
-    var data = JSON.parse(data);
+    var table = {};
+
+    for(e in sensors){
+        if(sensors[data._id]){
+            table[data._id] = "hello"
+        }
+    }
+    console.log(sensors);
+    console.log(table);
     console.log(data);
 
     if(ht[data._id]){
