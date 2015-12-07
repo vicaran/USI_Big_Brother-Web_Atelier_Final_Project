@@ -4,10 +4,11 @@ var k = require('./../../../k_globals/koala.js')
 //script of the operator
 k.createNode(function(data) {
 	//console.log(data);
+	var data = JSON.parse(data);
 
-	if(data.header){
+	if(data[header]){
 		var data = JSON.parse(data);
-		console.log(data)
+		console.log("if", data)
 
 
 	}
@@ -18,8 +19,8 @@ k.createNode(function(data) {
 		"2": ["updateGraphLine1","updateGraphBar1"]
 	}
 
-	console.log(data.data)
-	var data = JSON.parse(data);
+	console.log("else", data.data)
+	//var data = JSON.parse(data);
 	//console.log(data);
 
 	if(ht[data._id]){
