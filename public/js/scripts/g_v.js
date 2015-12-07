@@ -8,7 +8,7 @@ k.createNode(function(data) {
 	console.log(data)
 
 	if(data.header === "browser"){
-		var data = JSON.parse(data);
+		// var data = JSON.parse(data);
 		console.log("if", data)
 
 
@@ -21,7 +21,7 @@ k.createNode(function(data) {
 	}
 
 	// console.log("else", data)
-	var data = JSON.parse(data);
+	// var data = JSON.parse(data);
 	//console.log(data);
 
 	if(ht[data._id]){
