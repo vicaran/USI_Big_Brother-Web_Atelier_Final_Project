@@ -206,7 +206,7 @@ graph_button.addEventListener('click', function(){
 		c1.setAttribute('class','hidden');
 		c2.setAttribute('class','hidden');
 		c3.setAttribute('class','hidden');
-		console.log(myrealLine);
+		console.log(myrRealLine);
 		console.log(document.getElementById('canvas0'));
 		// c1.classList.add('hidden');
 		nextGraph = 'c1';
