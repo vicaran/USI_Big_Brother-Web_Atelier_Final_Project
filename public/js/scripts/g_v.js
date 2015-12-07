@@ -18,7 +18,7 @@ k.createNode(function(data) {
 		"2": ["updateGraphLine1","updateGraphBar1"]
 	}
 
-	console.log(data)
+	console.log(data.data)
 	var data = JSON.parse(data);
 	//console.log(data);
 
