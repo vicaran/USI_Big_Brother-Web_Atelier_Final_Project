@@ -1,54 +1,45 @@
 var k = require('./../k_globals/koala.js')
-    /**
-     * This function save the data on Redis
-     * @param data The json with the producer's data
-     * @param d The Date.now()
-     */
-var addToDatabase = function(data, d) {
+/**
+ * This function save the data on Redis
+ * @param data The json with the producer's data
+ * @param d The Date.now()
+ */
+var addToDatabase = function (data, d) {
 
     var keyDate = convertDate(d) + "-" + convertHour(d);
     var parse = JSON.parse(data)
-        // console.log('this is parse', parse);
+    // console.log('this is parse', parse);
     var _id = parse._id;
     console.log('------------------- REQUEST FROM SOCKET: ', _id, ' -------------------')
+    var json = {
+        volume: parse.volume,
+        light: parse.light,
+        temperature: parse.temperature
+    };
 
-    k.stateful.get(keyDate, function(res) {
+    k.stateful.get(keyDate, function (res) {
+        var toSave = {};
         if (res == null || res == undefined) {
-            var toSave = {};
             //if there isn't create a array of json
-            toSave[_id] =
-                [{
-                volume: parse.volume,
-                light: parse.light,
-                temperature: parse.temperature
-            }];
+            toSave[_id] = [json]
 
-            var json = JSON.stringify(toSave)
-            k.stateful.set(keyDate, json, function() {
-                console.log('Saved on new key')
-            });
 
         } else {
-            console.log('res', res)
+            console.log('res', res);
             var parseRes = JSON.parse(res);
-            // console.log('******************* ', _id, ' *******************')
-            var a = {
-                volume: parse.volume,
-                light: parse.light,
-                temperature: parse.temperature
-            };
             if (parseRes[_id] != undefined) {
-                parseRes[_id].push(a);
+                parseRes[_id].push(json);
             } else {
                 console.log('PUSH ON DATABASE ON NEW ID: ', _id);
-                parseRes[_id] = [a]
+                parseRes[_id] = [json]
             }
-            var newJson = JSON.stringify(parseRes);
-            console.log(newJson);
-            k.stateful.set(keyDate, newJson, function() {
-                console.log('Saved on existing key')
-            });
+
+            toSave = parseRes;
         }
+        k.stateful.set(keyDate, JSON.stringify(toSave), function () {
+            console.log('saved')
+        });
+
     })
 };
 
