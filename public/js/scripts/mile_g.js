@@ -210,9 +210,7 @@ graph_button.addEventListener('click', function(){
 		var canvas = document.getElementById("canvas0");
 		console.log(c)
 		console.log(canvas);
-		canvas.width= "1000px"
-		canvas.height= "1000px"
-		console.log(canvas);
+	
 		// c1.classList.add('hidden');
 		nextGraph = 'c1';
 	}else if(nextGraph == 'c1'){
@@ -236,13 +234,14 @@ graph_button.addEventListener('click', function(){
 		c1.setAttribute('class','hidden');
 		c2.setAttribute('class','hidden');
 		c3.setAttribute('class','');
-		c = "both";
+		nextGraph = "both";
 	}
 	else{
 		c.setAttribute('class','');
 		c1.setAttribute('class','');
 		c2.setAttribute('class','');
 		c3.setAttribute('class','');
+		nextGraph = "c";
 	}
 });
 
