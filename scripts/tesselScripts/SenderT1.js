@@ -32,6 +32,7 @@ SenderT1.main = function() {
             _id: self._id,
             volume: volume,
             light: light,
+            temperature: 0,
             time: Date.now()
         };
         self.ws.send(data);
