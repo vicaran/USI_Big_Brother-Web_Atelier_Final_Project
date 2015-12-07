@@ -2,11 +2,11 @@
 //If util.js calls define(), then this function is not fired until
 //util's dependencies have loaded, and the util argument will hold
 //the module value for "helper/util".
-var websocket = new WebSocket("ws://195.176.181.55:16000");
+// var websocket = new WebSocket("ws://195.176.181.55:16000");
 
-websocket.onmessage = function(event) {
-    console.log(event);
-}
+// websocket.onmessage = function(event) {
+//     console.log(event);
+// }
 //var k = require('./../../../k_globals/koala.js')
 //define the chart
 var lineChartData = {
@@ -240,7 +240,8 @@ input.onkeydown = function() {
 
 function submit() {
     console.log(input.value);
-    websocket.send(JSON.stringify(input.value));
+    producer_handler({header: "browser" , data:input.value}, 'producer')
+    //websocket.send(JSON.stringify(input.value));
 }
 
 //<-------------------------------------------------->
@@ -258,6 +259,10 @@ function switchGraphs() {
 }
 
 //<-------------------------------------------------->
+
+//
+
+//<------------------------------------------------->
 
 var updateGraphLine = function(volume, light, temp, time) {
     //console.log(volume,light, time)

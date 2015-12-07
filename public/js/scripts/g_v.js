@@ -4,6 +4,14 @@ var k = require('./../../../k_globals/koala.js')
 //script of the operator
 k.createNode(function(data) {
 
+	if(data.header === 'browser'){
+		var data = JSON.parse(data);
+		console.log(data)
+		
+
+	}
+	else{
+
 	var ht = {
 		"1": ["updateGraphLine","updateGraphBar"],
 		"2": ["updateGraphLine1","updateGraphBar1"]
@@ -17,6 +25,7 @@ k.createNode(function(data) {
 		k.callFunction(ht[data._id][0], [data.volume, data.light, data.temperature, data.time])
 		k.callFunction(ht[data._id][1], [data.volume, data.light, data.temperature, data.time])
 	}
+}
 	//k.callFunction('updateGraphLine', [data.volume, data.light ,data.time]);
 	//k.callFunction('updateGraphBar', [data.volume, data.light, data.time]);
 
@@ -57,6 +66,7 @@ k.createHTML('html', htmlString);
 
 //add the graph script
 k.createScript('our_graph1', 'js/scripts/g_graph.js');
+k.registerProducer('producer');
 
 //css
 k.createCSS('css_g', '/css/g_t.css');

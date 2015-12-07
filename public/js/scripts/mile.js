@@ -109,7 +109,7 @@ var htmlString =
     	'</div>' +
     	'<div id="graph-container" class="">' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
-				'<div id="newdata0" style="display:none;"></div>' +
+				'<div id="newdata0" style="display:none;">'+sensors.length +'</div>' +
 				'<div id="c" class="">' + 
 				'<canvas id="canvas0"  width="400px" height="400px"></canvas>' +
 				legend + 
