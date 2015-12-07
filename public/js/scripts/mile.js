@@ -1,19 +1,19 @@
 //require WLS
 var k = require('./../../../k_globals/koala.js')
 
-var t = {};
+var sensors = {};
 //script of the operator
 k.createNode(function(data){ 
 
     var data = JSON.parse(data);
 
-    t[data._id] = true;
+    sensors[data._id] = true;
 
     var table = {};
 
-    for(e in t){
-        if(t[data._id]){
-            table[data._id] = "hello"
+    for(e in sensors){
+        if(sensors[data._id]){
+            table[data._id] = "updateGraph" + data._id
         }
     }
     console.log(t);
