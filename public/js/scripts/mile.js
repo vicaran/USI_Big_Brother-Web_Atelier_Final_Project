@@ -37,6 +37,7 @@ var legend = '<div class="key">'+
             	'<div class="key_entry">'+
                     '<div class="volume_graph_key"></div>'+
                     '<div class="light_graph_key"></div>'+
+                    '<div class="temp_graph_key"></div>'+
                 '</div>'+
             	'<div class="key_name">'+
                 '<div>Volume</div>'+
