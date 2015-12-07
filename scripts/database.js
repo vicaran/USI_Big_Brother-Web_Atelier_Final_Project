@@ -24,6 +24,7 @@ var addToDatabase = function (data, d) {
 
 
         } else {
+            console.log('RES', res)
             var parseRes = JSON.parse(res);
             toSave = parseRes.push(json);
         }
