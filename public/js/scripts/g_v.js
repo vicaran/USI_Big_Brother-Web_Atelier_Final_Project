@@ -3,11 +3,12 @@ var k = require('./../../../k_globals/koala.js')
 
 //script of the operator
 k.createNode(function(data) {
+	console.log(data);
 
 	if(data.header === 'browser'){
 		var data = JSON.parse(data);
 		console.log(data)
-		
+
 
 	}
 	else{
