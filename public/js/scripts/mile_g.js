@@ -219,6 +219,11 @@ graph_button.addEventListener('click', function(){
 		c.setAttribute('class','hidden');
 		c2.setAttribute('class','hidden');
 		c3.setAttribute('class','hidden');
+		var canvas = document.getElementById("canvas1");
+		console.log(c1)
+		console.log(canvas);
+		canvas.setAttribute('height','1000px')
+		canvas.setAttribute('width','1000px')
 		// c.classList.add('hidden');
 		nextGraph = 'c2';
 	}else if(nextGraph == 'c2'){
