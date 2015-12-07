@@ -29,13 +29,12 @@ SenderT1.main = function () {
 
         var volume = self.gatherSound(soundPin);
         var light = lightPin.read() * lightPin.resolution;
-        var utc = new Date().getTime();
         var data = {
             _id: self._id,
             volume: volume,
             light: light,
             temperature: 0,
-            time: utc
+            time: Date.now()
         };
         self.ws.send(data);
 

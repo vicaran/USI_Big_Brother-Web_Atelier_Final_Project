@@ -13,14 +13,12 @@ var senderNodejs = function (_id,n) {
     var self = this;
     this.main = function () {
         interval = setInterval(function () {
-            var utc = new Date().getTime();
-
             var data = {
                 _id: self._id,
                 volume: self.n++,
                 light: 100,
                 temperature: 0,
-                time: utc
+                time: Date.now()
             };
             self.ws.send(data)
         }, 1000);
