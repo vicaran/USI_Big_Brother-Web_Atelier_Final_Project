@@ -41,6 +41,7 @@ var legend = '<div class="key">'+
             	'<div class="key_name">'+
                 '<div>Volume</div>'+
             	'<div>Light</div>'+
+                '<div>Temp</div>'+
                 '</div>'+
         	'</div>'
 
