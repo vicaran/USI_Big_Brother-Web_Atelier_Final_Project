@@ -206,7 +206,6 @@ graph_button.addEventListener('click', function(){
 		c1.setAttribute('class','hidden');
 		c2.setAttribute('class','hidden');
 		c3.setAttribute('class','hidden');
-		myRealLine.options.responsive = true;
 
 		console.log(myRealLine);
 		// c1.classList.add('hidden');
@@ -250,26 +249,26 @@ Chart.defaults.global.showTooltips = false;
 myLine = new Chart(ctx);
 myRealLine = myLine.Line(lineChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
+    responsive: true,
 });
 
 myLine1 = new Chart(ctx_1);
 myRealLine1 = myLine1.Line(lineChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
+    responsive: true,
 });
 
 myBar = new Chart(ctx_bar);
 myRealBar = myBar.Bar(barChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
+    responsive: true,
     barShowStroke: false
 });
 
 myBar1 = new Chart(ctx_bar1);
 myRealBar1 = myBar1.Bar(barChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
+    responsive: true,
     barShowStroke: false
 });
 
