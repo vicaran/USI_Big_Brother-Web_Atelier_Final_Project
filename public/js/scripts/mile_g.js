@@ -222,9 +222,8 @@ graph_button.addEventListener('click', function(){
 		var canvas = document.getElementById("canvas1");
 		console.log(c1)
 		console.log(canvas);
-		myRealBar.maintainAspectRatio = false;
-		canvas.setAttribute('height','1000px')
-		canvas.setAttribute('width','1000px')
+		ctx_bar.canvas.width = 1000;
+		ctx_bar.canvas.height = 1000;
 		// c.classList.add('hidden');
 		nextGraph = 'c2';
 	}else if(nextGraph == 'c2'){
