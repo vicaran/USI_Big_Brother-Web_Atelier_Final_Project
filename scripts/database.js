@@ -26,7 +26,8 @@ var addToDatabase = function (data, d) {
         } else {
             console.log('RES', res)
             var parseRes = JSON.parse(res);
-            toSave = parseRes.push(json);
+            parseRes.push(json)
+            toSave = parseRes;
             console.log('TO SAVE', toSave)
         }
         k.stateful.set(_id, JSON.stringify(toSave), function () {
