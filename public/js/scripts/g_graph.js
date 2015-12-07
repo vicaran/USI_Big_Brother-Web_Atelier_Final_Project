@@ -225,7 +225,7 @@ document.getElementById('legend3').innerHTML = myRealBar1.generateLegend();
 //document.getElementById('legend4').innerHTML = myRealRad.generateLegend();
 
 var button = document.getElementById('button');
-button.onclick = producer_handler({header: "browser" , data: input.value}, 'producer')
+button.onclick = producer_handler({header: "browser" , data: "hello"}, 'producer')
 
 
 
