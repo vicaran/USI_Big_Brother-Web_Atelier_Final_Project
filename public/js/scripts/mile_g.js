@@ -206,10 +206,6 @@ graph_button.addEventListener('click', function(){
 		c1.setAttribute('class','hidden');
 		c2.setAttribute('class','hidden');
 		c3.setAttribute('class','hidden');
-
-		var canvas = document.getElementById("canvas0");
-		console.log(c)
-		console.log(canvas);
 	
 		// c1.classList.add('hidden');
 		nextGraph = 'c1';
@@ -219,11 +215,6 @@ graph_button.addEventListener('click', function(){
 		c.setAttribute('class','hidden');
 		c2.setAttribute('class','hidden');
 		c3.setAttribute('class','hidden');
-		var canvas = document.getElementById("canvas1");
-		console.log(c1)
-		console.log(canvas);
-		ctx_bar.canvas.width = 1000;
-		ctx_bar.canvas.height = 1000;
 		// c.classList.add('hidden');
 		nextGraph = 'c2';
 	}else if(nextGraph == 'c2'){
@@ -276,26 +267,30 @@ myLine = new Chart(ctx);
 myRealLine = myLine.Line(lineChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
     responsive: true,
+    maintainAspectRatio: true,
 });
 
 myLine1 = new Chart(ctx_1);
 myRealLine1 = myLine1.Line(lineChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
     responsive: true,
+    maintainAspectRatio: true,
 });
 
 myBar = new Chart(ctx_bar);
 myRealBar = myBar.Bar(barChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
     responsive: true,
-    barShowStroke: false
+    barShowStroke: false,
+    maintainAspectRatio: true,
 });
 
 myBar1 = new Chart(ctx_bar1);
 myRealBar1 = myBar1.Bar(barChartData, {
     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
     responsive: true,
-    barShowStroke: false
+    barShowStroke: false,
+    maintainAspectRatio: true,
 });
 
 
