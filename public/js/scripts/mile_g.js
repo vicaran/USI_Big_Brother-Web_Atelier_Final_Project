@@ -208,6 +208,7 @@ graph_button.addEventListener('click', function(){
 		c3.setAttribute('class','hidden');
 
 		var canvas = document.getElementById("canvas0");
+		console.log(c)
 		console.log(canvas);
 		canvas.width= "1000px"
 		canvas.height= "1000px"
