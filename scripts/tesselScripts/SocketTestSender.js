@@ -13,12 +13,14 @@ var senderNodejs = function (_id,n) {
     var self = this;
     this.main = function () {
         interval = setInterval(function () {
+            var utc = new Date().getTime();
+
             var data = {
                 _id: self._id,
                 volume: self.n++,
                 light: 100,
                 temperature: 0,
-                time: Date.now()
+                time: utc
             };
             self.ws.send(data)
         }, 1000);
@@ -34,7 +36,7 @@ var senderNodejs = function (_id,n) {
  */
 var senderTestGenerator = function (NumberOfSender) {
     for (var i = 0; i < NumberOfSender; i++) {
-        var t = new senderNodejs(i, i + 10)
+        var t = new senderNodejs(i, i + 10);
         t.start()
 
     }

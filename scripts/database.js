@@ -22,21 +22,17 @@ var addToDatabase = function (data, d) {
     k.stateful.get(_id, function (res) {
         var toSave;
         if (res == null || res == undefined) {
-            //if there isn't create a array of json
+            //if there isn't  a array of json
             toSave = [json];
 
-
         } else {
-            console.log('RES', res)
             var parseRes = JSON.parse(res);
-            parseRes.push(json)
+            parseRes.push(json);
             toSave = parseRes;
-            console.log('TO SAVE', toSave)
         }
         k.stateful.set(_id, JSON.stringify(toSave), function () {
-            console.log('saved, ', toSave)
+            console.log('saved')
         });
-
     })
 };
 
