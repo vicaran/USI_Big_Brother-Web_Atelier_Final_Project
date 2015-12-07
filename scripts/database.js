@@ -5,7 +5,6 @@ var k = require('./../k_globals/koala.js')
  * @param d The Date.now()
  */
 var addToDatabase = function (data, d) {
-
     var keyDate = convertDate(d) + "-" + convertHour(d);
     var parse = JSON.parse(data);
     // console.log('this is parse', parse);
@@ -17,28 +16,18 @@ var addToDatabase = function (data, d) {
         temperature: parse.temperature
     };
 
-    k.stateful.get(keyDate, function (res) {
-        var a = res;
+    k.stateful.get(_id, function (res) {
         var toSave = {};
-        if (a == null || a == undefined) {
+        if (res == null || res == undefined) {
             //if there isn't create a array of json
-            toSave[_id] = [json]
+            toSave = [json];
 
 
         } else {
-            console.log('res', a);
-            var parseRes = JSON.parse(a);
-            if (parseRes[_id] != undefined) {
-                parseRes[_id].push(json);
-            } else {
-                console.log('PUSH ON DATABASE ON NEW ID: ', _id);
-                parseRes[_id] = [json]
-            }
-
-            toSave = parseRes;
-            a = toSave;
+            var parseRes = JSON.parse(res);
+            toSave = parseRes.push(json);
         }
-        k.stateful.set(keyDate, JSON.stringify(toSave), function () {
+        k.stateful.set(_id, JSON.stringify(toSave), function () {
             console.log('saved, ', toSave)
         });
 

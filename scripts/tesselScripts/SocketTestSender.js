@@ -21,7 +21,7 @@ var senderNodejs = function (_id,n) {
                 time: Date.now()
             };
             self.ws.send(data)
-        }, 500);
+        }, 1000);
     };
     this.start = function () {
         this.main()
