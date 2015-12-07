@@ -7,7 +7,7 @@ var k = require('./../k_globals/koala.js')
 var addToDatabase = function (data, d) {
 
     var keyDate = convertDate(d) + "-" + convertHour(d);
-    var parse = JSON.parse(data)
+    var parse = JSON.parse(data);
     // console.log('this is parse', parse);
     var _id = parse._id;
     console.log('------------------- REQUEST FROM SOCKET: ', _id, ' -------------------')
@@ -37,7 +37,7 @@ var addToDatabase = function (data, d) {
             toSave = parseRes;
         }
         k.stateful.set(keyDate, JSON.stringify(toSave), function () {
-            console.log('saved')
+            console.log('saved, ', toSave)
         });
 
     })
