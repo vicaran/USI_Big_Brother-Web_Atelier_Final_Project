@@ -20,7 +20,7 @@ var about_section = '<div class="fa card">'+
 'Donec molestie maximus velit, vitae venenatis massa tristique non. Aliquam erat volutpat. Duis imperdiet tempor elit ut sollicitudin. Fusce at purus vehicula, venenatis libero sit amet, faucibus eros. Maecenas id aliquam magna. Maecenas scelerisque sapien a metus iaculis facilisis. Duis tincidunt scelerisque sem et tempus. Phasellus iaculis tellus in ex pretium, a pellentesque justo pretium. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam bibendum aliquet dui, sollicitudin pharetra lectus dapibus in. Nullam porta erat ut pellentesque tristique.</div>'+
 '</div>'
 var legend = '<div class="key">'+
-            	'<div style="padding-left: 11px">LEGEND</div>'+
+            	'<div style="text-align: center;">LEGEND</div>'+
             	'<div class="key_entry"><div class="volume_graph_key"></div>'+
             	'<div class="light_graph_key"></div></div>'+
             	'<div class="key_name"><div>Volume</div>'+
@@ -91,12 +91,6 @@ var htmlString =
             '<div class="fa">&nbsp; The Big Brother Team</div>' +
     '</div>';
 k.createHTML('pimmi', htmlString);
-// k.createHTML('graph-container', '<div id="graph-container">');
-// k.createHTML('data', '<div id="newdata" style="display:none;"></div>');
-// k.createHTML('canvas', '<canvas id="canvas" width="400px" height="400px"></canvas>');
-// k.createHTML('data1', '<div id="newdata1" style="display:none;"> Hello</div>');
-// k.createHTML('canvas1', '<canvas id="canvas1" width="400px" height="400px"></canvas>');
-// k.createHTML('graph-container-close','</div>');
 
 //add the graph script
 k.createScript('our_graph', 'js/scripts/milestone_graph.js');
