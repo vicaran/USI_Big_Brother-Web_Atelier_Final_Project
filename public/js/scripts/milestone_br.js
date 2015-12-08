@@ -84,6 +84,7 @@ var htmlString =
  				legend +
 				'</div>' +
 				'</div>' + 
+                '<div class="whitespace"></div>' +
 				// FOOTER
 				'<div id="footer">' +
             '<div class="fa"> With &nbsp;</div>' +
