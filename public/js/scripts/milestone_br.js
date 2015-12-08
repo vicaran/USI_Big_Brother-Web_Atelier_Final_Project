@@ -87,7 +87,7 @@ var htmlString =
 				// FOOTER
 				'<div id="footer">' +
             '<div class="fa"> With &nbsp;</div>' +
-            '<i class="fa fa-heart "  style="color:#871F17;"></i>' +
+            '<i class="fa fa-eye "  style="color:#871F17;"></i>' +
             '<div class="fa">&nbsp; The Big Brother Team</div>' +
     '</div>';
 k.createHTML('pimmi', htmlString);

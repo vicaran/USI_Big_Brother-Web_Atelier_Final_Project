@@ -1999,23 +1999,18 @@ canvas {
     left: 0px;
     right:-100%;
     margin-right: -100px;
-    margin-left: -10px;
-    margin-top: -10px;
 }
 #footer{
     color: #BEBDBF;
     background-color: rgba(51,56,63,0.3);
-    height: 2em;
+    height: 2.5em;
     position: fixed;
     bottom: 0px;
     left: 0px;
-    right: -100%;
-    padding-left: 40%;
-    padding-right: 40%;
-    padding-top:0.5em;
-    padding-bottom: 0.5em;
-    
-    margin-right: -100px;
+    right: 1;
+    padding-top:0.7em;
+    padding-bottom: 0.7em;
+    text-align: center;
 }
 .whitespace {
     background-color:#181A1F; 
