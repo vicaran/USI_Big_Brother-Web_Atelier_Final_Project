@@ -2079,7 +2079,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     border-radius: 25px;
     text-align: center;
     font-size: 14pt;
-    width: 80%;
+    width: 100%;
     align: center;
     margin: 2em;
     padding-top: 2em;
