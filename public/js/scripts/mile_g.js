@@ -443,11 +443,11 @@ var audio1 = 10;
       }
 
         img1 = new Image();
-        img1.src = 'part1.png';
+        img1.src = "http://i67.tinypic.com/bg5ovs.png";
         img2 = new Image();
-        img2.src = 'part2.png';
+        img2.src = "http://i66.tinypic.com/2rzrhic.png";
         img3 = new Image();
-        img3.src = 'part3.png';
+        img3.src = "http://i65.tinypic.com/2hmgady.png";
 
     window.onload = function() {
 
