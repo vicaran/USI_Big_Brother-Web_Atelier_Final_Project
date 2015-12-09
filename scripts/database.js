@@ -16,7 +16,8 @@ var addToDatabase = function (data, d) {
     var json = {
         volume: parse.volume,
         light: parse.light,
-        temperature: parse.temperature
+        temperature: parse.temperature,
+        date: parse.date
     };
 
     k.stateful.get(_id, function (res) {
