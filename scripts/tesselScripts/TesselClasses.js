@@ -1,5 +1,8 @@
 /**
- * Created by VeaVictis on 03/12/15.
+ * This module exports two simple Tessel classes created for the USI big brothers project
+ * SenderTessel gather the data from light, sound and temperature and send it trought the network in a JSON format
+ *
+ * @author Francesco Saverio Zuppichini
  */
 /**
  * This class holds a Tessel interface
@@ -27,15 +30,6 @@ MyTessel.prototype.main = function () {
 MyTessel.prototype.start = function () {
     this.main();
 };
-
-
-///**
-// *  This function return the private field _id
-// * @returns {*|number}
-// */
-//MyTessel.prototype.getId = function () {
-//    return this._id;
-//};
 
 /**
  * This class implements the Tessel interface in order to send data
