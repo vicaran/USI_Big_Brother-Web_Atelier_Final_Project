@@ -92,10 +92,10 @@ var htmlString =
     	'</div>' +
     	// DATABASE GRAPHS
     	'<div id="old-graphs" class="hidden">'+
-    	'<div class="fa card"><i class="fa fa-exclamation-triangle fa-2x" style="color: #FFB700"></i>'+
-    	'<div class="postpone">FOR NEXT TIME<br></div>'+
-    	'<img src="https://media.giphy.com/media/xTk9ZJnsGLlsc0eFAk/giphy.gif" alt="vincent" style="width:400px; height:200px"</a>' +
-    	'</div>'+
+    	'<canvas id="myCanvas" class="size"
+            style="border:5px solid #d3d3d3;">
+            Your browser does not support the canvas element.
+        </canvas>'+
     	'</div>' +
     	// ACTIVATE LIGHTS SECTION
     	'<div id="light-bulb" class="hidden">'+
