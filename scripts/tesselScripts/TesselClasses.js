@@ -174,6 +174,5 @@ function ReceiveTessel(id) {
 ReceiveTessel.prototype = Object.create(MyTessel.prototype);
 ReceiveTessel.prototype.constructor = ReceiveTessel;
 
-
 exports.SenderTessel = SenderTessel;
 exports.ReceiveTessel = ReceiveTessel;
