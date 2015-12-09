@@ -93,9 +93,12 @@ var htmlString =
     	// DATABASE GRAPHS
     	'<div id="old-graphs" class="hidden">'+
         // ---Andrea's Implementation :)
-    	// '<canvas id="audioCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
-     //    'Your browser does not support the canvas element.'+
-     //    '</canvas>'+
+        '<p>'
+        'Click the part you want to receive information about.'
+        '</p>'
+    	'<canvas id="positionCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
+        'Your browser does not support the canvas element.'+
+        '</canvas>'+
             '<div class="text-input">'+
             '<input type="text" name="From" value="Enter date" id="database_from_date"/>'+
             '</div>'+

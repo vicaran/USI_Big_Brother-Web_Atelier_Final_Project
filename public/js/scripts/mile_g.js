@@ -623,4 +623,63 @@ function lightLevelCanvas() {
 }
 lightLevelCanvas()
 
+
+//position part
+function positionCanvas() {
+    var audio1 = 10;
+    var audio2 = 80;
+    var audio3 = 23;
+
+    function writeMessage(canvas, message) {
+        // var context = canvas.getContext('2d');
+        // context.clearRect(0, 0, canvas.width, canvas.height);
+        // context.font = '18pt Calibri';
+        // context.fillStyle = 'black';
+        // context.fillText(message, 10, 25);
+        console.log('Clicked on:', message);
+    }
+
+    function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRec();
+        return {
+            x: evt.clientX - rect.left,
+            y: evt.clientY - rect.top
+        };
+    }
+
+    img1 = new Image();
+    img1.src = "http://i67.tinypic.com/bg5ovs.png";
+    img2 = new Image();
+    img2.src = "http://i66.tinypic.com/2rzrhic.png";
+    img3 = new Image();
+    img3.src = "http://i65.tinypic.com/2hmgady.png";
+
+
+    var canvas = document.getElementById('positionCanvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight / 8;
+    var context = canvas.getContext('2d');
+    context.globalAlpha = 0.5
+    context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
+    context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
+    context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
+
+    canvas.addEventListener('click', function(evt) {
+        var mousePos = getMousePos(canvas, evt);
+        // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+        if (mousePos.x > -1 && mousePos.x < 300){
+          var message = "Part1";
+          choose.style.visibility = "visible";
+          
+        } else if(mousePos.x > 300 && mousePos.x < 600){
+          var message = "Part2";
+          choose.style.visibility = "visible";
+        } else if(mousePos.x > 600 && mousePos.x < 900){
+          var message = "Part3";
+        }
+        writeMessage(canvas, message);
+      }, false);
+
+}
+
 //<------------------------------------------------>
