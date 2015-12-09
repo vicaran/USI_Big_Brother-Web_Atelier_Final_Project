@@ -1987,8 +1987,9 @@ body {
 }
 
 .graph-group {
-    display: block;
-    position: absolute;
+    display: flex;
+    position: relative;
+    margin-left: 50px;
 }
 
 .graph-group > canvas {
@@ -2154,7 +2155,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 /*    padding: 3px;*/
 }
 #graph-container{
-    display: flex;
+    display: block;
 }
 .volume_graph_key{
     width: 20px;
