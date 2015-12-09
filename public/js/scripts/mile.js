@@ -92,7 +92,8 @@ var htmlString =
     	'</div>' +
     	// DATABASE GRAPHS
     	'<div id="old-graphs" class="hidden">'+
-    	'<canvas id="myCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
+        // ---Andrea's Implementation :)
+    	'<canvas id="audioCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
         'Your browser does not support the canvas element.'+
         '</canvas>'+
         '</div>' +
@@ -101,9 +102,9 @@ var htmlString =
     	'<div id="light-bulb" class="hidden">'+
     	// Here we make the buttons for the tessel
     	// ---Andrea's Implementation :)
-		'<a href="#" bubbletooltip="Light is currently: ON"><img src="http://i67.tinypic.com/bg5ovs.png" alt="p1" class="setDimension"></a>' +
-        '<a href="#" bubbletooltip="Light is currently: OFF"><img src="http://i66.tinypic.com/2rzrhic.png" alt="p2" class="setDimension"></a>' +
-        '<a href="#" bubbletooltip="Light is currently: OFF"><img src="http://i65.tinypic.com/2hmgady.png" alt="p3" class="setDimension"></a>' +
+		'<canvas id="lightCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
+        'Your browser does not support the canvas element.'+
+        '</canvas>'+
 		// ---------------------------
     	// '<div id="tessel1" class="tessel-button">Sector 1</div>'+
     	'</div>' +
