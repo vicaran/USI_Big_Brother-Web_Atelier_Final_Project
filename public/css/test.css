@@ -1989,14 +1989,14 @@ body {
 .graph-group {
     display: flex;
     position: relative;
-    margin-left: 50px;
+/*    margin-left: 50px;*/
     margin-bottom: 50px;
 }
 
 .graph-group > canvas {
     float: left;
 /*    position: relative;*/
-    left: 50px;
+    margin-left: 50px;
 }
 
 #navbar{
