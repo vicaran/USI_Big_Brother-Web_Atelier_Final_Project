@@ -93,9 +93,10 @@ var htmlString =
     	// DATABASE GRAPHS
     	'<div id="old-graphs" class="hidden">'+
         // ---Andrea's Implementation :)
-    	'<canvas id="audioCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
-        'Your browser does not support the canvas element.'+
-        '</canvas>'+
+    	// '<canvas id="audioCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
+     //    'Your browser does not support the canvas element.'+
+     //    '</canvas>'+
+        
         '</div>' +
     	
     	// ACTIVATE LIGHTS SECTION
