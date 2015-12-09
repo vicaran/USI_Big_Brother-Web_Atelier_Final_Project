@@ -92,7 +92,7 @@ var htmlString =
     	'</div>' +
     	// DATABASE GRAPHS
     	'<div id="old-graphs" class="hidden">'+
-    	'<canvas id="myCanvas" class="size" style="border:5px solid #d3d3d3;">'+
+    	'<canvas id="myCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
         'Your browser does not support the canvas element.'+
         '</canvas>'+
     	'</div>' +
