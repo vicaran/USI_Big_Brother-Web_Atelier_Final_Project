@@ -101,7 +101,7 @@ var htmlString =
         '</canvas>'+
             '<div class="text-input">'+
             '<input type="text" name="From" placeholder="Enter date" id="db-from"/>'+
-            '<div class="fa fa-search search-button"></div>'
+            '<div class="fa fa-search search-button"></div>'+
             '</div>'+
         '</div>' +
     	
