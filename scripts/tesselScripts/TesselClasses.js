@@ -1,6 +1,6 @@
 /**
  * This module exports two simple Tessel classes created for the USI big brothers project
- * SenderTessel gather the data from light, sound and temperature and send it trought the network in a JSON format
+ * SenderTessel gather the data from light, sound and temperature and send it through the network in a JSON format
  *
  * @author Francesco Saverio Zuppichini
  */
@@ -18,6 +18,7 @@ function MyTessel(id) {
     //  TODO check if i can make id private
     this._id = id;
 }
+
 /**
  * This function is the main function - you MUST override it
  **/
