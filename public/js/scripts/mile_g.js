@@ -422,4 +422,101 @@ var updateGraphBar1 = function(volume, light, temp, time) {
     //document.getElementById('newdata1').setAttribute('time', "");
 }
 
+//OPENSPACE CANVAS
+var audio1 = 10;
+    var audio2 = 80;
+    var audio3 = 23;
+      function writeMessage(canvas, message) {
+        var context = canvas.getContext('2d');
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.font = '18pt Calibri';
+        context.fillStyle = 'black';
+        context.fillText(message, 10, 25);
+      }
+
+      function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRec();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+      }
+
+        img1 = new Image();
+        img1.src = 'part1.png';
+        img2 = new Image();
+        img2.src = 'part2.png';
+        img3 = new Image();
+        img3.src = 'part3.png';
+
+    window.onload = function() {
+    var canvas = document.getElementById('myCanvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight/4;
+    var context = canvas.getContext('2d');
+    context.globalAlpha = 0.5
+    context.drawImage(img1,0,0,canvas.width/3,canvas.height);
+    context.drawImage(img2,canvas.width/3,0,canvas.width/3,canvas.height);
+    context.drawImage(img3,(canvas.width/3)*2,0,canvas.width/3,canvas.height);
+
+    var interval = setInterval(function(){
+        audio1 ++;
+        audio2 --;
+        audio3 ++;
+        if (audio1 == 80){
+          audio1 = 0;
+        }
+
+        if (audio2 == 0){
+          audio2 = 80;
+        }
+
+        if (audio3 == 80 || audio3 == 0){
+          audio2 = 23;
+        }
+
+        if (audio1 < 20){
+          context.drawImage(img1,0,0,canvas.width/3,canvas.height);
+          context.fillStyle="#00FF00";
+          context.fillRect(0,0,canvas.width/3,canvas.height);
+        } else if(audio1 > 20 && audio1 < 50){
+          context.drawImage(img1,0,0,canvas.width/3,canvas.height);
+          context.fillStyle="#0000FF";
+          context.fillRect(0,0,canvas.width/3,canvas.height);
+        } else if(audio1 > 50){
+          context.drawImage(img1,0,0,canvas.width/3,canvas.height);
+          context.fillStyle="#FF0000";
+          context.fillRect(0,0,canvas.width/3,canvas.height);
+        }
+
+        if (audio2 < 20){
+          context.drawImage(img2,canvas.width/3,0,canvas.width/3,canvas.height);
+          context.fillStyle="#00FF00";
+          context.fillRect(canvas.width/3,0,canvas.width/3,canvas.height);
+        } else if(audio2 > 20 && audio2 < 50){
+          context.drawImage(img2,canvas.width/3,0,canvas.width/3,canvas.height);
+          context.fillStyle="#0000FF";
+          context.fillRect(canvas.width/3,0,canvas.width/3,canvas.height);
+        } else if(audio2 > 50){
+          context.drawImage(img2,canvas.width/3,0,canvas.width/3,canvas.height);
+          context.fillStyle="#FF0000";
+          context.fillRect(canvas.width/3,0,canvas.width/3,canvas.height);
+        }
+
+        if (audio3 < 20){
+          context.drawImage(img3,(canvas.width/3)*2,0,canvas.width/3,canvas.height);
+          context.fillStyle="#00FF00";
+          context.fillRect((canvas.width/3)*2,0,canvas.width/3,canvas.height);
+        } else if(audio3 > 20 && audio3 < 50){
+          context.drawImage(img3,(canvas.width/3)*2,0,canvas.width/3,canvas.height);
+          context.fillStyle="#0000FF";
+          context.fillRect((canvas.width/3)*2,0,canvas.width/3,canvas.height);
+        } else if(audio3 > 50){
+          context.drawImage(img3,(canvas.width/3)*2,0,canvas.width/3,canvas.height);
+          context.fillStyle="#FF0000";
+          context.fillRect((canvas.width/3)*2,0,canvas.width/3,canvas.height);
+        }
+      },100)
+};
+
 //<------------------------------------------------>
