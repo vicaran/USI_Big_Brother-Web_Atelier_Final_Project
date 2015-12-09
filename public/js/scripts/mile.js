@@ -92,10 +92,9 @@ var htmlString =
     	'</div>' +
     	// DATABASE GRAPHS
     	'<div id="old-graphs" class="hidden">'+
-    	'<canvas id="myCanvas" class="size"
-            style="border:5px solid #d3d3d3;">
-            Your browser does not support the canvas element.
-        </canvas>'+
+    	'<canvas id="myCanvas" class="size" style="border:5px solid #d3d3d3;">'+
+        'Your browser does not support the canvas element.'+
+        '</canvas>'+
     	'</div>' +
     	// ACTIVATE LIGHTS SECTION
     	'<div id="light-bulb" class="hidden">'+
