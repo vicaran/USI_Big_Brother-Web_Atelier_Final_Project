@@ -10,6 +10,7 @@ k.createNode(function(data) {
 	if(data.header === "browser"){
 		// var data = JSON.parse(data);
 		console.log("if", data)
+		k.send(JSON.stringify(data));
 
 
 	}
