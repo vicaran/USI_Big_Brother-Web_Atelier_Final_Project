@@ -5,7 +5,7 @@ var k = require('./../../../k_globals/koala.js')
 k.createNode(function(data) {
 	//console.log(data);
 	var data = JSON.parse(data);
-	console.log(data)
+	//console.log(data)
 
 	if(data.header === "browser"){
 		// var data = JSON.parse(data);
