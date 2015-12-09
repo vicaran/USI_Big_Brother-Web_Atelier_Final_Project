@@ -127,6 +127,7 @@ var htmlString =
 				    '</div>' +
                     '<br>'+
                 '</div>' +
+                '<div class="graph-group">'+
                 '<div id="newdata2" style="display:none;"> Hello</div>' +
                 '<div id="c2" class="">' +
                 '<canvas id="canvas2"  width="400px" height="400px"></canvas>' +
@@ -136,6 +137,7 @@ var htmlString =
                 '<div id="c3" class="">' +
                 '<canvas id="canvas3"  width="400px" height="400px"></canvas>' +
                 legend +
+                '</div>' +
                 '</div>' +
 				'</div>' + 
 				// FOOTER
