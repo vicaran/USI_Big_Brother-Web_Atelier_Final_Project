@@ -675,14 +675,14 @@ function positionCanvas() {
     canvas.addEventListener('click', function(evt) {
         var mousePos = getMousePos(canvas, evt);
         // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
-        if (mousePos.x > -1 && mousePos.x < 300) {
+        if (mousePos.x > -1 && mousePos.x < (canvas.width / 3)) {
             var message = "Part1";
             choose.style.visibility = "visible";
 
-        } else if (mousePos.x > 300 && mousePos.x < 600) {
+        } else if (mousePos.x > (canvas.width / 3) && mousePos.x < ((canvas.width / 3)*2)) {
             var message = "Part2";
             choose.style.visibility = "visible";
-        } else if (mousePos.x > 600 && mousePos.x < 900) {
+        } else if (mousePos.x > ((canvas.width / 3)*2) && mousePos.x < canvas.width) {
             var message = "Part3";
         }
         writeMessage(canvas, message);
