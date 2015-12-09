@@ -17,14 +17,14 @@ function MyTessel(id) {
 /**
  * This function is the main function - you MUST override it
  **/
-MyTessel.prototype.main = function() {
+MyTessel.prototype.main = function () {
 
 };
 
 /**
  * This function start the Tessel
  */
-MyTessel.prototype.start = function() {
+MyTessel.prototype.start = function () {
     this.main();
 };
 
@@ -46,12 +46,60 @@ MyTessel.prototype.start = function() {
 function SenderTessel(id) {
     MyTessel.call(this, id);
     console.log('Sender Tessel ' + this._id + ' created')
+    this.main = function () {
+        var self = this;
+        //------ analog pins ------
+        //initialized sound sensor
+        var soundPin = this.tessel.port['GPIO'].analog[0];
+        //initialized light sensor
+        var lightPin = this.tessel.port['GPIO'].analog[1];
+        //initialized temp sensor
+        var tempPin = tessel.port['GPIO'].analog[1];
+
+        //------ digital pins ------
+        //initialized Led
+        var led = this.tessel.port['GPIO'].pin['G3'];
+
+        var voltage = 0;
+
+
+        this.ws.receive(function (data) {
+            if (data == "RESET") {
+            } else {
+                var parse = JSON.parse(data)
+                var volume = parse.volume;
+                console.log('-receiver- ', parse);
+                if (parse.light < 530) {
+                    led.write(1)
+                } else {
+                    led.write(0)
+
+                }
+            }
+        });
+        interval = setInterval(function () {
+
+            var volume = self.gatherSound(soundPin);
+            var temperature = self.gatherTemperature(tempPin);
+
+            var light = lightPin.read() * lightPin.resolution;
+            var data = {
+                _id: self._id,
+                volume: volume,
+                light: light,
+                temperature: temperature,
+                time: Date.now()
+            };
+            self.ws.send(data);
+
+        }, 1000)
+    };
 
     /**
      * This function set the RGB Led. Low noise = green, medium = blue and high = red
      * @param {number} volume
      */
-    this.setColor = function(volume) {
+    this.setColor = function (volume) {
 
         switch (volume) {
             case volume < 10:
@@ -81,7 +129,7 @@ function SenderTessel(id) {
      * @param pin - the analog pin of the sound sensor
      * @returns {number} volume
      */
-    this.gatherSound = function(pin) {
+    this.gatherSound = function (pin) {
         var volume = 0.0; // peak-to-peak level
 
         var signalMax = 0;
@@ -106,6 +154,16 @@ function SenderTessel(id) {
 
         return volume
     };
+
+    /**
+     * Function for reading the input from a TMP36
+     * @param pin The analog pin of the TMP36
+     * @returns {number} The temperature in Celsius
+     */
+    this.gatherTemperature = function (pin) {
+        var voltage = (pin.read() * 3.3);
+        return voltage - 0.5 * 100;
+    }
 }
 
 SenderTessel.prototype = Object.create(MyTessel.prototype);
