@@ -438,7 +438,7 @@ function audioLevelCanvas() {
 
     var canvas = document.getElementById('audioCanvas');
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight / 4;
+    canvas.height = window.innerHeight / 6;
     var context = canvas.getContext('2d');
     context.globalAlpha = 0.5
     context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
@@ -507,7 +507,7 @@ function audioLevelCanvas() {
 audioLevelCanvas();
 
 //light part
-function audioLevelCanvas() {
+function lightLevelCanvas() {
     var audio1 = 10;
     var audio2 = 80;
     var audio3 = 23;
@@ -539,7 +539,7 @@ function audioLevelCanvas() {
 
     var canvas = document.getElementById('lightCanvas');
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight / 4;
+    canvas.height = window.innerHeight / 6;
     var context = canvas.getContext('2d');
     context.globalAlpha = 0.5
     context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
@@ -621,5 +621,6 @@ function audioLevelCanvas() {
         }
     }, 100)
 }
+lightLevelCanvas()
 
 //<------------------------------------------------>
