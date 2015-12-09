@@ -2,8 +2,7 @@
  * New node file
  */
 
-
-var k = require('./../../k_globals/koala.js')
+var k = require('./../k_globals/koala.js')
 
 
 setInterval(function(msg) {
