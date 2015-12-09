@@ -100,7 +100,7 @@ var htmlString =
         'Your browser does not support the canvas element.'+
         '</canvas>'+
             '<div class="text-input">'+
-            '<input type="text" name="From" value="Enter date" id="database_from_date"/>'+
+            '<input type="text" name="From" placeholder="Enter date" id="database_from_date"/>'+
             '</div>'+
         '</div>' +
     	
