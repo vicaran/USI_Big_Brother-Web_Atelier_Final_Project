@@ -4,6 +4,7 @@
  *
  * @author Francesco Saverio Zuppichini
  */
+
 /**
  * This class holds a Tessel interface
  *
@@ -54,9 +55,6 @@ function SenderTessel(id) {
         //initialized Led
         var led = this.tessel.port['GPIO'].pin['G3'];
 
-        var voltage = 0;
-
-
         this.ws.receive(function (data) {
             if (data == "RESET") {
             } else {
@@ -72,10 +70,8 @@ function SenderTessel(id) {
             }
         });
         interval = setInterval(function () {
-
             var volume = self.gatherSound(soundPin);
             var temperature = self.gatherTemperature(tempPin);
-
             var light = lightPin.read() * lightPin.resolution;
             var data = {
                 _id: self._id,
