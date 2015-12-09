@@ -93,9 +93,9 @@ var htmlString =
     	// DATABASE GRAPHS
     	'<div id="old-graphs" class="hidden">'+
         // ---Andrea's Implementation :)
-        '<p>'
-        'Click the part you want to receive information about.'
-        '</p>'
+        '<p>'+
+        'Click the part you want to receive information about.'+
+        '</p>'+
     	'<canvas id="positionCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
         'Your browser does not support the canvas element.'+
         '</canvas>'+
