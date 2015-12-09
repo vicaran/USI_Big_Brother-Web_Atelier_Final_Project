@@ -1986,8 +1986,17 @@ body {
     background-color: rgba(255,0,0,0.2);
 }
 
-canvas {
+.graph-group {
+    display: flex;
+    position: relative;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+.graph-group > canvas {
     float: left;
+/*    position: relative;*/
+    margin-left: 50px;
 }
 
 #navbar{
@@ -2139,6 +2148,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     height: 9em;
     padding: 2%;
     width: 8em;
+    text-align: center;
     margin: 10px;
 }
 .key_entry{
@@ -2147,7 +2157,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 /*    padding: 3px;*/
 }
 #graph-container{
-    display: flex;
+    display: block;
 }
 .volume_graph_key{
     width: 20px;
@@ -2196,4 +2206,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     padding-top: 3px;
     padding-left: 8px;
     padding-bottom: 2px;
+}
+.text-input{
+    float: left;
 }

@@ -34,11 +34,11 @@ var senderNodejs = function (_id,n) {
  */
 var senderTestGenerator = function (NumberOfSender) {
     for (var i = 0; i < NumberOfSender; i++) {
-        var t = new senderNodejs(i, i + 10);
+        var t = new senderNodejs(i+1, i + 10);
         t.start()
 
     }
 };
 
 
-senderTestGenerator(3);
+senderTestGenerator(150);

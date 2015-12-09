@@ -56,15 +56,10 @@ var addToDatabase = function(data, d) {
 var getFromDatabase = function(from, to) {
 	var first;
 	var last;	
+	
+	//date format gg/mm/yyyy--hh/mm
 	var from = from || first;
 	var to = to || last;
-
-
-    var keyDate = convertDate(d) + "-" + convertHour(d);
-    var parse = JSON.parse(data)
-        // console.log('this is parse', parse);
-    var _id = parse._id;
-    console.log('------------------- REQUEST FROM SOCKET: ', _id, ' -------------------')
 
     k.stateful.get(keyDate, function(res) {
         if (res == null || res == undefined) {
