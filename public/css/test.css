@@ -1989,7 +1989,7 @@ body {
 .graph-group {
     display: flex;
     position: relative;
-/*    margin-left: 50px;*/
+    margin-left: 50px;
     margin-bottom: 50px;
 }
 
