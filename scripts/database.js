@@ -17,7 +17,7 @@ var addToDatabase = function (data, d) {
         volume: parse.volume,
         light: parse.light,
         temperature: parse.temperature,
-        date: parse.date
+        time: parse.time
     };
 
     k.stateful.get(_id, function (res) {

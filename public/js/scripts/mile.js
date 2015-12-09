@@ -113,6 +113,18 @@ var htmlString =
     	'</div>' +
     	'<div id="graph-container" class="">' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
+<<<<<<< HEAD
+				'<div id="newdata0" style="display:none;">'+sensors.length +'</div>' +
+				'<div id="c" class="">' + 
+				'<canvas id="canvas0"  width="400px" height="400px"></canvas>' +
+				legend + 
+				'</div>' + 
+				'<div id="newdata1" style="display:none;"> Hello</div>' +
+				'<div id="c1" class="">' +
+ 				'<canvas id="canvas1"  width="400px" height="400px"></canvas>' +
+ 				legend +
+				'</div>' +
+=======
                 '<div class="graph-group">'+
 				    '<div id="newdata0" style="display:none;">'+sensors.length +
                     '</div>' +
@@ -128,6 +140,7 @@ var htmlString =
                     '<br>'+
                 '</div>' +
                 '<div class="graph-group">'+
+>>>>>>> e717ef84aa83550dcff467889b2afc996add07e0
                 '<div id="newdata2" style="display:none;"> Hello</div>' +
                 '<div id="c2" class="">' +
                 '<canvas id="canvas2"  width="400px" height="400px"></canvas>' +
