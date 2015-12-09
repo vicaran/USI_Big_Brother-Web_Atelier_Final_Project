@@ -1986,8 +1986,15 @@ body {
     background-color: rgba(255,0,0,0.2);
 }
 
-canvas {
+.graph-group {
+    display: block;
+    position: absolute;
+}
+
+.graph-group > canvas {
     float: left;
+    position: relative;
+    left: 50px;
 }
 
 #navbar{
@@ -2196,4 +2203,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     padding-top: 3px;
     padding-left: 8px;
     padding-bottom: 2px;
+}
+.text-input{
+    float: left;
 }

@@ -96,7 +96,9 @@ var htmlString =
     	// '<canvas id="audioCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
      //    'Your browser does not support the canvas element.'+
      //    '</canvas>'+
+        '<div class="text-input">'+
         '<input type="text" name="From" value="Enter date" id="database_from_date"/>'+
+        '</div>'+
         '</div>' +
     	
     	// ACTIVATE LIGHTS SECTION
@@ -111,17 +113,20 @@ var htmlString =
     	'</div>' +
     	'<div id="graph-container" class="">' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
-				'<div id="newdata0" style="display:none;">'+sensors.length +'</div>' +
-				'<div id="c" class="">' + 
-				'<canvas id="canvas0"  width="400px" height="400px"></canvas>' +
-				legend + 
-				'</div>' + 
-				'<div id="newdata1" style="display:none;"> Hello</div>' +
-				'<div id="c1" class="">' +
- 				'<canvas id="canvas1"  width="400px" height="400px"></canvas>' +
- 				legend +
-				'</div>' +
-                '<br>'+
+                '<div class="graph-group">'+
+				    '<div id="newdata0" style="display:none;">'+sensors.length +
+                    '</div>' +
+				    '<div id="c" class="">' + 
+				    '<canvas id="canvas0"  width="400px" height="400px"></canvas>' +
+				    legend + 
+				    '</div>' + 
+				    '<div id="newdata1" style="display:none;"> Hello</div>' +
+				    '<div id="c1" class="">' +
+ 				   '<canvas id="canvas1"  width="400px" height="400px"></canvas>' +
+ 				   legend +
+				    '</div>' +
+                    '<br>'+
+                '</div>' +
                 '<div id="newdata2" style="display:none;"> Hello</div>' +
                 '<div id="c2" class="">' +
                 '<canvas id="canvas2"  width="400px" height="400px"></canvas>' +
