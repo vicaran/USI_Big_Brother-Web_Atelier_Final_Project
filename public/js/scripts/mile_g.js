@@ -504,7 +504,7 @@ function audioLevelCanvas() {
         }
     }, 100)
 }
-audioLevelCanvas();
+// audioLevelCanvas();
 
 //light part
 function lightLevelCanvas() {
@@ -621,7 +621,7 @@ function lightLevelCanvas() {
         }
     }, 100)
 }
-lightLevelCanvas()
+// lightLevelCanvas()
 
 
 //position part
@@ -681,5 +681,7 @@ function positionCanvas() {
       }, false);
 
 }
+
+positionCanvas()
 
 //<------------------------------------------------>
