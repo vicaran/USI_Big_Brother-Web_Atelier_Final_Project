@@ -1993,7 +1993,7 @@ body {
 
 .graph-group > canvas {
     float: left;
-    position: relative;
+/*    position: relative;*/
     left: 50px;
 }
 
