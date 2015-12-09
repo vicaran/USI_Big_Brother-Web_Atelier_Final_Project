@@ -1990,6 +1990,7 @@ body {
     display: flex;
     position: relative;
     margin-left: 50px;
+    margin-bottom: 50px;
 }
 
 .graph-group > canvas {
@@ -2147,6 +2148,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     height: 9em;
     padding: 2%;
     width: 8em;
+    text-align: center;
     margin: 10px;
 }
 .key_entry{
