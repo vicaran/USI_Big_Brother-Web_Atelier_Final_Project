@@ -626,9 +626,6 @@ function lightLevelCanvas() {
 
 //position part
 function positionCanvas() {
-    var audio1 = 10;
-    var audio2 = 80;
-    var audio3 = 23;
 
     function writeMessage(canvas, message) {
         // var context = canvas.getContext('2d');
@@ -641,7 +638,6 @@ function positionCanvas() {
 
     function getMousePos(canvas, evt) {
         var mouseX, mouseY;
-
         if (evt.offsetX) {
             mouseX = evt.offsetX;
             mouseY = evt.offsetY;
@@ -677,11 +673,8 @@ function positionCanvas() {
         // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
         if (mousePos.x > -1 && mousePos.x < (canvas.width / 3)) {
             var message = "Part1";
-            choose.style.visibility = "visible";
-
         } else if (mousePos.x > (canvas.width / 3) && mousePos.x < ((canvas.width / 3)*2)) {
             var message = "Part2";
-            choose.style.visibility = "visible";
         } else if (mousePos.x > ((canvas.width / 3)*2) && mousePos.x < canvas.width) {
             var message = "Part3";
         }
