@@ -549,18 +549,18 @@ function lightLevelCanvas() {
     canvas.addEventListener('click', function(evt) {
         var mousePos = getMousePos(canvas, evt);
         // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
-        if (mousePos.x > -1 && mousePos.x < 300){
-          var message = "Part1";
-          choose.style.visibility = "visible";
-          
-        } else if(mousePos.x > 300 && mousePos.x < 600){
-          var message = "Part2";
-          choose.style.visibility = "visible";
-        } else if(mousePos.x > 600 && mousePos.x < 900){
-          var message = "Part3";
+        if (mousePos.x > -1 && mousePos.x < 300) {
+            var message = "Part1";
+            choose.style.visibility = "visible";
+
+        } else if (mousePos.x > 300 && mousePos.x < 600) {
+            var message = "Part2";
+            choose.style.visibility = "visible";
+        } else if (mousePos.x > 600 && mousePos.x < 900) {
+            var message = "Part3";
         }
         writeMessage(canvas, message);
-      }, false);
+    }, false);
 
     var interval = setInterval(function() {
         audio1++;
@@ -640,10 +640,18 @@ function positionCanvas() {
     }
 
     function getMousePos(canvas, evt) {
-        var rect = this.getBoundingClientRec();
+        var mouseX, mouseY;
+
+        if (evt.offsetX) {
+            mouseX = evt.offsetX;
+            mouseY = evt.offsetY;
+        } else if (evt.layerX) {
+            mouseX = evt.layerX;
+            mouseY = evt.layerY;
+        }
         return {
-            x: evt.clientX - rect.left,
-            y: evt.clientY - rect.top
+            x: mouseX,
+            y: mouseY
         };
     }
 
@@ -667,18 +675,18 @@ function positionCanvas() {
     canvas.addEventListener('click', function(evt) {
         var mousePos = getMousePos(canvas, evt);
         // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
-        if (mousePos.x > -1 && mousePos.x < 300){
-          var message = "Part1";
-          choose.style.visibility = "visible";
-          
-        } else if(mousePos.x > 300 && mousePos.x < 600){
-          var message = "Part2";
-          choose.style.visibility = "visible";
-        } else if(mousePos.x > 600 && mousePos.x < 900){
-          var message = "Part3";
+        if (mousePos.x > -1 && mousePos.x < 300) {
+            var message = "Part1";
+            choose.style.visibility = "visible";
+
+        } else if (mousePos.x > 300 && mousePos.x < 600) {
+            var message = "Part2";
+            choose.style.visibility = "visible";
+        } else if (mousePos.x > 600 && mousePos.x < 900) {
+            var message = "Part3";
         }
         writeMessage(canvas, message);
-      }, false);
+    }, false);
 
 }
 
