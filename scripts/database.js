@@ -21,7 +21,7 @@ var addToDatabase = function (data, d) {
 
     k.stateful.get(_id, function (res) {
         var toSave;
-        if (res == null || res == undefined) {
+        if (res === null || res === undefined) {
             //if there isn't  a array of json
             toSave = [json];
 

@@ -13,12 +13,12 @@ wss.on('connection', function(ws) {
     ws.on('message', function(data) {
 
         console.log('Here is data:', data);
-    })
-})
+    });
+});
 
 setInterval(function(msg) {
 	var data = {
-		header: {position: "x", type: "temp"}, 
+		header: {position: "x", type: "temp"},
 		time: new Date().getTime(),
 		content: Math.floor((Math.random()*100)+1),
 		};
@@ -48,10 +48,10 @@ setInterval(function(msg) {
 
 		
 	
-	// k.send(JSON.stringify(dataMilestone1));
-	k.send(dataMilestone1);
-	// k.send(JSON.stringify(dataMilestone2));
-	k.send(dataMilestone2);
+	k.send(JSON.stringify(dataMilestone1));
+	// k.send(dataMilestone1);
+	k.send(JSON.stringify(dataMilestone2));
+	// k.send(dataMilestone2);
 	//k.send(JSON.stringify(data));
 	//k.send(JSON.stringify(data1));
 

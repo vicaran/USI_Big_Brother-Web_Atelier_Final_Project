@@ -133,7 +133,7 @@ datasets : [
 		data : []
 	},
 ]
-}
+};
 // Navbar implementation
 var current_page = current_page || 'graph-container';
 document.getElementById('live-feed').parentNode.lastChild.setAttribute('style','background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
