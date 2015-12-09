@@ -96,9 +96,9 @@ var htmlString =
     	// '<canvas id="audioCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
      //    'Your browser does not support the canvas element.'+
      //    '</canvas>'+
-        '<div class="text-input">'+
-        '<input type="text" name="From" value="Enter date" id="database_from_date"/>'+
-        '</div>'+
+            '<div class="text-input">'+
+            '<input type="text" name="From" value="Enter date" id="database_from_date"/>'+
+            '</div>'+
         '</div>' +
     	
     	// ACTIVATE LIGHTS SECTION
