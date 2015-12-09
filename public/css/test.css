@@ -2160,11 +2160,12 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 }
 
 .canvasSize{
-        padding-right: 30%;
-        padding-left: 30%;
+        padding-right: 10%;
+        padding-left: 10%;
         padding-top: 10%;
         width: 100%;
         height: 50%;
+        border:5px solid #d3d3d3;
 }
 
 .light_graph_key {

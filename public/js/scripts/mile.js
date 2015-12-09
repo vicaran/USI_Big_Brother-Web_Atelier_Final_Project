@@ -102,7 +102,7 @@ var htmlString =
     	'<div id="light-bulb" class="hidden">'+
     	// Here we make the buttons for the tessel
     	// ---Andrea's Implementation :)
-		'<canvas id="lightCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
+		'<canvas id="lightCanvas" class="canvasSize">'+
         'Your browser does not support the canvas element.'+
         '</canvas>'+
 		// ---------------------------
