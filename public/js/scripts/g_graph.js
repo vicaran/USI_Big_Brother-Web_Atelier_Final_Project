@@ -226,7 +226,7 @@ document.getElementById('legend3').innerHTML = myRealBar1.generateLegend();
 
 var button = document.getElementById('button');
 button.onclick = function(){
-    producer_handler({header: "browser" , data: "hello"}, 'producer')
+    producer_handler(JSON.stringify({header: "browser" , data: "hello"}), 'producer')
 }
 
 
@@ -242,7 +242,7 @@ input.onkeydown = function() {
 
 function submit() {
     console.log(input.value)
-    producer_handler({header: "browser" , data: "hello"}, 'producer')
+    producer_handler(JSON.stringify({header: "browser" , data: input.value}), 'producer')
     //websocket.send(JSON.stringify(input.value));
 }
 
