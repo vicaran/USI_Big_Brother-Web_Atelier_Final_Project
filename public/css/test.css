@@ -1968,7 +1968,7 @@ body {
 }
 
 .fa-refresh { 
-    color: white;
+    color: #BEBDBF;
     font-size: 20px;
     position: relative;
     right: 15px;
@@ -2085,7 +2085,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 
 .card{
     background-color: rgba(51,56,63,0.6);
-    color: color: #BEBDBF;
+    color: #BEBDBF;
     border-radius: 25px;
     text-align: center;
     font-size: 14pt;
@@ -2139,6 +2139,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     position: relative;
     left: 30px;
 }
+
 .key {
     float:right;
 /*    position: relative;*/
@@ -2209,4 +2210,17 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 }
 .text-input{
     float: left;
+    margin-left: 50px;
+    border-radius: 25%;
+    background-color: #181A1F;
+}
+
+.search-button{
+    background-color:  rgba(51,56,63,0.6); 
+    border-left: 1px grey;
+    color : #BEBDBF;
+}
+
+#db-from{
+    
 }
