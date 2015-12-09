@@ -450,6 +450,7 @@ var audio1 = 10;
         img3.src = 'part3.png';
 
     window.onload = function() {
+
     var canvas = document.getElementById('myCanvas');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight/4;
@@ -460,6 +461,7 @@ var audio1 = 10;
     context.drawImage(img3,(canvas.width/3)*2,0,canvas.width/3,canvas.height);
 
     var interval = setInterval(function(){
+    	console.log('ma tipo diocane?');
         audio1 ++;
         audio2 --;
         audio3 ++;
