@@ -10,7 +10,7 @@ var main = function () {
     var temperature = 0.0
     interval = setInterval(function () {
     	read = tempPin.read();
-        voltage = (read *3.3);
+        voltage = (read * 3.3);
         console.log('read: ', read )
 
         temperature = (voltage - 0.5) *100;
