@@ -40,7 +40,7 @@ MyTessel.prototype.start = function () {
  */
 function SenderTessel(id) {
     MyTessel.call(this, id);
-    console.log('Sender Tessel ' + this._id + ' created')
+    console.log('Sender Tessel ' + this._id + ' created');
     this.main = function () {
         var self = this;
         //------ analog pins ------
@@ -54,7 +54,6 @@ function SenderTessel(id) {
         //------ digital pins ------
         //initialized Led
         var led = this.tessel.port['GPIO'].pin['G3'];
-
         this.ws.receive(function (data) {
             if (data == "RESET") {
             } else {
