@@ -2160,9 +2160,9 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 }
 
 .canvasSize{
-        padding-right: auto;
-        padding-left: auto;
-        padding-top: 50px;
+        padding-right: 30%;
+        padding-left: 30%;
+        padding-top: 10%;
         width: 100%;
         height: 50%;
 }
