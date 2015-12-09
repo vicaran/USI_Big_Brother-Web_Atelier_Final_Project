@@ -13,8 +13,10 @@ k.createNode(function(data) {
 		k.send(JSON.stringify(data));
 
 
-	}
-	else{
+	}else if(data.header === "database"){
+		console.log("database data", data)
+
+	}else{
 
 	var ht = {
 		"1": ["updateGraphLine","updateGraphBar"],
