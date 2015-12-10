@@ -2218,6 +2218,10 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     color : #BEBDBF;
 }
 
+#light-bulb{
+    padding:5%;
+}
+
 #db-from{
     
 }

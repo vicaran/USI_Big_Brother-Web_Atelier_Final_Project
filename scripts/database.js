@@ -37,10 +37,10 @@ var addToDatabase = function (data, d) {
     })
 };
 
-var retrieveData = function (since, to) {
+var retrieveData = function (id, since, to) {
     var data = [];
     
-    k.stateful.get(1, function (res) {
+    k.stateful.get(id, function (res) {
         var toRetrieve = [];
         var res = JSON.parse(res);
          //console.log("res ", res)
@@ -53,7 +53,9 @@ var retrieveData = function (since, to) {
 
         data.push(toRetrieve);
         console.log("data inside loop ", data)
-        return data
+        var json = {header: "database"};
+        json.content = data
+        k.send(JSON.stringify(json))
             
 
 
