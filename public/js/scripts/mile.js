@@ -102,6 +102,7 @@ var htmlString =
         '</canvas>'+
 
         '<div class="text-input" id="block-input1">'+
+            '<br>'+
             '<p>'+
             'From: '+
             '</p>'+
@@ -115,6 +116,7 @@ var htmlString =
         '</div>'+
 
         '<div class="text-input" id="block-input2">'+
+            '<br>'+
             '<p>'+
             'From: '+
             '</p>'+
@@ -128,6 +130,7 @@ var htmlString =
         '</div>'+
 
         '<div class="text-input" id="block-input3">'+
+            '<br>'+
             '<p>'+
             'From: '+
             '</p>'+

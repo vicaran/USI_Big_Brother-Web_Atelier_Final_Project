@@ -677,7 +677,7 @@ function positionCanvas() {
     form1.style.display = "none";
     form2.style.display = "none";
     form3.style.display = "none";
-    
+
     var context = canvas.getContext('2d');
 
     var reDrawCanvas = function() {
@@ -697,9 +697,13 @@ function positionCanvas() {
         // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
         if (mousePos.x > -1 && mousePos.x < (canvas.width / 3)) {
             var message = "Part1";
+            context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
+            context.fillStyle = "#FFFFFF";
+            context.fillRect(0, 0, canvas.width / 3, canvas.height);
             form1.style.display = "";
             form2.style.display = "none";
             form3.style.display = "none";
+
         } else if (mousePos.x > (canvas.width / 3) && mousePos.x < ((canvas.width / 3) * 2)) {
             var message = "Part2";
             form1.style.display = "none";
