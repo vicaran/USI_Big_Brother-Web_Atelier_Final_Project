@@ -5,8 +5,7 @@ var data = {header: "database", content: "data from database"};
 
 k.createNode(function(msg){
 	console.log("createNode " + msg);
-	d = dataB.retrieveData(1449676695680,1449676698689);
-	console.log("data in createNode", d)
+	console.log("data in createNode", dataB.retrieveData(1449676695680,1449676698689))
 	k.send(JSON.stringify(data));	
 });
 
