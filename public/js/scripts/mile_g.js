@@ -151,7 +151,7 @@ nav.addEventListener('click', function(e) {
         document.getElementById('graph-container').setAttribute('class', 'hidden');
         document.getElementById('old-graphs').setAttribute('class', '');
         document.getElementById('light-bulb').setAttribute('class', 'hidden');
-
+        
         document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
