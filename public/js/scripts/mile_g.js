@@ -660,9 +660,9 @@ function positionCanvas() {
 
 
     var canvas = document.getElementById('positionCanvas');
-    var form1 = document.getElementById('db-from1');
-    var form2 = document.getElementById('db-from2');
-    var form3 = document.getElementById('db-from3');
+    var form1 = document.getElementById('block-input1');
+    var form2 = document.getElementById('block-input2');
+    var form3 = document.getElementById('block-input3');
 
 
     canvas.width = window.innerWidth;
@@ -682,7 +682,8 @@ function positionCanvas() {
         // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
         if (mousePos.x > -1 && mousePos.x < (canvas.width / 3)) {
             var message = "Part1";
-
+            console.log('Here is part 1 visibility: ', form1.style.visibility);
+            form1.style.visibility = visible;
         } else if (mousePos.x > (canvas.width / 3) && mousePos.x < ((canvas.width / 3)*2)) {
             var message = "Part2";
         } else if (mousePos.x > ((canvas.width / 3)*2) && mousePos.x < canvas.width) {
