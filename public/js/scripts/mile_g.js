@@ -674,6 +674,10 @@ function positionCanvas() {
     var form2 = document.getElementById('block-input2');
     var form3 = document.getElementById('block-input3');
 
+    form1.style.display = "none";
+    form2.style.display = "none";
+    form3.style.display = "none";
+    
     var context = canvas.getContext('2d');
 
     var reDrawCanvas = function() {
