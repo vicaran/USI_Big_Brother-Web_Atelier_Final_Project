@@ -153,7 +153,7 @@ function SenderTessel(id) {
      */
     this.gatherTemperature = function (pin) {
         var voltage = (pin.read() * 3.3);
-        return (voltage - 0.5 * 100);
+        return (voltage - 0.5) * 100;
     }
 }
 
