@@ -156,13 +156,8 @@ nav.addEventListener('click', function(e) {
         document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-<<<<<<< HEAD
         document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
-    } else if (e.target.id == "activate-lights" || e.target.firsChild.id == "activate-lights") {
-=======
-        document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;'); 
     } else if (e.target.id == "activate-lights" || e.target.firstChild.id == "activate-lights") {
->>>>>>> c9da28d1a8b094eabf41e56b30d7067e59fc81c1
         document.getElementById('info-page').setAttribute('class', 'hidden');
         document.getElementById('graph-container').setAttribute('class', 'hidden');
         document.getElementById('old-graphs').setAttribute('class', 'hidden');
@@ -670,7 +665,7 @@ function positionCanvas() {
     var form3 = document.getElementById('block-input3');
 
     var context = canvas.getContext('2d');
-    
+
     var reDrawCanvas = function() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight / 8;
