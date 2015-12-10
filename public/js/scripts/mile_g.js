@@ -682,7 +682,7 @@ function positionCanvas() {
         if (mousePos.x > -1 && mousePos.x < (canvas.width / 3)) {
             var message = "Part1";
             console.log('Here is part 1 visibility: ', form1.style);
-            form1.style.visibility = visible;
+            form1.style.visibility = "visible";
         } else if (mousePos.x > (canvas.width / 3) && mousePos.x < ((canvas.width / 3)*2)) {
             var message = "Part2";
         } else if (mousePos.x > ((canvas.width / 3)*2) && mousePos.x < canvas.width) {
