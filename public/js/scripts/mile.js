@@ -65,12 +65,12 @@ var legend = '<div class="key">'+
 var htmlString = 
 // HEADER
 '<div id="navbar">' +
-    		'<div class="nav-panel" id="live-feed">' +
-    			'<div class="fa fa-bar-chart-o"> &nbsp;LIVE FEED</div>' +
+    		'<div class="nav-panel">' +
+    			'<div id="live-feed" class="fa fa-bar-chart-o"> &nbsp;LIVE FEED</div>' +
     			'<div class="nav-line"></div>' +
     		'</div>' +
-    		'<div class="nav-panel" id="archives">' +
-    			'<div  class="fa fa-database">&nbsp; ARCHIVES</div>' +
+    		'<div class="nav-panel">' +
+    			'<div id="archives" class="fa fa-database">&nbsp; ARCHIVES</div>' +
     			'<div class="nav-line"></div>' +
     		'</div>' +
     		'<div class="nav-panel">' +
