@@ -405,6 +405,12 @@ var updateGraphBar1 = function(volume, light, temp, time) {
     //document.getElementById('newdata1').setAttribute('time', "");
 }
 
+//Submit button old data
+function getDataFromDatabase(deviceID, fromData, toData){
+    console.log('Che bello');
+}
+
+
 //OPENSPACE CANVAS
 //audio part
 function audioLevelCanvas() {
@@ -667,7 +673,7 @@ function positionCanvas() {
     var context = canvas.getContext('2d');
 
     var reDrawCanvas = function() {
-        canvas.width = window.innerWidth/4;
+        canvas.width = window.innerWidth;
         canvas.height = window.innerHeight / 8;
 
         context.globalAlpha = 0.5

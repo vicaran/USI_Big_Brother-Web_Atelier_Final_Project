@@ -111,7 +111,7 @@ var htmlString =
             'To: '+
             '</p>'+
             '<input type="text" name="From" placeholder="Enter date" id="db-to1"/>'+
-            '<div class="fa fa-search search-button"></div>'+
+            '<button class="fa fa-search search-button" on-click="getDataFromDatabase"></button>'+
         '</div>'+
 
         '<div class="text-input" id="block-input2">'+
