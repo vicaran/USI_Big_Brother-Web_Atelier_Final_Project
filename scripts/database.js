@@ -41,7 +41,8 @@ var retrieveData = function (since, to) {
     var data = [];
 
     for(var i = 1; i<4; i++){
-        k.stateful.get(1, function (res) {
+
+        k.stateful.get(i, function (res) {
             var toRetrieve = [];
             var res = JSON.parse(res);
             //console.log("res ", res)
@@ -54,14 +55,19 @@ var retrieveData = function (since, to) {
             }
 
             data.push(toRetrieve);
-            console.log("data inside loop ", data)
+            if(i === 3){
+                return data
+            }
+            console.log("data inside loop ")
             
 
 
         })
+
+
     }
     console.log("data ", data)
-    return data
+    //return data
 };
 
 
