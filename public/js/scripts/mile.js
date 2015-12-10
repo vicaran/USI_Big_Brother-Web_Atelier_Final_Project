@@ -100,43 +100,43 @@ var htmlString =
     	'<canvas id="positionCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
             'Your browser does not support the canvas element.'+
         '</canvas>'+
+
         '<div class="text-input" id="block-input1">'+
-                '<p>'+
-                'From: '+
-                '</p>'+
-                '<input type="text" name="From" placeholder="Enter date" id="db-from1"/>'+
-                '<p>'+
-                'To: '+
-                '</p>'+
-                '<input type="text" name="From" placeholder="Enter date" id="db-to1"/>'+
-                '<div class="fa fa-search search-button"></div>'+
-            '</div>'+
+            '<p>'+
+            'From: '+
+            '</p>'+
+            '<input type="text" name="From" placeholder="Enter date" id="db-from1"/>'+
+            '<p>'+
+            'To: '+
+            '</p>'+
+            '<input type="text" name="From" placeholder="Enter date" id="db-to1"/>'+
+            '<div class="fa fa-search search-button"></div>'+
+        '</div>'+
 
-            '<div class="text-input" id="block-input2">'+
-                '<p>'+
-                'From: '+
-                '</p>'+
-                '<input type="text" name="From" placeholder="Enter date" id="db-from2"/>'+
-                '<p>'+
-                'To: '+
-                '</p>'+
-                '<input type="text" name="From" placeholder="Enter date" id="db-to2"/>'+
-                '<div class="fa fa-search search-button"></div>'+
-            '</div>'+
+        '<div class="text-input" id="block-input2">'+
+            '<p>'+
+            'From: '+
+            '</p>'+
+            '<input type="text" name="From" placeholder="Enter date" id="db-from2"/>'+
+            '<p>'+
+            'To: '+
+            '</p>'+
+            '<input type="text" name="From" placeholder="Enter date" id="db-to2"/>'+
+            '<div class="fa fa-search search-button"></div>'+
+        '</div>'+
 
-            '<div class="text-input" id="block-input3">'+
-                '<p>'+
-                'From: '+
-                '</p>'+
-                '<input type="text" name="From" placeholder="Enter date" id="db-from3"/>'+
-                '<p>'+
-                'To: '+
-                '</p>'+
-                '<input type="text" name="From" placeholder="Enter date" id="db-to3"/>'+
-                '<div class="fa fa-search search-button"></div>'+
-            '</div>'+
-        '</div>' +
-    	
+        '<div class="text-input" id="block-input3">'+
+            '<p>'+
+            'From: '+
+            '</p>'+
+            '<input type="text" name="From" placeholder="Enter date" id="db-from3"/>'+
+            '<p>'+
+            'To: '+
+            '</p>'+
+            '<input type="text" name="From" placeholder="Enter date" id="db-to3"/>'+
+            '<div class="fa fa-search search-button"></div>'+
+        '</div>'+
+    '</div>'+
     	// ACTIVATE LIGHTS SECTION
     	'<div id="light-bulb" class="hidden">'+
     	// Here we make the buttons for the tessel
