@@ -769,6 +769,7 @@ function editArchives(content){
     barChartDataArchieve.datasets[0].data = [];
     barChartDataArchieve.datasets[1].data = [];
     barChartDataArchieve.datasets[2].data = [];
+    barChartDataArchieve.labels = [];
 
     var env = document.getElementById("old-graphs");
     var myArchBar;
