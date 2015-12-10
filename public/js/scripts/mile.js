@@ -16,9 +16,21 @@ k.createNode(function(data){
             table[data._id] = "updateGraph" + data._id
         }
     }
-    console.log(sensors);
-    console.log(table);
-    console.log(data);
+    console.log("sensors", sensors);
+    console.log("table", table);
+    console.log("data", data);
+
+
+    if(data.header === "browser"){
+        // var data = JSON.parse(data);
+        console.log("browser request", data)
+        k.send(JSON.stringify(data));
+
+
+    }else if(data.header === "database"){
+        console.log("database data", data)
+
+    }else{
 
 
     var ht = {
@@ -30,6 +42,7 @@ k.createNode(function(data){
         k.callFunction(ht[data._id][0], [data.volume, data.light, data.temperature, data.time])
         k.callFunction(ht[data._id][1], [data.volume, data.light, data.temperature, data.time])
     }
+}
 });
 
 //create the hidden div that will contain the received data
@@ -204,6 +217,9 @@ k.createHTML('pimmi', htmlString);
 
 //add the graph script
 k.createScript('our_graph', 'js/scripts/mile_g.js');
+
+//connect browser with browser operator
+k.registerProducer('producer');
 
 //css
 k.createCSS('csstest', '/css/test.css')

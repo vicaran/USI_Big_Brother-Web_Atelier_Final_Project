@@ -412,6 +412,13 @@ function getDataFromDatabase(deviceID){
     console.log('Che bello questo e id:', deviceID);
     console.log('Questo e from:', fromDateElementID);
     console.log('Questo e to:', toDateElementID);
+
+    var from = getElementById(fromDateElementID);
+    var to = getElementById(toDateElementID);
+
+    var timestampFrom = from.value
+    var timestampTo = to.value
+    producer_handler(JSON.stringify({header: "browser" , from: timestampFrom, to: timestampTo, id:deviceID}), 'producer')
 }
 
 //Turn on button
