@@ -783,7 +783,7 @@ function editArchives(content){
     });
 
     
-
+    myArchRealBar.destroy();
 
 
    
@@ -802,7 +802,7 @@ function editArchives(content){
     }
 
     myArchBar.Bar(barChartDataArchieve);
-    myArchRealBar.destroy();
+
 
 
 }
