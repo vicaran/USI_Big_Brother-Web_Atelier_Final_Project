@@ -660,9 +660,17 @@ function positionCanvas() {
 
 
     var canvas = document.getElementById('positionCanvas');
+    var form1 = document.getElementById('db-from1');
+    var form2 = document.getElementById('db-from2');
+    var form3 = document.getElementById('db-from3');
+
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight / 8;
     var context = canvas.getContext('2d');
+
+    context.fillText("ciaone", 150, 150)
+
     context.globalAlpha = 0.5
     context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
     context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
@@ -673,6 +681,7 @@ function positionCanvas() {
         // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
         if (mousePos.x > -1 && mousePos.x < (canvas.width / 3)) {
             var message = "Part1";
+
         } else if (mousePos.x > (canvas.width / 3) && mousePos.x < ((canvas.width / 3)*2)) {
             var message = "Part2";
         } else if (mousePos.x > ((canvas.width / 3)*2) && mousePos.x < canvas.width) {

@@ -94,15 +94,24 @@ var htmlString =
     	'<div id="old-graphs" class="hidden">'+
         // ---Andrea's Implementation :)
         '<p>'+
-        'Click the part you want to receive information about.'+
+            'Click the part of the openspace you want to receive information about.'+
         '</p>'+
     	'<canvas id="positionCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
-        'Your browser does not support the canvas element.'+
-        '</canvas>'+
+            'Your browser does not support the canvas element.'+
             '<div class="text-input">'+
-            '<input type="text" name="From" placeholder="Enter date" id="db-from"/>'+
-            '<div class="fa fa-search search-button"></div>'+
+                '<input type="text" name="From" placeholder="Enter date" id="db-from1"/>'+
+                '<div class="fa fa-search search-button"></div>'+
             '</div>'+
+            '<div class="text-input">'+
+                '<input type="text" name="From" placeholder="Enter date" id="db-from2"/>'+
+                '<div class="fa fa-search search-button"></div>'+
+            '</div>'+
+            '<div class="text-input">'+
+                '<input type="text" name="From" placeholder="Enter date" id="db-from3"/>'+
+                '<div class="fa fa-search search-button"></div>'+
+            '</div>'+
+        '</canvas>'+
+            
         '</div>' +
     	
     	// ACTIVATE LIGHTS SECTION
