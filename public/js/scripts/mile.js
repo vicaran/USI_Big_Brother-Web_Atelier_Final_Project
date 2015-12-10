@@ -157,7 +157,7 @@ var htmlString =
             '<input type="text" name="From" placeholder="Enter date" id="db-to3"/>'+
             '<button class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></button>'+
         '</div>'+
-        +'<canvas id="canvasArch" width="400px" height="400px"></canvas>'+
+       '<canvas id="canvasArch" width="400px" height="400px"></canvas>'+
     '</div>'+
     	// ACTIVATE LIGHTS SECTION
     	'<div id="light-bulb" class="hidden">'+
