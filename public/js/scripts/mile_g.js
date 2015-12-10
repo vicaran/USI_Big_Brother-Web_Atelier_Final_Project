@@ -789,8 +789,9 @@ function editArchives(content){
    
 
     for(var i in content){
-         var date = new Date(content[i].time).toUTCString();
+        var date = new Date(content[i].time).toUTCString();
         date = date.split(' ')[4]
+        console.log("Content ", content[i]);
         barChartDataArchieve.datasets[0].data.push(content[i].volume);
         barChartDataArchieve.datasets[1].data.push(content[i].light);
         barChartDataArchieve.datasets[2].data.push(content[i].temp);
