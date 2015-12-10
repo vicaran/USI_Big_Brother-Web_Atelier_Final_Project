@@ -161,7 +161,7 @@ var htmlString =
 				'</div>' + 
 				// FOOTER
 				'<div id="footer">' +
-            '<div class="fa"> With &nbsp;</div>' +
+            '<div class="fa"> Provided with &nbsp;</div>' +
             '<i class="fa fa-heart "  style="color:#871F17;"></i>' +
             '<div class="fa">&nbsp; The Big Brother Team</div>' +
     '</div>';

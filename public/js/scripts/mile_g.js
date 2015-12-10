@@ -675,14 +675,13 @@ function positionCanvas() {
     // context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
     // context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
     // context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
-    context.fillText(form1, 150, 150)
 
     canvas.addEventListener('click', function(evt) {
         var mousePos = getMousePos(canvas, evt);
         // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
         if (mousePos.x > -1 && mousePos.x < (canvas.width / 3)) {
             var message = "Part1";
-            console.log('Here is part 1 visibility: ', form1.style.visibility);
+            console.log('Here is part 1 visibility: ', form1.style);
             form1.style.visibility = visible;
         } else if (mousePos.x > (canvas.width / 3) && mousePos.x < ((canvas.width / 3)*2)) {
             var message = "Part2";
