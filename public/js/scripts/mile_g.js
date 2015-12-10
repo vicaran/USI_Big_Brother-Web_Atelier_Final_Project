@@ -155,7 +155,7 @@ nav.addEventListener('click', function(e) {
         document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;'); 
+        document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
     } else if (e.target.id == "activate-lights" || e.target.firsChild.id == "activate-lights") {
         document.getElementById('info-page').setAttribute('class', 'hidden');
         document.getElementById('graph-container').setAttribute('class', 'hidden');
@@ -663,21 +663,21 @@ function positionCanvas() {
     var form2 = document.getElementById('block-input2');
     var form3 = document.getElementById('block-input3');
 
-
-    
     var context = canvas.getContext('2d');
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight / 8;
-
-    context.globalAlpha = 0.5
-    context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
-    context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
-    context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
-
-    canvas.addEventListener('click', function(evt) {
+    
+    var reDrawCanvas = function() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight / 8;
+
+        context.globalAlpha = 0.5
+        context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
+        context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
+        context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
+    }
+    reDrawCanvas();
+
+    canvas.addEventListener('click', function(evt) {
+        reDrawCanvas();
         var mousePos = getMousePos(canvas, evt);
         // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
         if (mousePos.x > -1 && mousePos.x < (canvas.width / 3)) {
@@ -686,12 +686,12 @@ function positionCanvas() {
             form1.style.visibility = "visible";
             form2.style.visibility = "hidden";
             form3.style.visibility = "hidden";
-        } else if (mousePos.x > (canvas.width / 3) && mousePos.x < ((canvas.width / 3)*2)) {
+        } else if (mousePos.x > (canvas.width / 3) && mousePos.x < ((canvas.width / 3) * 2)) {
             var message = "Part2";
             form1.style.visibility = "hidden";
             form2.style.visibility = "visible";
             form3.style.visibility = "hidden";
-        } else if (mousePos.x > ((canvas.width / 3)*2) && mousePos.x < canvas.width) {
+        } else if (mousePos.x > ((canvas.width / 3) * 2) && mousePos.x < canvas.width) {
             var message = "Part3";
             form1.style.visibility = "hidden";
             form2.style.visibility = "hidden";

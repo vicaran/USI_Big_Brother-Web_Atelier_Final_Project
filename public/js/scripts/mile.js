@@ -107,6 +107,7 @@ var htmlString =
             '</p>'+
             '<input type="text" name="From" placeholder="Enter date" id="db-from1"/>'+
             '<p>'+
+            '<br>'+
             'To: '+
             '</p>'+
             '<input type="text" name="From" placeholder="Enter date" id="db-to1"/>'+
@@ -119,6 +120,7 @@ var htmlString =
             '</p>'+
             '<input type="text" name="From" placeholder="Enter date" id="db-from2"/>'+
             '<p>'+
+            '<br>'+
             'To: '+
             '</p>'+
             '<input type="text" name="From" placeholder="Enter date" id="db-to2"/>'+
@@ -131,6 +133,7 @@ var htmlString =
             '</p>'+
             '<input type="text" name="From" placeholder="Enter date" id="db-from3"/>'+
             '<p>'+
+            '<br>'+
             'To: '+
             '</p>'+
             '<input type="text" name="From" placeholder="Enter date" id="db-to3"/>'+
