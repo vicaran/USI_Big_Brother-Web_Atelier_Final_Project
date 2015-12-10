@@ -126,8 +126,8 @@ var nav = document.getElementById('navbar');
 nav.addEventListener('click', function(e) {
     // console.log('e');
     console.log(e.target);
-    console.log(e.target.firsChild.id);
-    if (e.target.id == "about" || e.target.firsChild.id == "about") {
+    console.log(e.target.firstChild.id);
+    if (e.target.id == "about" || e.target.firstChild.id == "about") {
         document.getElementById('info-page').setAttribute('class', '');
         document.getElementById('graph-container').setAttribute('class', 'hidden');
         document.getElementById('old-graphs').setAttribute('class', 'hidden');
