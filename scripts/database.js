@@ -37,6 +37,43 @@ var addToDatabase = function (data, d) {
     })
 };
 
+var retrieveData = function (since, to) {
+    var data = [];
+
+    for(var i = 1; i<4; i++){
+        k.stateful.get(i, function (res) {
+            var toRetrieve = [];
+            var res = JSON.parse(res);
+            // fist element of the array that is the oldest
+
+            for(i in res){
+                if(since <= res[i].time & res[i].time <= to){
+                    toRetrieve.push(res[i])
+                }
+            }
+
+            data.push(toRetrieve);
+
+
+        })
+    }
+
+    return data
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Convert the date into the form of: gg/mm/yyyy
  * @param date The Date.now() from receiver.js
@@ -63,3 +100,4 @@ function convertHour(date) {
 }
 
 exports.addToDatabase = addToDatabase;
+exports.retrieveData = retrieveData;
