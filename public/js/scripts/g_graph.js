@@ -226,7 +226,7 @@ document.getElementById('legend3').innerHTML = myRealBar1.generateLegend();
 
 var button = document.getElementById('button');
 button.onclick = function(){
-    producer_handler(JSON.stringify({header: "browser" , data: "hello", id:"1"}), 'producer')
+    producer_handler(JSON.stringify({header: "browser" , data: "hello", id:1}), 'producer')
 }
 
 
