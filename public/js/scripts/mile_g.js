@@ -126,7 +126,7 @@ var nav = document.getElementById('navbar');
 nav.addEventListener('click', function(e) {
     // console.log('e');
     console.log(e.target.parentNode.lastChild);
-    if (e.target.id == "about") {
+    if (e.target.id == "about" || e.target.firsChild.id == "about") {
         document.getElementById('info-page').setAttribute('class', '');
         document.getElementById('graph-container').setAttribute('class', 'hidden');
         document.getElementById('old-graphs').setAttribute('class', 'hidden');
@@ -135,8 +135,8 @@ nav.addEventListener('click', function(e) {
         document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        e.target.parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
-    } else if (e.target.id == "live-feed") {
+        document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
+    } else if (e.target.id == "live-feed" || e.target.firsChild.id == "live-feed") {
         document.getElementById('info-page').setAttribute('class', 'hidden');
         document.getElementById('graph-container').setAttribute('class', '');
         document.getElementById('old-graphs').setAttribute('class', 'hidden');
@@ -145,19 +145,22 @@ nav.addEventListener('click', function(e) {
         document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        e.target.parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
-    } else if (e.target.id == "archives") {
+        document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
+    } else if (e.target.id == "archives" || e.target.firsChild.id == "archives") {
         document.getElementById('info-page').setAttribute('class', 'hidden');
         document.getElementById('graph-container').setAttribute('class', 'hidden');
         document.getElementById('old-graphs').setAttribute('class', '');
         document.getElementById('light-bulb').setAttribute('class', 'hidden');
+<<<<<<< HEAD
         
+=======
+        current_page = 'old-graphs';
+>>>>>>> 5c2c3870abf5dc5a635a37dedc7d74dcd6ec0956
         document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        e.target.parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
-        current_page = 'old-graphs';
-    } else if (e.target.id == "activate-lights") {
+        document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;'); 
+    } else if (e.target.id == "activate-lights" || e.target.firsChild.id == "activate-lights") {
         document.getElementById('info-page').setAttribute('class', 'hidden');
         document.getElementById('graph-container').setAttribute('class', 'hidden');
         document.getElementById('old-graphs').setAttribute('class', 'hidden');
@@ -166,7 +169,7 @@ nav.addEventListener('click', function(e) {
         document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        e.target.parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
+        document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
     }
 });
 

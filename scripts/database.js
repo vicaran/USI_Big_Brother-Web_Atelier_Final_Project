@@ -40,10 +40,11 @@ var addToDatabase = function (data, d) {
 var retrieveData = function (since, to) {
     var data = [];
 
-    for(var i = 1; i<4; i++){
-        k.stateful.get(i, function (res) {
+    //for(var i = 1; i<4; i++){
+        k.stateful.get(1, function (res) {
             var toRetrieve = [];
             var res = JSON.parse(res);
+            console.log("res ", res)
             // fist element of the array that is the oldest
 
             for(i in res){
@@ -53,11 +54,11 @@ var retrieveData = function (since, to) {
             }
 
             data.push(toRetrieve);
+            console.log("data ", data)
 
 
         })
-    }
-
+    //
     return data
 };
 
