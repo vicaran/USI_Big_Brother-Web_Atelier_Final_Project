@@ -675,8 +675,8 @@ function positionCanvas() {
     // context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
     // context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
     // context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
-    context.fillText("ciaone", 150, 150)
-    
+    context.fillText(form1, 150, 150)
+
     canvas.addEventListener('click', function(evt) {
         var mousePos = getMousePos(canvas, evt);
         // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
