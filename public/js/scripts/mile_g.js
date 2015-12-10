@@ -693,7 +693,6 @@ function positionCanvas() {
         // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
         if (mousePos.x > -1 && mousePos.x < (canvas.width / 3)) {
             var message = "Part1";
-            console.log('Here is part 1 visibility: ', form1.style);
             form1.style.display = "";
             form2.style.display = "none";
             form3.style.display = "none";
