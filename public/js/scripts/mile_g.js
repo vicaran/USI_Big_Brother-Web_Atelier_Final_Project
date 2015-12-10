@@ -125,7 +125,7 @@ document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 
 var nav = document.getElementById('navbar');
 nav.addEventListener('click', function(e) {
     // console.log('e');
-    console.log(e.target.firsChild);
+    console.log(e.target.childNodes);
     if (e.target.id == "about" || e.target.firsChild.id == "about") {
         document.getElementById('info-page').setAttribute('class', '');
         document.getElementById('graph-container').setAttribute('class', 'hidden');
