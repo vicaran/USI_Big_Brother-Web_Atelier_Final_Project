@@ -120,28 +120,28 @@ var barChartData1 = {
 };
 
 var barChartDataArchieve = {
-    labels: ["mydata", ],
+    labels: [],
     datasets: [{
         label: "volume Data Set",
         fillColor: "rgba(215,54,139,0.2)",
         strokeColor: "rgba(215,54,139,0.8)",
         highlightFill: "#fff",
         highlightStroke: "rgba(215,54,139,0.8)",
-        data: [100,]
+        data: []
     }, {
         label: "light Data Set",
         fillColor: "rgba(151,187,205,0.2)",
         strokeColor: "rgba(151,187,205,1)",
         highlightFill: "#fff",
         highlightStroke: "rgba(151,187,205,1)",
-        data: [100,]
+        data: []
     }, {
         label: "temp Data Set",
         fillColor: "rgba(241,85,45,0.2)",
         strokeColor: "rgba(241,85,45,1)",
         highlightFill: "#fff",
         highlightStroke: "rgba(151,187,205,1)",
-        data: [100,]
+        data: []
     }, ]
 }
 // Navbar implementation
