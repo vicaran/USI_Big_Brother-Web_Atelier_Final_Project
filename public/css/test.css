@@ -2209,6 +2209,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     margin-left: 50px;
     border-radius: 25%;
     background-color: #181A1F;
+    display: none;
 }
 
 .search-button{
