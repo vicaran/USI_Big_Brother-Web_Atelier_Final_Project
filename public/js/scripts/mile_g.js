@@ -665,11 +665,11 @@ function positionCanvas() {
     var form3 = document.getElementById('block-input3');
 
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight / 8;
+    
     var context = canvas.getContext('2d');
 
-
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight / 8;
 
     context.globalAlpha = 0.5
     context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
@@ -677,6 +677,8 @@ function positionCanvas() {
     context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
 
     canvas.addEventListener('click', function(evt) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight / 8;
         var mousePos = getMousePos(canvas, evt);
         // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
         if (mousePos.x > -1 && mousePos.x < (canvas.width / 3)) {
