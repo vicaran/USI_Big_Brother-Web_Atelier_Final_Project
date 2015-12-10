@@ -150,6 +150,11 @@ var htmlString =
 		'<canvas id="lightCanvas" class="canvasSize">'+
         'Your browser does not support the canvas element.'+
         '</canvas>'+
+        // '<button class="fa fa-search search-button" onclick="turnOnLight(1)"></button>'+
+        '<div class="onoffswitch">'+
+        '<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">'+
+        '<label class="onoffswitch-label" for="myonoffswitch"></label>'+
+        '</div>'+
 		// ---------------------------
     	// '<div id="tessel1" class="tessel-button">Sector 1</div>'+
     	'</div>' +

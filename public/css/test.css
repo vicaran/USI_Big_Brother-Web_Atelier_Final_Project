@@ -2224,3 +2224,38 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 #db-from{
     
 }
+/**
+SWITCH
+**/
+.onoffswitch {
+    position: relative; width: 199px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    height: 37px; padding: 0; line-height: 37px;
+    border: 2px solid #CCCCCC; border-radius: 37px;
+    background-color: #BFBFBF;
+    transition: background-color 0.3s ease-in;
+}
+.onoffswitch-label:before {
+    content: "";
+    display: block; width: 37px; margin: 0px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 160px;
+    border: 2px solid #CCCCCC; border-radius: 37px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+    background-color: #FF9100;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+   border-color: #FF9100;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    right: 0px; 
+}

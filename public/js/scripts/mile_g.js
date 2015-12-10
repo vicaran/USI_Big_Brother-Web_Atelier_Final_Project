@@ -414,6 +414,10 @@ function getDataFromDatabase(deviceID){
     console.log('Questo e to:', toDateElementID);
 }
 
+//Turn on button
+function turnOnLight(deviceID){
+    console.log('Che bello questo e id:', deviceID);
+}
 
 //OPENSPACE CANVAS
 //audio part
