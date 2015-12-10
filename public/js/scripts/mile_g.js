@@ -794,7 +794,7 @@ function editArchives(content){
 
         barChartDataArchieve.datasets[0].data.push(content[i].volume);
         barChartDataArchieve.datasets[1].data.push(content[i].light);
-        barChartDataArchieve.datasets[2].data.push(content[i].temp);
+        barChartDataArchieve.datasets[2].data.push(content[i].temperature);
         barChartDataArchieve.labels.push(date);
         console.log("volume ", barChartDataArchieve.datasets[0].data);
         console.log("light ", barChartDataArchieve.datasets[1].data);
