@@ -737,6 +737,13 @@ function positionCanvas() {
 
 }
 
+
+
+function editArchives(data){
+    document.getElementById("old-graphs").innerHTML = data;
+
+}
+
 positionCanvas()
 
 //<------------------------------------------------>
