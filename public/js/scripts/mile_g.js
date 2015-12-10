@@ -125,8 +125,9 @@ document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 
 var nav = document.getElementById('navbar');
 nav.addEventListener('click', function(e) {
     // console.log('e');
-    console.log(e.target.parentNode.lastChild);
-    if (e.target.id == "about" || e.target.firsChild.id == "about") {
+    console.log(e.target);
+    console.log(e.target.firstChild.id);
+    if (e.target.id == "about" || e.target.firstChild.id == "about") {
         document.getElementById('info-page').setAttribute('class', '');
         document.getElementById('graph-container').setAttribute('class', 'hidden');
         document.getElementById('old-graphs').setAttribute('class', 'hidden');
@@ -136,7 +137,7 @@ nav.addEventListener('click', function(e) {
         document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
-    } else if (e.target.id == "live-feed" || e.target.firsChild.id == "live-feed") {
+    } else if (e.target.id == "live-feed" || e.target.firstChild.id == "live-feed") {
         document.getElementById('info-page').setAttribute('class', 'hidden');
         document.getElementById('graph-container').setAttribute('class', '');
         document.getElementById('old-graphs').setAttribute('class', 'hidden');
@@ -146,7 +147,7 @@ nav.addEventListener('click', function(e) {
         document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
-    } else if (e.target.id == "archives" || e.target.firsChild.id == "archives") {
+    } else if (e.target.id == "archives" || e.target.firstChild.id == "archives") {
         document.getElementById('info-page').setAttribute('class', 'hidden');
         document.getElementById('graph-container').setAttribute('class', 'hidden');
         document.getElementById('old-graphs').setAttribute('class', '');
@@ -155,8 +156,13 @@ nav.addEventListener('click', function(e) {
         document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
         document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
+<<<<<<< HEAD
         document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
     } else if (e.target.id == "activate-lights" || e.target.firsChild.id == "activate-lights") {
+=======
+        document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;'); 
+    } else if (e.target.id == "activate-lights" || e.target.firstChild.id == "activate-lights") {
+>>>>>>> c9da28d1a8b094eabf41e56b30d7067e59fc81c1
         document.getElementById('info-page').setAttribute('class', 'hidden');
         document.getElementById('graph-container').setAttribute('class', 'hidden');
         document.getElementById('old-graphs').setAttribute('class', 'hidden');

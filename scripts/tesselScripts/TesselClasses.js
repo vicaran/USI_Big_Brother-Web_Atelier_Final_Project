@@ -50,7 +50,7 @@ function SenderTessel(id) {
         //initialized light sensor
         var lightPin = this.tessel.port['GPIO'].analog[1];
         //initialized temp sensor
-        var tempPin = tessel.port['GPIO'].analog[1];
+        var tempPin = this.tessel.port['GPIO'].analog[2];
 
         //------ digital pins ------
         //initialized Led
@@ -114,6 +114,7 @@ function SenderTessel(id) {
         }
     };
 
+
     /**
      * Function for reading the input from a microphone, gathering data in a window of 50ms
      * @param pin - the analog pin of the sound sensor
@@ -152,7 +153,7 @@ function SenderTessel(id) {
      */
     this.gatherTemperature = function (pin) {
         var voltage = (pin.read() * 3.3);
-        return voltage - 0.5 * 100;
+        return (voltage - 0.5) * 100;
     }
 }
 
