@@ -94,17 +94,58 @@ var htmlString =
     	'<div id="old-graphs" class="hidden">'+
         // ---Andrea's Implementation :)
         '<p>'+
-        'Click the part you want to receive information about.'+
+            'Click the part of the openspace you want to receive information about.'+
         '</p>'+
+
     	'<canvas id="positionCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
-        'Your browser does not support the canvas element.'+
+            'Your browser does not support the canvas element.'+
         '</canvas>'+
+<<<<<<< HEAD
             '<div class="text-input">'+
             '<input type="text" name="From" placeholder="Enter date" id="db-from"/>'+
             '<div class="fa fa-search search-buttoncd "></div>'+
             '</div>'+
         '</div>' +
     	
+=======
+
+        '<div class="text-input" id="block-input1">'+
+            '<p>'+
+            'From: '+
+            '</p>'+
+            '<input type="text" name="From" placeholder="Enter date" id="db-from1"/>'+
+            '<p>'+
+            'To: '+
+            '</p>'+
+            '<input type="text" name="From" placeholder="Enter date" id="db-to1"/>'+
+            '<div class="fa fa-search search-button"></div>'+
+        '</div>'+
+
+        '<div class="text-input" id="block-input2">'+
+            '<p>'+
+            'From: '+
+            '</p>'+
+            '<input type="text" name="From" placeholder="Enter date" id="db-from2"/>'+
+            '<p>'+
+            'To: '+
+            '</p>'+
+            '<input type="text" name="From" placeholder="Enter date" id="db-to2"/>'+
+            '<div class="fa fa-search search-button"></div>'+
+        '</div>'+
+
+        '<div class="text-input" id="block-input3">'+
+            '<p>'+
+            'From: '+
+            '</p>'+
+            '<input type="text" name="From" placeholder="Enter date" id="db-from3"/>'+
+            '<p>'+
+            'To: '+
+            '</p>'+
+            '<input type="text" name="From" placeholder="Enter date" id="db-to3"/>'+
+            '<div class="fa fa-search search-button"></div>'+
+        '</div>'+
+    '</div>'+
+>>>>>>> 0e888f66139e4d26e34717bffc0bead7c1de881f
     	// ACTIVATE LIGHTS SECTION
     	'<div id="light-bulb" class="hidden">'+
     	// Here we make the buttons for the tessel
@@ -147,7 +188,7 @@ var htmlString =
 				'</div>' + 
 				// FOOTER
 				'<div id="footer">' +
-            '<div class="fa"> With &nbsp;</div>' +
+            '<div class="fa"> Provided with &nbsp;</div>' +
             '<i class="fa fa-heart "  style="color:#871F17;"></i>' +
             '<div class="fa">&nbsp; The Big Brother Team</div>' +
     '</div>';

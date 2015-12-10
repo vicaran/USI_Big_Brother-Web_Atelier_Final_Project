@@ -2008,7 +2008,6 @@ body {
     top: 0px;
     left: 0px;
     right:-100%;
-    margin-right: -100px;
 }
 #footer{
     color: #BEBDBF;
@@ -2091,7 +2090,8 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     font-size: 14pt;
     width: 100%;
     align: center;
-    margin: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
     padding-top: 2em;
 }
 .card >div{
@@ -2172,8 +2172,6 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 }
 
 .canvasSize{
-        margin-right: 5%;
-        margin-left: 5%;
         margin-top: 5%;
         margin-bottom: 5%;
         width: 100%;
@@ -2213,6 +2211,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     margin-left: 50px;
     border-radius: 25%;
     background-color: #181A1F;
+    visibility: hidden;
 }
 
 .search-button{

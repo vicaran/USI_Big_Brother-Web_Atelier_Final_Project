@@ -659,23 +659,43 @@ function positionCanvas() {
 
 
     var canvas = document.getElementById('positionCanvas');
+    var form1 = document.getElementById('block-input1');
+    var form2 = document.getElementById('block-input2');
+    var form3 = document.getElementById('block-input3');
+
+
+    
+    var context = canvas.getContext('2d');
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight / 8;
-    var context = canvas.getContext('2d');
+
     context.globalAlpha = 0.5
     context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
     context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
     context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
 
     canvas.addEventListener('click', function(evt) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight / 8;
         var mousePos = getMousePos(canvas, evt);
         // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
         if (mousePos.x > -1 && mousePos.x < (canvas.width / 3)) {
             var message = "Part1";
+            console.log('Here is part 1 visibility: ', form1.style);
+            form1.style.visibility = "visible";
+            form2.style.visibility = "hidden";
+            form3.style.visibility = "hidden";
         } else if (mousePos.x > (canvas.width / 3) && mousePos.x < ((canvas.width / 3)*2)) {
             var message = "Part2";
+            form1.style.visibility = "hidden";
+            form2.style.visibility = "visible";
+            form3.style.visibility = "hidden";
         } else if (mousePos.x > ((canvas.width / 3)*2) && mousePos.x < canvas.width) {
             var message = "Part3";
+            form1.style.visibility = "hidden";
+            form2.style.visibility = "hidden";
+            form3.style.visibility = "visible";
         }
         writeMessage(canvas, message);
     }, false);
