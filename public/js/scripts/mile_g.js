@@ -694,19 +694,19 @@ function positionCanvas() {
         if (mousePos.x > -1 && mousePos.x < (canvas.width / 3)) {
             var message = "Part1";
             console.log('Here is part 1 visibility: ', form1.style);
-            form1.style.visibility = "visible";
-            form2.style.visibility = "hidden";
-            form3.style.visibility = "hidden";
+            form1.style.display = "";
+            form2.style.display = "none";
+            form3.style.display = "none";
         } else if (mousePos.x > (canvas.width / 3) && mousePos.x < ((canvas.width / 3) * 2)) {
             var message = "Part2";
-            form1.style.visibility = "hidden";
-            form2.style.visibility = "visible";
-            form3.style.visibility = "hidden";
+            form1.style.display = "none";
+            form2.style.display = "";
+            form3.style.display = "none";
         } else if (mousePos.x > ((canvas.width / 3) * 2) && mousePos.x < canvas.width) {
             var message = "Part3";
-            form1.style.visibility = "hidden";
-            form2.style.visibility = "hidden";
-            form3.style.visibility = "visible";
+            form1.style.display = "none";
+            form2.style.display = "none";
+            form3.style.display = "";
         }
         writeMessage(canvas, message);
     }, false);
