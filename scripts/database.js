@@ -44,7 +44,7 @@ var retrieveData = function (since, to) {
         k.stateful.get(1, function (res) {
             var toRetrieve = [];
             var res = JSON.parse(res);
-            console.log(res)
+            console.log("res ", res)
             // fist element of the array that is the oldest
 
             for(i in res){
