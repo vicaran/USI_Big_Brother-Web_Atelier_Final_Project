@@ -40,7 +40,7 @@ var addToDatabase = function (data, d) {
 var retrieveData = function (id, since, to) {
     var data = [];
     
-    k.stateful.get(id, function (res) {
+    k.stateful.get(1, function (res) {
         var toRetrieve = [];
         var res = JSON.parse(res);
          //console.log("res ", res)
