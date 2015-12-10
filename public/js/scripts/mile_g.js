@@ -767,20 +767,22 @@ function positionCanvas() {
 
 function editArchives(content){
     var env = document.getElementById("old-graphs");
-    var myBar;
-    var myRealBar;
+    var myArchBar;
+    var myArchRealBar;
 
 
     var ctx_bar = document.getElementById("canvasArch").getContext("2d");
 
 
-    myBar = new Chart(ctx_bar);
-    myRealBar = myBar.Bar(barChartData, {
+    myArchBar = new Chart(ctx_bar);
+    myArchRealBar = myArchBar.Bar(barChartDataArchieve, {
         tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
         responsive: false,
         barShowStroke: false,
 
     });
+
+    myArchRealBar.destroy();
 
 
 
@@ -795,7 +797,7 @@ function editArchives(content){
         barChartDataArchieve.labels.push(date);
     }
 
-    myBar.Bar(barChartDataArchieve);
+    myArchBar.Bar(barChartDataArchieve);
 
 
 }
