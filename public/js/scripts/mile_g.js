@@ -706,11 +706,17 @@ function positionCanvas() {
 
         } else if (mousePos.x > (canvas.width / 3) && mousePos.x < ((canvas.width / 3) * 2)) {
             var message = "Part2";
+            context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
+            context.fillStyle = "#FFFFFF";
+            context.fillRect(canvas.width / 3, 0, canvas.width / 3, canvas.height);
             form1.style.display = "none";
             form2.style.display = "";
             form3.style.display = "none";
         } else if (mousePos.x > ((canvas.width / 3) * 2) && mousePos.x < canvas.width) {
             var message = "Part3";
+            context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
+            context.fillStyle = "#FFFFFF";
+            context.fillRect((canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
             form1.style.display = "none";
             form2.style.display = "none";
             form3.style.display = "";
