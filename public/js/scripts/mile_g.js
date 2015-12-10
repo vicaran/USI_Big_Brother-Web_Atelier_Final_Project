@@ -667,7 +667,7 @@ function positionCanvas() {
     var context = canvas.getContext('2d');
 
     var reDrawCanvas = function() {
-        canvas.width = window.innerWidth;
+        canvas.width = window.innerWidth/4;
         canvas.height = window.innerHeight / 8;
 
         context.globalAlpha = 0.5
