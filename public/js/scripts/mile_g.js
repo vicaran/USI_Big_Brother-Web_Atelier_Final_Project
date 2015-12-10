@@ -406,8 +406,12 @@ var updateGraphBar1 = function(volume, light, temp, time) {
 }
 
 //Submit button old data
-function getDataFromDatabase(deviceID, fromData, toData){
-    console.log('Che bello');
+function getDataFromDatabase(deviceID){
+    var fromDateElementID = "db-from" + deviceID;
+    var toDateElementID = "db-to" + deviceID;
+    console.log('Che bello questo e id:', deviceID);
+    console.log('Questo e from:', fromDateElementID);
+    console.log('Questo e to:', toDateElementID);
 }
 
 

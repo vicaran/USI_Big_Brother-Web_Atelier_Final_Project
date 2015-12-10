@@ -111,7 +111,7 @@ var htmlString =
             'To: '+
             '</p>'+
             '<input type="text" name="From" placeholder="Enter date" id="db-to1"/>'+
-            '<button class="fa fa-search search-button" on-click="getDataFromDatabase"></button>'+
+            '<button class="fa fa-search search-button" on-click="getDataFromDatabase(1)"></button>'+
         '</div>'+
 
         '<div class="text-input" id="block-input2">'+
@@ -124,7 +124,7 @@ var htmlString =
             'To: '+
             '</p>'+
             '<input type="text" name="From" placeholder="Enter date" id="db-to2"/>'+
-            '<div class="fa fa-search search-button"></div>'+
+            '<button class="fa fa-search search-button" on-click="getDataFromDatabase(2)"></button>'+
         '</div>'+
 
         '<div class="text-input" id="block-input3">'+
@@ -137,7 +137,7 @@ var htmlString =
             'To: '+
             '</p>'+
             '<input type="text" name="From" placeholder="Enter date" id="db-to3"/>'+
-            '<div class="fa fa-search search-button"></div>'+
+            '<button class="fa fa-search search-button" on-click="getDataFromDatabase(3)"></button>'+
         '</div>'+
     '</div>'+
     	// ACTIVATE LIGHTS SECTION
