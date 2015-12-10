@@ -118,6 +118,32 @@ var barChartData1 = {
         data: []
     }, ]
 };
+
+var barChartDataArchieve = {
+    labels: [],
+    datasets: [{
+        label: "volume Data Set",
+        fillColor: "rgba(215,54,139,0.2)",
+        strokeColor: "rgba(215,54,139,0.8)",
+        highlightFill: "#fff",
+        highlightStroke: "rgba(215,54,139,0.8)",
+        data: []
+    }, {
+        label: "light Data Set",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        highlightFill: "#fff",
+        highlightStroke: "rgba(151,187,205,1)",
+        data: []
+    }, {
+        label: "temp Data Set",
+        fillColor: "rgba(241,85,45,0.2)",
+        strokeColor: "rgba(241,85,45,1)",
+        highlightFill: "#fff",
+        highlightStroke: "rgba(151,187,205,1)",
+        data: []
+    }, ]
+}
 // Navbar implementation
 var current_page = current_page || 'graph-container';
 document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
@@ -739,10 +765,51 @@ function positionCanvas() {
 
 
 
-function editArchives(data){
-    document.getElementById("old-graphs").innerHTML = data;
+function editArchives(content){
+    var env = document.getElementById("old-graphs");
+    var myBar;
+    var myRealBar;
+
+
+    var ctx_bar = document.getElementById("canvasArch").getContext("2d");
+
+
+    myBar = new Chart(ctx_bar);
+    myRealBar = myBar.Bar(barChartData, {
+        tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
+        responsive: false,
+        barShowStroke: false,
+
+    });
+
+
+
+   
+
+    for(var i in content){
+         var date = new Date(content[i].time).toUTCString();
+        date = date.split(' ')[4]
+        barChartDataArchieve.datasets[0].data.push(content[i].volume);
+        barChartDataArchieve.datasets[1].data.push(content[i].light);
+        barChartDataArchieve.datasets[2].data.push(content[i].temp);
+        barChartDataArchieve.labels.push(date);
+    }
+
+    myBar.Bar(barChartDataArchieve);
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 positionCanvas()
 

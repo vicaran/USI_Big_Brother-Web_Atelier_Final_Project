@@ -30,7 +30,7 @@ k.createNode(function(data){
     }else if(data.header === "database"){
         console.log("database data", data)
 
-        k.callFunction("editArchives", [data.content])
+        k.callFunction("editArchives", [data.content[0]])
 
     }else{
 
@@ -157,6 +157,9 @@ var htmlString =
             '<input type="text" name="From" placeholder="Enter date" id="db-to3"/>'+
             '<button class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></button>'+
         '</div>'+
+        +'<canvas id="canvasArch" class="canvasSize" width="400px" height="400px">'+
+            'Your browser does not support the canvas element.'+
+        '</canvas>'+
     '</div>'+
     	// ACTIVATE LIGHTS SECTION
     	'<div id="light-bulb" class="hidden">'+
