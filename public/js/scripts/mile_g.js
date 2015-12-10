@@ -413,8 +413,8 @@ function getDataFromDatabase(deviceID){
     console.log('Questo e from:', fromDateElementID);
     console.log('Questo e to:', toDateElementID);
 
-    var from = getElementById(fromDateElementID);
-    var to = getElementById(toDateElementID);
+    var from = document.getElementById(fromDateElementID);
+    var to = document.getElementById(toDateElementID);
 
     var timestampFrom = from.value
     var timestampTo = to.value
