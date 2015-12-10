@@ -2091,7 +2091,8 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     font-size: 14pt;
     width: 100%;
     align: center;
-    margin: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
     padding-top: 2em;
 }
 .card >div{
@@ -2172,8 +2173,6 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 }
 
 .canvasSize{
-        margin-right: 5%;
-        margin-left: 5%;
         margin-top: 5%;
         margin-bottom: 5%;
         width: 100%;
