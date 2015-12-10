@@ -53,7 +53,9 @@ var retrieveData = function (since, to) {
 
         data.push(toRetrieve);
         console.log("data inside loop ", data)
-        k.send(JSON.stringify({header: "database", content: "data from database inside database"}))
+        var json = {header: "database"};
+        json.content = data
+        k.send(JSON.stringify(json))
             
 
 
