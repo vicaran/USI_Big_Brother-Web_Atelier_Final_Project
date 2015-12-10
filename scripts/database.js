@@ -55,10 +55,7 @@ var retrieveData = function (since, to) {
             }
 
             data.push(toRetrieve);
-            if(i === 3){
-                return data
-            }
-            console.log("data inside loop ")
+            console.log("data inside loop ", data)
             
 
 
