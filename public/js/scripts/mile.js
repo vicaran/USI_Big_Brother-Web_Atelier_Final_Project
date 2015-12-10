@@ -100,6 +100,14 @@ var htmlString =
     	'<canvas id="positionCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
             'Your browser does not support the canvas element.'+
         '</canvas>'+
+<<<<<<< HEAD
+            '<div class="text-input">'+
+            '<input type="text" name="From" placeholder="Enter date" id="db-from"/>'+
+            '<div class="fa fa-search search-buttoncd "></div>'+
+            '</div>'+
+        '</div>' +
+    	
+=======
 
         '<div class="text-input" id="block-input1">'+
             '<p>'+
@@ -137,6 +145,7 @@ var htmlString =
             '<div class="fa fa-search search-button"></div>'+
         '</div>'+
     '</div>'+
+>>>>>>> 0e888f66139e4d26e34717bffc0bead7c1de881f
     	// ACTIVATE LIGHTS SECTION
     	'<div id="light-bulb" class="hidden">'+
     	// Here we make the buttons for the tessel
