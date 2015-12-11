@@ -575,6 +575,7 @@ var gDeviceID = 0 ;
 var gContent = 0;
 
 function monitorLights(deviceID, content) {
+    console.log("This is the deviceID: ", deviceID);
     console.log("This is the content in MONITOR LIGHT: ", content);
     gDeviceID = deviceID;
     gContent = content;

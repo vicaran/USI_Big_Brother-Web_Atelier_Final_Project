@@ -41,6 +41,7 @@ k.createNode(function(data){
     }
 
     if(ht[data._id]){
+        console.log('This is entire data before: ', data);
         k.callFunction(ht[data._id][0], [data.volume, data.light, data.temperature, data.time])
         k.callFunction(ht[data._id][1], [data.volume, data.light, data.temperature, data.time])
         k.callFunction("monitorLights", [data._id, data.volume])
