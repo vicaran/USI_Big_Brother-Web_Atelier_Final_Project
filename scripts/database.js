@@ -56,7 +56,7 @@ var addToDatabase = function (data, d) {
         var toRetrieveData = [];
         var i = startPoint;
         console.log("Startpoint: ", startPoint, " finishPoint: ", finishPoint, " index i: ", i);
-        while (i <= finishPoint){
+        while (i <= startPoint + finishPoint){
             console.log('INDEX: ', i )
 
             toRetrieveData.push(res[i]);
