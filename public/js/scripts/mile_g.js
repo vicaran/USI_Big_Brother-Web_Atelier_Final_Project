@@ -603,6 +603,10 @@ function lightLevelCanvas() {
 
 
     var canvas = document.getElementById('lightCanvas');
+    document.getElementById('myonoffswitch1').checked = false;
+    document.getElementById('myonoffswitch2').checked = false;
+    document.getElementById('myonoffswitch3').checked = false;
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight / 8;
     var context = canvas.getContext('2d');
@@ -610,6 +614,8 @@ function lightLevelCanvas() {
     context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
     context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
     context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
+    context.fillStyle = "#000000";
+    context.fillRect(0, 0, canvas.width, canvas.height);
 
     var interval = setInterval(function() {
         if (gDeviceID == 1) {
@@ -617,7 +623,7 @@ function lightLevelCanvas() {
                 context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
                 document.getElementById('myonoffswitch1').checked = true;
             } else {
-                context.globalAlpha = 0.5
+                context.globalAlpha = 0.5;
                 context.fillStyle = "#000000";
                 context.fillRect(0, 0, canvas.width / 3, canvas.height);
                 context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
@@ -627,23 +633,23 @@ function lightLevelCanvas() {
         } else if (gDeviceID == 2) {
             if (gContent > 700) {
                 context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
-                context.fillStyle = "#FFFFFF";
-                context.fillRect(canvas.width / 3, 0, canvas.width / 3, canvas.height);
                 document.getElementById('myonoffswitch2').checked = true;
             } else {
-                context.globalAlpha = 0.5
+                context.globalAlpha = 0.5;
+                context.fillStyle = "#000000";
+                context.fillRect(canvas.width / 3, 0, canvas.width / 3, canvas.height);
                 context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
                 document.getElementById('myonoffswitch2').checked = false;
             }
         } else if (gDeviceID == 3) {
             if (gContent > 50) {
                 context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
-                context.fillStyle = "#FFFFFF";
-                context.fillRect((canvas.width / 3) * 2, 0, (canvas.width / 3) * 2, canvas.height);
                 document.getElementById('myonoffswitch3').checked = true;
 
             } else {
-                context.globalAlpha = 0.5
+                context.globalAlpha = 0.5;
+                context.fillStyle = "#000000";
+                context.fillRect((canvas.width / 3) * 2, 0, (canvas.width / 3) * 2, canvas.height);
                 context.drawImage(img3, canvas.width / 3, 0, canvas.width / 3, canvas.height);
                 document.getElementById('myonoffswitch3').checked = false;
             }
