@@ -126,22 +126,22 @@ var htmlString =
             '<br>'+
             'To: '+
             '</p>'+
-            '<input type="text" name="From" placeholder="Enter date" id="db-to1"/>'+
+            '<input type="text" name="To" placeholder="Enter date" id="db-to1"/>'+
             '<span class="fa fa-search search-button" onclick="getDataFromDatabase(1)"></span>'+
             // '<button class="fa fa-search search-button" onclick="getDataFromDatabase(1)"></button>'+
         '</div>'+
 
         '<div class="text-input" id="block-input2">'+
             '<br>'+
-            '<p>'+
+            '<p class="fa fa-hourglass-start">'+
             'From: '+
             '</p>'+
             '<input type="text" name="From" placeholder="Enter date" id="db-from2"/>'+
-            '<p>'+
+            '<p class="fa fa-hourglass-end">'+
             '<br>'+
             'To: '+
             '</p>'+
-            '<input type="text" name="From" placeholder="Enter date" id="db-to2"/>'+
+            '<input type="text" name="To" placeholder="Enter date" id="db-to2"/>'+
             '<span class="fa fa-search search-button" onclick="getDataFromDatabase(2)"></span>'+
             // '<button class="fa fa-search search-button" onclick="getDataFromDatabase(2)"></button>'+
         '</div>'+
@@ -156,7 +156,7 @@ var htmlString =
             '<br>'+
             'To: '+
             '</p>'+
-            '<input type="text" name="From" placeholder="Enter date" id="db-to3"/>'+
+            '<input type="text" name="To" placeholder="Enter date" id="db-to3"/>'+
             '<span class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></span>'+
             // '<button class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></button>'+
         '</div>'+
