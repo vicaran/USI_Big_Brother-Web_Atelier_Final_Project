@@ -37,7 +37,13 @@ var addToDatabase = function (data, d) {
     })
 };
 
-
+/**
+ * This function will send the data in the Delta since - to
+ *
+ * @param id The unique id of the Tessel
+ * @param since The starting point
+ * @param to The finish point
+ */
 
 var retrieveData = function (id, since, to) {
     var sSince = convertMStoS(since);
@@ -54,7 +60,7 @@ var retrieveData = function (id, since, to) {
         while (i <= finishPoint){
             console.log('INDEX: ', i )
 
-            toRetrieveData.push(res[i])
+            toRetrieveData.push(res[i]);
             i++;
 
         }
