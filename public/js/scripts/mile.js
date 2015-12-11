@@ -29,8 +29,8 @@ k.createNode(function(data){
 
 
     }else if(data.header === "database"){
-        // console.log("database data", data)
-        k.callFunction("editArchives", [data.content[0]])
+        console.log("database data", data)
+        k.callFunction("editArchives", [data.content])
 
     }else{
 
