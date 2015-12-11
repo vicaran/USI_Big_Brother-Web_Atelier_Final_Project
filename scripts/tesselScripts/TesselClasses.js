@@ -129,19 +129,19 @@ function SenderTessel(id,moduleId) {
         console.log(rawLight)
         switch (this.module) {
             case 1:
-                return this.findPercentLight(rawLight - 496,518);
+                return this.findPercentLight(rawLight,496,1016);
                 break
             case 2:
-                return this.findPercentLight(rawLight - 190, 800);
+                return this.findPercentLight(rawLight ,190, 1016);
                 break
             case 3:
-                return this.findPercentLight(rawLight - 550, 518);
+                return this.findPercentLight(rawLight ,550, 1016);
                 break
         }
     };
 
-    this.findPercentLight = function(light, delta){
-        var normalizedLight = (100*light) / delta;
+    this.findPercentLight = function(light, min,max){
+        var normalizedLight = (light - min)/(max - min);
         console.log('****** ', normalizedLight)
         return normalizedLight
 
