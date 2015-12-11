@@ -614,8 +614,6 @@ function lightLevelCanvas() {
     context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
     context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
     context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
-    context.fillStyle = "#000000";
-    context.fillRect(0, 0, canvas.width, canvas.height);
 
     var interval = setInterval(function() {
         if (gDeviceID == 1) {
@@ -655,7 +653,7 @@ function lightLevelCanvas() {
             }
         }
         gDeviceID = 0;
-    }, 1000)
+    }, 500)
 }
 lightLevelCanvas()
 
