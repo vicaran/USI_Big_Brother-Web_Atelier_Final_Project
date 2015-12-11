@@ -11,12 +11,19 @@ var senderNodejs = function (_id,n) {
     console.log('CALLED')
     this.ws = require('./producerWS.js');
     var self = this;
+    var levelLight = 0
     this.main = function () {
         interval = setInterval(function () {
+            levelLight = levelLight + 300;
+
+            if (levelLight > 950){
+                levelLight = 450;
+            }
+
             var data = {
                 _id: self._id,
                 volume: self.n++,
-                light: 100,
+                light: levelLight,
                 temperature: 0,
                 time: Date.now()
             };

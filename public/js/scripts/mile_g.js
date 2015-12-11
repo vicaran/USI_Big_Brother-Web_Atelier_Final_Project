@@ -603,6 +603,16 @@ function lightLevelCanvas() {
 
 
     var canvas = document.getElementById('lightCanvas');
+    var switch1 = document.getElementById('myonoffswitch1');
+    var switch2 = document.getElementById('myonoffswitch2');
+    var switch3 = document.getElementById('myonoffswitch3');
+    switch1.style.visibility = "hidden";
+    switch2.style.visibility = "hidden";
+    switch3.style.visibility = "hidden";
+    switch1.checked = false;
+    switch2.checked = false;
+    switch3.checked = false;
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight / 8;
     var context = canvas.getContext('2d');
@@ -615,30 +625,38 @@ function lightLevelCanvas() {
         if (gDeviceID == 1) {
             if (gContent > 700) {
                 context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
-                context.fillStyle = "#FFFFFF";
+            } else {
+                context.globalAlpha = 0.5;
+                context.fillStyle = "#000000";
                 context.fillRect(0, 0, canvas.width / 3, canvas.height);
-                document.getElementById('myonoffswitch1').checked = true;
-            } else {
-                context.globalAlpha = 0.5
                 context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
-                document.getElementById('myonoffswitch1').checked = false;
+                switch1.style.visibility = "visible";
             }
+            gDeviceID = 0;
         } else if (gDeviceID == 2) {
-            if (gContent > 50) {
-
+            if (gContent > 700) {
+                context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
             } else {
-
+                context.globalAlpha = 0.5;
+                context.fillStyle = "#000000";
+                context.fillRect(canvas.width / 3, 0, canvas.width / 3, canvas.height);
+                context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
             }
         } else if (gDeviceID == 3) {
             if (gContent > 50) {
+                context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
 
             } else {
-
+                context.globalAlpha = 0.5;
+                context.fillStyle = "#000000";
+                context.fillRect((canvas.width / 3) * 2, 0, (canvas.width / 3) * 2, canvas.height);
+                context.drawImage(img3, canvas.width / 3, 0, canvas.width / 3, canvas.height);
             }
         }
-    }, 500)
+        gDeviceID = 0;
+    }, 100)
 }
-lightLevelCanvas()
+// lightLevelCanvas()
 
 
 //position part
