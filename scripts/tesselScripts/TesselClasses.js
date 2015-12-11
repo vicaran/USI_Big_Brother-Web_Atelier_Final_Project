@@ -9,6 +9,7 @@
  * This class holds a Tessel interface
  *
  * @param {int} id The unique identifier of the Tessel
+ * @param {int} The number of the module
  * @constructor
  */
 function MyTessel(id) {
@@ -17,6 +18,7 @@ function MyTessel(id) {
     this.ws = require("./producerWS.js");
     //  TODO check if i can make id private
     this._id = id;
+    this.module = id;
 }
 
 /**
@@ -113,7 +115,20 @@ function SenderTessel(id) {
                 red.write(0)
         }
     };
+    /**
+     * This function check the number of the module in order to normalize the light
+     *
+     * @param pin The light Sensor Pin
+     */
 
+    //this.gatherLight = function(pin){
+    //    var rawLight = lightPin.read() * lightPin.resolution;
+    //    switch (this.module){
+    //        case 0:
+    //            return rawLight -
+    //
+    //    }
+    //}
 
     /**
      * Function for reading the input from a microphone, gathering data in a window of 50ms
