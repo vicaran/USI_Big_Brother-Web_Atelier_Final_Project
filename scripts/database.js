@@ -37,6 +37,8 @@ var addToDatabase = function (data, d) {
     })
 };
 
+
+
 var retrieveData = function (id, since, to) {
     var sSince = convertMStoS(since)
     var sTo = convertMStoS(to)
@@ -44,30 +46,27 @@ var retrieveData = function (id, since, to) {
     k.stateful.get(id, function (res) {
         var parse = JSON.parse(res);
         var oldest = convertMStoS(parse[0].time);
-        var startPoint = oldest - convertMStoS(since)
+        var startPoint = oldest - convertMStoS(since);
         var finishPoint = sSince - sTo;
         var toRetrieveData = [];
-        var i = startPoint
+        var i = startPoint;
+        console.log("Startpoint: ", startPoint, " finishPoint: ", finishPoint, " index i: ", i);
         while (i <= finishPoint){
+            console.log('INDEX: ', i )
 
             toRetrieveData.push(res[i])
             i++;
 
         }
-        var toReturnJSON = {header: "database"};
+        var toSendJSON = {header: "database"};
 
-        data.push(toRetrieve);
-        console.log("data inside loop ", data)
-        var json = {header: "database"};
-        json.content = data
-        k.send(JSON.stringify(json))
+        toSendJSON.content = toRetrieveData
+        k.send(JSON.stringify(toSendJSON))
             
 
 
     });
 
-    //console.log("data ", data)
-    //return data
 };
 
 
@@ -81,11 +80,6 @@ function convertMStoS(ms){
 
     return Math.floor(ms/1000);
 }
-
-
-
-
-
 
 /**
  * Convert the date into the form of: gg/mm/yyyy
