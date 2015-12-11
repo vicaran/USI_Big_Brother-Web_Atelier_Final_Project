@@ -612,15 +612,15 @@ function lightLevelCanvas() {
 
 
     var canvas = document.getElementById('lightCanvas');
-    var switch1 = document.getElementById('myonoffswitch1');
-    var switch2 = document.getElementById('myonoffswitch2');
-    var switch3 = document.getElementById('myonoffswitch3');
+    var switch1 = document.getElementById('onoffswitch1');
+    var switch2 = document.getElementById('onoffswitch2');
+    var switch3 = document.getElementById('onoffswitch3');
     switch1.style.visibility = "hidden";
     switch2.style.visibility = "hidden";
     switch3.style.visibility = "hidden";
-    switch1.checked = false;
-    switch2.checked = false;
-    switch3.checked = false;
+    document.getElementById('myonoffswitch1').checked = false;
+    document.getElementById('myonoffswitch2').checked = false;
+    document.getElementById('myonoffswitch3').checked = false;
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight / 8;
@@ -641,7 +641,6 @@ function lightLevelCanvas() {
                 context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
                 switch1.style.visibility = "visible";
             }
-            gDeviceID = 0;
         } else if (gDeviceID == 2) {
             if (gContent > 700) {
                 context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
@@ -654,7 +653,6 @@ function lightLevelCanvas() {
         } else if (gDeviceID == 3) {
             if (gContent > 50) {
                 context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
-
             } else {
                 context.globalAlpha = 0.5;
                 context.fillStyle = "#000000";
