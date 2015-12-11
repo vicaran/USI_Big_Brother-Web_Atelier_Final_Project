@@ -780,7 +780,9 @@ function positionCanvas() {
 
 }
 
-
+function monitorLights(content){
+    console.log("This is the content in MONITOR LIGHT: ", content);
+}
 
 function editArchives(content){
     barChartDataArchieve.datasets[0].data = [];
@@ -792,9 +794,7 @@ function editArchives(content){
     var myArchBar;
     var myArchRealBar;
 
-
     var ctx_bar = document.getElementById("canvasArch").getContext("2d");
-
 
     myArchBar = new Chart(ctx_bar);
     myArchRealBar = myArchBar.Bar(barChartDataArchieve, {
@@ -804,11 +804,7 @@ function editArchives(content){
 
     });
 
-    
     myArchRealBar.destroy();
-
-
-   
 
     for(var i in content){
         var date = new Date(content[i].time).toUTCString();
