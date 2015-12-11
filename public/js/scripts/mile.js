@@ -110,14 +110,14 @@ var htmlString =
         '</canvas>'+
 
         '<div class="text-input" id="block-input1">'+
-            '<br>'+
+                '<br>'+
             '<p>'+
-            'From: '+
+                'From: '+
             '</p>'+
             '<input type="text" name="From" placeholder="Enter date" id="db-from1"/>'+
             '<p>'+
-            '<br>'+
-            'To: '+
+                '<br>'+
+                'To: '+
             '</p>'+
             '<input type="text" name="To" placeholder="Enter date" id="db-to1"/>'+
             '<span class="fa fa-search search-button" onclick="getDataFromDatabase(1)"></span>'+
