@@ -613,11 +613,13 @@ function lightLevelCanvas() {
 
     var interval = setInterval(function() {
         if (gDeviceID == 1) {
-            if (gContent > 600) {
+            if (gContent > 700) {
+                context.globalAlpha = 0.5
                 context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
                 context.fillStyle = "#FFFFFF";
                 context.fillRect(0, 0, canvas.width / 3, canvas.height);
             } else {
+                context.globalAlpha = 0.5
                 context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
             }
         } else if (gDeviceID == 2) {
