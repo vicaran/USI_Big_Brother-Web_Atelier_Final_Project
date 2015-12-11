@@ -178,6 +178,9 @@ var htmlString =
     	// '<div id="tessel1" class="tessel-button">Sector 1</div>'+
     	'</div>' +
     	'<div id="graph-container" class="">' +
+                '<div><div id="graph-selector" class="fa"> Show graphs...'+
+                '<div class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-3x"></i><i class="fa fa-angle-up fa-stack-2x"></i><i class="fa fa-angle-down fa-stack-1x"></i></div>'+
+                '</div></div>'+
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
                 '<div class="graph-group">'+
 				    '<div id="newdata0" style="display:none;">'+sensors.length +
