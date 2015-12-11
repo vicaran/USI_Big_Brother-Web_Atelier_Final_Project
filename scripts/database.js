@@ -62,7 +62,7 @@ var addToDatabase = function (data, d) {
 
 
         }
-        console.log('Found: ', )
+        console.log('Found: ', toRetrieveData )
         var toSendJSON = {header: "database"};
         toSendJSON.content = toRetrieveData;
         k.send(JSON.stringify(toSendJSON))
