@@ -40,8 +40,8 @@ var addToDatabase = function (data, d) {
 
 
 var retrieveData = function (id, since, to) {
-    var sSince = convertMStoS(since)
-    var sTo = convertMStoS(to)
+    var sSince = convertMStoS(since);
+    var sTo = convertMStoS(to);
 
     k.stateful.get(id, function (res) {
         var parse = JSON.parse(res);
@@ -58,12 +58,10 @@ var retrieveData = function (id, since, to) {
             i++;
 
         }
+        console.log('DATA: ', toRetrieveData);
         var toSendJSON = {header: "database"};
-
-        toSendJSON.content = toRetrieveData
+        toSendJSON.content = toRetrieveData;
         k.send(JSON.stringify(toSendJSON))
-            
-
 
     });
 
