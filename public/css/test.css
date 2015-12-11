@@ -2211,7 +2211,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     border-radius: 25%;
     background-color: #181A1F;
 }
-.graph-selector{
+#graph-selector{
     margin-left: 50px;
     border-radius: 25px;
     border: 2px, #BEBDBF;
