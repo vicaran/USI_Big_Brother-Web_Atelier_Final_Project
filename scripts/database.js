@@ -48,8 +48,11 @@ var addToDatabase = function (data, d) {
     k.stateful.get(id, function (res) {
         var parse = JSON.parse(res);
         var oldest = parse[0].time;
+        console.log("Since: ", since, " to: ", to)
         var startPoint =  since - oldest;
+        startPoint = convertMStoS(startPoint)
         var finishPoint = to - since;
+        finishPoint = convertMStoS(finishPoint)
         var toRetrieveData = [];
         var i = startPoint;
         console.log("Startpoint: ", startPoint, " finishPoint: ", finishPoint, " index i: ", i, " oldest ", oldest);
