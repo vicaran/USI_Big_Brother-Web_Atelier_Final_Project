@@ -44,8 +44,7 @@ var addToDatabase = function (data, d) {
  * @param since The starting point
  * @param to The finish point
  */
-
-var retrieveData = function (id, since, to) {
+ var retrieveData = function (id, since, to) {
     var sSince = convertMStoS(since);
     var sTo = convertMStoS(to);
 
@@ -57,7 +56,7 @@ var retrieveData = function (id, since, to) {
         var toRetrieveData = [];
         var i = startPoint;
         console.log("Startpoint: ", startPoint, " finishPoint: ", finishPoint, " index i: ", i);
-        while (i <= finishPoint){
+        while (i <= startPoint + finishPoint){
             console.log('INDEX: ', i )
 
             toRetrieveData.push(res[i]);
