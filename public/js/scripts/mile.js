@@ -161,8 +161,6 @@ var htmlString =
     	// ---Andrea's Implementation :)
 		'<canvas id="lightCanvas" class="canvasSize">'+
         'Your browser does not support the canvas element.'+
-        '</canvas>'+
-        // '<button class="fa fa-search search-button" onclick="turnOnLight(1)"></button>'+
         '<div class="onoffswitch1">'+
             '<input type="checkbox" name="onoffswitch1" class="onoffswitch-checkbox1" id="myonoffswitch1" checked>'+
             '<label class="onoffswitch-label1" for="myonoffswitch1">'+
@@ -170,6 +168,9 @@ var htmlString =
                 '<span class="onoffswitch-switch1"></span>'+
             '</label>'+
         '</div>'+
+        '</canvas>'+
+        // '<button class="fa fa-search search-button" onclick="turnOnLight(1)"></button>'+
+        
 
         '<div class="onoffswitch2">'+
             '<input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox2" id="myonoffswitch2" checked>'+
