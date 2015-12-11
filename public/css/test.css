@@ -2211,7 +2211,12 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     border-radius: 25%;
     background-color: #181A1F;
 }
-
+.graph-selector{
+    margin-left: 50px;
+    border-radius: 25px;
+    border: 2px, #BEBDBF;
+    border-right: none;
+}
 .search-button{
     background-color:  rgba(51,56,63,0.6); 
     border-left: 1px grey;
