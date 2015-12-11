@@ -59,8 +59,6 @@ var addToDatabase = function (data, d) {
         while (i < startPoint + finishPoint){
             toRetrieveData.push(parse[i]);
             i++;
-
-
         }
         console.log('Found: ', toRetrieveData )
         var toSendJSON = {header: "database"};
