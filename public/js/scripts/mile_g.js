@@ -615,8 +615,6 @@ function lightLevelCanvas() {
         if (gDeviceID == 1) {
             if (gContent > 700) {
                 context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
-                context.fillStyle = "#FFFFFF";
-                context.fillRect(0, 0, canvas.width / 3, canvas.height);
                 document.getElementById('myonoffswitch1').checked = true;
             } else {
                 context.globalAlpha = 0.5
