@@ -435,14 +435,20 @@ var updateGraphBar1 = function(volume, light, temp, time) {
 function getDataFromDatabase(deviceID){
     var buttons = document.getElementsByClassName('search-button');
     if(deviceID == 1){
-        buttons[0].style.backgroundColor = "black";
+        buttons[0].style.backgroundColor = "rgba(51,56,63,1)";
         var transition = setTimeout(function(){
             buttons[0].style.backgroundColor = "rgba(51,56,63,0.6)";
-        },500);
-    }else if(deviceID == 1){
-        buttons[1].style.backgroundColor = "black";
-    }else if(deviceID == 1){
-        buttons[2].style.backgroundColor = "black";
+        },250);
+    }else if(deviceID == 2){
+        buttons[1].style.backgroundColor = "rgba(51,56,63,1)";
+        var transition = setTimeout(function(){
+            buttons[1].style.backgroundColor = "rgba(51,56,63,0.6)";
+        },250);
+    }else if(deviceID == 3){
+        buttons[2].style.backgroundColor = "rgba(51,56,63,1)";
+        var transition = setTimeout(function(){
+            buttons[2].style.backgroundColor = "rgba(51,56,63,0.6)";
+        },250);
     }
     var fromDateElementID = "db-from" + deviceID;
     var toDateElementID = "db-to" + deviceID;
