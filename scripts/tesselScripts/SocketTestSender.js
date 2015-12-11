@@ -19,7 +19,7 @@ var senderNodejs = function (_id,n) {
                 levelLight ++;
             }, 10)
             
-            if (levelLight == 950){
+            if (levelLight > 950){
                 levelLight = 450;
             }
 
