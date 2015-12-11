@@ -201,8 +201,8 @@ var htmlString =
     	'<div id="graph-container" class="">' +
                 '<div>'+
                     '<div id="graph-selector" class="fa"> Show graphs...</div>'+
-                    '<div class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-1x"></i><i class="fa fa-sort-down fa-stack-1x"></i></div>'+
-                    '<div class="fa fa-sort-up fa-stack-1x"></div>'+
+                    '<div class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-sort-down fa-stack-1x"></i></div>'+
+                    '<div class="fa fa-sort-up"></div>'+
                     '<div>'+
                         '<div>Gauthier</div>'+
                         '<div>Andrea</div>'+
