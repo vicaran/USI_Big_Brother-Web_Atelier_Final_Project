@@ -120,31 +120,31 @@ var barChartData1 = {
 };
 
 var barChartDataArchieve = {
-    labels: [],
-    datasets: [{
-        label: "volume Data Set",
-        fillColor: "rgba(215,54,139,0.2)",
-        strokeColor: "rgba(215,54,139,0.8)",
-        highlightFill: "#fff",
-        highlightStroke: "rgba(215,54,139,0.8)",
-        data: []
-    }, {
-        label: "light Data Set",
-        fillColor: "rgba(151,187,205,0.2)",
-        strokeColor: "rgba(151,187,205,1)",
-        highlightFill: "#fff",
-        highlightStroke: "rgba(151,187,205,1)",
-        data: []
-    }, {
-        label: "temp Data Set",
-        fillColor: "rgba(241,85,45,0.2)",
-        strokeColor: "rgba(241,85,45,1)",
-        highlightFill: "#fff",
-        highlightStroke: "rgba(151,187,205,1)",
-        data: []
-    }, ]
-}
-// Navbar implementation
+        labels: [],
+        datasets: [{
+            label: "volume Data Set",
+            fillColor: "rgba(215,54,139,0.2)",
+            strokeColor: "rgba(215,54,139,0.8)",
+            highlightFill: "#fff",
+            highlightStroke: "rgba(215,54,139,0.8)",
+            data: []
+        }, {
+            label: "light Data Set",
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            highlightFill: "#fff",
+            highlightStroke: "rgba(151,187,205,1)",
+            data: []
+        }, {
+            label: "temp Data Set",
+            fillColor: "rgba(241,85,45,0.2)",
+            strokeColor: "rgba(241,85,45,1)",
+            highlightFill: "#fff",
+            highlightStroke: "rgba(151,187,205,1)",
+            data: []
+        }, ]
+    }
+    // Navbar implementation
 var current_page = current_page || 'graph-container';
 document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
 // document.getElementById(current_page).setAttribute('style', 'display', '');
@@ -432,23 +432,23 @@ var updateGraphBar1 = function(volume, light, temp, time) {
 }
 
 //Submit button old data
-function getDataFromDatabase(deviceID){
+function getDataFromDatabase(deviceID) {
     var buttons = document.getElementsByClassName('search-button');
-    if(deviceID == 1){
+    if (deviceID == 1) {
         buttons[0].style.backgroundColor = "rgba(51,56,63,1)";
-        var transition = setTimeout(function(){
+        var transition = setTimeout(function() {
             buttons[0].style.backgroundColor = "rgba(51,56,63,0.6)";
-        },250);
-    }else if(deviceID == 2){
+        }, 250);
+    } else if (deviceID == 2) {
         buttons[1].style.backgroundColor = "rgba(51,56,63,1)";
-        var transition = setTimeout(function(){
+        var transition = setTimeout(function() {
             buttons[1].style.backgroundColor = "rgba(51,56,63,0.6)";
-        },250);
-    }else if(deviceID == 3){
+        }, 250);
+    } else if (deviceID == 3) {
         buttons[2].style.backgroundColor = "rgba(51,56,63,1)";
-        var transition = setTimeout(function(){
+        var transition = setTimeout(function() {
             buttons[2].style.backgroundColor = "rgba(51,56,63,0.6)";
-        },250);
+        }, 250);
     }
     var fromDateElementID = "db-from" + deviceID;
     var toDateElementID = "db-to" + deviceID;
@@ -461,11 +461,16 @@ function getDataFromDatabase(deviceID){
 
     var timestampFrom = from.value
     var timestampTo = to.value
-    producer_handler(JSON.stringify({header: "browser" , from: timestampFrom, to: timestampTo, id:deviceID}), 'producer')
+    producer_handler(JSON.stringify({
+        header: "browser",
+        from: timestampFrom,
+        to: timestampTo,
+        id: deviceID
+    }), 'producer')
 }
 
 //Turn on button
-function turnOnLight(deviceID){
+function turnOnLight(deviceID) {
     console.log('Che bello questo e id:', deviceID);
 }
 
@@ -571,17 +576,17 @@ function audioLevelCanvas() {
 // audioLevelCanvas();
 
 //light part
-function lightLevelCanvas() {
-    var audio1 = 10;
-    var audio2 = 80;
-    var audio3 = 23;
+var gDeviceID;
+var gContent;
 
+function monitorLights(deviceID, content) {
+    console.log("This is the content in MONITOR LIGHT: ", content);
+    gDeviceID = deviceID;
+    gContent = content;
+}
+
+function lightLevelCanvas() {
     function writeMessage(canvas, message) {
-        // var context = canvas.getContext('2d');
-        // context.clearRect(0, 0, canvas.width, canvas.height);
-        // context.font = '18pt Calibri';
-        // context.fillStyle = 'black';
-        // context.fillText(message, 10, 25);
         console.log('Clicked on:', message);
     }
 
@@ -610,80 +615,29 @@ function lightLevelCanvas() {
     context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
     context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
 
-    canvas.addEventListener('click', function(evt) {
-        var mousePos = getMousePos(canvas, evt);
-        // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
-        if (mousePos.x > -1 && mousePos.x < 300) {
-            var message = "Part1";
-            choose.style.visibility = "visible";
-
-        } else if (mousePos.x > 300 && mousePos.x < 600) {
-            var message = "Part2";
-            choose.style.visibility = "visible";
-        } else if (mousePos.x > 600 && mousePos.x < 900) {
-            var message = "Part3";
-        }
-        writeMessage(canvas, message);
-    }, false);
-
     var interval = setInterval(function() {
-        audio1++;
-        audio2--;
-        audio3++;
-        if (audio1 == 80) {
-            audio1 = 0;
-        }
+        if (gDeviceID == 1) {
+            if (gContent > 600) {
+                context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
+                context.fillStyle = "#FFFFFF";
+                context.fillRect(0, 0, canvas.width / 3, canvas.height);
+            } else {
+                context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
+            }
+        } else if (gDeviceID == 2) {
+            if (gContent > 50) {
 
-        if (audio2 == 0) {
-            audio2 = 80;
-        }
+            } else {
 
-        if (audio3 == 80 || audio3 == 0) {
-            audio2 = 23;
-        }
+            }
+        } else if (gDeviceID == 3) {
+            if (gContent > 50) {
 
-        if (audio1 < 20) {
-            context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
-            context.fillStyle = "#00FF00";
-            context.fillRect(0, 0, canvas.width / 3, canvas.height);
-        } else if (audio1 > 20 && audio1 < 50) {
-            context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
-            context.fillStyle = "#0000FF";
-            context.fillRect(0, 0, canvas.width / 3, canvas.height);
-        } else if (audio1 > 50) {
-            context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
-            context.fillStyle = "#FF0000";
-            context.fillRect(0, 0, canvas.width / 3, canvas.height);
-        }
+            } else {
 
-        if (audio2 < 20) {
-            context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
-            context.fillStyle = "#00FF00";
-            context.fillRect(canvas.width / 3, 0, canvas.width / 3, canvas.height);
-        } else if (audio2 > 20 && audio2 < 50) {
-            context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
-            context.fillStyle = "#0000FF";
-            context.fillRect(canvas.width / 3, 0, canvas.width / 3, canvas.height);
-        } else if (audio2 > 50) {
-            context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
-            context.fillStyle = "#FF0000";
-            context.fillRect(canvas.width / 3, 0, canvas.width / 3, canvas.height);
+            }
         }
-
-        if (audio3 < 20) {
-            context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
-            context.fillStyle = "#00FF00";
-            context.fillRect((canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
-        } else if (audio3 > 20 && audio3 < 50) {
-            context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
-            context.fillStyle = "#0000FF";
-            context.fillRect((canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
-        } else if (audio3 > 50) {
-            context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
-            context.fillStyle = "#FF0000";
-            context.fillRect((canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
-        }
-    }, 100)
+    }, 500)
 }
 // lightLevelCanvas()
 
@@ -779,12 +733,10 @@ function positionCanvas() {
     }, false);
 
 }
+positionCanvas();
 
-function monitorLights(DeviceID, content){
-    console.log("This is the content in MONITOR LIGHT: ", content);
-}
 
-function editArchives(content){
+function editArchives(content) {
     barChartDataArchieve.datasets[0].data = [];
     barChartDataArchieve.datasets[1].data = [];
     barChartDataArchieve.datasets[2].data = [];
@@ -806,7 +758,7 @@ function editArchives(content){
 
     myArchRealBar.destroy();
 
-    for(var i in content){
+    for (var i in content) {
         var date = new Date(content[i].time).toUTCString();
         date = date.split(' ')[4]
 
@@ -824,18 +776,5 @@ function editArchives(content){
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-positionCanvas()
 
 //<------------------------------------------------>
