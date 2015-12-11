@@ -159,10 +159,8 @@ var htmlString =
     	'<div id="light-bulb" class="hidden">'+
     	// Here we make the buttons for the tessel
     	// ---Andrea's Implementation :)
-        '<div>'+
 		'<canvas id="lightCanvas" class="canvasSize">'+
         'Your browser does not support the canvas element.'+
-
         '</canvas>'+
         '<div class="onoffswitch1">'+
             '<input type="checkbox" name="onoffswitch1" class="onoffswitch-checkbox1" id="myonoffswitch1" checked>'+
@@ -171,10 +169,7 @@ var htmlString =
                 '<span class="onoffswitch-switch1"></span>'+
             '</label>'+
         '</div>'+
-        '</div>'+
         // '<button class="fa fa-search search-button" onclick="turnOnLight(1)"></button>'+
-        
-
         '<div class="onoffswitch2">'+
             '<input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox2" id="myonoffswitch2" checked>'+
             '<label class="onoffswitch-label2" for="myonoffswitch2">'+
