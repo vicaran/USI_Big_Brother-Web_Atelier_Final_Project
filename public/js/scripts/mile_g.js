@@ -433,6 +433,14 @@ var updateGraphBar1 = function(volume, light, temp, time) {
 
 //Submit button old data
 function getDataFromDatabase(deviceID){
+    var buttons = document.getElementsByClassName('search-button');
+    if(deviceID == 1){
+        buttons[0].style.backgroundColor = "black";
+    }else if(deviceID == 1){
+        buttons[1].style.backgroundColor = "black";
+    }else if(deviceID == 1){
+        buttons[2].style.backgroundColor = "black";
+    }
     var fromDateElementID = "db-from" + deviceID;
     var toDateElementID = "db-to" + deviceID;
     console.log('Che bello questo e id:', deviceID);
