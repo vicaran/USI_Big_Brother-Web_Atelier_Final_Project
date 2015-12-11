@@ -25,6 +25,7 @@ k.createNode(function(data){
         // var data = JSON.parse(data);
         console.log("browser request", data)
         k.send(JSON.stringify(data));
+        k.callFunction("monitorLights", [data.content[0]])
 
 
     }else if(data.header === "database"){
@@ -169,21 +170,21 @@ var htmlString =
             '</label>'+
         '</div>'+
 
-        // '<div class="onoffswitch">'+
-        //     '<input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox2" id="myonoffswitch2" checked>'+
-        //     '<label class="onoffswitch-label2" for="myonoffswitch2">'+
-        //         '<span class="onoffswitch-inner2"></span>'+
-        //         '<span class="onoffswitch-switch2"></span>'+
-        //     '</label>'+
-        // '</div>'+
+        '<div class="onoffswitch2">'+
+            '<input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox2" id="myonoffswitch2" checked>'+
+            '<label class="onoffswitch-label2" for="myonoffswitch2">'+
+                '<span class="onoffswitch-inner2"></span>'+
+                '<span class="onoffswitch-switch2"></span>'+
+            '</label>'+
+        '</div>'+
 
-        // '<div class="onoffswitch">'+
-        //     '<input type="checkbox" name="onoffswitch3" class="onoffswitch-checkbox3" id="myonoffswitch3" checked>'+
-        //     '<label class="onoffswitch-label3" for="myonoffswitch3">'+
-        //         '<span class="onoffswitch-inner3"></span>'+
-        //         '<span class="onoffswitch-switch3"></span>'+
-        //     '</label>'+
-        // '</div>'+
+        '<div class="onoffswitch3">'+
+            '<input type="checkbox" name="onoffswitch3" class="onoffswitch-checkbox3" id="myonoffswitch3" checked>'+
+            '<label class="onoffswitch-label3" for="myonoffswitch3">'+
+                '<span class="onoffswitch-inner3"></span>'+
+                '<span class="onoffswitch-switch3"></span>'+
+            '</label>'+
+        '</div>'+
 		// ---------------------------
     	'</div>' +
     	'<div id="graph-container" class="">' +
