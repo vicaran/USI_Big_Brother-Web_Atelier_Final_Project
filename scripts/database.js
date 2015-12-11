@@ -55,8 +55,9 @@ var addToDatabase = function (data, d) {
         finishPoint = convertMStoS(finishPoint)
         var toRetrieveData = [];
         var i = startPoint;
+        i ++;
         console.log("Startpoint: ", startPoint, " finishPoint: ", finishPoint, " index i: ", i, " oldest ", oldest);
-        while (i <= startPoint + finishPoint){
+        while (i < startPoint + finishPoint){
             console.log('INDEX: ', i )
 
             toRetrieveData.push(parse[i]);
