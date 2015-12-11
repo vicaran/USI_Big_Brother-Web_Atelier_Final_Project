@@ -121,7 +121,7 @@ function SenderTessel(id,moduleId) {
     /**
      * This function check the number of the module in order to normalize the light
      *
-     * @param pin The light Sensor Pin
+     * @param lightPin The light Sensor Pin
      */
 
     this.gatherLight = function (lightPin) {
@@ -132,16 +132,22 @@ function SenderTessel(id,moduleId) {
                 return this.findPercentLight(rawLight,496,1016);
                 break
             case 2:
-                return this.findPercentLight(rawLight ,190, 1016);
+                return this.findPercentLight(rawLight ,550, 1016);
                 break
             case 3:
-                return this.findPercentLight(rawLight ,550, 1016);
+                return this.findPercentLight(rawLight ,190, 1016);
                 break
         }
     };
 
     this.findPercentLight = function(light, min,max){
         var normalizedLight = (light - min)/(max - min);
+        var delta = max - min;
+        console.log(delta)
+        var x = delta/458
+        console.log('x: ', x)
+        console.log('normal: ', normalizedLight)
+        normalizedLight *= x
         console.log('****** ', normalizedLight)
         return normalizedLight
 
