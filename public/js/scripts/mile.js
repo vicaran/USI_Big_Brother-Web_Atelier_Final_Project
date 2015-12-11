@@ -133,11 +133,11 @@ var htmlString =
 
         '<div class="text-input" id="block-input2">'+
             '<br>'+
-            '<p class="fa fa-hourglass-start">'+
+            '<p>'+
             'From: '+
             '</p>'+
             '<input type="text" name="From" placeholder="Enter date" id="db-from2"/>'+
-            '<p class="fa fa-hourglass-end">'+
+            '<p>'+
             '<br>'+
             'To: '+
             '</p>'+
