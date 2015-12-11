@@ -623,20 +623,33 @@ function lightLevelCanvas() {
                 context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
                 document.getElementById('myonoffswitch1').checked = false;
             }
+            gDeviceID = 0;
         } else if (gDeviceID == 2) {
-            if (gContent > 50) {
-
+            if (gContent > 700) {
+                context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
+                context.fillStyle = "#FFFFFF";
+                context.fillRect(0, 0, canvas.width / 3, canvas.height);
+                document.getElementById('myonoffswitch1').checked = true;
             } else {
-
+                context.globalAlpha = 0.5
+                context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
+                document.getElementById('myonoffswitch1').checked = false;
             }
         } else if (gDeviceID == 3) {
             if (gContent > 50) {
+                context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
+                context.fillStyle = "#FFFFFF";
+                context.fillRect(0, 0, (canvas.width / 3) * 2, canvas.height);
+                document.getElementById('myonoffswitch1').checked = true;
 
             } else {
-
+                context.globalAlpha = 0.5
+                context.drawImage(img3, canvas.width / 3, 0, canvas.width / 3, canvas.height);
+                document.getElementById('myonoffswitch1').checked = false;
             }
         }
-    }, 500)
+        gDeviceID = 0;
+    }, 1000)
 }
 lightLevelCanvas()
 
