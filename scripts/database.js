@@ -38,18 +38,23 @@ var addToDatabase = function (data, d) {
 };
 
 var retrieveData = function (id, since, to) {
-    var retrivedData = [];
-    
+    var sSince = convertMStoS(since)
+    var sTo = convertMStoS(to)
+
     k.stateful.get(id, function (res) {
-        var toRetrieve = [];
-        var res = JSON.parse(res);
-         //console.log("res ", res)
-         // fist element of the array that is the oldest
-        for(vai in res){
-            if(since <= res[i].time & res[i].time <= to){
-                toRetrieve.push(res[i])
-            }
+        var parse = JSON.parse(res);
+        var oldest = convertMStoS(parse[0].time);
+        var startPoint = oldest - convertMStoS(since)
+        var finishPoint = sSince - sTo;
+        var toRetrieveData = [];
+        var i = startPoint
+        while (i <= finishPoint){
+
+            toRetrieveData.push(res[i])
+            i++;
+
         }
+        var toReturnJSON = {header: "database"};
 
         data.push(toRetrieve);
         console.log("data inside loop ", data)
@@ -59,7 +64,7 @@ var retrieveData = function (id, since, to) {
             
 
 
-    })
+    });
 
     //console.log("data ", data)
     //return data
