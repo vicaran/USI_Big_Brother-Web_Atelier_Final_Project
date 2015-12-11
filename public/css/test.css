@@ -2172,11 +2172,17 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 
 }
 
-.canvasSize{
+.canvasSizeLights{
         width: 100%;
         height: 30%;
         border:5px solid #d3d3d3;
         position: fixed;
+}
+
+.canvasSize{
+        width: 100%;
+        height: 30%;
+        border:5px solid #d3d3d3;
 }
 
 .light_graph_key {
@@ -2233,9 +2239,8 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 }
 
 #light-bulb{
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 5%; 
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #db-from{
@@ -2244,6 +2249,10 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 /**
 SWITCHES
 **/
+
+.orderSwitches {
+    display: flex;
+}
 .onoffswitch1 {
     position: relative; width: 90px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
