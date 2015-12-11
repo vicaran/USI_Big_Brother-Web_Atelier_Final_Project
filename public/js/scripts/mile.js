@@ -158,7 +158,7 @@ var htmlString =
             '</p>'+
             '<input type="text" name="From" placeholder="Enter date" id="db-to3"/>'+
             '<span class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></span>'+
-            '<button class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></button>'+
+            // '<button class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></button>'+
         '</div>'+
        '<canvas id="canvasArch" width="400px" height="400px"></canvas>'+
     '</div>'+

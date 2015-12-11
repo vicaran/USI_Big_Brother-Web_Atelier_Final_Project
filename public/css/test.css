@@ -2138,6 +2138,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     float:left;
     position: relative;
     left: 30px;
+    color: #BEBDBF;
 }
 
 .key {
@@ -2215,6 +2216,14 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     background-color:  rgba(51,56,63,0.6); 
     border-left: 1px grey;
     color : #BEBDBF;
+    padding: 0.5em;
+    position: relative;
+    top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.search-button:selected{
+    border: 1px, #A5BDD7;
 }
 
 #light-bulb{
