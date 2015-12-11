@@ -614,13 +614,14 @@ function lightLevelCanvas() {
     var interval = setInterval(function() {
         if (gDeviceID == 1) {
             if (gContent > 700) {
-                context.globalAlpha = 0.5
                 context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
                 context.fillStyle = "#FFFFFF";
                 context.fillRect(0, 0, canvas.width / 3, canvas.height);
+                document.getElementById('myonoffswitch1').checked = true;
             } else {
                 context.globalAlpha = 0.5
                 context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
+                document.getElementById('myonoffswitch1').checked = false;
             }
         } else if (gDeviceID == 2) {
             if (gContent > 50) {
