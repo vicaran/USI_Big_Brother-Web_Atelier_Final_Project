@@ -655,7 +655,7 @@ function lightLevelCanvas() {
         gDeviceID = 0;
     }, 100)
 }
-lightLevelCanvas()
+// lightLevelCanvas()
 
 
 //position part
