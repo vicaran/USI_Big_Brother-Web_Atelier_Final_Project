@@ -459,12 +459,13 @@ function getDataFromDatabase(deviceID) {
     var from = document.getElementById(fromDateElementID);
     var to = document.getElementById(toDateElementID);
 
-    var timestampFrom = from.value
-    var timestampTo = to.value
+
+    var timestampFrom = new Date(from.value);
+    var timestampTo = new Date(to.value);
     producer_handler(JSON.stringify({
         header: "browser",
-        from: timestampFrom,
-        to: timestampTo,
+        from: timestampFrom.getTime(),
+        to: timestampTo.getTime(),
         id: deviceID
     }), 'producer')
 }
