@@ -761,6 +761,7 @@ positionCanvas();
 
 
 function editArchives(content) {
+    console.log("content  ", content);
     barChartDataArchieve.datasets[0].data = [];
     barChartDataArchieve.datasets[1].data = [];
     barChartDataArchieve.datasets[2].data = [];
@@ -783,6 +784,7 @@ function editArchives(content) {
     myArchRealBar.destroy();
 
     for (var i in content) {
+        console.log("i ", i);
         var date = new Date(content[i].time).toUTCString();
         date = date.split(' ')[4]
 
