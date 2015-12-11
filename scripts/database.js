@@ -44,8 +44,7 @@ var addToDatabase = function (data, d) {
  * @param since The starting point
  * @param to The finish point
  */
-
-var retrieveData = function (id, since, to) {
+ var retrieveData = function (id, since, to) {
     var sSince = convertMStoS(since);
     var sTo = convertMStoS(to);
 

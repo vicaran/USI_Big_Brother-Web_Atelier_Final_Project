@@ -114,7 +114,7 @@ var htmlString =
             '<p>'+
             'From: '+
             '</p>'+
-            '<input type="text" name="From" placeholder="Enter date" id="db-from1"/>'+
+            '<input type="text" name="From" placeholder=""mm/dd/yyyy hh:mm:ss"" id="db-from1"/>'+
             '<p>'+
             '<br>'+
             'To: '+
@@ -129,12 +129,12 @@ var htmlString =
             '<p>'+
             'From: '+
             '</p>'+
-            '<input type="text" name="From" placeholder="Enter date" id="db-from2"/>'+
+            '<input type="text" name="From" placeholder=""mm/dd/yyyy hh:mm:ss"" id="db-from2"/>'+
             '<p>'+
             '<br>'+
             'To: '+
             '</p>'+
-            '<input type="text" name="To" placeholder="Enter date" id="db-to2"/>'+
+            '<input type="text" name="To" placeholder=""mm/dd/yyyy hh:mm:ss"" id="db-to2"/>'+
             '<span class="fa fa-search search-button" onclick="getDataFromDatabase(2)"></span>'+
             // '<button class="fa fa-search search-button" onclick="getDataFromDatabase(2)"></button>'+
         '</div>'+
@@ -144,12 +144,12 @@ var htmlString =
             '<p>'+
             'From: '+
             '</p>'+
-            '<input type="text" name="From" placeholder="Enter date" id="db-from3"/>'+
+            '<input type="text" name="From" placeholder=""mm/dd/yyyy hh:mm:ss"" id="db-from3"/>'+
             '<p>'+
             '<br>'+
             'To: '+
             '</p>'+
-            '<input type="text" name="To" placeholder="Enter date" id="db-to3"/>'+
+            '<input type="text" name="To" placeholder=""mm/dd/yyyy hh:mm:ss"" id="db-to3"/>'+
             '<span class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></span>'+
             // '<button class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></button>'+
         '</div>'+
