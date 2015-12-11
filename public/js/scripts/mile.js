@@ -202,11 +202,13 @@ var htmlString =
                 '<div>'+
                     '<div id="graph-selector" class="fa"> Show graphs...</div>'+
                     '<div class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-sort-down fa-stack-1x"></i></div>'+
-                    '<div class="fa fa-sort-up"></div>'+
                     '<div>'+
-                        '<div>Gauthier</div>'+
-                        '<div>Andrea</div>'+
-                        '<div>Zuppi</div>'+
+                        '<div class="fa fa-sort-up"></div>'+
+                        '<div>'+
+                            '<div>Gauthier</div>'+
+                            '<div>Andrea</div>'+
+                            '<div>Zuppi</div>'+
+                        '</div>'+
                     '</div>'+
                 '</div>'+
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
