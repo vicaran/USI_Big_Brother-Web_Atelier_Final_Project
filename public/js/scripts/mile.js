@@ -25,12 +25,11 @@ k.createNode(function(data){
         // var data = JSON.parse(data);
         console.log("browser request", data)
         k.send(JSON.stringify(data));
-        k.callFunction("monitorLights", [data.content[0]])
+        k.callFunction("monitorLights", data)
 
 
     }else if(data.header === "database"){
         console.log("database data", data)
-
         k.callFunction("editArchives", [data.content[0]])
 
     }else{
