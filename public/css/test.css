@@ -2245,8 +2245,11 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     display:block;
 }
 #menu-useless-arrow{
-    margin-left: 90px;
     color: #BEBDBF;
+    display: flex;
+    position: relative;
+    padding-left: 110px;
+    margin-left: 50px;
 }
 
 #db-from{
