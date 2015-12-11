@@ -653,7 +653,7 @@ function lightLevelCanvas() {
             }
         }
         gDeviceID = 0;
-    }, 300)
+    }, 100)
 }
 lightLevelCanvas()
 
