@@ -91,7 +91,7 @@ var htmlString =
     	about_section +
     	'</div>' +
     	// DATABASE GRAPHS
-    	'<div id="old-graphs" class="hidden">'+
+        '<div id="old-graphs" class="hidden">'+
         // ---Andrea's Implementation :)
         '<p>'+
             'Click the part of the openspace you want to receive information about.'+
@@ -152,11 +152,29 @@ var htmlString =
         '</canvas>'+
         // '<button class="fa fa-search search-button" onclick="turnOnLight(1)"></button>'+
         '<div class="onoffswitch">'+
-        '<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">'+
-        '<label class="onoffswitch-label" for="myonoffswitch"></label>'+
+            '<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>'+
+            '<label class="onoffswitch-label" for="myonoffswitch">'+
+                '<span class="onoffswitch-inner"></span>'+
+                '<span class="onoffswitch-switch"></span>'+
+            '</label>'+
+        '</div>'+
+
+        '<div class="onoffswitch">'+
+            '<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>'+
+            '<label class="onoffswitch-label" for="myonoffswitch">'+
+                '<span class="onoffswitch-inner"></span>'+
+                '<span class="onoffswitch-switch"></span>'+
+            '</label>'+
+        '</div>'+
+
+        '<div class="onoffswitch">'+
+            '<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>'+
+            '<label class="onoffswitch-label" for="myonoffswitch">'+
+                '<span class="onoffswitch-inner"></span>'+
+                '<span class="onoffswitch-switch"></span>'+
+            '</label>'+
         '</div>'+
 		// ---------------------------
-    	// '<div id="tessel1" class="tessel-button">Sector 1</div>'+
     	'</div>' +
     	'<div id="graph-container" class="">' +
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
