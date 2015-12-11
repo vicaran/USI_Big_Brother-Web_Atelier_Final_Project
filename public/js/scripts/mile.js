@@ -54,10 +54,6 @@ var about_section = '<div class="fa card">'+
 'Donec molestie maximus velit, vitae venenatis massa tristique non. Aliquam erat volutpat. Duis imperdiet tempor elit ut sollicitudin. Fusce at purus vehicula, venenatis libero sit amet, faucibus eros. Maecenas id aliquam magna. Maecenas scelerisque sapien a metus iaculis facilisis. Duis tincidunt scelerisque sem et tempus. Phasellus iaculis tellus in ex pretium, a pellentesque justo pretium. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam bibendum aliquet dui, sollicitudin pharetra lectus dapibus in. Nullam porta erat ut pellentesque tristique.</div>'+
 '</div>'
 
-
-
-
-
 var legend = '<div class="key">'+
             	'<div style="padding-left: 11px">LEGEND</div>'+
             	'<div class="key_entry">'+
@@ -71,11 +67,6 @@ var legend = '<div class="key">'+
                 '<div>Temp</div>'+
                 '</div>'+
         	'</div>'
-
-
-
-
-
 
 var htmlString = 
 // HEADER
@@ -106,7 +97,7 @@ var htmlString =
     	about_section +
     	'</div>' +
     	// DATABASE GRAPHS
-    	'<div id="old-graphs" class="hidden">'+
+        '<div id="old-graphs" class="hidden">'+
         // ---Andrea's Implementation :)
         '<p>'+
             'Click the part of the openspace you want to receive information about.'+
@@ -170,12 +161,30 @@ var htmlString =
         'Your browser does not support the canvas element.'+
         '</canvas>'+
         // '<button class="fa fa-search search-button" onclick="turnOnLight(1)"></button>'+
-        '<div class="onoffswitch">'+
-        '<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">'+
-        '<label class="onoffswitch-label" for="myonoffswitch"></label>'+
+        '<div class="onoffswitch1">'+
+            '<input type="checkbox" name="onoffswitch1" class="onoffswitch-checkbox1" id="myonoffswitch1" checked>'+
+            '<label class="onoffswitch-label1" for="myonoffswitch1">'+
+                '<span class="onoffswitch-inner1"></span>'+
+                '<span class="onoffswitch-switch1"></span>'+
+            '</label>'+
         '</div>'+
+
+        // '<div class="onoffswitch">'+
+        //     '<input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox2" id="myonoffswitch2" checked>'+
+        //     '<label class="onoffswitch-label2" for="myonoffswitch2">'+
+        //         '<span class="onoffswitch-inner2"></span>'+
+        //         '<span class="onoffswitch-switch2"></span>'+
+        //     '</label>'+
+        // '</div>'+
+
+        // '<div class="onoffswitch">'+
+        //     '<input type="checkbox" name="onoffswitch3" class="onoffswitch-checkbox3" id="myonoffswitch3" checked>'+
+        //     '<label class="onoffswitch-label3" for="myonoffswitch3">'+
+        //         '<span class="onoffswitch-inner3"></span>'+
+        //         '<span class="onoffswitch-switch3"></span>'+
+        //     '</label>'+
+        // '</div>'+
 		// ---------------------------
-    	// '<div id="tessel1" class="tessel-button">Sector 1</div>'+
     	'</div>' +
     	'<div id="graph-container" class="">' +
                 '<div><div id="graph-selector" class="fa"> Show graphs...'+
