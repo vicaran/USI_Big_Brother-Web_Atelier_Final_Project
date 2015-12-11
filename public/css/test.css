@@ -2176,6 +2176,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
         width: 100%;
         height: 30%;
         border:5px solid #d3d3d3;
+        position: fixed;
 }
 
 .light_graph_key {
@@ -2232,7 +2233,9 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 }
 
 #light-bulb{
-    padding:5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%; 
 }
 
 #db-from{
