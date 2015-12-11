@@ -164,6 +164,9 @@ var htmlString =
         '</canvas>'+
         '<div class="orderSwitches">'+
         '<div class="onoffswitch1">'+
+            '<p>'+
+            'Turn on the light?'+
+            '</p>'+
             '<input type="checkbox" name="onoffswitch1" class="onoffswitch-checkbox1" id="myonoffswitch1" checked>'+
             '<label class="onoffswitch-label1" for="myonoffswitch1">'+
                 '<span class="onoffswitch-inner1"></span>'+
@@ -172,6 +175,9 @@ var htmlString =
         '</div>'+
         // '<button class="fa fa-search search-button" onclick="turnOnLight(1)"></button>'+
         '<div class="onoffswitch2">'+
+            '<p>'+
+            'Turn on the light?'+
+            '</p>'+
             '<input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox2" id="myonoffswitch2" checked>'+
             '<label class="onoffswitch-label2" for="myonoffswitch2">'+
                 '<span class="onoffswitch-inner2"></span>'+
@@ -180,6 +186,9 @@ var htmlString =
         '</div>'+
 
         '<div class="onoffswitch3">'+
+            '<p>'+
+            'Turn on the light?'+
+            '</p>'+
             '<input type="checkbox" name="onoffswitch3" class="onoffswitch-checkbox3" id="myonoffswitch3" checked>'+
             '<label class="onoffswitch-label3" for="myonoffswitch3">'+
                 '<span class="onoffswitch-inner3"></span>'+
