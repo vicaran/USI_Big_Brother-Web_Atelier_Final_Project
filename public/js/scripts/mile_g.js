@@ -151,8 +151,8 @@ document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 
 var nav = document.getElementById('navbar');
 nav.addEventListener('click', function(e) {
     // console.log('e');
-    console.log(e.target);
-    console.log(e.target.firstChild.id);
+    // console.log(e.target);
+    // console.log(e.target.firstChild.id);
     if (e.target.id == "about" || e.target.firstChild.id == "about") {
         document.getElementById('info-page').setAttribute('class', '');
         document.getElementById('graph-container').setAttribute('class', 'hidden');
@@ -452,9 +452,9 @@ function getDataFromDatabase(deviceID) {
     }
     var fromDateElementID = "db-from" + deviceID;
     var toDateElementID = "db-to" + deviceID;
-    console.log('Che bello questo e id:', deviceID);
-    console.log('Questo e from:', fromDateElementID);
-    console.log('Questo e to:', toDateElementID);
+    // console.log('Che bello questo e id:', deviceID);
+    // console.log('Questo e from:', fromDateElementID);
+    // console.log('Questo e to:', toDateElementID);
 
     var from = document.getElementById(fromDateElementID);
     var to = document.getElementById(toDateElementID);
@@ -467,11 +467,6 @@ function getDataFromDatabase(deviceID) {
         to: timestampTo,
         id: deviceID
     }), 'producer')
-}
-
-//Turn on button
-function turnOnLight(deviceID) {
-    console.log('Che bello questo e id:', deviceID);
 }
 
 //OPENSPACE CANVAS
@@ -576,8 +571,8 @@ function audioLevelCanvas() {
 // audioLevelCanvas();
 
 //light part
-var gDeviceID;
-var gContent;
+var gDeviceID = 0 ;
+var gContent = 0;
 
 function monitorLights(deviceID, content) {
     console.log("This is the content in MONITOR LIGHT: ", content);
@@ -639,7 +634,7 @@ function lightLevelCanvas() {
         }
     }, 500)
 }
-// lightLevelCanvas()
+lightLevelCanvas()
 
 
 //position part
@@ -766,9 +761,9 @@ function editArchives(content) {
         barChartDataArchieve.datasets[1].data.push(content[i].light);
         barChartDataArchieve.datasets[2].data.push(content[i].temperature);
         barChartDataArchieve.labels.push(date);
-        console.log("volume ", barChartDataArchieve.datasets[0].data);
-        console.log("light ", barChartDataArchieve.datasets[1].data);
-        console.log("temp ", barChartDataArchieve.datasets[2].data);
+        // console.log("volume ", barChartDataArchieve.datasets[0].data);
+        // console.log("light ", barChartDataArchieve.datasets[1].data);
+        // console.log("temp ", barChartDataArchieve.datasets[2].data);
     }
 
     myArchBar.Bar(barChartDataArchieve);

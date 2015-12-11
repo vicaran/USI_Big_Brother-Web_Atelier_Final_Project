@@ -16,20 +16,20 @@ k.createNode(function(data){
             table[data._id] = "updateGraph" + data._id
         }
     }
-    console.log("sensors", sensors);
-    console.log("table", table);
-    console.log("data", data);
+    // console.log("sensors", sensors);
+    // console.log("table", table);
+    // console.log("data", data);
 
 
     if(data.header === "browser"){
         // var data = JSON.parse(data);
-        console.log("browser request", data)
+        // console.log("browser request", data)
         k.send(JSON.stringify(data));
         
 
 
     }else if(data.header === "database"){
-        console.log("database data", data)
+        // console.log("database data", data)
         k.callFunction("editArchives", [data.content[0]])
 
     }else{
