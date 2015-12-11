@@ -29,7 +29,7 @@ k.createNode(function(data){
 
 
     }else if(data.header === "database"){
-        // console.log("database data", data)
+        console.log("database data", data)
         k.callFunction("editArchives", data.content)
 
     }else{
