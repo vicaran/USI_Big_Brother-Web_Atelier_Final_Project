@@ -2241,6 +2241,14 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 #light-bulb{
 }
 
+#drop-down-menu{
+    display:block;
+}
+#menu-useless-arrow{
+    margin-left: 90px;
+    color: #BEBDBF;
+}
+
 #db-from{
     
 }
