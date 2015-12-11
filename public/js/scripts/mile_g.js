@@ -780,7 +780,7 @@ function positionCanvas() {
 
 }
 
-function monitorLights(content){
+function monitorLights(DeviceID, content){
     console.log("This is the content in MONITOR LIGHT: ", content);
 }
 

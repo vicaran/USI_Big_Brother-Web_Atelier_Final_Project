@@ -25,7 +25,7 @@ k.createNode(function(data){
         // var data = JSON.parse(data);
         console.log("browser request", data)
         k.send(JSON.stringify(data));
-        k.callFunction("monitorLights", data)
+        
 
 
     }else if(data.header === "database"){
@@ -43,6 +43,7 @@ k.createNode(function(data){
     if(ht[data._id]){
         k.callFunction(ht[data._id][0], [data.volume, data.light, data.temperature, data.time])
         k.callFunction(ht[data._id][1], [data.volume, data.light, data.temperature, data.time])
+        k.callFunction("monitorLights", [data._id, data.volume])
     }
 }
 });
