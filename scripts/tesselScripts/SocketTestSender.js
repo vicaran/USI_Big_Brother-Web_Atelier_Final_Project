@@ -14,8 +14,8 @@ var senderNodejs = function (_id,n) {
     var levelLight = 0
     this.main = function () {
         interval = setInterval(function () {
-            levelLight ++;
-            
+            levelLight = levelLight + 300;
+
             if (levelLight > 950){
                 levelLight = 450;
             }
@@ -48,4 +48,4 @@ var senderTestGenerator = function (NumberOfSender) {
 };
 
 
-senderTestGenerator(3);
+senderTestGenerator(1);

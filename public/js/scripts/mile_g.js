@@ -620,6 +620,8 @@ function lightLevelCanvas() {
                 document.getElementById('myonoffswitch1').checked = true;
             } else {
                 context.globalAlpha = 0.5
+                context.fillStyle = "#000000";
+                context.fillRect(0, 0, canvas.width / 3, canvas.height);
                 context.drawImage(img1, 0, 0, canvas.width / 3, canvas.height);
                 document.getElementById('myonoffswitch1').checked = false;
             }
