@@ -628,7 +628,7 @@ function lightLevelCanvas() {
             if (gContent > 700) {
                 context.drawImage(img2, canvas.width / 3, 0, canvas.width / 3, canvas.height);
                 context.fillStyle = "#FFFFFF";
-                context.fillRect(0, 0, canvas.width / 3, canvas.height);
+                context.fillRect(canvas.width / 3, 0, canvas.width / 3, canvas.height);
                 document.getElementById('myonoffswitch2').checked = true;
             } else {
                 context.globalAlpha = 0.5
@@ -639,7 +639,7 @@ function lightLevelCanvas() {
             if (gContent > 50) {
                 context.drawImage(img3, (canvas.width / 3) * 2, 0, canvas.width / 3, canvas.height);
                 context.fillStyle = "#FFFFFF";
-                context.fillRect(0, 0, (canvas.width / 3) * 2, canvas.height);
+                context.fillRect(canvas.width / 3) * 2, 0, (canvas.width / 3) * 2, canvas.height);
                 document.getElementById('myonoffswitch3').checked = true;
 
             } else {
