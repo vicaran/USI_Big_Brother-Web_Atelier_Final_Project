@@ -118,7 +118,7 @@ function SenderTessel(id,moduleId) {
                 red.write(0)
         }
     };
-    
+
     /**
      * This function check the number of the module in order to normalize the light
      *

@@ -55,8 +55,7 @@ var addToDatabase = function (data, d) {
         finishPoint = convertMStoS(finishPoint)
         var toRetrieveData = [];
         var i = startPoint;
-        i++;
-        while (i < startPoint + finishPoint){
+        while (i <= startPoint + finishPoint){
             toRetrieveData.push(parse[i]);
             i++;
         }
