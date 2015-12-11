@@ -2331,6 +2331,7 @@ SWITCHES
 }
 
 /*3*/
+
 .onoffswitch3 {
     position: relative; width: 90px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
