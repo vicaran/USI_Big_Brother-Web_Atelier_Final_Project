@@ -9,16 +9,18 @@
  * This class holds a Tessel interface
  *
  * @param {int} id The unique identifier of the Tessel
- * @param {int} The number of the module
+ * @param {int} moduleId The number of the module
  * @constructor
  */
-function MyTessel(id) {
+function MyTessel(id, moduleId) {
     this.tessel = require('tessel');
     this.GPIO = this.tessel.port['GPIO'];
     this.ws = require("./producerWS.js");
     //  TODO check if i can make id private
     this._id = id;
-    this.module = id;
+    if (moduleId != 1 && moduleId != 2 && moduleId != 3) throw new Error("The module Id must be 1 or 2 or 3!")
+    this.module = moduleId;
+
 }
 
 /**
@@ -39,10 +41,11 @@ MyTessel.prototype.start = function () {
  * This class implements the Tessel interface in order to send data
  *
  * @param {int} id The unique identifier of the Tessel
+ * @param {int} moduleId The number of the module
  * @constructor The Mytessel constructor
  */
-function SenderTessel(id) {
-    MyTessel.call(this, id);
+function SenderTessel(id,moduleId) {
+    MyTessel.call(this, id,moduleId);
     console.log('Sender Tessel ' + this._id + ' created');
     this.main = function () {
         var self = this;
@@ -62,7 +65,7 @@ function SenderTessel(id) {
             } else {
                 var parse = JSON.parse(data)
                 var volume = parse.volume;
-                console.log('-receiver- ', parse);
+                //console.log('-receiver- ', parse);
                 if (parse.light < 530) {
                     led.write(1)
                 } else {
@@ -74,7 +77,7 @@ function SenderTessel(id) {
         interval = setInterval(function () {
             var volume = self.gatherSound(soundPin);
             var temperature = self.gatherTemperature(tempPin);
-            var light = lightPin.read() * lightPin.resolution;
+            var light = self.gatherLight(lightPin);
             var data = {
                 _id: self._id,
                 volume: volume,
@@ -121,14 +124,28 @@ function SenderTessel(id) {
      * @param pin The light Sensor Pin
      */
 
-    //this.gatherLight = function(pin){
-    //    var rawLight = lightPin.read() * lightPin.resolution;
-    //    switch (this.module){
-    //        case 0:
-    //            return rawLight -
-    //
-    //    }
-    //}
+    this.gatherLight = function (lightPin) {
+        var rawLight = lightPin.read() * lightPin.resolution;
+        console.log(rawLight)
+        switch (this.module) {
+            case 1:
+                return this.findPercentLight(rawLight - 496,518);
+                break
+            case 2:
+                return this.findPercentLight(rawLight - 190, 800);
+                break
+            case 3:
+                return this.findPercentLight(rawLight - 550, 518);
+                break
+        }
+    };
+
+    this.findPercentLight = function(light, delta){
+        var normalizedLight = (100*light) / delta;
+        console.log('****** ', normalizedLight)
+        return normalizedLight
+
+    };
 
     /**
      * Function for reading the input from a microphone, gathering data in a window of 50ms
