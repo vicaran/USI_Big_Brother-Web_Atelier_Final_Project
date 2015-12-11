@@ -118,6 +118,32 @@ var barChartData1 = {
         data: []
     }, ]
 };
+
+var barChartDataArchieve = {
+    labels: [],
+    datasets: [{
+        label: "volume Data Set",
+        fillColor: "rgba(215,54,139,0.2)",
+        strokeColor: "rgba(215,54,139,0.8)",
+        highlightFill: "#fff",
+        highlightStroke: "rgba(215,54,139,0.8)",
+        data: []
+    }, {
+        label: "light Data Set",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        highlightFill: "#fff",
+        highlightStroke: "rgba(151,187,205,1)",
+        data: []
+    }, {
+        label: "temp Data Set",
+        fillColor: "rgba(241,85,45,0.2)",
+        strokeColor: "rgba(241,85,45,1)",
+        highlightFill: "#fff",
+        highlightStroke: "rgba(151,187,205,1)",
+        data: []
+    }, ]
+}
 // Navbar implementation
 var current_page = current_page || 'graph-container';
 document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
@@ -407,11 +433,35 @@ var updateGraphBar1 = function(volume, light, temp, time) {
 
 //Submit button old data
 function getDataFromDatabase(deviceID){
+    var buttons = document.getElementsByClassName('search-button');
+    if(deviceID == 1){
+        buttons[0].style.backgroundColor = "rgba(51,56,63,1)";
+        var transition = setTimeout(function(){
+            buttons[0].style.backgroundColor = "rgba(51,56,63,0.6)";
+        },250);
+    }else if(deviceID == 2){
+        buttons[1].style.backgroundColor = "rgba(51,56,63,1)";
+        var transition = setTimeout(function(){
+            buttons[1].style.backgroundColor = "rgba(51,56,63,0.6)";
+        },250);
+    }else if(deviceID == 3){
+        buttons[2].style.backgroundColor = "rgba(51,56,63,1)";
+        var transition = setTimeout(function(){
+            buttons[2].style.backgroundColor = "rgba(51,56,63,0.6)";
+        },250);
+    }
     var fromDateElementID = "db-from" + deviceID;
     var toDateElementID = "db-to" + deviceID;
     console.log('Che bello questo e id:', deviceID);
     console.log('Questo e from:', fromDateElementID);
     console.log('Questo e to:', toDateElementID);
+
+    var from = document.getElementById(fromDateElementID);
+    var to = document.getElementById(toDateElementID);
+
+    var timestampFrom = from.value
+    var timestampTo = to.value
+    producer_handler(JSON.stringify({header: "browser" , from: timestampFrom, to: timestampTo, id:deviceID}), 'producer')
 }
 
 //Turn on button
@@ -729,6 +779,66 @@ function positionCanvas() {
     }, false);
 
 }
+
+
+
+function editArchives(content){
+    barChartDataArchieve.datasets[0].data = [];
+    barChartDataArchieve.datasets[1].data = [];
+    barChartDataArchieve.datasets[2].data = [];
+    barChartDataArchieve.labels = [];
+
+    var env = document.getElementById("old-graphs");
+    var myArchBar;
+    var myArchRealBar;
+
+
+    var ctx_bar = document.getElementById("canvasArch").getContext("2d");
+
+
+    myArchBar = new Chart(ctx_bar);
+    myArchRealBar = myArchBar.Bar(barChartDataArchieve, {
+        tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
+        responsive: false,
+        barShowStroke: false,
+
+    });
+
+    
+    myArchRealBar.destroy();
+
+
+   
+
+    for(var i in content){
+        var date = new Date(content[i].time).toUTCString();
+        date = date.split(' ')[4]
+
+        barChartDataArchieve.datasets[0].data.push(content[i].volume);
+        barChartDataArchieve.datasets[1].data.push(content[i].light);
+        barChartDataArchieve.datasets[2].data.push(content[i].temperature);
+        barChartDataArchieve.labels.push(date);
+        console.log("volume ", barChartDataArchieve.datasets[0].data);
+        console.log("light ", barChartDataArchieve.datasets[1].data);
+        console.log("temp ", barChartDataArchieve.datasets[2].data);
+    }
+
+    myArchBar.Bar(barChartDataArchieve);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 positionCanvas()
 
