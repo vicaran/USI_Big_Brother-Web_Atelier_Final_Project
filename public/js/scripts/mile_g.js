@@ -459,9 +459,17 @@ function getDataFromDatabase(deviceID) {
     var from = document.getElementById(fromDateElementID);
     var to = document.getElementById(toDateElementID);
 
+    console.log("from", from);
+    console.log("to", to);
+    console.log("from value", from.value);
+    console.log("to value", to.value);
 
     var timestampFrom = new Date(from.value);
     var timestampTo = new Date(to.value);
+
+    console.log("timestampFrom ", timestampFrom.getTime());
+    console.log("timestampTo ", timestampTo.getTime());
+
     producer_handler(JSON.stringify({
         header: "browser",
         from: timestampFrom.getTime(),
