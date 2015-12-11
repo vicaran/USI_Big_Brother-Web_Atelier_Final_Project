@@ -436,7 +436,7 @@ function getDataFromDatabase(deviceID){
     var buttons = document.getElementsByClassName('search-button');
     if(deviceID == 1){
         buttons[0].style.backgroundColor = "black";
-        var transition.setTimeout(function(){
+        var transition = setTimeout(function(){
             buttons[0].style.backgroundColor = "rgba(51,56,63,0.6)";
         },500);
     }else if(deviceID == 1){
