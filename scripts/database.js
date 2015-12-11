@@ -44,32 +44,32 @@ var addToDatabase = function (data, d) {
  * @param since The starting point
  * @param to The finish point
  */
-var retrieveData = function (id, since, to) {
-    var data = [];
-    
+ var retrieveData = function (id, since, to) {
+    var sSince = convertMStoS(since);
+    var sTo = convertMStoS(to);
+
     k.stateful.get(id, function (res) {
-        var toRetrieve = [];
-        var res = JSON.parse(res);
-         //console.log("res ", res)
-         // fist element of the array that is the oldest
-        for(i in res){
-            if(since <= res[i].time & res[i].time <= to){
-                toRetrieve.push(res[i])
-            }
+        var parse = JSON.parse(res);
+        var oldest = convertMStoS(parse[0].time);
+        var startPoint = oldest - convertMStoS(since);
+        var finishPoint = sSince - sTo;
+        var toRetrieveData = [];
+        var i = startPoint;
+        console.log("Startpoint: ", startPoint, " finishPoint: ", finishPoint, " index i: ", i);
+        while (i <= startPoint + finishPoint){
+            console.log('INDEX: ', i )
+
+            toRetrieveData.push(res[i]);
+            i++;
+
         }
+        console.log('DATA: ', toRetrieveData);
+        var toSendJSON = {header: "database"};
+        toSendJSON.content = toRetrieveData;
+        k.send(JSON.stringify(toSendJSON))
 
-        data.push(toRetrieve);
-        console.log("data inside loop ", data)
-        var json = {header: "database"};
-        json.content = data
-        k.send(JSON.stringify(json))
-            
+    });
 
-
-    })
-
-    //console.log("data ", data)
-    //return data
 };
 
 
