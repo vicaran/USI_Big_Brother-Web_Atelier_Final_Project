@@ -38,14 +38,14 @@ var addToDatabase = function (data, d) {
 };
 
 var retrieveData = function (id, since, to) {
-    var data = [];
+    var retrivedData = [];
     
     k.stateful.get(id, function (res) {
         var toRetrieve = [];
         var res = JSON.parse(res);
          //console.log("res ", res)
          // fist element of the array that is the oldest
-        for(i in res){
+        for(vai in res){
             if(since <= res[i].time & res[i].time <= to){
                 toRetrieve.push(res[i])
             }
@@ -66,12 +66,16 @@ var retrieveData = function (id, since, to) {
 };
 
 
+/**
+ * This function converts Millisecond number into Seconds
+ *
+ * @param ms A millisecond number
+ * @returns {number} The second from the milliseconds
+ */
+function convertMStoS(ms){
 
-
-
-
-
-
+    return Math.floor(ms/1000);
+}
 
 
 
