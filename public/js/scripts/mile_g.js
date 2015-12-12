@@ -685,7 +685,7 @@ function drawAllCanvases() {
     form1.style.display = "none";
     form2.style.display = "none";
     form3.style.display = "none";
-    var posContext = canvas.getContext('2d');
+    var posContext = posCanvas.getContext('2d');
     var reDrawCanvas = function() {
         posCanvas.width = window.innerWidth;
         posCanvas.height = window.innerHeight / 8;
