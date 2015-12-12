@@ -2174,7 +2174,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 .data-projection{
     top: -25px;
     position: absolute;
-    background-color: rgba(51,56,63,0.3);
+/*    background-color: rgba(51,56,63,0.3);*/
     padding-top: 2%;
     padding-bottom: 12%;
     height: 5em;
