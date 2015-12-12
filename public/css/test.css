@@ -2171,6 +2171,17 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     margin-top: 7px;
 
 }
+.data-projection{
+    background-color: rgba(215,54,139,0.8);
+}
+
+.data-projection{
+    display: block;
+}
+
+.data-projection > div >div{
+    display: flex;
+}
 
 .canvasSizeLights{
         width: 100%;
