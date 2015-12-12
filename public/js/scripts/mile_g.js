@@ -146,7 +146,10 @@ var barChartDataArchieve = {
     }
 // drop-down-menu
 var drop_down = false;
-document.getElementById('menu-button').addEventListener('click',function(){
+document.getElementById('menu-button').addEventListener('click',function(e){
+    var animation = setTimeout(function() {
+            e.style.backgroundColor = "rgba(74,73,74,0.6)";
+        }, 250);
     if(!drop_down){
         document.getElementById('drop-down-menu').setAttribute('class', '');
         drop_down = true;
