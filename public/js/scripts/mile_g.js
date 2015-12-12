@@ -758,6 +758,7 @@ positionCanvas();
 
 
 function editArchives(content) {
+    console.log("content  ", content);
     barChartDataArchieve.datasets[0].data = [];
     barChartDataArchieve.datasets[1].data = [];
     barChartDataArchieve.datasets[2].data = [];
@@ -780,6 +781,7 @@ function editArchives(content) {
     myArchRealBar.destroy();
 
     for (var i in content) {
+        console.log("i ", i);
         var date = new Date(content[i].time).toUTCString();
         date = date.split(' ')[4]
 
@@ -787,9 +789,9 @@ function editArchives(content) {
         barChartDataArchieve.datasets[1].data.push(content[i].light);
         barChartDataArchieve.datasets[2].data.push(content[i].temperature);
         barChartDataArchieve.labels.push(date);
-        // console.log("volume ", barChartDataArchieve.datasets[0].data);
-        // console.log("light ", barChartDataArchieve.datasets[1].data);
-        // console.log("temp ", barChartDataArchieve.datasets[2].data);
+        console.log("volume ", barChartDataArchieve.datasets[0].data);
+        console.log("light ", barChartDataArchieve.datasets[1].data);
+        console.log("temp ", barChartDataArchieve.datasets[2].data);
     }
 
     myArchBar.Bar(barChartDataArchieve);

@@ -29,8 +29,8 @@ k.createNode(function(data){
 
 
     }else if(data.header === "database"){
-        // console.log("database data", data)
-        k.callFunction("editArchives", [data.content[0]])
+        console.log("database data", data)
+        k.callFunction("editArchives", [data.content])
 
     }else{
 
@@ -110,14 +110,14 @@ var htmlString =
         '</canvas>'+
 
         '<div class="text-input" id="block-input1">'+
-            '<br>'+
+                '<br>'+
             '<p>'+
-            'From: '+
+                'From: '+
             '</p>'+
             '<input type="text" name="From" placeholder=""mm/dd/yyyy hh:mm:ss"" id="db-from1"/>'+
             '<p>'+
-            '<br>'+
-            'To: '+
+                '<br>'+
+                'To: '+
             '</p>'+
             '<input type="text" name="To" placeholder="Enter date" id="db-to1"/>'+
             '<span class="fa fa-search search-button" onclick="getDataFromDatabase(1)"></span>'+
@@ -200,13 +200,16 @@ var htmlString =
     	'</div>' +
     	'<div id="graph-container" class="">' +
                 '<div>'+
-                    '<div id="graph-selector" class="fa"> Show graphs...</div>'+
-                    '<div class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-sort-down fa-stack-1x"></i></div>'+
-                    '<div class="fa fa-sort-up"></div>'+
-                    '<div>'+
-                        '<div>Gauthier</div>'+
-                        '<div>Andrea</div>'+
-                        '<div>Zuppi</div>'+
+                    '<div id="graph-selector"> <div class="fa">Show graphs...</div>'+
+                        '<div id="menu-button"class="fa fa-sort-down fa-lg"></div>'+
+                    '</div>'+
+                    '<div id="drop-down-menu">'+
+                        '<div id="menu-useless-arrow" class="fa fa-sort-up fa-lg2"></div>'+
+                        '<div id="menu-box">'+
+                            '<div class="fa menu-tab">Gauthier</div>'+
+                            '<div class="fa menu-tab">Andrea</div>'+
+                            '<div class="fa menu-tab">Zuppi</div>'+
+                        '</div>'+
                     '</div>'+
                 '</div>'+
 				'<span id="arrow" class="fa fa-refresh" ></span>' +
