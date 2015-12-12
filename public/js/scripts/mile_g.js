@@ -144,6 +144,20 @@ var barChartDataArchieve = {
             data: []
         }, ]
     }
+// drop-down-menu
+var drop_down = false;
+document.getElementById('menu-button').addEventListener('click',function(){
+    if(!drop_down){
+        document.getElementById('drop-down-menu').setAttribute('class', '');
+        drop_down = true;
+    }else{
+        document.getElementById('drop-down-menu').setAttribute('class', 'hidden');
+        drop_down = false;
+
+    }
+});
+
+
     // Navbar implementation
 var current_page = current_page || 'graph-container';
 document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
