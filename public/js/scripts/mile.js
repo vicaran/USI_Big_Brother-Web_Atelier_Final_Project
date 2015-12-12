@@ -157,6 +157,9 @@ var htmlString =
     '</div>'+
     	// ACTIVATE LIGHTS SECTION
     	'<div id="light-bulb" class="hidden">'+
+        '<p>'+
+            'When the light is off, you can choose to turn on the light in the desired part of the openspace.'+
+        '</p>'+
     	// Here we make the buttons for the tessel
     	// ---Andrea's Implementation :)
 		'<canvas id="lightCanvas" class="canvasSizeLights">'+

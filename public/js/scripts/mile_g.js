@@ -732,6 +732,11 @@ function drawAllCanvases() {
     
     //check if the light is on or off
     var interval = setInterval(function() {
+        if (gContent == true){
+            gContent == false;
+        } else{
+            gContent == true;
+        }
         if (gDeviceID == 1) {
             if (gContent == true) {
                 lightContext.drawImage(img1, 0, 0, lightCanvas.width / 3, lightCanvas.height);
@@ -761,7 +766,7 @@ function drawAllCanvases() {
                 lightContext.drawImage(img3, lightCanvas.width / 3, 0, lightCanvas.width / 3, lightCanvas.height);
             }
         }
-        gDeviceID = false;
+        gDeviceID = 0;
     }, 100)
 }
 drawAllCanvases();
