@@ -2269,7 +2269,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 }
 
 .menu-tab{
-    margin: 1px;
+/*    margin: 1px;*/
     color: #181A1F;
     display: block;
     padding: 8%;
@@ -2280,9 +2280,9 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 
 .menu-tab:hover{
     color: #BEBDBF;
-    background-color: rgba(51,56,63,0.2);
+    background-color: rgba(44,55,57,0.5);
     border-radius: 8px;
-    margin:1px;
+/*    margin:1px;*/
 }
 
 #db-from{
