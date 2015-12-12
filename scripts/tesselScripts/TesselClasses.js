@@ -68,6 +68,7 @@ function SenderTessel(id, moduleId) {
             if (data == "RESET") {
             } else {
                 var parse = JSON.parse(data)
+                console.log(parse)
                 if (parse.light < 530) {
                     led.write(1)
                 } else {
@@ -131,10 +132,10 @@ function SenderTessel(id, moduleId) {
         console.log(rawLight)
         switch (this.module) {
             case 1:
-                return rawLight < 550;
+                return rawLight > 550;
                 break;
             case 2 || 3:
-                return rawLight < 320;
+                return rawLight > 320;
                 break;
         }
     };
