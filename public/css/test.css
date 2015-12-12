@@ -2227,13 +2227,16 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     margin-left: 45px;
     display: flex;
     background-color: rgba(51,56,63,0.3);
-    padding: 5px;
+/*    padding: 5px;*/
     margin-right: -5px;
     border-radius: 8px;   
 /*    border: #BEBDBF;*/
     padding-left: -3px;
 }
-
+#graph-selector >div{
+    padding: 10px;
+    margin-bottom: 1px;
+}
 #menu-button{
     background-color: rgba(51,56,63,0.3);
 }
