@@ -736,6 +736,7 @@ function drawAllCanvases() {
         if (gDeviceID == 1) {
             if (gContent == true) {
                 lightContext.drawImage(img1, 0, 0, lightCanvas.width / 3, lightCanvas.height);
+                switch1.style.visibility = "hidden";
             } else {
                 lightContext.globalAlpha = 0.5;
                 lightContext.fillStyle = "#000000";
@@ -746,20 +747,24 @@ function drawAllCanvases() {
         } else if (gDeviceID == 2) {
             if (gContent == true) {
                 lightContext.drawImage(img2, lightCanvas.width / 3, 0, lightCanvas.width / 3, lightCanvas.height);
+                switch2.style.visibility = "hidden";
             } else {
                 lightContext.globalAlpha = 0.5;
                 lightContext.fillStyle = "#000000";
                 lightContext.fillRect(lightCanvas.width / 3, 0, lightCanvas.width / 3, lightCanvas.height);
                 lightContext.drawImage(img2, lightCanvas.width / 3, 0, lightCanvas.width / 3, lightCanvas.height);
+                switch2.style.visibility = "visible";
             }
         } else if (gDeviceID == 3) {
             if (gContent == true) {
                 lightContext.drawImage(img3, (lightCanvas.width / 3) * 2, 0, lightCanvas.width / 3, lightCanvas.height);
+                switch3.style.visibility = "hidden";
             } else {
                 lightContext.globalAlpha = 0.5;
                 lightContext.fillStyle = "#000000";
                 lightContext.fillRect((lightCanvas.width / 3) * 2, 0, (lightCanvas.width / 3) * 2, lightCanvas.height);
                 lightContext.drawImage(img3, lightCanvas.width / 3, 0, lightCanvas.width / 3, lightCanvas.height);
+                switch3.style.visibility = "visible";
             }
         }
         gDeviceID = 0;
