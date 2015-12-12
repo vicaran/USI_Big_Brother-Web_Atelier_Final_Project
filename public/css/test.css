@@ -2292,7 +2292,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 .menu-tab:hover{
     color: #BEBDBF;
     background-color:  rgba(51,56,63,0.2);
-/*    border-radius: 8px;*/
+    border-radius: inherit;
 /*    margin:1px;*/
 }
 
