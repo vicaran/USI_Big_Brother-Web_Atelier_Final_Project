@@ -201,7 +201,7 @@ var htmlString =
     	'<div id="graph-container" class="">' +
                 '<div>'+
                     '<div id="graph-selector" class="fa"> Show graphs...'+
-                        '<div class="fa-sort-down"></div>'+
+                        '<div class="fa-sort-down fa-lg"></div>'+
                     '</div>'+
                     '<div id="drop-down-menu">'+
                         '<div id="menu-useless-arrow" class="fa fa-sort-up fa-lg2"></div>'+

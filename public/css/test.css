@@ -2225,19 +2225,12 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 }
 #graph-selector{
     margin-left: 45px;
-    border-top-left-radius: 8px;
-/*    border: 2px, #BEBDBF;*/
-    /* border-right: none; */
+    display: flex;
     padding: 5px;
     margin-right: -5px;
-    /* border-bottom-color: white; */
-    /* border-left-width: thin; */
-    /* border-left-color: white; */
-/*    background-color: grey;*/
     border: #BEBDBF;
-    border-style: solid;
-    border-right-style: none;
     padding-left: -3px;
+}
 }
 .search-button{
     background-color:  rgba(51,56,63,0.6); 
