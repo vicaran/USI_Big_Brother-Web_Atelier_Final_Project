@@ -663,9 +663,9 @@ function drawAllCanvases() {
     var switch1 = document.getElementById('onoffswitch1');
     var switch2 = document.getElementById('onoffswitch2');
     var switch3 = document.getElementById('onoffswitch3');
-    switch1.style.visibility = "hidden";
-    switch2.style.visibility = "hidden";
-    switch3.style.visibility = "hidden";
+    // switch1.style.visibility = "hidden";
+    // switch2.style.visibility = "hidden";
+    // switch3.style.visibility = "hidden";
     document.getElementById('myonoffswitch1').checked = false;
     document.getElementById('myonoffswitch2').checked = false;
     document.getElementById('myonoffswitch3').checked = false;
