@@ -185,7 +185,7 @@ var htmlString =
             '</label>'+
         '</div>'+
 
-        '<div class="onoffswitch3" id="onoffswitch2">'+
+        '<div class="onoffswitch3" id="onoffswitch3">'+
             '<p>'+
             'Turn on the light?'+
             '</p>'+
