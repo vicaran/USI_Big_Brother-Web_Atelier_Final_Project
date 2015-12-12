@@ -221,53 +221,53 @@ var htmlString =
 				    '<div id="newdata0" style="display:none;">'+sensors.length +
                     '</div>' +
 				    '<div id="c" class="">' + 
-				    '<canvas id="canvas0"  width="400px" height="400px"></canvas>' +
-				    legend + 
+				    '<canvas style="padding-left: 10%;" id="canvas0"  width="400px" height="400px"></canvas>' +
+				    // legend + 
 				    '</div>' + 
 				    '<div id="newdata1" style="display:none;"> Hello</div>' +
 				    '<div id="c1" class="">' +
- 				   '<canvas id="canvas1"  width="400px" height="400px"></canvas>' +
- 				   legend +
+ 				   '<canvas style="padding-left: 10%;" id="canvas1"  width="400px" height="400px"></canvas>' +
+ 				   // legend +
 				    '</div>' +
                     '<br>'+
                     '<div class="data-projection">'+
                         '<div>'+
-                            '<div>Current Volume</div>' +
-                            '<div class="value">X</div>'+
+                            '<div class="fa fa-lg" style="color:rgba(215,54,139,1);">Current Volume</div>' +
+                            '<div class="fa fa-lg value" style="color:rgba(215,54,139,1);">X</div>'+
                         '</div>'+
                         '<div> '+
-                            '<div>Current Light</div>' +
-                            '<div class="value">X</div>'+
+                            '<div class="fa fa-lg" style="color:rgba(151,187,205,1);">Current Light</div>' +
+                            '<div class="fa fa-lg value" style="color:rgba(151,187,205,1);">X</div>'+
                         '</div>'+
                         '<div> '+
-                            '<div>Current Temperature</div>' +
-                            '<div class="value">X</div>'+
+                            '<div class="fa fa-lg" style="color:rgba(241,85,45,1);">Current Temperature</div>' +
+                            '<div class="fa fa-lg value" style="color:rgba(241,85,45,1);">X</div>'+
                         '</div>'+
                     '</div>'+
                 '</div>' +
                 '<div class="graph-group">'+
                     '<div id="newdata2" style="display:none;"> Hello</div>' +
                     '<div id="c2" class="">' +
-                        '<canvas id="canvas2"  width="400px" height="400px"></canvas>' +
-                        legend +
+                        '<canvas style="padding-left: 10%;" id="canvas2"  width="400px" height="400px"></canvas>' +
+                        // legend +
                     '</div>' +
                     '<div id="newdata3" style="display:none;"> Hello</div>' +
                     '<div id="c3" class="">' +
-                        '<canvas id="canvas3"  width="400px" height="400px"></canvas>' +
-                        legend +
+                        '<canvas style="padding-left: 10%;" id="canvas3"  width="400px" height="400px"></canvas>' +
+                        // legend +
                     '</div>' +
                     '<div class="data-projection">'+
                         '<div>'+
-                            '<div>Current Volume</div>' +
-                            '<div class="value">X</div>'+
+                            '<div class="fa fa-lg" style="color:rgba(215,54,139,1);">Current Volume</div>' +
+                            '<div class="fa fa-lg value" style="color:rgba(215,54,139,1);">X</div>'+
                         '</div>'+
                         '<div> '+
-                            '<div>Current Light</div>' +
-                            '<div class="value">X</div>'+
+                            '<div class="fa fa-lg" style="color:rgba(151,187,205,1);">Current Light</div>' +
+                            '<div class="fa fa-lg value" style="color:rgba(151,187,205,1);">X</div>'+
                         '</div>'+
                         '<div> '+
-                            '<div>Current Temperature</div>' +
-                            '<div class="value">X</div>'+
+                            '<div class="fa fa-lg" style="color:rgba(241,85,45,1);">Current Temperature</div>' +
+                            '<div class="fa fa-lg value" style="color:rgba(241,85,45,1);">X</div>'+
                         '</div>'+
                     '</div>'+
                     '</div>' +
