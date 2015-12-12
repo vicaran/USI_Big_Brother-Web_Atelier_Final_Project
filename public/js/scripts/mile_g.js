@@ -610,7 +610,6 @@ function lightLevelCanvas() {
     img3 = new Image();
     img3.src = "http://i65.tinypic.com/2hmgady.png";
 
-
     var canvas = document.getElementById('lightCanvas');
     var switch1 = document.getElementById('onoffswitch1');
     var switch2 = document.getElementById('onoffswitch2');
@@ -700,7 +699,6 @@ function positionCanvas() {
     img3 = new Image();
     img3.src = "http://i65.tinypic.com/2hmgady.png";
 
-
     var canvas = document.getElementById('positionCanvas');
     var form1 = document.getElementById('block-input1');
     var form2 = document.getElementById('block-input2');
@@ -755,7 +753,6 @@ function positionCanvas() {
         }
         writeMessage(canvas, message);
     }, false);
-
 }
 positionCanvas();
 
