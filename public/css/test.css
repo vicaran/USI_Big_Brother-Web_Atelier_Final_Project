@@ -2232,7 +2232,11 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     border: #BEBDBF;
     padding-left: -3px;
 }
+
+#menu-button{
+    background-color: rgba(51,56,63,0.3);
 }
+
 .search-button{
     background-color:  rgba(51,56,63,0.6); 
     border-left: 1px grey;
