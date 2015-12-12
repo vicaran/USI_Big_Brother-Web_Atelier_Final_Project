@@ -2181,6 +2181,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     padding-right: 5%;
     padding-left: 2%;
     border-radius: 8px;
+    margin-left: 1.5em;
 }
 
 .data-projection > div{
