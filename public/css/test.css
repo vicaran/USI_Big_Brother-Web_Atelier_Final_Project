@@ -2177,7 +2177,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     height: 5em;
 }
 
-.data-projection{
+.data-projection > div{
     display: block;
 }
 
