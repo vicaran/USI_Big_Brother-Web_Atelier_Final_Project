@@ -1,12 +1,10 @@
-var TesselClasses = require('./TesselClasses.js');
-
 /* the wifi-cc3000 library is bundled in with Tessel's firmware,
  * so there's no need for an npm install. It's similar
  * to how require('tessel') works.
  */
 var wifi = require('wifi-cc3000');
-var network = 'USI_BIG_BROTHER'; // put in your network name here
-var pass = 'usibigbrother'; // put in your password here, or leave blank for unsecured
+var network = '#####'; // put in your network name here
+var pass = '#####'; // put in your password here, or leave blank for unsecured
 var security = 'wpa2'; // other options are 'wep', 'wpa', or 'unsecured'
 var timeouts = 0;
 
@@ -18,8 +16,7 @@ wifi.on('connect', function(data){
 wifi.on('disconnect', function(data){
     // wifi dropped, probably want to call connect() again
     console.log("disconnect emitted", data);
-})
-
+});
 wifi.on('timeout', function(err){
     // tried to connect but couldn't, retry
     console.log("timeout emitted");
@@ -65,18 +62,9 @@ function connect(){
         , password: pass
         , timeout: 30 // in seconds
     });
-    timeout = setTimeout(function () {
-        console.log('timeout')
-    }, 10000);
-    var SenderT1 = new TesselClasses.SenderTessel(1,2);
-    SenderT1.start();
-
 }
 
 // connect wifi now, if not already connected
 if (!wifi.isConnected()) {
     connect();
 }
-
-
-

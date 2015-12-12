@@ -44,8 +44,8 @@ MyTessel.prototype.start = function () {
  * @param {int} moduleId The number of the module
  * @constructor The Mytessel constructor
  */
-function SenderTessel(id,moduleId) {
-    MyTessel.call(this, id,moduleId);
+function SenderTessel(id, moduleId) {
+    MyTessel.call(this, id, moduleId);
     console.log('Sender Tessel ' + this._id + ' created');
     this.main = function () {
         var self = this;
@@ -130,26 +130,30 @@ function SenderTessel(id,moduleId) {
         console.log(rawLight)
         switch (this.module) {
             case 1:
-                return this.findPercentLight(rawLight,496,1016);
+                if (rawLight < 550) {
+                    return false
+                }
+                return true;
                 break
             case 2:
-                return this.findPercentLight(rawLight ,550, 1016);
+                if (rawLight < 320) {
+                    return false
+                }
+                return true;
                 break
             case 3:
-                return this.findPercentLight(rawLight ,190, 1016);
+                if (rawLight < 320) {
+                    return false
+                }
+                return true;
                 break
         }
     };
 
-    this.findPercentLight = function(light, min,max){
-        var normalizedLight = (light - min)/(max - min);
-        var delta = max - min;
-        console.log(delta)
-        var x = delta/458
-        console.log('x: ', x)
-        console.log('normal: ', normalizedLight)
-        normalizedLight *= x
-        console.log('****** ', normalizedLight)
+    this.findPercentLight = function (light, min, max) {
+        console.log(light)
+        var normalizedLight = (light - min) / (max - min);
+        console.log('****** ', normalizedLight * 100)
         return normalizedLight
 
     };
