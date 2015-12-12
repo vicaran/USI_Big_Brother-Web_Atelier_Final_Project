@@ -161,13 +161,13 @@ document.getElementById('menu-button').addEventListener('click', function(e) {
 
     }
 });
-document.getElementById('liquid_frame').addEventListener('click',function(e){
-    if(!e.target.id=="drop-down-menu"){
-        if(!document.getElementById('drop-down-menu').classList.contains('hidden')){
-            document.getElementById('drop-down-menu').setAttribute('class',"hidden");
-        }
-    }
-});
+// document.getElementById('liquid_frame').addEventListener('click',function(e)){
+//     if(!e.target.id=="drop-down-menu"){
+//         if(!document.getElementById('drop-down-menu').classList.contains('hidden')){
+//             document.getElementById('drop-down-menu').setAttribute('class',"hidden");
+//         }
+//     }
+// });
 // selecting tab from drop-down-menu
 document.getElementById('menu-box').addEventListener('click', function(e) {
     var graphs = document.getElementsByClassName('graph-group');
