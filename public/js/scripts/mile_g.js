@@ -181,6 +181,8 @@ document.getElementById('menu-box').addEventListener('click', function(e) {
         // graphs[2].setAttribute('class', 'graph-group');
         graphs[1].setAttribute('class', 'graph-group hidden');
         graphs[0].setAttribute('class', 'graph-group hidden');
+    }else{
+        document.getElementById('drop-down-menu').setAttribute('class','hidden');
     }
 });
 
