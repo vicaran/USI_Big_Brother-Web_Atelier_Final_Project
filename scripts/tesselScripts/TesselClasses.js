@@ -18,7 +18,6 @@ function MyTessel(id, moduleId) {
     this.ws = require("./producerWS.js");
     //  TODO check if i can make id private
     this._id = id;
-    if (moduleId != 1 && moduleId != 2 && moduleId != 3) throw new Error("The module Id must be 1 or 2 or 3!")
     this.module = moduleId;
 
 }
@@ -45,8 +44,11 @@ MyTessel.prototype.start = function () {
  * @constructor The Mytessel constructor
  */
 function SenderTessel(id, moduleId) {
-    console.log('This is id', id);
-    console.log('This is moduleId', moduleId)
+    // defensive programming
+    if (!Number.isInteger(id)) throw new Error("Id must be a number");
+    if (id <= 0) throw new Error("Id must be positive")
+    if (moduleId != 1 && moduleId != 2 && moduleId != 3) throw new Error("The module Id must be 1 or 2 or 3!")
+
     MyTessel.call(this, id, moduleId);
     console.log('Sender Tessel ' + this._id + ' created');
     this.main = function () {
@@ -132,32 +134,12 @@ function SenderTessel(id, moduleId) {
         console.log(rawLight)
         switch (this.module) {
             case 1:
-                if (rawLight < 550) {
-                    return false
-                }
-                return true;
+                return rawLight < 550;
                 break
-            case 2:
-                if (rawLight < 320) {
-                    return false
-                }
-                return true;
-                break
-            case 3:
-                if (rawLight < 320) {
-                    return false
-                }
-                return true;
-                break
+            case 2 || 3:
+                return rawLight < 320;
+                break;
         }
-    };
-
-    this.findPercentLight = function (light, min, max) {
-        console.log(light)
-        var normalizedLight = (light - min) / (max - min);
-        console.log('****** ', normalizedLight * 100)
-        return normalizedLight
-
     };
 
     /**
