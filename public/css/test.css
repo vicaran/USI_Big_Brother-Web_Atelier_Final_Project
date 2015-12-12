@@ -2229,7 +2229,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 }
 #graph-selector >div{
     padding: 10px;
-    margin-bottom: 1px;
+/*    margin-bottom: 1px;*/
 }
 #menu-button{
     background-color: rgba(51,56,63,0.3);
