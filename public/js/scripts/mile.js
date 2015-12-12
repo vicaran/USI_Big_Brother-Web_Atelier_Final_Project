@@ -230,15 +230,15 @@ var htmlString =
                     '<div class="data-projection">'+
                         '<div>'+
                             '<div>Current Volume</div>' +
-                            '<div>X</div>'+
+                            '<div class="value">X</div>'+
                         '</div>'+
                         '<div> '+
                             '<div>Current Light</div>' +
-                            '<div>X</div>'+
+                            '<div class="value">X</div>'+
                         '</div>'+
                         '<div> '+
                             '<div>Current Temperature</div>' +
-                            '<div>X</div>'+
+                            '<div class="value">X</div>'+
                         '</div>'+
                     '</div>'+
                 '</div>' +
@@ -256,15 +256,15 @@ var htmlString =
                     '<div class="data-projection">'+
                         '<div>'+
                             '<div>Current Volume</div>' +
-                            '<div>X</div>'+
+                            '<div class="value">X</div>'+
                         '</div>'+
                         '<div> '+
                             '<div>Current Light</div>' +
-                            '<div>X</div>'+
+                            '<div class="value">X</div>'+
                         '</div>'+
                         '<div> '+
                             '<div>Current Temperature</div>' +
-                            '<div>X</div>'+
+                            '<div class="value">X</div>'+
                         '</div>'+
                     '</div>'+
                     '</div>' +
