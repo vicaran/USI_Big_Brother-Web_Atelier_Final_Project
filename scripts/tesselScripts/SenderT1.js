@@ -13,7 +13,7 @@ var timeouts = 0;
 wifi.on('connect', function(data){
     // you're connected
     console.log("connect emitted", data);
-    var SenderT1 = new TesselClasses.SenderTessel('sd',2);
+    var SenderT1 = new TesselClasses.SenderTessel(1,2);
     SenderT1.start();
 });
 
