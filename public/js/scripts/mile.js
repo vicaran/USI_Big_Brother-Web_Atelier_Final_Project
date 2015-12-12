@@ -157,13 +157,16 @@ var htmlString =
     '</div>'+
     	// ACTIVATE LIGHTS SECTION
     	'<div id="light-bulb" class="hidden">'+
+        '<p>'+
+            'When the light is off, you can choose to turn on the light in the desired part of the openspace.'+
+        '</p>'+
     	// Here we make the buttons for the tessel
     	// ---Andrea's Implementation :)
 		'<canvas id="lightCanvas" class="canvasSizeLights">'+
         'Your browser does not support the canvas element.'+
         '</canvas>'+
         '<div class="orderSwitches">'+
-        '<div class="onoffswitch1">'+
+        '<div class="onoffswitch1" id="onoffswitch1">'+
             '<p>'+
             'Turn on the light?'+
             '</p>'+
@@ -174,7 +177,7 @@ var htmlString =
             '</label>'+
         '</div>'+
         // '<button class="fa fa-search search-button" onclick="turnOnLight(1)"></button>'+
-        '<div class="onoffswitch2">'+
+        '<div class="onoffswitch2" id="onoffswitch2">'+
             '<p>'+
             'Turn on the light?'+
             '</p>'+
@@ -185,7 +188,7 @@ var htmlString =
             '</label>'+
         '</div>'+
 
-        '<div class="onoffswitch3">'+
+        '<div class="onoffswitch3" id="onoffswitch3">'+
             '<p>'+
             'Turn on the light?'+
             '</p>'+
