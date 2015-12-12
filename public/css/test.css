@@ -2226,10 +2226,11 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 #graph-selector{
     margin-left: 45px;
     display: flex;
-    border-radius: rgba(51,56,63,0.3);
+    background-color: rgba(51,56,63,0.3);
     padding: 5px;
     margin-right: -5px;
-    border: #BEBDBF;
+    border-radius: 8px;   
+/*    border: #BEBDBF;*/
     padding-left: -3px;
 }
 
