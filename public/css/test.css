@@ -2172,12 +2172,15 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 
 }
 .data-projection{
+    top: -25px;
+    position: absolute;
     background-color: rgba(51,56,63,0.3);
     padding-top: 2%;
     padding-bottom: 12%;
     height: 5em;
     padding-right: 5%;
     padding-left: 2%;
+    border-radius: 8px;
 }
 
 .data-projection > div{
@@ -2193,7 +2196,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     display: flex;
     /* float: left; */
     position: absolute;
-    left: 91.5%;
+    left: 75%;
 }
 .canvasSizeLights{
         width: 100%;
