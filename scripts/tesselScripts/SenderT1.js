@@ -65,11 +65,6 @@ function connect(){
         , password: pass
         , timeout: 30 // in seconds
     });
-    timeout = setTimeout(function () {
-        console.log('timeout')
-    }, 10000);
-    var SenderT1 = new TesselClasses.SenderTessel(1,2);
-    SenderT1.start();
 
 }
 
@@ -77,6 +72,12 @@ function connect(){
 if (!wifi.isConnected()) {
     connect();
 }
+
+timeout = setTimeout(function () {
+    console.log('timeout')
+}, 30000);
+var SenderT1 = new TesselClasses.SenderTessel(1,2);
+SenderT1.start();
 
 
 
