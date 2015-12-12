@@ -13,6 +13,8 @@ var timeouts = 0;
 wifi.on('connect', function(data){
     // you're connected
     console.log("connect emitted", data);
+    var SenderT1 = new TesselClasses.SenderTessel(1,2);
+    SenderT1.start();
 });
 
 wifi.on('disconnect', function(data){
@@ -65,12 +67,6 @@ function connect(){
         , password: pass
         , timeout: 30 // in seconds
     });
-    timeout = setTimeout(function () {
-        console.log('timeout')
-    }, 10000);
-    var SenderT1 = new TesselClasses.SenderTessel(1,2);
-    SenderT1.start();
-
 }
 
 // connect wifi now, if not already connected

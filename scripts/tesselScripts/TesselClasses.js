@@ -45,6 +45,8 @@ MyTessel.prototype.start = function () {
  * @constructor The Mytessel constructor
  */
 function SenderTessel(id, moduleId) {
+    console.log('This is id', id);
+    console.log('This is moduleId', moduleId)
     MyTessel.call(this, id, moduleId);
     console.log('Sender Tessel ' + this._id + ' created');
     this.main = function () {
