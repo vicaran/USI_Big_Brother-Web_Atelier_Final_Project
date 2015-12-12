@@ -78,6 +78,7 @@ function SenderTessel(id, moduleId) {
                 }
             }
         });
+        
         interval = setInterval(function () {
             var volume = self.gatherSound(soundPin);
             var temperature = self.gatherTemperature(tempPin);
