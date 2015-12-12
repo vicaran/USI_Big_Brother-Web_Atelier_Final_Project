@@ -17,11 +17,6 @@
     line-height: .75em;
     vertical-align: -15%
 }
-.fa-lg2 {
-    font-size: 1.33333333em;
-    line-height: .75em;
-    vertical-align: -15%
-}
 
 .fa-2x {
     font-size: 2em
@@ -2239,8 +2234,11 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 #menu-button{
     background-color: rgba(51,56,63,0.3);
     border-top-right-radius: 8px;
-    padding-right:3px;
+    margin-left: 3px;
+    border-color: rgba(190,189,191,0.1);
     border-bottom-right-radius: 8px;
+    border-left-style: solid;
+    border-width: 0.1em;
 }
 
 .search-button{
@@ -2264,28 +2262,26 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     display:block;
 }
 #menu-useless-arrow{
-    color: #BEBDBF;
+    color: rgba(31,34,38,1);
     display: flex;
     position: relative;
-    padding-left: 113px;
+    padding-left: 122px;
     top: -10px;
-    margin-left: 50px;
+    margin-left: 50px
 }
 #menu-box{
-    /* margin-left: 50px; */
-    background-color: #BEBDBF;
+    background-color: rgba(31,34,38,1);
     border-radius: 8px;
     border-top-style: none;
-    /* padding: 5%; */
     position: relative;
-    top: -20;
-    width: 10em;
-    left: 45px;
+    top: -39.7px;
+    width: 10.7em;
+    left: 47.2px;
 }
 
 .menu-tab{
 /*    margin: 1px;*/
-    color: #181A1F;
+    color: #BEBDBF;
     display: block;
     padding: 8%;
     text-align: center;
@@ -2295,7 +2291,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 
 .menu-tab:hover{
     color: #BEBDBF;
-    background-color:  rgba(51,56,63,0.5);
+    background-color:  rgba(51,56,63,0.2);
 /*    border-radius: 8px;*/
 /*    margin:1px;*/
 }

@@ -204,8 +204,9 @@ var htmlString =
                         '<div id="menu-button"class="fa fa-sort-down fa-lg"></div>'+
                     '</div>'+
                     '<div id="drop-down-menu">'+
-                        '<div id="menu-useless-arrow" class="fa fa-sort-up fa-lg2"></div>'+
+                        '<div id="menu-useless-arrow" class="fa fa-sort-up fa-3x"></div>'+
                         '<div id="menu-box">'+
+                            '<div class="fa menu-tab">Irene</div>'+
                             '<div class="fa menu-tab">Gauthier</div>'+
                             '<div class="fa menu-tab">Andrea</div>'+
                             '<div class="fa menu-tab">Zuppi</div>'+
