@@ -2258,21 +2258,30 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     margin-left: 50px;
 }
 #menu-box{
-    margin-left:50px;
+    /* margin-left: 50px; */
     background-color: #BEBDBF;
-    border-radius: 25px;
-    padding: 5%;
+    border-radius: 8px;
+    /* padding: 5%; */
+    position: relative;
+    top: -20;
+    width: 10em;
+    left: 45px;
 }
 
 .menu-tab{
     margin: 1px;
     color: #181A1F;
+    display: block;
+    padding: 8%;
     text-align: center;
+    
     
 }
 
 .menu-tab:hover{
-    background-color: white;
+    color: #BEBDBF;
+    background-color: rgba(51,56,63,0.6);
+    border-radius: 8px;
 }
 
 #db-from{
