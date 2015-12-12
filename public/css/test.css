@@ -2282,6 +2282,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     color: #BEBDBF;
     background-color: rgba(51,56,63,0.6);
     border-radius: 8px;
+    margin:1px
 }
 
 #db-from{
