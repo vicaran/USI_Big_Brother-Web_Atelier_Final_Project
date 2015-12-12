@@ -143,13 +143,18 @@ var barChartDataArchieve = {
             highlightStroke: "rgba(151,187,205,1)",
             data: []
         }, ]
-    }
+    };
 // drop-down-menu
 var drop_down = false;
 document.getElementById('menu-button').addEventListener('click',function(e){
-    var animation = setTimeout(function(e) {
-            e.style.backgroundColor = "rgba(74,73,74,0.6)";
+    console.log(e.target);
+    e.target.style.backgroundColor = "rgba(89,88,89,0.6)";
+        var animation = setTimeout(function() {
+            e.target.style.backgroundColor = "rgba(51,56,63,0.6)";
         }, 250);
+    // var animation = setTimeout(function(e) {
+    //         e.style.backgroundColor = "rgba(89,88,89,0.6)";
+    //     }, 250);
     if(!drop_down){
         document.getElementById('drop-down-menu').setAttribute('class', '');
         drop_down = true;
