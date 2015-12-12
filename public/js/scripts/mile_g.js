@@ -622,6 +622,7 @@ function audioLevelCanvas() {
 //light part
 var gDeviceID = 0;
 var gContent = false;
+
 function monitorLights(deviceID, content) {
     console.log("This is the deviceID: ", deviceID);
     console.log("This is the content in MONITOR LIGHT: ", content);
@@ -729,7 +730,7 @@ function drawAllCanvases() {
         }
         writeMessage(posCanvas, message);
     }, false);
-    
+
     //check if the light is on or off
     var interval = setInterval(function() {
         if (gDeviceID == 1) {
