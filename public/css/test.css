@@ -2173,25 +2173,27 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 }
 .data-projection{
     background-color: rgba(51,56,63,0.3);
-    padding: 2%;
+    padding-top: 2%;
     padding-bottom: 12%;
     height: 5em;
-    padding-right: 3%;
+    padding-right: 5%;
+    padding-left: 2%;
 }
 
 .data-projection > div{
-    display: block;
+    display: flex;
 }
 
 .data-projection > div >div{
-    display: flex;
+/*    display: flex;*/
     padding: 1em;
-    position: relative;
+/*    position: relative;*/
 }
 .value{
     display: flex;
-    float:right;
-    position: relative;
+    /* float: left; */
+    position: absolute;
+    left: 91.5%;
 }
 .canvasSizeLights{
         width: 100%;
