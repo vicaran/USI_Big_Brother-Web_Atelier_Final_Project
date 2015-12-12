@@ -20,6 +20,7 @@ wifi.on('connect', function(data){
 wifi.on('disconnect', function(data){
     // wifi dropped, probably want to call connect() again
     console.log("disconnect emitted", data);
+    connect();
 })
 
 wifi.on('timeout', function(err){
