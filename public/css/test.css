@@ -2226,11 +2226,10 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 #graph-selector{
     margin-left: 45px;
     display: flex;
+    width: 11em;
     background-color: rgba(51,56,63,0.3);
-/*    padding: 5px;*/
     margin-right: -5px;
-    border-radius: 8px;   
-/*    border: #BEBDBF;*/
+    border-radius: 8px;
     padding-left: -3px;
 }
 #graph-selector >div{
@@ -2239,6 +2238,9 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 }
 #menu-button{
     background-color: rgba(51,56,63,0.3);
+    border-top-right-radius: 8px;
+    padding-right:3px;
+    border-bottom-right-radius: 8px;
 }
 
 .search-button{
