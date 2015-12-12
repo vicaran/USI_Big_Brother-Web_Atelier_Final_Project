@@ -2172,7 +2172,9 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 
 }
 .data-projection{
-    background-color: rgba(215,54,139,0.8);
+    background-color: rgba(51,56,63,0.3);
+    padding: 5%;
+    height: 5em;
 }
 
 .data-projection{
