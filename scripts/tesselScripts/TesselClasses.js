@@ -2,7 +2,7 @@
  * This module exports two simple Tessel classes created for the USI big brothers project
  * SenderTessel gather the data from light, sound and temperature and send it through the network in a JSON format
  *
- * @author Francesco Saverio Zuppichini
+ * @author Francesco Saverio Zuppichini && Andrea Vicari
  */
 
 /**
@@ -68,17 +68,14 @@ function SenderTessel(id, moduleId) {
             if (data == "RESET") {
             } else {
                 var parse = JSON.parse(data)
-                var volume = parse.volume;
-                //console.log('-receiver- ', parse);
                 if (parse.light < 530) {
                     led.write(1)
                 } else {
                     led.write(0)
-
                 }
             }
         });
-        
+
         interval = setInterval(function () {
             var volume = self.gatherSound(soundPin);
             var temperature = self.gatherTemperature(tempPin);
@@ -91,7 +88,6 @@ function SenderTessel(id, moduleId) {
                 time: Date.now()
             };
             self.ws.send(data);
-
         }, 1000)
     };
 
@@ -136,7 +132,7 @@ function SenderTessel(id, moduleId) {
         switch (this.module) {
             case 1:
                 return rawLight < 550;
-                break
+                break;
             case 2 || 3:
                 return rawLight < 320;
                 break;
