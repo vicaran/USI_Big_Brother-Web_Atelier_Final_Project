@@ -200,8 +200,8 @@ var htmlString =
     	'</div>' +
     	'<div id="graph-container" class="">' +
                 '<div>'+
-                    '<div id="graph-selector" class="fa"> Show graphs...'+
-                        '<div class="fa-sort-down fa-lg"></div>'+
+                    '<div id="graph-selector"> <div class="fa">Show graphs...</div>'+
+                        '<div id="menu-button"class="fa-sort-down fa-lg"></div>'+
                     '</div>'+
                     '<div id="drop-down-menu">'+
                         '<div id="menu-useless-arrow" class="fa fa-sort-up fa-lg2"></div>'+
