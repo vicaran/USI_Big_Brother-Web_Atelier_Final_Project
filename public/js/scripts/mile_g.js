@@ -240,56 +240,56 @@ nav.addEventListener('click', function(e) {
 // SWITCH BETWEEN GRAPHS
 // currently hidden 
 // var prev_graph_c1 = false;
-var nextGraph = nextGraph || 'c';
+// var nextGraph = nextGraph || 'c';
 
-var graph_button = document.getElementById("arrow");
+// var graph_button = document.getElementById("arrow");
 
-graph_button.addEventListener('click', function() {
+// graph_button.addEventListener('click', function() {
 
-    c = document.getElementById('c');
-    c1 = document.getElementById('c1');
-    c2 = document.getElementById('c2');
-    c3 = document.getElementById('c3');
+//     c = document.getElementById('c');
+//     c1 = document.getElementById('c1');
+//     c2 = document.getElementById('c2');
+//     c3 = document.getElementById('c3');
 
-    if (nextGraph == 'c') {
-        // c.classList.remove('hidden');
-        c.setAttribute('class', '');
-        c1.setAttribute('class', 'hidden');
-        c2.setAttribute('class', 'hidden');
-        c3.setAttribute('class', 'hidden');
+//     if (nextGraph == 'c') {
+//         // c.classList.remove('hidden');
+//         c.setAttribute('class', '');
+//         c1.setAttribute('class', 'hidden');
+//         c2.setAttribute('class', 'hidden');
+//         c3.setAttribute('class', 'hidden');
 
-        // c1.classList.add('hidden');
-        nextGraph = 'c1';
-    } else if (nextGraph == 'c1') {
-        // c1.classList.remove('hidden');
-        c1.setAttribute('class', '');
-        c.setAttribute('class', 'hidden');
-        c2.setAttribute('class', 'hidden');
-        c3.setAttribute('class', 'hidden');
-        // c.classList.add('hidden');
-        nextGraph = 'c2';
-    } else if (nextGraph == 'c2') {
-        c.setAttribute('class', 'hidden');
-        c1.setAttribute('class', 'hidden');
-        c2.setAttribute('class', '');
-        c3.setAttribute('class', 'hidden');
+//         // c1.classList.add('hidden');
+//         nextGraph = 'c1';
+//     } else if (nextGraph == 'c1') {
+//         // c1.classList.remove('hidden');
+//         c1.setAttribute('class', '');
+//         c.setAttribute('class', 'hidden');
+//         c2.setAttribute('class', 'hidden');
+//         c3.setAttribute('class', 'hidden');
+//         // c.classList.add('hidden');
+//         nextGraph = 'c2';
+//     } else if (nextGraph == 'c2') {
+//         c.setAttribute('class', 'hidden');
+//         c1.setAttribute('class', 'hidden');
+//         c2.setAttribute('class', '');
+//         c3.setAttribute('class', 'hidden');
 
-        nextGraph = 'c3';
+//         nextGraph = 'c3';
 
-    } else if (nextGraph == 'c3') {
-        c.setAttribute('class', 'hidden');
-        c1.setAttribute('class', 'hidden');
-        c2.setAttribute('class', 'hidden');
-        c3.setAttribute('class', '');
-        nextGraph = "both";
-    } else {
-        c.setAttribute('class', '');
-        c1.setAttribute('class', '');
-        c2.setAttribute('class', '');
-        c3.setAttribute('class', '');
-        nextGraph = "c";
-    }
-});
+//     } else if (nextGraph == 'c3') {
+//         c.setAttribute('class', 'hidden');
+//         c1.setAttribute('class', 'hidden');
+//         c2.setAttribute('class', 'hidden');
+//         c3.setAttribute('class', '');
+//         nextGraph = "both";
+//     } else {
+//         c.setAttribute('class', '');
+//         c1.setAttribute('class', '');
+//         c2.setAttribute('class', '');
+//         c3.setAttribute('class', '');
+//         nextGraph = "c";
+//     }
+// });
 
 
 //<-----------------                 ------------------------------->

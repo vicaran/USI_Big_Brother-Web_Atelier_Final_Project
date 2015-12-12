@@ -2134,12 +2134,12 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     flex-direction: row;
 }
 */
-#arrow {
-    float:left;
-    position: relative;
-    left: 30px;
-    color: #BEBDBF;
-}
+/*#arrow {*/
+/*    float:left;*/
+/*    position: relative;*/
+/*    left: 30px;*/
+/*    color: #BEBDBF;*/
+/*}*/
 
 .key {
     float:right;

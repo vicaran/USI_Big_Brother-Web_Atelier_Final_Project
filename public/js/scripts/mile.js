@@ -213,7 +213,7 @@ var htmlString =
                         '</div>'+
                     '</div>'+
                 '</div>'+
-				'<span id="arrow" class="fa fa-refresh" ></span>' +
+				// '<span id="arrow" class="fa fa-refresh" ></span>' +
                 '<div class="graph-group">'+
 				    '<div id="newdata0" style="display:none;">'+sensors.length +
                     '</div>' +
