@@ -204,10 +204,10 @@ var htmlString =
                     '<div class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-sort-down fa-stack-1x"></i></div>'+
                     '<div id="drop-down-menu">'+
                         '<div id="menu-useless-arrow" class="fa fa-sort-up fa-lg2"></div>'+
-                        '<div>'+
-                            '<div>Gauthier</div>'+
-                            '<div>Andrea</div>'+
-                            '<div>Zuppi</div>'+
+                        '<div id="menu-box">'+
+                            '<div class="fa menu-tab">Gauthier</div>'+
+                            '<div class="fa menu-tab">Andrea</div>'+
+                            '<div class="fa menu-tab">Zuppi</div>'+
                         '</div>'+
                     '</div>'+
                 '</div>'+
