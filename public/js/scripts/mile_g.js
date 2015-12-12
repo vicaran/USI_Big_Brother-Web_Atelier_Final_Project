@@ -151,7 +151,7 @@ document.getElementById('menu-button').addEventListener('click',function(e){
     e.target.style.backgroundColor = "rgba(89,88,89,0.6)";
         var animation = setTimeout(function() {
             e.target.style.backgroundColor = "rgba(51,56,63,0.6)";
-        }, 100);
+        }, 50);
     // var animation = setTimeout(function(e) {
     //         e.style.backgroundColor = "rgba(89,88,89,0.6)";
     //     }, 250);
