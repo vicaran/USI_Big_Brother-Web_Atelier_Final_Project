@@ -2224,10 +2224,20 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     background-color: #181A1F;
 }
 #graph-selector{
-    margin-left: 50px;
-    border-radius: 25px;
-    border: 2px, #BEBDBF;
-    border-right: none;
+    margin-left: 45px;
+    border-top-left-radius: 8px;
+/*    border: 2px, #BEBDBF;*/
+    /* border-right: none; */
+    padding: 5px;
+    margin-right: -5px;
+    /* border-bottom-color: white; */
+    /* border-left-width: thin; */
+    /* border-left-color: white; */
+/*    background-color: grey;*/
+    border: #BEBDBF;
+    border-style: solid;
+    border-right-style: none;
+    padding-left: -3px;
 }
 .search-button{
     background-color:  rgba(51,56,63,0.6); 
@@ -2261,6 +2271,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     /* margin-left: 50px; */
     background-color: #BEBDBF;
     border-radius: 8px;
+    border-top-style: none;
     /* padding: 5%; */
     position: relative;
     top: -20;
@@ -2280,7 +2291,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 
 .menu-tab:hover{
     color: #BEBDBF;
-    background-color: rgba(44,55,57,0.5);
+    background-color:  rgba(51,56,63,0.5);
 /*    border-radius: 8px;*/
 /*    margin:1px;*/
 }
