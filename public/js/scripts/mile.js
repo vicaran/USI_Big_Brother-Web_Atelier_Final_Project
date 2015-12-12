@@ -227,20 +227,47 @@ var htmlString =
  				   legend +
 				    '</div>' +
                     '<br>'+
+                    '<div class="data-projection">'+
+                        '<div>'+
+                            '<div>Current Volume</div>' +
+                            '<div>X</div>'+
+                        '</div>'+
+                        '<div> '+
+                            '<div>Current Light</div>' +
+                            '<div>X</div>'+
+                        '</div>'+
+                        '<div> '+
+                            '<div>Current Temperature</div>' +
+                            '<div>X</div>'+
+                        '</div>'+
+                    '</div>'+
                 '</div>' +
                 '<div class="graph-group">'+
-
-                '<div id="newdata2" style="display:none;"> Hello</div>' +
-                '<div id="c2" class="">' +
-                '<canvas id="canvas2"  width="400px" height="400px"></canvas>' +
-                legend +
-                '</div>' +
-                '<div id="newdata3" style="display:none;"> Hello</div>' +
-                '<div id="c3" class="">' +
-                '<canvas id="canvas3"  width="400px" height="400px"></canvas>' +
-                legend +
-                '</div>' +
-                '</div>' +
+                    '<div id="newdata2" style="display:none;"> Hello</div>' +
+                    '<div id="c2" class="">' +
+                        '<canvas id="canvas2"  width="400px" height="400px"></canvas>' +
+                        legend +
+                    '</div>' +
+                    '<div id="newdata3" style="display:none;"> Hello</div>' +
+                        '<div id="c3" class="">' +
+                            '<canvas id="canvas3"  width="400px" height="400px"></canvas>' +
+                            legend +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="data-projection">'+
+                            '<div>'+
+                                '<div>Current Volume</div>' +
+                                '<div>X</div>'+
+                            '</div>'+
+                            '<div> '+
+                                '<div>Current Light</div>' +
+                                '<div>X</div>'+
+                            '</div>'+
+                            '<div> '+
+                                '<div>Current Temperature</div>' +
+                                '<div>X</div>'+
+                            '</div>'+
+                        '</div>'+
 				'</div>' + 
 				// FOOTER
 				'<div id="footer">' +
