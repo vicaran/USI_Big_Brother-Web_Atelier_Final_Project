@@ -206,10 +206,10 @@ var htmlString =
                     '<div id="drop-down-menu" class="hidden">'+
                         '<div id="menu-useless-arrow" class="fa fa-sort-up fa-3x"></div>'+
                         '<div id="menu-box">'+
-                            '<div class="fa menu-tab">Show All</div>'+
-                            '<div class="fa menu-tab">Zone 1</div>'+
-                            '<div class="fa menu-tab">Zone 2</div>'+
-                            '<div class="fa menu-tab">Zone 3</div>'+
+                            '<div id="all" class="fa menu-tab">Show All</div>'+
+                            '<div id="one" class="fa menu-tab">Zone 1</div>'+
+                            '<div id="two" class="fa menu-tab">Zone 2</div>'+
+                            '<div id="three" class="fa menu-tab">Zone 3</div>'+
                         '</div>'+
                     '</div>'+
                 '</div>'+

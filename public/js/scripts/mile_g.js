@@ -147,14 +147,11 @@ var barChartDataArchieve = {
 // drop-down-menu
 var drop_down = false;
 document.getElementById('menu-button').addEventListener('click',function(e){
-    console.log(e.target);
+    // console.log(e.target);
     e.target.style.backgroundColor = "rgba(89,88,89,0.6)";
         var animation = setTimeout(function() {
             e.target.style.backgroundColor = "rgba(51,56,63,0.6)";
-        }, 50);
-    // var animation = setTimeout(function(e) {
-    //         e.style.backgroundColor = "rgba(89,88,89,0.6)";
-    //     }, 250);
+        }, 30);
     if(!drop_down){
         document.getElementById('drop-down-menu').setAttribute('class', '');
         drop_down = true;
@@ -162,6 +159,28 @@ document.getElementById('menu-button').addEventListener('click',function(e){
         document.getElementById('drop-down-menu').setAttribute('class', 'hidden');
         drop_down = false;
 
+    }
+});
+
+// selecting tab from drop-down-menu
+document.getElementById('menu-box').addEventListener('click',function(e){
+    var graphs = document.getElementsByClassName('graph-group');
+    if(e.target.id=="all"){
+        for(var i=0;i<graphs.length;i++){
+            graphs[i].setAttribute('class', 'graph-group');
+        }
+    }else if(e.target.id=="one"){
+        graphs[0].setAttribute('class', 'graph-group');
+        graphs[1].setAttribute('class', 'graph-group hidden');
+        // graphs[2].setAttribute('class', 'graph-group hidden');
+    } else if(e.target.id=="two"){
+        graphs[1].setAttribute('class', 'graph-group');
+        graphs[0].setAttribute('class', 'graph-group hidden');
+        // graphs[2].setAttribute('class', 'graph-group hidden');
+    } else if(e.target.id=="three"){
+        // graphs[2].setAttribute('class', 'graph-group');
+        graphs[1].setAttribute('class', 'graph-group hidden');
+        graphs[0].setAttribute('class', 'graph-group hidden');
     }
 });
 
