@@ -29,16 +29,10 @@ var workers = new Array();
 //Not used in the latest release
 var MESSAGE_PER_LATENCY = 10
 
-<<<<<<< HEAD
 //  mapping the html blocks, the scripts and CSS added by the webworkers into the mainpage
 var addedHtml = {}
 var addedScript = {}
 var addedCSS = {}
-=======
-//  mapping the html blocks and the scripts added by the webworkers into the mainpage
-var addedHtml = {}
-var addedScript = {}
->>>>>>> 9ea83630233a0758881023edabcee7807625da6d
 
 /*
  * Firebase server used to initialiase the webRTC conenction
