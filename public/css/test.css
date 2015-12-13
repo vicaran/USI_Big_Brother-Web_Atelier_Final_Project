@@ -2004,9 +2004,9 @@ body {
     display: flex;
     background-color: rgba(51,56,63,0.3);
     height: 3em;
-    position: fixed;
+    position: absolute;
     top: 0px;
-    /* width: 130%; */
+    width: 100%;
     left: 0px;
     right: 1;
 }
