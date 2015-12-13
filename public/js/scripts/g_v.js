@@ -73,8 +73,10 @@ k.createHTML('html', htmlString);
 // k.createHTML('graph-container-close','</div>');
 
 //add the graph script
+k.createScript('moment', 'js/scripts/moment.js');
 k.createScript('our_graph1', 'js/scripts/g_graph.js');
 k.createScript('pikaday', 'js/scripts/pikaday.js');
+
 // k.createScript('test_pikaday', 'js/scripts/test_pikaday.js')
 
 k.registerProducer('producer');
