@@ -332,12 +332,8 @@ var producer_handler = function(data, identifier){
 
     options.__checkpoints[options.__checkpoints.length-1].m_size = sizeof(data) + sizeof(options)
 
-<<<<<<< HEAD
     operators[cid].__pushMessage('producer', JSON.stringify(data), options, cid)
-=======
 
-    operators[cid].__pushMessage('producer', data, options, cid)
->>>>>>> 9ea83630233a0758881023edabcee7807625da6d
     // if(operators[cid].__worker_pool.length == 0 || operators[cid].__message_pool.length != 0) {
     //   // operators[cid].__message_pool.push({
     //   //   type: 'producer',
