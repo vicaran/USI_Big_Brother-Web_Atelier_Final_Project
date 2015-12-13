@@ -49,7 +49,7 @@ var addToDatabase = function (data, d) {
         var parse = JSON.parse(res);
         var oldest = parse[0].time;
         console.log("Since: ", since, " to: ", to)
-        var startPoint =  since - oldest;
+        var startPoint =  since - oldest < 0 ? oldest : since - oldest;
         startPoint = convertMStoS(startPoint)
         var finishPoint = to - since;
         finishPoint = convertMStoS(finishPoint)
