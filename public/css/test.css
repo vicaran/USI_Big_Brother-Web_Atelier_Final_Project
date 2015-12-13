@@ -2006,8 +2006,9 @@ body {
     height: 3em;
     position: relative;
     top: 0px;
-    left: 0px;
-    right:-100%;
+    width: 130%;
+/*    left: 0px;*/
+/*    right:-100%;*/
 }
 #footer{
     color: #BEBDBF;
@@ -2172,7 +2173,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 
 }
 .data-projection{
-    top: -25px;
+    top: 50px;
     position: absolute;
 /*    background-color: rgba(51,56,63,0.3);*/
     padding-top: 2%;
