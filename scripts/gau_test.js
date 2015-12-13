@@ -3,15 +3,6 @@ var dataB = require('./database.js')
 
 //var data = {header: "database", content: "data from database"};
 k.createNode(function(msg){
-	function(){
-		var executed = false;
-		return function(){
-			if(!executed){
-				executed = true;
-				dataB.sendDataZero();
-			}
-		}
-	}
 	console.log("createNode " + msg);
 	msg = JSON.parse(msg);
 
