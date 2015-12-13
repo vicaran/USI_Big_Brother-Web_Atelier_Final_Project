@@ -1,4 +1,5 @@
-    var picker = new Pikaday(
+var pikaday = require('./js/scripts/pikaday.js')
+ var picker = new Pikaday(
     {
         field: document.getElementById('inputDate'),
         firstDay: 1,
