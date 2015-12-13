@@ -4368,8 +4368,8 @@ for(var i = 1; i<4; i++){
             }
         }),
 
-        var _startDate = startPicker.getDate(),
-        var _endDate = endPicker.getDate();
+        _startDate = startPicker.getDate(),
+        _endDate = endPicker.getDate();
 
         if (_startDate) {
             startDate = _startDate;
