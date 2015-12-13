@@ -32,7 +32,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
 }
 
@@ -77,13 +77,15 @@ hr.star-primary:after {
 .img-centered {
     margin: 0 auto;
 }
+
 #LiveData {
     background-color: #545454;
 }
+
 header {
     text-align: center;
     color: #fff;
-    background-image:url("./../img/header.jpg");
+    background-image: url("./../img/header.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -101,7 +103,7 @@ header img {
 header .intro-text .name {
     display: block;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 2em;
     font-weight: 700;
 }
@@ -110,8 +112,11 @@ header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
 }
+.borderSections {
+    border-bottom: 2px solid white;
 
-@media(min-width:768px) {
+}
+@media (min-width: 768px) {
     header .container {
         padding-top: 200px;
         padding-bottom: 100px;
@@ -126,7 +131,7 @@ header .intro-text .skills {
     }
 }
 
-@media(min-width:768px) {
+@media (min-width: 768px) {
     .navbar-fixed-top {
         padding: 25px 0;
         -webkit-transition: padding .3s;
@@ -150,13 +155,17 @@ header .intro-text .skills {
     }
 }
 
-.navbar {
-    background-color: black;
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+.nav a{
+    font-size: 20px;
 }
 
+.navbar {
+    /*#bdbdbd*/
+    background-color:#a8a8a8;
+    text-transform: uppercase;
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
 
 .navbar a:focus {
     outline: 0;
@@ -172,7 +181,7 @@ header .intro-text .skills {
 
 .navbar-default,
 .navbar-inverse {
-    border: 0;
+    border-bottom: 2px solid white;
 }
 
 section {
@@ -198,7 +207,7 @@ section.success a.active {
     color: #2c3e50;
 }
 
-@media(max-width:767px) {
+@media (max-width: 767px) {
     section {
         padding: 75px 0;
     }
@@ -225,7 +234,7 @@ section.success a.active {
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: rgba(24,188,156,.9);
+    background: rgba(24, 188, 156, .9);
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
@@ -259,7 +268,7 @@ section.success a.active {
     z-index: 2;
 }
 
-@media(min-width:767px) {
+@media (min-width: 767px) {
     #portfolio .portfolio-item {
         margin: 0 0 30px;
     }
@@ -300,7 +309,7 @@ section.success a.active {
     border-radius: 0;
     font-size: 1.5em;
     background: 0 0;
-    box-shadow: none!important;
+    box-shadow: none !important;
     resize: none;
 }
 
@@ -315,10 +324,10 @@ section.success a.active {
     vertical-align: middle;
     vertical-align: baseline;
     opacity: 0;
-    -webkit-transition: top .3s ease,opacity .3s ease;
-    -moz-transition: top .3s ease,opacity .3s ease;
-    -ms-transition: top .3s ease,opacity .3s ease;
-    transition: top .3s ease,opacity .3s ease;
+    -webkit-transition: top .3s ease, opacity .3s ease;
+    -moz-transition: top .3s ease, opacity .3s ease;
+    -ms-transition: top .3s ease, opacity .3s ease;
+    transition: top .3s ease, opacity .3s ease;
 }
 
 .floating-label-form-group::not(:first-child) {
