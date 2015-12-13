@@ -294,4 +294,5 @@ k.createScript('pikaday', 'js/scripts/pikaday.js');
 k.registerProducer('producer');
 
 //css
-k.createCSS('csstest', '/css/test.css')
+k.createCSS('csstest', '/css/test.css');
+k.createCSS('css_datepiker', '/css/pikaday.css');
