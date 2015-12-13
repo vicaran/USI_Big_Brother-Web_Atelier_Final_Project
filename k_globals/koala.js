@@ -641,7 +641,6 @@ exports.createJoin = function(func, automatic) {
 	@param {Object} state The observable state
 */
 var express = require('express');
-//la prima ricordo era un fine settimana, stavo sul 13 lo zaino pieno di montana
 var app = express();
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
