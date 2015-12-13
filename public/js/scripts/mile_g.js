@@ -807,7 +807,7 @@ function editArchives(content) {
 
     myArchRealBar.destroy();
     for (var i in content) {
-        console.log("i ", i);
+        console.log("i ", content[i]);
         var date = new Date(content[i].time).toUTCString();
         date = date.split(' ')[4]
         barChartDataArchieve.datasets[0].data.push(content[i].volume);
