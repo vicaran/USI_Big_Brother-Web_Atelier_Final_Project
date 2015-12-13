@@ -51,8 +51,11 @@ var addToDatabase = function (data, d) {
         console.log("Since: ", since, " to: ", to)
         var startPoint =  since - oldest < 0 ? oldest : since - oldest;
         console.log(startPoint);
+
         startPoint = convertMStoS(startPoint)
-        var finishPoint = to - since;
+
+        var finishPoint = to - startPoint < 0? parse[parse.length -1 ].time: to - startPoint;
+
         finishPoint = convertMStoS(finishPoint)
         var toRetrieveData = [];
         var i = startPoint;
