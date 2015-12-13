@@ -508,17 +508,20 @@ function getDataFromDatabase(deviceID) {
     // console.log('Che bello questo e id:', deviceID);
     // console.log('Questo e from:', fromDateElementID);
     // console.log('Questo e to:', toDateElementID);
-
     var from = document.getElementById(fromDateElementID);
     var to = document.getElementById(toDateElementID);
 
-    console.log("from", from);
-    console.log("to", to);
-    console.log("from value", from.value);
-    console.log("to value", to.value);
+    var fr = from.value + ' '
+    var t = to.value + ' '
+for(var i = 1; i < 4; i++){
+    var selFrom = document.getElementById('sel-from'+deviceID+i);
+    var selTo = document.getElementById('sel-to'+deviceID+i);
+    fr += ':'+selFrom.value
+    t += ':'+selTo.value
+}
 
-    var timestampFrom = new Date(from.value);
-    var timestampTo = new Date(to.value);
+    var timestampFrom = new Date(fr);
+    var timestampTo = new Date(t);
 
     console.log("timestampFrom ", timestampFrom.getTime());
     console.log("timestampTo ", timestampTo.getTime());
