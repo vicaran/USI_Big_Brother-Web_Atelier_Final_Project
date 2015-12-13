@@ -4338,11 +4338,8 @@
 
 
 
-var funcs = [];
-for (var i = 1; i < 4; i++) {
-    funcs[i] = (function(index) {
-        return function() {
-             var startDate,
+function pickdate(index) {
+        var startDate,
         endDate,
         updateStartDate = function() {
             startPicker.setStartRange(startDate);
@@ -4355,7 +4352,7 @@ for (var i = 1; i < 4; i++) {
             endPicker.setEndRange(endDate);
         },
         startPicker = new Pikaday({
-            field: document.getElementById('db-from'+index),
+            field: document.getElementById('start'+index),
             minDate: new Date(1456790999),
             maxDate: new Date(2020, 12, 31),
             onSelect: function() {
@@ -4365,7 +4362,7 @@ for (var i = 1; i < 4; i++) {
             }
         }),
         endPicker = new Pikaday({
-            field: document.getElementById('db-to'+index),
+            field: document.getElementById('end'+index),
             minDate: new Date(1456790999),
             maxDate: new Date(2020, 12, 31),
             onSelect: function() {
@@ -4389,10 +4386,14 @@ for (var i = 1; i < 4; i++) {
         }
             console.log("My value: " + index);
         };
-    }(i));
+
+var funcs = [];
+
+for (var i = 1; i < 4; i++) {
+    funcs[i] = pickdate.bind(this, i);
 }
 
-for (var j = 1; j<4; j++){
+for (var j = 1; j < 4; j++) {
     funcs[j]();
 }
 
