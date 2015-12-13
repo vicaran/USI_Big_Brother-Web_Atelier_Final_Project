@@ -203,7 +203,7 @@ function drawAllCanvases() {
         gDeviceID = 0;
     }, 100)
 }
-drawAllCanvases();
+// drawAllCanvases();
 
 function editArchives(content) {
     console.log("content  ", content);
