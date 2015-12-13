@@ -1,0 +1,197 @@
+
+
+
+
+
+
+
+
+var debug = require('debug')
+var log = {
+  worker: debug('wls:worker'),
+  output: debug('wls:worker:output')
+}
+
+var colors = require('colors/safe')
+
+/**
+ * Implementation backend of the Worker on the browser. This file is loaded by the Worker
+ * and contains all the data structures and functions to send and receive data from other
+ * Workers.
+ */
+var globalStatusPim = []
+var startTime = new Date();
+log.worker("started at "+startTime);
+var util = require('util');
+
+var mod_overcpu = require('../overcpu/build/Release/overcpu');
+var ocpu = new mod_overcpu.OverCpu();
+ocpu.setUpdateInterval(5000);
+
+/*
+	Controller variables. If all false, global/local controller up
+	Andrea's controller is the server_browser_controller implementation
+*/
+var andrea_controller = false;
+
+
+var assert = require('assert')
+
+try
+{
+	var zmq = require('zmq');
+}
+catch(e)
+{
+	var l = "[root:ERROR] - No ZMQ support on this machine!"
+	var f = function() { console.log(l); return { on : f, bindSync : f } }
+	var zmq = {
+		socket : f
+	}
+	f()
+}
+
+
+process.on('error', function(error) {
+console.log('--> '+error) })
+
+var sender = zmq.socket('push');
+var receiver = zmq.socket('pull')
+var http = require('http');
+var url = require('url');
+var jade = require('jade');
+//var mc = require('mc');
+var os = require('os');
+var binded = false;
+var last_message_received;
+var sending_counter = [];
+var data_storage = require('./cluster_storage');
+/*
+	execution_flag used so that if the message with a certain id is being processed,
+	the controller will not kill the worker (since it is processing a message)
+*/
+var execution_flag = [];
+var sending_protocol;
+
+var TEST_LAST_MESSAGE_RECEIVED;
+var TEST_CONSUMER;
+
+//how much time passes from one message to the other
+var AVG = 1000;
+
+var idle_counter = 0;
+var idle_max_timeout = 1000;
+var kill_flag = false;
+//TODO: change to variables, for now hardcoded
+var options = {
+	host: '127.0.0.1',
+  	port: 9080,
+  	method: 'PUT'
+}
+
+/*
+	Global Variables
+*/
+var connections = new Array();
+var clients = new Array();
+var dest = new Array();
+var cb = undefined;
+var join_cb = undefined;
+var exit_manager = {}
+var ta_manager = -1
+var uid = undefined;
+var cid = undefined;
+var cid_alias = undefined;
+var proxy_connection;
+var db_client = {};
+var messages_sent = 0;
+var messages_received = 0;
+var isProducer = false;
+
+//global variables to handle join
+var inConnections = new Array();
+var inMessagesReceived = new Array();
+var cbOrdering = new Array();
+
+//var mc_cli = new mc.Client("agora.mobile.usilu.net:11211");
+//var mc_cli = new mc.Client("127.0.0.1:11211");
+
+var fs = require('fs');
+
+var worker_number = 1
+
+// setInterval(function(){
+// 	API_callbacks_counter++;
+// 	API_callbacks[API_callbacks_counter] = function(wrks){
+// 		worker_number = wrks.length
+// 	};
+// 	process.send({
+// 		response: "get_worker_number",
+// 		uid: uid,
+// 		cid: cid,
+// 		operatorCid: cid,
+// 		cb : API_callbacks_counter
+// 	});
+// }, 500)
+
+// npm debug
+var debugDavide = require('debug')('davide');
+
+//DB stuff
+try
+{
+	/*var Db = require('mongodb').Db,
+  		Connection = require('mongodb').Connection,
+  		Server = require('mongodb').Server;
+	var host = process.env['MONGO_NODE_DRIVER_HOST'] != null ? process.env['MONGO_NODE_DRIVER_HOST'] : 'localhost';
+	var port = process.env['MONGO_NODE_DRIVER_PORT'] != null ? process.env['MONGO_NODE_DRIVER_PORT'] : Connection.DEFAULT_PORT;
+	var db = new Db('koala-state', new Server(host, port, {}), {safe: true, native_parser:true});
+	db.open(function(err, client) {
+		db_client = client;
+	});*/
+	var mongoose = require('mongoose');
+	var db = mongoose.createConnection('localhost', 'test');
+	var schema = mongoose.Schema({ k: 'String', val : "Number" });
+	var Storage = db.model('Storage', schema);
+
+}
+catch(e)
+{
+	var l = "[root:ERROR] - No MONGODB support on this machine!"
+	var f = function() { console.log(l); return { on : f, bindSync : f } }
+
+	var db = {}
+	this.state = {}
+	//f()
+
+}
+
+/*
+	@author: Davide Nava
+	Test method for memcached store functionality.
+*/
+// exports.putState = function(key,value){
+// 	mc_cli.connect(function(){ // connect to memcached
+// 		//debugDavide('Connected to the localhost memcached');
+// 		mc_cli.set(key, value, {flags:0, exptime:0},function(err,status){ //try to update value
+// 			if(!err){ //value stored
+// 				debugDavide(status);
+// 			}else{
+// 				mc_cli.add(key, value, {flags:0, exptime:0},function(err,status){ // add new value
+// 					if(!err){
+// 						debugDavide(status); // value stored
+// 					}else{
+// 						debugDavide(err); // NOT STORED, NOT FOUND, EXISTS
+// 					}
+// 				});
+// 			}
+// 		});
+// 	});
+// }
+
+assert(process.argv[2])
+var port = process.argv[2]
+
+/*
+	Creates the server through the net library.
+	Binds the connections to the server to execute

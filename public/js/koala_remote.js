@@ -240,6 +240,7 @@ var require = function() {
 				html: html,
 			})
 		},
+<<<<<<< HEAD
 		createCSS: function(id, css) {
 			postMessage({
 				type: 'addCSS',
@@ -247,6 +248,8 @@ var require = function() {
 				css: css,
 			})
 		},
+=======
+>>>>>>> 9ea83630233a0758881023edabcee7807625da6d
 		createScript: function(id, script) {
 			postMessage({
 				type: 'addScript',
@@ -595,6 +598,7 @@ self.onmessage = function(message) {
 		latency['out'] = message.data.data
 	}
 	else if(type == "producer"){
+<<<<<<< HEAD
 		var msg = undefined
 		try {
 			msg = JSON.parse(message.data.message)
@@ -606,6 +610,13 @@ self.onmessage = function(message) {
 			scriptCallback(msg, worker_id)
 		}
 		__k.done()
+=======
+		if(scriptCallback) {
+			scriptCallback({
+				data: message.data.message
+			}, worker_id)
+		}
+>>>>>>> 9ea83630233a0758881023edabcee7807625da6d
 	}
 	else if(type == 'script') {
 		worker_id = message.data["uid"];
