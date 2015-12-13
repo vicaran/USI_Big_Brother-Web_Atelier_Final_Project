@@ -4317,7 +4317,7 @@
 
 var picker = new Pikaday(
     {
-        field: document.getElementById('inputDate'),
+        field: document.getElementById('db-from1'),
         firstDay: 1,
         format: 'MM/DD/YYYY',
         minDate: new Date(2000, 0, 1),

@@ -288,6 +288,7 @@ k.createHTML('pimmi', htmlString);
 
 //add the graph script
 k.createScript('our_graph', 'js/scripts/mile_g.js');
+k.createScript('pikaday', 'js/scripts/pikaday.js');
 
 //connect browser with browser operator
 k.registerProducer('producer');
