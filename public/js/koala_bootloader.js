@@ -1177,13 +1177,9 @@ $(document).ready(function(){
         var id = event.data.identifier
         
         if(!addedHtml[id]) {
-<<<<<<< HEAD
           //$('#__frame_' + cid).prepend('<div class="row">' + html + '</div>')
           // $('#__frame_' + cid).append(html)
           $('#_liquid_frame').append(html)
-=======
-          $('#__frame_' + cid).prepend('<div class="row">' + html + '</div>')
->>>>>>> 9ea83630233a0758881023edabcee7807625da6d
           addedHtml[id] = true
         }
       } 
@@ -1206,7 +1202,6 @@ $(document).ready(function(){
         }
       } 
       /*
-<<<<<<< HEAD
        * Workers add CSS to the webpage through the operator
        */
       else if(event.data.type == "addCSS") {
@@ -1225,8 +1220,6 @@ $(document).ready(function(){
        }
      }
       /*
-=======
->>>>>>> 9ea83630233a0758881023edabcee7807625da6d
        * Workers call a function on the DOM
        */
       else if(event.data.type == "callFunction") {
@@ -1451,10 +1444,7 @@ $(document).ready(function(){
       console.log('Something went bad, reaload the page')
       return
     }
-<<<<<<< HEAD
     
-=======
->>>>>>> 9ea83630233a0758881023edabcee7807625da6d
 
     now.register_new_remote_node(function(new_node_id, new_alias, random_token) {
         globalRandomToken = random_token
@@ -2992,7 +2982,6 @@ var connectPeer = function(id, r_token) {
 				The following means that *this* worker will receive (or not receive anymore) messages
 				from the workers that sent the _WLS_SETUP message. 
 			*/
-<<<<<<< HEAD
     			if(data._WLS_SETUP == "bind"){
     				var w = data.sender_operator;
     				console.log("dentro bind");
@@ -3011,26 +3000,6 @@ var connectPeer = function(id, r_token) {
     				operators[data.receiver].cbOrdering.splice(ordering.indexOf(w), 1);
     				return;
     			}
-=======
-			if(data._WLS_SETUP == "bind"){
-				var w = data.sender_operator;
-				console.log("dentro bind");
-				//check to avoid doing double the thing when more than one worker for the same operator connect
-				if(!operators[data.receiver].inConnections[w]){
-					operators[data.receiver].inConnections[w] = true;
-					operators[data.receiver].cbOrdering.push(w);
-					console.log(w, operators[data.receiver].inConnections);
-				}
-				return;
-			}
-			
-			else if(data._WLS_SETUP == "unbind"){
-				var w = data.sender_operator;
-				operators[data.receiver].inConnections[w] = undefined;
-				operators[data.receiver].cbOrdering.splice(ordering.indexOf(w), 1);
-				return;
-			}
->>>>>>> 9ea83630233a0758881023edabcee7807625da6d
         }
 
         if(type == 'incoming_message') {

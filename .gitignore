@@ -8,8 +8,6 @@
 !/scripts/*
 !/public/
 /public/*
-!/k_globals/
-!/k_globals/*
 !/public/css/
 !/public/js
 !/public/js/*
