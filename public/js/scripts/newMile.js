@@ -149,121 +149,121 @@ var htmlString =
         // </div>
             '</div>'+
         '</article>'+
+    '</section>'+
+    '<section class="panel b-yellow" id="2">'+
+        '<article class="panel__wrapper">'+
+            '<div class="panel__content">'+
+                '<h1 class="panel__headline"><i class="fa fa-bolt"></i>&nbsp;Archive</h1>'+
+                '<div class="panel__block"></div>'+
+                '<p>'+
+                    'Click the part of the openspace you want to receive information about.'+
+                '</p>'+
+                '<canvas id="positionCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">'+
+                    'Your browser does not support the canvas element.'+
+                '</canvas>'+
+                '<div class="text-input" id="block-input1">'+
+                    '<br>'+
+                    '<p>'+
+                        'From:'+
+                    '</p>'+
+                    '<input type="text" name="From" placeholder="" mm/dd/yyyy hh:mm:ss "" id="db-from1" />'+
+                    '<p>'+
+                        '<br> To:'+
+                    '</p>'+
+                    '<input type="text" name="To" placeholder="Enter date" id="db-to1" />'+
+                    '<span class="fa fa-search search-button" onclick="getDataFromDatabase(1)"></span>'+
+                    // '<button class="fa fa-search search-button" onclick="getDataFromDatabase(1)"></button>'+
+                '</div>'+
+                '<div class="text-input" id="block-input2">'+
+                    '<br>'+
+                    '<p>'+
+                        'From:'+
+                    '</p>'+
+                    '<input type="text" name="From" placeholder="" mm/dd/yyyy hh:mm:ss "" id="db-from2" />'+
+                    '<p>'+
+                        '<br> To:'+
+                    '</p>'+
+                    '<input type="text" name="To" placeholder="" mm/dd/yyyy hh:mm:ss "" id="db-to2" />'+
+                    '<span class="fa fa-search search-button" onclick="getDataFromDatabase(2)"></span>'+
+                    // '<button class="fa fa-search search-button" onclick="getDataFromDatabase(2)"></button>'+
+                '</div>'+
+                '<div class="text-input" id="block-input3">'+
+                    '<br>'+
+                    '<p>'+
+                        'From:'+
+                    '</p>'+
+                    '<input type="text" name="From" placeholder="" mm/dd/yyyy hh:mm:ss "" id="db-from3" />'+
+                    '<p>'+
+                        '<br> To:'+
+                    '</p>'+
+                    '<input type="text" name="To" placeholder="" mm/dd/yyyy hh:mm:ss "" id="db-to3" />'+
+                    '<span class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></span>'+
+                '</div>'+
+                '<canvas id="canvasArch" width="400px" height="400px"></canvas>'+
+            '</div>'+
+            '</div>'+
+            '</div>'+
+        '</article>'+
+    '</section>'+
+    '<section class="panel b-red" id="3">'+
+        '<article class="panel__wrapper">'+
+            '<div class="panel__content">'+
+                '<h1 class="panel__headline"><i class="fa fa-music"></i>&nbsp;Turn On Lights</h1>'+
+                '<div class="panel__block"></div>'+
+                '<p>'+
+                    'When the light is off, you can choose to turn on the light in the desired part of the openspace.'+
+                '</p>'+
+                '<canvas id="lightCanvas" class="canvasSizeLights">'+
+                    'Your browser does not support the canvas element.'+
+                '</canvas>'+
+                '<div class="orderSwitches">'+
+                    '<div class="onoffswitch1" id="onoffswitch1">'+
+                        '<p>'+
+                            'Turn on?'+
+                        '</p>'+
+                        '<input type="checkbox" name="onoffswitch1" class="onoffswitch-checkbox1" id="myonoffswitch1" checked>'+
+                        '<label class="onoffswitch-label1" for="myonoffswitch1">'+
+                            '<span class="onoffswitch-inner1"></span>'+
+                            '<span class="onoffswitch-switch1"></span>'+
+                        '</label>'+
+                    '</div>'+
+                    '<div class="onoffswitch2" id="onoffswitch2">'+
+                        '<p>'+
+                            'Turn on?'+
+                        '</p>'+
+                        '<input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox2" id="myonoffswitch2" checked>'+
+                        '<label class="onoffswitch-label2" for="myonoffswitch2">'+
+                            '<span class="onoffswitch-inner2"></span>'+
+                            '<span class="onoffswitch-switch2"></span>'+
+                        '</label>'+
+                    '</div>'+
+                    '<div class="onoffswitch3" id="onoffswitch3">'+
+                        '<p>'+
+                            'Turn on?'+
+                        '</p>'+
+                        '<input type="checkbox" name="onoffswitch3" class="onoffswitch-checkbox3" id="myonoffswitch3" checked>'+
+                        '<label class="onoffswitch-label3" for="myonoffswitch3">'+
+                            '<span class="onoffswitch-inner3"></span>'+
+                            '<span class="onoffswitch-switch3"></span>'+
+                        '</label>'+
+                    '</div>'+
+                '</div>'+
+        '</article>'+
+    '</section>'+
+    '<section class="panel b-green" id="4">'+
+        '<article class="panel__wrapper">'+
+            '<div class="panel__content">'+
+                '<h1 class="panel__headline"><i class="fa fa-paper-plane"></i>&nbsp;ABOUT</h1>'+
+                '<div class="panel__block"></div>'+
+                '<div class="fa card">'+
+                    '<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam venenatis vulputate sem, commodo suscipit nisi congue ultricies. Sed a pharetra metus, at pulvinar neque. Maecenas porta suscipit ullamcorper. Mauris euismod rutrum eros ac bibendum. Curabitur eget quam ut augue sodales tristique a in quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin blandit ipsum sed venenatis scelerisque. Vestibulum vulputate tellus a sapien condimentum interdum. Nam ut augue a diam vulputate consequat. Morbi vitae vestibulum tortor.'+
+                        '<br>'+
+                        '<br> Donec molestie maximus velit, vitae venenatis massa tristique non. Aliquam erat volutpat. Duis imperdiet tempor elit ut sollicitudin. Fusce at purus vehicula, venenatis libero sit amet, faucibus eros. Maecenas id aliquam magna. Maecenas scelerisque sapien a metus iaculis facilisis. Duis tincidunt scelerisque sem et tempus. Phasellus iaculis tellus in ex pretium, a pellentesque justo pretium. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam bibendum aliquet dui, sollicitudin pharetra lectus dapibus in. Nullam porta erat ut pellentesque tristique.'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</article>'+
     '</section>';
-    // <section class="panel b-yellow" id="2">
-    //     <article class="panel__wrapper">
-    //         <div class="panel__content">
-    //             <h1 class="panel__headline"><i class="fa fa-bolt"></i>&nbsp;Archive</h1>
-    //             <div class="panel__block"></div>
-    //             <p>
-    //                 Click the part of the openspace you want to receive information about.
-    //             </p>
-    //             <canvas id="positionCanvas" class="canvasSize" style="border:5px solid #d3d3d3;">
-    //                 Your browser does not support the canvas element.
-    //             </canvas>
-    //             <div class="text-input" id="block-input1">
-    //                 <br>
-    //                 <p>
-    //                     From:
-    //                 </p>
-    //                 <input type="text" name="From" placeholder="" mm/dd/yyyy hh:mm:ss "" id="db-from1" />
-    //                 <p>
-    //                     <br> To:
-    //                 </p>
-    //                 <input type="text" name="To" placeholder="Enter date" id="db-to1" />
-    //                 <span class="fa fa-search search-button" onclick="getDataFromDatabase(1)"></span> //
-    //                 <button class="fa fa-search search-button" onclick="getDataFromDatabase(1)"></button>
-    //             </div>
-    //             <div class="text-input" id="block-input2">
-    //                 <br>
-    //                 <p>
-    //                     From:
-    //                 </p>
-    //                 <input type="text" name="From" placeholder="" mm/dd/yyyy hh:mm:ss "" id="db-from2" />
-    //                 <p>
-    //                     <br> To:
-    //                 </p>
-    //                 <input type="text" name="To" placeholder="" mm/dd/yyyy hh:mm:ss "" id="db-to2" />
-    //                 <span class="fa fa-search search-button" onclick="getDataFromDatabase(2)"></span> //
-    //                 <button class="fa fa-search search-button" onclick="getDataFromDatabase(2)"></button>
-    //             </div>
-    //             <div class="text-input" id="block-input3">
-    //                 <br>
-    //                 <p>
-    //                     From:
-    //                 </p>
-    //                 <input type="text" name="From" placeholder="" mm/dd/yyyy hh:mm:ss "" id="db-from3" />
-    //                 <p>
-    //                     <br> To:
-    //                 </p>
-    //                 <input type="text" name="To" placeholder="" mm/dd/yyyy hh:mm:ss "" id="db-to3" />
-    //                 <span class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></span>
-    //             </div>
-    //             <canvas id="canvasArch" width="400px" height="400px"></canvas>
-    //         </div>
-    //         </div>
-    //         </div>
-    //     </article>
-    // </section>
-    // <section class="panel b-red" id="3">
-    //     <article class="panel__wrapper">
-    //         <div class="panel__content">
-    //             <h1 class="panel__headline"><i class="fa fa-music"></i>&nbsp;Turn On Lights</h1>
-    //             <div class="panel__block"></div>
-    //             <p>
-    //                 When the light is off, you can choose to turn on the light in the desired part of the openspace.
-    //             </p>
-    //             <canvas id="lightCanvas" class="canvasSizeLights">
-    //                 Your browser does not support the canvas element.
-    //             </canvas>
-    //             <div class="orderSwitches">
-    //                 <div class="onoffswitch1" id="onoffswitch1">
-    //                     <p>
-    //                         Turn on?
-    //                     </p>
-    //                     <input type="checkbox" name="onoffswitch1" class="onoffswitch-checkbox1" id="myonoffswitch1" checked>
-    //                     <label class="onoffswitch-label1" for="myonoffswitch1">
-    //                         <span class="onoffswitch-inner1"></span>
-    //                         <span class="onoffswitch-switch1"></span>
-    //                     </label>
-    //                 </div>
-    //                 <div class="onoffswitch2" id="onoffswitch2">
-    //                     <p>
-    //                         Turn on?
-    //                     </p>
-    //                     <input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox2" id="myonoffswitch2" checked>
-    //                     <label class="onoffswitch-label2" for="myonoffswitch2">
-    //                         <span class="onoffswitch-inner2"></span>
-    //                         <span class="onoffswitch-switch2"></span>
-    //                     </label>
-    //                 </div>
-    //                 <div class="onoffswitch3" id="onoffswitch3">
-    //                     <p>
-    //                         Turn on?
-    //                     </p>
-    //                     <input type="checkbox" name="onoffswitch3" class="onoffswitch-checkbox3" id="myonoffswitch3" checked>
-    //                     <label class="onoffswitch-label3" for="myonoffswitch3">
-    //                         <span class="onoffswitch-inner3"></span>
-    //                         <span class="onoffswitch-switch3"></span>
-    //                     </label>
-    //                 </div>
-    //             </div>
-    //     </article>
-    // </section>
-    // <section class="panel b-green" id="4">
-    //     <article class="panel__wrapper">
-    //         <div class="panel__content">
-    //             <h1 class="panel__headline"><i class="fa fa-paper-plane"></i>&nbsp;ABOUT</h1>
-    //             <div class="panel__block"></div>
-    //             <div class="fa card">
-    //                 <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam venenatis vulputate sem, commodo suscipit nisi congue ultricies. Sed a pharetra metus, at pulvinar neque. Maecenas porta suscipit ullamcorper. Mauris euismod rutrum eros ac bibendum. Curabitur eget quam ut augue sodales tristique a in quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin blandit ipsum sed venenatis scelerisque. Vestibulum vulputate tellus a sapien condimentum interdum. Nam ut augue a diam vulputate consequat. Morbi vitae vestibulum tortor.
-    //                     <br>
-    //                     <br> Donec molestie maximus velit, vitae venenatis massa tristique non. Aliquam erat volutpat. Duis imperdiet tempor elit ut sollicitudin. Fusce at purus vehicula, venenatis libero sit amet, faucibus eros. Maecenas id aliquam magna. Maecenas scelerisque sapien a metus iaculis facilisis. Duis tincidunt scelerisque sem et tempus. Phasellus iaculis tellus in ex pretium, a pellentesque justo pretium. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam bibendum aliquet dui, sollicitudin pharetra lectus dapibus in. Nullam porta erat ut pellentesque tristique.
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </article>
-    // </section>';
 k.createHTML('pimmi', htmlString);
 
 //add the graph script
