@@ -808,15 +808,20 @@ function editArchives(content) {
     myArchRealBar.destroy();
     for (var i in content) {
         console.log("i ", content[i]);
-        var date = new Date(content[i].time).toUTCString();
-        date = date.split(' ')[4]
-        barChartDataArchieve.datasets[0].data.push(content[i].volume);
-        barChartDataArchieve.datasets[1].data.push(content[i].light);
-        barChartDataArchieve.datasets[2].data.push(content[i].temperature);
-        barChartDataArchieve.labels.push(date);
-        console.log("volume ", barChartDataArchieve.datasets[0].data);
-        console.log("light ", barChartDataArchieve.datasets[1].data);
-        console.log("temp ", barChartDataArchieve.datasets[2].data);
+        if(content[i] !== "undefined"){
+            var date = new Date(content[i].time).toUTCString();
+            date = date.split(' ')[4]
+            barChartDataArchieve.datasets[0].data.push(content[i].volume);
+            barChartDataArchieve.datasets[1].data.push(content[i].light);
+            barChartDataArchieve.datasets[2].data.push(content[i].temperature);
+            barChartDataArchieve.labels.push(date);
+            console.log("volume ", barChartDataArchieve.datasets[0].data);
+            console.log("light ", barChartDataArchieve.datasets[1].data);
+            console.log("temp ", barChartDataArchieve.datasets[2].data);
+        }
+        else{
+            
+        }
     }
     myArchBar.Bar(barChartDataArchieve);
 }
