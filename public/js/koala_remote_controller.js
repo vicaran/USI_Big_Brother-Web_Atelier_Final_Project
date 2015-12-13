@@ -213,7 +213,7 @@ controller.onCPU = function(cid) {
   }
 
   if(!helpRequest[cid]) {
-//    now.require_central_controller(cid, null, options, code.CPU, function(){})
+    now.require_central_controller(cid, null, options, code.CPU, function(){})
     helpRequest[cid] = true
   }
 }

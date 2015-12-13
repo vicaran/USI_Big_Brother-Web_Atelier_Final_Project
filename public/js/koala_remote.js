@@ -11,9 +11,6 @@ var xmlhttp = new XMLHttpRequest();
 
 var drawUI = false
 
-//worker script callback
-var scriptCallback     = undefined;
-
 
 var throughput = {
 	in: 0,
@@ -173,12 +170,6 @@ var require = function() {
 		createNode : function(cb) {
 			scriptCallback = cb;
 		},
-		createJoin : function(cb) {
-			scriptCallback = cb;
-			postMessage({
-				type: "registerJoin",
-			});
-		},
 		done: function() {
 			if(activeCallbacks == 0) {
 				postMessage({
@@ -240,13 +231,6 @@ var require = function() {
 				html: html,
 			})
 		},
-		createCSS: function(id, css) {
-			postMessage({
-				type: 'addCSS',
-				identifier: id,
-				css: css,
-			})
-		},
 		createScript: function(id, script) {
 			postMessage({
 				type: 'addScript',
@@ -290,148 +274,13 @@ var require = function() {
 			callback([""])
 		},
 		
-//		storage: {
-//			getMergedSortList: function() {
-//				postMessage({
-//					type: "getMergedSortList",
-//					content: arguments
-//				})
-//			},
-//			incrBySortList: function(setName, incr, key) {
-//				postMessage({
-//					type: "incrBySortList",
-//					content: arguments,
-//					setName: setName,
-//					incr: incr,
-//					key: key
-//				});
-//			}
-//		},
-		//stateful
-//		stateful: function(methodName, args, callback){
-//			var statefulMethod = {
-//					type: 'statefulCall',
-//					name: methodName,
-//					args: args,
-//					token: undefined
-//			}
-//			
-//			if(typeof(callback) == 'function') {
-//				activeCallbacks++
-//				var token = new Date().getTime();
-//				waitingCallbacks[token] = callback;
-//				statefulMethod.token = token;
-//			}
-//			
-//			postMessage(statefulMethod);
-//		}
-		stateful: {
-			set: function(key, value, callback) {
-				var statefulMethod = {
-						type: 'statefulCall',
-						name: 'set',
-						args: [key,value],
-						token: undefined
-				}
-				if(typeof(callback) == 'function') {
-					activeCallbacks++
-					var token = new Date().getTime();
-					waitingCallbacks[token] = callback;
-					statefulMethod.token = token;
-				}
-				postMessage(statefulMethod);
-			},
-			get: function(key, callback) {
-				var statefulMethod = {
-						type: 'statefulCall',
-						name: 'get',
-						args: [key],
-						token: undefined
-				}
-				if(typeof(callback) == 'function') {
-					activeCallbacks++
-					var token = new Date().getTime();
-					waitingCallbacks[token] = callback;
-					statefulMethod.token = token;
-				}
-				postMessage(statefulMethod);
-			},
-			incr: function(key, callback) {
-				var statefulMethod = {
-						type: 'statefulCall',
-						name: 'incr',
-						args: [key],
-						token: undefined
-				}
-				if(typeof(callback) == 'function') {
-					activeCallbacks++
-					var token = new Date().getTime();
-					waitingCallbacks[token] = callback;
-					statefulMethod.token = token;
-				}
-				postMessage(statefulMethod);
-			},
-			decr: function(key, callback) {
-				var statefulMethod = {
-						type: 'statefulCall',
-						name: 'decr',
-						args: [key],
-						token: undefined
-				}
-				if(typeof(callback) == 'function') {
-					activeCallbacks++
-					var token = new Date().getTime();
-					waitingCallbacks[token] = callback;
-					statefulMethod.token = token;
-				}
-				postMessage(statefulMethod);
-			},
-			addToSortList: function(args,callback){
-				var statefulMethod = {
-						type: 'statefulCall',
-						name: 'addToSortList',
-						args: args,
-						token: undefined
-				}
-				if(typeof(callback) == 'function') {
-					activeCallbacks++
-					var token = new Date().getTime();
-					waitingCallbacks[token] = callback;
-					statefulMethod.token = token;
-				}
-				postMessage(statefulMethod);
-			},
-			incrBySortList: function(setName, incr, key, callback) {
-				var statefulMethod = {
-						type: 'statefulCall',
-						name: 'incrBySortList',
-						args: [setName, incr, key],
-						token: undefined
-				}
-				if(typeof(callback) == 'function') {
-					activeCallbacks++
-					var token = new Date().getTime();
-					waitingCallbacks[token] = callback;
-					statefulMethod.token = token;
-				}
-				postMessage(statefulMethod);
-			},
-			getMergedSortList: function(args,cb) {
-				var statefulMethod = {
-						type: 'statefulCall',
-						name: 'getMergedSortList',
-						args: args,
-						token: undefined
-				}
-				if(typeof(callback) == 'function') {
-					activeCallbacks++
-					var token = new Date().getTime();
-					waitingCallbacks[token] = callback;
-					statefulMethod.token = token;
-				}
-				postMessage(statefulMethod);
+		storage: {
+			getMergedSortList: function() {
+				postMessage({
+					type: "getMergedSortList",
+					content: arguments
+				})
 			}
-			
 		}
 	}
 	// self = this;
@@ -595,17 +444,11 @@ self.onmessage = function(message) {
 		latency['out'] = message.data.data
 	}
 	else if(type == "producer"){
-		var msg = undefined
-		try {
-			msg = JSON.parse(message.data.message)
-		} catch(e) {
-			msg = message.data.message
-		}
-
 		if(scriptCallback) {
-			scriptCallback(msg, worker_id)
+			scriptCallback({
+				data: message.data.message
+			}, worker_id)
 		}
-		__k.done()
 	}
 	else if(type == 'script') {
 		worker_id = message.data["uid"];

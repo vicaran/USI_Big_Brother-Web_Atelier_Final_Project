@@ -10,11 +10,17 @@ var addMarker = function(c,t,color,location, user) {
 	if(location.geonames.length > 0) {
 		var loc = location.geonames[0]
 
-		if(!user) {
+		console.log(t)
+
+		var text = t.text
+
+
+		if(!user && !(text[0] == "R" && text[1] == "T")) {
 			var pinLocation = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + color,
-		        new google.maps.Size(21, 34),
-		        new google.maps.Point(0,0),
-		        new google.maps.Point(10, 34));
+		        null,
+		        null,
+		        null,
+		        new google.maps.Size(40, 68));
 
 			var marker = new google.maps.Marker({
 		     	position: new google.maps.LatLng(loc.lat, loc.lng),
@@ -26,11 +32,28 @@ var addMarker = function(c,t,color,location, user) {
 
 
 		  	google.maps.event.addListener(marker, 'click', function() {
-			  	producer_handler({t:t, color:color}, 'producer')
+		  		var count = $('#input_number').val()
+
+		  		count = Number(count)
+		  		if(isNaN(count)) {
+		  			count = 1
+		  		}
+
+		  		if(count < 1 || 20 < count) {
+		  			count = 1
+		  		}
+
+
+			  	producer_handler({t:t, color:color, count:count}, 'producer')
 			});
+
+		  	google.maps.event.addListener(marker, 'mouseover', function() {
+			  	producer_handler({t:t, color:color}, 'viewer')
+			});
+
 		} else {
 			var pinUser = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + color,
-			        null, null, null, new google.maps.Size(10, 17))
+			        null, null, null, new google.maps.Size(20, 34))
 
 			var marker = new google.maps.Marker({
 		     	position: new google.maps.LatLng(loc.lat, loc.lng),
@@ -39,6 +62,10 @@ var addMarker = function(c,t,color,location, user) {
 		    	animation: google.maps.Animation.DROP,
 		    	icon: pinUser
 		  	});
+
+		  	google.maps.event.addListener(marker, 'mouseover', function() {
+			  	producer_handler({t:t, color:color}, 'viewer')
+			});
 		}
 	}
 }
