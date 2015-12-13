@@ -9,8 +9,13 @@
 !/public/
 /public/*
 !/public/css/
+<<<<<<< HEAD
 !/public/js
 !/public/js/*
+=======
+!/public/js/
+/public/js/*
+>>>>>>> parent of 8f103cf... gitignore pdm
 !/public/js/scripts/
 !/public/js/scripts/*
 !/skeleton/
