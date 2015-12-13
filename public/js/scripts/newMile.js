@@ -171,8 +171,8 @@ var htmlString =
                         '<br> To:'+
                     '</p>'+
                     '<input type="text" name="To" placeholder="Enter date" id="db-to1" />'+
-                    '<span class="fa fa-search search-button" onclick="getDataFromDatabase(1)"></span>'+
-                    // '<button class="fa fa-search search-button" onclick="getDataFromDatabase(1)"></button>'+
+                    // '<span class="fa fa-search search-button" onclick="getDataFromDatabase(1)"></span>'+
+                    '<button class="fa fa-search search-button" onclick="getDataFromDatabase(1)"></button>'+
                 '</div>'+
                 '<div class="text-input" id="block-input2">'+
                     '<br>'+
@@ -184,8 +184,8 @@ var htmlString =
                         '<br> To:'+
                     '</p>'+
                     '<input type="text" name="To" placeholder="" mm/dd/yyyy hh:mm:ss "" id="db-to2" />'+
-                    '<span class="fa fa-search search-button" onclick="getDataFromDatabase(2)"></span>'+
-                    // '<button class="fa fa-search search-button" onclick="getDataFromDatabase(2)"></button>'+
+                    // '<span class="fa fa-search search-button" onclick="getDataFromDatabase(2)"></span>'+
+                    '<button class="fa fa-search search-button" onclick="getDataFromDatabase(2)"></button>'+
                 '</div>'+
                 '<div class="text-input" id="block-input3">'+
                     '<br>'+
@@ -197,7 +197,8 @@ var htmlString =
                         '<br> To:'+
                     '</p>'+
                     '<input type="text" name="To" placeholder="" mm/dd/yyyy hh:mm:ss "" id="db-to3" />'+
-                    '<span class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></span>'+
+                    // '<span class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></span>'+
+                    '<button class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></button>'+
                 '</div>'+
                 '<canvas id="canvasArch" width="400px" height="400px"></canvas>'+
             '</div>'+
