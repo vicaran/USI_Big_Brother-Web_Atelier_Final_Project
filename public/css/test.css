@@ -2092,8 +2092,11 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     font-size: 14pt;
     width: 80%;
     align: center;
+    margin: 2em;
+/*
     margin-top: 2em;
     margin-bottom: 2em;
+*/
     padding-top: 2em;
 }
 .card >div{
