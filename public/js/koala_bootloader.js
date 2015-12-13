@@ -120,7 +120,7 @@ var socket_operators = {}
 
 var globalRandomToken = undefined
 
-var presentationMode = false;
+var presentationMode = true
 
 /*
  * Opening new socket
@@ -149,39 +149,16 @@ var open_new_socket_connection = function(host, port, cid1, cid2, from, to, prot
   if(socket_connections[host] == undefined) {
     socket_status[host] = 'closed'
 
-    var conn = new WebSocket('ws://'+host+':'+port)
+    //var conn = new WebSocket('ws://'+host+':'+port)
+    var conn = new WebSocket('ws://neha.inf.unisi.ch:'+port)
+
 
     conn.onmessage = function(msg){
-      var message = JSON.parse(msg.data);
-      
-	   /*
-			Check if this is a message from the stream or a message from the setup.
-			The following means that *this* worker will receive (or not receive anymore) messages
-			from the workers that sent the _WLS_SETUP message. 
-		*/
-		if(message._WLS_SETUP == "bind"){
-			console.log("bind ricevuto: " + JSON.stringify(message));
-			var w = message.sender_operator;
-			
-			//check to avoid doing double the thing when more than one worker for the same operator connect
-			if(!operators[message.receiver].inConnections[w]){
-				operators[message.receiver].inConnections[w] = true;
-				operators[message.receiver].cbOrdering.push(w);
-			}
-			return;
-		}
-		
-		else if(message._WLS_SETUP == "unbind"){
-			var w = JSON.parse(data).sender_operator;
-			operators[message.receiver].inConnections[w] = undefined;
-			operators[message.receiver].cbOrdering.splice(ordering.indexOf(w), 1);
-			return;
-		}
+      var message = JSON.parse(msg.data)
 
       if(message.type == 'incoming_message') {
         var toCid = message.to
         var options = message.options
-        var fromCid = message.from_operator;
 
         if(options == undefined || typeof options !== 'object') {
           options = {
@@ -214,14 +191,13 @@ var open_new_socket_connection = function(host, port, cid1, cid2, from, to, prot
         })
 
         options.__checkpoints[options.__checkpoints.length-1].m_size = sizeof(message.data) + sizeof(options)
-	
-		operators[toCid].__pushMessage('incoming_message', JSON.stringify(message.data), options, fromCid);  
 
+        operators[toCid].__pushMessage('incoming_message', JSON.stringify(message.data), options)  
       }
     }
     
     conn.onopen = function() {
-      conn.send(JSON.stringify({type: 'setup', cid: browserCid, alias: operators[browserCid].alias}));
+      conn.send(JSON.stringify({type: 'setup', cid: browserCid}));
 
 
       socket_status[host] = 'opened'
@@ -332,7 +308,7 @@ var producer_handler = function(data, identifier){
     options.__checkpoints[options.__checkpoints.length-1].m_size = sizeof(data) + sizeof(options)
 
 
-    operators[cid].__pushMessage('producer', data, options, cid)
+    operators[cid].__pushMessage('producer', data, options)
     // if(operators[cid].__worker_pool.length == 0 || operators[cid].__message_pool.length != 0) {
     //   // operators[cid].__message_pool.push({
     //   //   type: 'producer',
@@ -387,51 +363,12 @@ var register_producer = function(pid, identifier) {
  * this function is never directly called, but instead you use operators[cid].__pushMessage
  * where there is a curried binded version of this function
  */
-var push_message = function(cid, type, data, options, fromCid) {
-  var m = undefined
-  
-  if(operators[cid].isJoin){
-  	//store the message in local buffer
-	operators[cid].inMessagesReceived[fromCid] = data;
-	
-	var msgArray = new Array();
-	
-	//check if all the messages of the join have been received
-	var all_received = true;
-	
-	for(var mm in operators[cid].inConnections){
-		if(!operators[cid].inMessagesReceived[mm] && operators[cid].inConnections[mm] == true)
-			all_received = false;
-		else
-			msgArray.push(operators[cid].inMessagesReceived[mm]);
-	}
-	
-	//if all received
-	if(all_received){
-		var finalMsg = new Array();
-		for(var i = 0; i < operators[cid].cbOrdering.length; i++){
-			finalMsg.push(msgArray[operators[cid].cbOrdering[i]]);
-		}
-		//join_cb(finalMsg, uid, options);
-		m = {
-			type: type,
-			message: finalMsg,
-			options: options
-		}
-		
-		//empty the inMessagesReceived array
-		for(var f in operators[cid].inMessagesReceived){
-			delete operators[cid].inMessagesReceived[f];
-		}
-	}
-  } else {
-  	m = {
-    	type: type,
-    	message: data,
-    	options: options
-  	}
+var push_message = function(cid, type, data, options) {
+  var m = {
+    type: type,
+    message: data,
+    options: options
   }
-	
 
   // var dt = JSON.parse(data)
   // if(dt.counter != undefined) {
@@ -441,10 +378,6 @@ var push_message = function(cid, type, data, options, fromCid) {
   //     // controller.onBattery()
   //   }
   // }
- 
-  if(m == undefined) {
-  	return
-  }
 
   if(operators[cid].__worker_pool.length == 0 || operators[cid].__message_pool.length != 0) {
     operators[cid].__message_pool.push(m)
@@ -507,8 +440,8 @@ var deactivate_slow_mode = function(cid) {
 }
 
 var local_push_message = function(cid, message) {
-  var data = JSON.parse(message);
-  var fromCid = message.from;
+  var data = JSON.parse(message)
+
   var options = data.options
 
   if(options == undefined || typeof options !== 'object') {
@@ -541,7 +474,7 @@ var local_push_message = function(cid, message) {
   options.__checkpoints[options.__checkpoints.length-1].m_size = sizeof(data.msg) + sizeof(options)
 
   if(data.type == 'incoming_message') {
-    push_message(cid, data.type, data.msg, options, fromCid);
+    push_message(cid, data.type, data.msg, options)
   } else {
     console.log('New local push message')
   }
@@ -716,7 +649,6 @@ $(document).ready(function(){
   }
 
   var send_out = function(cid, message) {
-  	message.from = cid;
     //TODO brodcast check
     if(true) {
       if(operators[cid]['out'].length == 0) {
@@ -768,17 +700,8 @@ $(document).ready(function(){
 
     operators[cid].__workerCounter--
 
-    //console.log(w)
-    console.log(uid)
-    var index = operators[cid].__workers.indexOf(uid)
-    console.log(operators[cid].__workers)
-    for(var k = 0; k < operators[cid].__workers.length; k++){
-        console.log(uid + " equal to " + operators[cid].__workers[k]);
-	if(operators[cid].__workers[k] == uid){
-            operators[cid].__workers[k] = undefined;
-	}
-    }
-    operators[cid].__workers[index] = undefined
+    var index = operators[cid].__workers.indexOf(w)
+    operators[cid].__workers[w] = undefined
 
     index = operators[cid].__worker_pool.indexOf(w)
     operators[cid].__worker_pool.splice(index, 1)
@@ -792,8 +715,7 @@ $(document).ready(function(){
     delete operators[cid].__workersID[uid]
 
     updateGraphics(cid)
-    if(typeof cb === 'function')
-    	cb()
+    cb()
   }
 
   /*
@@ -1345,49 +1267,19 @@ $(document).ready(function(){
         } 
         
         // controller.run(cid)
-//      } else if(event.data.type == "getMergedSortList") {
-//    	  var workerId = uid
-//    	  var content = event.data.content
-//    	  now.get_merged_sort_list(uid, content, function(workerId, state) {
-//    		  console.log("Received state")
-//    		  console.log(state)
-//    		  
-//    		  worker.postMessage({
-//    			  type: "got_mergedList",
-//    			  content: state
-//    		  })
-//    	  })
-//      } else if(event.data.type == "incrBySortList") {
-//    	  var workerId = uid
-//    	  //var content = event.data.content;
-//    	  var setName = event.data.setName;
-//    	  var incr = event.data.incr;
-//    	  var key = event.data.key
-//    	  now.incr_by_sort_list(uid, setName, incr, key);
-//    	  
-      } else if(event.data.type == "statefulCall") {
-    	  var name 	= event.data.name;
-    	  var args 	= event.data.args;
-    	  var token = event.data.token;
-    	  
-    	  now.statefulOp(name, args, function(result){
+      } else if(event.data.type == "getMergedSortList") {
+    	  var workerId = uid
+    	  var content = event.data.content
+    	  now.get_merged_sort_list(uid, content, function(workerId, state) {
+    		  console.log("Received state")
+    		  console.log(state)
+    		  
     		  worker.postMessage({
-    				  type: 'returnFunction',
-    				  content: result,
-    				  token: token
-    	  		});
-    	  });
-    	  
-      } 
-      /*
-       * The worker registers a join event
-       */
-      else if(event.data.type == "registerJoin") {
-      	operators[cid].isJoin = true;
-      }
-    	  
-
-      // TODO: nava qui ricevi i messaggi dai worker 
+    			  type: "got_mergedList",
+    			  content: state
+    		  })
+    	  })
+      } // TODO: nava qui ricevi i messaggi dai worker 
       // any other message: errors and console logs
       else {
         console.log("Worker said: " + event.data);    
@@ -1597,7 +1489,6 @@ $(document).ready(function(){
         operators[cid].__message_pool = []
         operators[cid].__maxWorkers = 0
         operators[cid].__workerCounter = 0
-        operators[cid].__alias = alias
         operators[cid].__throughput = {
           startingSampleDate: (new Date()).getTime(),
           in: 0,
@@ -1622,11 +1513,6 @@ $(document).ready(function(){
 
         operators[cid].__roundRobinPosition = 0
         operators[cid].__isSlowMode = false
-        
-        //variables to handle join
-		operators[cid].inConnections = new Array();
-		operators[cid].inMessagesReceived = new Array();
-		operators[cid].cbOrdering = new Array();
 
         if($('#__frame_' + cid).length == 0) {
             jQuery('<div>', {
@@ -2046,7 +1932,7 @@ $(document).ready(function(){
               type: 'configuration',
               from: cid1,
               to: cid2
-            }));
+            }))
 
             for(var w in operators[cid1].__workersID) {
               operators[cid1].__workersID[w].postMessage({
@@ -2054,17 +1940,7 @@ $(document).ready(function(){
               })
             }
 
-            operators[cid1].__isBinded = true;
-            
-            //send setup message for join
-            conn.send(JSON.stringify({	
-            	"type" 					: "_WLS_SETUP",
-				"_WLS_SETUP"			: "bind",
-				"sender_operator" 		: cid1,
-				"sender_operator_alias" : operators[cid1].alias,
-				"sender_worker" 		: undefined,
-				"receiver"				: cid2
-			}));
+            operators[cid1].__isBinded = true
           })
 
           conn.on('close', function() {
@@ -2657,7 +2533,7 @@ $(document).ready(function(){
             c.push({
               cid: i,
               workers: {length: operators[i].__workerCounter},
-              alias: operators[i].alias,
+              alias: "",
               script: cidInfos[i]['script'],
               producer: cidInfos[i]['automatic']
             })
@@ -2738,13 +2614,6 @@ $(document).ready(function(){
 
         for(var c in operators[cid1]['out']) {
           if(operators[cid1]['out'][c].to == cid2) {
-	        operators[cid1]['out'][c].send(JSON.stringify({
-				"_WLS_SETUP"			: "unbind",
-				"sender_operator" 		: cid1,
-				"sender_operator_alias" : operators[cid1].alias,
-				"sender_worker" 		: undefined
-			}));
-          	
             // console.log('Closing ' + operators[cid1]['out'][c].channelType)
             if(operators[cid1]['out'][c].channelType == 'socket' || operators[cid1]['out'][c].channelType == 'local') {
               operators[cid1]['out'].splice(c, 1)
@@ -2756,13 +2625,6 @@ $(document).ready(function(){
 
         for(var c in operators[cid1]['slowOut']) {
           if(operators[cid1]['slowOut'][c].to == cid2) {
-          	operators[cid1]['out'][c].send(JSON.stringify({
-          		"type"					: "",
-				"_WLS_SETUP"			: "unbind",
-				"sender_operator" 		: cid1,
-				"sender_operator_alias" : operators[cid1].alias,
-				"sender_worker" 		: undefined
-			}));
             // console.log('Closing ' + operators[cid1]['slowOut'][c].channelType)
             if(operators[cid1]['slowOut'][c].channelType == 'socket' || operators[cid1]['out'][c].channelType == 'local') {
               operators[cid1]['slowOut'].splice(c, 1)
@@ -2780,7 +2642,7 @@ $(document).ready(function(){
             })
           }
 
-          operators[cid1].__isBinded = false;
+          operators[cid1].__isBinded = false
         }
 
         cb(cid1)
@@ -2799,10 +2661,6 @@ $(document).ready(function(){
             }
           }
         }
-        
-        //join unbind
-        operators[cid2].inConnections[cid1] = undefined;
-		operators[cid2].cbOrdering.splice(operators[cid2].cbOrdering.indexOf(cid1), 1);
 
         cb(cid2)
       }
@@ -2952,39 +2810,11 @@ var connectPeer = function(id, r_token) {
 
       conn.on('data', function(data) {
         data = JSON.parse(data)
-        var type = data.type;
-        
-        if(type == "_WLS_SETUP"){
-        	/*
-				Check if this is a message from the stream or a message from the setup.
-				The following means that *this* worker will receive (or not receive anymore) messages
-				from the workers that sent the _WLS_SETUP message. 
-			*/
-			if(data._WLS_SETUP == "bind"){
-				var w = data.sender_operator;
-				console.log("dentro bind");
-				//check to avoid doing double the thing when more than one worker for the same operator connect
-				if(!operators[data.receiver].inConnections[w]){
-					operators[data.receiver].inConnections[w] = true;
-					operators[data.receiver].cbOrdering.push(w);
-					console.log(w, operators[data.receiver].inConnections);
-				}
-				return;
-			}
-			
-			else if(data._WLS_SETUP == "unbind"){
-				var w = data.sender_operator;
-				operators[data.receiver].inConnections[w] = undefined;
-				operators[data.receiver].cbOrdering.splice(ordering.indexOf(w), 1);
-				return;
-			}
-        }
+        var type = data.type
 
         if(type == 'incoming_message') {
-          var fromCid = data.from;
-          
           var options = data.options
-          
+
           if(options == undefined || typeof options !== 'object') {
             options = {
               __checkpoints: []
@@ -3017,7 +2847,7 @@ var connectPeer = function(id, r_token) {
 
           options.__checkpoints[options.__checkpoints.length-1].m_size = sizeof(data.msg) + sizeof(options)
 
-          operators[cid].__pushMessage('incoming_message', data.msg, options, fromCid)
+          operators[cid].__pushMessage('incoming_message', data.msg, options)
         } else if(type == 'configuration') {
           from = data.from
           cid = data.to
@@ -3026,7 +2856,7 @@ var connectPeer = function(id, r_token) {
 
           console.log('New configuration: ' + from + " to " + cid)
 
-          operators[cid]['in'].push(conn);
+          operators[cid]['in'].push(conn)
         } else {
           console.log(data)
         }
