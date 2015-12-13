@@ -12,7 +12,7 @@ var ready = false;
 var connection = ws.connect(url, function() {
     console.log('--Producer Connected on: ' + url, ' --');
     ready = true;
-    //TODO WHEN CONNECTION ON SERVER CRASHES
+    //TODO WHEN CONNECTION ON SERVER CRASHES https://github.com/sitegui/nodejs-websocket
 })
 
 
