@@ -243,524 +243,524 @@ function editArchives(content) {
 
 //CHARTS
 //define the chart
-var lineChartData = {
-    labels: [],
-    datasets: [{
-        label: "volume Data Set",
-        fillColor: "rgba(215,54,139,0.2)",
-        strokeColor: "rgba(215,54,139,1)",
-        pointColor: "rgba(215,54,139,1)",
-        pointStrokeColor: "rgba(215,54,139,1)",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(220,220,220,1)",
-        data: []
-    }, {
-        label: "light dataset",
-        fillColor: "rgba(151,187,205,0.2)",
-        strokeColor: "rgba(151,187,205,1)",
-        pointColor: "rgba(151,187,205,1)",
-        pointStrokeColor: "rgba(151,187,205,1)",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(151,187,205,1)",
-        data: []
-    }, {
-        label: "temp dataset",
-        fillColor: "rgba(241,85,45,0.2)",
-        strokeColor: "rgba(241,85,45,1)",
-        pointColor: "rgba(241,85,45,1)",
-        pointStrokeColor: "rgba(241,85,45,1)",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(241,85,45,1)",
-        data: []
-    }]
+// var lineChartData = {
+//     labels: [],
+//     datasets: [{
+//         label: "volume Data Set",
+//         fillColor: "rgba(215,54,139,0.2)",
+//         strokeColor: "rgba(215,54,139,1)",
+//         pointColor: "rgba(215,54,139,1)",
+//         pointStrokeColor: "rgba(215,54,139,1)",
+//         pointHighlightFill: "#fff",
+//         pointHighlightStroke: "rgba(220,220,220,1)",
+//         data: []
+//     }, {
+//         label: "light dataset",
+//         fillColor: "rgba(151,187,205,0.2)",
+//         strokeColor: "rgba(151,187,205,1)",
+//         pointColor: "rgba(151,187,205,1)",
+//         pointStrokeColor: "rgba(151,187,205,1)",
+//         pointHighlightFill: "#fff",
+//         pointHighlightStroke: "rgba(151,187,205,1)",
+//         data: []
+//     }, {
+//         label: "temp dataset",
+//         fillColor: "rgba(241,85,45,0.2)",
+//         strokeColor: "rgba(241,85,45,1)",
+//         pointColor: "rgba(241,85,45,1)",
+//         pointStrokeColor: "rgba(241,85,45,1)",
+//         pointHighlightFill: "#fff",
+//         pointHighlightStroke: "rgba(241,85,45,1)",
+//         data: []
+//     }]
 
-}
+// }
 
-var lineChartData1 = {
-    labels: [],
-    datasets: [{
-        label: "volume Data Set",
-        fillColor: "rgba(215,54,139,0.2)",
-        strokeColor: "rgba(215,54,139,1)",
-        pointColor: "rgba(215,54,139,1)",
-        pointStrokeColor: "rgba(215,54,139,1)",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(220,220,220,1)",
-        data: []
-    }, {
-        label: "light dataset",
-        fillColor: "rgba(151,187,205,0.2)",
-        strokeColor: "rgba(151,187,205,1)",
-        pointColor: "rgba(151,187,205,1)",
-        pointStrokeColor: "rgba(151,187,205,1)",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(151,187,205,1)",
-        data: []
-    }, {
-        label: "temp dataset",
-        fillColor: "rgba(241,85,45,0.2)",
-        strokeColor: "rgba(241,85,45,1)",
-        pointColor: "rgba(241,85,45,1)",
-        pointStrokeColor: "rgba(241,85,45,1)",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(151,187,205,1)",
-        data: []
-    }]
+// var lineChartData1 = {
+//     labels: [],
+//     datasets: [{
+//         label: "volume Data Set",
+//         fillColor: "rgba(215,54,139,0.2)",
+//         strokeColor: "rgba(215,54,139,1)",
+//         pointColor: "rgba(215,54,139,1)",
+//         pointStrokeColor: "rgba(215,54,139,1)",
+//         pointHighlightFill: "#fff",
+//         pointHighlightStroke: "rgba(220,220,220,1)",
+//         data: []
+//     }, {
+//         label: "light dataset",
+//         fillColor: "rgba(151,187,205,0.2)",
+//         strokeColor: "rgba(151,187,205,1)",
+//         pointColor: "rgba(151,187,205,1)",
+//         pointStrokeColor: "rgba(151,187,205,1)",
+//         pointHighlightFill: "#fff",
+//         pointHighlightStroke: "rgba(151,187,205,1)",
+//         data: []
+//     }, {
+//         label: "temp dataset",
+//         fillColor: "rgba(241,85,45,0.2)",
+//         strokeColor: "rgba(241,85,45,1)",
+//         pointColor: "rgba(241,85,45,1)",
+//         pointStrokeColor: "rgba(241,85,45,1)",
+//         pointHighlightFill: "#fff",
+//         pointHighlightStroke: "rgba(151,187,205,1)",
+//         data: []
+//     }]
 
-}
-
-
-var barChartData = {
-    labels: [],
-    datasets: [{
-        label: "volume Data Set",
-        fillColor: "rgba(215,54,139,0.2)",
-        strokeColor: "rgba(215,54,139,0.8)",
-        highlightFill: "#fff",
-        highlightStroke: "rgba(215,54,139,0.8)",
-        data: []
-    }, {
-        label: "light Data Set",
-        fillColor: "rgba(151,187,205,0.2)",
-        strokeColor: "rgba(151,187,205,1)",
-        highlightFill: "#fff",
-        highlightStroke: "rgba(151,187,205,1)",
-        data: []
-    }, {
-        label: "temp Data Set",
-        fillColor: "rgba(241,85,45,0.2)",
-        strokeColor: "rgba(241,85,45,1)",
-        highlightFill: "#fff",
-        highlightStroke: "rgba(151,187,205,1)",
-        data: []
-    }, ]
-}
+// }
 
 
-var barChartData1 = {
-    labels: [],
-    datasets: [{
-        label: "volume Data Set",
-        fillColor: "rgba(215,54,139,0.2)",
-        strokeColor: "rgba(215,54,139,0.8)",
-        highlightFill: "#fff",
-        highlightStroke: "rgba(215,54,139,0.8)",
-        data: []
-    }, {
-        label: "light Data Set",
-        fillColor: "rgba(151,187,205,0.2)",
-        strokeColor: "rgba(151,187,205,1)",
-        highlightFill: "#fff",
-        highlightStroke: "rgba(151,187,205,1)",
-        data: []
-    }, {
-        label: "temp Data Set",
-        fillColor: "rgba(241,85,45,0.2)",
-        strokeColor: "rgba(241,85,45,1)",
-        highlightFill: "#fff",
-        highlightStroke: "rgba(151,187,205,1)",
-        data: []
-    }, ]
-};
-
-var barChartDataArchieve = {
-    labels: [],
-    datasets: [{
-        label: "volume Data Set",
-        fillColor: "rgba(215,54,139,0.2)",
-        strokeColor: "rgba(215,54,139,0.8)",
-        highlightFill: "#fff",
-        highlightStroke: "rgba(215,54,139,0.8)",
-        data: []
-    }, {
-        label: "light Data Set",
-        fillColor: "rgba(151,187,205,0.2)",
-        strokeColor: "rgba(151,187,205,1)",
-        highlightFill: "#fff",
-        highlightStroke: "rgba(151,187,205,1)",
-        data: []
-    }, {
-        label: "temp Data Set",
-        fillColor: "rgba(241,85,45,0.2)",
-        strokeColor: "rgba(241,85,45,1)",
-        highlightFill: "#fff",
-        highlightStroke: "rgba(151,187,205,1)",
-        data: []
-    }, ]
-};
-// drop-down-menu
-var drop_down = false;
-document.getElementById('menu-button').addEventListener('click', function(e) {
-    // console.log(e.target);
-    e.target.style.backgroundColor = "rgba(89,88,89,0.6)";
-    var animation = setTimeout(function() {
-        e.target.style.backgroundColor = "rgba(51,56,63,0.6)";
-    }, 30);
-    if (!drop_down) {
-        document.getElementById('drop-down-menu').setAttribute('class', '');
-        drop_down = true;
-    } else {
-        document.getElementById('drop-down-menu').setAttribute('class', 'hidden');
-        drop_down = false;
-
-    }
-});
-
-// selecting tab from drop-down-menu
-document.getElementById('menu-box').addEventListener('click', function(e) {
-    var graphs = document.getElementsByClassName('graph-group');
-    if (e.target.id == "all") {
-        for (var i = 0; i < graphs.length; i++) {
-            graphs[i].setAttribute('class', 'graph-group');
-        }
-    } else if (e.target.id == "one") {
-        graphs[0].setAttribute('class', 'graph-group');
-        graphs[1].setAttribute('class', 'graph-group hidden');
-        // graphs[2].setAttribute('class', 'graph-group hidden');
-    } else if (e.target.id == "two") {
-        graphs[1].setAttribute('class', 'graph-group');
-        graphs[0].setAttribute('class', 'graph-group hidden');
-        // graphs[2].setAttribute('class', 'graph-group hidden');
-    } else if (e.target.id == "three") {
-        // graphs[2].setAttribute('class', 'graph-group');
-        graphs[1].setAttribute('class', 'graph-group hidden');
-        graphs[0].setAttribute('class', 'graph-group hidden');
-    }else{
-        document.getElementById('drop-down-menu').setAttribute('class','hidden');
-    }
-});
+// var barChartData = {
+//     labels: [],
+//     datasets: [{
+//         label: "volume Data Set",
+//         fillColor: "rgba(215,54,139,0.2)",
+//         strokeColor: "rgba(215,54,139,0.8)",
+//         highlightFill: "#fff",
+//         highlightStroke: "rgba(215,54,139,0.8)",
+//         data: []
+//     }, {
+//         label: "light Data Set",
+//         fillColor: "rgba(151,187,205,0.2)",
+//         strokeColor: "rgba(151,187,205,1)",
+//         highlightFill: "#fff",
+//         highlightStroke: "rgba(151,187,205,1)",
+//         data: []
+//     }, {
+//         label: "temp Data Set",
+//         fillColor: "rgba(241,85,45,0.2)",
+//         strokeColor: "rgba(241,85,45,1)",
+//         highlightFill: "#fff",
+//         highlightStroke: "rgba(151,187,205,1)",
+//         data: []
+//     }, ]
+// }
 
 
-// Navbar implementation
-var current_page = current_page || 'graph-container';
-document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
-// document.getElementById(current_page).setAttribute('style', 'display', '');
-var nav = document.getElementById('navbar');
-nav.addEventListener('click', function(e) {
-    // console.log('e');
-    // console.log(e.target);
-    // console.log(e.target.firstChild.id);
-    if (e.target.id == "about" || e.target.firstChild.id == "about") {
-        document.getElementById('info-page').setAttribute('class', '');
-        document.getElementById('graph-container').setAttribute('class', 'hidden');
-        document.getElementById('old-graphs').setAttribute('class', 'hidden');
-        document.getElementById('light-bulb').setAttribute('class', 'hidden');
-        current_page = 'info-page';
-        document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
-    } else if (e.target.id == "live-feed" || e.target.firstChild.id == "live-feed") {
-        document.getElementById('info-page').setAttribute('class', 'hidden');
-        document.getElementById('graph-container').setAttribute('class', '');
-        document.getElementById('old-graphs').setAttribute('class', 'hidden');
-        document.getElementById('light-bulb').setAttribute('class', 'hidden');
-        current_page = 'graph-container';
-        document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
-    } else if (e.target.id == "archives" || e.target.firstChild.id == "archives") {
-        document.getElementById('info-page').setAttribute('class', 'hidden');
-        document.getElementById('graph-container').setAttribute('class', 'hidden');
-        document.getElementById('old-graphs').setAttribute('class', '');
-        document.getElementById('light-bulb').setAttribute('class', 'hidden');
-        current_page = 'old-graphs';
-        document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
-    } else if (e.target.id == "activate-lights" || e.target.firstChild.id == "activate-lights") {
-        document.getElementById('info-page').setAttribute('class', 'hidden');
-        document.getElementById('graph-container').setAttribute('class', 'hidden');
-        document.getElementById('old-graphs').setAttribute('class', 'hidden');
-        document.getElementById('light-bulb').setAttribute('class', '');
-        current_page = 'light-bulb';
-        document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
-        document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
-    }
-});
+// var barChartData1 = {
+//     labels: [],
+//     datasets: [{
+//         label: "volume Data Set",
+//         fillColor: "rgba(215,54,139,0.2)",
+//         strokeColor: "rgba(215,54,139,0.8)",
+//         highlightFill: "#fff",
+//         highlightStroke: "rgba(215,54,139,0.8)",
+//         data: []
+//     }, {
+//         label: "light Data Set",
+//         fillColor: "rgba(151,187,205,0.2)",
+//         strokeColor: "rgba(151,187,205,1)",
+//         highlightFill: "#fff",
+//         highlightStroke: "rgba(151,187,205,1)",
+//         data: []
+//     }, {
+//         label: "temp Data Set",
+//         fillColor: "rgba(241,85,45,0.2)",
+//         strokeColor: "rgba(241,85,45,1)",
+//         highlightFill: "#fff",
+//         highlightStroke: "rgba(151,187,205,1)",
+//         data: []
+//     }, ]
+// };
 
-// SWITCH BETWEEN GRAPHS
-// currently hidden 
-// var prev_graph_c1 = false;
-// var nextGraph = nextGraph || 'c';
-
-// var graph_button = document.getElementById("arrow");
-
-// graph_button.addEventListener('click', function() {
-
-//     c = document.getElementById('c');
-//     c1 = document.getElementById('c1');
-//     c2 = document.getElementById('c2');
-//     c3 = document.getElementById('c3');
-
-//     if (nextGraph == 'c') {
-//         // c.classList.remove('hidden');
-//         c.setAttribute('class', '');
-//         c1.setAttribute('class', 'hidden');
-//         c2.setAttribute('class', 'hidden');
-//         c3.setAttribute('class', 'hidden');
-
-//         // c1.classList.add('hidden');
-//         nextGraph = 'c1';
-//     } else if (nextGraph == 'c1') {
-//         // c1.classList.remove('hidden');
-//         c1.setAttribute('class', '');
-//         c.setAttribute('class', 'hidden');
-//         c2.setAttribute('class', 'hidden');
-//         c3.setAttribute('class', 'hidden');
-//         // c.classList.add('hidden');
-//         nextGraph = 'c2';
-//     } else if (nextGraph == 'c2') {
-//         c.setAttribute('class', 'hidden');
-//         c1.setAttribute('class', 'hidden');
-//         c2.setAttribute('class', '');
-//         c3.setAttribute('class', 'hidden');
-
-//         nextGraph = 'c3';
-
-//     } else if (nextGraph == 'c3') {
-//         c.setAttribute('class', 'hidden');
-//         c1.setAttribute('class', 'hidden');
-//         c2.setAttribute('class', 'hidden');
-//         c3.setAttribute('class', '');
-//         nextGraph = "both";
+// var barChartDataArchieve = {
+//     labels: [],
+//     datasets: [{
+//         label: "volume Data Set",
+//         fillColor: "rgba(215,54,139,0.2)",
+//         strokeColor: "rgba(215,54,139,0.8)",
+//         highlightFill: "#fff",
+//         highlightStroke: "rgba(215,54,139,0.8)",
+//         data: []
+//     }, {
+//         label: "light Data Set",
+//         fillColor: "rgba(151,187,205,0.2)",
+//         strokeColor: "rgba(151,187,205,1)",
+//         highlightFill: "#fff",
+//         highlightStroke: "rgba(151,187,205,1)",
+//         data: []
+//     }, {
+//         label: "temp Data Set",
+//         fillColor: "rgba(241,85,45,0.2)",
+//         strokeColor: "rgba(241,85,45,1)",
+//         highlightFill: "#fff",
+//         highlightStroke: "rgba(151,187,205,1)",
+//         data: []
+//     }, ]
+// };
+// // drop-down-menu
+// var drop_down = false;
+// document.getElementById('menu-button').addEventListener('click', function(e) {
+//     // console.log(e.target);
+//     e.target.style.backgroundColor = "rgba(89,88,89,0.6)";
+//     var animation = setTimeout(function() {
+//         e.target.style.backgroundColor = "rgba(51,56,63,0.6)";
+//     }, 30);
+//     if (!drop_down) {
+//         document.getElementById('drop-down-menu').setAttribute('class', '');
+//         drop_down = true;
 //     } else {
-//         c.setAttribute('class', '');
-//         c1.setAttribute('class', '');
-//         c2.setAttribute('class', '');
-//         c3.setAttribute('class', '');
-//         nextGraph = "c";
+//         document.getElementById('drop-down-menu').setAttribute('class', 'hidden');
+//         drop_down = false;
+
+//     }
+// });
+
+// // selecting tab from drop-down-menu
+// document.getElementById('menu-box').addEventListener('click', function(e) {
+//     var graphs = document.getElementsByClassName('graph-group');
+//     if (e.target.id == "all") {
+//         for (var i = 0; i < graphs.length; i++) {
+//             graphs[i].setAttribute('class', 'graph-group');
+//         }
+//     } else if (e.target.id == "one") {
+//         graphs[0].setAttribute('class', 'graph-group');
+//         graphs[1].setAttribute('class', 'graph-group hidden');
+//         // graphs[2].setAttribute('class', 'graph-group hidden');
+//     } else if (e.target.id == "two") {
+//         graphs[1].setAttribute('class', 'graph-group');
+//         graphs[0].setAttribute('class', 'graph-group hidden');
+//         // graphs[2].setAttribute('class', 'graph-group hidden');
+//     } else if (e.target.id == "three") {
+//         // graphs[2].setAttribute('class', 'graph-group');
+//         graphs[1].setAttribute('class', 'graph-group hidden');
+//         graphs[0].setAttribute('class', 'graph-group hidden');
+//     }else{
+//         document.getElementById('drop-down-menu').setAttribute('class','hidden');
 //     }
 // });
 
 
-//<-----------------                 ------------------------------->
-var updateInterval;
-var myLine;
-var myRealLine;
-var myBar;
-var myRealBar;
-var myLine1;
-var myRealLine1;
-var myBar1;
-var myRealBar1;
+// // Navbar implementation
+// var current_page = current_page || 'graph-container';
+// document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
+// // document.getElementById(current_page).setAttribute('style', 'display', '');
+// var nav = document.getElementById('navbar');
+// nav.addEventListener('click', function(e) {
+//     // console.log('e');
+//     // console.log(e.target);
+//     // console.log(e.target.firstChild.id);
+//     if (e.target.id == "about" || e.target.firstChild.id == "about") {
+//         document.getElementById('info-page').setAttribute('class', '');
+//         document.getElementById('graph-container').setAttribute('class', 'hidden');
+//         document.getElementById('old-graphs').setAttribute('class', 'hidden');
+//         document.getElementById('light-bulb').setAttribute('class', 'hidden');
+//         current_page = 'info-page';
+//         document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
+//         document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
+//         document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
+//         document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
+//     } else if (e.target.id == "live-feed" || e.target.firstChild.id == "live-feed") {
+//         document.getElementById('info-page').setAttribute('class', 'hidden');
+//         document.getElementById('graph-container').setAttribute('class', '');
+//         document.getElementById('old-graphs').setAttribute('class', 'hidden');
+//         document.getElementById('light-bulb').setAttribute('class', 'hidden');
+//         current_page = 'graph-container';
+//         document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
+//         document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
+//         document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
+//         document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
+//     } else if (e.target.id == "archives" || e.target.firstChild.id == "archives") {
+//         document.getElementById('info-page').setAttribute('class', 'hidden');
+//         document.getElementById('graph-container').setAttribute('class', 'hidden');
+//         document.getElementById('old-graphs').setAttribute('class', '');
+//         document.getElementById('light-bulb').setAttribute('class', 'hidden');
+//         current_page = 'old-graphs';
+//         document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
+//         document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
+//         document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
+//         document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
+//     } else if (e.target.id == "activate-lights" || e.target.firstChild.id == "activate-lights") {
+//         document.getElementById('info-page').setAttribute('class', 'hidden');
+//         document.getElementById('graph-container').setAttribute('class', 'hidden');
+//         document.getElementById('old-graphs').setAttribute('class', 'hidden');
+//         document.getElementById('light-bulb').setAttribute('class', '');
+//         current_page = 'light-bulb';
+//         document.getElementById('about').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
+//         document.getElementById('live-feed').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
+//         document.getElementById('archives').parentNode.lastChild.setAttribute('style', 'background-color: rgba(51,56,63,0); height:2px; padding-right: 10px; bottom:-11px;');
+//         document.getElementById('activate-lights').parentNode.lastChild.setAttribute('style', 'background-color: #871F17; height:2px; padding-right: 10px; bottom:-11px;');
+//     }
+// });
 
-var ctx = document.getElementById("canvas0").getContext("2d");
-var ctx_bar = document.getElementById("canvas1").getContext("2d");
-var ctx_1 = document.getElementById("canvas2").getContext("2d");
-var ctx_bar1 = document.getElementById("canvas3").getContext("2d");
+// // SWITCH BETWEEN GRAPHS
+// // currently hidden 
+// // var prev_graph_c1 = false;
+// // var nextGraph = nextGraph || 'c';
 
+// // var graph_button = document.getElementById("arrow");
 
-Chart.defaults.global.animation = false;
-Chart.defaults.global.showTooltips = false;
+// // graph_button.addEventListener('click', function() {
 
-//<------------------------------------------------------------------->
-myLine = new Chart(ctx);
-myRealLine = myLine.Line(lineChartData, {
-    tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
+// //     c = document.getElementById('c');
+// //     c1 = document.getElementById('c1');
+// //     c2 = document.getElementById('c2');
+// //     c3 = document.getElementById('c3');
 
-});
+// //     if (nextGraph == 'c') {
+// //         // c.classList.remove('hidden');
+// //         c.setAttribute('class', '');
+// //         c1.setAttribute('class', 'hidden');
+// //         c2.setAttribute('class', 'hidden');
+// //         c3.setAttribute('class', 'hidden');
 
-myLine1 = new Chart(ctx_1);
-myRealLine1 = myLine1.Line(lineChartData, {
-    tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
+// //         // c1.classList.add('hidden');
+// //         nextGraph = 'c1';
+// //     } else if (nextGraph == 'c1') {
+// //         // c1.classList.remove('hidden');
+// //         c1.setAttribute('class', '');
+// //         c.setAttribute('class', 'hidden');
+// //         c2.setAttribute('class', 'hidden');
+// //         c3.setAttribute('class', 'hidden');
+// //         // c.classList.add('hidden');
+// //         nextGraph = 'c2';
+// //     } else if (nextGraph == 'c2') {
+// //         c.setAttribute('class', 'hidden');
+// //         c1.setAttribute('class', 'hidden');
+// //         c2.setAttribute('class', '');
+// //         c3.setAttribute('class', 'hidden');
 
-});
+// //         nextGraph = 'c3';
 
-myBar = new Chart(ctx_bar);
-myRealBar = myBar.Bar(barChartData, {
-    tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
-    barShowStroke: false,
-
-});
-
-myBar1 = new Chart(ctx_bar1);
-myRealBar1 = myBar1.Bar(barChartData, {
-    tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    responsive: false,
-    barShowStroke: false,
-
-});
-
-
-//<-------------------------------------------------->
-
-var updateGraphLine = function(volume, light, temp, time) {
-    //console.log(volume,light, time)
-    var date = new Date(time).toUTCString();
-    date = date.split(' ')[4]
-
-    myRealLine.destroy();
-
-
-    //push newly received data (time & data)
-    lineChartData.datasets[0].data.push(volume);
-    lineChartData.datasets[1].data.push(light);
-    lineChartData.datasets[2].data.push(temp);
-    lineChartData.labels.push(date);
-
-    //if longer than 20, remove the first one
-    if (lineChartData.datasets[0].data.length > 10 | lineChartData.datasets[1].data.length > 10 | lineChartData.datasets[2].data.length > 10) {
-        lineChartData.datasets[0].data.shift();
-        lineChartData.datasets[1].data.shift();
-        lineChartData.datasets[2].data.shift();
-        lineChartData.labels.shift();
-    }
-
-    //draw it
-    myLine.Line(lineChartData);
-
-    //empty the content of the div
-    //document.getElementById('newdata').setAttribute('volume', "");
-    //document.getElementById('newdata').setAttribute('time', "");
-}
-
-
-//<-------------------------------------------------->
-
-var updateGraphLine1 = function(volume, light, temp, time) {
-    //console.log(volume,light, time)
-    var date = new Date(time).toUTCString();
-    date = date.split(' ')[4]
-
-    myRealLine1.destroy();
-
-
-    //push newly received data (time & data)
-    lineChartData1.datasets[0].data.push(volume);
-    lineChartData1.datasets[1].data.push(light);
-    lineChartData1.datasets[2].data.push(temp);
-    lineChartData1.labels.push(date);
-
-    //if longer than 20, remove the first one
-    if (lineChartData1.datasets[0].data.length > 10 | lineChartData1.datasets[1].data.length > 10 | lineChartData1.datasets[2].data.length > 10) {
-        lineChartData1.datasets[0].data.shift();
-        lineChartData1.datasets[1].data.shift();
-        lineChartData1.datasets[2].data.shift();
-        lineChartData1.labels.shift();
-    }
-
-    //draw it
-    myLine1.Line(lineChartData1);
-
-    //empty the content of the div
-    //document.getElementById('newdata').setAttribute('volume', "");
-    //document.getElementById('newdata').setAttribute('time', "");
-}
+// //     } else if (nextGraph == 'c3') {
+// //         c.setAttribute('class', 'hidden');
+// //         c1.setAttribute('class', 'hidden');
+// //         c2.setAttribute('class', 'hidden');
+// //         c3.setAttribute('class', '');
+// //         nextGraph = "both";
+// //     } else {
+// //         c.setAttribute('class', '');
+// //         c1.setAttribute('class', '');
+// //         c2.setAttribute('class', '');
+// //         c3.setAttribute('class', '');
+// //         nextGraph = "c";
+// //     }
+// // });
 
 
+// //<-----------------                 ------------------------------->
+// var updateInterval;
+// var myLine;
+// var myRealLine;
+// var myBar;
+// var myRealBar;
+// var myLine1;
+// var myRealLine1;
+// var myBar1;
+// var myRealBar1;
 
-//<------------------------------------------------------->
-//<------------------------------------------------------->
+// var ctx = document.getElementById("canvas0").getContext("2d");
+// var ctx_bar = document.getElementById("canvas1").getContext("2d");
+// var ctx_1 = document.getElementById("canvas2").getContext("2d");
+// var ctx_bar1 = document.getElementById("canvas3").getContext("2d");
 
-var updateGraphBar = function(volume, light, temp, time) {
-    var date = new Date(time).toUTCString();
-    date = date.split(' ')[4]
 
-    myRealBar.destroy();
+// Chart.defaults.global.animation = false;
+// Chart.defaults.global.showTooltips = false;
 
-    //push newly received data (time & data)
-    barChartData.datasets[0].data.push(volume);
-    barChartData.datasets[1].data.push(light);
-    barChartData.datasets[2].data.push(temp);
-    barChartData.labels.push(date);
+// //<------------------------------------------------------------------->
+// myLine = new Chart(ctx);
+// myRealLine = myLine.Line(lineChartData, {
+//     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
+//     responsive: false,
 
-    //if longer than 20, remove the first one
-    if (barChartData.datasets[0].data.length > 10 | barChartData.datasets[1].data.length > 10 | barChartData.datasets[2].data.length > 10) {
-        barChartData.datasets[0].data.shift();
-        barChartData.datasets[1].data.shift();
-        barChartData.datasets[2].data.shift();
-        barChartData.labels.shift();
-    }
+// });
 
-    //draw it
-    myBar.Bar(barChartData);
+// myLine1 = new Chart(ctx_1);
+// myRealLine1 = myLine1.Line(lineChartData, {
+//     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
+//     responsive: false,
 
-    //empty the content of the div
-    //document.getElementById('newdata1').setAttribute('volume', "");
-    //document.getElementById('newdata1').setAttribute('time', "");
-}
+// });
 
-//<------------------------------------------------>
+// myBar = new Chart(ctx_bar);
+// myRealBar = myBar.Bar(barChartData, {
+//     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
+//     responsive: false,
+//     barShowStroke: false,
 
-var updateGraphBar1 = function(volume, light, temp, time) {
-    var date = new Date(time).toUTCString();
-    date = date.split(' ')[4]
+// });
 
-    myRealBar1.destroy();
+// myBar1 = new Chart(ctx_bar1);
+// myRealBar1 = myBar1.Bar(barChartData, {
+//     tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
+//     responsive: false,
+//     barShowStroke: false,
 
-    //push newly received data (time & data)
-    barChartData1.datasets[0].data.push(volume);
-    barChartData1.datasets[1].data.push(light);
-    barChartData1.datasets[2].data.push(temp);
-    barChartData1.labels.push(date);
+// });
 
-    //if longer than 20, remove the first one
-    if (barChartData1.datasets[0].data.length > 10 | barChartData1.datasets[1].data.length > 10 | barChartData1.datasets[2].data.length > 10) {
-        barChartData1.datasets[0].data.shift();
-        barChartData1.datasets[1].data.shift();
-        barChartData1.datasets[2].data.shift();
-        barChartData1.labels.shift();
-    }
 
-    //draw it
-    myBar1.Bar(barChartData1);
+// //<-------------------------------------------------->
 
-    //empty the content of the div
-    //document.getElementById('newdata1').setAttribute('volume', "");
-    //document.getElementById('newdata1').setAttribute('time', "");
-}
+// var updateGraphLine = function(volume, light, temp, time) {
+//     //console.log(volume,light, time)
+//     var date = new Date(time).toUTCString();
+//     date = date.split(' ')[4]
 
-//Submit button old data
-function getDataFromDatabase(deviceID) {
-    var buttons = document.getElementsByClassName('search-button');
-    if (deviceID == 1) {
-        buttons[0].style.backgroundColor = "rgba(51,56,63,1)";
-        var transition = setTimeout(function() {
-            buttons[0].style.backgroundColor = "rgba(51,56,63,0.6)";
-        }, 250);
-    } else if (deviceID == 2) {
-        buttons[1].style.backgroundColor = "rgba(51,56,63,1)";
-        var transition = setTimeout(function() {
-            buttons[1].style.backgroundColor = "rgba(51,56,63,0.6)";
-        }, 250);
-    } else if (deviceID == 3) {
-        buttons[2].style.backgroundColor = "rgba(51,56,63,1)";
-        var transition = setTimeout(function() {
-            buttons[2].style.backgroundColor = "rgba(51,56,63,0.6)";
-        }, 250);
-    }
-    var fromDateElementID = "db-from" + deviceID;
-    var toDateElementID = "db-to" + deviceID;
-    // console.log('Che bello questo e id:', deviceID);
-    // console.log('Questo e from:', fromDateElementID);
-    // console.log('Questo e to:', toDateElementID);
+//     myRealLine.destroy();
 
-    var from = document.getElementById(fromDateElementID);
-    var to = document.getElementById(toDateElementID);
 
-    console.log("from", from);
-    console.log("to", to);
-    console.log("from value", from.value);
-    console.log("to value", to.value);
+//     //push newly received data (time & data)
+//     lineChartData.datasets[0].data.push(volume);
+//     lineChartData.datasets[1].data.push(light);
+//     lineChartData.datasets[2].data.push(temp);
+//     lineChartData.labels.push(date);
 
-    var timestampFrom = new Date(from.value);
-    var timestampTo = new Date(to.value);
+//     //if longer than 20, remove the first one
+//     if (lineChartData.datasets[0].data.length > 10 | lineChartData.datasets[1].data.length > 10 | lineChartData.datasets[2].data.length > 10) {
+//         lineChartData.datasets[0].data.shift();
+//         lineChartData.datasets[1].data.shift();
+//         lineChartData.datasets[2].data.shift();
+//         lineChartData.labels.shift();
+//     }
 
-    console.log("timestampFrom ", timestampFrom.getTime());
-    console.log("timestampTo ", timestampTo.getTime());
+//     //draw it
+//     myLine.Line(lineChartData);
 
-    producer_handler(JSON.stringify({
-        header: "browser",
-        from: timestampFrom.getTime(),
-        to: timestampTo.getTime(),
-        id: deviceID
-    }), 'producer')
-}
+//     //empty the content of the div
+//     //document.getElementById('newdata').setAttribute('volume', "");
+//     //document.getElementById('newdata').setAttribute('time', "");
+// }
+
+
+// //<-------------------------------------------------->
+
+// var updateGraphLine1 = function(volume, light, temp, time) {
+//     //console.log(volume,light, time)
+//     var date = new Date(time).toUTCString();
+//     date = date.split(' ')[4]
+
+//     myRealLine1.destroy();
+
+
+//     //push newly received data (time & data)
+//     lineChartData1.datasets[0].data.push(volume);
+//     lineChartData1.datasets[1].data.push(light);
+//     lineChartData1.datasets[2].data.push(temp);
+//     lineChartData1.labels.push(date);
+
+//     //if longer than 20, remove the first one
+//     if (lineChartData1.datasets[0].data.length > 10 | lineChartData1.datasets[1].data.length > 10 | lineChartData1.datasets[2].data.length > 10) {
+//         lineChartData1.datasets[0].data.shift();
+//         lineChartData1.datasets[1].data.shift();
+//         lineChartData1.datasets[2].data.shift();
+//         lineChartData1.labels.shift();
+//     }
+
+//     //draw it
+//     myLine1.Line(lineChartData1);
+
+//     //empty the content of the div
+//     //document.getElementById('newdata').setAttribute('volume', "");
+//     //document.getElementById('newdata').setAttribute('time', "");
+// }
+
+
+
+// //<------------------------------------------------------->
+// //<------------------------------------------------------->
+
+// var updateGraphBar = function(volume, light, temp, time) {
+//     var date = new Date(time).toUTCString();
+//     date = date.split(' ')[4]
+
+//     myRealBar.destroy();
+
+//     //push newly received data (time & data)
+//     barChartData.datasets[0].data.push(volume);
+//     barChartData.datasets[1].data.push(light);
+//     barChartData.datasets[2].data.push(temp);
+//     barChartData.labels.push(date);
+
+//     //if longer than 20, remove the first one
+//     if (barChartData.datasets[0].data.length > 10 | barChartData.datasets[1].data.length > 10 | barChartData.datasets[2].data.length > 10) {
+//         barChartData.datasets[0].data.shift();
+//         barChartData.datasets[1].data.shift();
+//         barChartData.datasets[2].data.shift();
+//         barChartData.labels.shift();
+//     }
+
+//     //draw it
+//     myBar.Bar(barChartData);
+
+//     //empty the content of the div
+//     //document.getElementById('newdata1').setAttribute('volume', "");
+//     //document.getElementById('newdata1').setAttribute('time', "");
+// }
+
+// //<------------------------------------------------>
+
+// var updateGraphBar1 = function(volume, light, temp, time) {
+//     var date = new Date(time).toUTCString();
+//     date = date.split(' ')[4]
+
+//     myRealBar1.destroy();
+
+//     //push newly received data (time & data)
+//     barChartData1.datasets[0].data.push(volume);
+//     barChartData1.datasets[1].data.push(light);
+//     barChartData1.datasets[2].data.push(temp);
+//     barChartData1.labels.push(date);
+
+//     //if longer than 20, remove the first one
+//     if (barChartData1.datasets[0].data.length > 10 | barChartData1.datasets[1].data.length > 10 | barChartData1.datasets[2].data.length > 10) {
+//         barChartData1.datasets[0].data.shift();
+//         barChartData1.datasets[1].data.shift();
+//         barChartData1.datasets[2].data.shift();
+//         barChartData1.labels.shift();
+//     }
+
+//     //draw it
+//     myBar1.Bar(barChartData1);
+
+//     //empty the content of the div
+//     //document.getElementById('newdata1').setAttribute('volume', "");
+//     //document.getElementById('newdata1').setAttribute('time', "");
+// }
+
+// //Submit button old data
+// function getDataFromDatabase(deviceID) {
+//     var buttons = document.getElementsByClassName('search-button');
+//     if (deviceID == 1) {
+//         buttons[0].style.backgroundColor = "rgba(51,56,63,1)";
+//         var transition = setTimeout(function() {
+//             buttons[0].style.backgroundColor = "rgba(51,56,63,0.6)";
+//         }, 250);
+//     } else if (deviceID == 2) {
+//         buttons[1].style.backgroundColor = "rgba(51,56,63,1)";
+//         var transition = setTimeout(function() {
+//             buttons[1].style.backgroundColor = "rgba(51,56,63,0.6)";
+//         }, 250);
+//     } else if (deviceID == 3) {
+//         buttons[2].style.backgroundColor = "rgba(51,56,63,1)";
+//         var transition = setTimeout(function() {
+//             buttons[2].style.backgroundColor = "rgba(51,56,63,0.6)";
+//         }, 250);
+//     }
+//     var fromDateElementID = "db-from" + deviceID;
+//     var toDateElementID = "db-to" + deviceID;
+//     // console.log('Che bello questo e id:', deviceID);
+//     // console.log('Questo e from:', fromDateElementID);
+//     // console.log('Questo e to:', toDateElementID);
+
+//     var from = document.getElementById(fromDateElementID);
+//     var to = document.getElementById(toDateElementID);
+
+//     console.log("from", from);
+//     console.log("to", to);
+//     console.log("from value", from.value);
+//     console.log("to value", to.value);
+
+//     var timestampFrom = new Date(from.value);
+//     var timestampTo = new Date(to.value);
+
+//     console.log("timestampFrom ", timestampFrom.getTime());
+//     console.log("timestampTo ", timestampTo.getTime());
+
+//     producer_handler(JSON.stringify({
+//         header: "browser",
+//         from: timestampFrom.getTime(),
+//         to: timestampTo.getTime(),
+//         id: deviceID
+//     }), 'producer')
+// }
