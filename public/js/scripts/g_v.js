@@ -39,6 +39,16 @@ k.createNode(function(data) {
 
 //create the hidden div that will contain the received data
 var htmlString ='<input name="fromDate" type="text" value="Insert date from to" id="inputDate"></input>'+
+				'<script src="./public/js/scripts/pikaday.js"></script>'+
+				'<script>
+    				var picker = new Pikaday(
+    					{
+        				field: document.getElementById('datepicker'),
+        				firstDay: 1,
+       					minDate: new Date(2000, 0, 1),
+        				maxDate: new Date(2020, 12, 31),
+        				yearRange: [2000,2020]
+    				});</script>' +
                 '<button id="button">click me</button>'+
 				'<div id="graph-container">' +
 				'<div id="newdata0" style="display:none;"></div>' +
