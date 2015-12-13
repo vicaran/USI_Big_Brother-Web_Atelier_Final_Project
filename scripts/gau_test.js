@@ -7,9 +7,9 @@ k.createNode(function(msg){
 	msg = JSON.parse(msg);
 
 
-	// dataB.retrieveData(msg.id, msg.from, msg.to);
+	dataB.retrieveData(msg.id, msg.from, msg.to);
 
-	dataB.retrieveData(msg.id, 1449953366000,1449953378440)
+	// dataB.retrieveData(msg.id, 1449953366000,1449953378440)
 	// dataB.retrieveData(msg.id, 1449676695680,1449676698689)
 	//k.send(JSON.stringify(data));
 });
