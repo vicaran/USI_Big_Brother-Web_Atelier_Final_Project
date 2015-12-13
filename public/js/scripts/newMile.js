@@ -56,7 +56,7 @@ var htmlString =
 k.createHTML('pimmi', htmlString);
 
 //add the graph script
-k.createScript('our_graph', 'js/scripts/newMile_g.js');
+// k.createScript('our_graph', 'js/scripts/newMile_g.js');
 
 //connect browser with browser operator
 k.registerProducer('producer');
