@@ -2271,6 +2271,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     margin-right: -5px;
     border-radius: 8px;
     padding-left: -3px;
+    margin-top: 30px;
 }
 #graph-selector >div{
     padding: 10px;
