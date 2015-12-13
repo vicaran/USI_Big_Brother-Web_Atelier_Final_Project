@@ -13,8 +13,12 @@ var timeouts = 0;
 wifi.on('connect', function(data){
     // you're connected
     console.log("connect emitted", data);
+    setTimedOut(function(){
+        console.log('OK sono in timeout')
+    },15000);
     var SenderT1 = new TesselClasses.SenderTessel(1,2);
     SenderT1.start();
+
 });
 
 wifi.on('disconnect', function(data){
