@@ -9,7 +9,8 @@
 !/public/
 /public/*
 !/public/css/
-!/public/js/
+!/public/js
+!/public/js/*
 !/public/js/scripts/
 !/public/js/scripts/*
 !/skeleton/
