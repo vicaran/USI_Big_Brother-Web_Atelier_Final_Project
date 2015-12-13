@@ -787,9 +787,15 @@ drawAllCanvases();
 function drawSelects(){
     for(var i = 1; i<4; i++){
         for(var j = 1; j<3; j++){
-            var selH = document.getElementById('selH'+i+j);
-            var selM = document.getElementById('selM'+i+j);
-            var selS = document.getElementById('selS'+i+j);
+            var selFromH = document.getElementById('sel-from'+i+j);
+            var selFromM = document.getElementById('sel-from'+i+j);
+            var selFromS = document.getElementById('sel-from'+i+j);
+
+
+            var selToH = document.getElementById('sel-from'+i+j);
+            var selToM = document.getElementById('sel-from'+i+j);
+            var selToS = document.getElementById('sel-from'+i+j);
+
 
             var hours = ''
             var minutes = ''
@@ -804,9 +810,14 @@ function drawSelects(){
 
             }
 
-            selH.innerHTML = hours;
-            selM.innerHTML = minutes;
-            selS.innerHTML = seconds;
+            selFromH.innerHTML = hours;
+            selFromM.innerHTML = minutes;
+            selFromS.innerHTML = seconds;
+
+            selToH.innerHTML = hours;
+            selToM.innerHTML = minutes;
+            selToS.innerHTML = seconds;
+
 
         }
     }
