@@ -12,7 +12,9 @@ var openMenu = function() {
 
 // reveal content of first panel by default
 panel.eq(0).find('.panel__content').addClass('panel__content--active');
-
+panel.eq(1).find('.panel__content').addClass('panel__content--active');
+panel.eq(2).find('.panel__content').addClass('panel__content--active');
+panel.eq(3).find('.panel__content').addClass('panel__content--active');
 var scrollFx = function() {
   var ds = doc.scrollTop();
   var of = vh / 4;
