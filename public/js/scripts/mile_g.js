@@ -812,7 +812,7 @@ function drawSelects(){
     }
 }
 
-drawSelects()
+//drawSelects()
 
 function editArchives(content) {
     console.log("content  ", content);
