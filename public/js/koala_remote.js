@@ -240,13 +240,6 @@ var require = function() {
 				html: html,
 			})
 		},
-		createCSS: function(id, css) {
-			postMessage({
-				type: 'addCSS',
-				identifier: id,
-				css: css,
-			})
-		},
 		createScript: function(id, script) {
 			postMessage({
 				type: 'addScript',
@@ -595,17 +588,11 @@ self.onmessage = function(message) {
 		latency['out'] = message.data.data
 	}
 	else if(type == "producer"){
-		var msg = undefined
-		try {
-			msg = JSON.parse(message.data.message)
-		} catch(e) {
-			msg = message.data.message
-		}
-
 		if(scriptCallback) {
-			scriptCallback(msg, worker_id)
+			scriptCallback({
+				data: message.data.message
+			}, worker_id)
 		}
-		__k.done()
 	}
 	else if(type == 'script') {
 		worker_id = message.data["uid"];
