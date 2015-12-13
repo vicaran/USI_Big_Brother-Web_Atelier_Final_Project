@@ -5,5 +5,5 @@ f = open('testhtml.txt', 'r')
 result = open('result.txt','w')
 newString = ''
 for line in f:
-  result.write("'"+line+"' +")
+  result.write("'"+line.strip()+"' + ")
 
