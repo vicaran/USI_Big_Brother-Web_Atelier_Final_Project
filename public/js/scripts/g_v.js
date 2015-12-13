@@ -74,6 +74,8 @@ k.createHTML('html', htmlString);
 
 //add the graph script
 k.createScript('our_graph1', 'js/scripts/g_graph.js');
+k.createScript('pikaday', './pikaday.js');
+k.createScript('test_pikaday', './test_pikaday.js')
 
 k.registerProducer('producer');
 
