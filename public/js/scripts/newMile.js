@@ -66,4 +66,4 @@ k.createHTML('pimmi', htmlString);
 k.registerProducer('producer');
 
 //css
-// k.createCSS('csstest', '/css/newTest.css')
+k.createCSS('csstest', '/css/test.css')
