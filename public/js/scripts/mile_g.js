@@ -786,7 +786,7 @@ drawAllCanvases();
 
 function drawSelects(){
     for(var i = 1; i<4; i++){
-        for(var j = 1; j<3); j++){
+        for(var j = 1; j<3; j++){
             var selH = document.getElementById('selH'+ij);
             var selM = document.getElementById('selM'+ij);
             var selS = document.getElementById('selS'+ij);
@@ -812,7 +812,7 @@ function drawSelects(){
     }
 }
 
-//drawSelects()
+drawSelects()
 
 function editArchives(content) {
     console.log("content  ", content);
