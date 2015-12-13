@@ -230,6 +230,8 @@ button.onclick = function(){
 }
 
 var sel = document.getElementById('sel');
+
+
 var minutes = ''
 for(var i = 1; i<61; i++){
     minutes += '<option val="'+ i +'">'+ i +'</option>'
@@ -242,11 +244,13 @@ input.onkeydown = function() {
     if (window.event.keyCode == '13') {
         submit();
         input.blur();
+
     }
 }
 
 function submit() {
-    console.log(input.value)
+    console.log(input.value);
+    console.log(sel.value);
     producer_handler(JSON.stringify({header: "browser" , data: input.value}), 'producer')
     //websocket.send(JSON.stringify(input.value));
 }
