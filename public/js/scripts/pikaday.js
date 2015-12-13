@@ -4314,13 +4314,14 @@
 
 
 
-
+for(var i = 0; i<3; i++){
 var picker = new Pikaday(
     {
-        field: document.getElementById('db-from1'),
+        field: document.getElementById('db-from'+i),
         firstDay: 1,
         format: 'MM/DD/YYYY',
         minDate: new Date(2000, 0, 1),
         maxDate: new Date(2020, 12, 31),
         yearRange: [2000,2020]
     });
+}
