@@ -2004,11 +2004,11 @@ body {
     display: flex;
     background-color: rgba(51,56,63,0.3);
     height: 3em;
-    position: relative;
+    position: absolute;
     top: 0px;
-/*    width: 130%;*/
-/*    left: 0px;*/
-/*    right:-100%;*/
+    width: 100%;
+    left: 0px;
+    right: 1;
 }
 #footer{
     color: #BEBDBF;
@@ -2271,6 +2271,7 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     margin-right: -5px;
     border-radius: 8px;
     padding-left: -3px;
+    margin-top: 30px;
 }
 #graph-selector >div{
     padding: 10px;
@@ -2297,13 +2298,15 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     padding-right: 10px;
 }
 .search-button:selected{
-    border: 1px, #A5BDD7;
+    border: 1px;
+    border-color: #A5BDD7;
 }
 
 #light-bulb{
 }
 
 #drop-down-menu{
+    position:absolute;
     display:block;
 }
 #menu-useless-arrow{
