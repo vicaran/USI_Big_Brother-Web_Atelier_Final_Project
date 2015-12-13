@@ -2086,10 +2086,11 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
 .card{
     background-color: rgba(51,56,63,0.6);
     color: #BEBDBF;
+    display: flex;
     border-radius: 25px;
     text-align: center;
     font-size: 14pt;
-    width: 100%;
+    width: 80%;
     align: center;
     margin-top: 2em;
     margin-bottom: 2em;
