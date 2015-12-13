@@ -801,8 +801,8 @@ function drawSelects(){
             var minutes = ''
             var seconds = ''
 
-            for(var k = 1; k<61; k++){
-                if(i < 25){
+            for(var k = 0; k<60; k++){
+                if(i < 24){
                     hours += '<option val="'+ k +'">'+ k +'</option>'
                 }
                 minutes += '<option val="'+ k +'">'+ k +'</option>'
