@@ -4349,7 +4349,7 @@ for(var i = 1; i<4; i++){
             endPicker.setEndRange(endDate);
         },
         startPicker = new Pikaday({
-            field: document.getElementById('start'),
+            field: document.getElementById('db-from'+i),
             minDate: new Date(1456790999),
             maxDate: new Date(2020, 12, 31),
             onSelect: function() {
@@ -4359,7 +4359,7 @@ for(var i = 1; i<4; i++){
             }
         }),
         endPicker = new Pikaday({
-            field: document.getElementById('end'),
+            field: document.getElementById('db-to'+i),
             minDate: new Date(1456790999),
             maxDate: new Date(2020, 12, 31),
             onSelect: function() {
