@@ -513,13 +513,16 @@ function getDataFromDatabase(deviceID) {
 
     var fr = from.value + ' '
     var t = to.value + ' '
+
 for(var i = 1; i < 4; i++){
     var selFrom = document.getElementById('sel-from'+deviceID+i);
     var selTo = document.getElementById('sel-to'+deviceID+i);
+    
     fr += ':'+selFrom.value
     t += ':'+selTo.value
 }
-
+    console.log("from value before converting it", fr);
+    console.log('to value before converting it', t)
     var timestampFrom = new Date(fr);
     var timestampTo = new Date(t);
 
