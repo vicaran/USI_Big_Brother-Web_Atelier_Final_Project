@@ -229,14 +229,26 @@ button.onclick = function(){
     producer_handler(JSON.stringify({header: "browser" , data: "hello", id:1}), 'producer')
 }
 
-var sel = document.getElementById('sel');
+var selH = document.getElementById('selH');
+var selM = document.getElementById('selM');
+var selS = document.getElementById('selS');
 
-
+var hours = ''
 var minutes = ''
+var seconds = ''
+
 for(var i = 1; i<61; i++){
+    if(i < 25){
+        hours += '<option val="'+ i +'">'+ i +'</option>'
+    }
     minutes += '<option val="'+ i +'">'+ i +'</option>'
+    seconds += '<option val="'+ i +'">'+ i +'</option>'
+
 }
-sel.innerHTML = minutes;
+selH.innerHTML = hours;
+selM.innerHTML = minutes;
+selS.innerHTML = seconds;
+
 
 var input = document.getElementById("inputDate");
 

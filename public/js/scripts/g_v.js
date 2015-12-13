@@ -38,7 +38,7 @@ k.createNode(function(data) {
 });
 
 //create the hidden div that will contain the received data
-var htmlString ='<input name="fromDate" type="text" value="Insert date from to" id="inputDate"></input>'+ '<select id="sel"/>'+
+var htmlString ='<input name="fromDate" type="text" value="Insert date from to" id="inputDate"></input>'+ '<select id="selH"/>'+'<select id="selM"/>' + '<select id="selS"/>'+
                 '<button id="button">click me</button>'+
 				'<div id="graph-container">' +
 				'<div id="newdata0" style="display:none;"></div>' +
