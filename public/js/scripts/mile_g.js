@@ -808,7 +808,7 @@ function editArchives(content) {
     myArchRealBar.destroy();
     for (var i in content) {
         console.log("i ", content[i]);
-        if(content[i] !== "undefined"){
+        if(content[i] !== "null"){
             var date = new Date(content[i].time).toUTCString();
             date = date.split(' ')[4]
             var light = content[i].light ? 50: 0;
