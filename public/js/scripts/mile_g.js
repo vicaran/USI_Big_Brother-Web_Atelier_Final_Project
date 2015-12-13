@@ -786,15 +786,15 @@ drawAllCanvases();
 
 function drawSelects(){
     for(var i = 1; i<4; i++){
-        for(var j = 1; j<3; j++){
+        for(var j = 1; j<4; j++){
             var selFromH = document.getElementById('sel-from'+i+j);
             var selFromM = document.getElementById('sel-from'+i+j);
             var selFromS = document.getElementById('sel-from'+i+j);
 
 
-            var selToH = document.getElementById('sel-from'+i+j);
-            var selToM = document.getElementById('sel-from'+i+j);
-            var selToS = document.getElementById('sel-from'+i+j);
+            var selToH = document.getElementById('sel-to'+i+j);
+            var selToM = document.getElementById('sel-to'+i+j);
+            var selToS = document.getElementById('sel-to'+i+j);
 
 
             var hours = ''
