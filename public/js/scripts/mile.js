@@ -95,7 +95,7 @@ var htmlString =
     	// INDIVIDUAL SECTIONS BEGIN HERE
     	// ABOUT SECTION: This is where we write about the team, wls, etc
    		'<div id="info-page" class="hidden">'+ 
-        '<div class="whitespace"></div>'
+        '<div class="whitespace"></div>'+
 		about_section+
     	about_section +
     	'</div>' +
@@ -158,7 +158,7 @@ var htmlString =
     '</div>'+
     	// ACTIVATE LIGHTS SECTION
     	'<div id="light-bulb" class="hidden">'+
-        '<div class="whitespace"></div>'
+        '<div class="whitespace"></div>'+
         '<p>'+
             'When the light is off, you can choose to turn on the light in the desired part of the openspace.'+
         '</p>'+
@@ -204,7 +204,7 @@ var htmlString =
 		// ---------------------------
     	'</div>' +
     	'<div id="graph-container" class="">' +
-        '<div class="whitespace"></div>'
+        '<div class="whitespace"></div>'+
                 '<div>'+
                     '<div id="graph-selector"> <div class="fa">Show graphs...</div>'+
                         '<div id="menu-button" class="fa fa-sort-down fa-lg"></div>'+
