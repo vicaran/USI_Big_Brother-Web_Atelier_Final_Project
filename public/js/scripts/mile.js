@@ -232,16 +232,16 @@ var htmlString =
                     '<br>'+
                     '<div class="data-projection">'+
                         '<div>'+
-                            '<div class="fa fa-lg" style="color:rgba(215,54,139,1);">Current Volume</div>' +
-                            '<div id="vol_1" class="fa fa-lg value" style="color:rgba(215,54,139,1);">X</div>'+
+                            '<div class="fa fa-lg volume_color">Current Volume</div>' +
+                            '<div id="vol_1" class="fa fa-lg value volume_color"></div>'+
                         '</div>'+
                         '<div> '+
-                            '<div class="fa fa-lg" style="color:rgba(151,187,205,1);">Current Light</div>' +
-                            '<div id="light_1" class="fa fa-lg value" style="color:rgba(151,187,205,1);">X</div>'+
+                            '<div class="fa fa-lg light_color">Current Light</div>' +
+                            '<div id="light_1" class="fa fa-lg value light_color"></div>'+
                         '</div>'+
                         '<div> '+
-                            '<div class="fa fa-lg" style="color:rgba(241,85,45,1);">Current Temperature</div>' +
-                            '<div id="temp_1" class="fa fa-lg value" style="color:rgba(241,85,45,1);">X</div>'+
+                            '<div class="fa fa-lg temp_color" >Current Temperature</div>' +
+                            '<div id="temp_1" class="fa fa-lg value temp_color" ></div>'+
                         '</div>'+
                     '</div>'+
                 '</div>' +
@@ -258,16 +258,16 @@ var htmlString =
                     '</div>' +
                     '<div class="data-projection">'+
                         '<div>'+
-                            '<div class="fa fa-lg" style="color:rgba(215,54,139,1);">Current Volume</div>' +
-                            '<div id="vol_2" class="fa fa-lg value" style="color:rgba(215,54,139,1);">X</div>'+
+                            '<div class="fa fa-lg volume_color" >Current Volume</div>' +
+                            '<div id="vol_2" class="fa fa-lg value volume_color"></div>'+
                         '</div>'+
                         '<div> '+
-                            '<div class="fa fa-lg" style="color:rgba(151,187,205,1);">Current Light</div>' +
-                            '<div id="light_2" class="fa fa-lg value" style="color:rgba(151,187,205,1);">X</div>'+
+                            '<div class="fa fa-lg light_color" >Current Light</div>' +
+                            '<div id="light_2" class="fa fa-lg value light_color" ></div>'+
                         '</div>'+
                         '<div> '+
-                            '<div class="fa fa-lg" style="color:rgba(241,85,45,1);">Current Temperature</div>' +
-                            '<div id="temp_2" class="fa fa-lg value" style="color:rgba(241,85,45,1);">X</div>'+
+                            '<div class="fa fa-lg temp_color">Current Temperature</div>' +
+                            '<div id="temp_2" class="fa fa-lg value temp_color"></div>'+
                         '</div>'+
                     '</div>'+
                     '</div>' +

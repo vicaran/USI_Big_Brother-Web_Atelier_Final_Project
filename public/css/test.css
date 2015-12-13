@@ -2114,6 +2114,19 @@ a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after{
     text-align: left;
     font-size: 56pt;
 }
+
+.volume_color{
+    color:rgba(215,54,139,1);
+}
+
+.light_color{
+    color:rgba(151,187,205,1);
+}
+
+.temp_color{
+    color:rgba(241,85,45,1);
+}
+
 .nav-panel:hover > .nav-line{
     background-color: #BEBDBF;
     position: relative;
