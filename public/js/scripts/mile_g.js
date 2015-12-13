@@ -784,6 +784,46 @@ function drawAllCanvases() {
 }
 drawAllCanvases();
 
+function drawSelects(){
+    for(var i = 1; i<4; i++){
+        for(var j = 1; j<4; j++){
+            var selFromH = document.getElementById('sel-from'+i+j);
+            var selFromM = document.getElementById('sel-from'+i+j);
+            var selFromS = document.getElementById('sel-from'+i+j);
+
+
+            var selToH = document.getElementById('sel-to'+i+j);
+            var selToM = document.getElementById('sel-to'+i+j);
+            var selToS = document.getElementById('sel-to'+i+j);
+
+
+            var hours = ''
+            var minutes = ''
+            var seconds = ''
+
+            for(var k = 0; k<60; k++){
+                if(i < 24){
+                    hours += '<option val="'+ k +'">'+ k +'</option>'
+                }
+                minutes += '<option val="'+ k +'">'+ k +'</option>'
+                seconds += '<option val="'+ k +'">'+ k +'</option>'
+
+            }
+
+            selFromH.innerHTML = hours;
+            selFromM.innerHTML = minutes;
+            selFromS.innerHTML = seconds;
+
+            selToH.innerHTML = hours;
+            selToM.innerHTML = minutes;
+            selToS.innerHTML = seconds;
+
+
+        }
+    }
+}
+
+drawSelects()
 
 function editArchives(content) {
     console.log("content  ", content);
