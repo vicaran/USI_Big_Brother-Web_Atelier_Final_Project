@@ -362,8 +362,11 @@ var updateGraphLine = function(volume, light, temp, time) {
 
     //push newly received data (time & data)
     lineChartData.datasets[0].data.push(volume);
+    document.getElementById('vol_1').innerHTML = volume;
     lineChartData.datasets[1].data.push(light);
+    document.getElementById('light_1').innerHTML = light;
     lineChartData.datasets[2].data.push(temp);
+    document.getElementById('temp_1').innerHTML = temp;
     lineChartData.labels.push(date);
 
     //if longer than 20, remove the first one
@@ -395,8 +398,11 @@ var updateGraphLine1 = function(volume, light, temp, time) {
 
     //push newly received data (time & data)
     lineChartData1.datasets[0].data.push(volume);
+    document.getElementById('vol_2').innerHTML = volume;
     lineChartData1.datasets[1].data.push(light);
+    document.getElementById('light_2').innerHTML = light;
     lineChartData1.datasets[2].data.push(temp);
+    document.getElementById('temp_2').innerHTML = temp;
     lineChartData1.labels.push(date);
 
     //if longer than 20, remove the first one
