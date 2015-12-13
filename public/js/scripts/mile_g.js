@@ -811,8 +811,9 @@ function editArchives(content) {
         if(content[i] !== "undefined"){
             var date = new Date(content[i].time).toUTCString();
             date = date.split(' ')[4]
+            var light = content[i].light ? 50: 0;
             barChartDataArchieve.datasets[0].data.push(content[i].volume);
-            barChartDataArchieve.datasets[1].data.push(content[i].light);
+            barChartDataArchieve.datasets[1].data.push(light);
             barChartDataArchieve.datasets[2].data.push(content[i].temperature);
             barChartDataArchieve.labels.push(date);
             console.log("volume ", barChartDataArchieve.datasets[0].data);
@@ -820,7 +821,7 @@ function editArchives(content) {
             console.log("temp ", barChartDataArchieve.datasets[2].data);
         }
         else{
-            
+
         }
     }
     myArchBar.Bar(barChartDataArchieve);
