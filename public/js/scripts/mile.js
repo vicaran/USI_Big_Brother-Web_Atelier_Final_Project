@@ -139,6 +139,7 @@ var htmlString =
             'To: '+
             '</p>'+
             '<input type="text" name="To" placeholder=""mm/dd/yyyy hh:mm:ss"" id="db-to2"/>'+
+            '<select id="sel-to21"/>' + '<select id="sel-to22"/>' + '<select id="sel-to23"/>' +
             '<span class="fa fa-search search-button" onclick="getDataFromDatabase(2)"></span>'+
             // '<button class="fa fa-search search-button" onclick="getDataFromDatabase(2)"></button>'+
         '</div>'+
@@ -155,6 +156,7 @@ var htmlString =
             'To: '+
             '</p>'+
             '<input type="text" name="To" placeholder=""mm/dd/yyyy hh:mm:ss"" id="db-to3"/>'+
+            '<select id="sel-to31"/>' + '<select id="sel-to32"/>' + '<select id="sel-to33"/>' +
             '<span class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></span>'+
             // '<button class="fa fa-search search-button" onclick="getDataFromDatabase(3)"></button>'+
         '</div>'+
