@@ -114,7 +114,7 @@ var htmlString =
             '<p>'+
                 'From: '+
             '</p>'+
-            '<input type="text" name="From" placeholder=""mm/dd/yyyy hh:mm:ss"" id="db-from1"/>'+
+            '<input type="text" name="From" placeholder=""mm/dd/yyyy hh:mm:ss"" id="db-from1"/>'+ '<select id="select"/>'
             '<p>'+
                 '<br>'+
                 'To: '+
