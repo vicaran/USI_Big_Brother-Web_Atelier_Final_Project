@@ -4315,25 +4315,70 @@
 
 
 for(var i = 1; i<4; i++){
-var pickerStart = new Pikaday(
-    {
-        field: document.getElementById('db-from'+i),
-        firstDay: 1,
-        format: 'MM/DD/YYYY',
-        minDate: new Date(2000, 0, 1),
-        maxDate: new Date(2020, 12, 31),
-        yearRange: [2000,2020]
-    });
+// var pickerStart = new Pikaday(
+//     {
+//         field: document.getElementById('db-from'+i),
+//         firstDay: 1,
+//         format: 'MM/DD/YYYY',
+//         minDate: new Date(2000, 0, 1),
+//         maxDate: new Date(2020, 12, 31),
+//         yearRange: [2000,2020]
+//     });
 
-var pickerEnd = new Pikaday(
-    {
-        field: document.getElementById('db-to'+i),
-        firstDay: 1,
-        format: 'MM/DD/YYYY',
-        minDate: new Date(2000, 0, 1),
-        maxDate: new Date(2020, 12, 31),
-        yearRange: [2000,2020]
-    });
+// var pickerEnd = new Pikaday(
+//     {
+//         field: document.getElementById('db-to'+i),
+//         firstDay: 1,
+//         format: 'MM/DD/YYYY',
+//         minDate: new Date(2000, 0, 1),
+//         maxDate: new Date(2020, 12, 31),
+//         yearRange: [2000,2020]
+//     });
+// }
+
+     var startDate,
+        endDate,
+        updateStartDate = function() {
+            startPicker.setStartRange(startDate);
+            endPicker.setStartRange(startDate);
+            endPicker.setMinDate(startDate);
+        },
+        updateEndDate = function() {
+            startPicker.setEndRange(endDate);
+            startPicker.setMaxDate(endDate);
+            endPicker.setEndRange(endDate);
+        },
+        startPicker = new Pikaday({
+            field: document.getElementById('start'),
+            minDate: new Date(1456790999),
+            maxDate: new Date(2020, 12, 31),
+            onSelect: function() {
+                console.log(this.getDate())
+                startDate = this.getDate();
+                updateStartDate();
+            }
+        }),
+        endPicker = new Pikaday({
+            field: document.getElementById('end'),
+            minDate: new Date(1456790999),
+            maxDate: new Date(2020, 12, 31),
+            onSelect: function() {
+                endDate = this.getDate();
+                updateEndDate();
+            }
+        }),
+        _startDate = startPicker.getDate(),
+        _endDate = endPicker.getDate();
+
+        if (_startDate) {
+            startDate = _startDate;
+            updateStartDate();
+        }
+
+        if (_endDate) {
+            endDate = _endDate;
+            updateEndDate();
+        }
 }
 
 
