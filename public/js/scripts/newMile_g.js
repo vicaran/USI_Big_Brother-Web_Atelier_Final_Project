@@ -135,8 +135,6 @@ function drawAllCanvases() {
     posCanvas.addEventListener('click', function(evt) {
         reDrawCanvas();
         var mousePos = getMousePos(posCanvas, evt);
-        console.log('Mouse pos', mousePos);
-        console.log('Canvas wid', posCanvas.width/3);
         // var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
         if (mousePos.x > -1 && mousePos.x < (posCanvas.width / 3)) {
             var message = "Part1";

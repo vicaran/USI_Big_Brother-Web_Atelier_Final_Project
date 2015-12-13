@@ -16,9 +16,9 @@ k.createNode(function(data){
             table[data._id] = "updateGraph" + data._id
         }
     }
-    // console.log("sensors", sensors);
-    // console.log("table", table);
-    // console.log("data", data);
+    console.log("sensors", sensors);
+    console.log("table", table);
+    console.log("data", data);
 
 
     if(data.header === "browser"){
