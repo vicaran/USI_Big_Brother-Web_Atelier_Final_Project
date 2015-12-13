@@ -787,9 +787,9 @@ drawAllCanvases();
 function drawSelects(){
     for(var i = 1; i<4; i++){
         for(var j = 1; j<3; j++){
-            var selH = document.getElementById('selH'+ij);
-            var selM = document.getElementById('selM'+ij);
-            var selS = document.getElementById('selS'+ij);
+            var selH = document.getElementById('selH'+i+j);
+            var selM = document.getElementById('selM'+i+j);
+            var selS = document.getElementById('selS'+i+j);
 
             var hours = ''
             var minutes = ''
