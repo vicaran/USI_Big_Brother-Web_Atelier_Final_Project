@@ -85,7 +85,7 @@ function createNewVariable(id) {
 
 }
 
-function convertDate(d){
+function convertDate(d) {
     var parseDate = new Date(d).toUTCString()
     return parseDate.split(' ')[4]
 }
@@ -100,9 +100,9 @@ function updateChart(id, parse) {
     lineChartData.datasets[0].data.push(parse.volume);
     lineChartData.datasets[1].data.push(parse.light);
     lineChartData.datasets[2].data.push(parse.temperature);
-    if(minor){
+    if (minor) {
         console.log(lineChartData.labels.length - graphDimension)
-        for(var i = 0; i < (lineChartData.labels.length - graphDimension); i ++) {
+        for (var i = 0; i < (lineChartData.labels.length - graphDimension); i++) {
             lineChartData.datasets[0].data.shift()
             lineChartData.datasets[1].data.shift()
             lineChartData.datasets[2].data.shift()
@@ -176,10 +176,49 @@ function createIdSelector() {
 function changeDimension() {
     document.querySelector('paper-slider').addEventListener('change', function (event) {
 
-        minor =  event.target.value < graphDimension
+        minor = event.target.value < graphDimension
         console.log('minor: ', minor)
         graphDimension = event.target.value;
         console.log(event.target.value);
     });
 }
 changeDimension();
+
+function handleDatabaseRequest() {
+
+    $('#since').datetimepicker();
+    $('#to').datetimepicker({
+        useCurrent: false //Important! See issue #1075
+    });
+    $("#since").on("dp.change", function (e) {
+        $('#to').data("DateTimePicker").minDate(e.date);
+        console.log($('#since').datepicker(false,'getDate')[0].childNodes[1].value)
+
+    });
+    $("#to").on("dp.change", function (e) {
+        console.log($('#to').datepicker(false,'getDate')[0].childNodes[1].value)
+
+        $('#since').data("DateTimePicker").maxDate(e.date);
+    });
+
+    //$('#since').datepicker()
+    //    .on('changeDate', function (ev) {
+    //        if(ev.date.valueOf() != undefined) {
+    //            console.log(ev.date.valueOf())
+    //        }
+    //    });
+
+    //console.log(dateFormat)
+    //var to = document.getElementById('to')
+    //since.addEventListener('change', function (e) {
+    //    var dateFormat = $('#since').datepicker('option', 'dd, MM, yy');
+    //
+    //    console.log(e.target.value)
+    //});
+    //to.addEventListener('change', function (e) {
+    //    console.log(e.target.value)
+    //})
+
+}
+
+handleDatabaseRequest();

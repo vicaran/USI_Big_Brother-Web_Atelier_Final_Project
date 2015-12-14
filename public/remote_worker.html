@@ -44,10 +44,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
     <script src="js/scripts/jquery-2.1.4.js"></script>
     <script type="text/javascript" src="./js/bower_components/moment/min/moment.min.js"></script>
-    <script type="text/javascript" src="./js/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript"
             src="./js/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-    <link rel="stylesheet" href="./js/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet"
           href="./js/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
     <link href="css/freelancer.css" rel="stylesheet">
@@ -195,20 +193,26 @@
 
                     </div>
                     <div class="container">
+
                         <div class='col-md-6'>
+                            <h2> From </h2>
+
                             <div class="form-group">
                                 <div class='input-group date' id='since'>
-                                    <input type='text' class="form-control"/>
+                                    <input type='text' class="form-control" id="sinceInput"/>
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
                                 </div>
                             </div>
                         </div>
+
                         <div class='col-md-6'>
+                            <h2> To </h2>
+
                             <div class="form-group">
                                 <div class='input-group date' id='to'>
-                                    <input type='text' class="form-control"/>
+                                    <input type='text' class="form-control" id="toInput"/>
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -216,20 +220,6 @@
                             </div>
                         </div>
                     </div>
-                    <script type="text/javascript">
-                        $(function () {
-                            $('#since').datetimepicker();
-                            $('#to').datetimepicker({
-                                useCurrent: false //Important! See issue #1075
-                            });
-                            $("#since").on("dp.change", function (e) {
-                                $('#to').data("DateTimePicker").minDate(e.date);
-                            });
-                            $("#to").on("dp.change", function (e) {
-                                $('#since').data("DateTimePicker").maxDate(e.date);
-                            });
-                        });
-                    </script>
                 </div>
             </div>
         </div>
@@ -298,8 +288,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 
 
-<script src="js/scripts/app.js"></script>
-
 <script src="js/scripts/bootstrap.min.js"></script>
 <script src="js/scripts/bootstrap-datepicker.js"></script>
 
@@ -313,6 +301,9 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="js/freelancer.js"></script>
+
+<script src="js/scripts/app.js"></script>
+
 </body>
 
 
