@@ -130,7 +130,7 @@ function createIdSelector() {
         }
         var newDiv = document.createElement('div');
         newDiv.setAttribute('class', "IdSelector");
-        newDiv.setAttribute('id', 'c' + idArray[i].toString());
+        newDiv.setAttribute('data-id', 'd' + idArray[i].toString());
         var h2 = document.createElement('h2');
         h2.innerHTML = idArray[i];
         newDiv.appendChild(h2);
