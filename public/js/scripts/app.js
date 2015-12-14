@@ -5,7 +5,6 @@
 
 var tesselIds = {};
 var graphDimension = 10;
-Chart.defaults.global.responsive = true;
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
 
@@ -125,7 +124,7 @@ function createIdSelector() {
     for (var i = 0; i < idArray.length; i++) {
         var checkIfExist = document.getElementById('c' + idArray[i].toString());
 
-        if (checkIfExist != undefined ) {
+        if (checkIfExist != undefined) {
             continue
         }
         var newDiv = document.createElement('div');
@@ -154,11 +153,16 @@ function createIdSelector() {
     }
 }
 
-function changeDimension(){
-    document.querySelector('paper-slider').addEventListener('change', function(event) {
-        graphDimension = event.target.value
-        if(graphDimension>20){
-
+function changeDimension() {
+    document.querySelector('paper-slider').addEventListener('change', function (event) {
+        graphDimension = event.target.value;
+        var containerCharts = document.getElementById("ChartDiv")
+        var basicClass = containerCharts.className;
+        if (graphDimension > 20) {
+            containerCharts.className += 'flexColumn'
+        }
+        else {
+            containerCharts.className = basicClass
         }
         console.log(event.target.value);
     });

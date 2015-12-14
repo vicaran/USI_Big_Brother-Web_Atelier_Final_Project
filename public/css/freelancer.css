@@ -21,6 +21,9 @@
 
     color: black;
 }
+.flexColumn{
+    flex-direction: column;
+}
 
 .chart{
     height: 400px;
