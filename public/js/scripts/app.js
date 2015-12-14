@@ -135,11 +135,12 @@ function createIdSelector() {
         h2.innerHTML = idArray[i];
         newDiv.appendChild(h2);
         newDiv.addEventListener('click', function (e) {
+            console.log(e.target)
             var allDivs = document.getElementsByClassName('IdSelector activeIdSelector')
             if (e.target.className == "IdSelector") {
                 e.target.className = e.target.className + ' activeIdSelector'
                 for (var i = 0; i < allDivs.length; i++) {
-                    if (allDivs[i] != this) {
+                    if (allDivs[i] != e.target) {
                         allDivs[i].className = "IdSelector"
                     }
                 }
