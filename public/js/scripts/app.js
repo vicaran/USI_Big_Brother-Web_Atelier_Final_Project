@@ -1,5 +1,6 @@
 /**
- * GG A TUTTI, é stato fatto il miracolo
+ * GG A TUTTI, é stato fatto il miracolo !!
+ * 
  */
 
 var tesselIds = {};
