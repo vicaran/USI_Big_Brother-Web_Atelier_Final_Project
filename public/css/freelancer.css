@@ -22,7 +22,7 @@
     color: black;
 }
 .flexColumn{
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .chart{
