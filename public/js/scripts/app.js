@@ -97,7 +97,7 @@ function updateChart(id, parse) {
     if(minor){
         console.log('******** MINOR')
         console.log(lineChartData.labels.length - graphDimension)
-        for(var i = 0; i < (lineChartData.labels.length - graphDimension); i ++) {
+        for(var i = 0; i < (graphDimension - lineChartData.labels.length ); i ++) {
             console.log('diocan')
             lineChartData.labels.shift();
         }
