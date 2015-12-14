@@ -39,9 +39,9 @@ canvas {
 
 .IdSelector {
     border: 2px solid white;
-
+    flex-grow: 1;
     height: 100px;
-    flex-basis: 50px;
+    flex-basis: 200px;
     display: flex;
     align-items: center;
 }
