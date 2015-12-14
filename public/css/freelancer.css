@@ -4,6 +4,43 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+/*.myChartContainer {*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*padding-left: 20px;*/
+    /*padding-right: 20px;*/
+    /*display: flex;*/
+    /*flex-direction: row;*/
+/*}*/
+
+/*.chart {*/
+    /*width: 100%;*/
+    /*flex: 1*/
+/*}*/
+canvas{
+    width: 100% !important;
+    height: auto !important;
+}
+#IdSelectorContainer{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+.IdSelector{
+    border: 2px solid white;
+
+    height: 100px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.IdSelector h2{
+    flex: 1;
+}
+.activeIdSelector{
+    background-color: #7f0000;
+}
 body {
     overflow-x: hidden;
 }
@@ -32,7 +69,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
     font-weight: 700;
 }
 
@@ -42,8 +79,12 @@ hr.star-primary {
     padding: 0;
     max-width: 250px;
     border: 0;
-    border-top: solid 5px;
+    border-top: solid 2px;
     text-align: center;
+}
+
+#about {
+    background-color: #535f6b;
 }
 
 hr.star-light:after,
@@ -52,7 +93,7 @@ hr.star-primary:after {
     position: relative;
     top: -.8em;
     padding: 0 .25em;
-    font-family: FontAwesome;
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
     font-size: 2em;
 }
 
@@ -66,7 +107,7 @@ hr.star-light:after {
 }
 
 hr.star-primary {
-    border-color: #2c3e50;
+    border-color: white;
 }
 
 hr.star-primary:after {
@@ -78,7 +119,12 @@ hr.star-primary:after {
     margin: 0 auto;
 }
 
+a > i {
+    padding-right: 5px;
+}
+
 #LiveData {
+    height: 100%;
     background-color: #545454;
 }
 
@@ -86,7 +132,7 @@ header {
     text-align: center;
     color: #fff;
     background-image: url("../js/scripts/img/header.jpg");
-    /*background-size: 100%;*/
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -103,7 +149,7 @@ header img {
 header .intro-text .name {
     display: block;
     text-transform: uppercase;
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
     font-size: 2em;
     font-weight: 700;
 }
@@ -112,11 +158,19 @@ header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
 }
+
 .borderSections {
     border-bottom: 2px solid white;
 
 }
+
+#Database {
+
+    background-color: black;
+}
+
 @media (min-width: 768px) {
+
     header .container {
         padding-top: 200px;
         padding-bottom: 100px;
@@ -132,6 +186,7 @@ header .intro-text .skills {
 }
 
 @media (min-width: 768px) {
+
     .navbar-fixed-top {
         padding: 25px 0;
         -webkit-transition: padding .3s;
@@ -147,7 +202,7 @@ header .intro-text .skills {
     }
 
     .navbar-fixed-top.navbar-shrink {
-        padding: 10px 0;
+        padding: 0px;
     }
 
     .navbar-fixed-top.navbar-shrink .navbar-brand {
@@ -155,15 +210,15 @@ header .intro-text .skills {
     }
 }
 
-.nav a{
+.nav a {
     font-size: 20px;
 }
 
 .navbar {
     /*#bdbdbd*/
-    background-color:#a8a8a8;
+    background: linear-gradient(to bottom right, white, #a8a8a8);
     text-transform: uppercase;
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
     font-weight: 700;
 }
 
@@ -190,7 +245,7 @@ section {
 
 section h2 {
     margin: 0;
-    font-size: 3em;
+    font-size: 24px;
 }
 
 section.success {
@@ -208,6 +263,19 @@ section.success a.active {
 }
 
 @media (max-width: 767px) {
+
+    /*.myChartContainer {*/
+        /*height: 100%;*/
+        /*width: 100%;*/
+        /*padding-left: 20px;*/
+        /*padding-right: 20px;*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+    /*}*/
+
+    /*.chart {*/
+        /*flex: 1;*/
+    /*}*/
     section {
         padding: 75px 0;
     }
