@@ -14,7 +14,7 @@ const PORT = 15000;
 function handleRequeste(req, res){
     res.end('It Works!! Path Hit: ' + request.url);
 }
-var server = http.createServer(handleRequest);
+var server = http.createServer(handleRequeste);
 
 server.listen(PORT, function(){
     //Callback triggered when server is successfully listening. Hurray!
