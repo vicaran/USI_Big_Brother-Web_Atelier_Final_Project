@@ -8,38 +8,9 @@ var tesselIds = {};
 var myLineChart;
 var myLineChart1;
 
-k.createNode(function (data) {
-    console.log('diocan')
-    console.log(data);
-    var parse = JSON.parse(data);
-
-    switch (parse){
-        case "browser":
-            console.log(parse)
-            k.send(JSON.stringify(data));
-            break
-        case "database":
-            console.log("database data", parse)
-
-
-    }
-
-    //myLineChart.addData([parse.time],)
-    //    var ht = {
-    //        "1": ["updateGraphLine", "updateGraphBar"],
-    //        "2": ["updateGraphLine1", "updateGraphBar1"]
-    //    }
-    //
-    //    // console.log("else", data)
-    //    // var data = JSON.parse(data);
-    //    //console.log(data);
-    //
-    //    if (ht[data._id]) {
-    //        k.callFunction(ht[data._id][0], [data.volume, data.light, data.temperature, data.time])
-    //        k.callFunction(ht[data._id][1], [data.volume, data.light, data.temperature, data.time])
-    //    }
-    //}
-})
+function check(data){
+    console.log('*******',data)
+}
 window.onload = function () {
 
     //var updateGraphLine = function (volume, light, temp, time) {
