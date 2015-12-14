@@ -95,7 +95,7 @@ function updateChart(id, parse) {
     lineChartData.datasets[1].data.push(parse.light);
     lineChartData.datasets[2].data.push(parse.temperature);
     if(minor){
-        for(var i = 0; i < lineChartData.labels.length - graphDimension) {
+        for(var i = 0; i < (lineChartData.labels.length - graphDimension); i ++) {
             lineChartData.labels.shift();
         }
     }
