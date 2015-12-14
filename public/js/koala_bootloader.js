@@ -1176,12 +1176,12 @@ $(document).ready(function(){
         var html = event.data.html
         var id = event.data.identifier
         
-        if(!addedHtml[id]) {
-          //$('#__frame_' + cid).prepend('<div class="row">' + html + '</div>')
-          // $('#__frame_' + cid).append(html)
-          $('#_liquid_frame').append(html)
-          addedHtml[id] = true
-        }
+        // if(!addedHtml[id]) {
+        //   //$('#__frame_' + cid).prepend('<div class="row">' + html + '</div>')
+        //   // $('#__frame_' + cid).append(html)
+        //   $('#_liquid_frame').append(html)
+        //   addedHtml[id] = true
+        // }
       } 
       /*
        * Workers add javascript to the webpage through the operator
