@@ -79,6 +79,7 @@ function graphCreate(id) {
 }
 
 function createNewVariable(id) {
+    document.getElementById("waitTest").parent.removeChild()
     tesselIds[id] = {
         data: getDataChart()
     }
@@ -192,11 +193,11 @@ function handleDatabaseRequest() {
     });
     $("#since").on("dp.change", function (e) {
         $('#to').data("DateTimePicker").minDate(e.date);
-        console.log($('#since').datepicker(false,'getDate')[0].childNodes[1].value)
+        console.log($('#since').datepicker(false, 'getDate')[0].childNodes[1].value)
 
     });
     $("#to").on("dp.change", function (e) {
-        console.log($('#to').datepicker(false,'getDate')[0].childNodes[1].value)
+        console.log($('#to').datepicker(false, 'getDate')[0].childNodes[1].value)
 
         $('#since').data("DateTimePicker").maxDate(e.date);
     });
@@ -221,4 +222,18 @@ function handleDatabaseRequest() {
 
 }
 
+function waitForStreaming() {
+    var existCharts = document.getElementById("ChartDiv").children.length == 0
+    console.log(". . . . waiting for operators")
+    if (existCharts) {
+        var container = document.getElementById("ChartDiv");
+        var waitTest = document.createElement('h2')
+        waitTest.setAttribute('id', 'waitTest')
+        waitTest.className = 'text-center'
+        waitTest.innerHTML = '. . . . waiting for operators'
+        container.appendChild(waitTest)
+    }
+}
+
+waitForStreaming()
 handleDatabaseRequest();
