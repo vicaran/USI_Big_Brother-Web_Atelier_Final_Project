@@ -161,12 +161,11 @@ function changeDimension() {
         var containerCharts = document.getElementById("ChartDiv")
         if (graphDimension > 20) {
             console.log('**************')
-            containerCharts.style.width = '100%';
-
+            containerCharts.style.width = 100+'%';
 
         }
         else {
-            containerCharts.style.width = '50%';
+            containerCharts.style.width = 50 +'%';
         }
         console.log(event.target.value);
     });
