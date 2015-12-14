@@ -103,7 +103,7 @@ function updateChart(id, parse) {
         }
     }
     lineChartData.labels.push(parse.time);
-
+    console.log('dimension:', graphDimension)
     //if longer than 20, remove the first one
     if (lineChartData.datasets[0].data.length > graphDimension | lineChartData.datasets[1].data.length > graphDimension | lineChartData.datasets[2].data.length > graphDimension) {
         lineChartData.datasets[0].data.shift();
