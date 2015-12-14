@@ -135,18 +135,17 @@ function createIdSelector() {
         h2.innerHTML = idArray[i];
         newDiv.appendChild(h2);
         newDiv.addEventListener('click', function (e) {
-            console.log(e.target)
             var allDivs = document.getElementsByClassName('IdSelector activeIdSelector')
-            if (e.target.className == "IdSelector") {
-                e.target.className = e.target.className + ' activeIdSelector'
+            if (this.className == "IdSelector") {
+                this.className = this.className + ' activeIdSelector'
                 for (var i = 0; i < allDivs.length; i++) {
-                    if (allDivs[i] != e.target) {
+                    if (allDivs[i] != this) {
                         allDivs[i].className = "IdSelector"
                     }
                 }
             }
             else {
-                e.target.className = "IdSelector"
+                this.className = "IdSelector"
             }
 
 
