@@ -3,7 +3,6 @@
  */
 
 var tesselIds = {};
-var test = false;
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
 
@@ -43,7 +42,7 @@ function getDataChart() {
     return lineChartData;
 }
 
-function canvasCreate(id){
+function canvasCreate(id) {
 
     var container = document.getElementById("ChartDiv");
     var div = document.createElement('div')
@@ -52,7 +51,7 @@ function canvasCreate(id){
     div.className = "col-sm-6"
     var canvas = document.createElement('canvas')
     canvas.className = "chart"
-    canvas.setAttribute('id',id)
+    canvas.setAttribute('id', id)
     div.appendChild(p);
     div.appendChild(canvas)
     container.appendChild(div);
@@ -61,7 +60,7 @@ function canvasCreate(id){
 }
 
 
-function graphCreate(id){
+function graphCreate(id) {
     ctx = document.getElementById(id).getContext("2d");
     myLine = new Chart(ctx)
     myLineChart = myLine.Line(tesselIds[id].data, {
@@ -74,14 +73,14 @@ function graphCreate(id){
 
 }
 
-function createNewVariable(id){
+function createNewVariable(id) {
     tesselIds[id] = {
         data: getDataChart()
     }
 
 }
 
-function updateChart(id,parse){
+function updateChart(id, parse) {
     var myLineChart = tesselIds[id].myLineChart
     myLineChart.destroy();
 
@@ -102,10 +101,7 @@ function updateChart(id,parse){
     var myLine = tesselIds[id].myLine
     //draw it
     myLine.Line(lineChartData);
-    if(!test) {
-        createIdSelector()
-        test = true;
-    }
+    createIdSelector()
 
 }
 
@@ -117,19 +113,23 @@ function chartHandler(parse) {
         canvasCreate(parse._id)
         graphCreate(parse._id)
     }
-    updateChart(parse._id,parse);
+    updateChart(parse._id, parse);
 }
 
 
 function createIdSelector() {
     var idArray = Object.keys(tesselIds);
-
+    var checkIfExist = document.getElementById('id')
     var container = document.getElementById("IdSelectorContainer");
 
     for (var i = 0; i < idArray.length; i++) {
+        if (checkIfExist == 'c' + idArray[i].toString()) {
+            console.log('exist:' + 'c' + idArray[i])
+            continue
+        }
         var newDiv = document.createElement('div');
         newDiv.setAttribute('class', "IdSelector");
-        newDiv.setAttribute('data-id', idArray[i]);
+        newDiv.setAttribute('id', 'c' + idArray[i].toString());
         var h2 = document.createElement('h2');
         h2.innerHTML = idArray[i];
         newDiv.appendChild(h2);
