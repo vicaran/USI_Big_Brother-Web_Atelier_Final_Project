@@ -24,7 +24,7 @@ k.createNode(function (data) {
 
     }
 
-
+    myLineChart.addData([parse.time],)
     //    var ht = {
     //        "1": ["updateGraphLine", "updateGraphBar"],
     //        "2": ["updateGraphLine1", "updateGraphBar1"]
