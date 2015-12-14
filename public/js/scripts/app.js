@@ -5,6 +5,7 @@
 
 var tesselIds = {};
 var graphDimension = 10;
+var minor = false;
 
 Chart.defaults.global.responsive = true;
 
@@ -93,11 +94,15 @@ function updateChart(id, parse) {
     lineChartData.datasets[0].data.push(parse.volume);
     lineChartData.datasets[1].data.push(parse.light);
     lineChartData.datasets[2].data.push(parse.temperature);
+    if(minor){
+        for(var i = 0; i < lineChartData.labels.length - graphDimension) {
+            lineChartData.labels.shift();
+        }
+    }
     lineChartData.labels.push(parse.time);
 
     //if longer than 20, remove the first one
     if (lineChartData.datasets[0].data.length > graphDimension | lineChartData.datasets[1].data.length > graphDimension | lineChartData.datasets[2].data.length > graphDimension) {
-        lineChartData.labels = []
         lineChartData.datasets[0].data.shift();
         lineChartData.datasets[1].data.shift();
         lineChartData.datasets[2].data.shift();
@@ -159,7 +164,10 @@ function createIdSelector() {
 
 function changeDimension() {
     document.querySelector('paper-slider').addEventListener('change', function (event) {
+
+        minor = graphDimension < event.target.value
         graphDimension = event.target.value;
+
         var containerCharts = document.getElementById("ChartDiv")
         console.log(event.target.value);
     });
