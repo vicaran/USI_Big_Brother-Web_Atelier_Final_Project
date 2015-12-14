@@ -4,6 +4,11 @@
  */
 
 var tesselIds = {};
+var graphDimension = 10;
+var minor = false;
+
+Chart.defaults.global.responsive = true;
+
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
 
@@ -71,7 +76,6 @@ function graphCreate(id) {
     tesselIds[id].myLine = myLine;
     tesselIds[id].myLineChart = myLineChart;
 
-
 }
 
 function createNewVariable(id) {
@@ -81,19 +85,35 @@ function createNewVariable(id) {
 
 }
 
+function convertDate(d) {
+    var parseDate = new Date(d).toUTCString()
+    return parseDate.split(' ')[4]
+}
+
 function updateChart(id, parse) {
     var myLineChart = tesselIds[id].myLineChart
     myLineChart.destroy();
 
+    time = convertDate(parse.time)
     var lineChartData = tesselIds[id].data
     //push newly received data (time & data)
     lineChartData.datasets[0].data.push(parse.volume);
     lineChartData.datasets[1].data.push(parse.light);
     lineChartData.datasets[2].data.push(parse.temperature);
-    lineChartData.labels.push(parse.time);
+    if (minor) {
+        console.log(lineChartData.labels.length - graphDimension)
+        for (var i = 0; i < (lineChartData.labels.length - graphDimension); i++) {
+            lineChartData.datasets[0].data.shift()
+            lineChartData.datasets[1].data.shift()
+            lineChartData.datasets[2].data.shift()
+            lineChartData.labels.shift();
+        }
+    }
 
+    lineChartData.labels.push(time);
+    console.log('dimension:', graphDimension)
     //if longer than 20, remove the first one
-    if (lineChartData.datasets[0].data.length > 10 | lineChartData.datasets[1].data.length > 10 | lineChartData.datasets[2].data.length > 10) {
+    if (lineChartData.datasets[0].data.length > graphDimension || lineChartData.datasets[1].data.length > graphDimension || lineChartData.datasets[2].data.length > graphDimension) {
         lineChartData.datasets[0].data.shift();
         lineChartData.datasets[1].data.shift();
         lineChartData.datasets[2].data.shift();
@@ -117,7 +137,6 @@ function chartHandler(parse) {
     updateChart(parse._id, parse);
 }
 
-
 function createIdSelector() {
     var idArray = Object.keys(tesselIds);
     var container = document.getElementById("IdSelectorContainer");
@@ -125,7 +144,7 @@ function createIdSelector() {
     for (var i = 0; i < idArray.length; i++) {
         var checkIfExist = document.getElementById('c' + idArray[i].toString());
 
-        if (checkIfExist != undefined ) {
+        if (checkIfExist != undefined) {
             continue
         }
         var newDiv = document.createElement('div');
@@ -154,3 +173,52 @@ function createIdSelector() {
     }
 }
 
+function changeDimension() {
+    document.querySelector('paper-slider').addEventListener('change', function (event) {
+
+        minor = event.target.value < graphDimension
+        console.log('minor: ', minor)
+        graphDimension = event.target.value;
+        console.log(event.target.value);
+    });
+}
+changeDimension();
+
+function handleDatabaseRequest() {
+
+    $('#since').datetimepicker();
+    $('#to').datetimepicker({
+        useCurrent: false //Important! See issue #1075
+    });
+    $("#since").on("dp.change", function (e) {
+        $('#to').data("DateTimePicker").minDate(e.date);
+        console.log($('#since').datepicker(false,'getDate')[0].childNodes[1].value)
+
+    });
+    $("#to").on("dp.change", function (e) {
+        console.log($('#to').datepicker(false,'getDate')[0].childNodes[1].value)
+
+        $('#since').data("DateTimePicker").maxDate(e.date);
+    });
+
+    //$('#since').datepicker()
+    //    .on('changeDate', function (ev) {
+    //        if(ev.date.valueOf() != undefined) {
+    //            console.log(ev.date.valueOf())
+    //        }
+    //    });
+
+    //console.log(dateFormat)
+    //var to = document.getElementById('to')
+    //since.addEventListener('change', function (e) {
+    //    var dateFormat = $('#since').datepicker('option', 'dd, MM, yy');
+    //
+    //    console.log(e.target.value)
+    //});
+    //to.addEventListener('change', function (e) {
+    //    console.log(e.target.value)
+    //})
+
+}
+
+handleDatabaseRequest();
