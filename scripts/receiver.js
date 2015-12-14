@@ -12,7 +12,7 @@ const PORT = 15000;
 //     });
 
 function handleRequeste(req, res){
-    res.end('It Works!! Path Hit: ' + request.url);
+    res.end('It Works!! Path Hit: ' + req.url);
 }
 var server = http.createServer(handleRequeste);
 
