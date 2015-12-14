@@ -1,5 +1,5 @@
 /**
- * Lavoro di gotie fatto da zio zuppi e andre in meno parte, in tutto ci abbiamo un'ora gg
+ * GG A TUTTI, é stato fatto il miracolo
  */
 
 var tesselIds = {};
@@ -125,7 +125,6 @@ function createIdSelector() {
         var checkIfExist = document.getElementById('c' + idArray[i].toString());
 
         if (checkIfExist != undefined ) {
-            console.log('exist:' + 'c' + idArray[i])
             continue
         }
         var newDiv = document.createElement('div');
