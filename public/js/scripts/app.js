@@ -9,6 +9,8 @@ var myLineChart1;
 
 function check(data){
     console.log('*******',data)
+    myLineChart.addData(data.time,[data.temperature,data.light,'porcodio'])
+
 }
 window.onload = function () {
 
