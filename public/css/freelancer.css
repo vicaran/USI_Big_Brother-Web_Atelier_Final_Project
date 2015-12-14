@@ -149,8 +149,7 @@ header {
 }
 
 header .container {
-    padding-top: 100px;
-    padding-bottom: 50px;
+
 }
 
 header img {
@@ -174,6 +173,7 @@ header .intro-text .skills {
 .borderSections {
     border-bottom: 2px solid white;
 
+    min-height: 600px;
 }
 
 #Database {
