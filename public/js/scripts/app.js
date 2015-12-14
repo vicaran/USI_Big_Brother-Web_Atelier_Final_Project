@@ -6,94 +6,61 @@ var idArray = [1, 2];
 var tesselIds = {};
 var myLineChart;
 var myLineChart1;
+var ctx;
+var myLine ;
 
-function check(data) {
-    //myLineChart.addData([data.temperature, data.light, data.volume],data.time.toString())
-    myLineChart.dataset[0].data = data.temperature
-    myLineChart.labels = data.time.toString
-    console.log(myLineChart.datasets[0])
+ctx = document.getElementById("myChart").getContext("2d");
+
+Chart.defaults.global.animation = false;
+Chart.defaults.global.responsive = true;
+myLine = new Chart(ctx)
+
+var lineChartData = {
+    labels: [],
+    datasets: [{
+        label: "volume Data Set",
+        fillColor: "rgba(215,54,139,0.2)",
+        strokeColor: "rgba(215,54,139,1)",
+        pointColor: "rgba(215,54,139,1)",
+        pointStrokeColor: "rgba(215,54,139,1)",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(220,220,220,1)",
+        data: []
+    }, {
+        label: "light dataset",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "rgba(151,187,205,1)",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(151,187,205,1)",
+        data: []
+    }, {
+        label: "temp dataset",
+        fillColor: "rgba(241,85,45,0.2)",
+        strokeColor: "rgba(241,85,45,1)",
+        pointColor: "rgba(241,85,45,1)",
+        pointStrokeColor: "rgba(241,85,45,1)",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(241,85,45,1)",
+        data: []
+    }]
 
 }
-//var updateGraphLine = function (volume, light, temp, time) {
-//    //console.log(volume,light, time)
-//    var date = new Date(time).toUTCString();
-//    date = date.split(' ')[4];
-//
-//    myRealLine.destroy();
-//
-//
-//    //push newly received data (time & data)
-//    lineChartData1.datasets[0].data.push(volume);
-//    document.getElementById('vol_2').innerHTML = volume;
-//    lineChartData1.datasets[1].data.push(light);
-//    document.getElementById('light_2').innerHTML = light;
-//    lineChartData1.datasets[2].data.push(temp);
-//    document.getElementById('temp_2').innerHTML = temp;
-//    lineChartData1.labels.push(date);
-//
-//    //if longer than 20, remove the first one
-//    if (lineChartData1.datasets[0].data.length > 10 | lineChartData1.datasets[1].data.length > 10 | lineChartData1.datasets[2].data.length > 10) {
-//        lineChartData1.datasets[0].data.shift();
-//        lineChartData1.datasets[1].data.shift();
-//        lineChartData1.datasets[2].data.shift();
-//        lineChartData1.labels.shift();
-//    }
-//
-//    //draw it
-//    myLineChart.Line(lineChartData1);
-//
-//    //empty the content of the div
-//    //document.getElementById('newdata').setAttribute('volume', "");
-//    //document.getElementById('newdata').setAttribute('time', "");
-//}
+
+myLineChart = myLine.Line(lineChartData, {
+    tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
+});
 
 function createGraph() {
 
-    var ctx = document.getElementById("myChart").getContext("2d");
+    ctx = document.getElementById("myChart").getContext("2d");
+    myLine = new Chart(ctx)
 
-    //Chart.defaults.global.responsive = true;
 
-    var data = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [
-            {
-                label: "My First dataset",
-                fillColor: "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: []
-            },
-            {
-                label: "My Second dataset",
-                fillColor: "rgba(151,187,205,0.2)",
-                strokeColor: "rgba(151,187,205,1)",
-                pointColor: "rgba(151,187,205,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(151,187,205,1)",
-                data: []
-
-            },
-            {
-                label: "My third dataset",
-                fillColor: "rgba(151,187,205,0.2)",
-                strokeColor: "rgba(151,187,205,1)",
-                pointColor: "rgba(151,187,205,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(151,187,205,1)",
-                data: []
-
-            }
-        ]
-    };
-    Chart.defaults.global.responsive = true;
-
-    myLineChart = new Chart(ctx).Line(data);
-
+    myLineChart = myLine.Line(data, {
+        tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
+    });
 
     var ctx1 = document.getElementById("myChart1").getContext("2d");
 
@@ -104,7 +71,37 @@ function createGraph() {
 
 }
 
-createGraph();
+
+function check(parse) {
+        //console.log(volume,light, time)
+
+
+    myLineChart.destroy();
+
+
+        //push newly received data (time & data)
+        lineChartData.datasets[0].data.push(parse.volume);
+        lineChartData.datasets[1].data.push(parse.light);
+        lineChartData.datasets[2].data.push(parse.temperature);
+        lineChartData.labels.push(parse.time);
+
+        //if longer than 20, remove the first one
+        if (lineChartData.datasets[0].data.length > 10 | lineChartData.datasets[1].data.length > 10 | lineChartData.datasets[2].data.length > 10) {
+            lineChartData.datasets[0].data.shift();
+            lineChartData.datasets[1].data.shift();
+            lineChartData.datasets[2].data.shift();
+            lineChartData.labels.shift();
+        }
+
+        //draw it
+        myLine.Line(lineChartData);
+
+        //empty the content of the div
+        //document.getElementById('newdata').setAttribute('volume', "");
+        //document.getElementById('newdata').setAttribute('time', "");
+
+
+}
 
 function createIdSelector() {
     var container = document.getElementById("IdSelectorContainer");
