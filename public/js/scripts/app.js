@@ -7,6 +7,12 @@ var tesselIds = {};
 var myLineChart;
 var myLineChart1;
 var ctx;
+var myLine ;
+
+Chart.defaults.global.animation = false;
+Chart.defaults.global.responsive = true;
+
+
 //var updateGraphLine = function (volume, light, temp, time) {
 //    //console.log(volume,light, time)
 //    var date = new Date(time).toUTCString();
@@ -43,7 +49,7 @@ var ctx;
 function createGraph() {
 
     ctx = document.getElementById("myChart").getContext("2d");
-
+    myLine = new Chart(ctx)
     //Chart.defaults.global.responsive = true;
 
     var data = {
@@ -98,11 +104,6 @@ function createGraph() {
 }
 
 createGraph();
-myLine = new Chart(ctx);
-
-Chart.defaults.global.animation = false;
-Chart.defaults.global.responsive = true;
-
 
 function check(parse) {
     //myLineChart.addData([data.temperature, data.light, data.volume],data.time.toString())
