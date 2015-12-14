@@ -9,7 +9,7 @@ var myLineChart1;
 
 function check(data) {
     myLineChart.addData([data.temperature, data.light, data.volume],data.time.toString())
-    console.log(myLineChart.datasets[0].data)
+    console.log(myLineChart.datasets[0])
 
 }
 //var updateGraphLine = function (volume, light, temp, time) {
