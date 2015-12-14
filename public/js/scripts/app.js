@@ -55,28 +55,6 @@ function canvasCreate(id){
 
 }
 
-myLineChart = myLine.Line(lineChartData, {
-    tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-});
-
-function createGraph() {
-
-    ctx = document.getElementById("myChart").getContext("2d");
-    myLine = new Chart(ctx)
-
-
-    myLineChart = myLine.Line(data, {
-        tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
-    });
-
-    var ctx1 = document.getElementById("myChart1").getContext("2d");
-
-
-    myLineChart1 = new Chart(ctx1).Line(data);
-    console.log(myLineChart1)
-
-
-}
 
 function graphCreate(id){
     ctx = document.getElementById(id).getContext("2d");
@@ -126,7 +104,7 @@ function updateChart(id){
 
 function chartHandler(parse) {
     //console.log(volume,light, time)
-    if (tesselIds[parse._id] == underlined || tesselIds[parse._id] == null) {
+    if (tesselIds[parse._id] == undefined || tesselIds[parse._id] == null) {
         createNewVariable(parse._id)
         canvasCreate(parse._id)
         graphCreate(parse._id)
