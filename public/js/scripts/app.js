@@ -6,6 +6,8 @@
 var tesselIds = {};
 var graphDimension = 10;
 
+Chart.defaults.global.responsive = true;
+
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
 
@@ -158,17 +160,6 @@ function changeDimension() {
     document.querySelector('paper-slider').addEventListener('change', function (event) {
         graphDimension = event.target.value;
         var containerCharts = document.getElementById("ChartDiv")
-        if (graphDimension > 20) {
-            console.log('**************')
-            containerCharts.style.height = "800px";
-
-            containerCharts.style.width = "100%";
-            console.log( containerCharts.style.width )
-
-        }
-        else {
-            containerCharts.style.width = "50%";
-        }
         console.log(event.target.value);
     });
 }
