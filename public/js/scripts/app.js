@@ -119,11 +119,12 @@ function chartHandler(parse) {
 
 function createIdSelector() {
     var idArray = Object.keys(tesselIds);
-    var checkIfExist = document.getElementById('id')
     var container = document.getElementById("IdSelectorContainer");
 
     for (var i = 0; i < idArray.length; i++) {
-        if (checkIfExist == 'c' + idArray[i].toString()) {
+        var checkIfExist = document.getElementById('c' + idArray[i].toString());
+
+        if (checkIfExist != undefined ) {
             console.log('exist:' + 'c' + idArray[i])
             continue
         }
