@@ -6,20 +6,7 @@ var idArray = [1, 2];
 var tesselIds = {};
 var myLineChart;
 var myLineChart1;
-myLine = new Chart(ctx);
-
-Chart.defaults.global.animation = false;
-Chart.defaults.global.responsive = true;
-
-
-function check(parse) {
-    //myLineChart.addData([data.temperature, data.light, data.volume],data.time.toString())
-    myLineChart.datasets[0].data.push(parse.temperature)
-    myLineChart.labels = parse.time.toString
-    console.log(myLineChart.datasets[0].data)
-    myLineChart = new Chart(ctx).Line(myLineChart.datasets)
-
-}
+var ctx;
 //var updateGraphLine = function (volume, light, temp, time) {
 //    //console.log(volume,light, time)
 //    var date = new Date(time).toUTCString();
@@ -55,7 +42,7 @@ function check(parse) {
 
 function createGraph() {
 
-    var ctx = document.getElementById("myChart").getContext("2d");
+    ctx = document.getElementById("myChart").getContext("2d");
 
     //Chart.defaults.global.responsive = true;
 
@@ -111,6 +98,20 @@ function createGraph() {
 }
 
 createGraph();
+myLine = new Chart(ctx);
+
+Chart.defaults.global.animation = false;
+Chart.defaults.global.responsive = true;
+
+
+function check(parse) {
+    //myLineChart.addData([data.temperature, data.light, data.volume],data.time.toString())
+    myLineChart.datasets[0].data.push(parse.temperature)
+    myLineChart.labels = parse.time.toString
+    console.log(myLineChart.datasets[0].data)
+    myLineChart = new Chart(ctx).Line(myLineChart.datasets)
+
+}
 
 function createIdSelector() {
     var container = document.getElementById("IdSelectorContainer");
