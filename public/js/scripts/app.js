@@ -1,7 +1,7 @@
 /**
  * Created by VeaVictis on 13/12/15.
  */
-//var k = require('./../../../k_globals/koala.js');
+var k = require('./../../../k_globals/koala.js')
 
 
 var idArray = [1, 2];
@@ -9,21 +9,20 @@ var tesselIds = {};
 var myLineChart;
 var myLineChart1;
 
-//k.createNode(function (data) {
-//    console.log('diocan')
-//    //console.log(data);
-//    var parse = JSON.parse(data);
-//
-//    switch (parse){
-//        case "browser":
-//            console.log(parse)
-//            k.send(JSON.stringify(data));
-//            break
-//        case "database":
-//            console.log("database data", parse)
-//
-//
-//    }
+k.createNode(function (data) {
+    //console.log(data);
+    var parse = JSON.parse(data);
+
+    switch (parse){
+        case "browser":
+            console.log(parse)
+            k.send(JSON.stringify(data));
+            break
+        case "database":
+            console.log("database data", parse)
+
+
+    }
 
 
     //    var ht = {
@@ -40,7 +39,7 @@ var myLineChart1;
     //        k.callFunction(ht[data._id][1], [data.volume, data.light, data.temperature, data.time])
     //    }
     //}
-//})
+})
 window.onload = function () {
 
     //var updateGraphLine = function (volume, light, temp, time) {
@@ -147,7 +146,7 @@ window.onload = function () {
                 }
 
 
-            });
+            })
             container.appendChild(newDiv)
         }
     };
