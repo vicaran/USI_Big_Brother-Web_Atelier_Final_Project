@@ -2,9 +2,9 @@
  * Lavoro di gotie fatto da zio zuppi e andre in meno parte, in tutto ci abbiamo un'ora gg
  */
 
-var idArray = [1, 2];
 var tesselIds = {};
 Chart.defaults.global.animation = false;
+Chart.defaults.global.showTooltips = false;
 
 function getDataChart() {
     var lineChartData = {
@@ -118,6 +118,8 @@ function chartHandler(parse) {
 
 
 function createIdSelector() {
+    var idArray = Object.keys(tesselIds);
+
     var container = document.getElementById("IdSelectorContainer");
 
     for (var i = 0; i < idArray.length; i++) {
@@ -130,15 +132,15 @@ function createIdSelector() {
         newDiv.addEventListener('click', function (e) {
             var allDivs = document.getElementsByClassName('IdSelector activeIdSelector')
             if (this.className == "IdSelector") {
-                e.target.element.className = this.className + ' activeIdSelector'
+                this.className = this.className + ' activeIdSelector'
                 for (var i = 0; i < allDivs.length; i++) {
-                    if (allDivs[i] != e.target.element) {
+                    if (allDivs[i] != this) {
                         allDivs[i].className = "IdSelector"
                     }
                 }
             }
             else {
-                e.target.element.className = "IdSelector"
+                this.className = "IdSelector"
             }
 
 
