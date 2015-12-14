@@ -159,7 +159,9 @@ function changeDimension() {
         var containerCharts = document.getElementById("ChartDiv")
         var basicClass = containerCharts.className;
         if (graphDimension > 20) {
-            containerCharts.className += 'flexColumn'
+            console.log('**************')
+                containerCharts.className += ' flexColumn'
+
         }
         else {
             containerCharts.className = basicClass
