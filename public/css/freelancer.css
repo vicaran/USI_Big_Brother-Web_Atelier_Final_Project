@@ -280,6 +280,9 @@ section.success a.active {
 }
 
 @media (max-width: 767px) {
+    paper-slider{
+        width: 100%;
+    }
     .borderSections{
         min-height: inherit;
     }
