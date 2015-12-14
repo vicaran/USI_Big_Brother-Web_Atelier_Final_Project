@@ -101,16 +101,15 @@ function updateChart(id, parse) {
     lineChartData.datasets[1].data.push(parse.light);
     lineChartData.datasets[2].data.push(parse.temperature);
     if(minor){
-        console.log('******** MINOR')
         console.log(lineChartData.labels.length - graphDimension)
         for(var i = 0; i < (lineChartData.labels.length - graphDimension); i ++) {
-            console.log('diocan')
             lineChartData.datasets[0].data.shift()
             lineChartData.datasets[1].data.shift()
             lineChartData.datasets[2].data.shift()
             lineChartData.labels.shift();
         }
     }
+
     lineChartData.labels.push(time);
     console.log('dimension:', graphDimension)
     //if longer than 20, remove the first one
@@ -180,8 +179,6 @@ function changeDimension() {
         minor =  event.target.value < graphDimension
         console.log('minor: ', minor)
         graphDimension = event.target.value;
-
-        var containerCharts = document.getElementById("ChartDiv")
         console.log(event.target.value);
     });
 }
