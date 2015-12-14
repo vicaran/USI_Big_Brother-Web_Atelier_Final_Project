@@ -1,6 +1,6 @@
 /**
  * GG A TUTTI, é stato fatto il miracolo !!
- * 
+ * Commitozky alle 5 del mattino e si esce a comandare
  */
 
 var tesselIds = {};
