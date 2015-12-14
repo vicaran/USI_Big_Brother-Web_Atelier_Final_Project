@@ -5,29 +5,36 @@
  */
 
 /*.myChartContainer {*/
-    /*height: 100%;*/
-    /*width: 100%;*/
-    /*padding-left: 20px;*/
-    /*padding-right: 20px;*/
-    /*display: flex;*/
-    /*flex-direction: row;*/
+/*height: 100%;*/
+/*width: 100%;*/
+/*padding-left: 20px;*/
+/*padding-right: 20px;*/
+/*display: flex;*/
+/*flex-direction: row;*/
 /*}*/
 
 /*.chart {*/
-    /*width: 100%;*/
-    /*flex: 1*/
+/*width: 100%;*/
+/*flex: 1*/
 /*}*/
-canvas{
+.datepicker-days {
+
+    color: black;
+}
+
+canvas {
     width: 100% !important;
     height: auto !important;
 }
-#IdSelectorContainer{
+
+#IdSelectorContainer {
     display: flex;
     flex-direction: row;
     height: 100%;
     width: 100%;
 }
-.IdSelector{
+
+.IdSelector {
     border: 2px solid white;
 
     height: 100px;
@@ -35,12 +42,15 @@ canvas{
     display: flex;
     align-items: center;
 }
-.IdSelector h2{
+
+.IdSelector h2 {
     flex: 1;
 }
-.activeIdSelector{
+
+.activeIdSelector {
     background-color: #7f0000;
 }
+
 body {
     overflow-x: hidden;
 }
@@ -265,16 +275,15 @@ section.success a.active {
 @media (max-width: 767px) {
 
     /*.myChartContainer {*/
-        /*height: 100%;*/
-        /*width: 100%;*/
-        /*padding-left: 20px;*/
-        /*padding-right: 20px;*/
-        /*display: flex;*/
-        /*flex-direction: column;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*padding-left: 20px;*/
+    /*padding-right: 20px;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
     /*}*/
-
     /*.chart {*/
-        /*flex: 1;*/
+    /*flex: 1;*/
     /*}*/
     section {
         padding: 75px 0;
