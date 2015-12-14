@@ -1182,7 +1182,7 @@ $(document).ready(function(){
           // $('#__frame_' + cid).append(html)
           // $('#_liquid_frame').append(html)
           var diocan = document.getElementById('_liquid_frame')
-          if(diocan != null || diocan != undefiend){diocan.innerHTML(html)}
+          if(diocan != null || diocan != undefiend){diocan.innerHTML = html}
             else{console.log('si bugga tutto')}
           addedHtml[id] = true
         }
