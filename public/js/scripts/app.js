@@ -5,6 +5,8 @@
 
 var tesselIds = {};
 var graphDimension = 10;
+Chart.defaults.global.responsive = true;
+
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
 
@@ -157,14 +159,14 @@ function changeDimension() {
     document.querySelector('paper-slider').addEventListener('change', function (event) {
         graphDimension = event.target.value;
         var containerCharts = document.getElementById("ChartDiv")
-        var basicClass = containerCharts.className;
         if (graphDimension > 20) {
             console.log('**************')
-                containerCharts.className += ' flexColumn'
+            containerCharts.style.width = '100%';
+
 
         }
         else {
-            containerCharts.className = basicClass
+            containerCharts.style.width = '50%';
         }
         console.log(event.target.value);
     });
