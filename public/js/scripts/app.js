@@ -97,7 +97,7 @@ function updateChart(id, parse) {
     if(minor){
         console.log('******** MINOR')
         console.log(lineChartData.labels.length - graphDimension)
-        for(var i = 0; i < (graphDimension - lineChartData.labels.length ); i ++) {
+        for(var i = 0; i < (ineChartData.labels.length - graphDimension)); i ++) {
             console.log('diocan')
             lineChartData.labels.shift();
         }
@@ -168,7 +168,8 @@ function createIdSelector() {
 function changeDimension() {
     document.querySelector('paper-slider').addEventListener('change', function (event) {
 
-        minor = graphDimension < event.target.value
+        minor =  event.target.value < graphDimension
+        console.log('minor: ', minor)
         graphDimension = event.target.value;
 
         var containerCharts = document.getElementById("ChartDiv")
