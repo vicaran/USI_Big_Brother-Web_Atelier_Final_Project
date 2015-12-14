@@ -11,6 +11,7 @@ function check(data) {
     //myLineChart.addData([data.temperature, data.light, data.volume],data.time.toString())
     myLineChart.datasets[0].data = data.temperature
     myLineChart.labels = data.time.toString
+    console.log(myLineChart.datasets[0].data)
 
 }
 //var updateGraphLine = function (volume, light, temp, time) {
