@@ -17,6 +17,18 @@
 /*width: 100%;*/
 /*flex: 1*/
 /*}*/
+.table-condensed > thead > tr > th, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td{
+    color: black;
+}
+.bootstrap-datetimepicker-widget .timepicker-hour, .bootstrap-datetimepicker-widget .timepicker-minute, .bootstrap-datetimepicker-widget .timepicker-second{
+    color: black;
+}
+.bootstrap-datetimepicker-widget table td.day{
+    color: black;
+}
+a, a:hover, a:focus, a:active, a.active{
+    color: black;
+}
 .datepicker-days {
 
     color: black;
@@ -76,7 +88,8 @@ a:focus,
 a:active,
 a.active {
     outline: 0;
-    color: #18bc9c;
+    color: black
+;
 }
 
 h1,
