@@ -1,7 +1,7 @@
 /**
  * Created by VeaVictis on 13/12/15.
- */
-var k = require('./../../../k_globals/koala.js');
+ //*/
+//var k = require('./../../../k_globals/koala.js');
 
 
 var idArray = [1, 2];
@@ -10,13 +10,12 @@ var myLineChart;
 var myLineChart1;
 
 k.createNode(function (data) {
-    console.log('diocan')
+    console.log(data)
     //console.log(data);
     var parse = JSON.parse(data);
 
     switch (parse){
         case "browser":
-            console.log(parse)
             k.send(JSON.stringify(data));
             break
         case "database":
@@ -39,7 +38,7 @@ k.createNode(function (data) {
     //        k.callFunction(ht[data._id][0], [data.volume, data.light, data.temperature, data.time])
     //        k.callFunction(ht[data._id][1], [data.volume, data.light, data.temperature, data.time])
     //    }
-    //}
+    //}e
 })
 window.onload = function () {
 
