@@ -34,6 +34,7 @@ var addedHtml = {}
 var addedScript = {}
 var addedCSS = {}
 
+
 /*
  * Firebase server used to initialiase the webRTC conenction
  * right now the server is unique and hardcoded
@@ -1179,7 +1180,8 @@ $(document).ready(function(){
         if(!addedHtml[id]) {
           //$('#__frame_' + cid).prepend('<div class="row">' + html + '</div>')
           // $('#__frame_' + cid).append(html)
-          $('#_liquid_frame').append(html)
+          // $('#_liquid_frame').append(html)
+          document.getElementById('liquid_frame').append(html)
           addedHtml[id] = true
         }
       } 
