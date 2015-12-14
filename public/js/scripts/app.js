@@ -5,6 +5,7 @@
 
 var tesselIds = {};
 var graphDimension = 10;
+Chart.defaults.global.responsive = true;
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
 
@@ -156,7 +157,7 @@ function createIdSelector() {
 function changeDimension(){
     document.querySelector('paper-slider').addEventListener('change', function(event) {
         graphDimension = event.target.value
-        if(graphDimension>50){
+        if(graphDimension>20){
 
         }
         console.log(event.target.value);
