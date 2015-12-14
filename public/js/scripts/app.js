@@ -76,7 +76,7 @@ function createNewVariable(id){
 
 }
 
-function updateChart(id){
+function updateChart(id,parse){
     var myLineChart = tesselIds[id].myLineChart
     myLineChart.destroy();
 
@@ -109,7 +109,7 @@ function chartHandler(parse) {
         canvasCreate(parse._id)
         graphCreate(parse._id)
     }
-    updateChart(parse._id);
+    updateChart(parse._id,parse);
 }
 
 
