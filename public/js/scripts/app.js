@@ -137,6 +137,7 @@ function createIdSelector() {
         newDiv.addEventListener('click', function (e) {
             var allDivs = document.getElementsByClassName('IdSelector activeIdSelector')
             if (this.className == "IdSelector") {
+                
                 this.className = this.className + ' activeIdSelector'
                 for (var i = 0; i < allDivs.length; i++) {
                     if (allDivs[i] != this) {
