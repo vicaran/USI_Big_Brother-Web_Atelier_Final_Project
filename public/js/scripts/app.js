@@ -85,10 +85,16 @@ function createNewVariable(id) {
 
 }
 
+function convertDate(d){
+    var parseDate = new Date(d).toUTCString()
+    return parseDate.split(' ')[4]
+}
+
 function updateChart(id, parse) {
     var myLineChart = tesselIds[id].myLineChart
     myLineChart.destroy();
 
+    time = convertDate(parse.time)
     var lineChartData = tesselIds[id].data
     //push newly received data (time & data)
     lineChartData.datasets[0].data.push(parse.volume);
@@ -105,7 +111,7 @@ function updateChart(id, parse) {
             lineChartData.labels.shift();
         }
     }
-    lineChartData.labels.push(parse.time);
+    lineChartData.labels.push(time);
     console.log('dimension:', graphDimension)
     //if longer than 20, remove the first one
     if (lineChartData.datasets[0].data.length > graphDimension || lineChartData.datasets[1].data.length > graphDimension || lineChartData.datasets[2].data.length > graphDimension) {
