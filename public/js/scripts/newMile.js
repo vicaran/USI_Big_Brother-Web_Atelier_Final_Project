@@ -7,6 +7,7 @@ k.createNode(function(data){
 
     var data = JSON.parse(data);
     console.log('Data', data);
+    check(data);
 })
 //     sensors[data._id] = true;
 
@@ -57,7 +58,7 @@ var htmlString =
 k.createHTML('pimmi', htmlString);
 
 //add the graph script
-// k.createScript('our_graph', 'js/scripts/mile_g.js');
+k.createScript('our_graph', 'js/scripts/app.js');
 
 //connect browser with browser operator
 k.registerProducer('producer');
