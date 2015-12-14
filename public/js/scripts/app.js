@@ -8,7 +8,7 @@ var myLineChart;
 var myLineChart1;
 
 function check(data) {
-    myLineChart.addData([data.temperature, data.light, 'porcodio'].data.time)
+    myLineChart.addData([data.temperature, data.light, 'porcodio'],data.time)
     console.log(myLineChart.datasets[0].data)
     myLineChart = new Chart(ctx).Line(data);
 
