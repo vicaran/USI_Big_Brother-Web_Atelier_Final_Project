@@ -62,6 +62,7 @@ function createGraph() {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
+                data: []
             },
             {
                 label: "My Second dataset",
@@ -71,6 +72,8 @@ function createGraph() {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(151,187,205,1)",
+                data: []
+
             },
             {
                 label: "My third dataset",
@@ -80,6 +83,8 @@ function createGraph() {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(151,187,205,1)",
+                data: []
+
             }
         ]
     };
