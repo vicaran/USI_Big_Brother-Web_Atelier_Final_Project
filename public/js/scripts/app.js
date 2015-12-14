@@ -7,10 +7,10 @@ var tesselIds = {};
 var myLineChart;
 var myLineChart1;
 
-function check(data) {
+function check(parse) {
     //myLineChart.addData([data.temperature, data.light, data.volume],data.time.toString())
-    myLineChart.datasets[0].data.push(data.temperature)
-    myLineChart.labels = data.time.toString
+    myLineChart.datasets[0].data.push(parse.temperature)
+    myLineChart.labels = parse.time.toString
     console.log(myLineChart.datasets[0].data)
     myLineChart = new Chart(ctx).Line(myLineChart.datasets)
 
