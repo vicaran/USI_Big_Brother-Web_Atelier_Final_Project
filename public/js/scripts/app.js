@@ -3,7 +3,6 @@
  */
 var k = require('./../../../k_globals/koala.js');
 
-
 var idArray = [1, 2];
 var tesselIds = {};
 var myLineChart;
