@@ -138,7 +138,6 @@ a > i {
 
 #LiveData {
     background-color: #545454;
-
 }
 
 header {
@@ -150,7 +149,7 @@ header {
 }
 
 header .container {
-    padding-top: 350px;
+    padding-top: 100px;
     padding-bottom: 50px;
 }
 
@@ -174,7 +173,7 @@ header .intro-text .skills {
 
 .borderSections {
     border-bottom: 2px solid white;
-    min-height: 100%;
+
 }
 
 #Database {
@@ -185,7 +184,7 @@ header .intro-text .skills {
 @media (min-width: 768px) {
 
     header .container {
-        padding-top: 300px;
+        padding-top: 200px;
         padding-bottom: 100px;
     }
 
