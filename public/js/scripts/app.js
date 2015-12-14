@@ -8,7 +8,7 @@ var myLineChart;
 var myLineChart1;
 
 function check(data) {
-    myLineChart.addData([data.temperature, data.light, 'porcodio'],data.time)
+    myLineChart.addData([data.temperature, data.light, data.volume],data.time.toString())
 
 }
 //var updateGraphLine = function (volume, light, temp, time) {
@@ -70,6 +70,15 @@ function createGraph() {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(151,187,205,1)",
+            },
+            {
+                label: "My third dataset",
+                fillColor: "rgba(151,187,205,0.2)",
+                strokeColor: "rgba(151,187,205,1)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
             }
         ]
     };
@@ -101,15 +110,15 @@ function createIdSelector() {
         newDiv.addEventListener('click', function (e) {
             var allDivs = document.getElementsByClassName('IdSelector activeIdSelector')
             if (this.className == "IdSelector") {
-                this.className = this.className + ' activeIdSelector'
+                e.target.element.className = this.className + ' activeIdSelector'
                 for (var i = 0; i < allDivs.length; i++) {
-                    if (allDivs[i] != this) {
+                    if (allDivs[i] != e.target.element) {
                         allDivs[i].className = "IdSelector"
                     }
                 }
             }
             else {
-                this.className = "IdSelector"
+                e.target.element.className = "IdSelector"
             }
 
 
