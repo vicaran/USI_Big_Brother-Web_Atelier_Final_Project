@@ -1,5 +1,5 @@
 /**
- * Created by VeaVictis on 13/12/15.
+ * Lavoro di gotie fatto da zio zuppi e andre in meno parte, in tutto ci abbiamo un'ora gg
  */
 
 var idArray = [1, 2];
@@ -115,6 +115,7 @@ function chartHandler(parse) {
 
 function createIdSelector() {
     var container = document.getElementById("IdSelectorContainer");
+
     for (var i = 0; i < idArray.length; i++) {
         var newDiv = document.createElement('div');
         newDiv.setAttribute('class', "IdSelector");
