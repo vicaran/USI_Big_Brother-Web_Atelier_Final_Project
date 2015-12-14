@@ -8,8 +8,9 @@ var myLineChart;
 var myLineChart1;
 
 function check(data) {
-    myLineChart.addData(data.time, [data.temperature, data.light, 'porcodio'])
-    console.log(myLineChart.data)
+    myLineChart.addData([data.temperature, data.light, 'porcodio'].data.time)
+    console.log(myLineChart.datasets[0].data)
+    myLineChart = new Chart(ctx).Line(data);
 
 }
 //var updateGraphLine = function (volume, light, temp, time) {
