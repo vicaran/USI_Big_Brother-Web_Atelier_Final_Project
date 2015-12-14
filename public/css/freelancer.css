@@ -21,9 +21,12 @@
 
     color: black;
 }
+.flexColumn{
+    flex-direction: row;
+}
 
 .chart{
-    height: 400px;
+    height: 550px;
 }
 canvas {
     width: 100% !important;
@@ -32,6 +35,7 @@ canvas {
 
 #IdSelectorContainer {
     display: flex;
+    
     flex-direction: row;
     width: 100%;
     flex-wrap: wrap;

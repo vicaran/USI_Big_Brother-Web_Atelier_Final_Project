@@ -7,7 +7,7 @@
 !/scripts/
 !/scripts/*
 !/public/
-/public/*
+!/public/*
 !/k_globals/
 !/k_globals/*
 !/public/css/
