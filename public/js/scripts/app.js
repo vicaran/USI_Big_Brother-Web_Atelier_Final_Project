@@ -97,6 +97,10 @@ function updateChart(id, parse) {
 
     //if longer than 20, remove the first one
     if (lineChartData.datasets[0].data.length > graphDimension | lineChartData.datasets[1].data.length > graphDimension | lineChartData.datasets[2].data.length > graphDimension) {
+        lineChartData.datasets[0].data = []
+        lineChartData.datasets[1].data = []
+        lineChartData.datasets[2].data = []
+
         lineChartData.datasets[0].data.shift();
         lineChartData.datasets[1].data.shift();
         lineChartData.datasets[2].data.shift();
