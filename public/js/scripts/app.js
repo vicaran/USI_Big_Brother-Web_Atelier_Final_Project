@@ -4,6 +4,7 @@
  */
 
 var tesselIds = {};
+var graphDimension = 10;
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
 
@@ -71,7 +72,6 @@ function graphCreate(id) {
     tesselIds[id].myLine = myLine;
     tesselIds[id].myLineChart = myLineChart;
 
-
 }
 
 function createNewVariable(id) {
@@ -93,7 +93,7 @@ function updateChart(id, parse) {
     lineChartData.labels.push(parse.time);
 
     //if longer than 20, remove the first one
-    if (lineChartData.datasets[0].data.length > 10 | lineChartData.datasets[1].data.length > 10 | lineChartData.datasets[2].data.length > 10) {
+    if (lineChartData.datasets[0].data.length > graphDimension | lineChartData.datasets[1].data.length > graphDimension | lineChartData.datasets[2].data.length > graphDimension) {
         lineChartData.datasets[0].data.shift();
         lineChartData.datasets[1].data.shift();
         lineChartData.datasets[2].data.shift();
@@ -116,7 +116,6 @@ function chartHandler(parse) {
     }
     updateChart(parse._id, parse);
 }
-
 
 function createIdSelector() {
     var idArray = Object.keys(tesselIds);
@@ -154,3 +153,13 @@ function createIdSelector() {
     }
 }
 
+function changeDimension(){
+    document.querySelector('paper-slider').addEventListener('change', function(event) {
+        graphDimension = event.target.value
+        if(graphDimension>50){
+
+        }
+        console.log(event.target.value);
+    });
+}
+changeDimension();
