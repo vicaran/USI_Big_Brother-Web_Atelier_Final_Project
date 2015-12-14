@@ -3,6 +3,7 @@
  */
 
 var tesselIds = {};
+var test = false;
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
 
@@ -101,7 +102,10 @@ function updateChart(id,parse){
     var myLine = tesselIds[id].myLine
     //draw it
     myLine.Line(lineChartData);
-
+    if(!test) {
+        createIdSelector()
+        test = true;
+    }
 
 }
 
@@ -148,5 +152,4 @@ function createIdSelector() {
         container.appendChild(newDiv)
     }
 }
-createIdSelector()
 
