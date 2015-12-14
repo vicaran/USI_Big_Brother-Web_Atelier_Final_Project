@@ -149,7 +149,8 @@ header {
 }
 
 header .container {
-
+    padding-top: 100px;
+    padding-bottom: 50px;
 }
 
 header img {
@@ -275,7 +276,9 @@ section.success a.active {
 }
 
 @media (max-width: 767px) {
-
+    .borderSections{
+        min-height: inherit;
+    }
     /*.myChartContainer {*/
     /*height: 100%;*/
     /*width: 100%;*/
