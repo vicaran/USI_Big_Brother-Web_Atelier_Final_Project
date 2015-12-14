@@ -96,7 +96,9 @@ function updateChart(id, parse) {
     lineChartData.datasets[2].data.push(parse.temperature);
     if(minor){
         console.log('******** MINOR')
+        console.log(lineChartData.labels.length - graphDimension)
         for(var i = 0; i < (lineChartData.labels.length - graphDimension); i ++) {
+            console.log('diocan')
             lineChartData.labels.shift();
         }
     }
