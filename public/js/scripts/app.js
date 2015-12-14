@@ -8,7 +8,9 @@ var myLineChart;
 var myLineChart1;
 
 function check(data) {
-    myLineChart.addData([data.temperature, data.light, data.volume],data.time.toString())
+    //myLineChart.addData([data.temperature, data.light, data.volume],data.time.toString())
+    myLineChart.dataset[0].data = data.temperature
+    myLineChart.labels = data.time.toString
     console.log(myLineChart.datasets[0])
 
 }
