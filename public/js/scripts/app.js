@@ -8,11 +8,10 @@ var myLineChart;
 var myLineChart1;
 
 function check(data) {
-    console.log('*******', data)
     myLineChart.addData(data.time, [data.temperature, data.light, 'porcodio'])
+    console.log(myLineChart.data)
 
 }
-console.log('*********MADONNA NEGRA ***************** ')
 //var updateGraphLine = function (volume, light, temp, time) {
 //    //console.log(volume,light, time)
 //    var date = new Date(time).toUTCString();
@@ -63,7 +62,6 @@ function createGraph() {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [65, 59, 80, 81, 56, 55, 40]
             },
             {
                 label: "My Second dataset",
@@ -73,7 +71,6 @@ function createGraph() {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(151,187,205,1)",
-                data: [28, 48, 40, 19, 86, 27, 90]
             }
         ]
     };
