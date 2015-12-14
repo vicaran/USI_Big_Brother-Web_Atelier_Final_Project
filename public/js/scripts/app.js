@@ -4,6 +4,7 @@
 
 var idArray = [1, 2];
 var tesselIds = {};
+Chart.defaults.global.animation = false;
 
 function getDataChart() {
     var lineChartData = {
@@ -45,10 +46,13 @@ function canvasCreate(id){
 
     var container = document.getElementById("ChartDiv");
     var div = document.createElement('div')
+    var p = document.createElement('p')
+    p.innerHTML = id;
     div.className = "col-sm-6"
     var canvas = document.createElement('canvas')
     canvas.className = "chart"
     canvas.setAttribute('id',id)
+    div.appendChild(p);
     div.appendChild(canvas)
     container.appendChild(div);
 
@@ -122,7 +126,7 @@ function createIdSelector() {
         newDiv.setAttribute('data-id', idArray[i]);
         var h2 = document.createElement('h2');
         h2.innerHTML = idArray[i];
-        newDiv.appendChild(h2)
+        newDiv.appendChild(h2);
         newDiv.addEventListener('click', function (e) {
             var allDivs = document.getElementsByClassName('IdSelector activeIdSelector')
             if (this.className == "IdSelector") {
