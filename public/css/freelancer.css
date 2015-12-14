@@ -22,6 +22,9 @@
     color: black;
 }
 
+.chart{
+    height: 400px;
+}
 canvas {
     width: 100% !important;
     height: auto !important;
