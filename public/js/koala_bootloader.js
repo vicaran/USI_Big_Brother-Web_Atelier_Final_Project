@@ -1180,7 +1180,7 @@ $(document).ready(function(){
         if(!addedHtml[id]) {
           //$('#__frame_' + cid).prepend('<div class="row">' + html + '</div>')
           // $('#__frame_' + cid).append(html)
-          // $('#_liquid_frame').append(html)
+          $('#_liquid_frame').append(html)
           // document.getElementById('_liquid_frame').appendChild(html)
           addedHtml[id] = true
         }
