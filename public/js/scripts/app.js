@@ -6,6 +6,11 @@ var idArray = [1, 2];
 var tesselIds = {};
 var myLineChart;
 var myLineChart1;
+myLine = new Chart(ctx);
+
+Chart.defaults.global.animation = false;
+Chart.defaults.global.responsive = true;
+
 
 function check(parse) {
     //myLineChart.addData([data.temperature, data.light, data.volume],data.time.toString())
@@ -91,10 +96,10 @@ function createGraph() {
             }
         ]
     };
-    Chart.defaults.global.responsive = true;
 
-    myLineChart = new Chart(ctx).Line(data);
-
+    myLineChart = myLine.Line(data, {
+        tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
+    });
 
     var ctx1 = document.getElementById("myChart1").getContext("2d");
 
