@@ -9,52 +9,53 @@ var myLineChart1;
 var ctx;
 var myLine ;
 
+ctx = document.getElementById("myChart").getContext("2d");
+
 Chart.defaults.global.animation = false;
 Chart.defaults.global.responsive = true;
-var data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [
-        {
-            label: "My First dataset",
-            fillColor: "rgba(220,220,220,0.2)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: []
-        },
-        {
-            label: "My Second dataset",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
-            data: []
+myLine = new Chart(ctx)
 
-        },
-        {
-            label: "My third dataset",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
-            data: []
+var lineChartData = {
+    labels: [],
+    datasets: [{
+        label: "volume Data Set",
+        fillColor: "rgba(215,54,139,0.2)",
+        strokeColor: "rgba(215,54,139,1)",
+        pointColor: "rgba(215,54,139,1)",
+        pointStrokeColor: "rgba(215,54,139,1)",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(220,220,220,1)",
+        data: []
+    }, {
+        label: "light dataset",
+        fillColor: "rgba(151,187,205,0.2)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "rgba(151,187,205,1)",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(151,187,205,1)",
+        data: []
+    }, {
+        label: "temp dataset",
+        fillColor: "rgba(241,85,45,0.2)",
+        strokeColor: "rgba(241,85,45,1)",
+        pointColor: "rgba(241,85,45,1)",
+        pointStrokeColor: "rgba(241,85,45,1)",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(241,85,45,1)",
+        data: []
+    }]
 
-        }
-    ]
-};
+}
+
+myLineChart = myLine.Line(lineChartData, {
+    tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
+});
 
 function createGraph() {
 
     ctx = document.getElementById("myChart").getContext("2d");
     myLine = new Chart(ctx)
-    //Chart.defaults.global.responsive = true;
-
 
 
     myLineChart = myLine.Line(data, {
@@ -72,12 +73,33 @@ function createGraph() {
 
 
 function check(parse) {
-    createGraph();
-    //myLineChart.addData([data.temperature, data.light, data.volume],data.time.toString())
-    myLineChart.datasets[0].data.push(parse.temperature)
-    myLineChart.labels = parse.time.toString
-    console.log(myLineChart.datasets[0].data)
-    myLineChart = new Chart(ctx).Line(myLineChart.datasets)
+        //console.log(volume,light, time)
+
+
+    myLineChart.destroy();
+
+
+        //push newly received data (time & data)
+        lineChartData.datasets[0].data.push(parse.volume);
+        lineChartData.datasets[1].data.push(parse.light);
+        lineChartData.datasets[2].data.push(parse.temperature);
+        lineChartData.labels.push(parse.time);
+
+        //if longer than 20, remove the first one
+        if (lineChartData.datasets[0].data.length > 10 | lineChartData.datasets[1].data.length > 10 | lineChartData.datasets[2].data.length > 10) {
+            lineChartData.datasets[0].data.shift();
+            lineChartData.datasets[1].data.shift();
+            lineChartData.datasets[2].data.shift();
+            lineChartData.labels.shift();
+        }
+
+        //draw it
+        myLine.Line(lineChartData);
+
+        //empty the content of the div
+        //document.getElementById('newdata').setAttribute('volume', "");
+        //document.getElementById('newdata').setAttribute('time', "");
+
 
 }
 
