@@ -1,7 +1,6 @@
 /**
  * Created by VeaVictis on 13/12/15.
  */
-var k = require('./../../../k_globals/koala.js');
 
 var idArray = [1, 2];
 var tesselIds = {};
