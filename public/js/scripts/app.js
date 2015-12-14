@@ -11,7 +11,7 @@ var myLineChart1;
 
 k.createNode(function (data) {
     console.log('diocan')
-    //console.log(data);
+    console.log(data);
     var parse = JSON.parse(data);
 
     switch (parse){
