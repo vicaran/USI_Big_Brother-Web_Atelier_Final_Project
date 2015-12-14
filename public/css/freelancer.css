@@ -145,7 +145,7 @@ header {
     color: #fff;
     background-image: url("../js/scripts/img/header.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: round;
 }
 
 header .container {
