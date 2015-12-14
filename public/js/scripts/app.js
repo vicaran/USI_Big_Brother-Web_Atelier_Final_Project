@@ -13,7 +13,7 @@ function check(data){
 
 }
 window.onload = function () {
-
+    console.log('*********MADONNA NEGRA ***************** ')
     //var updateGraphLine = function (volume, light, temp, time) {
     //    //console.log(volume,light, time)
     //    var date = new Date(time).toUTCString();
@@ -121,7 +121,7 @@ window.onload = function () {
             });
             container.appendChild(newDiv)
         }
-    };
+    }
     createIdSelector()
 
 };
