@@ -1180,8 +1180,10 @@ $(document).ready(function(){
         if(!addedHtml[id]) {
           //$('#__frame_' + cid).prepend('<div class="row">' + html + '</div>')
           // $('#__frame_' + cid).append(html)
-          $('#_liquid_frame').append(html)
-          // document.getElementById('_liquid_frame').appendChild(html)
+          // $('#_liquid_frame').append(html)
+          var diocan = document.getElementById('_liquid_frame')
+          if(diocan != null || diocan != undefiend){diocan.appendChild(html)}
+            else{console.log('si bugga tutto')}
           addedHtml[id] = true
         }
       } 
