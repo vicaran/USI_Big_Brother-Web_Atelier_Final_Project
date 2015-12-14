@@ -99,13 +99,16 @@ function updateChart(id, parse) {
         console.log(lineChartData.labels.length - graphDimension)
         for(var i = 0; i < (lineChartData.labels.length - graphDimension); i ++) {
             console.log('diocan')
+            lineChartData.datasets[0].data.shift()
+            lineChartData.datasets[1].data.shift()
+            lineChartData.datasets[2].data.shift()
             lineChartData.labels.shift();
         }
     }
     lineChartData.labels.push(parse.time);
     console.log('dimension:', graphDimension)
     //if longer than 20, remove the first one
-    if (lineChartData.datasets[0].data.length > graphDimension | lineChartData.datasets[1].data.length > graphDimension | lineChartData.datasets[2].data.length > graphDimension) {
+    if (lineChartData.datasets[0].data.length > graphDimension || lineChartData.datasets[1].data.length > graphDimension || lineChartData.datasets[2].data.length > graphDimension) {
         lineChartData.datasets[0].data.shift();
         lineChartData.datasets[1].data.shift();
         lineChartData.datasets[2].data.shift();
