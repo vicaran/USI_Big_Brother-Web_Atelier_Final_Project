@@ -79,7 +79,7 @@ function graphCreate(id) {
     tesselIds[id].myLineChart = myLineChart;
     lineChartData = tesselIds[id].data;
     myLine.Line(lineChartData);
-    
+
     console.log(lineChartData);
     console.log('Created')
 
