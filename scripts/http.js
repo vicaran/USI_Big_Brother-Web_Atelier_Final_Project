@@ -5,6 +5,7 @@
 var k = require('./../k_globals/koala.js')
 var dataB = require('./database.js')
 var http = require('http');
+
 const PORT = 15000;
 // var WebSocketServer = require('ws').Server,
 //     wss = new WebSocketServer({
@@ -20,7 +21,8 @@ server.listen(PORT, function(){
 
 function handleRequest(req, res){
     // res.end('It Works!! Path Hit: ' + req.url);
-    console.log(req);
+    console.log("GG", req.url);
+    // console.log(req);
 }
 
 
