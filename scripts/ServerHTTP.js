@@ -19,10 +19,8 @@ var _id = 0;
 
 function handleRequest(req, res) {
     req.on('data', function(data) {
-    	console.log(req);
-    	console.log(res);
-        console.log('BODY: ' + data);
-        var stringified = JSON.stringify(data);
+    	console.log("DIOBOIA", req.url);
+        var stringified = JSON.stringify(req.url);
         var replaced = stringified.replace('&', ' ');
 
         // //update date

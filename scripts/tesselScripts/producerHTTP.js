@@ -10,17 +10,23 @@ var hostname = "http://neha.inf.unisi.ch:";
 var url = hostname + port.toString();
 
 var send = function(message) {
-    var req = http.post(url, message, function(res) {
-        res.setEncoding('utf8');
-        res.on('data', function(chunk) {
-            console.log('BODY: ' + chunk);
-        });
-    })
-    req.on('error', function(e) {
-        console.log('problem with request: ' + e.message);
+    setImmediate(function start() {
+    var req = http.get("http://neha.inf.unisi.ch:15000/" + message, function(res) {
+        console.log('# statusCode', res.statusCode)
+        var bufs = [];
+        res.on('data', function(data) {
+            bufs.push(new Buffer(data));
+            console.log('# received', new Buffer(data).toString());
+        })
+        res.on('end', function() {
+            console.log('done.');
+            setImmediate(start);
+        })
+    }).on('error', function(e) {
+        console.log('not ok -', e.message, 'error event')
+        setImmediate(start);
     });
-    // write data to request body
-    req.end(JSON.stringify(message));
+});
 };
 var ack = function() {
     send('ACK');
