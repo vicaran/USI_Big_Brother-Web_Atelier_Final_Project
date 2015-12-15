@@ -2,7 +2,6 @@
  * GG A TUTTI, é stato fatto il miracolo !!
  * Commitozky alle 5 del mattino e si esce a comandare
  */
-
 var tesselIds = {};
 var graphDimension = 10;
 var minor = false;
@@ -188,6 +187,15 @@ function changeDimension() {
 }
 changeDimension();
 
+
+function datePickerToUTC(dateFromDatapicker) {
+    console.log(dateFromDatapicker)
+    var d = new Date(dateFromDatapicker)
+    var timestamp = d.getTime()
+    console.log(new Date(timestamp))
+    return timestamp
+}
+
 function handleDatabaseRequest() {
 
     $('#since').datetimepicker();
@@ -196,11 +204,14 @@ function handleDatabaseRequest() {
     });
     $("#since").on("dp.change", function (e) {
         $('#to').data("DateTimePicker").minDate(e.date);
-        console.log($('#since').datepicker(false, 'getDate')[0].childNodes[1].value)
+        var dateToParse = $('#since').datepicker(false, 'getDate')[0].childNodes[1].value
+        datePickerToUTC(dateToParse)
 
     });
     $("#to").on("dp.change", function (e) {
-        console.log($('#to').datepicker(false, 'getDate')[0].childNodes[1].value)
+        var dateToParse = $('#to').datepicker(false, 'getDate')[0].childNodes[1].value
+        datePickerToUTC(dateToParse)
+
 
         $('#since').data("DateTimePicker").maxDate(e.date);
     });
