@@ -77,6 +77,7 @@ function canvasCreate(id, cont) {
     p.innerHTML = id;
     if(id == 'DB'){
         div.className = "container"
+        div.id = 'dbChart'
     }
     else {
         div.className = "col-sm-6"
@@ -209,6 +210,7 @@ function parseForDbChart(parse) {
  */
 function chartHandler(parse) {
     if (parse.header == 'database') {
+        removeOldChart()
         putInProducersIds('DB', parseForDbChart(parse.data))
         canvasCreate('DB', document.getElementById('databaseRow'))
         graphCreate('DB')
@@ -225,7 +227,16 @@ function chartHandler(parse) {
     }
 
 }
-
+/**
+ * This function removes the DB old Chart
+ */
+function removeOldChart(){
+    var oldChartDiv = document.getElementById('dbChart')
+    if(oldChartDiv != undefined) {
+        oldChartDiv.removeChild(oldChartDiv.children[0]);
+        oldChartDiv.parent.removeChild(oldChartDiv)
+    }
+}
 /**
  * This functions create the producers selectors that you can find in Database section in the UBB home page
  */
@@ -234,6 +245,7 @@ function createIdSelector() {
     var container = document.getElementById("IdSelectorContainer");
 
     for (var i = 0; i < idArray.length; i++) {
+        var id = 's:' + idArray[i].toString()
         //s refers to 'section'
         var checkIfExist = document.getElementById('s:' + idArray[i].toString());
         if (checkIfExist != undefined || idArray[i] == 'DB') {
@@ -241,7 +253,7 @@ function createIdSelector() {
         }
         var newDiv = document.createElement('div');
         newDiv.setAttribute('class', "IdSelector");
-        newDiv.setAttribute('id', 's:' + idArray[i].toString());
+        newDiv.setAttribute('id', 's:' + id);
         var h2 = document.createElement('h2');
         h2.innerHTML = idArray[i];
         newDiv.appendChild(h2);
