@@ -152,6 +152,7 @@ function createDBChart(parse) {
 
 function chartHandler(parse) {
     //console.log(volume,light, time)
+    console.log(' & && & & &  & & && & & & & & & & & & & & & ', parse)
     if (parse.header == 'database') {
 
         parseForDbChart(parse);
@@ -265,7 +266,7 @@ function handleDatabaseRequest() {
     btn.addEventListener('click', function () {
         if (from != undefined && to != undefined && currentId != undefined) {
             console.log('send to DB')
-            console.log('from: ', from, ' to:'.to)
+            console.log('from: ', from, ' to:', to)
             sendTimeStampToDB(from, to);
         }
         else {
