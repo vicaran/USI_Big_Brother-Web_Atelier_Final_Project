@@ -233,7 +233,7 @@ function chartHandler(parse) {
 function removeOldChart() {
     var oldChart = document.getElementById('DB')
     if (oldChart != undefined) {
-        oldChart.parent.removeChild(oldChartDiv)
+        oldChart.parentNode.removeChild(oldChart)
     }
 }
 /**
@@ -333,6 +333,7 @@ function sendTimeStampToDB(from, to) {
  * @returns {String} Date in dd/mm/yy format
  */
 function parseDatePicker(dateFromDatapicker) {
+    console.log('******', dateFromDatapicker)
     return dateFromDatapicker.split(' ')[0]
 }
 
@@ -385,7 +386,7 @@ function handleDatabaseRequest() {
             console.log(from, to)
             to = datePickerToUTC(from)
             from = datePickerToUTC(to)
-            sendTimeStampToDB(1450194485221, 1450194538548);
+            sendTimeStampToDB(from, to);
         }
         else {
             /*
