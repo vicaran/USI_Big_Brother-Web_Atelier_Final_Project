@@ -78,7 +78,7 @@ function SenderTessel(id, moduleId) {
             };
             console.log('Now im sending');
             self.http.send(data);
-        }, 1000)
+        }, 2000)
     };
     /**
      * This function set the RGB Led. Low noise = green, medium = blue and high = red
