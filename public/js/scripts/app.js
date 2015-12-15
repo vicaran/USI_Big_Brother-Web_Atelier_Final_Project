@@ -267,7 +267,7 @@ function handleDatabaseRequest() {
                 //for(var i = 0; i < divs.length;i++){
                 //    divs[i].className = 'IdSelector';
                 //}
-            })
+            },500)
             throw new Error('write a Date')
 
         }
