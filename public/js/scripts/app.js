@@ -148,14 +148,14 @@ function createIdSelector() {
 
     for (var i = 0; i < idArray.length; i++) {
         //s refers to 'section'
-        var checkIfExist = document.getElementById('s' + idArray[i].toString());
+        var checkIfExist = document.getElementById('s:' + idArray[i].toString());
 
         if (checkIfExist != undefined) {
             continue
         }
         var newDiv = document.createElement('div');
         newDiv.setAttribute('class', "IdSelector");
-        newDiv.setAttribute('id', 's' + idArray[i].toString());
+        newDiv.setAttribute('id', 's:' + idArray[i].toString());
         var h2 = document.createElement('h2');
         h2.innerHTML = idArray[i];
         newDiv.appendChild(h2);
@@ -234,19 +234,29 @@ function handleDatabaseRequest() {
 
     var btn = document.getElementById('reqDBbtn')
     btn.addEventListener('click', function () {
-        if (from != undefined && to != undefined) {
+        if (from != undefined && to != undefined && currentId != undefined) {
             sendTimeStampToDB();
         }
-        else{
+        else {
             var sinceInp = document.getElementById('sinceInput')
-            var toInp =   document.getElementById('toInput');
-            if(sinceInp.value == ""){
+            var toInp = document.getElementById('toInput');
+            if (sinceInp.value == "") {
                 sinceInp.value = 'Please write a date'
             }
-            if(toInp.value ==""){
+            if (toInp.value == "") {
                 toInp.value = 'Please write a date'
             }
-
+            var count = 0;
+            var divs = document.getElementsByClassName('IdSelector')
+            var interval = setInterval(function () {
+                for(var i = 0; i < divs.length;i++){
+                    divs.className +=' activeIdSelector'
+                }
+                count ++
+            }, 500);
+            if(count == 4) {
+                clearInterval(interval)
+            }
             throw new Error('write a Date')
 
         }
