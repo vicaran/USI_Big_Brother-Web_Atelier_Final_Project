@@ -269,7 +269,7 @@ function handleDatabaseRequest() {
                 //for(var i = 0; i < divs.length;i++){
                 //    divs[i].className = 'IdSelector';
                 //}
-            },200)
+            },100)
             throw new Error('write a Date')
 
         }
