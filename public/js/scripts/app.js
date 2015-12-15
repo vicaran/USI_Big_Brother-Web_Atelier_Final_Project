@@ -1,7 +1,5 @@
 /**
- * GG A TUTTI, é stato fatto il miracolo !!
- * Commitozky alle 5 del mattino e si esce a comandare
- * https://www.youtube.com/watch?v=FrG4TEcSuRg
+ * @author Francesco Saverio Zuppichini with the help of Gotie Muller for Usi Big Brother project
  */
 var producersIds = {};
 var graphDimension = 10;
@@ -9,7 +7,7 @@ var minor = false;
 var currentId;
 
 /*
-Chart beavihor
+ Chart beavihor
  */
 Chart.defaults.global.responsive = true;
 Chart.defaults.global.animation = false;
@@ -17,9 +15,9 @@ Chart.defaults.global.showTooltips = false;
 
 /*
 
-Charts part
+ Charts part
 
-All the charts are create use chart.js
+ All the charts are create use chart.js
 
  */
 /**
@@ -113,8 +111,8 @@ function graphCreate(id) {
  * @param id The unique producer's id
  * @param data
  */
-function putInProducersIds(id,data) {
-    console.log(id,'created')
+function putInProducersIds(id, data) {
+    console.log(id, 'created')
     var waitMessage = document.getElementById("waitTest");
     if (waitMessage != undefined || waitMessage != null) {
         waitMessage.remove();
@@ -197,7 +195,6 @@ function parseForDbChart(parse) {
         toSend.light.push(parse[i].light)
         toSend.temperature.push(parse[i].temperature)
     }
-    console.log('&&&&&&&&&&&&&&&&&&&&&&&&&', toSend)
     return toSend;
 }
 
@@ -234,8 +231,7 @@ function createIdSelector() {
     for (var i = 0; i < idArray.length; i++) {
         //s refers to 'section'
         var checkIfExist = document.getElementById('s:' + idArray[i].toString());
-
-        if (checkIfExist != undefined) {
+        if (checkIfExist != undefined || idArray[i] == 'DB') {
             continue
         }
         var newDiv = document.createElement('div');
@@ -246,7 +242,6 @@ function createIdSelector() {
         newDiv.appendChild(h2);
         newDiv.addEventListener('click', function (e) {
             currentId = Number(this.id.split(':')[1]);
-            console.log(currentId)
             var allDivs = document.getElementsByClassName('IdSelector activeIdSelector')
             if (this.className == "IdSelector") {
 
@@ -315,7 +310,7 @@ function handleDatabaseRequest() {
     var to = 1450194538545;
 
     /*
-    Jquery stuff for datapicker
+     Jquery stuff for datapicker
      */
     $('#since').datetimepicker();
     $('#to').datetimepicker({
@@ -337,17 +332,17 @@ function handleDatabaseRequest() {
     var btn = document.getElementById('reqDBbtn')
     btn.addEventListener('click', function () {
         /*
-        Check if every input is complete
+         Check if every input is complete
          */
         if (from != undefined && to != undefined && currentId != undefined) {
             sendTimeStampToDB(from, to);
         }
         else {
             /*
-            Three are the cases:
-            1) you don't select the first date input
-            2) you don't select the second date input
-            3) you don't select the correct Id
+             Three are the cases:
+             1) you don't select the first date input
+             2) you don't select the second date input
+             3) you don't select the correct Id
              */
             var sinceInp = document.getElementById('sinceInput')
             var toInp = document.getElementById('toInput');
@@ -407,7 +402,7 @@ function waitForStreaming() {
 }
 
 /*
-functions call
+ functions call
  */
 changeDimension();
 waitForStreaming()
