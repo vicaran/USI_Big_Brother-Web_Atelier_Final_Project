@@ -30,6 +30,14 @@ a, a:hover, a:focus, a:active, a.active{
     color: black;
 }
 
+#ChartDiv{
+    display: flex;
+    flex-direction: row;
+}
+.chart{
+    flex-basis: 350px;
+    flex-grow: 1;
+}
 .btn-default{
     border-color: white;
     background-color: transparent;

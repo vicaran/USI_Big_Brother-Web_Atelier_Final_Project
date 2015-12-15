@@ -45,7 +45,6 @@ var addToDatabase = function (data, d) {
  * @param to The finish point
  */
  var retrieveData = function (id, since, to) {
-    console.log('CHIAmATO')
     k.stateful.get(id, function (res) {
         console.log('retrivedata', since, to)
         var parse = JSON.parse(res);

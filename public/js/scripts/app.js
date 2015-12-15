@@ -80,7 +80,7 @@ function canvasCreate(id, cont) {
     }
     else {
         div = document.createElement('div')
-        div.className = "col-sm-6"
+        div.className = "col-sm-6 chart"
     }
     var canvas = document.createElement('canvas')
     canvas.className = "chart"
