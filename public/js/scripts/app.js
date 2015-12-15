@@ -248,7 +248,10 @@ function createIdSelector() {
         var id = 's:' + idArray[i].toString()
         //s refers to 'section'
         var checkIfExist = document.getElementById('s:' + idArray[i].toString());
-        if (checkIfExist != undefined || idArray[i] == 'DB') {
+        if (checkIfExist != undefined ) {
+            continue
+        }
+        if(idArray[i] == 'DB'){
             continue
         }
         var newDiv = document.createElement('div');
@@ -357,13 +360,11 @@ function handleDatabaseRequest() {
     });
     $("#since").on("dp.change", function (e) {
         $('#to').data("DateTimePicker").minDate(e.date);
-        var dateToParse = $('#since').datepicker(false, 'getDate')[0].childNodes[1].value
-        from = datePickerToUTC(dateToParse)
+        from = $('#since').datepicker(false, 'getDate')[0].childNodes[1].value
 
     });
     $("#to").on("dp.change", function (e) {
-        var dateToParse = $('#to').datepicker(false, 'getDate')[0].childNodes[1].value
-        to = datePickerToUTC(dateToParse)
+        to = $('#to').datepicker(false, 'getDate')[0].childNodes[1].value
 
         $('#since').data("DateTimePicker").maxDate(e.date);
     });
@@ -375,6 +376,8 @@ function handleDatabaseRequest() {
          */
         if (from != undefined && to != undefined && currentId != undefined) {
             createDBChartHeader(from,to)
+            to = datePickerToUTC(dateToParse)
+            from = datePickerToUTC(dateToParse)
             sendTimeStampToDB(from, to);
         }
         else {
