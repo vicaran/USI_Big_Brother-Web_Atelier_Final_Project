@@ -16,7 +16,7 @@ Chart.defaults.global.showTooltips = false;
 function getDataChart(data) {
 
     var lineChartData = {
-        labels: [data == undefined ? '' : data.time],
+        labels: data == undefined ? [] : data.time,
         datasets: [{
             label: "volume",
             fillColor: "rgba(215,54,139,0.2)",
@@ -72,14 +72,11 @@ function canvasCreate(id, cont) {
 function graphCreate(id) {
     ctx = document.getElementById(id).getContext("2d");
     myLine = new Chart(ctx)
-    myLineChart = myLine.Line(tesselIds[id].data, {
+    lineChartData = tesselIds[id].data;
+
+    myLineChart = myLine.Line(lineChartData, {
         tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
     });
-    tesselIds[id].canvas = ctx;
-    tesselIds[id].myLine = myLine;
-    tesselIds[id].myLineChart = myLineChart;
-    lineChartData = tesselIds[id].data;
-    myLine.Line(lineChartData);
 
     console.log(lineChartData);
     console.log('Created')
