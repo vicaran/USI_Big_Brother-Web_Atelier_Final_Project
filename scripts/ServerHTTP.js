@@ -19,9 +19,6 @@ function handleRequest(req, res) {
     req.on('data', function(chunk) {
         console.log('BODY: ' + chunk);
     });
-    console.log("GG", req.body);
-    console.log('GG2', res);
-    // console.log(req);
 }
 
 
