@@ -75,7 +75,7 @@ function canvasCreate(id, cont) {
     var div ;
     var p = document.createElement('p')
     p.innerHTML = id;
-    if(id != 'DB'){
+    if(id == 'DB'){
         div= document.getElementById('dbChart');
     }
     else {
