@@ -173,6 +173,7 @@ function createIdSelector() {
                 }
             }
             else {
+                this.id = '';
                 this.className = "IdSelector"
             }
 
