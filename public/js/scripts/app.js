@@ -247,8 +247,9 @@ function createIdSelector() {
     for (var i = 0; i < idArray.length; i++) {
         var id = 's:' + idArray[i].toString()
         //s refers to 'section'
-        var checkIfExist = document.getElementById('s:' + idArray[i].toString());
+        var checkIfExist = document.getElementById(id);
         if (checkIfExist != undefined ) {
+            console.log()
             continue
         }
         if(idArray[i] == 'DB'){
@@ -256,7 +257,7 @@ function createIdSelector() {
         }
         var newDiv = document.createElement('div');
         newDiv.setAttribute('class', "IdSelector");
-        newDiv.setAttribute('id', 's:' + id);
+        newDiv.setAttribute('id', id);
         var h2 = document.createElement('h2');
         h2.innerHTML = idArray[i];
         newDiv.appendChild(h2);
@@ -302,7 +303,6 @@ function changeDimension() {
  * @returns {Number} The UTC/timestamp data
  */
 function datePickerToUTC(dateFromDatapicker) {
-    console.log(dateFromDatapicker)
     var d = new Date(dateFromDatapicker)
     return d.getTime()
 }
@@ -349,8 +349,8 @@ function createDBChartHeader(from,to){
  * This function handle the request that we want to do
  */
 function handleDatabaseRequest() {
-    var from = 1450194485222;
-    var to = 1450194538545;
+    var from ;
+    var to ;
 
     /*
      Jquery stuff for datapicker
@@ -377,9 +377,9 @@ function handleDatabaseRequest() {
          */
         if (from != undefined && to != undefined && currentId != undefined) {
             createDBChartHeader(from,to)
-            to = datePickerToUTC(dateToParse)
-            from = datePickerToUTC(dateToParse)
-            sendTimeStampToDB(from, to);
+            to = datePickerToUTC(from)
+            from = datePickerToUTC(to)
+            sendTimeStampToDB(1450194485222, 1450194538545);
         }
         else {
             /*
