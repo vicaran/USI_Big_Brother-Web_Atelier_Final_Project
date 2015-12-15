@@ -160,7 +160,7 @@ function createIdSelector() {
         h2.innerHTML = idArray[i];
         newDiv.appendChild(h2);
         newDiv.addEventListener('click', function (e) {
-            currentId = this.id;
+            currentId = Number(this.id.split(':')[1]);
             console.log(currentId)
             var allDivs = document.getElementsByClassName('IdSelector activeIdSelector')
             if (this.className == "IdSelector") {
@@ -207,7 +207,7 @@ function sendTimeStampToDB(from, to) {
         header: "browser",
         from: from,
         to: to,
-        id: deviceID
+        id: currentId
     }), 'producer')
 }
 
@@ -267,9 +267,7 @@ function handleDatabaseRequest() {
                     if (count == 9) {
                         clearInterval(interval)
                     }
-                    //for(var i = 0; i < divs.length;i++){
-                    //    divs[i].className = 'IdSelector';
-                    //}
+
                 }, 100)
             }
             throw new Error('write a Date')
