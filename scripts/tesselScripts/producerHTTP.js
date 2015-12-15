@@ -12,7 +12,6 @@ var url = hostname + port.toString();
 var send = function(message) {
     var req = http.post(url, message, function(res) {
         res.setEncoding('utf8');
-
         res.on('data', function(chunk) {
             console.log('BODY: ' + chunk);
         });
@@ -21,10 +20,8 @@ var send = function(message) {
         console.log('problem with request: ' + e.message);
     });
     // write data to request body
-    console.log('sending', JSON.stringify(message));
     req.end(JSON.stringify(message));
 };
-
 var ack = function() {
     send('ACK');
 };
