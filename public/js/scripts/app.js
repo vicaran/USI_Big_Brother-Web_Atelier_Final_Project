@@ -78,20 +78,18 @@ function graphCreate(id) {
     tesselIds[id].canvas = ctx;
     tesselIds[id].myLine = myLine;
     tesselIds[id].myLineChart = myLineChart;
-    console.log(lineChartData);
-    myLineChart
     console.log('Created')
 
 }
 
-function createNewVariable(id) {
+function createNewVariable(id,data) {
     console.log(id,'created')
     var waitMessage = document.getElementById("waitTest");
     if (waitMessage != undefined || waitMessage != null) {
         waitMessage.remove();
     }
     tesselIds[id] = {
-        data: getDataChart()
+        data: getDataChart(data)
     }
 
 }
@@ -167,7 +165,7 @@ function chartHandler(parse) {
     //console.log(volume,light, time)
     console.log(' & && & & &  & & && & & & & & & & & & & & & ', parse)
     if (parse.header == 'database') {
-        createNewVariable('DB', getDataChart(parseForDbChart(parse.data)))
+        createNewVariable('DB', parseForDbChart(parse.data))
         canvasCreate('DB', document.getElementById('databaseRow'))
         graphCreate('DB')
         //drawChartDb('DB')
