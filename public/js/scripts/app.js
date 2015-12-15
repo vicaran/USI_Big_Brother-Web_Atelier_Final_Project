@@ -380,9 +380,10 @@ function handleDatabaseRequest() {
          */
         if (from != undefined && to != undefined && currentId != undefined) {
             createDBChartHeader(from, to)
-            console.log('-------- from: ',from,' to:', to , '---------')
             to = datePickerToUTC(from)
             from = datePickerToUTC(to)
+            console.log('-------- from: ',from,' to:', to , '---------')
+
             sendTimeStampToDB(from, to);
         }
         else {
