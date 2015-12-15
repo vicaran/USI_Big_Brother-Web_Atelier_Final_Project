@@ -317,6 +317,10 @@ section.success a.active {
 }
 
 @media (max-width: 767px) {
+    .chart{
+        flex-basis: 100%;
+
+    }
     paper-slider{
         width: 100%;
     }

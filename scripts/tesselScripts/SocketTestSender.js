@@ -48,4 +48,4 @@ var senderTestGenerator = function (NumberOfSender) {
 };
 
 
-senderTestGenerator(8);
+senderTestGenerator(3);
