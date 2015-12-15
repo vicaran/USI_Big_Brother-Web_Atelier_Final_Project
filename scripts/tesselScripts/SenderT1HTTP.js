@@ -75,6 +75,3 @@ function connect(){
 if (!wifi.isConnected()) {
     connect();
 }
-
-
-
