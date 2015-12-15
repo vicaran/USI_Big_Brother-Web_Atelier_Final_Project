@@ -21,7 +21,7 @@ server.listen(PORT, function(){
 
 function handleRequest(req, res){
     // res.end('It Works!! Path Hit: ' + req.url);
-    console.log("GG", req.url);
+    console.log("GG", req);
     // console.log(req);
 }
 
