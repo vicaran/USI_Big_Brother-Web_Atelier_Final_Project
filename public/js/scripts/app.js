@@ -251,16 +251,19 @@ function handleDatabaseRequest() {
             var interval = setInterval(function () {
                 console.log("INTERVAL")
                 for(var i = 0; i < divs.length;i++){
-                    divs[i].className +=' activeIdSelector'
+                    if(!count%2) {
+                        divs[i].className += ' activeIdSelector'
+                    }
+                    else{
+                        divs[i].className = 'IdSelector';
+                    }
                 }
                 count ++
                 console.log(count)
-                if(count == 4) {
-                    console.log("NO INTERVAL")
-                    clearInterval(interval)
-                }
-            }, 500);
-
+                //for(var i = 0; i < divs.length;i++){
+                //    divs[i].className = 'IdSelector';
+                //}
+            }
             throw new Error('write a Date')
 
         }
