@@ -3,16 +3,31 @@
  * Commitozky alle 5 del mattino e si esce a comandare
  * https://www.youtube.com/watch?v=FrG4TEcSuRg
  */
-var tesselIds = {};
+var producersIds = {};
 var graphDimension = 10;
 var minor = false;
 var currentId;
 
+/*
+Chart beavihor
+ */
 Chart.defaults.global.responsive = true;
-
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
 
+/*
+
+Charts part
+
+All the charts are create use chart.js
+
+ */
+/**
+ * This function generate the Data for the chart
+ *
+ * @param data The data field from the Database respons
+ * @returns {{labels: Array, datasets: *[]}}
+ */
 function getDataChart(data) {
 
     var lineChartData = {
@@ -47,10 +62,15 @@ function getDataChart(data) {
         }]
 
     };
-    console.log(lineChartData,')))')
     return lineChartData;
 }
 
+/**
+ * This function create a cavans ad then it appends to the container
+ *
+ * @param id The unique producer's id
+ * @param cont The container where u want to append the canvas
+ */
 function canvasCreate(id, cont) {
 
     var container = cont || document.getElementById("ChartDiv");
@@ -68,50 +88,67 @@ function canvasCreate(id, cont) {
 
 }
 
-
+/**
+ * This function is used for two this:
+ * 1) store all the object that we will need for updating the graph
+ * 2) create the first graph
+ *
+ * @param id The unique producer's id
+ */
 function graphCreate(id) {
     ctx = document.getElementById(id).getContext("2d");
     myLine = new Chart(ctx)
-    myLineChart = myLine.Line(tesselIds[id].data, {
+    myLineChart = myLine.Line(producersIds[id].data, {
         tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
     });
-    tesselIds[id].canvas = ctx;
-    tesselIds[id].myLine = myLine;
-    tesselIds[id].myLineChart = myLineChart;
+    producersIds[id].canvas = ctx;
+    producersIds[id].myLine = myLine;
+    producersIds[id].myLineChart = myLineChart;
     console.log('Created')
 
 }
 
-function createNewVariable(id,data) {
+/**
+ * This functions puts the correct data in the dictionary producersId
+ * @param id The unique producer's id
+ * @param data
+ */
+function putInProducersIds(id,data) {
     console.log(id,'created')
     var waitMessage = document.getElementById("waitTest");
     if (waitMessage != undefined || waitMessage != null) {
         waitMessage.remove();
     }
-    tesselIds[id] = {
+    producersIds[id] = {
         data: getDataChart(data)
     }
 
 }
 
-function convertDate(d) {
-    var parseDate = new Date(d).toUTCString()
+/**
+ * This function is used to convert from timestamp to hh:mm:ss
+ * since this is a streaming view we don't need the yy:mm:dd
+ * @param timestamp
+ * @returns {String} a date in the form hh:mm:ss
+ */
+
+function convertDate(timestamp) {
+    var parseDate = new Date(timestamp).toUTCString()
     return parseDate.split(' ')[4]
 }
 
-function drawChartDb(id) {
-   var myLineChart = tesselIds[id].myLineChart
-   var lineChartData = tesselIds[id].data
-   var myLine = tesselIds[id].myLine
-   myLine.Line(lineChartData);
-}
 
+/**
+ * This function updates the current chart
+ * @param id The unique producer's id
+ * @param parse The new producer's data
+ */
 function updateChart(id, parse) {
-    var myLineChart = tesselIds[id].myLineChart
+    var myLineChart = producersIds[id].myLineChart
     myLineChart.destroy();
 
     time = convertDate(parse.time)
-    var lineChartData = tesselIds[id].data
+    var lineChartData = producersIds[id].data
     //push newly received data (time & data)
     lineChartData.datasets[0].data.push(parse.volume);
     lineChartData.datasets[1].data.push(parse.light);
@@ -135,13 +172,18 @@ function updateChart(id, parse) {
         lineChartData.datasets[2].data.shift();
         lineChartData.labels.shift();
     }
-    var myLine = tesselIds[id].myLine
+    var myLine = producersIds[id].myLine
     //draw it
     myLine.Line(lineChartData);
     createIdSelector()
 
 }
 
+/**
+ * This function parse the Database answer in order to create a new set of data for a chart
+ * @param parse The new producer's data
+ * @returns {{volume: Array, light: Array, temperature: Array, time: Array}} An json that will be use in putInProducersIds
+ */
 function parseForDbChart(parse) {
     var toSend = {
         volume: [],
@@ -159,21 +201,21 @@ function parseForDbChart(parse) {
     return toSend;
 }
 
-function createDBChart(parse) {
-}
-
+/**
+ * This function is the main chart handler
+ * @param parse The new producer's data
+ */
 function chartHandler(parse) {
-    //console.log(volume,light, time)
-    console.log(' & && & & &  & & && & & & & & & & & & & & & ', parse)
     if (parse.header == 'database') {
-        createNewVariable('DB', parseForDbChart(parse.data))
+        putInProducersIds('DB', parseForDbChart(parse.data))
         canvasCreate('DB', document.getElementById('databaseRow'))
         graphCreate('DB')
         //drawChartDb('DB')
     }
     else {
-        if (tesselIds[parse._id] == undefined || tesselIds[parse._id] == null) {
-            createNewVariable(parse._id);
+        //check if data exists
+        if (producersIds[parse._id] == undefined || producersIds[parse._id] == null) {
+            putInProducersIds(parse._id);
             canvasCreate(parse._id)
             graphCreate(parse._id)
         }
@@ -182,8 +224,11 @@ function chartHandler(parse) {
 
 }
 
+/**
+ * This functions create the producers selectors that you can find in Database section in the UBB home page
+ */
 function createIdSelector() {
-    var idArray = Object.keys(tesselIds);
+    var idArray = Object.keys(producersIds);
     var container = document.getElementById("IdSelectorContainer");
 
     for (var i = 0; i < idArray.length; i++) {
@@ -222,6 +267,9 @@ function createIdSelector() {
     }
 }
 
+/**
+ * This function is the handler for the slider
+ */
 function changeDimension() {
     document.querySelector('paper-slider').addEventListener('change', function (event) {
 
@@ -231,17 +279,24 @@ function changeDimension() {
         console.log(event.target.value);
     });
 }
-changeDimension();
 
-
+/**
+ * This function converts the data from datapicker into UTC
+ *
+ * @param dateFromDatapicker It is the date gather from datapicker
+ * @returns {Number} The UTC/timestamp data
+ */
 function datePickerToUTC(dateFromDatapicker) {
     console.log(dateFromDatapicker)
     var d = new Date(dateFromDatapicker)
-    var timestamp = d.getTime();
-    console.log('Check data:', new Date(timestamp));
-    return timestamp
+    return d.getTime()
 }
 
+/**
+ * This functions send the request to the DB
+ * @param {Number} from The time of the first data that we want
+ * @param {Number} to The time of the last data that we want
+ */
 function sendTimeStampToDB(from, to) {
     console.log('INSIDE sendTimeStampToDB')
     producer_handler(JSON.stringify({
@@ -252,10 +307,16 @@ function sendTimeStampToDB(from, to) {
     }), 'producer')
 }
 
+/**
+ * This function handle the request that we want to do
+ */
 function handleDatabaseRequest() {
     var from = 1450194485222;
     var to = 1450194538545;
 
+    /*
+    Jquery stuff for datapicker
+     */
     $('#since').datetimepicker();
     $('#to').datetimepicker({
         useCurrent: false //Important! See issue #1075
@@ -275,34 +336,41 @@ function handleDatabaseRequest() {
 
     var btn = document.getElementById('reqDBbtn')
     btn.addEventListener('click', function () {
+        /*
+        Check if every input is complete
+         */
         if (from != undefined && to != undefined && currentId != undefined) {
-            console.log('send to DB')
-            console.log('from: ', from, ' to:', to)
             sendTimeStampToDB(from, to);
         }
         else {
+            /*
+            Three are the cases:
+            1) you don't select the first date input
+            2) you don't select the second date input
+            3) you don't select the correct Id
+             */
             var sinceInp = document.getElementById('sinceInput')
             var toInp = document.getElementById('toInput');
+            //no from input
             if (sinceInp.value == "") {
                 sinceInp.value = 'Please write a date'
             }
+            //no to input
             if (toInp.value == "") {
                 toInp.value = 'Please write a date'
             }
             var count = 0;
+            // no id
             if (document.getElementsByClassName('activeIdSelector').length == 0) {
                 var divs = document.getElementsByClassName('IdSelector')
+                //make them blink!
                 var interval = setInterval(function () {
-                    console.log("INTERVAL")
-                    console.log(count)
                     for (var i = 0; i < divs.length; i++) {
                         console.log(count % 2, '***********')
                         if (count % 2) {
-                            console.log('ACTIVE', count)
                             divs[i].className += ' activeIdSelector'
                         }
                         else {
-                            console.log('NO OACTIVE', count)
                             divs[i].className = 'IdSelector';
                         }
                     }
@@ -310,7 +378,6 @@ function handleDatabaseRequest() {
                     if (count == 9) {
                         clearInterval(interval)
                     }
-
                 }, 100)
             }
             throw new Error('write a Date')
@@ -320,7 +387,9 @@ function handleDatabaseRequest() {
     })
 }
 
-
+/**
+ * This function create the '... waiting for operators' write
+ */
 function waitForStreaming() {
     var existCharts = document.getElementById("ChartDiv").children.length == 0
     console.log(". . . . waiting for operators")
@@ -337,5 +406,9 @@ function waitForStreaming() {
     }
 }
 
+/*
+functions call
+ */
+changeDimension();
 waitForStreaming()
 handleDatabaseRequest();
