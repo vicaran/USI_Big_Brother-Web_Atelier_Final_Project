@@ -14,11 +14,23 @@ server.listen(PORT, function() {
     console.log("Server listening on: http://localhost:%s", PORT);
 });
 
+var client = {};
+var _id = 0;
+
 function handleRequest(req, res) {
-    // res.end('It Works!! Path Hit: ' + req.url);
-    req.on('data', function(chunk) {
-        console.log('BODY: ' + chunk);
+    req.on('data', function(data) {
+        console.log('BODY: ' + data);
+        var parsed = data.parse();
+        // //update date
+        // var date = new Date()
+        // client[ws._id].time = date;
+        // //send data
+        // if (JSON.parse(data) != "ACK") {
+        //     sendAll(data, date);
+        //     k.send(data)
+        // }
     });
+});
 }
 
 
