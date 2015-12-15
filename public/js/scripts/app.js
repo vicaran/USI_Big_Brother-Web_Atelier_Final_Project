@@ -154,9 +154,8 @@ function chartHandler(parse) {
     //console.log(volume,light, time)
     console.log(' & && & & &  & & && & & & & & & & & & & & & ', parse)
     if (parse.header == 'database') {
-
+        createNewVariable('DB',getDataChart(parseForDbChart(parse.data)))
         canvasCreate('DB',document.getElementById('databaseRow'))
-        getDataChart(parseForDbChart(parse.data));
         graphCreate('DB')
     }
     else {
