@@ -11,22 +11,20 @@ var url = hostname + port.toString();
 
 var send = function(message) {
     setImmediate(function start() {
-    var req = http.get("http://neha.inf.unisi.ch:15000/" + message, function(res) {
-        console.log('# statusCode', res.statusCode)
-        var bufs = [];
-        res.on('data', function(data) {
-            bufs.push(new Buffer(data));
-            console.log('# received', new Buffer(data).toString());
-        })
-        res.on('end', function() {
-            console.log('done.');
+        http.get("http://neha.inf.unisi.ch:15000/" + message.toString(), function(res) {
+            var bufs = [];
+            res.on('data', function(data) {
+                bufs.push(new Buffer(data));
+                console.log('# received', new Buffer(data).toString());
+            })
+            res.on('end', function() {
+                console.log('done.');
+            })
+        }).on('error', function(e) {
+            console.log('not ok -', e.message, 'error event')
             setImmediate(start);
-        })
-    }).on('error', function(e) {
-        console.log('not ok -', e.message, 'error event')
-        setImmediate(start);
+        });
     });
-});
 };
 var ack = function() {
     send('ACK');
