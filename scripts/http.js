@@ -14,13 +14,16 @@ const PORT = 15000;
 
 var server = http.createServer(handleRequest);
 
-server.listen(PORT, function(){
+server.listen(PORT, function() {
     //Callback triggered when server is successfully listening. Hurray!
     console.log("Server listening on: http://localhost:%s", PORT);
 });
 
-function handleRequest(req, res){
+function handleRequest(req, res) {
     // res.end('It Works!! Path Hit: ' + req.url);
+    req.on('data', function(chunk) {
+        console.log('BODY: ' + chunk);
+    });
     console.log("GG", req.body);
     console.log('GG2', res);
     // console.log(req);
