@@ -250,6 +250,8 @@ function handleDatabaseRequest() {
             var divs = document.getElementsByClassName('IdSelector')
             var interval = setInterval(function () {
                 console.log("INTERVAL")
+                console.log(count)
+
                 for(var i = 0; i < divs.length;i++){
                     if(count%2) {
                         console.log('ACTIVE')
@@ -260,7 +262,6 @@ function handleDatabaseRequest() {
                     }
                 }
                 count ++
-                console.log(count)
                 if(count == 3){
                     clearInterval(interval)
                 }
