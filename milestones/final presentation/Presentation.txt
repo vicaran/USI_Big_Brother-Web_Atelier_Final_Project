@@ -1,0 +1,9 @@
+Presentation:
+
+What we aimed for
+topology:
+	sensors, modules
+	database
+	website
+demo:
+applause-o-meter (maybe fake it) - webcam
