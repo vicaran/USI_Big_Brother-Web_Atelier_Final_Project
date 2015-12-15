@@ -385,7 +385,7 @@ function handleDatabaseRequest() {
             console.log(from, to)
             to = datePickerToUTC(from)
             from = datePickerToUTC(to)
-            sendTimeStampToDB(1450194485222, 1450194538545);
+            sendTimeStampToDB(1450194485221, 1450194538548);
         }
         else {
             /*
