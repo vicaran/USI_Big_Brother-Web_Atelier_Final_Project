@@ -262,7 +262,7 @@ function handleDatabaseRequest() {
                     }
                 }
                 count ++
-                if(count == 3){
+                if(count == 5){
                     clearInterval(interval)
                 }
                 //for(var i = 0; i < divs.length;i++){
