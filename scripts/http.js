@@ -11,11 +11,12 @@ const PORT = 15000;
 //         port: 15000
 //     });
 
-function handleRequeste(req, res){
+function handleRequest(req, res){
     console.log('DIOBOIA666');
     res.end('It Works!! Path Hit: ' + req.url);
 }
-var server = http.createServer(handleRequeste);
+
+var server = http.createServer(handleRequest);
 
 server.listen(PORT, function(){
     //Callback triggered when server is successfully listening. Hurray!
