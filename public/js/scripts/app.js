@@ -363,14 +363,16 @@ function handleDatabaseRequest() {
         useCurrent: false //Important! See issue #1075
     });
     $("#since").on("dp.change", function (e) {
-        $('#to').data("DateTimePicker").minDate(e.date);
+        //$('#to').data("DateTimePicker").minDate(e.date);
         from = $('#since').datepicker(false, 'getDate')[0].childNodes[1].value
 
     });
     $("#to").on("dp.change", function (e) {
-        to = $('#to').datepicker(false, 'getDate')[0].childNodes[1].value
+        //$('#since').data("DateTimePicker").maxDate(e.date);
 
-        $('#since').data("DateTimePicker").maxDate(e.date);
+        to = $('#to').datepicker(false, 'getDate')[0].childNodes[1].value
+        console.log(to)
+
     });
 
     var btn = document.getElementById('reqDBbtn')
