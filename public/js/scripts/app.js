@@ -157,6 +157,7 @@ function chartHandler(parse) {
         createNewVariable('DB',getDataChart(parseForDbChart(parse.data)))
         canvasCreate('DB',document.getElementById('databaseRow'))
         graphCreate('DB')
+        updateChart('DB')
     }
     else {
         if (tesselIds[parse._id] == undefined || tesselIds[parse._id] == null) {
