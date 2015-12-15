@@ -47,7 +47,7 @@ var addToDatabase = function (data, d) {
  var retrieveData = function (id, since, to) {
     console.log('CHIAmATO')
     k.stateful.get(id, function (res) {
-        console.log(res)
+        console.log('retrivedata', since, to)
         var parse = JSON.parse(res);
         var oldest = parse[0].time;
         console.log("Since: ", since, " to: ", to)
