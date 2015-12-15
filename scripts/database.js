@@ -54,7 +54,7 @@ var addToDatabase = function (data, d) {
         console.log(nearestFrom,nearestTo)
         for(var i = nearestFrom; i < nearestTo - nearestFrom;i++){
 
-            toRetrieveData.push(i);
+            toRetrieveData.push(parse[i]);
         }
 
         //var oldest = parse[0].time;
