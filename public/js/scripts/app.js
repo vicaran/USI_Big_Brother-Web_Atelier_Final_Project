@@ -72,13 +72,14 @@ function canvasCreate(id, cont) {
 function graphCreate(id) {
     ctx = document.getElementById(id).getContext("2d");
     myLine = new Chart(ctx)
-    lineChartData = tesselIds[id].data;
-
-    myLineChart = myLine.Line(lineChartData, {
+    myLineChart = myLine.Line(tesselIds[id].data, {
         tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>kb",
     });
-
+    tesselIds[id].canvas = ctx;
+    tesselIds[id].myLine = myLine;
+    tesselIds[id].myLineChart = myLineChart;
     console.log(lineChartData);
+    myLineChart
     console.log('Created')
 
 }
