@@ -108,7 +108,6 @@ function graphCreate(id) {
     producersIds[id].canvas = ctx;
     producersIds[id].myLine = myLine;
     producersIds[id].myLineChart = myLineChart;
-    console.log('Created')
 
 }
 
@@ -118,7 +117,6 @@ function graphCreate(id) {
  * @param data
  */
 function putInProducersIds(id, data) {
-    console.log(id, 'created')
     var waitMessage = document.getElementById("waitTest");
     if (waitMessage != undefined || waitMessage != null) {
         waitMessage.remove();
@@ -158,7 +156,6 @@ function updateChart(id, parse) {
     lineChartData.datasets[1].data.push(parse.light);
     lineChartData.datasets[2].data.push(parse.temperature);
     if (minor) {
-        console.log(lineChartData.labels.length - graphDimension)
         for (var i = 0; i < (lineChartData.labels.length - graphDimension); i++) {
             lineChartData.datasets[0].data.shift()
             lineChartData.datasets[1].data.shift()
@@ -168,7 +165,6 @@ function updateChart(id, parse) {
     }
 
     lineChartData.labels.push(time);
-    console.log('dimension:', graphDimension)
     //if longer than graphDimension, remove the first one
     if (lineChartData.datasets[0].data.length > graphDimension || lineChartData.datasets[1].data.length > graphDimension || lineChartData.datasets[2].data.length > graphDimension) {
         lineChartData.datasets[0].data.shift();
@@ -233,8 +229,10 @@ function chartHandler(parse) {
 function removeOldChart() {
     var oldChart = document.getElementById('DB')
     if (oldChart != undefined) {
-        oldChart.parentNode.removeChild(oldChart)
-    }
+        var parent= oldChart.parentNode
+        for(var i = 0; i < parent.childElementCount; i ++){
+            parent.removeChild(parent.children[i])
+    }}
 }
 /**
  * This functions create the producers selectors that you can find in Database section in the UBB home page
@@ -248,7 +246,6 @@ function createIdSelector() {
         //s refers to 'section'
         var checkIfExist = document.getElementById(id);
         if (checkIfExist != undefined) {
-            console.log()
             continue
         }
         if (idArray[i] == 'DB') {
@@ -383,7 +380,7 @@ function handleDatabaseRequest() {
          */
         if (from != undefined && to != undefined && currentId != undefined) {
             createDBChartHeader(from, to)
-            console.log(from, to)
+            console.log('-------- from: ',from,' to:', to , '---------')
             to = datePickerToUTC(from)
             from = datePickerToUTC(to)
             sendTimeStampToDB(from, to);

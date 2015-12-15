@@ -92,7 +92,7 @@ function binary_search_recursive(a, value, lo, hi) {
     var mid = Math.floor((lo + hi) / 2);
 
     if(Math.abs(lo-hi) == 1){
-        if(Math.abs(a[lo].time- value) >Math.abs(a[hi].time - value )){
+        if(Math.abs(a[lo].time - value) >Math.abs(a[hi].time - value )){
             console.log('found: ', a[lo].time, ' value: ', value)
             return lo
         }
