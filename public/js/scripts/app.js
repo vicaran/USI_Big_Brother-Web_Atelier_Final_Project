@@ -220,7 +220,7 @@ function handleDatabaseRequest() {
     });
     $("#to").on("dp.change", function (e) {
         var dateToParse = $('#to').datepicker(false, 'getDate')[0].childNodes[1].value
-        to = datePickerToUTC(dateToParse)
+        to = datePickerToUTC(dategaToParse)
 
 
         $('#since').data("DateTimePicker").maxDate(e.date);
@@ -233,11 +233,14 @@ function waitForStreaming() {
     console.log(". . . . waiting for operators")
     if (existCharts) {
         var container = document.getElementById("ChartDiv");
+        var containerH2 =  document.createElement('div')
         var waitTest = document.createElement('h2')
+        containerH2.className = 'col-sm 12 '
         waitTest.setAttribute('id', 'waitTest')
         waitTest.className = 'text-center'
         waitTest.innerHTML = '. . . . waiting for operators'
-        container.appendChild(waitTest)
+        containerH2.appendChild(waitTest)
+        container.appendChild(containerH2)
     }
 }
 
