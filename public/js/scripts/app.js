@@ -252,6 +252,7 @@ function handleDatabaseRequest() {
                 console.log("INTERVAL")
                 for(var i = 0; i < divs.length;i++){
                     if(!count%2) {
+                        console.log('ACTIVE')
                         divs[i].className += ' activeIdSelector'
                     }
                     else{
@@ -260,6 +261,9 @@ function handleDatabaseRequest() {
                 }
                 count ++
                 console.log(count)
+                if(count == 4){
+                    clearInterval(interval)
+                }
                 //for(var i = 0; i < divs.length;i++){
                 //    divs[i].className = 'IdSelector';
                 //}
