@@ -335,8 +335,8 @@ function parseDatePicker(dateFromDataPicker){
  */
 function createDBChartHeader(from,to){
     var chartHeader = document.createElement('h2')
-    chartHeader.innerHTML = parseDatePicker(from) + ' - ' parseDatePicker(to)
-    chartHeader.className = 'text-center'
+    chartHeader.innerHTML = parseDatePicker(from) + ' - ' + parseDatePicker(to)
+    chartHeader.className = 'text-center';
     document.getElementById('databaseRow').appendChild(chartHeader)
 
 }
