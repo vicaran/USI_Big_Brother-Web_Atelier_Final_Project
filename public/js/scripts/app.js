@@ -242,8 +242,8 @@ function sendTimeStampToDB(from, to) {
 }
 
 function handleDatabaseRequest() {
-    var from;
-    var to;
+    var from = 1450190601830;
+    var to = 1450190647883;
 
     $('#since').datetimepicker();
     $('#to').datetimepicker({
