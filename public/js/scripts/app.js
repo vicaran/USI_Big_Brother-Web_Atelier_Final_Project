@@ -79,7 +79,7 @@ function graphCreate(id) {
 
 function createNewVariable(id) {
     var waitMessage = document.getElementById("waitTest");
-    if(waitMessage != undefined || waitMessage != null){
+    if (waitMessage != undefined || waitMessage != null) {
         waitMessage.remove();
     }
     tesselIds[id] = {
@@ -191,13 +191,23 @@ changeDimension();
 function datePickerToUTC(dateFromDatapicker) {
     console.log(dateFromDatapicker)
     var d = new Date(dateFromDatapicker)
-    var timestamp = d.getTime()
-    console.log(new Date(timestamp))
+    var timestamp = d.getTime();
+    console.log('Check data:', new Date(timestamp));
     return timestamp
 }
 
-function handleDatabaseRequest() {
+function sendTimeStampToDB(from, to) {
+    producer_handler(JSON.stringify({
+        header: "browser",
+        from: from,
+        to: to,
+        id: deviceID
+    }), 'producer')
+}
 
+function handleDatabaseRequest() {
+    var from;
+    var to;
     $('#since').datetimepicker();
     $('#to').datetimepicker({
         useCurrent: false //Important! See issue #1075
@@ -205,34 +215,16 @@ function handleDatabaseRequest() {
     $("#since").on("dp.change", function (e) {
         $('#to').data("DateTimePicker").minDate(e.date);
         var dateToParse = $('#since').datepicker(false, 'getDate')[0].childNodes[1].value
-        datePickerToUTC(dateToParse)
+        from = datePickerToUTC(dateToParse)
 
     });
     $("#to").on("dp.change", function (e) {
         var dateToParse = $('#to').datepicker(false, 'getDate')[0].childNodes[1].value
-        datePickerToUTC(dateToParse)
+        to = datePickerToUTC(dateToParse)
 
 
         $('#since').data("DateTimePicker").maxDate(e.date);
     });
-
-    //$('#since').datepicker()
-    //    .on('changeDate', function (ev) {
-    //        if(ev.date.valueOf() != undefined) {
-    //            console.log(ev.date.valueOf())
-    //        }
-    //    });
-
-    //console.log(dateFormat)
-    //var to = document.getElementById('to')
-    //since.addEventListener('change', function (e) {
-    //    var dateFormat = $('#since').datepicker('option', 'dd, MM, yy');
-    //
-    //    console.log(e.target.value)
-    //});
-    //to.addEventListener('change', function (e) {
-    //    console.log(e.target.value)
-    //})
 
 }
 
