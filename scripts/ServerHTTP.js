@@ -29,8 +29,8 @@ function handleRequest(req, res) {
         //     sendAll(data, date);
         //     k.send(data)
         // }
+        // });
     });
-});
 }
 
 
