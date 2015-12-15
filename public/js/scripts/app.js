@@ -13,45 +13,46 @@ Chart.defaults.global.responsive = true;
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
 
-function getDataChart() {
+function getDataChart(data) {
+
     var lineChartData = {
         labels: [],
         datasets: [{
-            label: "volume Data Set",
+            label: "volume",
             fillColor: "rgba(215,54,139,0.2)",
             strokeColor: "rgba(215,54,139,1)",
             pointColor: "rgba(215,54,139,1)",
             pointStrokeColor: "rgba(215,54,139,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: []
+            data: data.volume == undefined ? [] : data.volume
         }, {
-            label: "light dataset",
+            label: "temperature",
             fillColor: "rgba(151,187,205,0.2)",
             strokeColor: "rgba(151,187,205,1)",
             pointColor: "rgba(151,187,205,1)",
             pointStrokeColor: "rgba(151,187,205,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151,187,205,1)",
-            data: []
+            data: data.temperature == undefined ? [] : data.temperature
         }, {
-            label: "temp dataset",
+            label: "light",
             fillColor: "rgba(241,85,45,0.2)",
             strokeColor: "rgba(241,85,45,1)",
             pointColor: "rgba(241,85,45,1)",
             pointStrokeColor: "rgba(241,85,45,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(241,85,45,1)",
-            data: []
+            data: data.light == undefined ? [] : data.light
         }]
 
     };
     return lineChartData;
 }
 
-function canvasCreate(id) {
+function canvasCreate(id, cont) {
 
-    var container = document.getElementById("ChartDiv");
+    var container = cont || document.getElementById("ChartDiv");
     var div = document.createElement('div')
     var p = document.createElement('p')
     p.innerHTML = id;
@@ -131,15 +132,42 @@ function updateChart(id, parse) {
 
 }
 
+function parseForDbChart(parse) {
+    var toSend = {
+        volume: [],
+        light: [],
+        temperature: []
+    };
+    for (var i = 0; i < parse.data.length; i++) {
+        toSend.volume.push(parse.data[i].volume)
+        toSend.light.push(parse.data[i].light)
+        toSend.temperature.push(parse.data[i].temperature)
+    }
+    console.log('&&&&&&&&&&&&&&&&&&&&&&&&&', toSend)
+    return toSend;
+}
+
+function createDBChart(parse) {
+}
 
 function chartHandler(parse) {
     //console.log(volume,light, time)
-    if (tesselIds[parse._id] == undefined || tesselIds[parse._id] == null) {
-        createNewVariable(parse._id)
-        canvasCreate(parse._id)
-        graphCreate(parse._id)
+    if (parse.header == 'database') {
+
+        parseForDbChart(parse);
+        canvasCreate('DB',document.getElementById('databaseRow'))
+        getDataChart(parseForDbChart());
+        graphCreate('DB')
     }
-    updateChart(parse._id, parse);
+    else {
+        if (tesselIds[parse._id] == undefined || tesselIds[parse._id] == null) {
+            createNewVariable(parse._id)
+            canvasCreate(parse._id)
+            graphCreate(parse._id)
+        }
+        updateChart(parse._id, parse);
+    }
+
 }
 
 function createIdSelector() {
@@ -237,7 +265,8 @@ function handleDatabaseRequest() {
     btn.addEventListener('click', function () {
         if (from != undefined && to != undefined && currentId != undefined) {
             console.log('send to DB')
-            sendTimeStampToDB(from,to);
+            console.log('from: ', from, ' to:'.to)
+            sendTimeStampToDB(from, to);
         }
         else {
             var sinceInp = document.getElementById('sinceInput')
@@ -249,7 +278,7 @@ function handleDatabaseRequest() {
                 toInp.value = 'Please write a date'
             }
             var count = 0;
-            if(document.getElementsByClassName('activeIdSelector').length== 0) {
+            if (document.getElementsByClassName('activeIdSelector').length == 0) {
                 var divs = document.getElementsByClassName('IdSelector')
                 var interval = setInterval(function () {
                     console.log("INTERVAL")
