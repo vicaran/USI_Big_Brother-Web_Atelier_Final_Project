@@ -64,7 +64,7 @@ function SenderTessel(id, moduleId) {
         //initialized Led
         var led = this.tessel.port['GPIO'].pin['G3'];
         //TODO INTERACT WITH LIGHTS
-        
+
         interval = setInterval(function() {
             var volume = self.gatherSound(soundPin);
             var temperature = self.gatherTemperature(tempPin);
@@ -76,6 +76,7 @@ function SenderTessel(id, moduleId) {
                 temperature: temperature,
                 time: Date.now()
             };
+            console.log('Now im sending');
             self.http.send(data);
         }, 1000)
     };
@@ -116,7 +117,6 @@ function SenderTessel(id, moduleId) {
 
     this.gatherLight = function(lightPin) {
         var rawLight = lightPin.read() * lightPin.resolution;
-        console.log(rawLight)
         switch (this.module) {
             case 1:
                 return rawLight > 550;

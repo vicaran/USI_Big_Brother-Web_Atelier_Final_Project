@@ -1,4 +1,4 @@
-var TesselClasses = require('./TesselClasses.js');
+var TesselClasses = require('./TesselClassesHTTP.js');
 
 /* the wifi-cc3000 library is bundled in with Tessel's firmware,
  * so there's no need for an npm install. It's similar
