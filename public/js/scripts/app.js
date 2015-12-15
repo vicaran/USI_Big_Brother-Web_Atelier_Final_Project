@@ -16,7 +16,7 @@ Chart.defaults.global.showTooltips = false;
 function getDataChart(data) {
 
     var lineChartData = {
-        labels: [],
+        labels: [data == undefined ? '' : data.time],
         datasets: [{
             label: "volume",
             fillColor: "rgba(215,54,139,0.2)",
@@ -96,6 +96,12 @@ function convertDate(d) {
     return parseDate.split(' ')[4]
 }
 
+function drawChartDb(id) {
+    var myLineChart = tesselIds[id].myLineChart
+    var lineChartData = tesselIds[id].data
+    var myLine = tesselIds[id].myLine
+    myLine.Line(lineChartData);
+}
 function updateChart(id, parse) {
     var myLineChart = tesselIds[id].myLineChart
     myLineChart.destroy();
@@ -136,9 +142,11 @@ function parseForDbChart(parse) {
     var toSend = {
         volume: [],
         light: [],
-        temperature: []
+        temperature: [],
+        time: []
     };
     for (var i = 0; i < parse.length; i++) {
+        toSend.time.push(parse[i].time)
         toSend.volume.push(parse[i].volume)
         toSend.light.push(parse[i].light)
         toSend.temperature.push(parse[i].temperature)
@@ -154,14 +162,14 @@ function chartHandler(parse) {
     //console.log(volume,light, time)
     console.log(' & && & & &  & & && & & & & & & & & & & & & ', parse)
     if (parse.header == 'database') {
-        createNewVariable('DB',getDataChart(parseForDbChart(parse.data)))
-        canvasCreate('DB',document.getElementById('databaseRow'))
+        createNewVariable('DB', getDataChart(parseForDbChart(parse.data)))
+        canvasCreate('DB', document.getElementById('databaseRow'))
         graphCreate('DB')
-        updateChart('DB')
+        drawChartDb('DB')
     }
     else {
         if (tesselIds[parse._id] == undefined || tesselIds[parse._id] == null) {
-            createNewVariable(parse._id)
+            createNewVariable(parse._id);
             canvasCreate(parse._id)
             graphCreate(parse._id)
         }
