@@ -23,8 +23,8 @@ a, a:hover, a:focus, a:active, a.active{
     flex-wrap: wrap;
 }
 .chart{
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 2px;
+    padding-right: 2px;
     flex-basis: 50%;
     flex-grow: 1;
 }

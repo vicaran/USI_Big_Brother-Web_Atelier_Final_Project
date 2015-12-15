@@ -72,10 +72,10 @@ function getDataChart(data) {
 function canvasCreate(id, cont) {
 
     var container = cont || document.getElementById("ChartDiv");
-    var div ;
+    var div;
     var p = document.createElement('p')
     p.innerHTML = id;
-    if(id == 'DB'){
+    if (id == 'DB') {
         div = document.getElementById('dbChart');
     }
     else {
@@ -212,7 +212,7 @@ function chartHandler(parse) {
     if (parse.header == 'database') {
         removeOldChart()
         putInProducersIds('DB', parseForDbChart(parse.data))
-        canvasCreate('DB',document.getElementById('databaseRow'))
+        canvasCreate('DB', document.getElementById('databaseRow'))
         graphCreate('DB');
         //drawChartDb('DB')
     }
@@ -230,9 +230,9 @@ function chartHandler(parse) {
 /**
  * This function removes the DB old Chart
  */
-function removeOldChart(){
+function removeOldChart() {
     var oldChart = document.getElementById('DB')
-    if(oldChart != undefined) {
+    if (oldChart != undefined) {
         oldChart.parent.removeChild(oldChartDiv)
     }
 }
@@ -247,11 +247,11 @@ function createIdSelector() {
         var id = 's:' + idArray[i].toString()
         //s refers to 'section'
         var checkIfExist = document.getElementById(id);
-        if (checkIfExist != undefined ) {
+        if (checkIfExist != undefined) {
             console.log()
             continue
         }
-        if(idArray[i] == 'DB'){
+        if (idArray[i] == 'DB') {
             continue
         }
         var newDiv = document.createElement('div');
@@ -261,7 +261,13 @@ function createIdSelector() {
         h2.innerHTML = idArray[i];
         newDiv.appendChild(h2);
         newDiv.addEventListener('click', function (e) {
-            currentId = Number(this.id.split(':')[1]);
+            var id = Number(this.id.split(':')[1]);
+            if (currentId == id) {
+                currentId = undefined;
+            }
+            else {
+                currentId = id
+            }
             var allDivs = document.getElementsByClassName('IdSelector activeIdSelector')
             if (this.className == "IdSelector") {
 
@@ -326,7 +332,7 @@ function sendTimeStampToDB(from, to) {
  * @param dateFromDatapicker Date from datepicker
  * @returns {String} Date in dd/mm/yy format
  */
-function parseDatePicker(dateFromDatapicker){
+function parseDatePicker(dateFromDatapicker) {
     return dateFromDatapicker.split(' ')[0]
 }
 
@@ -336,7 +342,7 @@ function parseDatePicker(dateFromDatapicker){
  * @param {Number} from The time of the first data that we want
  * @param {Number} to The time of the last data that we want
  */
-function createDBChartHeader(from,to){
+function createDBChartHeader(from, to) {
     var chartHeader = document.createElement('h2')
     chartHeader.innerHTML = parseDatePicker(from) + ' - ' + parseDatePicker(to)
     chartHeader.className = 'text-center';
@@ -348,8 +354,8 @@ function createDBChartHeader(from,to){
  * This function handle the request that we want to do
  */
 function handleDatabaseRequest() {
-    var from ;
-    var to ;
+    var from;
+    var to;
 
     /*
      Jquery stuff for datapicker
@@ -375,8 +381,8 @@ function handleDatabaseRequest() {
          Check if every input is complete
          */
         if (from != undefined && to != undefined && currentId != undefined) {
-            createDBChartHeader(from,to)
-            console.log(from,to)
+            createDBChartHeader(from, to)
+            console.log(from, to)
             to = datePickerToUTC(from)
             from = datePickerToUTC(to)
             sendTimeStampToDB(1450194485222, 1450194538545);
