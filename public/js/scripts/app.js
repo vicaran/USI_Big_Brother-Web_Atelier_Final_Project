@@ -381,7 +381,7 @@ function handleDatabaseRequest() {
          Check if every input is complete
          */
         if (from != undefined && to != undefined && currentId != undefined) {
-            createDBChartHeader(from, to)
+            //createDBChartHeader(from, to)
             to = datePickerToUTC(from)
             from = datePickerToUTC(to)
             console.log('-------- from: ',from,' to:', to , '---------')
