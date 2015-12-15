@@ -254,10 +254,11 @@ function handleDatabaseRequest() {
 
                 for(var i = 0; i < divs.length;i++){
                     if(!count%2) {
-                        console.log('ACTIVE')
+                        console.log('ACTIVE',count)
                         divs[i].className += ' activeIdSelector'
                     }
                     else{
+                        console.log('NO OACTIVE',count)
                         divs[i].className = 'IdSelector';
                     }
                 }
