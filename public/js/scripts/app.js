@@ -79,7 +79,7 @@ function graphCreate(id) {
 }
 
 function createNewVariable(id) {
-    document.getElementById("waitTest").parent.removeChild()
+    document.getElementById("waitTest").remove();
     tesselIds[id] = {
         data: getDataChart()
     }
