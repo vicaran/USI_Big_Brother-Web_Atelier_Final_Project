@@ -213,7 +213,7 @@ function chartHandler(parse) {
         removeOldChart()
         putInProducersIds('DB', parseForDbChart(parse.data))
         canvasCreate('DB', document.getElementById('databaseRow'))
-        graphCreate('DB')
+        graphCreate('DB');
         //drawChartDb('DB')
     }
     else {
@@ -318,6 +318,28 @@ function sendTimeStampToDB(from, to) {
         id: currentId
     }), 'producer')
 }
+/**
+ * This function return only the dd/mm/yy part from a dd/mm/yy hh/mm AM/PM string
+ * @param dateFromDataPicker Date from datepicker
+ * @returns {String} Date in dd/mm/yy format
+ */
+function parseDatePicker(dateFromDataPicker){
+    return dateFromDataPicker.split(' ')[0]
+}
+
+
+/**
+ * This function create the header for the DB chart
+ * @param {Number} from The time of the first data that we want
+ * @param {Number} to The time of the last data that we want
+ */
+function createDBChartHeader(from,to){
+    var chartHeader = document.createElement('h2')
+    chartHeader.innerHTML = parseDatePicker(from) + ' - ' parseDatePicker(to)
+    chartHeader.className = 'text-center'
+    document.getElementById('databaseRow').appendChild(chartHeader)
+
+}
 
 /**
  * This function handle the request that we want to do
@@ -352,6 +374,7 @@ function handleDatabaseRequest() {
          Check if every input is complete
          */
         if (from != undefined && to != undefined && currentId != undefined) {
+            createDBChartHeader(from,to)
             sendTimeStampToDB(from, to);
         }
         else {
