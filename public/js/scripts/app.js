@@ -1,8 +1,8 @@
 /**
  * GG A TUTTI, é stato fatto il miracolo !!
  * Commitozky alle 5 del mattino e si esce a comandare
+ * https://www.youtube.com/watch?v=FrG4TEcSuRg
  */
-
 var tesselIds = {};
 var graphDimension = 10;
 var minor = false;
@@ -80,7 +80,7 @@ function graphCreate(id) {
 
 function createNewVariable(id) {
     var waitMessage = document.getElementById("waitTest");
-    if(waitMessage != undefined || waitMessage != null){
+    if (waitMessage != undefined || waitMessage != null) {
         waitMessage.remove();
     }
     tesselIds[id] = {
@@ -188,40 +188,44 @@ function changeDimension() {
 }
 changeDimension();
 
-function handleDatabaseRequest() {
 
+function datePickerToUTC(dateFromDatapicker) {
+    console.log(dateFromDatapicker)
+    var d = new Date(dateFromDatapicker)
+    var timestamp = d.getTime();
+    console.log('Check data:', new Date(timestamp));
+    return timestamp
+}
+
+function sendTimeStampToDB(from, to) {
+    producer_handler(JSON.stringify({
+        header: "browser",
+        from: from,
+        to: to,
+        id: deviceID
+    }), 'producer')
+}
+
+function handleDatabaseRequest() {
+    var from;
+    var to;
     $('#since').datetimepicker();
     $('#to').datetimepicker({
         useCurrent: false //Important! See issue #1075
     });
     $("#since").on("dp.change", function (e) {
         $('#to').data("DateTimePicker").minDate(e.date);
-        console.log($('#since').datepicker(false, 'getDate')[0].childNodes[1].value)
+        var dateToParse = $('#since').datepicker(false, 'getDate')[0].childNodes[1].value
+        from = datePickerToUTC(dateToParse)
 
     });
     $("#to").on("dp.change", function (e) {
-        console.log($('#to').datepicker(false, 'getDate')[0].childNodes[1].value)
+        var dateToParse = $('#to').datepicker(false, 'getDate')[0].childNodes[1].value
+        to = datePickerToUTC(dategaToParse)
+
 
         $('#since').data("DateTimePicker").maxDate(e.date);
     });
-
-    //$('#since').datepicker()
-    //    .on('changeDate', function (ev) {
-    //        if(ev.date.valueOf() != undefined) {
-    //            console.log(ev.date.valueOf())
-    //        }
-    //    });
-
-    //console.log(dateFormat)
-    //var to = document.getElementById('to')
-    //since.addEventListener('change', function (e) {
-    //    var dateFormat = $('#since').datepicker('option', 'dd, MM, yy');
-    //
-    //    console.log(e.target.value)
-    //});
-    //to.addEventListener('change', function (e) {
-    //    console.log(e.target.value)
-    //})
 
 }
 
@@ -230,11 +234,14 @@ function waitForStreaming() {
     console.log(". . . . waiting for operators")
     if (existCharts) {
         var container = document.getElementById("ChartDiv");
+        var containerH2 =  document.createElement('div')
         var waitTest = document.createElement('h2')
+        containerH2.className = 'col-sm 12 '
         waitTest.setAttribute('id', 'waitTest')
         waitTest.className = 'text-center'
         waitTest.innerHTML = '. . . . waiting for operators'
-        container.appendChild(waitTest)
+        containerH2.appendChild(waitTest)
+        container.appendChild(containerH2)
     }
 }
 
