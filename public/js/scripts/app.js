@@ -47,6 +47,7 @@ function getDataChart(data) {
         }]
 
     };
+    console.log(lineChartData,')))')
     return lineChartData;
 }
 
