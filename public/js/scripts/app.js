@@ -1,6 +1,7 @@
 /**
  * GG A TUTTI, é stato fatto il miracolo !!
  * Commitozky alle 5 del mattino e si esce a comandare
+ * https://www.youtube.com/watch?v=FrG4TEcSuRg
  */
 var tesselIds = {};
 var graphDimension = 10;
