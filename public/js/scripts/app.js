@@ -77,8 +77,8 @@ function graphCreate(id) {
     tesselIds[id].canvas = ctx;
     tesselIds[id].myLine = myLine;
     tesselIds[id].myLineChart = myLineChart;
+    tesselIds[id].data = lineChartData;
     myLine.Line(lineChartData);
-
     console.log('Created')
 
 }
