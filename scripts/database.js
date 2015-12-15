@@ -41,28 +41,36 @@ var addToDatabase = function (data, d) {
  * This function will send the data in the Delta since - to
  *
  * @param id The unique id of the Tessel
- * @param since The starting point
+ * @param from The starting point
  * @param to The finish point
  */
- var retrieveData = function (id, since, to) {
+ var retrieveData = function (id, from, to) {
     k.stateful.get(id, function (res) {
-        console.log('retrivedata', since, to)
-        var parse = JSON.parse(res);
-        var oldest = parse[0].time;
-        console.log("Since: ", since, " to: ", to)
-        var startPoint =  since - oldest;
-        startPoint = convertMStoS(startPoint)
-        var finishPoint = to - since;
-        finishPoint = convertMStoS(finishPoint)
+        console.log('retrivedata', from, to)
         var toRetrieveData = [];
-        var i = startPoint;
-        while (i <= startPoint + finishPoint){
-            toRetrieveData.push(parse[i]);
-            i++;
+        var parse = JSON.parse(res);
+        var nearestFrom = binary_search_recursive(parse,from,0,parse.length - 1)
+        var nearestTo = binary_search_recursive(parse,to,0,parse.length - 1)
+        for(var i = nearestFrom; i < nearestTo - nearestFrom;i++){
+
+            toRetrieveData.push(i);
         }
-        console.log('Found: ', toRetrieveData )
+
+        //var oldest = parse[0].time;
+        //console.log("Since: ", since, " to: ", to)
+        //var startPoint =  since - oldest;
+        //startPoint = convertMStoS(startPoint)
+        //var finishPoint = to - since;
+        //finishPoint = convertMStoS(finishPoint)
+        //var toRetrieveData = [];
+        //var i = startPoint;
+        //while (i <= startPoint + finishPoint){
+        //    toRetrieveData.push(parse[i]);
+        //    i++;
+        //}
+        //console.log('Found: ', toRetrieveData )
         var toSendJSON = {header: "database"};
-        console.log('*************************', toRetrieveData)
+        //console.log('*************************', toRetrieveData)
         toSendJSON.data = toRetrieveData;
         k.send(JSON.stringify(toSendJSON))
 
@@ -70,6 +78,40 @@ var addToDatabase = function (data, d) {
 
 };
 
+/**
+ * A modified binary search in order to find the nearest index of value
+ * @param a The array
+ * @param value What we wants to search
+ * @param lo The lowest value
+ * @param hi The highest value
+ * @returns {*}
+ */
+function binary_search_recursive(a, value, lo, hi) {
+
+    var mid = Math.floor((lo + hi) / 2);
+
+    if(abs(lo-hi) == 1){
+        if(abs(a[lo].time- value) >abs(a[hi].time - value )){
+            console.log('found: ', a[lo].time, ' value: ', value)
+            return lo
+        }
+        else{
+            console.log('found: ', a[hi].time, ' value: ', value)
+            return hi
+        }
+    }
+    if(value == a[mid].time){
+        console.log('already in databae')
+        return a[mid]
+    }
+    if (a[mid].time > value) {
+        return binary_search_recursive(a, value, lo, mid - 1);
+    }
+    if (a[mid].time < value) {
+        return binary_search_recursive(a, value, mid + 1, hi);
+    }
+    return mid;
+}
 
 /**
  * This function converts Millisecond number into Seconds
