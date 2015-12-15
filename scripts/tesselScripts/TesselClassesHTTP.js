@@ -76,9 +76,8 @@ function SenderTessel(id, moduleId) {
                 temperature: temperature,
                 time: Date.now()
             };
-            console.log('Now im sending');
             self.http.send(data);
-        }, 2000)
+        }, 1000)
     };
     /**
      * This function set the RGB Led. Low noise = green, medium = blue and high = red
