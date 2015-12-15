@@ -237,7 +237,7 @@ function handleDatabaseRequest() {
     btn.addEventListener('click', function () {
         if (from != undefined && to != undefined && currentId != undefined) {
             console.log('send to DB')
-            sendTimeStampToDB();
+            sendTimeStampToDB(currentId,from,to);
         }
         else {
             var sinceInp = document.getElementById('sinceInput')
