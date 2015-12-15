@@ -72,14 +72,14 @@ function getDataChart(data) {
 function canvasCreate(id, cont) {
 
     var container = cont || document.getElementById("ChartDiv");
-    var div = document.createElement('div')
+    var div ;
     var p = document.createElement('p')
     p.innerHTML = id;
-    if(id == 'DB'){
-        div.className = "container"
-        div.id = 'dbChart'
+    if(id != 'DB'){
+        div= document.getElementById('dbChart');
     }
     else {
+        div = document.createElement('div')
         div.className = "col-sm-6"
     }
     var canvas = document.createElement('canvas')
@@ -212,7 +212,7 @@ function chartHandler(parse) {
     if (parse.header == 'database') {
         removeOldChart()
         putInProducersIds('DB', parseForDbChart(parse.data))
-        canvasCreate('DB', document.getElementById('databaseRow'))
+        canvasCreate('DB')
         graphCreate('DB');
         //drawChartDb('DB')
     }
@@ -303,6 +303,7 @@ function changeDimension() {
  * @returns {Number} The UTC/timestamp data
  */
 function datePickerToUTC(dateFromDatapicker) {
+    console.log(dateFromDatapicker)
     var d = new Date(dateFromDatapicker)
     return d.getTime()
 }
@@ -323,12 +324,11 @@ function sendTimeStampToDB(from, to) {
 }
 /**
  * This function return only the dd/mm/yy part from a dd/mm/yy hh/mm AM/PM string
- * @param dateFromDataPicker Date from datepicker
+ * @param dateFromDatapicker Date from datepicker
  * @returns {String} Date in dd/mm/yy format
  */
-function parseDatePicker(dateFromDataPicker){
-    console.log(dateFromDataPicker)
-    return dateFromDataPicker.split(' ')[0]
+function parseDatePicker(dateFromDatapicker){
+    return dateFromDatapicker.split(' ')[0]
 }
 
 
@@ -341,7 +341,7 @@ function createDBChartHeader(from,to){
     var chartHeader = document.createElement('h2')
     chartHeader.innerHTML = parseDatePicker(from) + ' - ' + parseDatePicker(to)
     chartHeader.className = 'text-center';
-    document.getElementById('databaseRow').appendChild(chartHeader)
+    document.getElementById('dbChart').appendChild(chartHeader)
 
 }
 
@@ -377,6 +377,7 @@ function handleDatabaseRequest() {
          */
         if (from != undefined && to != undefined && currentId != undefined) {
             createDBChartHeader(from,to)
+            console.log(from,to)
             to = datePickerToUTC(from)
             from = datePickerToUTC(to)
             sendTimeStampToDB(1450194485222, 1450194538545);
