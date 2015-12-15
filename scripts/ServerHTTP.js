@@ -20,6 +20,7 @@ var _id = 0;
 function handleRequest(req, res) {
     req.on('data', function(data) {
     	console.log(req);
+    	console.log(res);
         console.log('BODY: ' + data);
         var stringified = JSON.stringify(data);
         var replaced = stringified.replace('&', ' ');
