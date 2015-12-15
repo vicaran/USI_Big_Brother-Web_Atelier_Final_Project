@@ -253,7 +253,7 @@ function handleDatabaseRequest() {
                 console.log(count)
                 for(var i = 0; i < divs.length;i++){
                     console.log(count%2,'***********')
-                    if(!count%2 == 0) {
+                    if(count%2) {
                         console.log('ACTIVE',count)
                         divs[i].className += ' activeIdSelector'
                     }
