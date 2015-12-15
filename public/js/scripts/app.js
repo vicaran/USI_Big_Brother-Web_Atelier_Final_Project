@@ -327,6 +327,7 @@ function sendTimeStampToDB(from, to) {
  * @returns {String} Date in dd/mm/yy format
  */
 function parseDatePicker(dateFromDataPicker){
+    console.log(dateFromDataPicker)
     return dateFromDataPicker.split(' ')[0]
 }
 
