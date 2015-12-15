@@ -13,45 +13,47 @@ Chart.defaults.global.responsive = true;
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
 
-function getDataChart() {
+function getDataChart(data) {
+
     var lineChartData = {
-        labels: [],
+        labels: [data == undefined ? '' : data.time],
         datasets: [{
-            label: "volume Data Set",
+            label: "volume",
             fillColor: "rgba(215,54,139,0.2)",
             strokeColor: "rgba(215,54,139,1)",
             pointColor: "rgba(215,54,139,1)",
             pointStrokeColor: "rgba(215,54,139,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: []
+            data: data == undefined ? [] : data.volume
         }, {
-            label: "light dataset",
+            label: "temperature",
             fillColor: "rgba(151,187,205,0.2)",
             strokeColor: "rgba(151,187,205,1)",
             pointColor: "rgba(151,187,205,1)",
             pointStrokeColor: "rgba(151,187,205,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151,187,205,1)",
-            data: []
+            data: data == undefined ? [] : data.temperature
         }, {
-            label: "temp dataset",
+            label: "light",
             fillColor: "rgba(241,85,45,0.2)",
             strokeColor: "rgba(241,85,45,1)",
             pointColor: "rgba(241,85,45,1)",
             pointStrokeColor: "rgba(241,85,45,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(241,85,45,1)",
-            data: []
+            data: data == undefined ? [] : data.light
         }]
 
     };
+    console.log(lineChartData,')))')
     return lineChartData;
 }
 
-function canvasCreate(id) {
+function canvasCreate(id, cont) {
 
-    var container = document.getElementById("ChartDiv");
+    var container = cont || document.getElementById("ChartDiv");
     var div = document.createElement('div')
     var p = document.createElement('p')
     p.innerHTML = id;
@@ -76,10 +78,16 @@ function graphCreate(id) {
     tesselIds[id].canvas = ctx;
     tesselIds[id].myLine = myLine;
     tesselIds[id].myLineChart = myLineChart;
+    lineChartData = tesselIds[id].data;
+    myLine.Line(lineChartData);
+
+    console.log(lineChartData);
+    console.log('Created')
 
 }
 
 function createNewVariable(id) {
+    console.log(id,'created')
     var waitMessage = document.getElementById("waitTest");
     if (waitMessage != undefined || waitMessage != null) {
         waitMessage.remove();
@@ -95,6 +103,12 @@ function convertDate(d) {
     return parseDate.split(' ')[4]
 }
 
+//function drawChartDb(id) {
+//    var myLineChart = tesselIds[id].myLineChart
+//    var lineChartData = tesselIds[id].data
+//    var myLine = tesselIds[id].myLine
+//    myLine.Line(lineChartData);
+//}
 function updateChart(id, parse) {
     var myLineChart = tesselIds[id].myLineChart
     myLineChart.destroy();
@@ -131,15 +145,44 @@ function updateChart(id, parse) {
 
 }
 
+function parseForDbChart(parse) {
+    var toSend = {
+        volume: [],
+        light: [],
+        temperature: [],
+        time: []
+    };
+    for (var i = 0; i < parse.length; i++) {
+        toSend.time.push(parse[i].time)
+        toSend.volume.push(parse[i].volume)
+        toSend.light.push(parse[i].light)
+        toSend.temperature.push(parse[i].temperature)
+    }
+    console.log('&&&&&&&&&&&&&&&&&&&&&&&&&', toSend)
+    return toSend;
+}
+
+function createDBChart(parse) {
+}
 
 function chartHandler(parse) {
     //console.log(volume,light, time)
-    if (tesselIds[parse._id] == undefined || tesselIds[parse._id] == null) {
-        createNewVariable(parse._id)
-        canvasCreate(parse._id)
-        graphCreate(parse._id)
+    console.log(' & && & & &  & & && & & & & & & & & & & & & ', parse)
+    if (parse.header == 'database') {
+        createNewVariable('DB', getDataChart(parseForDbChart(parse.data)))
+        canvasCreate('DB', document.getElementById('databaseRow'))
+        graphCreate('DB')
+        //drawChartDb('DB')
     }
-    updateChart(parse._id, parse);
+    else {
+        if (tesselIds[parse._id] == undefined || tesselIds[parse._id] == null) {
+            createNewVariable(parse._id);
+            canvasCreate(parse._id)
+            graphCreate(parse._id)
+        }
+        updateChart(parse._id, parse);
+    }
+
 }
 
 function createIdSelector() {
@@ -213,8 +256,8 @@ function sendTimeStampToDB(from, to) {
 }
 
 function handleDatabaseRequest() {
-    var from;
-    var to;
+    var from = 1450194485222;
+    var to = 1450194538545;
 
     $('#since').datetimepicker();
     $('#to').datetimepicker({
@@ -237,7 +280,8 @@ function handleDatabaseRequest() {
     btn.addEventListener('click', function () {
         if (from != undefined && to != undefined && currentId != undefined) {
             console.log('send to DB')
-            sendTimeStampToDB(currentId,from,to);
+            console.log('from: ', from, ' to:', to)
+            sendTimeStampToDB(from, to);
         }
         else {
             var sinceInp = document.getElementById('sinceInput')
@@ -249,7 +293,7 @@ function handleDatabaseRequest() {
                 toInp.value = 'Please write a date'
             }
             var count = 0;
-            if(document.getElementsByClassName('activeIdSelector').length== 0) {
+            if (document.getElementsByClassName('activeIdSelector').length == 0) {
                 var divs = document.getElementsByClassName('IdSelector')
                 var interval = setInterval(function () {
                     console.log("INTERVAL")

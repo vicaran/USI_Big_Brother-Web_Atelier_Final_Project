@@ -8,8 +8,6 @@ k.createNode(function(data) {
         case 'browser':
             k.send(data);
             break;
-        case 'database':
-            break
         default:
             k.callFunction("chartHandler", [parse])
     }

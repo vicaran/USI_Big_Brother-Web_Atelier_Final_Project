@@ -47,6 +47,7 @@ var addToDatabase = function (data, d) {
  var retrieveData = function (id, since, to) {
     console.log('CHIAmATO')
     k.stateful.get(id, function (res) {
+        console.log('retrivedata', since, to)
         var parse = JSON.parse(res);
         var oldest = parse[0].time;
         console.log("Since: ", since, " to: ", to)
@@ -63,7 +64,7 @@ var addToDatabase = function (data, d) {
         console.log('Found: ', toRetrieveData )
         var toSendJSON = {header: "database"};
         console.log('*************************', toRetrieveData)
-        toSendJSON.content = toRetrieveData;
+        toSendJSON.data = toRetrieveData;
         k.send(JSON.stringify(toSendJSON))
 
     });
