@@ -76,7 +76,7 @@ function canvasCreate(id, cont) {
     var p = document.createElement('p')
     p.innerHTML = id;
     if(id == 'DB'){
-        div= document.getElementById('dbChart');
+        div = document.getElementById('dbChart');
     }
     else {
         div = document.createElement('div')
@@ -212,7 +212,7 @@ function chartHandler(parse) {
     if (parse.header == 'database') {
         removeOldChart()
         putInProducersIds('DB', parseForDbChart(parse.data))
-        canvasCreate('DB')
+        canvasCreate('DB',document.getElementById('databaseRow'))
         graphCreate('DB');
         //drawChartDb('DB')
     }
