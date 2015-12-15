@@ -203,6 +203,7 @@ function datePickerToUTC(dateFromDatapicker) {
 }
 
 function sendTimeStampToDB(from, to) {
+    console.log('INSIDE sendTimeStampToDB')
     producer_handler(JSON.stringify({
         header: "browser",
         from: from,
@@ -235,6 +236,7 @@ function handleDatabaseRequest() {
     var btn = document.getElementById('reqDBbtn')
     btn.addEventListener('click', function () {
         if (from != undefined && to != undefined && currentId != undefined) {
+            console.log('send to DB')
             sendTimeStampToDB();
         }
         else {

@@ -45,6 +45,7 @@ var addToDatabase = function (data, d) {
  * @param to The finish point
  */
  var retrieveData = function (id, since, to) {
+    console.log('CHIAmATO')
     k.stateful.get(id, function (res) {
         var parse = JSON.parse(res);
         var oldest = parse[0].time;
