@@ -165,7 +165,7 @@ function createIdSelector() {
             var allDivs = document.getElementsByClassName('IdSelector activeIdSelector')
             if (this.className == "IdSelector") {
 
-                this.className = this.className + ' activeIdSelector'
+                this.id = 'activeIdSelector'
                 for (var i = 0; i < allDivs.length; i++) {
                     if (allDivs[i] != this) {
                         allDivs[i].className = "IdSelector"
@@ -246,30 +246,33 @@ function handleDatabaseRequest() {
             if (toInp.value == "") {
                 toInp.value = 'Please write a date'
             }
-            var count = 0;
-            var divs = document.getElementsByClassName('IdSelector')
-            var interval = setInterval(function () {
-                console.log("INTERVAL")
-                console.log(count)
-                for(var i = 0; i < divs.length;i++){
-                    console.log(count%2,'***********')
-                    if(count%2) {
-                        console.log('ACTIVE',count)
-                        divs[i].className += ' activeIdSelector'
+            if(document.getElementById('activeIdSelector') == undefined) {
+                var count = 0;
+
+                var divs = document.getElementsByClassName('IdSelector')
+                var interval = setInterval(function () {
+                    console.log("INTERVAL")
+                    console.log(count)
+                    for (var i = 0; i < divs.length; i++) {
+                        console.log(count % 2, '***********')
+                        if (count % 2) {
+                            console.log('ACTIVE', count)
+                            divs[i].className += ' activeIdSelector'
+                        }
+                        else {
+                            console.log('NO OACTIVE', count)
+                            divs[i].className = 'IdSelector';
+                        }
                     }
-                    else{
-                        console.log('NO OACTIVE',count)
-                        divs[i].className = 'IdSelector';
+                    count++
+                    if (count == 9) {
+                        clearInterval(interval)
                     }
-                }
-                count ++
-                if(count == 9){
-                    clearInterval(interval)
-                }
-                //for(var i = 0; i < divs.length;i++){
-                //    divs[i].className = 'IdSelector';
-                //}
-            },100)
+                    //for(var i = 0; i < divs.length;i++){
+                    //    divs[i].className = 'IdSelector';
+                    //}
+                }, 100)
+            }
             throw new Error('write a Date')
 
         }

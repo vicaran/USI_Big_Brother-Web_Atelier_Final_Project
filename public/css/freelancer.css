@@ -81,7 +81,7 @@ canvas {
     flex: 1;
 }
 
-.activeIdSelector {
+#activeIdSelector {
     background-color: #7f0000;
 }
 
