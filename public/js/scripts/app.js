@@ -231,10 +231,9 @@ function chartHandler(parse) {
  * This function removes the DB old Chart
  */
 function removeOldChart(){
-    var oldChartDiv = document.getElementById('dbChart')
-    if(oldChartDiv != undefined) {
-        oldChartDiv.removeChild(oldChartDiv.children[0]);
-        oldChartDiv.parent.removeChild(oldChartDiv)
+    var oldChart = document.getElementById('DB')
+    if(oldChart != undefined) {
+        oldChart.parent.removeChild(oldChartDiv)
     }
 }
 /**
