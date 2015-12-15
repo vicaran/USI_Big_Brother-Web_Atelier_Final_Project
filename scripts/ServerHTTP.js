@@ -9,8 +9,8 @@ var http = require('http');
 const PORT = 15000;
 
 function handleRequeste(req, res){
-    console.log('DIOBOIA666');
-    res.end('It Works!! Path Hit: ' + req.url);
+    console.log('DIOBOIA666: ', req.url);
+    // res.end('It Works!! Path Hit: ' + req.url);
 }
 var server = http.createServer(handleRequeste);
 
