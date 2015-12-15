@@ -253,7 +253,7 @@ function handleDatabaseRequest() {
                 console.log(count)
 
                 for(var i = 0; i < divs.length;i++){
-                    if(count%2) {
+                    if(!count%2) {
                         console.log('ACTIVE')
                         divs[i].className += ' activeIdSelector'
                     }
@@ -262,7 +262,7 @@ function handleDatabaseRequest() {
                     }
                 }
                 count ++
-                if(count == 5){
+                if(count == 4){
                     clearInterval(interval)
                 }
                 //for(var i = 0; i < divs.length;i++){
