@@ -33,9 +33,10 @@ a, a:hover, a:focus, a:active, a.active{
 #ChartDiv{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .chart{
-    flex-basis: 350px;
+    flex-basis: 50%;
     flex-grow: 1;
 }
 .btn-default{
