@@ -77,10 +77,14 @@ function graphCreate(id) {
     tesselIds[id].canvas = ctx;
     tesselIds[id].myLine = myLine;
     tesselIds[id].myLineChart = myLineChart;
+    myLine.Line(lineChartData);
+
+    console.log('Created')
 
 }
 
 function createNewVariable(id) {
+    console.log(id,'created')
     var waitMessage = document.getElementById("waitTest");
     if (waitMessage != undefined || waitMessage != null) {
         waitMessage.remove();
@@ -96,12 +100,12 @@ function convertDate(d) {
     return parseDate.split(' ')[4]
 }
 
-function drawChartDb(id) {
-    var myLineChart = tesselIds[id].myLineChart
-    var lineChartData = tesselIds[id].data
-    var myLine = tesselIds[id].myLine
-    myLine.Line(lineChartData);
-}
+//function drawChartDb(id) {
+//    var myLineChart = tesselIds[id].myLineChart
+//    var lineChartData = tesselIds[id].data
+//    var myLine = tesselIds[id].myLine
+//    myLine.Line(lineChartData);
+//}
 function updateChart(id, parse) {
     var myLineChart = tesselIds[id].myLineChart
     myLineChart.destroy();
@@ -165,7 +169,7 @@ function chartHandler(parse) {
         createNewVariable('DB', getDataChart(parseForDbChart(parse.data)))
         canvasCreate('DB', document.getElementById('databaseRow'))
         graphCreate('DB')
-        drawChartDb('DB')
+        //drawChartDb('DB')
     }
     else {
         if (tesselIds[parse._id] == undefined || tesselIds[parse._id] == null) {
