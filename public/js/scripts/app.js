@@ -138,10 +138,10 @@ function parseForDbChart(parse) {
         light: [],
         temperature: []
     };
-    for (var i = 0; i < parse.data.length; i++) {
-        toSend.volume.push(parse.data[i].volume)
-        toSend.light.push(parse.data[i].light)
-        toSend.temperature.push(parse.data[i].temperature)
+    for (var i = 0; i < parse.length; i++) {
+        toSend.volume.push(parse[i].volume)
+        toSend.light.push(parse[i].light)
+        toSend.temperature.push(parse[i].temperature)
     }
     console.log('&&&&&&&&&&&&&&&&&&&&&&&&&', toSend)
     return toSend;
@@ -155,9 +155,8 @@ function chartHandler(parse) {
     console.log(' & && & & &  & & && & & & & & & & & & & & & ', parse)
     if (parse.header == 'database') {
 
-        parseForDbChart(parse);
         canvasCreate('DB',document.getElementById('databaseRow'))
-        getDataChart(parseForDbChart());
+        getDataChart(parseForDbChart(parse.data));
         graphCreate('DB')
     }
     else {
