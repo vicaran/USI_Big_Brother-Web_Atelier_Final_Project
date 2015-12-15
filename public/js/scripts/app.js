@@ -16,7 +16,7 @@ Chart.defaults.global.showTooltips = false;
 function getDataChart(data) {
 
     var lineChartData = {
-        labels: [data == undefined ? '' : data.time],
+        labels: data == undefined ? [] : data.time,
         datasets: [{
             label: "volume",
             fillColor: "rgba(215,54,139,0.2)",
