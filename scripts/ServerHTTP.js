@@ -20,7 +20,8 @@ var _id = 0;
 function handleRequest(req, res) {
     req.on('data', function(data) {
         console.log('BODY: ' + data);
-        var parsed = data.parse();
+    	var parsed = data.replace('&',' ');
+    	console.log('BODY: ' + parsed);
         // //update date
         // var date = new Date()
         // client[ws._id].time = date;
