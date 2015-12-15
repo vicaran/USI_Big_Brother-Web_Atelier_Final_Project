@@ -25,7 +25,7 @@ function getDataChart(data) {
             pointStrokeColor: "rgba(215,54,139,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: data.volume == undefined ? [] : data.volume
+            data: data == undefined ? [] : data.volume
         }, {
             label: "temperature",
             fillColor: "rgba(151,187,205,0.2)",
@@ -34,7 +34,7 @@ function getDataChart(data) {
             pointStrokeColor: "rgba(151,187,205,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151,187,205,1)",
-            data: data.temperature == undefined ? [] : data.temperature
+            data: data == undefined ? [] : data.temperature
         }, {
             label: "light",
             fillColor: "rgba(241,85,45,0.2)",
@@ -43,7 +43,7 @@ function getDataChart(data) {
             pointStrokeColor: "rgba(241,85,45,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(241,85,45,1)",
-            data: data.light == undefined ? [] : data.light
+            data: data == undefined ? [] : data.light
         }]
 
     };
