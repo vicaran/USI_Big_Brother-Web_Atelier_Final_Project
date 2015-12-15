@@ -29,6 +29,21 @@
 a, a:hover, a:focus, a:active, a.active{
     color: black;
 }
+
+.btn-default{
+    border-color: white;
+    background-color: transparent;
+}
+/*.btn:hover{*/
+    /*background-color: white;*/
+    /*color: black;*/
+/*}*/
+.btn:focus, .btn:hover{
+    border-color: white;
+
+    background-color: green;
+    color: black;
+}
 .datepicker-days {
 
     color: black;

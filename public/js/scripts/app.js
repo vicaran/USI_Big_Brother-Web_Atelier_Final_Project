@@ -209,6 +209,7 @@ function sendTimeStampToDB(from, to) {
 function handleDatabaseRequest() {
     var from;
     var to;
+
     $('#since').datetimepicker();
     $('#to').datetimepicker({
         useCurrent: false //Important! See issue #1075
@@ -221,20 +222,39 @@ function handleDatabaseRequest() {
     });
     $("#to").on("dp.change", function (e) {
         var dateToParse = $('#to').datepicker(false, 'getDate')[0].childNodes[1].value
-        to = datePickerToUTC(dategaToParse)
-
+        to = datePickerToUTC(dateToParse)
 
         $('#since').data("DateTimePicker").maxDate(e.date);
     });
 
+    var btn = document.getElementById('reqDBbtn')
+    btn.addEventListener('click', function () {
+        if (from != undefined && to != undefined) {
+            sendTimeStampToDB();
+        }
+        else{
+            var sinceInp = document.getElementById('sinceInput')
+            var toInp =   document.getElementById('toInput');
+            if(sinceInp.value == ""){
+                sinceInp.value = 'Please write a date'
+            }
+            if(toInp.value ==""){
+                toInp.value = 'Please write a date'
+            }
+
+            throw new Error('write in the field')
+
+        }
+    })
 }
+
 
 function waitForStreaming() {
     var existCharts = document.getElementById("ChartDiv").children.length == 0
     console.log(". . . . waiting for operators")
     if (existCharts) {
         var container = document.getElementById("ChartDiv");
-        var containerH2 =  document.createElement('div')
+        var containerH2 = document.createElement('div')
         var waitTest = document.createElement('h2')
         containerH2.className = 'col-sm 12 '
         waitTest.setAttribute('id', 'waitTest')
