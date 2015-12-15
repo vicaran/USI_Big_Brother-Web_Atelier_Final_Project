@@ -51,6 +51,7 @@ var addToDatabase = function (data, d) {
         var parse = JSON.parse(res);
         var nearestFrom = binary_search_recursive(parse,from,0,parse.length - 1)
         var nearestTo = binary_search_recursive(parse,to,0,parse.length - 1)
+        console.log(nearestFrom,nearestTo)
         for(var i = nearestFrom; i < nearestTo - nearestFrom;i++){
 
             toRetrieveData.push(i);
@@ -102,7 +103,7 @@ function binary_search_recursive(a, value, lo, hi) {
     }
     if(value == a[mid].time){
         console.log('already in databae')
-        return a[mid]
+        return mid
     }
     if (a[mid].time > value) {
         return binary_search_recursive(a, value, lo, mid - 1);
