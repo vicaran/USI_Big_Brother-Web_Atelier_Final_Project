@@ -165,7 +165,7 @@ function createIdSelector() {
             var allDivs = document.getElementsByClassName('IdSelector activeIdSelector')
             if (this.className == "IdSelector") {
 
-                this.id = 'activeIdSelector'
+                this.className = this.className + ' activeIdSelector'
                 for (var i = 0; i < allDivs.length; i++) {
                     if (allDivs[i] != this) {
                         allDivs[i].className = "IdSelector"
@@ -173,7 +173,6 @@ function createIdSelector() {
                 }
             }
             else {
-                this.id = '';
                 this.className = "IdSelector"
             }
 
@@ -247,9 +246,8 @@ function handleDatabaseRequest() {
             if (toInp.value == "") {
                 toInp.value = 'Please write a date'
             }
-            if(document.getElementById('activeIdSelector') == undefined) {
-                var count = 0;
-
+            var count = 0;
+            if(document.getElementsByClassName('activeIdSelector').length== 0) {
                 var divs = document.getElementsByClassName('IdSelector')
                 var interval = setInterval(function () {
                     console.log("INTERVAL")
