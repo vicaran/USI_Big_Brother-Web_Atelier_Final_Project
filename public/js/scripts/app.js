@@ -6,6 +6,7 @@
 var tesselIds = {};
 var graphDimension = 10;
 var minor = false;
+var currentId;
 
 Chart.defaults.global.responsive = true;
 
@@ -146,20 +147,24 @@ function createIdSelector() {
     var container = document.getElementById("IdSelectorContainer");
 
     for (var i = 0; i < idArray.length; i++) {
-        var checkIfExist = document.getElementById('c' + idArray[i].toString());
+        //s refers to 'section'
+        var checkIfExist = document.getElementById('s:' + idArray[i].toString());
 
         if (checkIfExist != undefined) {
             continue
         }
         var newDiv = document.createElement('div');
         newDiv.setAttribute('class', "IdSelector");
-        newDiv.setAttribute('id', 'c' + idArray[i].toString());
+        newDiv.setAttribute('id', 's:' + idArray[i].toString());
         var h2 = document.createElement('h2');
         h2.innerHTML = idArray[i];
         newDiv.appendChild(h2);
         newDiv.addEventListener('click', function (e) {
+            currentId = Number(this.id.split(':')[1]);
+            console.log(currentId)
             var allDivs = document.getElementsByClassName('IdSelector activeIdSelector')
             if (this.className == "IdSelector") {
+
                 this.className = this.className + ' activeIdSelector'
                 for (var i = 0; i < allDivs.length; i++) {
                     if (allDivs[i] != this) {
@@ -202,13 +207,14 @@ function sendTimeStampToDB(from, to) {
         header: "browser",
         from: from,
         to: to,
-        id: deviceID
+        id: currentId
     }), 'producer')
 }
 
 function handleDatabaseRequest() {
     var from;
     var to;
+
     $('#since').datetimepicker();
     $('#to').datetimepicker({
         useCurrent: false //Important! See issue #1075
@@ -221,20 +227,63 @@ function handleDatabaseRequest() {
     });
     $("#to").on("dp.change", function (e) {
         var dateToParse = $('#to').datepicker(false, 'getDate')[0].childNodes[1].value
-        to = datePickerToUTC(dategaToParse)
-
+        to = datePickerToUTC(dateToParse)
 
         $('#since').data("DateTimePicker").maxDate(e.date);
     });
 
+    var btn = document.getElementById('reqDBbtn')
+    btn.addEventListener('click', function () {
+        if (from != undefined && to != undefined && currentId != undefined) {
+            sendTimeStampToDB();
+        }
+        else {
+            var sinceInp = document.getElementById('sinceInput')
+            var toInp = document.getElementById('toInput');
+            if (sinceInp.value == "") {
+                sinceInp.value = 'Please write a date'
+            }
+            if (toInp.value == "") {
+                toInp.value = 'Please write a date'
+            }
+            var count = 0;
+            if(document.getElementsByClassName('activeIdSelector').length== 0) {
+                var divs = document.getElementsByClassName('IdSelector')
+                var interval = setInterval(function () {
+                    console.log("INTERVAL")
+                    console.log(count)
+                    for (var i = 0; i < divs.length; i++) {
+                        console.log(count % 2, '***********')
+                        if (count % 2) {
+                            console.log('ACTIVE', count)
+                            divs[i].className += ' activeIdSelector'
+                        }
+                        else {
+                            console.log('NO OACTIVE', count)
+                            divs[i].className = 'IdSelector';
+                        }
+                    }
+                    count++
+                    if (count == 9) {
+                        clearInterval(interval)
+                    }
+
+                }, 100)
+            }
+            throw new Error('write a Date')
+
+        }
+
+    })
 }
+
 
 function waitForStreaming() {
     var existCharts = document.getElementById("ChartDiv").children.length == 0
     console.log(". . . . waiting for operators")
     if (existCharts) {
         var container = document.getElementById("ChartDiv");
-        var containerH2 =  document.createElement('div')
+        var containerH2 = document.createElement('div')
         var waitTest = document.createElement('h2')
         containerH2.className = 'col-sm 12 '
         waitTest.setAttribute('id', 'waitTest')
