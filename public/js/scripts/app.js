@@ -75,7 +75,12 @@ function canvasCreate(id, cont) {
     var div = document.createElement('div')
     var p = document.createElement('p')
     p.innerHTML = id;
-    div.className = "col-sm-6"
+    if(id == 'DB'){
+        div.className = "container"
+    }
+    else {
+        div.className = "col-sm-6"
+    }
     var canvas = document.createElement('canvas')
     canvas.className = "chart"
     canvas.setAttribute('id', id)
