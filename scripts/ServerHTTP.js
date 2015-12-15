@@ -8,32 +8,16 @@ var http = require('http');
 
 const PORT = 15000;
 
-var server = http.createServer(handleRequest);
+function handleRequeste(req, res){
+    console.log('DIOBOIA666');
+    res.end('It Works!! Path Hit: ' + req.url);
+}
+var server = http.createServer(handleRequeste);
 
-server.listen(PORT, function() {
+server.listen(PORT, function(){
+    //Callback triggered when server is successfully listening. Hurray!
     console.log("Server listening on: http://localhost:%s", PORT);
 });
-
-var client = {};
-var _id = 0;
-
-function handleRequest(req, res) {
-    req.on('data', function(data) {
-    	console.log("DIOBOIA", req.url);
-        var stringified = JSON.stringify(req.url);
-        var replaced = stringified.replace('&', ' ');
-
-        // //update date
-        // var date = new Date()
-        // client[ws._id].time = date;
-        // //send data
-        // if (JSON.parse(data) != "ACK") {
-        //     sendAll(data, date);
-        //     k.send(data)
-        // }
-        // });
-    });
-}
 
 
 
