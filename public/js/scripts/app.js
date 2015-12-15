@@ -262,13 +262,13 @@ function handleDatabaseRequest() {
                     }
                 }
                 count ++
-                if(count == 4){
+                if(count == 9){
                     clearInterval(interval)
                 }
                 //for(var i = 0; i < divs.length;i++){
                 //    divs[i].className = 'IdSelector';
                 //}
-            },500)
+            },200)
             throw new Error('write a Date')
 
         }
