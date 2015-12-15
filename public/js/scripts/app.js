@@ -99,12 +99,13 @@ function convertDate(d) {
     return parseDate.split(' ')[4]
 }
 
-//function drawChartDb(id) {
-//    var myLineChart = tesselIds[id].myLineChart
-//    var lineChartData = tesselIds[id].data
-//    var myLine = tesselIds[id].myLine
-//    myLine.Line(lineChartData);
-//}
+function drawChartDb(id) {
+   var myLineChart = tesselIds[id].myLineChart
+   var lineChartData = tesselIds[id].data
+   var myLine = tesselIds[id].myLine
+   myLine.Line(lineChartData);
+}
+
 function updateChart(id, parse) {
     var myLineChart = tesselIds[id].myLineChart
     myLineChart.destroy();
