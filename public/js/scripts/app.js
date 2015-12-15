@@ -6,6 +6,7 @@
 var tesselIds = {};
 var graphDimension = 10;
 var minor = false;
+var currentId;
 
 Chart.defaults.global.responsive = true;
 
@@ -146,20 +147,24 @@ function createIdSelector() {
     var container = document.getElementById("IdSelectorContainer");
 
     for (var i = 0; i < idArray.length; i++) {
-        var checkIfExist = document.getElementById('c' + idArray[i].toString());
+        //s refers to 'section'
+        var checkIfExist = document.getElementById('s' + idArray[i].toString());
 
         if (checkIfExist != undefined) {
             continue
         }
         var newDiv = document.createElement('div');
         newDiv.setAttribute('class', "IdSelector");
-        newDiv.setAttribute('id', 'c' + idArray[i].toString());
+        newDiv.setAttribute('id', 's' + idArray[i].toString());
         var h2 = document.createElement('h2');
         h2.innerHTML = idArray[i];
         newDiv.appendChild(h2);
         newDiv.addEventListener('click', function (e) {
+            currentId = this.id;
+            console.log(currentId)
             var allDivs = document.getElementsByClassName('IdSelector activeIdSelector')
             if (this.className == "IdSelector") {
+
                 this.className = this.className + ' activeIdSelector'
                 for (var i = 0; i < allDivs.length; i++) {
                     if (allDivs[i] != this) {
@@ -242,7 +247,7 @@ function handleDatabaseRequest() {
                 toInp.value = 'Please write a date'
             }
 
-            throw new Error('write in the field')
+            throw new Error('write a Date')
 
         }
     })
