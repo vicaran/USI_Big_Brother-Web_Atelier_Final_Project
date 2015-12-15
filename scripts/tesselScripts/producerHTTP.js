@@ -21,6 +21,7 @@ var send = function(message) {
         console.log('problem with request: ' + e.message);
     });
     // write data to request body
+    console.log('sending', JSON.stringify(message));
     req.end(JSON.stringify(message));
 };
 var ack = function() {
