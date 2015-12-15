@@ -249,12 +249,15 @@ function handleDatabaseRequest() {
             var count = 0;
             var divs = document.getElementsByClassName('IdSelector')
             var interval = setInterval(function () {
+                console.log("INTERVAL")
                 for(var i = 0; i < divs.length;i++){
                     divs.className +=' activeIdSelector'
                 }
                 count ++
+                console.log(count)
             }, 500);
             if(count == 4) {
+                console.log("NO INTERVAL")
                 clearInterval(interval)
             }
             throw new Error('write a Date')
