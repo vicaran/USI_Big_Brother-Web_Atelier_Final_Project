@@ -63,6 +63,11 @@ function getDataChart(data) {
     return lineChartData;
 }
 
+/**
+ * This function create an array that correspond to the state of the light that can be True of False
+ * @param ArrayOfLight
+ * @returns {Array}
+ */
 function parseLight(ArrayOfLight){
     var toReturn = []
     for(var i = 0; i < ArrayOfLight.length; i++){
