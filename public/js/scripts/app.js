@@ -599,7 +599,7 @@ function mainHandler() {
      */
     getProducersIds()
     changeDimension();
-    waitForStreaming();
+    //waitForStreaming();
     handleDatabaseRequest();
 }
 
