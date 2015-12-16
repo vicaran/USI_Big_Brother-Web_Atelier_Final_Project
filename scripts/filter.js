@@ -7,6 +7,8 @@ k.createNode(function (msg) {
     msg = JSON.parse(msg);
     switch (msg.header) {
         case 'GET':
+            console.log('FILTER, GET')
+
             clusterStorage.keys('*',function(res){
                 var parse = JSON.parse(res)
                 console.log("INSIDE DB GET")

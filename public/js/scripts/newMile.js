@@ -9,6 +9,7 @@ k.createNode(function(data) {
             k.send(data);
             break;
         case 'GET':
+            console.log('NEW MILE, GET')
             k.send(data)
             break
         default:
