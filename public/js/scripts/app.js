@@ -294,8 +294,10 @@ function chartHandler(parse) {
  */
 function removeOldChart() {
     var oldChart = document.getElementById('DB')
-    var parent = oldChart.parentNode
-    parent.removeChild(oldChart)
+    if(oldChart != undefined) {
+        var parent = oldChart.parentNode
+        parent.removeChild(oldChart)
+    }
 
 }
 
