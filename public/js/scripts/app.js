@@ -224,15 +224,15 @@ function compressData(parse) {
     };
     for (var i = 0; i < length; i += ratio) {
         if (i % ratio) {
-            toSend.time.push(parse[i].time)
+            toSend.time.push(parse.time[i])
         }
         var light = 0;
         var temperature = 0;
         var volume = 0;
         for (var j = i; j < i+ratio; j++) {
-            light += parse[j].light
-            temperature += parse[j].temperature
-            volume += parse[j].volume
+            light += parse.light[j]
+            temperature += parse.temperature[j]
+            volume += parse.volume[j]
         }
         light /= ratio;
         temperature /= ratio;
