@@ -251,7 +251,7 @@ function chartHandler(parse) {
             canvasCreate('DB', document.getElementById('databaseRow'))
             graphCreate('DB');
             break;
-        case 'GET':
+        case 'DBGET':
             initializedProducersIds(parse.keys)
             createIdSelector()
             break;

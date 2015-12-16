@@ -8,10 +8,6 @@ k.createNode(function(data) {
         case 'browser':
             k.send(data);
             break;
-        case 'GET':
-            console.log('NEW MILE, GET')
-            k.send(data)
-            break
         default:
             k.callFunction("chartHandler", [parse])
     }

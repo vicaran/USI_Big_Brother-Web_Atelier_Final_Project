@@ -12,7 +12,7 @@ k.createNode(function (msg) {
             clusterStorage.keys('*',function(res){
                 console.log(res)
                 var parse = {
-                    header: 'GET',
+                    header: 'DBGET',
                     keys:res
                 }
                 console.log("INSIDE DB GET")
