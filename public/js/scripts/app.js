@@ -213,7 +213,7 @@ function updateChart(id, parse) {
 }
 
 function compressData(parse) {
-    console.log('COMPRESSION')
+    console.log('COMPRESSION',parse)
     var length = parse.time.length
     var ratio = Math.ceil(length / 60)
     var toSend = {
@@ -265,7 +265,7 @@ function parseForDbChart(parse) {
         toSend.temperature.push(parse[i].temperature)
     }
     console.log('LENGH: ', toSend.time.length)
-    if (toSend.time.length >= 60) {
+    if (toSend.time.length > 60) {
         console.log('>60')
         toSend = compressData(toSend)
     }
