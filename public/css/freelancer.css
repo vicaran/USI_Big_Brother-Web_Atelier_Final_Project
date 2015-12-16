@@ -4,68 +4,82 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-.table-condensed > thead > tr > th, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td{
+.table-condensed > thead > tr > th, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td {
     color: black;
 }
-.bootstrap-datetimepicker-widget .timepicker-hour, .bootstrap-datetimepicker-widget .timepicker-minute, .bootstrap-datetimepicker-widget .timepicker-second{
+
+.bootstrap-datetimepicker-widget .timepicker-hour, .bootstrap-datetimepicker-widget .timepicker-minute, .bootstrap-datetimepicker-widget .timepicker-second {
     color: black;
 }
-.bootstrap-datetimepicker-widget table td.day{
+
+.bootstrap-datetimepicker-widget table td.day {
     color: black;
 }
-a, a:hover, a:focus, a:active, a.active{
+
+a, a:hover, a:focus, a:active, a.active {
     color: black;
 }
-#divVolumeColor{  color : rgba(215,54,139,1)
+
+#divVolumeColor {
+    color: rgba(215, 54, 139, 1)
 }
-#legendContainer{
+
+#legendContainer {
     text-align: center;
     display: flex;
     flex-direction: row;
 }
-.legendFlex{
+
+.legendFlex {
     flex: 1;
 
     /*flex-direction: row;*/
 }
 
-#divLightColor{
-    color: rgba(151,187,205,1);
+#divLightColor {
+    color: rgba(151, 187, 205, 1);
 
 }
-#divTemperatureColor{
-    color: rgba(241,85,45,1);
+
+#divTemperatureColor {
+    color: rgba(241, 85, 45, 1);
 }
-#ChartDiv{
+
+#ChartDiv {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.chart{
+
+.chart {
     padding-left: 2px;
     padding-right: 2px;
     flex-basis: 50%;
     flex-grow: 1;
 }
-.btn-default{
+
+.btn-default {
     border-color: white;
     background-color: transparent;
 }
+
 /*.btn:hover{*/
-    /*background-color: white;*/
-    /*color: black;*/
+/*background-color: white;*/
+/*color: black;*/
 /*}*/
-.btn:focus, .btn:hover{
+.btn:focus, .btn:hover {
     border-color: white;
 
     background-color: green;
     color: black;
 }
+
 .datepicker-days {
 
     color: black;
 }
-.flexColumn{
+
+.flexColumn {
     flex-direction: row;
 }
 
@@ -76,7 +90,7 @@ canvas {
 
 #IdSelectorContainer {
     display: flex;
-    
+
     flex-direction: row;
     width: 100%;
     flex-wrap: wrap;
@@ -117,8 +131,7 @@ a:focus,
 a:active,
 a.active {
     outline: 0;
-    color: black
-;
+    color: black;
 }
 
 h1,
@@ -322,16 +335,19 @@ section.success a.active {
 }
 
 @media (max-width: 767px) {
-    .chart{
+    .chart {
         flex-basis: 100%;
 
     }
-    paper-slider{
+
+    paper-slider {
         width: 100%;
     }
-    .borderSections{
+
+    .borderSections {
         min-height: inherit;
     }
+
     section {
         padding: 75px 0;
     }
