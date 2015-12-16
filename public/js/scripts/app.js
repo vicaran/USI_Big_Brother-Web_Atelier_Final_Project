@@ -68,10 +68,10 @@ function getDataChart(data) {
  * @param ArrayOfLight
  * @returns {Array}
  */
-function parseLight(ArrayOfLight){
+function parseLight(ArrayOfLight) {
     var toReturn = []
-    for(var i = 0; i < ArrayOfLight.length; i++){
-        var toPush = ArrayOfLight? 100 : 0;
+    for (var i = 0; i < ArrayOfLight.length; i++) {
+        var toPush = ArrayOfLight ? 100 : 0;
         toReturn.push(toPush)
     }
     return toReturn
@@ -179,7 +179,7 @@ function updateChart(id, parse) {
     var time = convertDate(parse.time)
     var lineChartData = producersIds[id].data
     //push newly received data (time & data)
-    var light = parse.light? 100 : 0
+    var light = parse.light ? 100 : 0
     lineChartData.datasets[0].data.push(parse.volume);
     lineChartData.datasets[1].data.push(light);
     lineChartData.datasets[2].data.push(parse.temperature);
@@ -508,12 +508,16 @@ function waitForStreaming() {
     }
 }
 
-function getProducersIds(){
-    setTimedOut(function(){console.log('waiting for conneting')},3000);
-    console.log('INside GET producers ids')
-    producer_handler(JSON.stringify({
-        header: "GET"
-    }), 'producer')
+function getProducersIds() {
+    console.log('waiting for conneting')
+
+    setTimedOut(function () {
+        console.log('INside GET producers ids')
+        producer_handler(JSON.stringify({
+            header: "GET"
+        }), 'producer')
+
+    }, 3000);
 
 }
 
