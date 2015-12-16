@@ -223,7 +223,7 @@ function compressData(parse) {
         time: []
     };
     for (var i = 0; i < length; i += ratio) {
-        if (i % ratio) {
+        if ((i/ratio) == 0) {
             toSend.time.push(parse.time[i])
         }
         var light = 0;
