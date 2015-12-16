@@ -49,6 +49,7 @@ var addToDatabase = function (data, d) {
         console.log('retrivedata', from, to)
         var toRetrieveData = [];
         var parse = JSON.parse(res);
+        console.log(parse)
         var nearestFrom = binary_search_recursive(parse,from,0,parse.length - 1)
         var nearestTo = binary_search_recursive(parse,to,0,parse.length - 1)
         console.log(nearestFrom,nearestTo)

@@ -382,11 +382,7 @@ function handleDatabaseRequest() {
          */
         if (from != undefined && to != undefined && currentId != undefined) {
             createDBChartHeader(from, to)
-            from = datePickerToUTC(from);
-            to = datePickerToUTC(to);
-            console.log('-------- from: ',from,' to:', to , '---------')
-
-            sendTimeStampToDB(from, to);
+            sendTimeStampToDB(datePickerToUTC(from), datePickerToUTC(to));
         }
         else {
             /*
