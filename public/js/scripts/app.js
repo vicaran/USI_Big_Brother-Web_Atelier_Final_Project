@@ -36,30 +36,30 @@ function getDataChart(data) {
         labels: data == undefined ? [] : convertDateArray(data.time),
         datasets: [{
             label: "volume",
-            fillColor: "rgba(127, 0, 0, 0.2)",
-            strokeColor: "#7f0000",
-            pointColor: "#7f0000",
-            pointStrokeColor: "#7f0000",
+            fillColor: "rgba(215,54,139,0.2)",
+            strokeColor: "rgba(215,54,139,1)",
+            pointColor: "rgba(215,54,139,1)",
+            pointStrokeColor: "rgba(215,54,139,1)",
             pointHighlightFill: "#fff",
-            pointHighlightStroke: "#7f0000",
+            pointHighlightStroke: "rgba(220,220,220,1)",
             data: data == undefined ? [] : data.volume
         }, {
-            label: "light",
-            fillColor: "rgba(38, 70, 109, 0.2)",
-            strokeColor: "#26466D",
-            pointColor: "#26466D",
-            pointStrokeColor: "#26466D",
+            label: "temperature",
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "rgba(151,187,205,1)",
             pointHighlightFill: "#fff",
-            pointHighlightStroke: "#26466D",
+            pointHighlightStroke: "rgba(151,187,205,1)",
             data: data == undefined ? [] : data.temperature
         }, {
-            label: "temperature",
-            fillColor: "rgba(25, 25, 25,0.2)",
-            strokeColor: "#191919",
-            pointColor: "#191919",
-            pointStrokeColor: "#191919",
+            label: "light",
+            fillColor: "rgba(241,85,45,0.2)",
+            strokeColor: "rgba(241,85,45,1)",
+            pointColor: "rgba(241,85,45,1)",
+            pointStrokeColor: "rgba(241,85,45,1)",
             pointHighlightFill: "#fff",
-            pointHighlightStroke: "#191919",
+            pointHighlightStroke: "rgba(241,85,45,1)",
             data: data == undefined ? [] : parseLight(data.light)
         }]
 
