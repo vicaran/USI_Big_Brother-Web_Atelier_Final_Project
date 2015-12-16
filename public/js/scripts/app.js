@@ -344,6 +344,8 @@ function chartHandler(parse) {
             break;
         default:
             if (producersIds[parse._id] == undefined || producersIds[parse._id] == null || producersIds[parse._id].graph == false) {
+                var wait = document.getElementById('gifWait')
+                wait.parentNode.removeChild(wait);
                 putInProducersIds(parse._id);
                 canvasCreate(parse._id)
                 graphCreate(parse._id)

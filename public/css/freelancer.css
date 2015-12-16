@@ -19,7 +19,12 @@
 a, a:hover, a:focus, a:active, a.active {
     color: black;
 }
-
+/*ma chi diavolo ha messo le img dentro script? Complimenti*/
+#gifWait{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../img/www.GIFCreator.me_Su08FL.gif");
+}
 #divVolumeColor {
     color: rgba(215, 54, 139, 1)
 }
@@ -196,13 +201,14 @@ a > i {
 }
 
 #LiveData {
+    height: 100%;
     background-color: #545454;
 }
 
 header {
     text-align: center;
     color: #fff;
-    background-image: url("../js/scripts/img/header.jpg");
+    background-image: url("../img/header.jpg");
     background-size: cover;
     background-repeat: round;
 }
