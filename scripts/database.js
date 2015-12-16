@@ -53,9 +53,8 @@ var addToDatabase = function (data, d) {
         var nearestFrom = binary_search_recursive(parse,from,0,parse.length - 1)
         var nearestTo = binary_search_recursive(parse,to,0,parse.length - 1)
         console.log(nearestFrom,nearestTo)
-        for(var i = nearestFrom; i < nearestTo - nearestFrom;i++){
-            console.log(parse[i])
-            toRetrieveData.push(parse[i]);
+        for(var i = 0; i < nearestTo - nearestFrom;i++){
+            toRetrieveData.push(parse[nearestFrom + i]);
         }
 
         //var oldest = parse[0].time;
