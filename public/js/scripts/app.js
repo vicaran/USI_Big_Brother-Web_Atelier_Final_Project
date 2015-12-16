@@ -180,19 +180,20 @@ function updateLegend() {
     for (var i = 0; i < keys.length; i++) {
         if (producersIds[keys[i]].data != undefined) {
             var dataset = producersIds[keys[i]].data.datasets
+            console.log('dataset', dataset)
             activeProducer++
             lastVolume += (dataset[0][dataset[0].length - 1])
             lastLight += (dataset[1][dataset[1].length - 1])
             lastTemperature += (dataset[2][dataset[2].length - 1])
         }
     }
-
+    console.log(lastLight,lastTemperature,lastVolume)
     var volume = document.getElementById('divVolumeColor')
     var light = document.getElementById('divLightColor')
     var tempereture = document.getElementById('divTemperatureColor')
-    volume.innerHTML += ': ' + lastVolume / activeProducer
-    light.innerHTML += ': ' + lastLight / activeProducer
-    tempereture.innerHTML += ': ' + lastTemperature / activeProducer
+    volume.innerHTML = 'Volume: ' + lastVolume / activeProducer
+    light.innerHTML = 'Light: ' + lastLight / activeProducer
+    tempereture.innerHTML = 'Temperature: ' + lastTemperature / activeProducer
 
 }
 /**
