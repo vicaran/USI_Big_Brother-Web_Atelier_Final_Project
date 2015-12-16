@@ -36,7 +36,7 @@ function getDataChart(data) {
         labels: data == undefined ? [] : convertDateArray(data.time),
         datasets: [{
             label: "volume",
-            fillColor: "rgb(127, 0, 0,0.2)",
+            fillColor: "rgba(127, 0, 0, 0.2)",
             strokeColor: "#7f0000",
             pointColor: "#7f0000",
             pointStrokeColor: "rgba(215,54,139,1)",
@@ -54,7 +54,7 @@ function getDataChart(data) {
             data: data == undefined ? [] : data.temperature
         }, {
             label: "temperature",
-            fillColor: "rgb(25, 25, 25,0.2)",
+            fillColor: "rgba(25, 25, 25,0.2)",
             strokeColor: "#191919",
             pointColor: "#191919",
             pointStrokeColor: "rgba(241,85,45,1)",
