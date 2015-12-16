@@ -11,7 +11,7 @@ var currentId;
  */
 Chart.defaults.global.responsive = true;
 Chart.defaults.global.scaleFontColor= "white";
-Chart.defaults.global.animation = false;
+Chart.defaults.global.animation = true;
 Chart.defaults.global.showTooltips = false;
 
 /*
