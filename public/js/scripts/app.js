@@ -234,7 +234,9 @@ function parseForDbChart(parse) {
  */
 function initializedProducersIds(keys) {
     for (var i = 0; i < keys.length; i++) {
-        producersIds[keys[i]] = {}
+        producersIds[keys[i]] = {
+            graph :false,
+        }
     }
 }
 
@@ -256,7 +258,7 @@ function chartHandler(parse) {
             createIdSelector()
             break;
         default:
-            if (producersIds[parse._id] == undefined || producersIds[parse._id] == null) {
+            if (producersIds[parse._id] == undefined || producersIds[parse._id] == null || producersIds[parse._id].graph == false) {
                 putInProducersIds(parse._id);
                 canvasCreate(parse._id)
                 graphCreate(parse._id)
