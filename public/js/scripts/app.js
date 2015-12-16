@@ -516,15 +516,15 @@ function getProducersIds(){
 
 }
 
-window.onload = function mainHandler() {
+function mainHandler() {
     /*
      functions call
      */
-    console.log('madonna suina')
     getProducersIds()
     changeDimension();
     waitForStreaming();
     handleDatabaseRequest();
 }
 
-//mainHandler()
+
+mainHandler()
