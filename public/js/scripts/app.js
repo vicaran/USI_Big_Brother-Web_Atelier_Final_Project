@@ -175,11 +175,11 @@ function updateLegend() {
     var keys = Object.keys(producersIds)
     var lastVolume = 0
     var lastLight = 0
-    var lastTemperature  = 0
+    var lastTemperature = 0
     var activeProducer = 0;
     for (var i = 0; i < keys.length; i++) {
-        var dataset = producersIds[keys[i]].data.datasets
-        if (dataset != undefined) {
+        if (producersIds[keys[i]].data != undefined) {
+            var dataset = producersIds[keys[i]].data.datasets
             activeProducer++
             lastVolume += (dataset[0][dataset[0].length - 1])
             lastLight += (dataset[1][dataset[1].length - 1])
@@ -190,9 +190,9 @@ function updateLegend() {
     var volume = document.getElementById('divVolumeColor')
     var light = document.getElementById('divLightColor')
     var tempereture = document.getElementById('divTemperatureColor')
-    volume.innerHTML += ': ' + lastVolume/activeProducer
-    light.innerHTML += ': ' + lastLight/activeProducer
-    tempereture.innerHTML += ': ' + lastTemperature/activeProducer
+    volume.innerHTML += ': ' + lastVolume / activeProducer
+    light.innerHTML += ': ' + lastLight / activeProducer
+    tempereture.innerHTML += ': ' + lastTemperature / activeProducer
 
 }
 /**
