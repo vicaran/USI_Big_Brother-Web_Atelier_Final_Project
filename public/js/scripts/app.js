@@ -171,7 +171,30 @@ function convertDate(timestamp) {
     return parseDate.split(' ')[4]
 }
 
+function updateLegend() {
+    var keys = Object.keys(producersIds)
+    var lastVolume = 0
+    var lastLight = 0
+    var lastTemperature  = 0
+    var activeProducer = 0;
+    for (var i = 0; i < keys.length; i++) {
+        var dataset = producersIds[keys[i]].data.datasets
+        if (dataset != undefined) {
+            activeProducer++
+            lastVolume += (dataset[0][dataset[0].length - 1])
+            lastLight += (dataset[1][dataset[1].length - 1])
+            lastTemperature += (dataset[2][dataset[2].length - 1])
+        }
+    }
 
+    var volume = document.getElementById('divVolumeColor')
+    var light = document.getElementById('divLightColor')
+    var tempereture = document.getElementById('divTemperatureColor')
+    volume.innerHTML += ': ' + lastVolume/activeProducer
+    light.innerHTML += ': ' + lastLight/activeProducer
+    tempereture.innerHTML += ': ' + lastTemperature/activeProducer
+
+}
 /**
  * This function updates the current chart
  * @param id The unique producer's id
@@ -180,7 +203,8 @@ function convertDate(timestamp) {
 function updateChart(id, parse) {
     var myLineChart = producersIds[id].myLineChart
     myLineChart.destroy();
-    console.log(producersIds,'____________________________________________')
+    console.log(producersIds, '____________________________________________')
+    updateLegend()
     var time = convertDate(parse.time)
     var lineChartData = producersIds[id].data
     //push newly received data (time & data)
@@ -213,7 +237,7 @@ function updateChart(id, parse) {
 }
 
 function compressData(parse) {
-    console.log('COMPRESSION',parse)
+    console.log('COMPRESSION', parse)
     var length = parse.time.length
     var ratio = Math.ceil(length / 60)
     var toSend = {
@@ -223,14 +247,14 @@ function compressData(parse) {
         time: []
     };
     for (var i = 0; i < length; i += ratio) {
-        if ((i%ratio) == 0) {
+        if ((i % ratio) == 0) {
             toSend.time.push(parse.time[i])
         }
         var light = 0;
         var temperature = 0;
         var volume = 0;
-        for (var j = i; j < i+ratio; j++) {
-            if(j==length){
+        for (var j = i; j < i + ratio; j++) {
+            if (j == length) {
                 break
             }
             light += parse.light[j]
