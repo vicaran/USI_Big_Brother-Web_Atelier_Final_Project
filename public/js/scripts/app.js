@@ -180,7 +180,7 @@ function convertDate(timestamp) {
 function updateChart(id, parse) {
     var myLineChart = producersIds[id].myLineChart
     myLineChart.destroy();
-    console.log(currentId,'____________________________________________')
+    console.log(producersIds,'____________________________________________')
     var time = convertDate(parse.time)
     var lineChartData = producersIds[id].data
     //push newly received data (time & data)
