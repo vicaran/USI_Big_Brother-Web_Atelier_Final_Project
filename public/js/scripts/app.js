@@ -189,12 +189,12 @@ function updateLegend() {
     }
     console.log(lastLight,lastTemperature,lastVolume)
     var volume = document.getElementById('divVolumeColor')
-    if(volume = 'NaN'){return}
+    if(volume == 'NaN'){return}
     var light = document.getElementById('divLightColor')
-    var tempereture = document.getElementById('divTemperatureColor')
+    var temperature = document.getElementById('divTemperatureColor')
     volume.innerHTML = 'Volume: ' + (lastVolume / activeProducer).toFixed(2)
     light.innerHTML = 'Light: ' + (lastLight / activeProducer).toFixed(2)
-    tempereture.innerHTML = 'Temperature: ' + (lastTemperature / activeProducer).toFixed(2)
+    temperature.innerHTML = 'Temperature: ' + (lastTemperature / activeProducer).toFixed(2)
 
 }
 /**
