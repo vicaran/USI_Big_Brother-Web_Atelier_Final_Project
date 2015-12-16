@@ -10,7 +10,7 @@ var currentId;
  Chart beavihor
  */
 Chart.defaults.global.responsive = true;
-Chart.defaults.global.scaleFontColor= "white";
+Chart.defaults.global.scaleFontColor = "white";
 Chart.defaults.global.animation = false;
 //Chart.defaults.global.animationEasing = "linear";
 
@@ -212,12 +212,45 @@ function updateChart(id, parse) {
 
 }
 
+function compressData(parse) {
+    var length = parse[0].time.length
+    var ratio = Math.ceil(length / 60)
+    var toSend = {
+        volume: [],
+        light: [],
+        temperature: [],
+        time: []
+    };
+    for (var i = 0; i < length; i += ratio) {
+        if (i % ratio) {
+            toSend.time.push(parse[i].time)
+        }
+        var light = 0;
+        var temperature = 0;
+        var volume = 0;
+        for (var j = 0; j < length; j++) {
+            light += parse[j].light
+            temperature += parse[j].temperature
+            volume += parse[j].volume
+        }
+        light/=ratio;
+        temperature/=ratio;
+        volume/=ratio;
+        toSend.light.push(light)
+        toSend.temperature.push(temperature)
+        toSend.volume.push(volume)
+
+    }
+    return toSend
+}
+
 /**
  * This function parse the Database answer in order to create a new set of data for a chart
  * @param parse The new producer's data
  * @returns {{volume: Array, light: Array, temperature: Array, time: Array}} An json that will be use in putInProducersIds
  */
 function parseForDbChart(parse) {
+
     var toSend = {
         volume: [],
         light: [],
@@ -230,6 +263,9 @@ function parseForDbChart(parse) {
         toSend.light.push(parse[i].light)
         toSend.temperature.push(parse[i].temperature)
     }
+    if (parse[0].time.length > 60) {
+        toSend = compressData(toSend)
+    }
     return toSend;
 }
 
@@ -240,7 +276,7 @@ function parseForDbChart(parse) {
 function initializedProducersIds(keys) {
     for (var i = 0; i < keys.length; i++) {
         producersIds[keys[i]] = {
-            graph :false,
+            graph: false
         }
     }
 }
@@ -253,7 +289,8 @@ function chartHandler(parse) {
     switch (parse.header) {
         case 'database':
             removeOldChart()
-            putInProducersIds('DB', parseForDbChart(parse.data))
+            var data = parseForDbChart(parse.data);
+            putInProducersIds('DB', data)
             canvasCreate('DB', document.getElementById('databaseRow'))
             graphCreate('DB');
             break;
@@ -295,7 +332,7 @@ function chartHandler(parse) {
  */
 function removeOldChart() {
     var oldChart = document.getElementById('DB')
-    if(oldChart != undefined) {
+    if (oldChart != undefined) {
         var parent = oldChart.parentNode
         parent.removeChild(oldChart)
     }
@@ -450,7 +487,7 @@ function handleDatabaseRequest() {
          */
         if (from != undefined && to != undefined && currentId != undefined) {
             //createDBChartHeader(from, to)
-            console.log(from,to,'***(*(&**&(^*%^&^*%&^$&*$*&(%)^(*(%')
+            console.log(from, to, '***(*(&**&(^*%^&^*%&^$&*$*&(%)^(*(%')
             sendTimeStampToDB(datePickerToUTC(from), datePickerToUTC(to));
         }
         else {
