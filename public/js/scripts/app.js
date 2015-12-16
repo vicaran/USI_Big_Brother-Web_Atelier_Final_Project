@@ -252,7 +252,7 @@ function chartHandler(parse) {
             graphCreate('DB');
             break;
         case 'GET':
-            initializedProducersIds(parse)
+            initializedProducersIds(parse.keys)
             createIdSelector()
             break;
         default:
