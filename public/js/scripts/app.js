@@ -207,7 +207,7 @@ function parseForDbChart(parse) {
 function chartHandler(parse) {
     console.log(parse)
     if (parse.header == 'database') {
-        console.log(parse,'diocane')
+        console.log(parse, 'diocane')
         removeOldChart()
         putInProducersIds('DB', parseForDbChart(parse.data))
         canvasCreate('DB', document.getElementById('databaseRow'))
@@ -230,11 +230,9 @@ function chartHandler(parse) {
  */
 function removeOldChart() {
     var oldChart = document.getElementById('DB')
-    if (oldChart != undefined) {
-        var parent= oldChart.parentNode
-        for(var i = 0; i < parent.childElementCount; i ++){
-            parent.removeChild(parent.children[i])
-    }}
+    var parent = oldChart.parentNode
+    parent.removeChild(oldChart)
+
 }
 /**
  * This functions create the producers selectors that you can find in Database section in the UBB home page
@@ -342,13 +340,13 @@ function parseDatePicker(dateFromDatapicker) {
  * @param {Number} from The time of the first data that we want
  * @param {Number} to The time of the last data that we want
  */
-function createDBChartHeader(from, to) {
-    var chartHeader = document.createElement('h2')
-    chartHeader.innerHTML = parseDatePicker(from) + ' - ' + parseDatePicker(to)
-    chartHeader.className = 'text-center';
-    document.getElementById('dbChart').appendChild(chartHeader)
-
-}
+//function createDBChartHeader(from, to) {
+//    var chartHeader = document.createElement('h2')
+//    chartHeader.innerHTML = parseDatePicker(from) + ' - ' + parseDatePicker(to)
+//    chartHeader.className = 'text-center';
+//    document.getElementById('dbChart').appendChild(chartHeader)
+//
+//}
 
 /**
  * This function handle the request that we want to do
