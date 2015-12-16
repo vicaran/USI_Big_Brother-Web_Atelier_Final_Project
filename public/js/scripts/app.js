@@ -56,13 +56,21 @@ function getDataChart(data) {
             pointStrokeColor: "rgba(241,85,45,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(241,85,45,1)",
-            data: data == undefined ? [] : data.light
+            data: data == undefined ? [] : parseLight(data.light)
         }]
 
     };
     return lineChartData;
 }
 
+function parseLight(ArrayOfLight){
+    var toReturn = []
+    for(var i = 0; i < ArrayOfLight.length; i++){
+        var toPush = ArrayOfLight? 100 : 0;
+        toReturn.push(toPush)
+    }
+    return toReturn
+}
 
 /**
  * This function converts an array of time stamp in the form of hh:mm:ss
@@ -166,8 +174,9 @@ function updateChart(id, parse) {
     var time = convertDate(parse.time)
     var lineChartData = producersIds[id].data
     //push newly received data (time & data)
+    var light = parse.light? 100 : 0
     lineChartData.datasets[0].data.push(parse.volume);
-    lineChartData.datasets[1].data.push(parse.light);
+    lineChartData.datasets[1].data.push(light);
     lineChartData.datasets[2].data.push(parse.temperature);
     if (minor) {
         for (var i = 0; i < (lineChartData.labels.length - graphDimension); i++) {
