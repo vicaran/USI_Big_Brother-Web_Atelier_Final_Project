@@ -10,6 +10,7 @@ var currentId;
  Chart beavihor
  */
 Chart.defaults.global.responsive = true;
+Chart.defaults.global.scaleFontColor= "white";
 Chart.defaults.global.animation = false;
 Chart.defaults.global.showTooltips = false;
 
