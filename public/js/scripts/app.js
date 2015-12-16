@@ -515,7 +515,7 @@ function getProducersIds(){
 
 }
 
-function mainHandler() {
+window.onload = function mainHandler() {
     /*
      functions call
      */
@@ -525,4 +525,4 @@ function mainHandler() {
     handleDatabaseRequest();
 }
 
-mainHandler()
+//mainHandler()
