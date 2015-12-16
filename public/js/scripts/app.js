@@ -189,6 +189,7 @@ function updateLegend() {
     }
     console.log(lastLight,lastTemperature,lastVolume)
     var volume = document.getElementById('divVolumeColor')
+    if(volume = 'NaN'){return}
     var light = document.getElementById('divLightColor')
     var tempereture = document.getElementById('divTemperatureColor')
     volume.innerHTML = 'Volume: ' + (lastVolume / activeProducer).toFixed(2)
@@ -205,7 +206,6 @@ function updateChart(id, parse) {
     var myLineChart = producersIds[id].myLineChart
     myLineChart.destroy();
     console.log(producersIds, '____________________________________________')
-    updateLegend()
     var time = convertDate(parse.time)
     var lineChartData = producersIds[id].data
     //push newly received data (time & data)
@@ -221,6 +221,7 @@ function updateChart(id, parse) {
             lineChartData.labels.shift();
         }
     }
+    updateLegend()
 
     lineChartData.labels.push(time);
     //if longer than graphDimension, remove the first one
