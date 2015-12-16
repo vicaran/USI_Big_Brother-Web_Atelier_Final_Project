@@ -340,6 +340,12 @@ section.success a.active {
 }
 
 @media (max-width: 767px) {
+    #gifWait{
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-image: url("../js/scripts/img/www.GIFCreator.me_Su08FL.gif");
+    }
     .chart {
         flex-basis: 100%;
 
