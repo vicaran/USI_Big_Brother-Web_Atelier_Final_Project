@@ -193,10 +193,10 @@ function updateLegend() {
     var light = document.getElementById('divLightColor')
     var temperature = document.getElementById('divTemperatureColor')
     var meanVolume =  (lastVolume / activeProducer).toFixed(2)
-    var meanlight =  (lastlight / activeProducer).toFixed(2)
+    var meanLight =  (lastLight / activeProducer).toFixed(2)
     var meanTemperature =  (lastTemperature / activeProducer).toFixed(2)
     volume.innerHTML = 'Volume: ' + meanVolume
-    light.innerHTML = 'Light: ' + meanlight
+    light.innerHTML = 'Light: ' + meanLight
     temperature.innerHTML = 'Temperature: ' + meanTemperature
 
 }
