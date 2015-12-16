@@ -229,14 +229,14 @@ function compressData(parse) {
         var light = 0;
         var temperature = 0;
         var volume = 0;
-        for (var j = i; j < length; j++) {
+        for (var j = i; j < i+ratio; j++) {
             light += parse[j].light
             temperature += parse[j].temperature
             volume += parse[j].volume
         }
-        light/=ratio;
-        temperature/=ratio;
-        volume/=ratio;
+        light /= ratio;
+        temperature /= ratio;
+        volume /= ratio;
         toSend.light.push(light)
         toSend.temperature.push(temperature)
         toSend.volume.push(volume)
@@ -264,7 +264,7 @@ function parseForDbChart(parse) {
         toSend.light.push(parse[i].light)
         toSend.temperature.push(parse[i].temperature)
     }
-    console.log('LENGH: ',toSend.time.length )
+    console.log('LENGH: ', toSend.time.length)
     if (toSend.time.length >= 60) {
         console.log('>60')
         toSend = compressData(toSend)
