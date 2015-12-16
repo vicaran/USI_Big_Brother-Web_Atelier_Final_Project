@@ -21,6 +21,7 @@ a, a:hover, a:focus, a:active, a.active {
 }
 /*ma chi diavolo ha messo le img dentro script? Complimenti*/
 #gifWait{
+    margin-top: 5px;
     height: 80%;
     background-repeat: no-repeat;
     background-image: url("../js/scripts/img/www.GIFCreator.me_Su08FL.gif");
@@ -74,11 +75,13 @@ a, a:hover, a:focus, a:active, a.active {
 /*}*/
 .btn:focus, .btn:hover {
     border-color: white;
-
-    background-color: green;
+    background-color: white;
     color: black;
 }
+#reqDBbtn:focus,#reqDBbtn:hover {
+    background-color: green;
 
+}
 .datepicker-days {
 
     color: black;
@@ -340,12 +343,7 @@ section.success a.active {
 }
 
 @media (max-width: 767px) {
-    #gifWait{
-        height: 100%;
-        width: 100%;
-        background-repeat: no-repeat;
-        background-image: url("../js/scripts/img/www.GIFCreator.me_Su08FL.gif");
-    }
+
     .chart {
         flex-basis: 100%;
 
