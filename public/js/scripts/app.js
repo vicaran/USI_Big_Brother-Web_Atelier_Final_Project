@@ -69,9 +69,9 @@ function getDataChart(data) {
  * @param {Array} ArrayOfTimeSpamp an array formed by timestamp
  * @returns {Array} The new converted array
  */
-function convertDateArray(ArrayOfTimeSpamp) {
+function convertDateArray(ArrayOfTimeSpamp){
     var toReturn = []
-    for (var i = 0; i < ArrayOfTimeSpamp.length; i++) {
+    for(var i = 0; i < ArrayOfTimeSpamp.length;i++){
         toReturn.push(convertDate(ArrayOfTimeSpamp[i]))
     }
     return toReturn;
@@ -169,14 +169,14 @@ function updateChart(id, parse) {
     lineChartData.datasets[0].data.push(parse.volume);
     lineChartData.datasets[1].data.push(parse.light);
     lineChartData.datasets[2].data.push(parse.temperature);
-    //if (minor) {
-    //    for (var i = 0; i < (lineChartData.labels.length - graphDimension); i++) {
-    //        lineChartData.datasets[0].data.shift()
-    //        lineChartData.datasets[1].data.shift()
-    //        lineChartData.datasets[2].data.shift()
-    //        lineChartData.labels.shift();
-    //    }
-    //}
+    if (minor) {
+        for (var i = 0; i < (lineChartData.labels.length - graphDimension); i++) {
+            lineChartData.datasets[0].data.shift()
+            lineChartData.datasets[1].data.shift()
+            lineChartData.datasets[2].data.shift()
+            lineChartData.labels.shift();
+        }
+    }
 
     lineChartData.labels.push(time);
     //if longer than graphDimension, remove the first one
@@ -218,8 +218,8 @@ function parseForDbChart(parse) {
  * This function initialized all the keys form the database
  * @param keys The keys from the database
  */
-function initializedProducersIds(keys) {
-    for (var i = 0; i < keys.length; i++) {
+function initializedProducersIds(keys){
+    for(var i = 0; i < keys.length ; i++){
         producersIds[keys[i]] = {}
     }
 }
@@ -242,11 +242,11 @@ function chartHandler(parse) {
             createIdSelector()
             break;
         default:
-            if (producersIds[parse._id] == undefined || producersIds[parse._id] == null) {
-                putInProducersIds(parse._id);
-                canvasCreate(parse._id)
-                graphCreate(parse._id)
-            }
+                if (producersIds[parse._id] == undefined || producersIds[parse._id] == null) {
+
+            putInProducersIds(parse._id);
+            canvasCreate(parse._id)
+            graphCreate(parse._id)
             updateChart(parse._id, parse);
 
 
@@ -331,25 +331,6 @@ function createIdSelector() {
 }
 
 /**
- * This function resize the Chart after a change in the slider bar
- */
-function resizeChart() {
-
-    var keys = Object.keys(producersIds)
-    for (var j = 0; j < keys.length; j++) {
-        var lineChartData = producersIds[keys[j]].data
-
-        for (var i = 0; i < (lineChartData.labels.length - graphDimension); i++) {
-            lineChartData.datasets[0].data.shift()
-            lineChartData.datasets[1].data.shift()
-            lineChartData.datasets[2].data.shift()
-            lineChartData.labels.shift();
-
-        }
-    }
-}
-
-/**
  * This function is the handler for the slider
  */
 function changeDimension() {
@@ -358,7 +339,6 @@ function changeDimension() {
         minor = event.target.value < graphDimension
         console.log('minor: ', minor)
         graphDimension = event.target.value;
-        resizeChart()
         console.log(event.target.value);
     });
 }
