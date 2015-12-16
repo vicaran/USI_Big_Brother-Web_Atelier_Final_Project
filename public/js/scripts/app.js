@@ -171,6 +171,9 @@ function convertDate(timestamp) {
     return parseDate.split(' ')[4]
 }
 
+/**
+ * This function calculate the mean of the last value
+ */
 function updateLegend() {
     var keys = Object.keys(producersIds)
     var lastVolume = 0
@@ -241,7 +244,11 @@ function updateChart(id, parse) {
     createIdSelector()
 
 }
-
+/**
+ * This function compress the data in a ratio delta
+ * @param parse The parsed json data
+ * @returns {{volume: Array, light: Array, temperature: Array, time: Array}}
+ */
 function compressData(parse) {
     console.log('COMPRESSION', parse)
     var length = parse.time.length
@@ -343,24 +350,6 @@ function chartHandler(parse) {
 
             }
             updateChart(parse._id, parse);
-
-        //if (parse.header == 'database') {
-        //    console.log(parse, 'diocane')
-        //    removeOldChart()
-        //    putInProducersIds('DB', parseForDbChart(parse.data))
-        //    canvasCreate('DB', document.getElementById('databaseRow'))
-        //    graphCreate('DB');
-        //    //drawChartDb('DB')
-        //}
-        //else {
-        //    //check if data exists
-        //    if (producersIds[parse._id] == undefined || producersIds[parse._id] == null) {
-        //        putInProducersIds(parse._id);
-        //        canvasCreate(parse._id)
-        //        graphCreate(parse._id)
-        //    }
-        //    updateChart(parse._id, parse);
-        //}
 
     }
 }
