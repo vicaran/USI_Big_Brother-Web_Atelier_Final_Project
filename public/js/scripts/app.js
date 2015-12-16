@@ -294,6 +294,7 @@ function chartHandler(parse) {
             removeOldChart()
             var data = parseForDbChart(parse.data);
             putInProducersIds('DB', data)
+            console.log('DATA in dictonary', producersIds['DB'].data)
             canvasCreate('DB', document.getElementById('databaseRow'))
             graphCreate('DB');
             break;
