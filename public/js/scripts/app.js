@@ -247,10 +247,10 @@ function chartHandler(parse) {
                 putInProducersIds(parse._id);
                 canvasCreate(parse._id)
                 graphCreate(parse._id)
-                updateChart(parse._id, parse);
-
 
             }
+            updateChart(parse._id, parse);
+
         //if (parse.header == 'database') {
         //    console.log(parse, 'diocane')
         //    removeOldChart()
