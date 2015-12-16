@@ -21,7 +21,7 @@ a, a:hover, a:focus, a:active, a.active {
 }
 /*ma chi diavolo ha messo le img dentro script? Complimenti*/
 #gifWait{
-    height: 100%;
+    height: 80%;
     background-repeat: no-repeat;
     background-image: url("../img/www.GIFCreator.me_Su08FL.gif");
 }
