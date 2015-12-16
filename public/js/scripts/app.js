@@ -45,12 +45,12 @@ function getDataChart(data) {
             data: data == undefined ? [] : data.volume
         }, {
             label: "light",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "rgba(151,187,205,1)",
+            fillColor: "rgba(38, 70, 109, 0.2)",
+            strokeColor: "#26466D",
+            pointColor: "#26466D",
+            pointStrokeColor: "#26466D",
             pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
+            pointHighlightStroke: "#26466D",
             data: data == undefined ? [] : data.temperature
         }, {
             label: "temperature",
