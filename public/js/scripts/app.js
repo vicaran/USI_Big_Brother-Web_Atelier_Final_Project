@@ -191,9 +191,9 @@ function updateLegend() {
     var volume = document.getElementById('divVolumeColor')
     var light = document.getElementById('divLightColor')
     var tempereture = document.getElementById('divTemperatureColor')
-    volume.innerHTML = 'Volume: ' + lastVolume / activeProducer
-    light.innerHTML = 'Light: ' + lastLight / activeProducer
-    tempereture.innerHTML = 'Temperature: ' + lastTemperature / activeProducer
+    volume.innerHTML = 'Volume: ' + (lastVolume / activeProducer).toFixed(2)
+    light.innerHTML = 'Light: ' + (lastLight / activeProducer).toFixed(2)
+    tempereture.innerHTML = 'Temperature: ' + (lastTemperature / activeProducer).toFixed(2)
 
 }
 /**
