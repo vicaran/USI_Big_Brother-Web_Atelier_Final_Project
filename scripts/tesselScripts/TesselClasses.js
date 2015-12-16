@@ -129,7 +129,7 @@ function SenderTessel(id, moduleId) {
 
     this.gatherLight = function (lightPin) {
         var rawLight = lightPin.read() * lightPin.resolution;
-        console.log(rawLight)
+        // console.log(rawLight)
         switch (this.module) {
             case 1:
                 return rawLight > 550;
@@ -147,7 +147,6 @@ function SenderTessel(id, moduleId) {
      */
     this.gatherSound = function (pin) {
         var volume = 0.0; // peak-to-peak level
-
         var signalMax = 0;
         var signalMin = 1024;
         var sampleWindow = 50;
