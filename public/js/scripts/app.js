@@ -203,6 +203,8 @@ function updateLegend() {
  * @param parse The new producer's data
  */
 function updateChart(id, parse) {
+    updateLegend()
+
     var myLineChart = producersIds[id].myLineChart
     myLineChart.destroy();
     console.log(producersIds, '____________________________________________')
@@ -221,7 +223,6 @@ function updateChart(id, parse) {
             lineChartData.labels.shift();
         }
     }
-    updateLegend()
 
     lineChartData.labels.push(time);
     //if longer than graphDimension, remove the first one
