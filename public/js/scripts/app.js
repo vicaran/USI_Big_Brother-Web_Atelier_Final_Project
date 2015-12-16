@@ -214,7 +214,7 @@ function updateChart(id, parse) {
 
 function compressData(parse) {
     console.log('COMPRESSION')
-    var length = parse[0].time.length
+    var length = parse.time.length
     var ratio = Math.ceil(length / 60)
     var toSend = {
         volume: [],
