@@ -20,7 +20,7 @@ var senderNodejs = function (_id,n) {
                 _id: self._id,
                 volume: self.n++,
                 light: levelLight,
-                temperature: 0,
+                temperature: self.n++ * 10 % 150,
                 time: Date.now()
             };
             self.ws.send(data)
