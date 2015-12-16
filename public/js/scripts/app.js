@@ -517,7 +517,7 @@ function getProducersIds() {
             header: "GET"
         }), 'producer')
 
-    }, 3000);
+    }, 5000);
 
 }
 
