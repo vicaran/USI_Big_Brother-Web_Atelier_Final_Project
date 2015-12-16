@@ -355,6 +355,8 @@ var sortByKey = function(array, key) {
     });
 }
 
+
+
 /*
 	[INTERNAL FUNCTION]
 	Returns a boolean indicating if the the passed value is a JSON or not.
@@ -370,4 +372,12 @@ var isJSON = function(value) {
     }else{
     	return false;
     }
+}
+
+exports.keys = function(key, cb){
+	client.keys(key, function(error,res){
+		if(typeof cb == "function") {
+			cb(res);
+		}
+	});
 }
