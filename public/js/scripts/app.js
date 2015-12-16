@@ -192,9 +192,12 @@ function updateLegend() {
     if(volume == 'NaN'){return}
     var light = document.getElementById('divLightColor')
     var temperature = document.getElementById('divTemperatureColor')
-    volume.innerHTML = 'Volume: ' + (lastVolume / activeProducer).toFixed(2)
-    light.innerHTML = 'Light: ' + (lastLight / activeProducer).toFixed(2)
-    temperature.innerHTML = 'Temperature: ' + (lastTemperature / activeProducer).toFixed(2)
+    var meanVolume =  (lastVolume / activeProducer).toFixed(2)
+    var meanlight =  (lastlight / activeProducer).toFixed(2)
+    var meanTemperature =  (lastTemperature / activeProducer).toFixed(2)
+    volume.innerHTML = 'Volume: ' + meanVolume
+    light.innerHTML = 'Light: ' + meanlight
+    temperature.innerHTML = 'Temperature: ' + meanTemperature
 
 }
 /**
