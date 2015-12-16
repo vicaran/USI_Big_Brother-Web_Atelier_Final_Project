@@ -205,7 +205,9 @@ function parseForDbChart(parse) {
  * @param parse The new producer's data
  */
 function chartHandler(parse) {
+    console.log(parse)
     if (parse.header == 'database') {
+        console.log(parse,'diocane')
         removeOldChart()
         putInProducersIds('DB', parseForDbChart(parse.data))
         canvasCreate('DB', document.getElementById('databaseRow'))
