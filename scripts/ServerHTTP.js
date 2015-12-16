@@ -10,7 +10,7 @@ const PORT = 15000;
 
 function handleRequeste(req, res){
     console.log('DIOBOIA666: ', req.url);
-    res.end('It Works!! Path Hit: ' + req.url);
+    res.end();
 }
 var server = http.createServer(handleRequeste);
 

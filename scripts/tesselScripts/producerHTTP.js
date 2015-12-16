@@ -11,7 +11,7 @@ var url = hostname + port.toString();
 
 var send = function(message) {
     setImmediate(function start() {
-        http.get("http://neha.inf.unisi.ch:15000/" + message.toString(), function(res) {
+        http.get("http://neha.inf.unisi.ch:15000/" + message, function(res) {
             var bufs = [];
             res.on('data', function(data) {
                 bufs.push(new Buffer(data));
