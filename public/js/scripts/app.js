@@ -511,7 +511,7 @@ function waitForStreaming() {
 function getProducersIds() {
     console.log('waiting for conneting')
 
-    setTimedOut(function () {
+    setTimeout(function () {
         console.log('INside GET producers ids')
         producer_handler(JSON.stringify({
             header: "GET"
