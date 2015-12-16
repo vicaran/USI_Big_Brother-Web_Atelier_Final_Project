@@ -230,6 +230,9 @@ function compressData(parse) {
         var temperature = 0;
         var volume = 0;
         for (var j = i; j < i+ratio; j++) {
+            if(j==length){
+                return
+            }
             light += parse.light[j]
             temperature += parse.temperature[j]
             volume += parse.volume[j]
