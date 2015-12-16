@@ -257,7 +257,6 @@ function chartHandler(parse) {
             break;
         default:
             if (producersIds[parse._id] == undefined || producersIds[parse._id] == null) {
-
                 putInProducersIds(parse._id);
                 canvasCreate(parse._id)
                 graphCreate(parse._id)
@@ -509,9 +508,21 @@ function waitForStreaming() {
     }
 }
 
-/*
- functions call
- */
-changeDimension();
-waitForStreaming()
-handleDatabaseRequest();
+function getProducersIds(){
+    producer_handler(JSON.stringify({
+        header: "GET"
+    }), 'producer')
+
+}
+
+function mainHandler() {
+    /*
+     functions call
+     */
+    getProducersIds()
+    changeDimension();
+    waitForStreaming();
+    handleDatabaseRequest();
+}
+
+mainHandler()
