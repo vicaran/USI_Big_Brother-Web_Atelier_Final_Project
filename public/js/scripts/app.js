@@ -39,9 +39,9 @@ function getDataChart(data) {
             fillColor: "rgba(127, 0, 0, 0.2)",
             strokeColor: "#7f0000",
             pointColor: "#7f0000",
-            pointStrokeColor: "rgba(215,54,139,1)",
+            pointStrokeColor: "#7f0000",
             pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
+            pointHighlightStroke: "#7f0000",
             data: data == undefined ? [] : data.volume
         }, {
             label: "light",
@@ -57,9 +57,9 @@ function getDataChart(data) {
             fillColor: "rgba(25, 25, 25,0.2)",
             strokeColor: "#191919",
             pointColor: "#191919",
-            pointStrokeColor: "rgba(241,85,45,1)",
+            pointStrokeColor: "#191919",
             pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(241,85,45,1)",
+            pointHighlightStroke: "#191919",
             data: data == undefined ? [] : parseLight(data.light)
         }]
 
