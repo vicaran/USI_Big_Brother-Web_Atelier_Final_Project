@@ -249,7 +249,6 @@ function initializedProducersIds(keys) {
  * @param parse The new producer's data
  */
 function chartHandler(parse) {
-    console.log(parse)
     switch (parse.header) {
         case 'database':
             removeOldChart()
@@ -448,6 +447,7 @@ function handleDatabaseRequest() {
          */
         if (from != undefined && to != undefined && currentId != undefined) {
             //createDBChartHeader(from, to)
+            console.log(from,to,'***(*(&**&(^*%^&^*%&^$&*$*&(%)^(*(%')
             sendTimeStampToDB(datePickerToUTC(from), datePickerToUTC(to));
         }
         else {
