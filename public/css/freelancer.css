@@ -16,7 +16,26 @@
 a, a:hover, a:focus, a:active, a.active{
     color: black;
 }
+#divVolumeColor{  color : rgba(215,54,139,1)
+}
+#legendContainer{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+.legendFlex{
+    flex: 1;
 
+    /*flex-direction: row;*/
+}
+
+#divLightColor{
+    color: rgba(151,187,205,1);
+
+}
+#divTemperatureColor{
+    color: rgba(241,85,45,1);
+}
 #ChartDiv{
     display: flex;
     flex-direction: row;
@@ -201,7 +220,7 @@ header .intro-text .skills {
 .borderSections {
     border-bottom: 2px solid white;
 
-    min-height: 600px;
+    /*min-height: 600px;*/
 }
 
 #Database {

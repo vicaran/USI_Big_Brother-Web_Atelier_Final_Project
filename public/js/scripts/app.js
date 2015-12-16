@@ -11,8 +11,8 @@ var currentId;
  */
 Chart.defaults.global.responsive = true;
 Chart.defaults.global.scaleFontColor= "white";
-Chart.defaults.global.animation = true;
-Chart.defaults.global.animationEasing = "linear";
+Chart.defaults.global.animation = false;
+//Chart.defaults.global.animationEasing = "linear";
 
 
 Chart.defaults.global.showTooltips = false;
@@ -36,15 +36,15 @@ function getDataChart(data) {
         labels: data == undefined ? [] : convertDateArray(data.time),
         datasets: [{
             label: "volume",
-            fillColor: "rgba(215,54,139,0.2)",
-            strokeColor: "rgba(215,54,139,1)",
-            pointColor: "rgba(215,54,139,1)",
+            fillColor: "rgb(127, 0, 0,0.2)",
+            strokeColor: "#7f0000",
+            pointColor: "#7f0000",
             pointStrokeColor: "rgba(215,54,139,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
             data: data == undefined ? [] : data.volume
         }, {
-            label: "temperature",
+            label: "light",
             fillColor: "rgba(151,187,205,0.2)",
             strokeColor: "rgba(151,187,205,1)",
             pointColor: "rgba(151,187,205,1)",
@@ -53,10 +53,10 @@ function getDataChart(data) {
             pointHighlightStroke: "rgba(151,187,205,1)",
             data: data == undefined ? [] : data.temperature
         }, {
-            label: "light",
-            fillColor: "rgba(241,85,45,0.2)",
-            strokeColor: "rgba(241,85,45,1)",
-            pointColor: "rgba(241,85,45,1)",
+            label: "temperature",
+            fillColor: "rgb(25, 25, 25,0.2)",
+            strokeColor: "#191919",
+            pointColor: "#191919",
             pointStrokeColor: "rgba(241,85,45,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(241,85,45,1)",
