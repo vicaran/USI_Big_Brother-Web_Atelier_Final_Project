@@ -69,9 +69,9 @@ function getDataChart(data) {
  * @param {Array} ArrayOfTimeSpamp an array formed by timestamp
  * @returns {Array} The new converted array
  */
-function convertDateArray(ArrayOfTimeSpamp){
+function convertDateArray(ArrayOfTimeSpamp) {
     var toReturn = []
-    for(var i = 0; i < ArrayOfTimeSpamp.length;i++){
+    for (var i = 0; i < ArrayOfTimeSpamp.length; i++) {
         toReturn.push(convertDate(ArrayOfTimeSpamp[i]))
     }
     return toReturn;
@@ -218,8 +218,8 @@ function parseForDbChart(parse) {
  * This function initialized all the keys form the database
  * @param keys The keys from the database
  */
-function initializedProducersIds(keys){
-    for(var i = 0; i < keys.length ; i++){
+function initializedProducersIds(keys) {
+    for (var i = 0; i < keys.length; i++) {
         producersIds[keys[i]] = {}
     }
 }
@@ -242,33 +242,34 @@ function chartHandler(parse) {
             createIdSelector()
             break;
         default:
-                if (producersIds[parse._id] == undefined || producersIds[parse._id] == null) {
+            if (producersIds[parse._id] == undefined || producersIds[parse._id] == null) {
 
-            putInProducersIds(parse._id);
-            canvasCreate(parse._id)
-            graphCreate(parse._id)
-            updateChart(parse._id, parse);
+                putInProducersIds(parse._id);
+                canvasCreate(parse._id)
+                graphCreate(parse._id)
+                updateChart(parse._id, parse);
 
+
+            }
+        //if (parse.header == 'database') {
+        //    console.log(parse, 'diocane')
+        //    removeOldChart()
+        //    putInProducersIds('DB', parseForDbChart(parse.data))
+        //    canvasCreate('DB', document.getElementById('databaseRow'))
+        //    graphCreate('DB');
+        //    //drawChartDb('DB')
+        //}
+        //else {
+        //    //check if data exists
+        //    if (producersIds[parse._id] == undefined || producersIds[parse._id] == null) {
+        //        putInProducersIds(parse._id);
+        //        canvasCreate(parse._id)
+        //        graphCreate(parse._id)
+        //    }
+        //    updateChart(parse._id, parse);
+        //}
 
     }
-    //if (parse.header == 'database') {
-    //    console.log(parse, 'diocane')
-    //    removeOldChart()
-    //    putInProducersIds('DB', parseForDbChart(parse.data))
-    //    canvasCreate('DB', document.getElementById('databaseRow'))
-    //    graphCreate('DB');
-    //    //drawChartDb('DB')
-    //}
-    //else {
-    //    //check if data exists
-    //    if (producersIds[parse._id] == undefined || producersIds[parse._id] == null) {
-    //        putInProducersIds(parse._id);
-    //        canvasCreate(parse._id)
-    //        graphCreate(parse._id)
-    //    }
-    //    updateChart(parse._id, parse);
-    //}
-
 }
 /**
  * This function removes the DB old Chart
@@ -279,6 +280,7 @@ function removeOldChart() {
     parent.removeChild(oldChart)
 
 }
+
 /**
  * This functions create the producers selectors that you can find in Database section in the UBB home page
  */
@@ -369,6 +371,7 @@ function sendTimeStampToDB(from, to) {
         id: currentId
     }), 'producer')
 }
+
 /**
  * This function return only the dd/mm/yy part from a dd/mm/yy hh/mm AM/PM string
  * @param dateFromDatapicker Date from datepicker
