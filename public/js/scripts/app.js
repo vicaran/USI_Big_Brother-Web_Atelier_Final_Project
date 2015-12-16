@@ -213,6 +213,7 @@ function updateChart(id, parse) {
 }
 
 function compressData(parse) {
+    console.log('COMPRESSION')
     var length = parse[0].time.length
     var ratio = Math.ceil(length / 60)
     var toSend = {
@@ -228,7 +229,7 @@ function compressData(parse) {
         var light = 0;
         var temperature = 0;
         var volume = 0;
-        for (var j = 0; j < length; j++) {
+        for (var j = i; j < length; j++) {
             light += parse[j].light
             temperature += parse[j].temperature
             volume += parse[j].volume
@@ -241,6 +242,7 @@ function compressData(parse) {
         toSend.volume.push(volume)
 
     }
+    console.log(toSend)
     return toSend
 }
 
@@ -250,7 +252,6 @@ function compressData(parse) {
  * @returns {{volume: Array, light: Array, temperature: Array, time: Array}} An json that will be use in putInProducersIds
  */
 function parseForDbChart(parse) {
-
     var toSend = {
         volume: [],
         light: [],
@@ -263,7 +264,8 @@ function parseForDbChart(parse) {
         toSend.light.push(parse[i].light)
         toSend.temperature.push(parse[i].temperature)
     }
-    if (parse[0].time.length > 60) {
+    if (parse[0].time.length >= 60) {
+        console.log('>60')
         toSend = compressData(toSend)
     }
     return toSend;
