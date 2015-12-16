@@ -264,7 +264,8 @@ function parseForDbChart(parse) {
         toSend.light.push(parse[i].light)
         toSend.temperature.push(parse[i].temperature)
     }
-    if (parse[0].time.length >= 60) {
+    console.log('LENGH: ',toSend.time.length )
+    if (toSend.time.length >= 60) {
         console.log('>60')
         toSend = compressData(toSend)
     }
