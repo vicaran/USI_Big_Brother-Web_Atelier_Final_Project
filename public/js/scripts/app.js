@@ -182,9 +182,9 @@ function updateLegend() {
             var dataset = producersIds[keys[i]].data.datasets
             console.log('dataset', dataset)
             activeProducer++
-            lastVolume += (dataset[0].data[dataset.data[0].length - 1])
-            lastLight += (dataset[1].data[dataset.data[1].length - 1])
-            lastTemperature += (dataset[2].data[dataset.data[2].length - 1])
+            lastVolume += (dataset[0].data[dataset[0].data.length - 1])
+            lastLight += (dataset[1].data[dataset[1].data.length - 1])
+            lastTemperature += (dataset[2].data[dataset[2].data.length - 1])
         }
     }
     console.log(lastLight,lastTemperature,lastVolume)
