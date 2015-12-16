@@ -215,28 +215,57 @@ function parseForDbChart(parse) {
 }
 
 /**
+ * This function initialized all the keys form the database
+ * @param keys The keys from the database
+ */
+function initializedProducersIds(keys){
+    for(var i = 0; i < keys.length ; i++){
+        producersIds[keys[i]] = {}
+    }
+}
+
+/**
  * This function is the main chart handler
  * @param parse The new producer's data
  */
 function chartHandler(parse) {
     console.log(parse)
-    if (parse.header == 'database') {
-        console.log(parse, 'diocane')
-        removeOldChart()
-        putInProducersIds('DB', parseForDbChart(parse.data))
-        canvasCreate('DB', document.getElementById('databaseRow'))
-        graphCreate('DB');
-        //drawChartDb('DB')
-    }
-    else {
-        //check if data exists
-        if (producersIds[parse._id] == undefined || producersIds[parse._id] == null) {
+    switch (parse.header) {
+        case 'database':
+            removeOldChart()
+            putInProducersIds('DB', parseForDbChart(parse.data))
+            canvasCreate('DB', document.getElementById('databaseRow'))
+            graphCreate('DB');
+            break
+        case 'GET':
+            initializedProducersIds(parse)
+            createIdSelector()
+            break;
+        default:
             putInProducersIds(parse._id);
             canvasCreate(parse._id)
             graphCreate(parse._id)
-        }
-        updateChart(parse._id, parse);
+            updateChart(parse._id, parse);
+
+
     }
+    //if (parse.header == 'database') {
+    //    console.log(parse, 'diocane')
+    //    removeOldChart()
+    //    putInProducersIds('DB', parseForDbChart(parse.data))
+    //    canvasCreate('DB', document.getElementById('databaseRow'))
+    //    graphCreate('DB');
+    //    //drawChartDb('DB')
+    //}
+    //else {
+    //    //check if data exists
+    //    if (producersIds[parse._id] == undefined || producersIds[parse._id] == null) {
+    //        putInProducersIds(parse._id);
+    //        canvasCreate(parse._id)
+    //        graphCreate(parse._id)
+    //    }
+    //    updateChart(parse._id, parse);
+    //}
 
 }
 /**
