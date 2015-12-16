@@ -54,11 +54,11 @@ function SenderTessel(id, moduleId) {
         var self = this;
         //------ analog pins ------
         //initialized sound sensor
-        // var soundPin = this.tessel.port['GPIO'].analog[0];
+        var soundPin = this.tessel.port['GPIO'].analog[0];
         //initialized light sensor
-        // var lightPin = this.tessel.port['GPIO'].analog[1];
+        var lightPin = this.tessel.port['GPIO'].analog[1];
         //initialized temp sensor
-        // var tempPin = this.tessel.port['GPIO'].analog[2];
+        var tempPin = this.tessel.port['GPIO'].analog[2];
 
         //------ digital pins ------
         //initialized Led

@@ -15,7 +15,6 @@ wifi.on('connect', function(data){
     console.log("connect emitted", data);
     var SenderT1 = new TesselClasses.SenderTessel(1,2);
     SenderT1.start();
-
 });
 
 wifi.on('disconnect', function(data){
