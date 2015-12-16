@@ -29,7 +29,7 @@ Chart.defaults.global.showTooltips = false;
 function getDataChart(data) {
 
     var lineChartData = {
-        labels: data == undefined ? [] : data.time,
+        labels: data == undefined ? [] : convertDateArray(data.time),
         datasets: [{
             label: "volume",
             fillColor: "rgba(215,54,139,0.2)",
@@ -61,6 +61,20 @@ function getDataChart(data) {
 
     };
     return lineChartData;
+}
+
+
+/**
+ * This function converts an array of time stamp in the form of hh:mm:ss
+ * @param {Array} ArrayOfTimeSpamp an array formed by timestamp
+ * @returns {Array} The new converted array
+ */
+function convertDateArray(ArrayOfTimeSpamp){
+    var toReturn = []
+    for(var i = 0; i < ArrayOfTimeSpamp.length;i++){
+        toReturn.push(convertDate(ArrayOfTimeSpamp[i]))
+    }
+    return toReturn;
 }
 
 /**
@@ -149,7 +163,7 @@ function updateChart(id, parse) {
     var myLineChart = producersIds[id].myLineChart
     myLineChart.destroy();
 
-    time = convertDate(parse.time)
+    var time = convertDate(parse.time)
     var lineChartData = producersIds[id].data
     //push newly received data (time & data)
     lineChartData.datasets[0].data.push(parse.volume);
@@ -330,7 +344,6 @@ function sendTimeStampToDB(from, to) {
  * @returns {String} Date in dd/mm/yy format
  */
 function parseDatePicker(dateFromDatapicker) {
-    console.log('******', dateFromDatapicker)
     return dateFromDatapicker.split(' ')[0]
 }
 
