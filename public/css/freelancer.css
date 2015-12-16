@@ -23,7 +23,7 @@ a, a:hover, a:focus, a:active, a.active {
 #gifWait{
     height: 80%;
     background-repeat: no-repeat;
-    background-image: url("../img/www.GIFCreator.me_Su08FL.gif");
+    background-image: url("../js/scripts/img/www.GIFCreator.me_Su08FL.gif");
 }
 #divVolumeColor {
     color: rgba(215, 54, 139, 1)
@@ -208,7 +208,7 @@ a > i {
 header {
     text-align: center;
     color: #fff;
-    background-image: url("../img/header.jpg");
+    background-image: url("../js/scripts/img/header.jpg");
     background-size: cover;
     background-repeat: round;
 }
