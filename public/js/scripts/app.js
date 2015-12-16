@@ -112,11 +112,12 @@ function canvasCreate(id, cont) {
     else {
         div = document.createElement('div')
         div.className = "chart"
+        div.appendChild(p);
+
     }
     var canvas = document.createElement('canvas')
     canvas.className = "chart"
     canvas.setAttribute('id', id)
-    div.appendChild(p);
     div.appendChild(canvas)
     container.appendChild(div);
 
