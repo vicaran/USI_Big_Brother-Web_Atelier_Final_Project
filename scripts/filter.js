@@ -9,6 +9,7 @@ k.createNode(function (msg) {
         case 'GET':
             clusterStorage.keys('*',function(res){
                 var parse = JSON.parse(res)
+                console.log("INSIDE DB GET")
                 parse.header = 'GET'
                 k.send(JSON.stringify(parse))
             })

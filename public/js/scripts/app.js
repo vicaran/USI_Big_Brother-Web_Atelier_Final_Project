@@ -509,6 +509,7 @@ function waitForStreaming() {
 }
 
 function getProducersIds(){
+    console.log('INside GET producers ids')
     producer_handler(JSON.stringify({
         header: "GET"
     }), 'producer')
@@ -519,6 +520,7 @@ window.onload = function mainHandler() {
     /*
      functions call
      */
+    console.log('madonna suina')
     getProducersIds()
     changeDimension();
     waitForStreaming();
