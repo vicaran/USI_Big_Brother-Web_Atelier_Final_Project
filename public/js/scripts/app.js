@@ -1,5 +1,6 @@
 /**
  * @author Francesco Saverio Zuppichini with the help of Gotie Muller for Usi Big Brother project
+ * 12/16/2015 11:00 - 8
  */
 var producersIds = {};
 var graphDimension = 10;
