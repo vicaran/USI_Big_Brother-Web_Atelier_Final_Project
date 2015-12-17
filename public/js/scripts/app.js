@@ -46,19 +46,19 @@ function getDataChart(data) {
             data: data == undefined ? [] : data.volume
         }, {
             label: "temperature",
-            fillColor: "rgba(151,187,205,0.2)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "rgba(151,187,205,1)",
+            fillColor: "rgba(255, 255, 153, 0.2)",
+            strokeColor: "rgba(255, 255, 153, 1)",
+            pointColor: "rgba(255, 255, 153, 1)",
+            pointStrokeColor: "rgba(255, 255, 153, 1)",
             pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
+            pointHighlightStroke: "rgba(255, 255, 153, 1)",
             data: data == undefined ? [] : parseLight(data.light)
         }, {
             label: "light",
-            fillColor: "rgba(255, 255, 153, 0.2)",
-            strokeColor: "rgba(255, 255, 153, 1)",
-            pointColor: "#ffff99",
-            pointStrokeColor: "#ffff99",
+            fillColor: "rgba(241,85,45,0.2)",
+            strokeColor: "rgba(241,85,45,1)",
+            pointColor: "rgba(241,85,45,1)",
+            pointStrokeColor: "rgba(241,85,45,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(241,85,45,1)",
             data: data == undefined ? [] : data.temperature
@@ -598,7 +598,7 @@ function getProducersIds() {
             header: "GET"
         }), 'producer')
 
-    }, 7000);
+    }, 5000);
 
 }
 
