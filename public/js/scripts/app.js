@@ -57,8 +57,8 @@ function getDataChart(data) {
             label: "temperature",
             fillColor: "rgba(241,85,45,0.2)",
             strokeColor: "rgba(241,85,45,1)",
-            pointColor: "#ffff99",
-            pointStrokeColor: "#ffff99",
+            pointColor: "rgba(241,85,45,1)",
+            pointStrokeColor: "rgba(241,85,45,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(241,85,45,1)",
             data: data == undefined ? [] : data.temperature
