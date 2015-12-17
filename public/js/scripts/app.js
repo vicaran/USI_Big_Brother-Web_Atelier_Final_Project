@@ -37,28 +37,28 @@ function getDataChart(data) {
         labels: data == undefined ? [] : convertDateArray(data.time),
         datasets: [{
             label: "volume",
-            fillColor: "rgba(215,54,139,0.2)",
-            strokeColor: "rgba(215,54,139,1)",
-            pointColor: "rgba(215,54,139,1)",
-            pointStrokeColor: "rgba(215,54,139,1)",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: data == undefined ? [] : data.volume
-        }, {
-            label: "temperature",
             fillColor: "rgba(255, 255, 153, 0.2)",
             strokeColor: "rgba(255, 255, 153, 1)",
             pointColor: "rgba(255, 255, 153, 1)",
             pointStrokeColor: "rgba(255, 255, 153, 1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(255, 255, 153, 1)",
-            data: data == undefined ? [] : parseLight(data.light)
+            data: data == undefined ? [] : data.volume
         }, {
             label: "light",
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "rgba(151,187,205,1)",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: data == undefined ? [] : parseLight(data.light)
+        }, {
+            label: "temperature",
             fillColor: "rgba(241,85,45,0.2)",
             strokeColor: "rgba(241,85,45,1)",
-            pointColor: "rgba(241,85,45,1)",
-            pointStrokeColor: "rgba(241,85,45,1)",
+            pointColor: "#ffff99",
+            pointStrokeColor: "#ffff99",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(241,85,45,1)",
             data: data == undefined ? [] : data.temperature
@@ -598,7 +598,7 @@ function getProducersIds() {
             header: "GET"
         }), 'producer')
 
-    }, 5000);
+    }, 7000);
 
 }
 
