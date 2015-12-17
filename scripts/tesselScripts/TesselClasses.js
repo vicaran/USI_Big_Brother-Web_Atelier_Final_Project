@@ -81,6 +81,7 @@ function SenderTessel(id, moduleId) {
             var volume = self.gatherSound(soundPin);
             var temperature = self.gatherTemperature(tempPin);
             var light = self.gatherLight(lightPin);
+            console.log('Light', light);
             var data = {
                 _id: self._id,
                 volume: volume,
@@ -134,7 +135,10 @@ function SenderTessel(id, moduleId) {
             case 1:
                 return rawLight > 550;
                 break;
-            case 2 || 3:
+            case 2:
+                return rawLight > 320;
+                break;
+            case 3:
                 return rawLight > 320;
                 break;
         }
