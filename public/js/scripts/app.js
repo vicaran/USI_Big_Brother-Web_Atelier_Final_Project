@@ -52,7 +52,7 @@ function getDataChart(data) {
             pointStrokeColor: "rgba(151,187,205,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151,187,205,1)",
-            data: data == undefined ? [] : data.temperature
+            data: data == undefined ? [] : parseLight(data.light)
         }, {
             label: "light",
             fillColor: "rgba(241,85,45,0.2)",
@@ -61,7 +61,7 @@ function getDataChart(data) {
             pointStrokeColor: "rgba(241,85,45,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(241,85,45,1)",
-            data: data == undefined ? [] : parseLight(data.light)
+            data: data == undefined ? [] : data.temperature
         }]
 
     };
@@ -182,6 +182,9 @@ function updateLegend() {
     var lastTemperature = 0
     var activeProducer = 0;
     for (var i = 0; i < keys.length; i++) {
+        if(keys[i] =='DB'){
+            continue
+        }
         if (producersIds[keys[i]].data != undefined) {
             var dataset = producersIds[keys[i]].data.datasets
             console.log('dataset', dataset)
