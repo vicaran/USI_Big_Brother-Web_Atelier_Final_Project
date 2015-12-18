@@ -1,5 +1,6 @@
 /**
  * @author Francesco Saverio Zuppichini with the help of Gotie Muller for Usi Big Brother project
+ * 12/16/2015 11:00 - 8
  */
 var producersIds = {};
 var graphDimension = 10;
@@ -36,31 +37,31 @@ function getDataChart(data) {
         labels: data == undefined ? [] : convertDateArray(data.time),
         datasets: [{
             label: "volume",
-            fillColor: "rgba(215,54,139,0.2)",
-            strokeColor: "rgba(215,54,139,1)",
-            pointColor: "rgba(215,54,139,1)",
-            pointStrokeColor: "rgba(215,54,139,1)",
+            fillColor: "rgba(255, 255, 153, 0.2)",
+            strokeColor: "rgba(255, 255, 153, 1)",
+            pointColor: "rgba(255, 255, 153, 1)",
+            pointStrokeColor: "rgba(255, 255, 153, 1)",
             pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
+            pointHighlightStroke: "rgba(255, 255, 153, 1)",
             data: data == undefined ? [] : data.volume
         }, {
-            label: "temperature",
+            label: "light",
             fillColor: "rgba(151,187,205,0.2)",
             strokeColor: "rgba(151,187,205,1)",
             pointColor: "rgba(151,187,205,1)",
             pointStrokeColor: "rgba(151,187,205,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151,187,205,1)",
-            data: data == undefined ? [] : data.temperature
+            data: data == undefined ? [] : parseLight(data.light)
         }, {
-            label: "light",
+            label: "temperature",
             fillColor: "rgba(241,85,45,0.2)",
             strokeColor: "rgba(241,85,45,1)",
             pointColor: "rgba(241,85,45,1)",
             pointStrokeColor: "rgba(241,85,45,1)",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(241,85,45,1)",
-            data: data == undefined ? [] : parseLight(data.light)
+            data: data == undefined ? [] : data.temperature
         }]
 
     };
@@ -181,6 +182,9 @@ function updateLegend() {
     var lastTemperature = 0
     var activeProducer = 0;
     for (var i = 0; i < keys.length; i++) {
+        if(keys[i] =='DB'){
+            continue
+        }
         if (producersIds[keys[i]].data != undefined) {
             var dataset = producersIds[keys[i]].data.datasets
             console.log('dataset', dataset)
@@ -594,7 +598,7 @@ function getProducersIds() {
             header: "GET"
         }), 'producer')
 
-    }, 5000);
+    }, 7000);
 
 }
 
