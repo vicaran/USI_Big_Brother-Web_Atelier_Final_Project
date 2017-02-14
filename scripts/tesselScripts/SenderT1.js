@@ -5,8 +5,8 @@ var TesselClasses = require('./TesselClasses.js');
  * to how require('tessel') works.
  */
 var wifi = require('wifi-cc3000');
-var network = 'linksys'; // put in your network name here
-var pass = ''; // put in your password here, or leave blank for unsecured
+var network = 'USI_BIG_BROTHER'; // put in your network name here
+var pass = 'usibigbrother'; // put in your password here, or leave blank for unsecured
 var security = 'wpa2'; // other options are 'wep', 'wpa', or 'unsecured'
 var timeouts = 0;
 

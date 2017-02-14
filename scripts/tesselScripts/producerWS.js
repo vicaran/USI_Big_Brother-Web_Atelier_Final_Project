@@ -5,7 +5,7 @@
 var ws = require("nodejs-websocket");
 
 var port = 15000;
-var hostname = "ws://neha.inf.unisi.ch:";
+var hostname = "ws://195.176.181.55:";
 var url = hostname + port.toString();
 var ready = false;
 
