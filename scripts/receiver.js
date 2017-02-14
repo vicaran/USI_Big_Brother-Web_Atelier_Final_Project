@@ -26,7 +26,6 @@ wss.on('connection', function(ws) {
     };
     _id++;
     ws.on('message', function(data) {
-
         //update date
         var date = new Date()
         client[ws._id].time = date;
@@ -42,6 +41,7 @@ wss.on('connection', function(ws) {
         console.log('close socket: ' + _id);
         _id--;
     });
+
     ws.on('disconnect', function close() {
         delete client[ws._id];
         console.log('disconnected socket: ' + _id);
@@ -68,7 +68,6 @@ function sendAll(data, d) {
                     //delete socket
                     delete client[key];
                     _id--;
-
                 } else {
                     client[key].ws.send(data)
                 }
